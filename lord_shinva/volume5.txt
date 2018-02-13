@@ -1,0 +1,328 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 5 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+TECNICHE DI BASE: I WEB SERVER - PARTE 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Come abbiamo visto, molti server Web per Windows (come Microsoft IIS oppure
+Windows NT server) possono essere utilizzati per eseguire comandi arbitrari
+utilizzando lo schema seguente:
+
+  [URL].../nomescript.bat?&comando_1+comando_2+...+comando_N
+
+E` bene notare che i server Web registrano in uno o piu` file (detti "log")
+tutte le operazioni effettuate, e quindi nel caso utilizzassimo l'hack sopra
+descritto esso verrebbe senza dubbio registrato, insieme al nostro IP Address
+e ad altre informazioni.
+
+Per evitarlo, possiamo fare due cose.  Una possibilita` e` aggiungere alla
+fine dell'URL contenente i nostri comandi, il comando "time" oppure "date",
+in questo modo:
+
+  http://www.sito.com/cgi-bin/prova.bat?&echo+S+%7C+format+c%3A+%2Fu+time
+
+Procediamo ora con la spiegazione di questo URL.  Il comando eseguito e`:
+
+  echo S | format c: /u
+
+seguito dal comando "time", che vedremo dopo.  Il comando "format c:" come
+sappiamo serve a formattare un disco, in questo caso l'hard disk "C", mentre
+"/u" indica a "format" di procedere con una formattazione incondizionata,
+cioe` senza salvare i dati presenti sul disco... ma "format", una volta
+eseguito, chiede all'utente di premere un tasto: S (si) oppure N (no), e
+non fara` nient'altro fino a che non avra` uno dei due input.
+Per ovviare all'inconveniente, non potendo noi digitare "S" sulla tastiera
+del computer che vogliamo hackerare, utilizziamo "echo S" seguito da "|".
+In pratica "|" (detto "pipe") serve ad inviare l'output del comando "echo"
+(il carattere "S") al comando successivo (format), simulando la pressione del
+tasto.  Abbiamo cosi` risolto il problema.
+
+Una funzione non documentata del comando format e` l'opzione "/autotest".
+Tale opzione corrisponde in pratica alla riga di comando sopra descritta,
+e quindi potremo (solo nel caso di format) fare a meno di echo, pipe e "/u"
+scrivendo "format c: /autotest" (NON scrivetelo sul vostro computer).
+L'hard disk verra` formattato senza chiedere alcunche` all'utente.
+
+Ma ora torniamo al comando time (oppure date).  Perche` l'abbiamo aggiunto?
+
+I server registrano le operazioni nei log solo DOPO che tali operazioni siano
+state effettivamente eseguite.  Ad esempio, quando un URL viene "chiamato" e
+abbiamo ricevuto il contenuto della pagina ad esso associata.
+Per impedire al server di terminare l'operazione (e quindi di registrare
+l'URL hackerato e il nostro IP nel file di log) usiamo quindi time o date.
+Come sappiamo questi due comandi non fanno altro che cambiare ora o data, e
+a tale scopo chiedono all'utente il nuovo valore (l'orario, nel caso di time)
+all'utente.  Ma dal momento che il server non sa rispondere ai comandi ;)
+la loro esecuzione non potra` essere completata, il log non verra` scritto
+e noi avremo ottenuto quello che volevamo... segretezza :)
+
+Vi ho detto pero` che esistono DUE modi.  Ecco il secondo: esiste su Internet
+un server molto simile all'Anonimizzatore di cui vi ho parlato in un volume
+precedente a questo.  Si tratta di iPROXY (http://www.iproxy.com), un server
+che offre gratuitamente la possibilita` di collegarsi anonimamente ai siti,
+digitando l'URL desiderato (vi dice niente?).
+Non e` ovviamente una tecnica, ma un servizio pensato per ben altri scopi
+che per l'hacking... ma meglio uno in piu` che in meno ^_^
+
+Tornando ai problemi di sicurezza...
+
+Un altro bug di IIS e` il seguente: aggiungendo uno (o una coppia) di punti
+alla fine di un file script, anziche` essere eseguito, il contenuto del file
+verra` visualizzato sullo schermo del vostro browser.  Un altro bug simile
+permette di visualizzare file "segreti" (come pagine protette da password,
+documenti che non dovrebbero poter essere visualizzati in quanto "interni"
+e qualsiasi altro file presente sull'hard disk del server), in questo modo:
+
+  http://www.sito.com/..\..\..\..\qui_va_il_percorso\nome_del_file
+
+Esistono molti altri bugs, per i quali vi rimando (nel caso di Windows) ai
+siti sulla sicurezza di Windows.
+
+Passiamo ora agli altri Web server.
+
+Restando in tema di Windows NT/95 un altro server che ha il problema degli
+script in cgi-bin e` O'Reilly WebSite (versioni fino alla 1.1b).
+
+Per leggere invece un file log (WebSTAR.LOG) del server WebStar per Macintosh
+basta utilizzare il codice escape al posto del punto (nel nome del file):
+
+  http://www.sito.com/WebSTAR%20LOG
+
+Tenete presente che i bug fin qui descritti sono applicabili solo ai relativi
+software.  Non cercate, pertanto, di utilizzare "time" con un server Unix o
+roba del genere.
+
+TECNICHE DI BASE: I WEB SERVER UNIX
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Il Web server standard di Unix, Linux, ecc. e` httpd della NCSA.
+
+Tutte le versioni fino alla 1.4 hanno un bug molto frequente nel software
+server (lo ritroveremo ad esempio nei server SMTP, vecchi e nuovi).
+Si tratta di un problema detto "buffer overflow", che consiste nel riempire
+tutta l'area di memoria riservata dal server ai dati, e fargli eseguire un
+programma (molto piccolo, e preferibilmente in assembler) scritto da noi.
+Essendo una tecnica molto complessa la vedremo piu` avanti, poiche` ci sara`
+piu` utile con SMTP (per avere accesso root) che con il Web, in quanto nei
+nuovi server questo problema sembra essere stato corretto.
+Per la cronaca, lo stesso bug esiste anche nel server Apache (fino alla
+versione 1.02).
+
+Esistono poi degli hack (un "hack" e` una tecnica di hacking) che hanno
+letteralmente fatto storia.
+Relativamente vecchio ma ancora molto utilizzato e` quello del PHF, usato
+per hackerare le pagine Web di CIA, FBI e moltissimi altri, piu` o meno
+famosi.  Prima di spiegare questa tecnica e` bene precisare una cosa: se
+state leggendo questi volumi per imparare, non avrete certamente la capacita`
+di rendervi "invisibili" agli occhi di un SysAdmin... quindi attenti a non
+utilizzare queste tecniche.
+Molti siti (come ad esempio unina.it, l'Universita` di Napoli) hanno software
+in grado di riconoscere gli hack piu` conosciuti (tra cui PHF e Query).
+Potrebbero far sospendere il vostro account Internet, se non denunciarvi...
+
+Ma prima dobbiamo fare un breve corso sul sistema di password di Unix.
+
+TECNICHE DI BASE: UNIX E LE PASSWORD
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Riflettiamo un attimo: qual'e` la parte piu` interessante di un sistema
+Unix (o Linux) ?  Certamente il file delle password, nel quale si trova, in
+forma criptata, anche la password di root (oltre a quelle di tutti gli altri
+utenti).
+
+Una classica entry (riga di testo contentente dati) di un file password e`
+di questo tipo:
+
+username:4cFJg5aMkC9f:1000:20:nome e cognome:/home/utente:/bin/ksh
+
+I campi sono delimitati dai due punti, e sono:
+  - Nome utente (username)
+  - Password criptata
+  - Numero utente
+  - Numero gruppo
+  - GECOS (nome e cognome, oppure altre informazioni sull'utente)
+  - Directory utente (dalla quale in genere non potete uscire)
+  - Shell utilizzabile dall'utente (in genere limitata se non siete root)
+
+nel caso in cui uno o piu` campi siano disabilitati, li troverete vuoti (i
+due punti saranno vicini) oppure troverete uno slash (/) al loro posto.
+Nel caso della shell, in alcuni casi troverete /bin/false che, in pratica,
+corrisponde allo slash (e quindi a nessuna shell).
+
+Ma dove si trova il file delle password?
+
+La directory standard e` /etc e il file si chiama passwd, quindi il percorso
+completo sarebbe /etc/passwd ma la maggior parte dei nuovi sistemi ha un
+meccanismo denominato "shadowing" delle password.  Per evitare di prelevare
+il file contentente le password, infatti, viene creato un secondo file, il
+cui nome in genere e` shadow (in molti casi si trovera` nella directory /etc)
+che contiene, in forma un po` diversa da quella appena vista, tutti i campi,
+comprese quindi le password (criptate), e NON e` accessibile agli utenti.
+Il file passwd, invece, conterra` tutti i soliti campi, ma al posto della
+password conterra` un simbolo, detto Token (che in genere e` un asterisco).
+
+Perche` questo?  Le password sono criptate, ma e` ancora possibile risalire
+ad esse, crackarle (da "crack").  Non si possono decriptare, ma si puo` usare
+una lista di parole probabili (detta dizionario), criptarle una per una e
+confrontare il risultato con le password criptate in passwd.  Se coincidono,
+abbiamo trovato una password.
+Ovviamente per fare tutto cio` si usano dei programmi appositi.  I piu` usati
+(e i migliori) sono CrackerJack e HellFire Cracker.  Praticamente tutti i
+siti Web contenenti materiale per hackers ne hanno una copia.
+
+Tornando alle password, se un sistema usa lo shadowing, per risalire al vero
+file delle password, in base al sistema operativo usato potremo trovarlo in
+directory differenti, come mostrato in questa tabella tratta dalla HackFAQ:
+
+Sistema Unix          Path (percorso) del file        Token
+----------------------------------------------------------------
+AIX 3 (caso 1)        /etc/security/passwd            !
+AIX 3 (caso 2)        /tcb/auth/files/p/pippo         #
+A/UX 3.0s             /tcb/files/auth/?/              *
+BSD4.3-Reno           /etc/master.passwd              *
+ConvexOS 10           /etc/shadpw                     *
+ConvexOS 11           /etc/shadow                     *
+DG/UX                 /etc/tcb/aa/user/               *
+EP/IX                 /etc/shadow                     x
+HP-UX                 /.secure/etc/passwd             *
+IRIX 5                /etc/shadow                     x
+Linux 1.1             /etc/shadow                     *
+OSF/1                 /etc/passwd[.dir|.pag]          *
+SCO Unix #.2.x        /tcb/auth/files/p/pippo         *
+SunOS4.1+c2           /etc/security/passwd.adjunct    ##username
+SunOS 5.0             /etc/shadow                     *
+System V Release 4.0  /etc/shadow                     x
+System V Release 4.2  /etc/security/* database        *
+Ultrix 4              /etc/auth[.dir|.pag]            *
+UNICOS                /etc/udb                        *
+
+Ora che sappiamo cosa cercare (e dove), passiamo alle tecniche da impiegare.
+
+Un file /etc/passwd standard puo` spesso essere prelevato tranquillamente
+con FTP oppure collegandosi ad un indirizzo come:
+
+   http://www.sito.com/ftp/etc/passwd
+
+oppure...
+
+   ftp://ftp.sito.com/etc/passwd
+
+tenendo pero` presente che in genere i SysAdmin leggono i log... scaricando
+il loro file delle password non li farete certo felici.
+Quindi, non appena riuscirete a procurarvi username e password di un account
+(che non sia ne` vostro ne` di amici, se ci tenete alle amicizie...) e`
+consigliabile utilizzare quello anziche` il vostro account.
+
+Una volta prelevato /etc/passwd diamogli un'occhiata: se il secondo campo di
+ciascun rigo (o di almeno un paio di essi) contiene una password criptata,
+possiamo essere quasi sicuri che non esista nessuno shadowing.
+Dico *quasi* perche` alcuni grossi server stranieri hanno recentemente usato
+dei file passwd fittizi.  Crackandoli e provando a collegarsi con le password
+trovate, non si riesce a collegarsi... perche` sono tutte false e servono a
+depistare l'hacker inesperto.  E` raro che accada, ma e` da tener presente.
+
+Nel caso dovessimo trovare un Token al posto della password, ci affideremo
+alle tecniche di cui parlavamo in principio.
+
+Il primo hack che descriveremo e` quello del PHF.
+
+PHF e` una piccola utility di "agenda telefonica" presente in Unix, Linux,
+ecc.  Anch'essa puo` essere usata in modo sovversivo, per far eseguire dei
+comandi qualsiasi a un server.
+
+Basta collegarsi a un URL del genere:
+
+  http://www.sito.com/cgi-bin/phf?Jserver=x&Qalias=x%0A/bin/cat%20/etc/passwd
+
+oppure piu` semplicemente...
+
+  http://www.sito.com/cgi-bin/phf?Qalias=x%0A/bin/cat%20/etc/passwd
+
+usando /etc/shadow (o altri, vedi tabella sopra) al posto di /etc/passwd
+per "prelevare" il vero file delle password.
+
+Quello che avviene "chiamando" questi URL e` che il file PHF viene eseguito
+(vengono passati parametri fittizi, come Jserver e Qalias) e poi si simula
+un invio a capo (codice %0A) per inviare un nuovo comando, che nel nostro
+caso e` /bin/cat /etc/passwd (%20 equivale allo spazio, ma si puo` usare
+anche "+" al suo posto), ma puo` essere *qualsiasi* comando si voglia.
+
+In quel momento, infatti, abbiamo accesso root! =)
+E come tali, possiamo eseguire comandi, creare, modificare, distruggere...
+
+NOTA: il file /bin/cat equivale al comando "type" del DOS.  Serve quindi a
+visualizzare un file, e occasionalmente anche a crearne uno o ad aggiungere
+righe di testo ad uno pre-esistente.  Supponiamo di voler inserire una riga
+nel file "prova": in tal caso, useremo "cat" unitamente ai simboli di
+ridirezione > e >> e | (pipe), proprio come nel DOS.
+Alcuni esempi:
+
+   /bin/cat prova > test      crea un file col nome test e vi scrive "prova"
+   /bin/cat prova >> test     aggiunge la parola "prova" al file "test"
+
+Ovviamente per crackare un file shadow che, come abbiamo detto, usa un
+formato differente, dovremo prima effettuare il de-shadowing (trasformare
+shadow in formato passwd standard) e poi effettuare il cracking con i
+normali CrackerJack e simili.
+Esistono su Internet programmi appositi per tale operazione.
+
+Una tecnica molto simile a quella del PHF e` quella del Query:
+
+   http://www.sito.com/cgi-bin/query?%0A/bin/cat%20/etc/passwd
+
+che funziona in modo analogo a quello gia` visto del PHF.
+Dopo il "?" andrebbe inserito qualcosa da richiedere al server, ma poiche`
+a noi interessa solo eseguire comandi, ci "limiteremo" ancora una volta a
+scriverli dopo il codice %0A.
+
+Un'ultima cosa che puo` tornarci utile e` che molti server hanno un file
+chiamato test-cgi nella directory cgi-bin.  Se tale file contiene il comando:
+
+   echo QUERY_STRING = $QUERY_STRING
+
+potremo, ad esempio, dare un'occhiata alla directory di root ("/*") con il
+seguente URL:
+
+   http://www.sito.com/cgi-bin/test-cgi?/*
+
+o della directory corrente usando solo "*" anziche` "/*", e cosi` via.
+
+POSTILLA
+~~~~~~~~
+Che lo si creda o meno, nonostante queste tecniche siano abbastanza vecchie e
+utilizzatissime, sono parecchi i server (anche quelli "importanti") che sono
+vulnerabili.  Spesso inoltre non registrano neppure l'IP Address dell'hacker.
+Ovviamente se il server vi risponde qualcosa come "il tuo tentativo di
+hackerare questo server sara` comunicato a chi di dovere" (in inglese) state
+pur certi che vi troverete nei guai.  Quindi aspettate di diventare hackers
+prima di mettere in pratica... conoscere le tecniche non basta.  Se credete
+di essere gia` diventati hackers conoscendole, mi dispiace deludervi... vi
+potrete solo mettere nei guai e farvi etichettare per sempre come patetici
+"lamer" (termine dispregiativo del gergo hacker per indicare un hacker nato
+perdente).
+
+Ancora alcune lezioni sulle tecniche di base per gli altri tipi di servizi
+(FTP, SMTP, IRC, ecc.), e potremo iniziare con l'hacking.  Sara` necessario
+conoscerle bene perche` non torneremo piu` su tali argomenti, a meno che non
+sia necessario aggiungere qualcosa.
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-

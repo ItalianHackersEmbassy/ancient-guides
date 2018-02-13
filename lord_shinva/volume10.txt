@@ -1,0 +1,173 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>               Enciclopedia dell'Hacking               <=-=>
+      <=-=>               `````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 10 ]:.                   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+VIRTUOSISMI TECNICI: PARTE 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Supponiamo di aver finalmente hackerato un server e di avere username e
+password di un utente.  E ora cosa facciamo?  Ci limitiamo a leggere la sua
+posta, a collegarci via Telnet dal suo account e cose del genere?
+Certamente no...
+
+I passi principali nell'hackerare un server consistono nel fare quanto segue:
+
+ - prendere tutte le precauzioni prima di collegarsi: preferibilmente usare
+   l'account di qualcun altro (un utente di cui abbiamo crackato la password)
+   e/o usare un account Telnet su una BBS, utilizzare il "bounce" e cosi` via
+
+ - scegliere un server (di tipo Unix, in questo caso) e crackarne le password
+   individuando la locazione del file, se le password sono shadow o meno, ecc
+
+ - collegarsi con l'account crackato di uno degli utenti di quel server
+
+ - utilizzare i comandi "who" e "ps -u vostro_user_name" per vedere chi
+   e` on-line e cosa sta facendo (se il SysAdmin e` in giro, sara` meglio
+   lasciar perdere e collegarsi piu` tardi, meglio se di notte o la mattina
+   molto presto)
+
+ - digitare "unset HISTFILE" per far si` che il file "history" (dove vengono
+   annotate tutte le operazioni che svolgiamo!) venga eliminato non appena
+   lasceremo il sistema
+
+ - inviare, compilare e usare un programma per nasconderci dal log di utmp
+
+ - controllare con il comando "who" se "si vede" che siamo in linea
+
+ - se non si e` riusciti a crackare la password di root, usare un exploit
+   per ottenere accesso root, in modo da poter eseguire comandi nella shell
+
+ - OPZIONALE: crearsi un nuovo account su quel server, utilizzando un nome
+   poco vistoso (dare un'occhiata al file delle password per uniformarvi
+   agli altri in modo da non far saltare all'occhio il vostro nuovo account)
+
+ - installare una backdoor (se si e` in grado di farlo), oppure copiare la
+   shell root /bin/sh in qualche directory "sperduta" sotto falso nome e
+   cambiarne il livello d'accesso con chmod, in modo da poter usare la shell
+   di root anche quando si accede al sistema con l'account di un utente
+   qualsiasi (e quindi senza privilegi); se si e` creato un nuovo account
+   (vedi sopra) potremo mettere la shell "segreta" nella nostra directory
+   utente, in modo che nessun altro la noti e possa usarla all'infuori di
+   noi (un buon posto e` la directory .term nella directory /users oppure
+   /home/users o comunque dove si trovano le directory degli utenti).
+   Si puo` anche aggiungere un account al file delle password, in modo da
+   utilizzare la shell root quando ci servira`, utilizzando semplicemente
+   Telnet: usando PHF con il comando "echo stringa >> /etc/passwd" oppure
+   editando direttamente il file delle password si aggiunga...
+             nomequalsiasi::numeroutente:numerogruppo:/:/bin/sh
+   oppure qualcosa di meno vistoso, come un finto "account di sistema" del
+   tipo...
+                 spoolsys::13:12:system:/var/spool/:/bin/sh
+   (ovviamente si potra` anche utilizzare una password tra i due :: se non
+   si vuole consentire a qualcun altro di accedere a questo account)
+
+ - IMPORTANTISSIMO: cancellare tutte le tracce prima di lasciare il server
+   e in particolare...
+
+    - tutto quello che viene registrato riguardo al vostro server (host name,
+      IP Address, date e orari) nei files di log in /var/log e /var/adm
+
+    - eliminare sempre il file di history del vostro account (.bash_history),
+      e per evitare che venga creato di nuovo lo si setti a null con il
+      comando "ln -s /dev/null .bash_history"
+
+    - eliminare il file xferlog contenente il log dei trasferimenti di file
+      (se ne sono fatti)
+
+Ora, quando vorremo collegarci di nuovo per utilizzare la shell root, non
+dovremo fare che collegarci con l'account di un utente qualsiasi e poi, in
+base a quello che abbiamo fatto prima, utilizzare la backdoor per accedere a
+root, oppure usare la shell "segreta" che abbiamo installato.
+
+Tutto questo andra` fatto solo la prima volta, cioe` quando hackeriamo il
+server.  Cio` ci consentira` di non far notare un'attivita` hacker su quel
+server, cosicche` il nostro account (e soprattutto la shell root ;) durera`
+piu` a lungo... anche per moltissimo tempo, se il SysAdmin non sta attento a
+quel che accade nel suo sistema.
+
+NOTA IMPORTANTE: se non siete ancora in grado di nascondere le vostre tracce
+come descritto sopra, avrete bisogno di tempo per imparare, percio` NON
+tentate di hackerare un server.  Usate Linux (che spero vi sarete finalmente
+installati ;) e provate, usando il comando "man nome_comando" ogniqualvolta
+non capite il funzionamento di un particolare comando.
+Sperimentate sempre prima in modalita` locale (sul vostro computer), se ne
+avete la possibilita`.
+
+Quando dovete analizzare il contenuto di un file di log alla ricerca di
+informazioni da cancellare (come il vostro IP Address o l'host name del
+vostro provider) potete utilizzare "grep" (un comando Unix per cercare una
+stringa di testo in un file) come in questo esempio:
+
+   cd /var/log
+   grep hackers.com *
+
+in questo caso cercheremo l'host name "hackers.com" in tutti (*) i file della
+directory /var/log (ma anche /var/adm).
+Se l'output (i risultati della ricerca) e` troppo lungo per essere contenuto
+in una pagina, bastera` aggiungere il piping al comando "more", cosi`:
+
+   grep hackers.com * | more
+
+e potremo comodamente scorrere in alto e in basso la nostra lista.
+
+Se ad esempio troverete qualcosa del genere:
+
+nome_file_log data orario nome_software_server nome_del_vostro_provider.com
+altro_file_log data orario nome_software_server nome_del_vostro_provider.com
+....
+
+saprete che i file nome_file_log e altro_file_log stanno "registrando" cose
+che non vorreste proprio far sapere al SysAdmin!
+
+Come fregarli?  E` presto detto... :)
+
+Esiste un file, chiamato syslog.conf (configurazione log di sistema) che si
+trova nella directory /etc
+Il suo compito e` "dire" al sistema cosa loggare (registrare in file di log)
+e dove mettere i log (un altro file interessante e` /etc/login.defs dove
+e` possibile abilitare/disabilitare il logging delle operazioni effettuate
+con file ad accesso root).
+
+Ci bastera` quindi editare il file /etc/syslog.conf e cancellare i file
+"scomodi"... ma non solo.  Affinche` i cambiamenti apportati abbiano effetto,
+dovremo riavviare il programma syslogd, o piu` precisamente il suo processo
+(le operazioni che svolge in background).
+
+Ma prima di riavviare il processo dovremo disattivalo.  Per farlo, useremo
+il comando "kill" (uccidi), in questo modo: digitiamo "ps -x" per vedere a
+quale numero di processo e` associato syslogd.  Il primo numero sulla
+sinistra sara` quello che ci interessa: in pratica, e` come un numero di
+indentificazione che varia da processo a processo.
+
+Digitiamo ora "kill -HUP numero_di_processo" e syslogd verra` disattivato e
+subito riavviato.  Abbiamo ora ottenuto quello che volevamo: niente piu`
+"spie" che possano aiutare il SysAdmin ad identificarci.
+
+NOTA: in Unix le maiuscole e le minuscole sono fondamentali.  Attenetevi
+sempre alle mie istruzioni e tenete presente che i comandi sono quasi sempre
+in minuscolo, mentre le opzioni cambiano effetto a seconda che siano
+maiuscole o minuscole.
+
+(continua nel prossimo volume)
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-

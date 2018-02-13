@@ -1,0 +1,198 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 8 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+HACKING PRATICO: PARTE 1
+~~~~~~~~~~~~~~~~~~~~~~~~
+Passiamo ora dalla teoria alla pratica: come vi ho gia` detto nel precedente
+volume e` bene che vi facciate un account su una delle tante BBS via Telnet
+che sono presenti su Internet, in modo da poter accedere via Telnet ai vari
+servizi senza doverci preoccupare di dover cancellare il nostro IP Address.
+
+Ovviamente per avere la certezza di non lasciar tracce dovremmo applicare
+delle misure di sicurezza addizionali, come cancellare i log di sistema e
+utilizzare un account di qualcun altro... ma in genere una shell di una BBS
+via Telnet puo` bastare (a meno che non abbiate in mente di hackerare un
+mainframe del Pentagono o del NORAD).
+
+Prima di usare il vostro client Telnet preferito ricordate le tecniche di
+"bounce" di cui vi avevo parlato un po` di tempo fa?
+Rivediamole brevemente: usando un programma come Telnet, Finger, FTP, ecc.
+e` possibile effettuare un collegamento ricorsivo: in pratica, se il server
+sul quale abbiamo l'accesso shell e` sito.com noi potremo collegarci ad esso
+e una volta dentro potremo usare Telnet, Finger, ecc. per collegarci ancora
+una, due, tre volte a sito.com.  Cio` puo` sembrare stupido: collegarsi a
+un sito, e da questo collegarsi di nuovo allo stesso sito!
+
+In realta` e` un ottimo metodo per nascondere il nostro IP Address.  Infatti,
+ogniqualvolta ci colleghiamo a un sito lasciamo l'IP Address del server sul
+quale siamo collegati.  Normalmente, questo e` l'IP Address del provider che
+stiamo usando, e da esso si puo` risalire a noi.
+Ma se disponiamo di un account su una BBS via Telnet (come detto prima), non
+dovremo far altro che collegarci ad essa, e qualsiasi cosa faremo tramite la
+sua shell, anziche` il nostro IP lasceremo quello della BBS.
+Ovviamente pero` la vittima degli attacchi potrebbe rivolgersi al SysAdmin
+della BBS e questi troverebbe il vostro IP Address nei suoi log.
+Ricapitolando: la vittima ha l'IP della BBS (perche` e` da li` che vi siete
+collegati), mentre la BBS ha il vostro IP.
+
+Se poi dalla BBS ci colleghiamo tramite Telnet alla BBS stessa, l'IP Address
+registrato non sara` il nostro ma quello della BBS!  Quindi ora il nostro IP
+non compare piu` da nessuna parte.  Per essere ancora piu` sicuri potremmo
+iterare la connessione una terza volta, oppure collegarci dalla BBS primaria
+a un'altra BBS su cui abbiamo un account (bounce)... insomma, basta usare la
+fantasia :)
+
+Ma ora occupiamoci dei log di sistema.  Le nostre lezioni sull'hacking si
+baseranno principalmente su Unix (e quindi le varianti come Linux, ecc.) ma
+in futuro tratteremo anche altri sistemi come Windows NT e Macintosh.
+
+HACKING PRATICO: DISSIMULAZIONE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I file di log piu` "pericolosi" che contengono le tracce da cancellare sono
+/etc/utmp e /etc/wtmp ma un SysAdmin (a meno che non sia improvvisamente
+impazzito) sa che proprio per evitare "manomissioni" tali file vanno protetti
+e quindi in genere non e` possibile, per un utente qualsiasi, scrivere in
+essi.
+
+I "permessi" di lettura, scrittura e cancellazione di file e directory sotto
+Unix sono nella forma drwxrwxrwx (non spaventatevi! =) dove:
+
+  "d"  sta per directory (se c'e` e` una directory, altrimenti e` un file)
+  "r"  sta per read (accesso in lettura consentito)
+  "w"  sta per write (accesso in scrittura consentito)
+  "x"  sta per execute (e` permesso eseguire il file)
+
+Quando una o piu` di questi permessi non sono abilitati (non e` consentito
+fare una cosa, come nel caso di r w x oppure non si tratta di una directory
+nel caso di d) al loro posto troveremo un trattino (-).
+Escludiamo ora il primo carattere, che serve solo a capire se stiamo avendo
+a che fare con un file o una directory, e passiamo agli altri.  Essi sono
+raggruppati in tre gruppi di tre caratteri ciascuno: il primo gruppo si
+riferisce a cosa puo` fare l'utente, il secondo a cosa puo` fare il gruppo
+e il terzo a cosa possono fare gli altri.  Un esempio: -rwxrw-r-- significa
+che l'utente puo` leggere, scrivere ed eseguire il file (rwx), il secondo
+(rw-) significa che il gruppo (vedi spiegazione sui file delle password) puo`
+leggere e scrivere, ma non eseguire il file, mentre l'ultimo (r--) significa
+che gli altri possono soltanto leggere il file, ma non modificarlo.
+
+Per visualizzare i permessi di un file useremo il comando LS di Unix.  Esso
+equivale grossolanamente al comando DIR del DOS.
+L'uso di LS per visualizzare i permessi di file e directory e` il seguente:
+
+   ls -l nome_e_percorso_del_file
+
+Quindi, nel caso di utmp faremo: ls -l /etc/utmp dalla nostra shell.
+Vediamo dunque dal risultato di questo comando se abbiamo il permesso di
+scrivere in quel file: se il terzo carattere (nella forma vista prima) e`
+la lettera "w" (write) abbiamo tali permessi.  Se invece e` un trattino,
+dovremo accontentarci di nascondere il nostro IP Address... oppure hackerare
+root per avere tutti i permessi abilitati :)
+
+Se dunque abbiamo il permesso di scrittura, potremo nascondere le nostre
+tracce... o dissimulare il nostro username.  Mi spiego meglio: supponiamo
+che il nostro username e` "hacker".  Il nostro scopo e` farlo scomparire dai
+log, ma potremmo anche volerlo cambiare e far ricadere la colpa su qualcun
+altro che abbia un certo username, o ancora far comparire nei log un username
+inesistente (ad esempio qualche parolina per sfottere un po` il SysAdmin enl
+caso in cui vada a leggersi il log per risalire a noi).
+
+Ecco il programma in C (per Unix) che fara` entrambe le cose, a seconda di
+quella che ci serve:
+
+-= INIZIO CODICE =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+#include
+#include
+#include
+#include
+#include
+
+struct utmp *user;
+char *usrt;
+
+main (argc,argv)
+int argc;
+char *argv[];
+{
+  int fatto=0, cnt=0, start=1, index=0;
+  char err[80];
+  if (argc == 1) printf("Removing you from utmp\n");
+  if (argc == 2) printf("Changing your login to %s\n",argv[1]);
+  utmpname("/etc/utmp");
+  usrt = strrchr(ttyname(0),'/');
+  strcpy(usrt,++usrt);
+  while (fatto != 1) {
+    user = getutent();
+    cnt++;
+    if (strcmp(user->ut_line,usrt) == 0) fatto=1;
+  }
+  utmpname("/etc/utmp");
+  for (start=0; startut_type = LOGIN_PROCESS;
+    strcpy(user->ut_name,"LOGIN");
+  }
+  else user->ut_type = USER_PROCESS;
+  if (argc == 2) strcpy(user->ut_name,argv[1]);
+  pututline(user);
+  endutent();
+}
+
+-= FINE CODICE =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Ovviamente dovrete avere almeno un po` di dimestichezza con Unix... vi
+bastera` salvare questo listato sotto forma di file di testo, e inviarlo in
+una directory del server da hackerare, dopodiche` dovrete compilare il file
+usando gcc oppure cc (i due compilatori C piu` usati sotto Unix), digitando
+nella shell: gcc nome_del_file.c
+
+Se tutto e` andato bene, troverete nella directory un file compilato (se il
+nome del file era nascondi.c il nome del file eseguibile sara` semplicemente
+"nascondi").  L'uso e` semplice: eseguendo il file le vostre tracce saranno
+cancellate da utmp.  Scrivendo invece (ad esempio): nascondi hahaha
+il vostro username non sara` cancellato da utmp, ma verra` sostituito con
+"hahaha".
+
+Se avete il permesso in scrittura su utmp e non volete cimentarvi con il C
+e i compilatori (dovrete farlo prima o poi, se volete imparare seriamente)
+e volete ancora eliminare il vostro username dal log, dovrete:
+
+ 1) usare la tecnica del collegamento ricorsivo con Telnet (vista all'inizio
+    di questo file) per nascondere l'IP;
+ 2) modificare il file utmp per rimuovere l'username... o eliminarlo.
+
+Comunque vi consiglio caldamente di evitare questa "manovra" estrema e di
+usare il programma in C sopra riportato.
+
+Nel prossimo volume impareremo a destreggiarci in un sistema, e a rimanerci.
+Vedremo come funziona una "backdoor" e come mantenere accesso root nel tempo.
+Nel frattempo, se avete installato Unix o Linux sul vostro computer (non
+l'avete fatto ancora?? che aspettate? la miglior teoria e` la pratica ;)
+sarebbe bene prendere dimestichezza con il compilatore C e con i comandi di
+base (come cat e ls), e dare poi uno sguardo ai file utmp e wtmp per vedere
+come sono strutturati.  Provate anche a compilare e usare il programma in C
+presente in questo file.
+
+Buon lavoro!
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-

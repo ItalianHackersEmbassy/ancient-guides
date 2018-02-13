@@ -1,0 +1,143 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 4 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+INTRODUZIONE ALLE TECNICHE DI BASE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Le tecniche che inizieremo a vedere da questo capitolo in poi sono quelle
+di base per poter comprendere quelle piu` complesse.
+Inoltre nella spiegazione di ciascuna tecnica ne approfittero` per spiegare
+altri argomenti che normalmente in qualsiasi guida sull'hacking, in italiano
+o in inglese, sono lasciati alla... immaginazione del lettore.
+
+Dunque.  In questo volume vedremo delle semplici tecniche relative alla
+sicurezza (da un punto di vista hacker) dei server Web.
+
+Credo (e spero) che sappiate gia` usare un browser e i vari programmi... in
+caso contrario vi consiglio vivamente di lasciar perdere l'hacking e iniziare
+con qualcosa di piu` semplice, come accendere e spegnere il computer...
+
+TECNICHE DI BASE: I WEB SERVER - PARTE 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Molti metodi usati in passato per hackerare un sito Web si basavano su dei
+problemi di sicurezza pre-esistenti causati dalla scarsa competenza dei
+Webmaster e dei SysAdmin.  Ad esempio, un classico errore era lasciare
+programmi che hanno funzione di interpreti di comandi, come ad esempio il
+Perl (file perl.exe) accessibili a chiunque tramite Internet.
+Dal momento che tali programmi accettano parametri, se avessimo voluto
+cancellare l'intero contenuto di una directory avremmo potuto eseguire il
+comando di eliminazione semplicemente collegandoci all'URL (indirizzo Web).
+
+Nel nostro esempio, dal momento che il linguaggio in questione e` il Perl,
+il comando per eliminare la directory e` "unlink <*>" (senza gli apici).
+Per "dire" al Perl di eseguire un comando va usata l'opzione "-e".  Il
+comando completo sara` quindi: perl.exe -e unlink <*>
+
+Ora supponiamo che il povero Webmaster :) abbia lasciato perl.exe nella
+directory cgi-bin (dove si trovano quasi tutti i programmi usati su un sito).
+Non dovremo fare altro che collegarci dal nostro browser a questo indirizzo:
+
+  http://www.nomesito.com/cgi-bin/perl.exe?-e+unlink+%3C*%3E
+
+Ecco cosa stiamo facendo: http://www.nomesito.com/cgi-bin/perl.exe non e`
+altro che l'indirizzo del programma da eseguire; il punto interrogativo ci
+consente di passare dei comandi qualsiasi al programma (probabilmente lo
+avrete gia` visto quando vi collegate ai motori di ricerca); infine, come
+gia` detto prima, "-e" dice al Perl di eseguire il comando che segue.
+I segni + non sono altro che gli spazi.  Poiche` negli URL non si usano spazi
+vanno usati i + al loro posto.
+
+Ora troviamo la parola unlink, un altro + (spazio) e poi %3C*%3E ...cos'e`?
+Se guardate piu` sopra, vedrete che il comando da eseguire era unlink <*>
+Non abbiamo fatto altro che sostituire < con il suo codice ASCII in notazione
+esadecimale (3C preceduto da % per indicare che e` un codice ASCII) e lo
+stesso abbiamo fatto per > mentre l'asterisco e` rimasto uguale.
+Ovviamente non dovrete imparare i codici a memoria, vi bastera` trovare una
+tabella ASCII come quelle che si trovano sui libri di informatica e di
+programmazione, o in alcune piccole utility.  Se non l'avete, prima di
+proseguire e` assolutamente necessario che ve la procuriate.
+
+Dicevamo... perche` questi cambiamenti?
+Perche` esistono delle regole per "scrivere" un URL: caratteri come / e \
+(detti slash e backslash), le parentesi e le virgolette, gli spazi e quasi
+tutta la punteggiatura in genere (ad esclusione di + - e pochi altri simboli)
+vanno *sempre* sostituiti con il relativo codice ASCII.  Tutti gli altri
+caratteri possono rimanere invariati.
+Dunque quando dovremo scrivere uno dei simboli sopra descritti non bisognera`
+fare altro che cercarne il codice in esadecimale e scriverlo al suo posto,
+mettendo un simbolo di percentuale prima del codice.
+Tali codici sono detti di "escape".
+
+In modo analogo, un server Web come il Microsoft IIS per Windows (versioni
+dalla 1.x alla 2.0b) oppure il server di Windows NT 3.x puo` essere "forzato"
+ad eseguire dei comandi arbitrari, come ad esempio:
+
+  http://www.nomesito.com/cgi-bin/scrivimi.bat?&dir+c:\+%5Cs
+
+In questo caso scrivimi.bat e` un file batch (.bat).
+E` molto facile da scoprire se un server utilizzi tali file, in quanto basta
+dare un'occhiata alle pagine Web di un sito (e magari al loro listato) per
+scoprire se vi sono riferimenti ad essi.
+Ovviamente il trucco funziona solo con i server sopra elencati (per Windows)
+e con pochissimi altri.  Inoltre le nuove versioni hanno corretto questo
+problema.
+
+Il "bug" (errore) in questo caso risiede nella gestione dei files batch.
+Come vediamo, aggiungendo ?& al nome del file e poi scrivendo i comandi da
+eseguire, il server credera` di stare eseguendo ancora il file batch e in
+realta` fara` ben altro... nel nostro caso, il comando codificato e` il
+seguente: dir c:\ /s (dove / e` stato sostituito con il suo codice, %5C).
+Avremo quindi come risultato di tale comando l'elenco completo di *tutte* le
+directory e i file presenti sul server (utile per sapere dove mettere le
+mani se cerchiamo qualcosa in particolare o vogliamo modificare qualcosa).
+
+Quelle descritte non sono vere e proprie tecniche hacker: sono degli exploit
+per poter sfruttare i problemi di sicurezza conosciuti a nostro vantaggio.
+Le trattiamo anche perche` non si puo` imparare qualcosa di complesso senza
+conoscere le basi e i ragionamenti che sono dietro un exploit.
+
+Tali exploit sono ampiamente discussi e spiegati (in inglese) su Internet e
+a volerli spiegare tutti non basterebbero 100 volumi di questa enciclopedia.
+Ecco perche` vi invito fin d'ora ad "avventurarvi" sulla Rete, a cercare e a
+provare... e soprattutto a imparare l'inglese (se non lo conoscete gia`),
+perche` la stragrande maggioranza delle documentazioni e dei siti che possono
+insegnarvi qualcosa (come il mitico Silicon Toad... http://www.silitoad.org
+oppure come Hackers Underground... http://www.underground.org) e`, che lo
+vogliate o meno, in inglese.  In una parola: LEGGETE.
+
+Comunque l'obiettivo di questi volumi non e` certo insegnarvi dei trucchi.
+Possono essere molto utili, talvolta indispensabili.  Ma l'hacking e` ben
+altro, e si avvale dell'uso di tecniche raffinate che l'hacker sceglie in
+base alle proprie esigenze e in base al suo personale modo di hackerare.
+
+Se noteremo abbastanza interesse da parte vostra, l'autore (cioe` io, Lord
+Shinva) continuero` a scrivere questi volumi e presto conto di poter iniziare
+con l'hacking propriamente detto.  Se invece li considerate una perdita di
+tempo, ne interromperemo la pubblicazione.
+
+Per chi voglia comunicarci la propria opinione in merito, l'indirizzo di
+e-mail e` Lord.Shinva@usa.net (consigli, critiche, richieste di argomenti
+da trattare e proposte di collaborazione sono bene accetti).
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-

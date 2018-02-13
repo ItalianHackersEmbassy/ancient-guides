@@ -1,0 +1,181 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 9 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+HACKING PRATICO: PARTE 2
+~~~~~~~~~~~~~~~~~~~~~~~~
+Ora sappiamo come nascondere le nostre tracce, e come ottenere accesso root
+su un sistema, ma e` probabile che non appena il SysAdmin notera` qualche
+attivita` sospetta fara` di tutto per rendere vano tutto il nostro lavoro e
+tenerci alla larga dal suo sistema.
+
+Se cio` puo` ostacolare un hacker alle prime armi, non potra` pero` fermare
+chi sa come reagire nel modo giusto in questa guerra virtuale tra Hacker e
+SysAdmin.
+
+Iniziamo a identificare l'obiettivo principale: cosa ci consente di eseguire
+qualsiasi comando, avere accesso a tutti i file e le directory, aggiungere o
+rimuovere a piacimento un account su un server, e cosi` via?  Ovviamente la
+risposta e`: la shell di root, ossia /bin/sh.
+
+Ma se l'utente root (cioe` il SysAdmin) dovesse toglierci i privilegi root,
+avremmo solo una possibilita`: hackerare di nuovo il server, sperando che il
+SysAdmin non si sia accorto del metodo che abbiamo utilizzato per "entrare"
+e non abbia corretto il problema.
+
+Questa ovviamente non e` una soluzione brillante... percio` vediamo come fare
+per avere qualche carta in piu` da giocare.
+
+Un metodo puo` essere creare un programma o uno script che abbia i privilegi
+di root.  Infatti, quando copiamo un file ne conserviamo i privilegi; percio`
+se ad esempio copiamo /bin/sh in /tmp/test anche se poi accediamo al server
+con un account di un utente qualsiasi (e quindi senza privilegi), /tmp/test
+avra` la stessa identica funzione di /bin/sh in quanto non abbiamo copiato
+solo l'eseguibile della shell (sh) ma anche i suoi privilegi.  Quindi mentre
+normalmente /bin/sh non e` accessibile agli utenti, /tmp/test (o qualsiasi
+sia il nome che gli abbiamo voluto dare) sara` una shell root utilizzabile
+da qualsiasi utente che sappia della sua esistenza.
+
+Per applicare i nuovi permessi a un file esistente dobbiamo eseguire:
+
+   chmod 4777 nomefile
+
+dove nomefile e` (nel nostro caso) /tmp/test oppure un qualsiasi altro file
+contenente la shell.  "chmod" serve a cambiare i permessi di un file.
+La parte importante e` 4xxx (dove xxx e` il permesso standard di quel file).
+Se non conoscete bene Unix (e quindi non state capendo niente o quasi) vi
+consiglio per l'ennesima volta di installare Linux e di sperimentare con i
+comandi.  Usate il comando "man chmod" per avere ulteriori informazioni sul
+comando chmod, oppure "man comando" per avere informazioni su un qualsiasi
+altro comando Unix.
+
+Se avete un client rlogin (oppure rsh o rexec) potete fare un'altra cosa.
+
+Come spiegato nel volume 7, il file .rhosts contiene una lista di username
+e password di chi puo` accedere a un server senza bisogno di password; in
+pratica, e` una lista di server e utenti "fidati" :)
+
+Aggiungendo una riga contentente soltanto questo:
+
++ +
+
+(senza le righe vuote prima e dopo) al file .rhosts (ad esempio usando PHF,
+Sendmail o "cat" da una shell per aggiungere questa riga al file, come
+spiegato nel volume 5), chiunque potra` accedere al server usando rlogin,
+rsh e rexec ed eseguire comandi.  Se non vogliamo dare accesso a chiunque
+(per evitare di essere scoperti subito) potremo anche dare accesso solo a
+noi stessi, usando:
+
+nome_del_nostro_server nostro_username
+
+(anziche` + +), ma NON fatelo se l'account e` il vostro... se e` di qualcun
+altro e` un discorso, altrimenti non fatelo.  Infatti se e quando il SysAdmin
+dara` un'occhiata al file .rhosts trovera` in pratica il vostro "biglietto da
+visita", cioe` nome del vostro server e il vostro username!  Altro che
+nascondere l'IP Address ;)
+
+Dato quindi che starete certamente usando uno dei metodi spiegati nell'ottavo
+volume, come il bounce tramite Telnet, e un account di qualche sperduta BBS
+oltreoceano, usare + + sara` piu` che sufficiente nella maggior parte dei
+casi (diciamo pure sempre).
+
+Un altro metodo ancora e` aggiungere un comando a uno dei file script di uno
+o piu` utenti.  Ma cos'e` un file script?  Non e` altro che un file di testo
+contenente una lista di comandi da eseguire (come i file .BAT del DOS).
+Quindi se aggiungiamo un comando esso sara` eseguito proprio come gli altri.
+
+Gli script sono .login e .logout (che vengono avviati rispettivamente quando
+un utente si collega o si scollega), ma anche .profile e .cshrc e gli altri
+che iniziano con un punto in una directory utente.
+Aggiungendo ad esempio la riga seguente:
+
+   if /tmp/programma exists run /tmp/programma
+
+lo script verifichera` se il file /tmp/programma esiste e in caso affermativo
+lo eseguira`.  Questo metodo e` quindi l'ideale per eseguire un comando,
+come ad esempio la shell, oppure per un troiano o una backdoor.
+
+Ma cos'e` un troiano?  E una backdoor?
+
+Un troiano (detto anche Trojan Horse) e` un programma che fa qualcosa di cui
+chi lo esegue e` ignaro.  In genere sono concepiti per far danni, o attivare
+altri programmi.
+
+Una backdoor, invece, e` un programma che normalmente e` presente sul sistema
+(ad esempio "login", oppure i comandi presenti nella directory /bin), ma che
+e` stato modificato dall'hacker per fare qualcosa di preciso.
+Quasi sempre questo "qualcosa" e` accedere alla shell di root o eseguire uno
+o piu` programmi.
+L'utilita` di una backdoor e` che anche se un SysAdmin cambia la password di
+root, o comunque vi impedisce di usare la shell, voi avete sempre questo
+"passaggio segreto" per entrare nel sistema a sua insaputa, e senza lasciar
+traccia.
+
+Per chi conosce gia` un po` di C, diremo che una backdoor, nel caso piu`
+semplice, non e` altro che qualcosa del tipo:
+
+   system('/bin/cp /bin/sh /tmp/usami');
+
+(esegue i comandi tra virgolette, in questo caso copia la shell in tmp)
+inserita in un punto di un qualsiasi programma.  Un'ulteriore passo e`
+fare in modo che solo chi conosce della backdoor possa farla entrare in
+funzione.  Ad esempio, se la backdoor e` stata inserita nel programma "login"
+potremmo fare in modo che se si avvia login in questo modo:
+
+   login Lord_Shinva
+
+anziche` eseguire il codice originale di login verra` eseguita la backdoor,
+altrimenti verra` eseguito il codice normalmente.  Nient'altro che un
+semplice "if/then/else" come nella seguente pseudo-codifica:
+
+   if (strcmp(argv[1],"Lord_Shinva") {
+      ...codice della backdoor...
+   }
+   else {
+      ...codice di login...
+   }
+
+In genere pero` creare una backdoor e` molto piu` complicato che creare un
+troiano, poiche` mentre quest'ultimo e` un semplice programmino in C che
+esegue un paio di chiamate system() per eseguire dei comandi, una backdoor
+deve comportarsi proprio come il programma originale di cui ha preso il posto
+e quindi e` necessario avere il sorgente (listato) del programma originale.
+Cio` non e` impossibile, ma richiede gia` una certa bravura con il C e con
+Unix, e bisogna sapere dove cercare.
+
+Ma vi assicuro che col tempo, se avrete costanza nello studiare e mettere in
+pratica, creare una backdoor non sara` niente di complicato, una volta
+reperito il listato del programma da sostituire (potreste addirittura farlo
+interamente da soli, se si tratta di un programmino come LS).
+
+Nei prossimi volumi impareremo tutto quello che c'e` da sapere per avere un
+controllo piu` completo del sistema che vogliamo hackerare.  Spiegheremo
+inoltre diversi aspetti di Unix che normalmente sono lasciati ai SysAdmin e
+agli utenti piu` esperti... e che quindi ci interessano per poter degnamente
+competere con essi e sapere sempre come destreggiarsi in ogni situazione.
+
+Ovviamente non potremo spiegare tutto nel prossimo volume, quindi dovremo
+spezzare le lezioni in paragrafi.
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-

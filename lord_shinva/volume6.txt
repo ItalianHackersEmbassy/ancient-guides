@@ -1,0 +1,176 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 6 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+TECNICHE DI BASE: MISCELLANEA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nel volume precedente abbiamo visto come sfruttare alcuni problemi di
+sicurezza del software server.
+
+Dal momento che e` necessario conoscere tipo e versione del software e
+sistema operativo, dobbiamo sapere come avere tali informazioni.
+
+Ancora una volta ci torna comodo utilizzare Telnet.  Bastera` infatti
+collegarsi alla porta del servizio interessato per ottenere quasi sempre
+informazioni preziose.
+
+Ad esempio, se ci colleghiamo alla porta HTTP, FTP o SMTP, il server ci
+"salutera`" indicandoci tipo e versione del software, data locale e altre
+utili informazioni.
+Altre ancora possiamo ottenerle tramite il programma "finger", che serve a
+mostrare informazioni su un dato utente di un dato sistema.
+Alcuni siti inoltre ci risparmiano la fatica di cercare: infatti, i Webmaster
+dopo aver acquistato un "potente" software server, scrivono orgogliosi sulle
+loro pagine "questo sito utilizza il software xxxxx versione yyyyy"...
+
+Un'ulteriore nota sulla porta HTTP: i vecchi server (versioni fino alla 1.3)
+di httpd (per Unix e Linux) possono essere crashati richiedento un URL con
+un formato sbagliato.  Esistono in giro diversi exploit sull'argomento, e
+pertanto vi rimando alle mailing list sulla sicurezza su Internet.
+
+NOTA: da ora in poi quando parlero` di Unix mi riferiro` anche a Linux, AIX,
+Solaris, ecc. a meno che sia diversamente specificato.
+
+Prima di procedere vorrei farvi notare che non e` necessario scrivere in
+tempo reale i vostri comandi in Telnet (anche perche` correte il rischio di
+sbagliare e non poter cancellare).  Moltissimi client hanno le funzioni Copy
+e Paste (Copia e Incolla), che potete usare unitamente a un programma di
+videoscrittura (come il Block Notes di Windows) per velocizzare le operazioni
+(e ridurre il numero di cifre sulla vostra bolletta telefonica).
+Vi bastera` infatti scrivere tutti i comandi nel block notes, usare Copy e
+poi, una volta in Telnet, usare Paste.  Un consiglio: non usate testi troppo
+lunghi, perche` alcuni server potrebbero non essere abbastanza veloci per
+riceverli.
+
+Altri programmi vulnerabili a un attacco tramite Telnet sono Finger, Ping,
+Gopher, Pine e altri; in pratica, per quasi tutti quelli esistenti esiste
+un hack su misura.
+
+Ovviamente per capire di cosa sto parlando vi serviranno i programmi in
+questione.  Iniziamo da finger.
+
+Usando @ oppure 0 (o uno degli username standard come root, bin, ftp, system,
+demo, guest, ecc.) nell'effettuare una richiesta tramite finger e` possibile
+ottenere (specie con i vecchi server) svariate informazioni.
+
+Ma supponiamo ora di voler crashare il server finger.  Per quale motivo?
+Siamo tutti hackers.malicious o crackers? ;)  No, il motivo e` un altro:
+se il server finger (per Unix) dovesse crashare, noi avremmo accesso root.
+Perche`?  Se il server crasha, non avremo piu` un "interprete" dall'altra
+parte che "filtra" i nostri comandi e ci da informazioni quando scriviamo
+finger... ma avremo una specie di connessione diretta alla shell dei comandi
+con il livello d'accesso massimo (root, per l'appunto).
+
+Ecco come si fa: (non sbavate, siamo ancora al principio ;)
+utilizzando Telnet, il cui scopo e` fornire una connessione e lasciarla nelle
+nostre mani, ci colleghiamo alla porta 79 (finger) del server desiderato
+(assicuriamoci pero` prima che il sistema operativo sia effettivamente Unix e
+che abbia il server finger attivato).
+Ora, quello che fa un normale client finger e` semplicemente inviare il
+comando "finger nomeutente" e visualizzare le informazioni ricevute.
+Nient'altro.  E` uno spreco... tanto potere buttato al vento =)
+E pensare che finger ha anche accesso a tutte le directory degli utenti, e
+a saperlo controllare si potrebbero anche "ritoccare" i vari files...
+
+Ma noi, che abbiamo ben altre intenzioni (buone... lo dico per il NOPT, il
+Nucleo Operativo di Polizia Telematica ;) possiamo fare di meglio.
+
+Scrivendo ///* seguito dalla combinazione Ctrl-S accederete a root e
+paralizzerete il server (Ctrl-S e` un codice di controllo detto "freeze",
+cioe` "congela").  A questo punto la connessione e` in mano vostra.
+
+Il client finger puo` essere usato per un attacco di tipo D.O.S. (Denial Of
+Service, cioe` negare l'accesso a un servizio disattivandolo).
+Se usiamo finger per collegarci a un server troppe volte (lasciando "aperta"
+ogni connessione) dopo un po` il server rifiutera` a chiunque altro di
+collegarsi, e l'intero server del sito verra` rallentato; in alcuni casi
+potrebbe addirittura crashare.
+Per fare una cosa del genere bisognerebbe chiamare decine di volte lo stesso
+programma... una soluzione migliore consiste nel programmare da se` una
+utility che effettui molte connessioni alla stessa porta dello stesso server.
+
+Se il vostro client lo consente, potete nascondere il vostro IP Address
+effettuando un "bounce" (rimbalzo).  In pratica si tratta di richiedere a
+un server di fare la stessa richiesta a un altro server, per far risultare
+come "richiedente" il suo IP Address anziche` il nostro.
+Il comando e` nel formato: finger @sito.com@altrosito.com
+
+Non preoccupatevi se non avete capito tutto: vi torneranno utili quando
+dovrete studiare un attacco e conoscerete meglio l'Arte.
+
+Nota su finger: alcuni siti (mi sembra di ricordare quello della Microsoft)
+disabilitano finger per evitare problemi... in alcuni casi pero` si limitano
+a disabilitarlo, NON a cancellarlo dalla directory del server.
+Potrete quindi accedervi usando questo URL:
+
+  http://www.sito.com/cgi-bin/finger
+
+e per passare i parametri aggiungete "?" e i vostri comandi con il metodo
+della codifica degli URL descritta nei volumi precedenti.
+
+Personalmente non ho provato la tecnica del ///*^S su server non-Unix (come
+Windows NT e 95) in quanto essa e` basata sulla struttura di Unix.  Comunque
+potrebbe essere interessante provare; da cosa nasce cosa...
+
+Passiamo ora a Ping.
+
+Combinato a Finger, Ping e` eccellente per effettuare un attacco D.O.S. in
+quanto e` utilizzato praticamente ovunque, e non correte il rischio di non
+poterlo utilizzare come accade in alcuni casi con Finger.
+
+Per chi non lo conosce, diciamo che Ping e` un programma per controllare la
+presenza di un sito su Internet e valutare la sua velocita` di collegamento.
+
+Il funzionamento e` molto simile: aprire molte connessioni a un server, fino
+a che questo collassera` per il troppo lavoro richiesto alla CPU.
+Se avete la possibilita` di scegliere tra Ping e Ping-f vi consiglio di
+scegliere quest'ultimo, in quanto e` estremamente piu` veloce.
+
+Linux e` inoltre vulnerabile a un particolare attacco: da un computer che usi
+Windows 95 o NT si puo` usare questo comando:
+
+   ping -l 65510 sito.com
+
+dove sito.com e` un sito che usa Linux (versioni fino alla 2.0.20 esclusa).
+La macchina si blocchera` e si riavviera` automaticamente.
+Potete sperimentare anche altri valori tra 65508 e 65527 in luogo di 65510.
+
+Le vecchie versioni di Gopher hanno un serio bug: creando un file .links su
+un server gopher pubblico, contenente queste linee di testo:
+
+Type=8
+Name=Sceglimi
+Host=;/bin/sh
+Port=
+Path=
+
+potete collegarvi a Gopher, entrare nella directory dove avete piazzato il
+file .links e scegliere la voce "Sceglimi".  Il comando messo dopo "Host=;"
+verra` eseguito (nel nostro caso, una shell com accesso root).
+
+Dal prossimo volume inizieremo con tecniche raffinate che vi consentiranno
+di fare cose impensabili.  Siate certi di aver prima imparato quelle sin qui
+descritte, o non potrete apprendere quelle piu` complesse.
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-

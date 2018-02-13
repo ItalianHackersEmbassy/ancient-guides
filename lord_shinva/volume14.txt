@@ -1,0 +1,138 @@
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>               Enciclopedia dell'Hacking               <=-=>
+      <=-=>               `````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 14 ]:.                   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+ANONIMITA' E PROXY
+~~~~~~~~~~~~~~~~~~
+Cos'e` un proxy?  Senza entrare troppo nel dettaglio, si tratta di un server
+che vi permette di accedere a un servizio (generalmente WWW ma talvolta anche
+FTP, Gopher e altri) senza mostrare il vostro IP address.  Infatti, sia che
+navighiate sul Web o che effettuiate operazioni via FTP, l'IP rivelato sara`
+quello del server proxy anziche` il vostro.
+
+Ma come funziona?  Ecco un esempio.
+Immaginate di inserire l'indirizzo di un sito web nel vostro browser...
+questo contattera` il server contenente le pagine che vi interessano, e le
+scarichera` direttamente da li`.  Ovviamente il sysadmin del sito avra` il
+vostro IP address e molte altre informazioni su di voi (da quale pagina
+provenivate, che tipo e versione di browser utilizzavate, ecc).
+
+Se attivate il servizio di proxy, invece, le cose vanno diversamente.
+Supponiamo che vogliate collegarvi al sito hacker http://kr0mecorp.home.ml.org
+Questo indirizzo verra` mandato al proxy, che vi si colleghera`, scarichera`
+la pagina principale e ve la mandera`.  L'IP address registrato dal sito
+sara` quello del proxy, in quanto e` stato il proxy server a collegarsi al
+sito, non voi ;)
+
+Come si configura un browser per utilizzare il proxy?  E` presto detto.
+Vi faro` un esempio per Netscape (Navigator o Communicator).  Se utilizzate
+Micro$oft Explorer non vi spieghero` come fare... passate a Netscape o
+arrangiatevi... la roba della Micro$oft e` SEMPRE spazzatura.
+
+Dal menu` preferences di Netscape selezionate advanced e poi proxies, quindi
+manual proxy configuration e poi il bottone view.  Ora potrete inserire nella
+prima riga (HTTP) il nome del server proxy e poi la porta.
+Noterete che ci sono altre caselle libere: FTP, Gopher, ecc.  Se il proxy
+server supporta quei servizi, inserite nome del server e porta nelle
+rispettive locazioni e potrete accedere anonimamente anche a quei servizi.
+
+Ora siete pronti per navigare, e cio` avverra` in modo trasparente sia per
+voi che per la macchina alla quale vi collegate.
+
+Se volete usare un proxy FTP, probabilmente vorrete utilizzare un client
+come CuteFTP oppure WS-FTP, anziche` il browser... le operazioni per
+configurare tali client sono molto simili, basta trovare il menu` di
+configurazione e inserire nome e porta del proxy da utilizzare.
+Niente di piu`.
+
+Bene, ora sappiamo come utilizzare i proxy... ma dove possiamo reperirne
+uno funzionante da utilizzare?
+
+Il metodo che vado ad illustrarvi e` quello che uso io e che si e` rivelato
+efficace nella maggior parte dei casi.
+
+Buona parte dei server proxy hanno un nome che inizia con "proxy." (ad
+esempio proxy.pingnet.ch) oppure con "cache" (o "wwwcache" o "webcache"),
+e utilizzano come numero di porta uno dei seguenti: 3128, 8000, 8001, 8080,
+80, 81, 800 (e raramente varianti di questi).
+
+Basandoci su queste considerazioni, trovare i proxy e` quindi semplicissimo:
+prendete un host qualsiasi, meglio se vi sta antipatico, tipo il Berlusconiano
+www.mediaset.it oppure www.leganordsen.it (sito web del re assoluto dei
+cretini e degli ignoranti) e trasformate l'host name in un possibile nome
+"da proxy", ad esempio proxy.leganordsen.it (ovviamente non provate questo,
+e` probabile che un sito di merda come quello della Lega Nord non abbia
+neanche un proxy...).  A questo punto dovrete utilizzare uno dei numeri di
+porta elencati sopra.
+
+Prima di sperimentare tutte le porte, vi converra` controllare che il proxy
+esista.  Potete farlo in due modi: o utilizzate l'utility Ping oppure provate
+a navigare dopo aver configurato il proxy... se comparira` la finestra di
+errore di netscape, l'host non esiste.  Se invece lo status indica "contacting
+host proxy.xxxxx.com..." troppo a lungo, vuol dire che la porta non e` quella
+esatta; cambiatela e riprovate.
+
+Avrei molti proxy da elencarvi, ma dato che i rispettivi sysadmin si
+accorgerebbero dell'improvviso... incremento di utenza ;) diventerebbero
+presto inutili.  Trovarli e` comunque, come avete avuto modo di vedere, un
+processo estremamente semplice e potrebbe facilmente essere automatizzato,
+creando uno scanner che faccia da solo il lavoro, magari scritto in Perl...
+Ricordate, *qualunque* host va bene, italiano o straniero, grande o piccolo,
+di importanti societa` o piccoli providers.  Talvolta non troverete il
+proxy... beh, ci sono tanti altri siti da provare ;)
+Fate una ricerca per una parola qualsiasi su un motore di ricerca, ed eccovi
+tutti i server di cui avete bisogno.... centinaia di migliaia.
+Oppure utilizzate la ricerca avanzata di Altavista e cercate i server che
+iniziano per "proxy." ... le possibilita` sono infinite.
+
+Tenete presente che anche i proxy server registrano il vostro IP address,
+quindi non fate stupidaggini.  Se proprio volete un maggiore grado di
+sicurezza, concatenate i server in questo modo:
+
+http://primo_proxy:porta/http://secondo_proxy:porta/http://www.sito.com/
+
+Piu` lunga e` la catena, piu` difficile sara` rintracciarvi, specie se uno
+dei siti della catena cancella i log di accesso piu` frequentemente degli
+altri (e non e` una cosa rara... ;)).
+
+Un'ultima parola va detta sui wingates.  Wingate e` un software che permette
+di condividere un collegamento a internet da molti pc.  Peccato solo che non
+abbia nessuna password di protezione ;) e cosi` chiunque si colleghi a un
+server che ha wingate in funzione possa usare quel server come se fosse un
+proxy, e per giunta senza neanche lasciare la benche` minima traccia!
+
+Per trovarli, prelevate uno scanner di wingate da internet nel solito modo:
+collegatevi (ad esempio) a www.altavista.digital.com e cercate le parole
+"wingate scanner".  Troverete molti siti dai quali scaricare uno scanner.
+Usate lo scanner su vari servers fino a trovare qualche wingate funzionante.
+Eccovi una lista, che pero` probabilmente sara` presto inutile per le ragioni
+spiegate sopra per i proxy:
+
+www.este.net
+mrenner.bevc.blacksburg.va.us
+netgate.maret.org
+pc300057.multiweb.net
+cda-bitclub.netbusiness.it
+dyn.ml.org
+chamail.ozemail.com.au
+sandbox.pacificnet.net
+michae3.lnk.telstra.net
+pmzproxy.pmz.com
+showcad.demon.co.uk
+
+Una volta in possesso di qualche sito potete collegarvi alla porta 23 per
+accedervi.  Informazioni dettagliate le trovate su http://demoniz.bikkel.com
+E... si, sono in INGLESE.
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+          Copyright (C) 1998 by Lord Shinva - All rights reserved
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
