@@ -1,0 +1,292 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- COSTRUIRE UN FUCILE TESLA -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<PREMESSA - By AVA666>
+^^^^^^^^^^^^^^^^^^^^^^
+Il 'fucile di Tesla' prende il nome da 'Nikola Tesla', un ingegnere
+statunitense di origine croata che effettuo' ricerche sulle correnti ad alta
+frequenza e altissima tensione. Il Tesla (simbolo T) e' anche la unita' di
+misura dell'induzione magnetica. Il file e' stato scritto in versione HTML dal
+buon MasterdreaM. Io, AVA666, ho avuto il compito di convertire il file in
+versione testo: ho lavorato davvero duro per fare le immagini simili il piu'
+possibile alle originali. ('az, non vi immaginate QUANTO mi sono impegnato...)
+Beh, comunque pare che ci sia riuscito! Divertitevi... e fate buon uso dei
+nostri insegnamenti! (le tabelle non sono un granche' perche', come gia' detto,
+mi sono concentrato sui disegni...).                               +AvAtAr'99+
+
+
+____________________________________________
+>COSTRUIRE UN FUCILE TESLA - by MasterdreaM<
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Per costruirlo vi serviranno:
+- Un puntatore laser ultravioletto - OPPURE - Una lampada al mercurio e delle
+  lenti per rendere paralleli i raggi di luce
+- Una fonte di energia elettrica che generi 220V AC a 50 Hz
+- Un trasformatore per alta tensione (ad esempio la bobina di un motore di
+  un'automobile, un trasformatore ad alta tensione per neon, un trasformatore
+  per televisori o qualsiasi cosa che permetta la formazione di una scintilla
+  lunga 1.25 cm)
+- Un condensatore per alta tensione
+- Due elettrodi per la scintilla
+- Del cavo elettrico normale
+- Del cavo elettrico per elettromagneti
+- Un tubo di PET, polistirene, polipropilene o plexiglas
+- Due tappi per chiudere il tubo
+
+
+>COME COSTRUIRLO<
+^^^^^^^^^^^^^^^^^
+Il primo passo e' quello di procurarsi la fonte di energia adeguata allo scopo.
+Se si vuole si puo' utilizzare una semplice presa di corrente, ma riuscirebbe
+difficile portarsi appresso il fucile a causa della prolunga :-) .
+Per costruirsi una fonte trasportabile di energia elettrica che soddisfi questi
+requisiti basta procurarsi un clock regolato a 50 Hz, un filtro passa-basso
+per tagliare le armoniche piu' alte e ottenere un'onda sinusoidale, il segnale
+poi verra' amplificato fino a 220V per mezzo di un numero sufficiente di
+amplificatori e di batterie collegate in serie che li alimenteranno.
+Ottenuta la fonte di energia elettrica si deve usare un trasformatore per
+alimentare il condensatore, inoltre serve anche un fusibile costruito per
+resistere a 10 ampere. Per il trasformatore si consiglia di usare un
+trasformatore per neon; questi componenti verranno collegati seguendo lo
+schema che c'e' qui sotto.
+
+   
+                                         
+                                            ≥≥≥⁄ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ>
+All'alimentazione                           ≥≥≥(
+  ⁄\                                        ≥≥≥(
+ƒƒ≥  \ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¥FUSIBILE√ƒƒƒƒƒƒƒƒƒƒø≥≥≥(
+ƒƒ≥   ≥ƒƒƒƒƒƒƒø                            )≥≥≥(                     
+ƒƒ≥  /ƒƒƒƒƒƒƒƒƒƒƒƒø                        )≥≥≥(   Al condensatore e
+  ¿/          ≥   ≥                        )≥≥≥(                     
+              ≥   ≥                        )≥≥≥(   allo scintillatore 
+              ≥   ≥                        )≥≥≥(                     
+              ≥   ¿ƒƒƒƒƒ¥INTERRUTTORE√ƒƒƒƒƒŸ≥≥≥(                                      
+              ≥                             ≥≥≥(
+              ≥                             ≥≥≥(
+              ≥                             ≥≥≥¿ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ>
+              ≥                        Trasformatore
+              ≥                           per neon
+            -----                           
+             ---
+              -
+       (presa a terra)
+
+
+La seconda operazione e' quella di procurarsi un condensatore per alta tensione.
+Il modo piu' semplice e' naturalmente quello di comprarlo, ma se non lo si vuole
+comprare ecco un modo semplice per costruirlo. Ci si deve procurare due
+bottiglie da vino vuote a cui sara' stata tolta l'etichetta (nel caso le
+bottiglie fossero piene si consiglia di scolarsele tutte e aspettare che passi
+la piomba prima di continuare :-) ) da riempire a meta' con una soluzione satura
+di acqua e sale e meta' con olio per motori. Poi si deve avvolgere un foglio di
+alluminio attorno alla parte larga delle bottiglie, fondo compreso, e avvolgere
+del nastro isolante su tutto l'alluminio tranne quello che c'e' sul fondo.
+Serviranno anche un tappo di plastica bucato, dei dadi e un bullone molto
+lungo, da montare in questo modo: 
+
+         ≤
+       _‹€‹_
+      ≥TAPPO≥   <- Tappo di plastica
+       ≥ﬂ€ﬂ≥
+       ≥∞≤∞≥
+       ≥∞≤∞≥
+      /∞∞≤∞∞\
+    /∞∞∞∞≤∞∞∞∞\
+   ≥±±±±±≤±±±±±≥   <- Estremita' superiore del foglio di alluminio e  
+   ≥±±±±±≤±±±±±≥      del nastro isolante
+   ≥±±±±±≤±±±±±≥      
+   ≥±±±±±≤±±±±±≥    
+   ≥±±±±ﬂﬂﬂ±±±±≥      
+   ≥±±±±±±±±±±±≥      
+    \±±±±±±±±±/    <- Estremita' inferiore del nastro isolante
+
+         |
+          \
+            \___Portare il foglio d'alluminio sul fondo della bottiglia
+
+
+LEGENDA
+
+ﬂ€ﬂ Dadi esagonali
+
+∞∞∞ Olio per motori
+
+±±± Soluzione salina
+
+ ≤  Bullone 1/4x8"
+ ≤
+
+poi basta collegare tra di loro rispettivamente i fondi e le parti superiori
+delle due bottiglie ed ecco che si e' ottenuto un economico (anche se un po'
+grosso) condensatore per alta tensione. La prossima cosa da fare e' lo
+scintillatore. Per questo serviranno due pezzi di metallo da piegare a L, da
+bucare e attraverso cui far passare due bullo- ni da fissare con dadi in modo
+da poterli ruotare per modificarne la distan- za, come in figura. 
+
+
+
+         ∫          ∫
+     ≤ -|∫|--xxxx--|∫|- ≤
+         ∫          ∫
+         ∫          ∫
+ÕÕÕÕÕÕÕÕÕº          »ÕÕÕÕÕÕÕÕÕ
+
+LEGENDA
+
+xxxx   spazio per la scintilla
+≤      bulloni
+|      dadi
+ÕÕº    pezzi di metallo
+
+
+
+Ed ora dedichiamoci alla bobina, o meglio, alle bobine, perche' il fucile Tesla
+richiede una bobina primaria e una bobina secondaria.
+La costruzione si inizia dalla bobina secondaria: per questo e' richiesto un
+tubo fatto con una delle materie plastiche sopra citate.
+Perche' tutto funzioni correttamente il tubo dev'essere sottile, come mostrato
+dalla figura.
+
+
+               /----\              
+             /        \            
+             |        |     OK!
+             \        /            
+               \----/              
+
+               /----\              
+             /  /--\  \            
+             | |    | |     No...      
+             \  \--/  /            
+               \----/              
+
+
+
+Prima di avvolgere il cavo per elettromagneti attorno al tubo, si devono
+mettere dei tappi per chiudere il tubo e per evitare che le spire si disfino.
+Per costruire bobine secondarie di varie dimensioni, ecco due tabelle di
+valori che possono aiutare.
+
+⁄ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¬ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¬ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒø
+≥Diametro tubo   ≥  Rapporto altezza/diametro  ≥   Lunghezza avvolgimento   ≥
+√ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ≈ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ≈ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¥
+≥3 pollici       ≥             6:1             ≥          18 pollici        ≥
+≥4 pollici       ≥             5:1             ≥          20 pollici        ≥
+≥5 pollici       ≥           4.5:1             ≥          22.5 pollici      ≥
+≥6 pollici       ≥             4:1             ≥          24 pollici        ≥
+≥7 pollici       ≥           3.5:1             ≥          24.5 pollici      ≥
+≥8 pollici       ≥             3:1             ≥          24 pollici        ≥
+≥Oltre           ≥             3:1             ≥  Moltiplica *3 il diametro ≥
+¿ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¡ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¡ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒŸ
+
+⁄ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¬ƒƒƒƒƒƒƒƒƒƒƒƒƒ¬ƒƒƒƒƒƒƒƒ¬ƒƒƒƒƒƒƒƒƒƒ¬ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒø
+≥Diam. esterno bobina≥ Misura cavo ≥  SPP   ≥   Spire  ≥ Freq. di risonanza ≥
+√ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ≈ƒƒƒƒƒƒƒƒƒƒƒƒƒ≈ƒƒƒƒƒƒƒƒ≈ƒƒƒƒƒƒƒƒƒƒ≈ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¥
+≥          3         ≥      22     ≥   37   ≥    666   ≥        840 kHz     ≥
+≥          4         ≥      22     ≥   37   ≥    740   ≥        540 kHz     ≥
+≥          5         ≥      22     ≥   37   ≥    832.5 ≥        380 kHz     ≥
+≥          6         ≥      22     ≥   37   ≥    888   ≥        290 kHz     ≥
+≥          7         ≥      22     ≥   37   ≥    906   ≥        238 kHz     ≥
+≥          8         ≥      22     ≥   37   ≥    888   ≥        206 kHz     ≥
+≥          9         ≥      22     ≥   37   ≥    999   ≥        163 kHz     ≥
+≥         10         ≥      21     ≥   32   ≥    960   ≥        152 kHz     ≥
+¿ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¡ƒƒƒƒƒƒƒƒƒƒƒƒƒ¡ƒƒƒƒƒƒƒƒ¡ƒƒƒƒƒƒƒƒƒƒ¡ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒŸ
+NOTE: La misura del cavo ä in AWG; SPP=spire per pollice.
+
+
+
+La bobina secondaria finita dovrebbe avere questo aspetto:
+
+                     BOBINA(∞)
+                        |
+     TAPPO(±)           |            TAPPO(±)
+        |               |               |
+        v               |               v
+                        v
+        ±±                             ±±
+        ±±∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞±±    
+        ±±                             ±±
+        /                               \
+      /                                   \
+
+
+Avvolto il cavo per elettromagneti attorno al tubo ä il momento di pensare
+alla bobina primaria: per questa dovrebbero bastare 10 spire di cavo elettrico
+spesso, avvolto a una distasza pió o meno grande intorno alla bobina secondaria
+(la distanza consigliata ä 2.5 cm). Un capo della bobina primaria va montato
+allo scintillatore, l'altro all'altro capo del condensatore.
+Ora si puï passare al terminale di scarica, che puï essere una semplice sfera
+metallica collegata ad un capo della bobina secondaria (l'altro dovrebbe andare
+collegato a terra). Il risultato di queste operazioni ä una bobina di Tesla.
+
+
+                                                        /---\              
+                                                      /       \            
+                                                      \       /            
+                                                        \---/              
+                                                          |
+                                                          (
+                               ≥≥≥⁄ƒƒƒƒƒƒƒƒ¬ƒƒƒƒƒƒƒƒƒƒƒƒø (
+All'alimentazione              ≥≥≥(        ≥            ) (
+  ⁄\                           ≥≥≥(        ≥            ) (
+ƒƒ≥  \ƒƒƒƒƒƒƒƒƒƒ¥FUSIB.√ƒƒƒƒƒƒø≥≥≥(        ≥            ) (
+ƒƒ≥  /ƒƒƒƒƒƒø                 )≥≥≥(        ¡            ) (
+  ¿/        ≥                 )≥≥≥(   CONDENSATORE      ) (
+            ≥                 )≥≥≥(        ¬            ) (
+            ≥                 )≥≥≥(        ≥            ) (  
+            ¿ƒƒ¥INTERRUT.√ƒƒƒƒŸ≥≥≥(        ≥            ) (                   
+                               ≥≥≥(        ≥            ) (
+                               ≥≥≥¿ƒƒƒƒƒƒƒƒ¡ƒƒƒƒo  oƒƒƒƒŸ (
+                          Trasformatore      scintillat.  (____
+                             per neon                          \
+                                                                \
+                                                                |
+                                                    A terra o all'elettrodo
+                                                di destra dello scintillatore
+
+
+
+Il nostro scopo, perï, era quello di costruire un fucile Tesla, ricordate?
+Per questo ultimo ritocco ä necessario il puntatore laser ultravioletto o la
+lampada al mercurio e le lenti (visto che servivano?) che bisognerÖ montare in
+modo che una parte del raggio tocchi il terminale di scarica, mentre l'altra
+prosegua orizzontalmente il suo percorso. Come risultato, il fascio di luce
+ionizzerÖ l'aria, creando un "cavo elettrico virtuale" che cadrÖ sul bersaglio,
+permettendo di collimare nella zona voluta la potenza distruttiva di una
+bobina di Tesla.
+
+Ce l'abbiamo fatta! Ora possedete un FUCILE TESLA!!
+
+
+INTERESSANTI VARIAZIONI SUL TEMA
+Se avete constatato che i normali antifurti a sirena fanno solo abbaiare i
+cani e volete un modo serio per difendervi dai ladri, potrete utilizzare una
+bobina di Tesla per elettrizzare i cancelli, le maniglie, le ringhiere, le
+grondaie e le maniglie delle portiere e la carrozzeria della vostra automobile,
+semplicemente collegando queste strutture al terminale di scarica per mezzo
+di un cavo per alta tensione situato in modo da mimetizzarsi.
+Quando il malaugurato ladro tocchera' una di queste cose, sara' veramente roba
+da ridereT!
+
+
+
+File scritto da
+_______________
++ MasterdreaM +
+^^^^^^^^^^^^^^^
+Rielaborato da
+
+  ≈        ≈
+  ≥ AVA666 ≥
+  ~~~~~~~~~~
+

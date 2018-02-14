@@ -1,0 +1,36 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Master Table Of Dynamites.
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+       INGREDIENT                               FORMULA
+                             1   2   3   4   5   6   7   8   9  10  11  12
+Ammonium Nitrate..........  52  53  60  61  66  73  78  83   0   0   0   0
+Potassium Nitrate.........  21   0   0   0   0  2.8  5   7 30.5 34   0   0
+Sodium Nitrate............   0  12   5   3   0   0   0   0   0   0 30.5 24.5
+Barium Nitrate............   0   0   0   0   0   0   0   2   4   1   0   0
+Na or K Chloride..........   0   0  21 20.5 22  15   8   0   0   0   0   0
+Hydrated Ammonium Oxalate.  16  19   0   0   0   0   0   0   0   0   0   0
+Ammonium Chloride.........   6   0   0   0   0   0   0   0   0   0   0   0
+Cereal or Wood Meal.......   0   4   4  7.5  2   1   5   2   0 38.5 39.5 40.5
+Glycerin..................   0   0   0   4   0   0   0   0   0   0   0   0
+Spent Tan Bark Meal.......   0   0   0   0   0   0   0   0  40   1   0   0
+Potassium Dichromate......   0   0   0   0   0   0   0   0   0   0   5   5
+Sodium Carbonate..........   0   0   0   0   0   0   0   0  .5  .5   0   0
+Powdered Coal.............   0   0   0   0   4   0   0   0   0   0   0   0
+Nitrotoluene..............   0   0   6   1   0   0   0   0   0   0   0   0
+Dinitrotoluene............   0   0   0   0   0   5   0   0   0   0   0   0
+Trinitrotoluene...........   0   6   0   0   0   0   0   2   0   0   0   0
+Nitroglycerin.............   5   5   4   4   4  3.2  4   4  25  25  25  30
+                                     ALL AMOUNTS ARE IN PERCENTAGES
+
+== Fonte: Anarchy 'n' Explosives 4 ==
+
+The Raven
+Since `82

@@ -1,0 +1,93 @@
+			     BOMBE TRAPPOLA:
+
+
+
+Questa bomba è una variante della bomba ad inniezione elettronica molto diffusa
+su internet ma al contrario di quest'ultima sarà proprio la vittima
+ad attivarla, così noi potremo essere tranquillamente lontani
+(e diventare insospettabili...).
+
+ps: scusate se gli ashii fanno cagare ma non sono molto pratico...
+
+
+
+
+
+
+
+
+prendete una lampadina tipo quelle dell'albero di natale,
+foratene delicatamente il vetro ed inseriteci della polvere da sparo.
+Adesso prendete una scatola, magari una di quelle delle scarpe o se volete fare una
+bomba che spaventi soltanto,  anche la solita plastica del pacchetto
+di sigarette, e ripempitelo di polvere da sparo.
+
+___
+\_/
+ | = filamento della lmpadina
+
+## = vetro 
+
+@ = polvere da sparo
+
+x = ferro 
+
+
+
+  #####                                               ####  
+ #     #                                            #@@@    
+#       #                                          #@@@@@@@#
+#       #    <<<lampadina                          #@@@@@@@#
+#  ___  #                                          #@@@@_@@#
+ # \_/ #           lampadina forata  e riempita>>>  #@\-/@#
+  # | #                                              # | # 
+   XXX                                                XXX
+   xxx                                                xxx
+
+
+
+
+ora fate una fossa per terra ed inseriteci il contenitore 
+pieno di polvere da sparo con inserita la lampadina,
+anchessa piena di polvere(non attaccate la lampadina alla batteria!)
+e fate passare il filo in una fossa vicinissima a quella dove 
+è alloggiata la polvere da sparo, mettendo una batteria da 9v, 
+sul fondo con in contatti verso l'alto, ma 
+SENZA FAR TOCCARE I CONTATTI CON I FILI DELLA LAMPADINA!!!!
+
+
+adesso con l'aiuto di un bastoncino fragile o della plastilina, fissate i fili 
+a pochi millimetri dai contatti della batteria e coprite 
+con delle foglie la trappola.
+
+H = foglie  
+
+# = terra 
+         
+|_ = fili
+          
+@ = lampadina
+           
++ e - = polarità della batteria 
+
+x = scatola
+
+
+                    HHHHHHHHHHHHHHH  
+##################   _____________ #############
+##################   |_________   |      #######
+##################xxx||xx## +  _._._ -   #######
+##################xxx@xxx##    |   |    ########
+##################xBombax####  |___| < batteria#
+##################xxxxxxxx######################
+
+
+quando la vittima ci passerà sopra il suo peso farà toccare i contatti 
+della batteria con i fili che manderanno energia alla lampadina facendo
+esplodere il contenitore pieno di polvere da sparo.
+
+
+pps. mi riscuso per gli ashii... fanno veramente schifo!
+
+
+SNAKE32

@@ -1,0 +1,91 @@
+BOT e sua Installazione
+
+
+Un BOT è un programma che si connette automaticamente ad IRC come un normale client e risiede 
+sui canali come operatore proteggendoli da takeover, riconoscendo gli utenti banditi dal canale,
+oppando gli utenti privilegiati etc etc.
+
+Il bot più avanzato disponibile al momento si chiama Eggdrop ed è arrivato alla versione 1.3.24
+(è disponibile anche una release 2.0.0, scritta in C++, che è ancora in versione BETA). Questo 
+programma è scritto in linguaggio C ed ha delle caratteristiche molto avanzate come ad esempio 
+una "party line" accessibile via DCC che consente conversazioni senza lag (una specie di IRC in 
+miniatura completa di canali). E' inoltre possibile collegare più bot insieme, espandendo la 
+party line, e rendendola qualcosa di molto simile ad IRC.
+Prima di iniziare chiedersi se è davvero necessario un bot. La maggior parte dei server IRC 
+vietano del tutto i bot. Il motivo? Molti li usano come strumenti distruttivi. E' necessario 
+trovare almeno un server IRC a cui connettere il bot. Per sapere se i bot sono accettati o no, 
+leggere il messaggio del giorno del server (/MOTD <server> da IRC).
+
+Per eseguire eggdrop è necessario un sistema UNIX su cui è installato TCL (per controllare 
+digitare tclsh. Al prompt % digitare exit per uscire)
+Esistono anche versioni per Win ma sono molto più instabili. 
+TCL è un linguaggio di scripting scritto da John Ousterhout. E' molto meglio della maggior parte 
+dei linguaggi di scripting "integrati" come quelli di IrcII o mIRC e può essere collegato con 
+qualunque cosa necessiti di un linguaggio di scripting, quindi è stato collegato con Eggdrop.
+
+Per un elenco di shell UNIX eggabili disponibili in rete vedere http://www.shellcentral.com
+Caricare nella shell i sorgenti del bot compattati, e scompattarli
+(UNIX: tar -xzvf eggdrop#_#_#.tar.gz -- WIN: usare WinZip). Per compilare i sorgenti (UNIX) 
+basta digitare ./configure e ./make dalla cartella eggdrop#_#_# appena creata.
+
+Se si dispone di piattaforma Windows il file compilato eggdrop.exe è già incluso.
+
+Si sconsiglia DECISAMENTE di usare Eggdrop precompilati ottenuti da fonti non fidate. Eggdrop è 
+stato un obiettivo regolare per l'hacking e il crashing. La distribuzione di versioni binarie di
+eggdrop può consentire facilmente ad hackers di ottenere l'accesso non solo al bot ma 
+direttamente al proprio account!
+
+I siti FTP più fidati sono ftp://ftp.sodre.net e ftp://ftp.eggdrop.net
+
+CONFIGURAZIONE:
+
+A questo punto modificare il file di configurazione eggdrop.conf.dist seguendo i commenti 
+presenti al suo interno. Questo file consente di specificare il nick del bot, l'elenco dei 
+server a cui connettersi, e molto altro. E' possibile eseguirlo per avviare il bot (UNIX). Ad 
+esempio 
+
+chmod u+x eggdrop.conf.dist 
+
+e modificare la prima riga del file in
+#!./eggdrop
+per indicare al SO di eseguire eggdrop quando esegue lo script. Altrimenti è possibile avviare 
+il bot semplicemente col comando 
+
+eggdrop <opzioni> <file.conf>
+
+Eggdrop ha infatti dei parametri per la riga di comando - non molti, poiché molte cose sono 
+definite nel file di configurazione. Consentono di avviare il bot in una modalità diversa. Le 
+opzioni disponibili sono
+
+-n
+Non andare in background. Di solito eggdrop va automaticamente in background una volta avviato, 
+restituendo il prompt della shell.
+Con -n, non si ritornerà al prompt fino alla chiusura del bot (che dovrebbe avvenire solo se 
+esso viene terminato). Per impostazione predefinita -n invia tutte le entrate del file registro 
+alla console.
+
+-nt
+Non andare in background, usa il terminale. Simile a -n, ma simula una DCC con il bot.
+
+-nc
+Non andare in background, visualizza le informazioni sui canali. Simile a -n ma visualizza ogni 
+10 secondi lo stato corrente dei canali. 
+
+-m
+Crea il file utenti: Se non è presente il file utenti, eggdrop ne creerà uno e darà i privilegi 
+di OWNER al primo che gli scrive HELLO in query. Necessario solo al primo avvio.
+
+Al primo avvio eseguire dunque il bot con la riga di comando
+
+eggdrop -m file.conf.modificato
+
+Verrà chiesto di accedere ad IRC e digitare HELLO (la parola è personalizzabile) in query al bot.
+Si diverrà così OWNER del bot. Alle esecuzioni successive, non utilizzare il parametro -m.
+
+La sola differenza nelle versioni Windows consiste nel poter risparmiarsi la compilazione del 
+BOT ma è cmq necessario configurarlo modificando il file di configurazione.
+
+
+Per ulteriori informazioni leggere la documentazione allegata (o visitare nonsolokick). 
+
+(fonti: documentazione di EggdropII e www.nonsolokick.com)

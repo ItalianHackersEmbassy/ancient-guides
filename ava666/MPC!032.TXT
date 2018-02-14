@@ -1,0 +1,239 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 2 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+
+
+TELNET E SMTP 
+~~~~~~~~~~~~~
+Supponiamo di voler, per un motivo qualsiasi, inviare una e-mail a qualcuno
+facendo sembrare che essa sia stata mandata da qualcun altro.
+
+Il metodo piu` semplice e` utilizzare uno dei siti per hackers che offrono la
+possibilita` di inviare FakeMail (basta cercare questa parola in un motore di
+ricerca su Internet, ad esempio www.yahoo.com ha una sezione apposita per
+FakeMail e posta anonima).
+
+Ma per ora tralasciamo i siti e vediamo in pratica come funziona la tecnica
+delle FakeMail (che tra l'altro e` applicabile, in modo diverso, anche alle
+news).
+
+Il motivo per cui la studieremo e` che provandone il funzionamento, ne
+approfitteremo per imparare ad utilizzare Telnet e soprattutto SMTP, ovvero
+il servizio della posta in uscita.
+Questa e` infatti la base per capire come funzionano molte delle tecniche
+piu` utilizzate, e vi permettera`, quando sarete padroni della materia, di
+implementarne di nuove.
+
+Iniziamo dunque imparando ad usare Telnet.
+
+Usandolo per collegarvi a un sito semplicemente inserendo un host name, vi
+collegherete al servizio Telnet.  Ma abbiamo detto che non e` questo il
+nostro obiettivo.  A noi interessa il servizio SMTP.  Dunque, come fare per
+accedervi?
+
+Bisognera` inserire, oltre all'indirizzo del server a cui vogliamo
+collegarci, anche un numero di "porta".  Ma cos'e` una porta?
+Se riflettete, ogni server ha un unico indirizzo "centrale" (nome.com) ma
+gestisce molti servizi (web, ftp, posta...).  Di conseguenza dovrebbe avere
+altrettanti server su altrettanti indirizzi diversi.
+
+Per evitare un proliferare di indirizzi inutili esistono le porte, in pratica
+nient'altro numeri a cui sono associati i vari servizi.
+Vogliamo collegarci a SMTP?  Basta utilizzare la porta 25.  Ci interessano
+le news?  La porta e` 119.  Oppure FTP, porta 21... sono tutti numeri "fissi"
+(standard) e quindi, tranne in rarissimi casi, collegandosi - per esempio -
+alla porta 25 ci rispondera` sempre SMTP.
+
+NOTA: se avete Winsock potete leggere il file "services", contenente i numeri
+delle porte piu` usate.  Il file si trovera` nella directory di Winsock.
+
+Ora che abbiamo chiarito il discorso delle porte, supponiamo di volerci
+collegare a SMTP usando Telnet.  Scegliamo un server qualsiasi (sono davvero
+rari i casi in cui un server non gestisca la posta) e, in base al programma
+usato, dovremmo operare differentemente.
+La maggior parte di essi funziona in questo modo: per collegarsi a SMTP del
+server prova.it bisogna inserire prova.it:25 come nome del server.
+Alcuni invece non prevedono l'uso dei due punti per delimitare nome e porta,
+ma hanno uno spazio in cui inserire, separatamente, il numero o il nome del
+servizio.
+
+Dunque, una volta connessi a prova.it:25 avremo un messaggio di questo tipo:
+
+220 prova.it Sendmail x.x/x.x 11/11/97 ready at Mon, 30 Oct 97 06:22:19 -0200
+
+e niente altro.  Il server sta ora aspettando comandi da parte nostra.
+La prima cosa da fare e` identificarsi, e cio` va fatto con il comando HELO
+in questo modo:
+
+HELO nomeprovider.it
+
+sostituendo nomeprovider.it con il nome del nostro provider.
+
+NOTA: usando Telnet *NON* e` possibile cancellare.  Quindi digitate senza
+fretta, e se proprio sbagliate riavviate la connessione e ripetete tutto,
+oppure - in alcuni casi - puo` essere sufficiente premere invio e riscrivere
+la riga da zero.  Non cancellate, anche se sembra funzionare.  I risultati
+possono essere imprevedibili e potreste rivelare la vostra identita`.
+
+Talvolta e` possibile inserire un nome falso, ma i nuovi server conoscono
+gia` il vostro IP Address quando vi collegate, quindi tanto vale inserire il
+vero nome.
+
+La risposta sara`:
+
+250 prova.it Hello NOMEPROVIDER.IT, pleased to meet you
+
+A questo punto dovremo dire al server qual'e` il nostro indirizzo di e-mail.
+Usiamo allo scopo il comando "MAIL FROM" e digitiamo:
+
+MAIL FROM: <Bill_Gates@microsoft.com>
+
+...ovviamente l'indirizzo da inserire e` quello falso =)
+Il server rispondera` con un messaggio.  Se avremo sbagliato qualcosa, sara`
+un messaggio d'errore, e dovremo ripetere l'immissione.
+
+A questo punto dobbiamo scegliere la nostra "vittima", che supponiamo essere
+vittima@lamer.it.  Usiamo il comando "RCPT TO" e scriviamo:
+
+RCPT TO: <vittima@lamer.it>
+
+Il server rispondera` con un altro messaggio.
+
+Ed ora che abbiamo definito sorgente e destinazione passiamo all'invio delle
+intestazioni e del corpo del messaggio.
+Avvisiamo il server che siamo pronti, scrivendo:
+
+DATA
+
+e il server ci dira` di scrivere il messaggio e di concludere con un punto
+su una riga vuota.
+
+Fermiamoci un attimo.  In ogni e-mail esistono delle intestazioni (headers)
+che si trovano prima del corpo del messaggio vero e proprio.  Il loro scopo
+e` elencare tutti i computer attraverso i quali e` passato il messaggio,
+nonche` il nostro IP Address!  Cio` potrebbe rivelare la nostra identita` a
+un hacker o a un SysAdmin esperto.  Per evitarlo, digitiamo:
+
+Received: by nomeprovider.it id AA11212 with SMTP; Sun, 12 Oct 97 13:40:58
+
+dove nomeprovider.it e` il nome del vostro provider (quello che avete usato
+con HELO) e l'ultima parte (Sun, 12 Oct...) e` la data in formato standard.
+ID AA11212 va cambiato.  Potete mettere un numero qualsiasi (possibilmente
+che inizi con AA1 piu` altre 4 cifre, per farlo sembrare piu` reale).
+Si tratta solo di un numero di serie del server, niente di importante.
+
+Ora dobbiamo digitare:
+
+Message-ID: <123.AA11345@microsoft.com>
+
+Cio` serve a far credere che il messaggio sia partito effettivamente dal
+server "microsoft.com" con l'ID AA11345 (puo` essere un numero qualsiasi,
+purche` NON uguale a quello inserito prima con l'intestazione "Received:").
+
+Inseriamo ora di nuovo il destinatario, la data e il soggetto della e-mail:
+
+To: <vittima@lamer.it>
+Date: Sun, 12 Oct 97 11:30:27
+Subject: questa e` una prova...
+
+Lasciamo uno spazio e scriviamo il messaggio che vogliamo inviare (lungo
+quanto vogliamo).  Per concludere il messaggio lasciamo due righe vuote,
+digitiamo un punto, premiamo invio, scriviamo QUIT e invio.
+La FakeMail verra` inviata automaticamente dal server, e noi possiamo anche
+chiudere Telnet.
+
+E` importante inviare a se stessi dei messaggi di prova per vedere se il
+server scelto ha ricevuto i dati correttamente, se non sono stati commessi
+errori e, soprattutto, per vedere se il proprio IP Address si trova in
+mezzo alle intestazioni "Received:", oppure (sbagliato) alla fine.
+
+Ora che sappiamo come fare ad inviare una FakeMail, possiamo passare al
+passo successivo: usare le FakeMail per far danni... vogliamo seppellire
+la mailbox di qualcuno?
+Creiamo una normale FakeMail con il metodo spiegato sopra, ma come mittente
+dovremo inserire l'indirizzo e-mail della vittima e come destinatario usiamo
+un "listserv" (come ad esempio listserv@brownvm.brown.edu).
+Un Listserv e` un programma che invia programmi tramite e-mail nel caso non
+si riesca a prelevarlo via FTP.
+
+Se ad esempio sappiamo che nella directory "mieifiles" del server pluto.it
+c'e` un file di 20 megabyte il cui nome e` "enorme.gz" possiamo fare in modo
+che quei 20 MB vengano inviati sotto forma di testo nella e-mail della
+nostra vittima...
+Nell'esempio di cui sopra, dopo aver scritto i primi comandi della FakeMail,
+arrivati a "Subject:" scriviamo quanto segue:
+
+REPLY vittima@lamer.it
+CONNECT pluto.it anonymous indirizzo@falso.com
+BINARY
+GET mieifiles/enorme.gz
+QUIT
+
+e concludiamo quindi con le due righe vuote, il punto, QUIT, ecc.
+
+Ecco la spiegazione passo passo:
+
+REPLY indica l'indirizzo e-mail a cui rispondere
+CONNECT specifica il nome del provider a cui collegarsi e l'account da usare
+BINARY specifica un file di tipo binario (non va cambiato)
+GET specifica il nome del file da prelevare (completo di eventuali directory)
+QUIT termina la connessione
+
+Ovviamente, se dopo GET anziche` QUIT usiamo altri GET, il risultato sara`
+molto piu` dannoso.  Nel caso di un file di 20 MB, riscrivendo altre 10
+volte il comando "GET ..." verranno mandati un totale di ben 200 megabyte al
+povero utente destinatario!
+E poiche` i server di e-mail spezzano i messaggi in tanti piccoli messaggi,
+la vittima riceverebbe migliaia e migliaia di messaggi...
+E` un buon motivo per non dare in giro il proprio indirizzo di e-mail, no?
+
+Nel prossimo volume impareremo a scrivere messaggi totalmente anonimi, a
+riconoscere un messaggio falso da uno vero e ad identificare il computer da
+cui e` partito un attacco.
+Piu` in la` spiegheremo anche come rendersi al 100% invisibili utilizzando
+tecniche estremamente raffinate.
+
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+
+Grazie a LoRD SHiNVA, l'autore di questa enciclopedia,
+
+       By
+   Å        Å
+   ³ AVA666 ³
+   ~~~~~~~~~~
+
+
+

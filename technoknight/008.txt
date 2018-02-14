@@ -1,0 +1,70 @@
+                      <-....Un TrAsmettit0r3 FM....->
+
+                              Techno Knight
+
+
+Questo e' un piccolo trasmettitore FM, che potrete usare per rompere il cazzo
+alla gente, o per comunicare con i vostri amici durante un "azione" anarchica.
+Il raggio di azione non va oltre i 40-50 metri (quindi scordatevi di mettere
+ai vostri piedi l'intera citta'), nonostante questo mi sembra che per un
+trasmettitore fatto in casa non c'e' male no ?
+
+
+ANTENNA
+ ||
+ ||
+ \/
+       ______________________________________________________________
+\|/   ___     )       |       |      |             |        |        |
+ |    ---     )       R      ___     R             R        |      -----
+ |_||__| C10  ) L1    4      --- C3  5             7        |       ---
+   ||  |      )       |       |      |             |       ___ C6  ----- B1
+   C1  -------        |       |      |             |       ---      ---  9VDC
+       |_____         |       |  C9  __R6__        ----     |        |
+       |     \  Q1    |       |      |     |       |   |    |        |
+       |      \|______|_______|__|(__| Q2  |       R   |    |        |
+      ___     /|      |       |  |(  \     |  C5   8   |    |        |
+C2    ---    / BF199  |       |       \|___|__|(___|  _+_   |        |
+       |____V         R       |       /|      |(   |  ---   |        o
+       |              2      ___     / BC183C      |   | C7 |     \
+       |              |  C4  ---    V              |   |    |      \  S1
+       R              |       |     |_______   M1 / \  |    |       \
+       1              |       |     |      |      \_/  |    |        O
+       |              |       |     R     _+_      |   |    |        |
+       |              |       |     3     ---  C8  |   |    |        |
+       |              |       |     |      |       |   |    |        |
+       ---------------------------------------------------------------
+
+
+R1      =  100 ohms
+R2 e R4 =  10K ohms
+R3      =  1K ohms
+R5 e R7 =  47K ohms
+R6      =  2.2 Mohms
+R8      =  4.7K ohms
+B1      =  Batteria da 9 volt
+M1      =  Microfono
+C1      =  1.5 pf
+C2      =  100 pf
+C3 e C4 =  330 pf
+C5 e C9 =  .1 uf
+C6      =  .001 uf
+C7      =  22 uf
+C8      =  6.8 uf
+C10     =  Variabile 10-40 pf
+Q1      =  BF199, NTE229, ECG229
+Q2      =  BC183C, NTE199, ECG123AP
+L1      =  bobina 1 uh
+S1      =  interruttore
+
+
+La frequenza dipende dalla capacita' del condensatore variabile C10, che vi
+permette quindi di sintonizzare il trasmettitore sulla frequenza scelta.
+I suoni entrano attraverso il microfono M1 e vengono trasmessi attraverso
+l'antenna (un filo di circa 30 cm andra' bene)
+
+
+
+
+                               Techno Knight
+

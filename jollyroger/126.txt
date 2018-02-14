@@ -1,0 +1,73 @@
+More TRW Info                          Courtesy of the Jolly Roger
+
+Trw is a large database in which company's and banks can run credit
+checks on their customers.  Example: John Jones orders 500$ worth of stereo
+equipment from the Joe Blow Electronic distributtng Co.  Well it could be that
+he gave the company a phony credit card number, or doesn't have enough credit, 
+etc.  Well they call up Trw and then run a check on him, trw then lists his 
+card numbers (everything from sears to visa) and tells the numbers, credit,
+when he lost it last (if he ever did) and then of course tells if he has had 
+any prior problems paying his bills.
+
+I would also like to add that although Trw contains information on
+millions of people, not every part of the country is served, although the major
+area are..  So if you hate someone and live in a small state, you probably
+wont be able to order him 300 pink toilet seats from K-mart.
+
+Logging on
+==========
+
+To log on, you dial-up your local access number (or long-distance, what
+ever turns you on) and wait for it to say "trw" at this promt, you type
+either an "A" or a "Ctrl-G" and it will say "circuit building in progress"
+it will wait for a minute and then clear the screen, now you will type
+one of the following.
+
+Tca1
+Tca2
+Tnj1
+Tga1
+
+This is to tell it what geographical area the customer is in, it really
+doesnt matter which you use, because trw will automatically switch when
+it finds the record..
+
+Next, you will type in the pswd and info on the person you are trying to
+get credit info on:  you type it in a format like this:
+
+Rts Pswd Lname Fname ...,House number First letter of street name Zip <cr>
+now you type ctrl s and 2 ctrl q's here is what it looks like in real life:
+
+
+Ae: Dialing xxx-xxx-xxxx
+
+(screen clear)
+Trw ^G
+
+circuit building in progress
+
+(pause . . . screen clear)
+
+Tca1
+
+Rtc 3966785-cm5 Johnson David ...,4567 
+R 56785 
+^s ^q ^q
+
+and then it will wait for a few seconds and print out the file on him
+(if it can locate one for the guy)
+
+note: you may have to push return when you first connect to get the systems
+attention.
+
+Getting Your Passwords
+======================
+
+To obtain pswds, you go down to your favorite bank or sears store and
+dig through the trash (hence the name trashing) looking for printouts, if
+they are a big enough place, and live in a trw area, then they will probably
+have some.  The printouts will have the 7 digit subscriber code, leaving the
+3-4 digit pswd up to you.  Much like trashing down at good old ma bell.
+
+                                         --------- Jolly Roger
+

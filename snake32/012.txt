@@ -1,0 +1,227 @@
+           --------------------------------------------- 
+           USARE LINUX DA RIGA DI COMANDO (COMANDI BASH)
+          -----------------------------------------------
+
+Chiedendo a degli amici di fare delle prove sui loro sistemi, con lo
+scardinamento tramite livecd (011.tx), mi sono accorto di una cosa spiacevole...
+molte persone, anche abbastanza abili e con una buona cultura informatica
+alle spalle, quando usano linux cercano di usare la bash il meno possibile.
+Questo a mio avviso è sbagliato, poichè quando ci si si trova ad hackerare un server unix, una buona conoscenza della bash è obbligatoria. 
+In oltre usando linux dalla bash tutti i giorni, con un pò di pratica
+si diventerà velocissimi nel sbrigare situazioni spinose, anche quando ci
+si ritrova ad utilizzare il server grafico.
+In ogni caso ho deciso di scrivere una guida all'utilizzo della shell bash
+che possa essere di aiuto sia agli esperti, sia ai novizzi.
+Proprio puntanto su questi ultimi ho scritto la guida nel modo più
+comprensibile possibile, scrivendo ogni volta esempi della sistassi dei 
+vari comandi.Non potendo spiegare tutto il sistema operativo
+in un txt ho deciso di dividerlo a puntate, cominciando con i comandi base
+per poter gestire il computer.
+
+
+I COMANDI FONDAMENTALI PER USARE IL COMPUTER: (senza i due punti)
+
+
+ cd:       si usa per cambiare directory.  
+           ad esmpio  cd nome_ directory   per tornare alla directory 
+           superiore si usa cd..  
+
+ ./:       si usa per avviare gli script bash 
+           ad esempio ./script.sh o su alcuni file basta ./nomescript
+
+ cp:       serve per copiare un file o una sotto directory in un altra directory
+           per esempio per spostare il file ciao.txt che si trova in /home
+           in /home/snake32 devo scrivere:  cp /home/ciao.txt /home/snake32
+           se invece sono gia nella  directory che contiene il file allora basta
+           scrivere: cp ciao.txt /home/snake32
+
+
+
+ mv:       sposta o rinomina un file od una directory
+           ad esempio  mv mio.txt /home/snake32 per spostare. 
+           o per rinominare mio.txt in tuo.txt
+           basta eseguire  mv mio.txt tuo.txt
+
+ rm:       elimina uno o più file ad esempio 
+           rm nome_file per cancellare un file.
+           Se si aggiunge l'argomento -f il comando ignorerà qualsiasi
+           errore o complicazione ed eliminerà il file ad ogni costo
+
+rmdir:     elimina una directory.
+           Ad esempio per eliminare la directory prova:
+           rmdir prova 
+
+
+ ls:       visualizza tutti i file e le directory contenute nella 
+           directory in cui ci troviamo o che gli viene indicata.
+           es:
+           ls visualizza i dati contenuti nella directory in cui siamo
+           ls /home/snake32/zuppa visualizza tutti i file e le directory 
+           contenuti nella cartella zuppa che si trova in /home/snake32/zuppa.
+           se gli si aggiunge l'argomento "a" mostrerà anche i file nascosti,
+           compresi quelli di swap. Il comando diventerà allora:
+           ls -a
+                    
+
+ unzip:    serve per scompattare un file con estensione .zip
+           es: unzip giggio.zip
+
+
+
+
+ tar:      serve per scompattare file con estensione .tar.gz  o .tar.bz2
+           per scompattare un file con estensione .tar.gz
+           basta eseguire:
+           tar -xvzf  nome_archivio.tar.gz
+       
+           mentre per scompattare un file con estensione .tar.bz2 
+           basta eseguire: 
+           tar -xvjf nome_archivio.tar.bz2 
+
+    
+
+ cls:      pulisce lo scermo.
+
+
+ 
+ init:     cambia il runlevel, che approssivamente determina quali funzioni
+           il sistema deve utilizzare, sono 7 e vanno da 0(computer spento)
+           a 6(riavvia computer) il 5 è usato di norma insieme al server
+           grafico mentre dal 2 al 4 vengono usati in modalità solo testo. 
+           Per cambiare il runlevel da root basta eseguire init(runlevel).
+           Per esempio, per spegnere il computer basta scrivere:
+           init 0
+           per riavviare:
+           init 6
+
+
+ hostname: se lanciato senza argomenti dà in output il nome della macchina,
+           mentre se viene seguito da una stringa cambia il nome della macchina
+           ad esempio per cambiare l'hostname in "pc_di_mario" dovremo digitare:
+           hostname pc_di_mario 
+
+
+
+ startx:   serve per avviare il server grafico, è utile solo se di solito
+           avviate il sistema in modalità testuale e poi volete passare
+           in modlità grafica, non dovete far altro che utilizzarlo normalmente,
+           oppure per esempio: startkde
+           o ancora: startgnome
+
+
+
+ top:      fornisce dati sull'utilizzo di cpu e ram, da parte dei
+           processi in uso, in tempo reale (sotto forma di percentuale).
+
+
+
+ df:       fornisce dati sull'utilizzo dello spazio sul disco fisso in byte.
+           per renderlo più leggibile è possibile utilizzarlo con l'attributo
+           -h e/o l'attributo -T
+           che  mostra anche il tipo di fyle system utilizzato
+           es: 
+           df -h           <<<visualizza lo spazio in maniera facile da leggere            df -hT          <<<<come sopra ma mostra anche il tipo di fyle system               
+  
+
+ su:       abbreviazione di "switch user" serve a cambiare utente senza uscire 
+           dalla sessione attuale, a condizione di essere in possesso della
+           password. es:
+        
+           su pippo
+           passworddipippo
+        
+           Può quindi servire per ottenere 
+           i privilegi di amministratore in modo rapido.
+           In questo caso basta eseguire solo il comando senza argomenti.
+           es:
+           su 
+           passworddiroot
+
+ uname:    mostra la versione del kekenl in uso, si usa 
+           insieme al suo attributo -r es:
+           uname -r
+
+ 
+
+ more:     questo comando in genere è utilizzato per leggere comodamente 
+           un file di testo una pagina alla volta o riga per riga, in modalità
+           sola lettura, ma in realtà è molto potente e tramite una pipe gli si            possono reindirizzare una caderba di comandi, per esempio mettiamo 
+           caso di avere una directory con 100 sottodirectory e 200 file,
+           se eseguiamo il comando ls per visualizzarne il contenuto,
+           ci apparirà un output confuso, potremmo quindi "dirottare"
+           il comando ls sul comando more per fargli leggere l'output
+           di quest'ultimo come se fosse un file di testo, per scorrerlo 
+           un pò alla volta. fare tutto ciò è in realtà molto semplice,
+           facciamo caso di essere nella directory /home e di volerne 
+           visualizzare il contenuto con more
+           es:
+           ls|more
+           
+           adesso le varie directory e file ci appariranno ordinati 
+           e potremo usare il tasto spazio per scorrere di un intera schermata
+           oppure il tasto enter per scorrere di una riga alla volta
+           o ancora il tasto "b" per scorrere di una pagina all'indietro.
+           aprire un qualsiasi tipo di file contenente testo è
+           altrettanto semplice:
+           more prova.txt
+           more script.sh
+           more sorgente.py
+           more sorgente.c
+           etc... 
+
+          
+L'IMPORTANZA DEL "*"
+
+Questo carattere viene utilizzato quasi in ogni comando 
+e può servire come "selettore".
+per esempio se in una directory volessimo cancellare tutti i file di testo
+senza toccre gli altri basterebbe usare il comando rm nel seguente modo:
+rm *.txt 
+Seguendo la stessa logica, se ad esempio con il comando cp volessimo copiare tutti i file di testo in una directory possiamo semplicemente scrivere:
+cp *.txt nome_directorye
+etc...
+
+
+
+
+
+Programmi utili a riga di comando:
+
+CDPARANOIA: per seguirlo basta scrivere cdp.
+            non fa altro che ripeodurre un cd audio senza bisogno 
+            di interfaccia grafica.
+
+
+VIM:        il più popolare degli editor moderni!
+            vim è derivato dal vi che è a codice chiuso.
+            è semplice,(non quanto joe..) leggero, ed oltre tutto
+            se ci troviamo su unix o xenix non avremo altro che questo,
+            quindi è sempre meglio saperlo usare.
+
+   
+JOE:        altro editor di testo, ma ancora più semplice di vim.
+
+
+
+ED:         il primo editor di testo per unix... è abbastanza "ostico"
+            e date le generose offerte di editor semplici e potenti,
+            usarlo è un vero suicidio.
+
+
+ELVIS:      altro clone di vi.
+            sinceramente lo trovo la brutta copia del vim ma tutti
+            i gusti sono gusti. Provatelo... magari vi piace.
+
+
+       
+LYX:        web browser che non necessita di interfaccia grafica.
+
+
+|/TXT SOGGETTO AD AGGIORNAMENTI\|    
+
+SNAKE32    
+
+
+       
+       
+	 

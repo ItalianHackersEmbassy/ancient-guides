@@ -1,0 +1,297 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Ma gli hackers ce l'hanno una ragazza?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                Etilic & Drug Division of S0ftProject Presents:
+                -----------------------------------------------
+                ### Ma gli hackerZ ce l'hanno una ragazza? ###
+                -----------------------------------------------
+
+Si ringrazia per la partecipazione pIGpEN, il Dr_Slump e Cavallo De Cavallis
+
+Autore: MaNdrAkE		
+
+Consumo:		        1 Fetta di torta di mele
+			        3 Fondi di bottiglia di vodka (Liscia, limone
+                                  e pesca)
+			        1 Caffe'
+
+Musica ascoltata:		Nas	      - The Message; Affermative action
+                                Jay-Z         - City is Mine; Wishing on a star
+				LL Cool J     - Phenomenon
+
+Avvertenza: questa guida e' stata scritta durante un periodo di profonda
+depressione....
+
+******************************************************************************
+Questa guida e' dedicata al Dr_Slump, riusciro' mai a diventare simile a te?
+******************************************************************************
+Al Pig sono fin troppo simile....
+******************************************************************************
+
+******************************************************************************
+"Vedi ... io penso che in questa Terra ci siano tante ragazze buggate, basta
+trovare l'exploit giusto e mettersi su un firewall e qualche anti nuke come
+protezione ... se non riesci ad hackerare la ******, provaci tra un mese, sono
+sicuro che se giri quotidianamente su rootshell.com prima o poi troverai un
+bug anche su di lei ;)))) Intanto interfacciati a qualcuna dove sei sicuro che
+qualcuno vi e' gia' penetrato, prendi accesso da admin e falla divertire
+garantendoti una backdoor su di lei, se poi hai accesso root crea qualche
+account per il tuo povero pig o apri un provider su di lei sono sicuro che
+tra i clienti ci sara' pure Slump ;) Mi raccomando trattala come tratti
+Compuserve e vedrai che non potra' piu' far a meno di te =)"
+*******************************************************************************
+
+Ora e' il momento di una prefazione:
+
+Gli hackers sono persone normali, io NON sono un hacker e non sono normale,
+pIGpEN NON e' normale,  poi c'e' il Dr_Slump lui e'...
+
+Ma gli hackers fanno sesso?
+
+Beh, http://hackingirls.home.ml.org e' la prova che chi hacka fa' anche
+sesso....
+
+Esiste comunque anche un parte di hackers che non fa sesso, costoro rivolgono
+le attenzioni non ad una ragazza, ma ai siti su cui lavorano, per farvi capire
+meglio ecco un breve confronto tra cio' che assimila una ragazza ad un sito
+internet:
+
+Porta           Servizio                Ragazza
+
+80		il web			i vestiti che indossa, il look
+23		telnet			scusa, hai una sigaretta?
+21		ftp			il bambino che rischiate di fare 
+25		smpt			*******
+6667		irc			ciao, io mi chiamo MaN, tu?
+
+Ora e' il momento di spiegare le similitudini tra una ragazza e un sito
+iNET porta per porta.
+
+La porta 80 e' quella web, come tutti sappiamo il web e' grafica, sonoro...
+immagine insomma... percio' lo si puo' paragonare al look di una ragazza.
+Come tutti sappiamo piu' un sito web e' graficamente ricco piu' e' invitante
+navigarci dentro, stesso discorso con una donna. Attenzione pero', se c'e'
+troppa grafica il sito diventa lento... troppo leeentooo, come per le ragazze
+se sono troppo truccate viene da dire "ma guarda quella troia".
+
+Hack? Yes i like it....
+
+Allora, cosa fanno solitamente gli hacker quando hackerano un sito web? Beh,
+in genere tolgono tutta la grafica e lasciano il sito spoglio :P con una firma
+che indichi il loro passaggio; un esempio? www.diseg.unipa.it ;) e
+comel.uniroma.it (Marduk RuLeZ)... Quindi cercate di capire, quando avete la
+possibilita' di hackerare una ragazza cercate di fare lo stesso lavoro,
+togliete tutto cio' che rappresenta la "grafica" alla fine deve rimanere il
+solo nudo oggetto (il sito cos'avete capito?) come gli ingenieri che l'avevano
+progettato. Stesso lavoro con l'oggetto delle nostre bavose brame, deve
+rimanere come mamma l'ha fatta, solo a lavoro finito potrete "firmarla".
+Attenti, con firma intendo proprio una firma e NON un qualcosa che spunti 9
+mesi dopo; quello si chiama dominio ;)
+
+Porta 23 questa e' la porta piu' importante, diciamo che se riuscite ad averci
+accesso dovete solo cancellare le vostre traccie e stare attenti a non
+combinare casini. Nel caso di una ragazza questa porta e' rappresentata dal
+triangolino nero in mezzo alle gambe (e chi l'avrebbe mai detto?).
+
+Attenti, se riuscite ad avere accesso ad una ragazza come root dovete chiudere
+tutte le vostre porte tranne 1 e dotarvi di un firewall che permetta solo
+l'uscita dei "dati". La porta da aprire penso abbiate capito quale sia, mentre
+per quanto riguarda il firewall deve essere adatto alle vostre esigenze ne
+esistono diversi sul mercato con diverse caratteristiche....
+
+La porta 21 e' quella che mostra se il lavoro e' andato a buon fine o meno:
+se avete usato un firewall decente state tranquilli, non dovreste avere
+problemi cmq una controllatina dovete darla...
+Per accorgervi di avere lasciato qualche traccia sul sito remoto dovete
+controllare se il soggetto in questione non presenti uno o piu' di questi
+punti:
+
+1) faccia le sue funzioni normalmente ogni 21 giorni se cio' non accade andate
+   al punto 2 e pregate, altrimenti passate al punto 3
+
+2) non subisca ingrossamenti all'addome, in questo caso avete uppato qualcosa
+   che non dovevate: entro 9 mesi vi ritroverete con almeno 1 dominio in piu'
+   a cui badare
+2.1) per evitare problemi nel caso si verifichi questa possibilita' (che
+     sfiga ;) e' buona idea utilizzare uno spoofer; sfortunatamente esistono
+     alcuni tipi di "account" che funzionando sotto alcuni provider NON
+     permettono l'uso di spoofer; per beccarvi solitamente i sysadmin
+     utilizzano un terribile programma chiamato "test del DNA" che praticamente
+     confronta l'ip del soggetto con quello dell'hacker, nel caso siano
+     uguali......
+
+3) sia HIV negative, attenti voi o il sito potreste aver un virus.. se non
+   usate firewall ad alta sicurezza potreste uppare o ricevere virus, l'unico
+   modo per scoprire se siete un sistema infetto e' quello di contattare gli
+   untori (usl) e farvi passare un antivirus-test (attenzione alcuni virus
+   (IHV o Epatite (se non intercettata in tempo) possono distruggere il sistema
+   perche' sovrascrivono alcune funzioni fondamentali dello stesso)
+
+La porta 25 nei sistemi internet corrisponde al sendmail ossia ai dati in
+uscita, nelle ragazze cio' corrisponde sempre a dati in uscita, alcuni di
+questi sistemi sono buggati se siete fortunati potrete accedervi, dovete solo
+stare attenti che potreste causare dei danni al sistema remoto o addirittura
+a voi stessi.... il processo potrebbe essere molto doloroso.
+
+La porta 6667 e' la porta piu' importante almeno per quanto riguarda i
+preliminari riguardanti l'hacking; infatti nel 99% dei casi conoscerete la
+vostra "vittima" attraverso uno scambio di input/output da questa porta,
+solitamente cio' avviene in discoteca, al bar, a scuola....
+Questa porta e' adatta per ricevere 2 particolari tipi di dati in entrata
+(input) questi possono essere di due tipi: un primo, classico e meno
+gratificante consiste in uno scambio di dati (sia in entrata che in uscita)
+diciamo con una larghezza di banda di 4k (peraltro buona ;) e un secondo che
+permette uno scambio di bytes solamente in uscita da parte dell'hacker mentre
+la vittima si vede recapitare numerosi e bagnati pacchetti che possono
+impedirgli di parlare per alcuni attimi.
+
+Porte varie (suggerite da pIGpEN e Cavallo):
+
+Porta           Servizio        Funzione
+
+7		echo		clonazione
+9		discard		beh, per chi si sente depresso
+13              daytime         per chi vuole morire
+635		mount		occhio, fate il mount solo di domini di
+                                polarita' contraria alla vostra, mountare
+                                domini di pari polarita' NON e' giusto ;)
+2049		nfs		piu' si e' piu' e' divertente
+1025		listen		siam compagni di merende (per gli spioni)
+1109 		kerberos	lo famo strano??
+
+Comandi Vari:
+
+Ping Version: 
+
+Questo comando serve per ricevere alcune info riguardanti il soggetto di cui
+vi state occupando. Generalmente al ping viene risposto con una serie di
+informazioni sul sistema operativo usato e sulla versione. Nel caso di una
+ragazza questo comando puo' essere fatto generalmente solo da un ginecologo
+pero' a volte (in particolare quando il soggetto in questione sta' andando
+verso un crash (cfr. crash=ubriaca=fumata-->andata) queste infoz possono
+essere richieste anche da user normali. Resta il fatto che spesso e volentieri
+si sanno molte piu' cose da altri user, infatti essi possono passare
+informazioni riguardanti:
+
+a) il numero di user con privilegi di root (meno sono e meglio e' per una
+   questione di immagine)
+b) il numero di volte con cui il sito e' stato visitato da root
+c) le eventuali funzioni extra di cui il sito e' provvisto (particolare
+   bravura con la 6667 o infoz sul fatto che la porta 25 sia aperta anche ai
+   dati in entrata)
+
+Sappiate che se vi fate passare info da amici vari potreste incorrere in
+inesattezze sia nel bene che ne male, quindi il mio consiglio e' di passare
+alla pratica e sperimentare sul campo.
+
+Finger:
+
+Il comando server per avere informazioni sul soggetto, quali:
+
+Nome
+Cognome
+Residenza
+Eta' (meglio evitare di chiederlo se il sito da hackare sembra un po' datato
+(>25 anni) potrebbe offendersi)
+Varie ed eventuali, quali segno zodiacale, squadra del cuore, sogni, desideri
+(sappiate sfruttare queste infoz)
+
+Molti sistemi presentano bug sul comando finger. Infatti spesso e volentieri
+si viene a sapere infoz molto importanti, basta approfondire. Sappiate
+sfruttarli ;)
+
+Last root:
+
+Questo comando serve per sapere quando e' avvenuto l'ultimo accesso da root,
+spesso e volentieri il sito si rifiuta di rispondere a un comando del genere.
+Non preoccupatevi eccessivamente.
+
+Ping:
+
+Il ping consiste nell'inviare un particolare input ad un dominio, occhio a 2
+cose....
+Primo: il dominio potrebbe non gradire e rispondervi in malo modo (occhio ai
+ping flood)
+Secondo: il ping varia da zona a zona, ci sono zone piu' sensibili di altre.
+Se per caso inviate un ping state attenti, potrebbe rispondervi/non
+rispondervi/floodarvi, queste variabili sono influenzate anche dal tipo di
+privilegi che avete sul sito, se siete root potrete tranquillamente pingare
+le zone sensibili. Se lo fate e non vi accade nulla, ma anzi ricevete infoz
+sul continuare vuol dire che siete sulla buona strada per hackerare questo
+sito.
+
+Exploit? Si' grazie....
+
+Per quanto riguarda l'hacking esistono numerosi exploit che causano l'accesso
+come root ai sistemi, questi variano da os a os, ma in genere si compongono di
+una versione base (il sorgente in c) da compilare sulla macchina. Una volta
+compilato questo sorgente lo si deve eseguire; fatto cio' si possono causare
+diversi effetti sulla vittima che normalmente portano l'user a guadagnare
+l'accesso di root. Bene, con le ragazze il discorso e' piu' o meno lo stesso;
+esistono numerosi exploit: i piu' classici comportano l'invio di fiori, baci
+perugina et similae. Il fatto che esistano questi exploit NON vuol dire che
+si possano effettivamente usare; infatti l'esperienza mi insegna (indovinate
+con chi?) che esistono "sistemi" patchati che in genere accettano l'invio di
+questi comandi che dovrebbero garantire un accesso come amministratore di
+sistema che poi invece non avviene. Quindi il mio consiglio (e anche del pig)
+e' quello di girare continuamente su rootshell.com alla ricerca del bug che
+vi permetta di hackerare la tipa per cui sbavate.
+
+Ora, dopo aver letto fino a qui vi sarete resi conto che le donne e internet
+sono piu' simili di quanto avreste mai osato immaginare... ecco spiegato
+perche' c'e' gente che fa' hacking...
+
+Se siete una gentile esponente del sesso femminile non dovete offendervi,
+tutto quello che ho scritto e' stato fatto al puro scopo di divertire il
+lettore/lettrice; se siete alla ricerca di qualcuno che vi insegni qualche
+tecnica di hacking potete tranquillamente rivolgervi al sottoscritto, se
+magari avete delle amiche beh, io ho amici hackers,  chiaramente sarei felice
+di provare prima qualche exploit (si pronucia proprio exploit ;)))
+
+Attenzione esiste un'altra modalita' di hacking non trattata fino ad ora,
+questo tipo di "lavoro" si chiama bruteforcing.
+
+Il bruteforcing consiste nel prendere e tentare tutte le combinazioni di
+parole possibili alla ricerca di una passwd (questo per quanto riguarda un
+sito remoto) oppure nel prendere e usare violenza su una fanciulla allo scopo
+di intersecare i peli pubici (e non solo quelli). Questo metodo e' molto
+rischioso e vi potrebbe causare seri guai con la legge, infatti le persone
+che fanno cio' solitamente vengono duramente punite e anzi non vengono
+nemmeno chiamate hacker, ma stupratori... mi raccomando NON usate questo
+metodo, piuttosto pagate e compratevi una shell (occhio, le shell comprate
+sono rischiose, usate sempre il firewall, mi raccomando).
+
+Alcuni di voi leggendo questa guida potrebbero leggere di persone/cose di cui
+ignoravate l'esistenza, eccovi un breve elenco dei chi e dei perche':
+
+pIGpEN: uno psicopatico alla ricerca di una ragazza
+Dr_Slump: unknow; e' impossibile definirlo
+Compuserve: il piu' grande provider italiano ;))))) (se poi mi arrestano io
+            ti ammazzo pig ;))))
+
+MaNdrAkE
+
+Final THX:
+EleSSaR^ : Dove le prendi certe ricette???
+Dr_Slump : Da grande (se mai lo diventero') spero di diventare come te'
+pIGpEN   : Spero tu non faccia la mia fine
+ins4ne   : Una sola parola GRANDE
+Marduk	 : 2 parole, che pazienza thx 1000
+Hal	 : Per il Tocai
+DevilKiss: Certo che pure tu hai avuto una bella esperienza....
+^JJ^     : Per le numerose infoz
+Satana 	 : (proprio lui, il signore del male--> Il male e' la mia fede, Satana
+           il mio Signore)
+
+== fonte: bfi summer 98 ==
+
+The Raven
+Since `82

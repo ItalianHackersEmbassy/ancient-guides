@@ -1,0 +1,184 @@
+        \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  			INTRODUZIONE ALL'HACKING
+     	                    PER I PRINCIPIANTI 
+            \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                                        di Techno Knight
+
+
+Dunque per prima cosa levatevi dalla testa di entrare nel computer della NASA
+per leggere tutti i documenti segreti sugli alieni, o in quello del Pentagono
+per scatenare la terza guerra mondiale. Purtroppo gli addetti alla sicurezza
+di questi sistemi "importanti" non sono stupidi come erano una volta (si dice)
+e l'obbiettivo iniziale di un hacker principiante sara' quello di procurarsi
+illegalmente uno shell account da root su uno sperduto server di taiwan.
+Per poter entrare in un sistema avete bisogno di username e password.
+La lista di tutti gli userid con relative password dovrebbe (e sottolineo
+_dovrebbe_) trovarsi nel file /etc/passwd (mi riferisco a sistemi Unix e
+Linux, di Wintendo ennetti non voglio neanche sentirne parlare)
+
+La struttura di questo file e' la seguente :
+
+username:password:userid:groupid:informazioni:homedir:shell
+
+(ci sono ovviamente tante righe quanti sono gli shell account) 
+
+username e' il vostro "nome", la password e' la stringa che il sistema
+vi richiede per darvi l'accesso, l'userid e' un numero che vi identifica
+e groupid e' il numero del vostro gruppo. Nel campo seguente ci sono 
+le informazioni addizionali sull'utente, homedir e' la directory home (quella
+dove finite appena entrate nel sistema) e shell e' la shell che avete.
+Una shell e' un'interprete dei comandi (come il command.com sotto dos), che
+vi permette di "comunicare" con il sistema. In realta' in questo campo
+potrebbe anche esserci il nome di un altro programma. In questo caso non
+avete il controllo del sistema, ma automaticamente, appena entrate, viene
+eseguito quel programma (e' il caso degli ISP account, voi vi collegate
+al loro server tramite la linea telefonica, ma non avete una shell)
+
+Il "padrone" del sistema si chiama di solito root, e puo' fare quello
+che cazzo vuole lui (anche se i permessi non glielo consentirebbero)
+
+Infatti ogni file ha dei permessi di lettura, scrittura ed esecuzione...
+
+es.    - rwx r-- --- 
+
+Il primo trattino serve solo per identificare le directory (in questo caso
+dovrebbe essere d, quindi questa non e' una directory). I primi 3 permessi
+(rwx) indicano che il proprietario del file puo' accedere al file in
+lettura (r), scrittura (w), e puo' eseguirlo (x). Gli altri tre permessi
+indicano cio' che puo' fare chi appartiene allo stesso gruppo del proprietario
+(vedete che serve il groupid), in questo caso possono solo leggerlo.
+Gli ultimi 3 permessi sono quelli di tutti gli altri utenti, che in questo
+caso non possono fare proprio niente.
+
+
+Quindi basta leggere l'/etc/passwd direte voi, piu' ingenui che mai :)
+No, invece, perche' ci sono 2 problemi :
+
+1) per accedere all'/etc/passwd dovreste essere gia' sul server, e come
+   ci entrate se non conoscete le password ???
+
+2) le password sono criptate, con un metodo oneway (cioe' non e' possibile
+   risalire alla password originale; quando voi inserite la vostra password
+   il sistema non fa altro che criptarla con la stessa chiave di quella
+   scritta nell'/etc/passwd e confrontarla con essa.
+
+In realta' c'e' anche un altro problema, ma questo lo vedremo dopo, andiamo
+con calma....
+
+Per risolvere il primo problema potete :
+
+1) Prendervi una shell gratuita (ci sono molti server che le danno, ma di solito
+   non ci si puo' fare un cazzo), fregarvi il file delle password, scaricarvelo
+   sul vostro computer.
+
+2) Sfruttare un bug, come quello del phf, o di altri script cgi
+   Quello del phf e' forse il bug piu tristemente famoso agli amministratori
+   di sistema. Infatti permette di vedere il file di password inserendo
+   come url in un browser : 
+
+   http://sitovittima/cgi-bin/phf?Qalias=x%0a/bin/cat%20/etc/passwd 
+                                                               
+   Il punto interrogativo serve, nella convenzione usata sul web, per
+   indicare che stiamo per passare dei parametri al phf, mentre %20
+   indica uno spazio. In questo modo diciamo al phf di eseguire per noi
+   un cat al file di password, cosi' da visualizzare tutte le righe.
+   Se il phf gira con privilegi da root possiamo fare di piu' : aggiungere
+   un nuovo account, senza password, facendo eseguire al phf il comando
+
+   echo "elctrppr::0:0::/:/bin/sh" >> /etc/passwd
+ 
+   (ricordate di sostituire gli spazi con %20)
+
+   In questo caso ci bastera' telnettare al server e inserire elctrppr 
+   come username. Userid 0 e groupid 0 equivalgono ad avere tutti i
+   privilegi (come l'amministratore del sistema).
+
+
+Il secondo problema invece si risolve con un password cracker, cioe' un programma
+che cripta una serie di parole comunemente usate come password (wordlist) con
+la chiave delle password del file che avete fregato, e le confronta con esse
+per trovare una o piu' password valide. I password cracker piu' famosi
+sono john the ripper e crackerjack.
+Si possono utilizzare anche altri metodi oltre a quello della wordlist. 
+Ad esempio con john the ripper si puo' usare il metodo single (cioe' controlla
+se le password sono uguali o simili all'username), che e' senz'altro il piu' 
+veloce se gli utenti del sistema non hanno mai sentito parlare di qualcosa
+chiamato passwordcracking, e il metodo incremental, cioe' prova tutte le
+combinazioni di caratteri, seguendo delle regole che permettono di provare
+prima quelle piu' probabili : questo e' senz'altro il metodo che ha piu'
+possibilita' di successo, ma ha lo svantaggio di richiedere troppo tempo
+se le password sono davvero strane (qualche millennio piu' o meno :-(  )
+Dunque le wordlist sono una via di mezzo e possono risultare molto utili
+soprattutto se si conosce il tipo di user del sistema, potendo quindi
+selezionare una wordlist appropriata (ce ne sono ad esempio con nomi che
+hanno a che fare con la mitologia, con nomi inerenti al rock, ecc., nonche'
+liste che sono veri e propri dizionari senza definizioni di una specifica 
+lingua)
+
+
+Le password ultimamente vengono spesso shadowate, cioe' nel file /etc/passwd,
+accessibile in lettura a tutti gli utenti, ci sono delle x o degli asterischi
+al posto delle password, che sono invece in un altro file (il cui nome dipende
+dal sistema operativo, in linux dovrebbe essere /etc/shadow) accessibile
+solo da root. Per questa ragione molti preferiscono exploitare un bug per
+ottenere il root, senza passare per il passwordcracking. Un exploit e' un
+programma, o una tecnica, che sfrutta un bug, cioe' un errore di un programma.
+Se il programma gira con privilegi da root (cioe' se lo ha lanciato il root)
+quel programma avrebbe la _possibilita'_ di darvi privilegi da root, o di
+eseguire qualsiasi comando. Ovviamente l'amministratore del sistema non
+lancera' mai un programma creato per dare il root a tutti gli user, ma per
+fortuna ci sono in giro molti programmi buggati, che pur svolgendo il 
+loro compito, hanno degli errori (enormi pecche di programmazione) che permettono
+a chi li sa sfruttare (o a chi ha un programma di exploit fatto da qualcun altro)
+di fare cose per le quali non sono stati progettati (come dare il root) 
+Per una lista di tutti i bug con relativi exploit il punto di riferimento e'
+rootshell (http://www.rootshell.com) con tutti i bug scoperti ordinati per
+mesi e anni, con una funzione di ricerca.
+Quindi, se non volete lavorare con il file di password (che magari potrebbe
+essere inaccessibile), non vi resta che prendere una shell gratuita e poi studiarvi
+bene il sistema, segnarvi da qualche parte tutti i processi che girano con
+privilegi da root, e poi vedere su rootshell se qualcuno di essi e' buggato, 
+e come exploitarlo.
+Anche se non siete ancora dentro potete comunque vedere quali programmi server
+girano, facendo un portscan. In pratica si tratta di connettersi a tutte le porte
+per vedere quali accettano una connessione. Ovviamente non si dovra' fare 
+manualmente, ma ci si puo' fare un programma che esegua questo compito al posto
+nostro (con una ventina di righe ve lo fate), oppure prendere uno dei tanti
+gia' esistenti. Ad esempio diciamo al programma di portscanning di provare 
+tutte le porte del server dalla 1 alla 600.
+Mettiamo che tra le altre trovi aperte la 21, la 23, e la 25.
+Sappiamo che queste porte sono particolarmente interessanti.
+Sulla 21 infatti ci dovrebbe essere un server ftp, sulla 25 uno per la posta
+elettronica (eheh, speriamo send-mail), mentre la 23....devo spiegarvi davvero
+a cosa serve la 23 ? :)
+Dunque ci colleghiamo alla 21 e alla 25 e vediamo quali server ci sono (ad
+esempio sendmail, appena ci colleghiamo, ci salutera' indicandoci la versione)
+Procedendo cosi' cerchiamo di acquisire dall'esterno tutte le informazioni 
+possibili. Spesso poi, per sfruttare questi server, dovremo conoscere il
+protocollo usato. Ad esempio se stiamo utilizzando un server ftp, get
+servira' a prelevare un file, send a spedirlo, ecc.
+Questo e' utile perche' in questo modo possiamo comunicare con il server senza
+le restrizioni imposte da un programma "convenzionale" (a quanto mi risulta
+nei negozi non vendono programmi che permettono di spedire fakemail) 
+
+		 
+						
+
+Un'ultima tecnica (una pazzia ormai, anche se la mia prima shell l'ho ottenuta
+proprio con questo) e' il guessing, cioe' indovinare la password. Per prima
+cosa si possono provare varie combinazioni user/pass come root/root, root/system
+sys/sys, sys/system, daemon/daemon, uucp/uucp, ecc. ma ovviamente non funzioneranno
+MAI. Dunque dovrete usare il finger (sperando che non abbiano levato il servizio
+sulla porta 79) per ottenere informazioni sugli utenti e i loro username, per
+poi cercare di indovinare la password. 
+Per avere una lista di tutti gli utenti collegati, con i loro username e
+le informazioni addizionali, scrivere :  finger @servervittima
+Potete anche telnettare al server sulla porta 79, e vi ritroverete con una
+connessione che si aspetta un input da voi. Premendo invio avrete lo stesso
+risultato di prima, mentre scrivendo l'username di un utente avrete le
+informazioni specifiche. Nel caso di quella mia prima shell gli utenti 
+utilizzavano il nome (tutto minuscolo) come username e il cognome (sempre tutto
+minuscolo) come password.
+
+
+                                Techno Knight

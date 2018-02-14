@@ -1,0 +1,115 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+
+Come truccare uno scooter con meno di 300.000 lire.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Quante umiliazioni avete subito ad un semaforo?
+Il vostro scooter non si muove se qualcuno non lo piglia a calci?
+No problem.....con 270.000 circa potrete avere una skeggia di ripresa!
+Quanti di voi hanno sempre sognato di elaborare il proprio scooter
+spendendo pochi soldi? Volete far si che il vostro scooter si alzi su
+una ruota appena girate la manopola del gas su 1/3? Vi dico subito che
+questo e' stato testato sul mio motorino con esiti + che positivi ed
+anche se non sono un meccanico professionista non ho avuto molte
+difficolta'!
+
+
+ATTENZIONE:
+Le modifiche sotto riportate sono valide per motorini originali o
+meglio che non hanno mai subito modifiche (un modello base insomma)
+
+O MEGLIO "COME COSTRUIRE UN AEREO"
+
+MOTORE:
+Smontate testa, cilindro e pistone dal motorino; appoggiateli su un
+panno e puliteli, lavateli con un qualsiasi prodotto e asciugateli bene
+poi prendete una lima molto fine ed iniziate ad appiattire la testa del
+pistone in modo da farla diventare piatta. Prendete il cilindro e
+sempre con la lima allargate i travasi e le luci di scarico (sono buchi
+semirettangolari nelle pareti del cilindro). Adesso date una guardatina
+all' albero motore e controllate che abbia la gabbia a rulli (se no
+provvedete a sostituirla). Rimontate tutto e se volete fare una cosa
+fatta bene sostituite la candela con una di grado termico superiore di
+1-2 punti.
+
+CARBURATORE:
+Allora: stesso procedimento del motore per la pulizia, ma e' necessario
+farlo molto + accuratamente e soffiando dell'aria compressa (se ce l'
+avete e' meglio) in tutti i buchi e che trovate. Guardate il numero del
+getto del carburatore (una grossa vite color oro) che dovrebbe essere
+un 74-76 e sostituitelo con uno di 10 punti + grosso.
+
+PACCO LAMELLARE:
+E' quell'oggetto di forma quadrata con attaccate delle lamelle che si
+trova tra i collettore e il cilindro. Quindi svitate le lamelle del
+pacco e sostituitele con quelle da corsa che sono + leggere e meglio
+ancora se le prendete in carbonio.
+
+COLLETTORE DI SCARICO:
+E'il tubo che collega il motore al carburatore e puo' essere o di
+plastica dura o di ferro: dovete solo sostituirlo con uno + grosso (ma
+sembre con l'imboccatura del 12).
+
+FILTRO:
+Sostituitelo con uno da gara: ce ne sono di tutti i tipi, vi consiglio
+di sceglierlo a seconda frequenza con cui lo usate in una determinata
+stagione. Adesso vi spiego meglio: da ottobre a maggio prendete un
+filtro abbastanza chiuso (anche quello in metallo va bene) mentre per
+il periodo che va da giugno a settembre potrete prendere un filtro
+aperto (vedi quelli in spugna).
+
+VARIATORE:
+Sostituitelo con uno da corsa quindi + leggero.
+
+MASSETTE:
+Sostituitele con altre da 3 g 
+
+CINGHIA:
+Sostituitela con una da corsa + resistente e + leggera
+
+FRIZIONE:
+Sostituitela con una "regolabile" e lasciatela con le impostazioni di
+default
+
+MOLLA DI CONTRASTO:
+Fa parte della componentistica della frizione. Dovete sostituirla con
+una Malossi (colore ROSSO) o se non la trovate, prendete la + dura.
+
+MOLLETTINE:
+Fanno parte della componentistica della frizione.Prendete le + dure che
+riuscite a trovare.
+
+CARTER:
+E' il coperchio che avete smontato per accedere al variatore e alla
+frizione. Dunque qui le cose si complicano: dovete fare 4 buchi in alto
+a sinistra (tre del diametro di 2.6 cm e il quarto di 2 cm) e tre buchi
+sulla destra (due del diametro di 1.8 cm e uno di 1 cm). Poi copriteli
+semplicemente con un po di colla e un po di spugna (ma attenzione;
+mettete la colla attorno al buco e non sopra... senno' non servira' a
+niente).
+
+COSTO INDICATIVO DEI PEZZI DI RICAMBIO NECESSARI A QUESTO LAVORO:
+-Cinghia     10.000
+-Molla       10.000
+-Mollettine  10.000
+-Frizione   120.000
+-Getto        1.000
+-Lamelle     10.000
+-Massette    10.000
+-Variatore   50.000
+-Filtro      20.000
+-Collettore  30.000
+
+Totale      270.000
+
+== Fonte: by PiNbALL ==
+
+The Raven
+Since `82

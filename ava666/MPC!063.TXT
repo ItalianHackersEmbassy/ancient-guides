@@ -1,0 +1,96 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- REMAILER: ECCO UNA FACILE GUIDA #2 -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In questo file ho descritto alcune 'opzioni accessorie' di molti Remailer.
+
+Iniziamo con i 'Cutmarks'. Si usano aggiungendo la seguente linea:
+
+Cutmarks: *-*-*-*
+
+(*-*-*-* e' un esempio, ma puo' essere sostituito con qualsiasi carattere)
+Il risultato sara' che il destinatario non ricevera' cio' che c'e' scritto
+dopo '*-*-*-*'). Lo scopo principale di questa opzione e' di non far pervenire
+La firma che spesso molti Mail-server mettono automaticamente in coda alla
+lettera (es. MAILEXCITE). 
+
+Ecco come si presentera' la nostra lettera prima di essere spedita:
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+To: remailer@replay.com
+Subject: 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+::
+Request-Remailing-To: pinco_pallino@hotmail.com
+Cutmarks: *-*-*-*
+
+< succhia succhia succhia
+< CIAO VECCHIO LAMER,
+< COME TE LA PASSI?
+< slurpa slurpa slurpa
+
+*-*-*-*
+    saluti da 
+/---------------\
+| CRAZY  RABBIT |
+\---------------/
+
+
+ed ecco come arrivera' al destinatario:
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+From: remailer@replay.com
+Subject: (none)
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+< succhia succhia succhia
+< CIAO VECCHIO LAMER,
+< COME TE LA PASSI?
+< slurpa slurpa slurpa
+
+
+Niente male vero? Ora vediamo la mia opzione preferita...
+Si chiama "Latent-Time" e permette di far mantere la nostra lettera in giacenza
+sul server per un tempo determinato in modo da ostacolare ulteriormente la
+eventuale individuazione del mittente. Vediamo come funziona:
+Bisogna semplicemente aggiungere "Latent-Time:" seguito da un "+" ed dal tempo
+che deve restare sul server (minore di 24 ore) nella linea successiva a quella
+di "Request-Remailing-To:". Esempio:
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+To: remailer@replay.com
+Subject: 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+::
+Request-Remailing-To: pinco_pallino@hotmail.com
+Latent-Time: +5:30
+
+< succhia succhia succhia
+< CIAO VECCHIO LAMER,
+< COME TE LA PASSI?
+< slurpa slurpa slurpa
+
+
+
+In questo caso il server aspettera' 5 ore e 30 minuti prima di rispedire il
+messaggio al destinatario.
+
+
+P.S. Vedi il file precedente (mpc!062.txt) come introduzione e completamento
+     a questo file. "Forse" questo manuale continuera' su di un'altro file.
+     
+
+ Å        Å
+ ³ AVA666 ³
+ ~~~~~~~~~~

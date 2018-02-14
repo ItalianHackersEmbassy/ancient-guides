@@ -1,0 +1,70 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- COSTRUIRE UNA BOMBA A MANO -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Per costruirla vi serviranno:
+- Un tubo di ferro lungo circa 20 cm e col diametro di circa 9
+- Due dischi di ferro del diametro uguale a quello del tubo
+- Un saldatore
+- Un trapano
+- Dello stagno per saldare
+- Dello zucchero
+- Del radisol (un tipo di diserbante)
+- Una miccia
+
+<COME COSTRUIRLA>
+^^^^^^^^^^^^^^^^^
+Saldate un disco di ferro al tubo e aspettate che la saldatura si sia
+stabilizzata. Riempite il tubo con una miscela di radisol e zucchero (Provate
+varie proporzioni dei due componenti finchŠ non trovate quella che vi
+soddisfa).  Importante: per raggiungere l'effetto si deve usare proprio il
+radisol, un qualsiasi altro diserbante NON E' ADATTO.
+Perforate l'altro disco di ferro in modo che rimanga un buco appena
+sufficiente a far passare la miccia.
+Fateci passare la miccia assicurandovi che risulti abbastanza lunga.
+Mettete il disco con la miccia dentro al tubo. (Naturalmente Š necessario che
+la miccia tocchi la miscela contenuta nel tubo, altrimenti la bomba non
+funzioner…). Saldate il disco al tubo.
+Per farla esplodere accendete la miccia, lanciate la bomba e state riparati.
+
+<INTERESSANTI VARIAZIONI SUL TEMA>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Potrete ottenere una bomba incendiaria utilizzando del napalm (MPC!047.TXT)
+al posto della miscela di radisol+zucchero.
+
+
+>UPGRADE #1 - by MasterdreaM & Avatar<
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In mancanza del 'Radisol' potete utilizzare un sostituto a base di 'Clorato
+di Sodio' al 40% (Wow!!!). Lo vendono a pacchi da 10 Kg.  Le proporzioni
+ideali, secondo >MasterdreaM<, sono di 80% di Diserbante e 20% di zucchero.
+
+
+>UPGRADE #2 - by AVA666<
+^^^^^^^^^^^^^^^^^^^^^^^^
+Qualcuno ha protestato perche' la bomba e' stata chiamata 'Bomba a Mano', quando
+non si tratta di una vera e propria "BOMBA A MANO". Cio' che MasterdreaM voleva
+dire con BOMBA A MANO e' semplicemente 'una bomba che puo' essere lanciata'.
+Altre 'critiche' sono giunte per il fatto che bisogna saldare il disco al tubo
+quando quello e' pieno di composto esplosivo. Beh, effettivamente e' pericoloso
+('azzo se lo e'...), ma non ci sono problemi (spero), se la saldatura avviene
+all'esterno del tubo.
+
+_______________
+File scritto da
+_______________
++ MasterdreaM +
+^^^^^^^^^^^^^^^
+e facente parte
+del COOKBOOK di
+
+  Å        Å
+  ³ AVA666 ³ 
+  ~~~~~~~~~~

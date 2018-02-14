@@ -1,0 +1,137 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- NETBUS & BACK ORIFICE -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Esperimento provato, e funziona nel 90% dei casi.
+
+COS'E' UN TROJAN:
+
+Un trojan e' il cosiddetto 'cavallo di troia', dalla mitologia greca (Ulisse
+si sarebbe nascosto in questo enorme cavallo si legno, costruito da lui stesso,
+questo cavallo sarebbe stato donato alla citta' di Troia e la notte Ulisse
+con i suoi compagni, sarebbero usciti e avrebbero sterminato la citta'...).
+Lasciamo perdere la mitologia.
+Allora, questo Trojan, si insinua nell'hdd altrui, e quando questo si collega
+ad internet, lascia una porta aperta (quella standard e' la #12345) E l'utente
+che e' infetto, se non ha apposite difese e sistemi d'allarme, di cui poi 
+parlero', non si potra' mai accorgere di nulla, o almeno quando se ne
+accorgera', non sapra' chi l'ha mandato e nemmeno chi si e' collegato.
+Quindi, non dovreste correre alcun rischio, a meno che non vi mettiate a 
+scrivere come degli stupidi delle frasette sul computer altrui del tipo:
+IO SONO S. IL TUO NEMICO PEGGIORE, TI DISTRUGGERO', e' infantile...pero' 
+divertente e spassoso (e' comunque un reato). Anche se alla fine rischierete
+semplicemente una K-line, e nient'altro. (se state utilizzando il NetBus o
+trojan che sia, in un ambito della chat) comunque il mio consiglio e' quello
+di spoofarvi sempre e comunque.
+
+UTILIZZO E COMPATTAMENTO:
+
+Per l'utilizzo di questi trojan bisogna sfruttare i "bug" di alcuni programmi,
+io ho scelto come programma il WinZip 7.0
+Creare dei file come se facessero parte di un programma, del tipo file.ex_
+oppure appl.bi_ (insomma troncateli :-} ) e poi aggiungeteli al file che
+andremo a creare. 
+Dopo aver creato questi file, creare anche una piccola guida in inglese e
+scriveteci qualcosa di sensato, in modo da potersi mascherare meglio, poi ora
+arriva il bello.
+Zippare il file .exe (del trojan) e rinominarlo come Setup.exe, in modo che
+una volta zippato, questo, venga subito installato, senza chiedere nulla, la
+persona a cui avete mandato questo backdoor, non dovrebbe accorgersi di nulla,
+visto che non entrera' lui direttamente in contatto con il backdoor. 
+
+ES:
+
+**FILE ORIGINALI DEL NetBUS**
+-NetBus.exe (Programma netbus, per il collegamento)
+-Patch.exe (da non aprire!!!!)
+
+Rinominare "Patch.exe" in "setup.exe"
+
+Poi creare un file di guida in inglese e chiamarlo Help.txt
+
+Creare altri file .ini e .ico e file troncati (da installazione) tipo .mz_ .bi_
+.nf_ ...sbizzarritevi
+
+Ora compattate il tutto e lasciatelo cuocere per 30 minuti a fuoco lento...no,
+non cuocetelo scherzavo :)
+Dicevo, compattatelo e aspettate il momento migliore per attaccare.
+
+CONSIGLI DELL'UTILIZZO TRAMITE CHAT:
+
+Prendete questo file che avremo nominato <programma>.zip e creiamo un file di
+auto-scompattamento ora, una volta che avete il file .exe, siete a meta' dell'
+opera: Entrate in un canale del tipo: #sesso #sex (o cagate varie) dove si
+mandano un sacco di file e la maggior parte delle volte i "send" vanno a buon
+fine, se lo fate la sera tardi magari trovate parecchia gente che accetta
+file.....solitamente se avete nomi di donne i "maschi" accettano,
+volentieri...ma questa e' un'altra storia :)
+ora che avete mandato il file...siete pronti per navigare, eseguite il suo DNS,
+e siete pronti per navigare...con lui.
+
+UTILIZZO TRAMITE ALTRI MEZZI:
+
+Gli altri mezzi possono essere: 
+-Per Mail
+-Per Dischetto (hmmm, siete proprio bastardi!, magari ad un vostro amico...
+ divertente! :) )
+
+Per mandarli attraverso mail ci sono molti piu' problemi, perche' ovviamente
+(credo), l'utente prima di scaricare posta sospetta con allegati eseguibili
+la scannerizza all'antivirus, e se la becca...pregate di non aver utilizzato
+il vostro account...senno' siete dei cretini! Per questo createvi degli
+account "fantasma" a dei siti del tipo www.hotmail.com ; www.rocketmail.com
+etc etc, ...evitate il vostro vero nome...hmmm...consiglio!
+Dopodiche', mandate il tutto all'indirizzo specifico, e...se Dio vuole,
+dovrebbe funzionare!
+
+Per dischetto, beh, se siete amici, magari andate a casa sua, gli accendete il
+pc, tirategli giu' il suo bell'antivirus monitor...e fate i bastardi quanto
+piu' potete!!!!
+
+RICORDATE:
+
+Per infettare (e per essere infettati), da questi trojan, ci deve essere sempre
+una "collaborazione" da parte dell'altra persona, non nel senso che deve sapere
+che gli state installando il netbus o altri trojan, ma nel senso che e' lui che
+deve accettare, quindi, non siate mai buzzurri, ma anzi cordiali rispettate la
+netiquette! (dopodiche' farete i bastardi a sufficienza), spero possa bastarvi!
+
+Questo e' quanto
+               
+                   Saluti
+                     
+
+                   
+
+                    __..--::=={{@}} DawCreek {{@}}==::--..__
+
+
+
+
+              Just call me...
+
+                                          ___               ___    
+                      |¯¯¯¯¯¯¯¯\  /¯¯¯¯¯¯\\  \             /  /                               
+                      |  |¯¯¯\  \/  /¯¯\  \\  \           /  /                
+                      |  |    |  | |    |  ||  |___  ___ |  |
+                    |¯¯¯¯¯¯|   \ | |____|  ||  || |  | | |  |
+                     ¯|¯¯|¯    / |  ____   |\  \\  \/  //  /             
+                      |  |    |  | |    |  | \  \\ /  //  /
+                      |  |___/  /  |    |  |  \  \/  //  /        
+                      |________/|__|    |__|   \    /   /    
+                                                ¯¯¯¯ ¯¯¯                        
+                         
+
+GRAZIE A 'DawCreek', L'AUTORE DI QUESTO FILE
+
+    by
+Å        Å
+³ AVA666 ³
+~~~~~~~~~~
+

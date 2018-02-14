@@ -1,0 +1,45 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Coefficienti di potenza.
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+coefficenti di potenza usati in campo militare:
+GELATINA ESPLOSIVA 100
+T4 90
+PENTRITE 80
+TRITOLO 50
+FULMINATO DI MERCURIO 20
+POLVERE NERA 7
+
+coefficenti di potenza usati in campo civile :
+TRITOLO,ACIDO PICRICO,DINAMITE,NITROCELLULOSA 1
+GELATINA ESPLOSIVA 0.7
+C2,C3,T4,PENTRITE 0.8
+TETRYTOL,TRITOLITE,PENTROLITE,PETN 0.9
+NITROAMIDI,DINAMITE B ,1.2
+ESPLOSIVI AL NITRATO D'AMMONIO O CLORATO DI POTASSIO 1.4
+POLVERE NERA DA MINA 2.3
+
+in parole povere 2.3 Kg di polvere da mina equivalgono ( teoricamente) a Kg 
+1 di tritolo
+tericamente perchè queste proporzioni sono rilevate in base al volume finale 
+dei gas prodotti. cambiando la velocità di esplosione cambia anke l'effetto 
+distruttore (effetto brisanza) percui ameno che i 2.3 Kg di polvere non 
+siano messi dentro un bello e sano tubo di ghisa non distruggeranno mai come 
+un kilo di tritolo
+dalla mia esperienza personale posso dirti che un kilo di polvere da sparo 
+comune ( quella delle fontane )messa in un tubo di ghisa spesso 5 mm 
+distrugge come circa un etto di tritolo
+la prossima volta ti mando le tabelle dei materiali da distruggere
+
+
+by LUTHER BLISSET
+
+The Raven
+Since `82

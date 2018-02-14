@@ -1,0 +1,16 @@
+                            -------------------
+                              CASSE  ESPLOSIVE  
+                           ----------------------
+
+Questa variante della bomba ad inniezione elettronica mi è venuta in mente
+dopo aver costruito la bomba-playstation.
+il procedimento è identico, solo che questa volta io ho preferito
+usare l'alimentatore del sub invece della lucetta davanti alle casse.
+Perchè così la bomba scoppia non appena si attacca la spina.
+per la preparazione invece... andatevi a leggere il file sulla ps2 
+esplosiva e apportate le modifiche necessarie... oggi non mi va proprio 
+di scrivere e poi se non sapete usare in modo 
+diverso una tecnica già illustrata  vi consiglio di lasciar
+perdere questo cookbook ed usare qualcosa di diverso... che ne so le miccette...
+
+SNAKE32  

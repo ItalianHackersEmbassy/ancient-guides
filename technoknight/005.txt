@@ -1,0 +1,144 @@
+                                             ีอออออออออออออออออออออออออออออออธ
+                                             ณ  :::::::::::::::::::::::::::  |
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Titolo: Corso di C - IV Parte ณ
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ di : Techno Knight            ณ
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Scritto il  : 20/5/99         ณ
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Pericolo: Ûฐฐฐฐฐฐฐฐฐ          ณ
+                                             ิอออออออออออออออออออออออออออออออพ
+
+             ___                                           
+            / __|
+           ณ /
+           ณ \__       _  __    __
+            \___|     ณ ณ \ \  / /    
+                      ณ ณ  \ \/ /     
+                      |_|   \__/
+
+                                        
+   CORSO DI C - IV PUNTATA - by Techno Knight
+
+                
+                                                                 
+PREMESSA
+--------
+Al contrario delle precedenti 3 puntate questa non la troverete su Newbies
+ma su Vana Imago, perch purtroppo N0body88 (che mi ha convinto a scrivere
+le prime puntate di questo corso) non  + in rete per dei problemi (le
+solite voci dicono che sia rinchiuso in una prigione di massima sicurezza
+negli Stati Uniti), dei nuovi "coordinatori" del gruppo Newbies non conosco
+nessuno e nessuno mi ha chiesto la IV parte del corso, ma molta gente su
+irc mi ha detto che lo stava seguendo, quindi ho pubblicato cmq questa
+quarta puntata.
+
+Nella III puntata ho cominciato a parlare dei socket e come si usano per
+applicazioni client. Ovviamente adesso per finire di spiegare questo
+argomento devo insegnarvi ad usarli per applicazioni server.
+Per seguire questa puntata dovrete aver letto le precedenti, perch non
+mi soffermer• + sulla sintassi del linguaggio ne sulle cose di base
+riguardanti i socket, che dovreste gi… aver imparato dalla scorsa lezione.
+
+Allora un'applicazione server dovr… "ascoltare" su una porta aspettando
+una connessione da parte di un client. Quando un client cerca di collegarsi
+il server dovr… accettare la connessione e poi duplicare il processo :
+da una parte continuer… ad ascoltare sulla porta per ulteriori connessioni,
+dall'altra si preoccuper… di portare avanti la comunicazione con il client
+gi… collegato (per duplicare il processo useremo la funzione fork(),
+includendo nel nostro programma unistd.h)
+Allora, per prima cosa creiamoci un socket (beh spero che avrete letto la
+III puntata, se non l'avete fatto leggetela), poi useremo la funzione
+bind sul socket.
+
+Sintassi:
+                
+        int bind(int socket, struct sockaddr *indirizzo, int lunghezza);
+
+socket  il socket da utilizzare (quello che vi siete creati precedentemente),
+indirizzo  la struttura sockaddr che contiene i parametri del socket
+lunghezza  la dimensione di indirizzo.
+Se si verifica un errore ritorna -1.
+
+La funzione listen invece serve per mettere in ascolto il socket sulla porta
+specificando il numero massimo di connessioni contemporanee che si possono
+accettare.
+
+Sintassi:
+
+        int listen(int socket,int mass);
+
+socket  ovviamente il socket e mass il numero massimo di connessioni da
+accettare.
+
+Quando arriver… una richiesta di connessione dal client dovremo accettarla
+e per farlo usiamo la funzione accept.
+
+Sintassi:
+
+        int accept(int socket,struct sockaddr *indirizzo, int lunghezza);
+
+socket  il socket che stiamo usando, indirizzo punta a una struttura sockaddr
+che verr… riempita con i dati del client che si sta collegando al nostro
+server e lunghezza la dimensione di indirizzo.
+Questa funzione ritorna un valore che  il descriptor del nuovo socket
+con il quale possiamo comunicare con il client.
+E come al solito ecco l'esempiuccio.
+Questo  un programmino (eheh siate clementi, l'ho fatto solo per farvi
+un esempio :) che funziona come una specie di segreteria.
+Per compilarlo semplicemente "cc server.c -o server"
+Per usarlo (ihihih) : "server [messaggio] [porta]"
+Il programma ascolter… sulla porta [porta] e a chi si collegher… dar…
+il messaggio [messaggio], poi aspetter… un input, lo scriver… nel file
+/tmp/azzzz e chiuder… la connessione per aspettarne altre.
+Es. server "Lascia un messaggio stronzone." 1224
+E' in grado di gestire una sola connessione alla volta, per gestirne +
+contemporaneamente dovete solo usare il fork in modo che si duplichi
+ogni volta che accetta una nuova connessione.
+                                
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <unistd.h>
+#include <stdio.h>
+int s,s2;
+char io[200];
+struct sockaddr_in me;
+struct sockaddr_in te; 
+struct hostent *hp;
+char stringa[1024],registra[1024];
+FILE *ilfile;
+
+main(int argc,char *argv[]){
+
+	bzero(me,sizeof me);	
+	gethostname(io,199);
+	hp = gethostbyname(io);
+        me.sin_family=hp->h_addrtype;
+        me.sin_port=htons(atoi(argv[2]));
+	strcpy(stringa,argv[1]);
+	strcat(stringa,"\n\r");
+	
+	s = socket(AF_INET,SOCK_STREAM,0);
+        bind(s,(struct sockaddr *)&me,sizeof me); 
+	listen(s,3);
+	for (;;){
+		s2=accept(s,NULL,NULL);
+		send(s2,stringa,strlen(stringa),0);
+		recv(s2,registra,1024,0);
+		close(s2);
+	        ilfile=fopen("/tmp/azzzz","a+");
+	        fprintf(ilfile,"%s\n",registra);
+	        fclose(ilfile);
+
+	}
+	
+}
+
+
+                                
+                        Techno Knight (techno83@freemail.it)
+                
+

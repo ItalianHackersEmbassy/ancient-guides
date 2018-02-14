@@ -1,0 +1,151 @@
+800*600 Full Screen
+
+
+  __________   _________   ______         _______    _         _________   __________   ________ 
+ |   ____   | |   ______| |      \       |   _   |  | |       |   ______| |   ____   | |___  ___|
+ |  |    |  | |  |        |  |\   \      |  | |  |  | |       |  |        |  |    |  |    |  |   
+ |  |____|  | |  |__      |  | \   \     |  |_|  |  | |       |  |__      |  |____|  |    |  |   
+ |     _____| |   __|     |  | |   |     |   _   |  | |       |   __|     |     _____|    |  |   
+ |  |\  \     |  |        |  | |   |     |  | |  |  | |       |  |        |  |\  \        |  |   
+ |  | \  \    |  |        |  | /   /     |  | |  |  | |       |  |        |  | \  \       |  |   
+ |  |  \  \   |  |______  |  |/   /      |  | |  |  | |_____  |  |______  |  |  \  \      |  |   
+ |__|   \__\  |_________| |______/       |__| |__|  |_______| |_________| |__|   \__\     |__|   
+
+
+
+[...] Il potere è l' immondizia della storia degli umani [...]
+						F. Guccini
+
+
+Eccoci giunti finalmente alla v.1 del mio cookbook (Prima c'era la 0 !) In questa versione,
+oltre alla collaborazione con Techno[k], vanto anche alcuni interventi di canc3rman (Finalmente
+un articolo di Hacking fra tanti esplosivi :)
+Inutile fare un vero e proprio Disclaimer, infatti mi sembra solo un offesa all' intelligenza 
+del lettore, dato che suona come il "Non fatelo a casa" che dicono in Tv quando trasmettono il
+Circo. Ovvio quindi che questo vuole essere solo un manuale alle reazioni più violente o 
+particolari della chimica. E' sconsigliabile provare realmente quanto descritto nei files
+seguenti; e infine, tutti i miei commenti e i miei "consigli" su come usare i composti 
+ottenuti, sono da considerare come battute. In Tv stanno dando l' ultimo singolo dei RHCP, 
+Californication, il video è una figata !
+
+
+	 __________________                                 ______     ________
+	/                  \                               /     /     \      /
+	|     lEgEnDa      |            ______            /     /       \    /
+	|                  |            \     \          /     /         |  |
+	|  H=Hacking       |             \     \        /     /          |  |
+	|  P=Phreaking     |              \     \      /     /           |  |
+	|  V=Virus Writing |               \     \    /     /            |  |
+	|  A=Anarchy       |                \     \  /     /             |  |
+	|  C=Cracking      |                 \     \/     /              |  |
+	|  N=Narcos        |                  \          /               |  |
+	|  *=Various       |                   \        /               /    \
+	\__________________/                    \______/               /______\
+
+
+
+FILE		Titolo						Autore		Tipo
+
+|001	Veleno all' Aceto					bRiGa		A
+|002	Produrre Acido Nitrico					bRiGa		A
+|003	Basta benzina, ecco l' Ammonal				bRiGa		A
+|004	Una simpatica amica, l' Astrolite			bRiGa		A
+|005	Detonate e vi sarà aperto con il C4			bRiGa		A
+|006	Se disinnescare vi sembra facile...			bRiGa		A
+|007	Sogni d'oro con il Cloroformio				bRiGa		A
+|008	Il vecchio bRiGa consiglia...				bRiGa		*
+|009	Creativi con i detonatori				bRiGa		A
+|010	Semplice esplosivo					bRiGa		A
+|011	Potenzia la tua bomba, col Fulminato di Mercurio	bRiGa		A
+|012	Fumogeni e varianti interessanti			bRiGa		A
+|013	Granate a martello, perché no ?				bRiGa		A
+|014	Guida alla reperibilità degli elementi chimici		bRiGa		A
+|015	Semplice esplosivo instabile				bRiGa		A
+|016	Un simbolo per tutti noi, la Molotov !!!		bRiGa		A
+|017	Ogni tanto gli Yankee ne scoprono una: il Napalm	bRiGa		A
+|018	Tutti sanno che il fumo fa male...			bRiGa		A
+|019	Donne, provate a struccarvi con la Nitrocellulosa	bRiGa		A
+|020	Rallegra le tue feste con la Nitroglicerina		bRiGa		A
+|021	Una delle cose più inutili, l' Ossigeno			bRiGa		A
+|022	bRiGa&McGyver						bRiGa		*
+|023	Tutti Narcocoltivatori cona la "De Sballis"		bRiGa		N
+|024	Simpatico virus						Techno[k]	V
+|025	Flashing Powder						bRiGa   	A
+|026	Black Box						bRiGa		P
+|027	La mia arma non-convenzionale preferita: lo Shocker	bRiGa		A
+|028	Guida ai siti utili					bRiGa		*
+|029	Purificare numerosi elementi chimici			bRiga		A
+|030	Fare il fumo						bRiGa		N
+|031	Guida allo sballo					bRiGa		N
+|032	Phreaking for Newbies by BsTHaCk			BsTHaCk		P
+|033	Phreaking: Trucchi e Brute Force (Yeah :)		DjPrizzo	P
+|034	Granata+Fumogeno, finalmente insieme !			bRiGa		A
+|035	Lancia-granate lancia-molotov lancia-fumogeni		bRiGa		A
+|036	Informazioni di base sui BOT			www.nonsolokick.com	H
+|037	Tutti taccheggiatori con i consigli di bRiGa		bRiGa		A
+|038	Password sgamate					bRiGa		H
+|039	Strane reazioni inaspettate				bRiGa		A
+|040	Granata a concussione personalizzabile			bRiGa		A
+|041	Thermite, buca qualsiasi cosa !!!			bRiGa		A
+
+
+I Files sono in continuo aumento, vi assicuro la qualità e la veridicità di essi.
+In ogni caso (specialmente se ne capite di elettronica) potete contattarmi, vi assicuro una
+risposta. Il mio indirizzo E-Mail è Brigadist@Libero.it e il mio sito 
+è Http://Members.xoom.it/Brigadist visitate, cliccate sugli Sponsor (Sempre meglio che dare 
+l' otto per mille alla chiesa arraffona :) e firmate il Guestbook !!!
+
+
+
+
+[...] E adesso voglio dirvi c'è chi uccide per rubare, c'è chi uccide per amore, il cacciatore
+uccide solo per divertimento, io uccidevo per essere il migliore [...]
+						F. De Gregori
+
+TnX to:
+
+Techno[k]		Ma quando cazzo ci incontriamo ???
+DjPrizzo		Good work :)
+n4rKo			Mi hai deluso, preferisci la figa alla droga ??? :)
+drug[O]			Le tue piante mi assicurano l' ispirazione...
+Koba			Hai collezzionato 2 operazioni chirurgiche indecorose :)
+Fastidio		Perche' non mi porti a Caserta ???
+matr|cs			Per la richiesta di collaborazione.
+
+
+
+fUcKz to:
+
+I pulotti		Non mi avrete vivo >:D
+I carramba		Mi avete fermato e fatto storie per una decina di canne, ma dai !!!
+Berluska		Non per un motivo specifico, ma ci va sempre bene.
+I miei			CAZZO, IO ALL' HACKMEETING CI VOLEVO ANDAREEEEEEEE :(((
+Braciola		Vendi una merda di roba !!!
+Ai prof.		Anche se mi hanno promosso...
+Alla Telekom		Immancabile !!!
+A Paola & Chiara	Adesso sto sentendo il loro pezzo per MTV, MA DATEVI AL PORNO !!!
+
+                 
+                                      La bacheca di bRiGa
+
+                  Qui raccolgo tutti i miei progetti che non ho potuto portare
+                  avanti, o per imprevisti o per incompetenza :))) Se potete
+                  aiutarmi in qualsiasi modo, contattatemi, l'indirizzo e' qui
+                  da qualche parte...
+
+
+			o Come fondere la limatura di ferro in casa
+			o Bobina di Tesla
+			o Guida ai comandi e all' installazione di Linux
+			o Bomba Atomica (Ma dai... :)
+			o Come piacere alle donne :)
+
+
+
+
+
+
+P.S.: BRIGADIST = BRIGA[nte] DIST[ratto], Perkè da pikkolo rubakkiavo le karamelle nei negozi e
+mi sgamavano sempre, kosì kiamavano i miei ke mi prendevano a kalci sulle gengive :E
+
+bYEZ aLLA pROXYMA

@@ -1,0 +1,98 @@
+                        bartx personal diary        releas 1.0
+
+ Tutto il materiale contenuto in questo articolo ha fini eslusivamente informativi ed  
+educativi. Io Bartx non mi ritengo in alcun modo responsabile dei danni causati a cose o  
+         persone dall'uso delle informazioni contenute in questo articolo.
+  Pertanto il lettore si assume ogni genere di responsabilita' per l'uso che farà delle  
+                    informazioni contenute in questo articolo.
+Siete pregati di non postare questo articolo in newsgroup e di non diffonderlo se non in  
+                                  forma originale.
+
+
+Allora:
+fino a pochi giorni fà non sapevo un cz di irc.
+premesso ciò, vi dico anche che tutto quello che combinate e non con queste info, io non
+mi sento affatto responsabile, e non voglio essere considerato tale.
+
+L'attrezzatura:
+per prima cosa vi serve un modem, un pc, una presa del telefono e, in fine, un client irc.
+Se preferite (scelta consigliata), procuratevi uno script, uno a caso và bene.  |:-)
+
+Le cose principali: 
+
+
+***********************************  configurazione  **************************************
+ Aprite la finestra option e, nella prima schermata, inserite un server (del tipo :
+irc.azzurra.it) e lasciate le potre di defoult.
+
+fatto questo inserite i dati nelle caselle sotto (non devono essere per forza "veri" |;-))
+quali e mail nome ecc...
+
+nella casella nick, dovete inserire il vostro nuovo nick, chè dopo bisognerà REGISTRARE.
+
+
+
+************************************** registrare il nick *********************************
+
+La procedura è questa:
+/MSG NickServ register (password)
+
+quindi per registrare il nick scriverete:
+ /MSG NickServ register tua_nuova_password
+
+nel caso il nick sia già registato, ne dovrete sceglere un'altro.
+Per cambiare nick scrivete:
+/nick nuovo_nick
+
+
+*********************************  comandi particolari  ****************************
+Ora che siete utenti irc a tutti gli effetti ecco un pò di comandi:
+
+/join #nome_canale                             Entra nel canale
+/nick nuovo_nick                               Cambia il nick
+/mode #chan +b nick                            Banna un nick dal canale, cioè nn lo fà +
+                                               entrare, poco efficace, basta cambiare nick
+                                               per rientrare
+/mode #chan +b *!*username@indirizzoip         Banna la mask, molto più efficace del primo
+/-b <nick>/<mask>                              Togliere il ban al nick o alla mask
+/kick #canale <nick> motivo_del_kick           Praticamente sbatte fuori un'utente. Non
+                                      impedisce di rientrare nel canale, è solo un'avviso.
+/me messaggio                                  Manda un messaggio di questo tipo: 
+                                                         tuo_nick testo del messaggio
+/mode #canale +o <nick>                        Per dare i privilegi di operatore al nick
+/mode #canale -o <nick>                        Il contrario
+/msg chanserv invite #canale> <nick>           Invitare il nick nel canale
+/msg <nick>                                    Mandare messaggi privati al nick
+
+
+Per alcuni di questi comandi, bisogna essere operatori del canale. L'operatore è un livello privilegiato di utente che può mandare via/invitare persone, accedere alle impostazioni del canale, dare/togliete l'operatore ad altre persone ecc...
+
+
+*********************************   Golossario ******************************************
+
+Nick = il soprannome, il nome che avete in chat. 
+la mask = è formata da username e da host, si presenta all'incirca così: Nickname!nome@ip
+canale = stanza in cui si tengono discussioni. I più gettonati sono #italia  e  #sesso :-)
+Chan = sinonimo di canale, e imparate l'inglese!!!
+topic = titolo del canale, dovrebbe riportare gli argomenti di discussione del chan stesso
+kickare = espellere dal canale, di solito utilizzato o per avvertire, o dopo il ban.
+bannare = non fare entrare un'utente nel canale
+deoppare = togliere l'operatore
+Oppare = dare l'operatore
+
+nella release 1.1 ci sarà un'articolo sull'ircwar (guerra irc)
+
+
+
+
+
+            ######                                    
+            ##   ##                #                  
+            ##   ##               ##                  
+            ##   ##   ####   ######## ##  ##          
+            ######   #   ##  ##   ##  ##  ##          
+            ##   ##    ####  ##   ##   ####           
+            ##   ##   ## ##  ##   ##    ##            
+            ##   ##  ##  ##  ##   ##   ####           
+            ##   ##  ##  ##  ##   ##  ##  ##          
+            ######    #####  ##    ## ##  ##          

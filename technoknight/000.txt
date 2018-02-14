@@ -1,0 +1,200 @@
+ _  _         ___   ___    ___  _  __   ___   ___   ___  _  __
+³ ³³ ³       / __| /   \  /   \³ ³/ /  ³ - \ /   \ /   \³ |/ /
+³ ³³ |__    | |__ |  -  ||  -  |   /   ³ _ \³  -  ³  -  ³   /
+|_||____|    \___| \___/  \___/|_|\_\  |___/ \___/ \___/|_|\_\
+                         _
+                        ³ ³  _
+                       /_ ³ ³ ³
+                       \__| |_|
+    _________   ____     ____    _   _   __   _     ____
+   |___   ___| ³  __|   / ___|  ³ ³ ³ ( ³  \ ³ |   /    \
+       ³ ³     ³  __|  ³ /      ) |_| ³ :   \| :  ³  /\  ³
+       ³ ³     ³ :__   ³ \___   ³  _  ³ ³ ³\   |  ³ /\/\ ³
+      _| |_    |____|   \____|  |_| |_| |_| \__|   \____/
+      \   /
+       \./                              
+      __   ___   __     __    __     _____     __    __   ________
+     :  ³ /  /  ³  \   ³  ³  ³  ³   / ____|   :  ³  ³  ³ |__    __|
+     :  |/  /   ³   \  ³  ³  ³  ³  ³ /        ³  |__|  ³    |  ³
+     ³     /    ³    \ ³  ³  |  ³  : ³   ___  ³   __   ³    ³  ³
+     ³     \    ³  ³\ \|  ³  ³  ³  ³ |__|  _| ³  ³  ³  ³    ³  ³
+    _| |\___\   |__| \____|  |__|   \_____|   |__|  |__|    |__|
+    \  /
+     \/                           SETTEMBRE 1999
+
+IL COOKBOOK di Techno Knight (anche detto Techno[K] :)
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+/\/\/\/\/\/\/\/\/\/INTR0\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+                                                                                        
+Ne e' passato di tempo dall'edizione 0...questo perche' avevo gia' deciso
+di non fare una nuova edizione per ogni file che avrei aggiunto, ma di
+aggiungere almeno una ventina di files per ogni edizione.
+                                        
+Qualche parola prima che cominciate a leggere.
+Ho iniziato a scrivere questo cookbook con la semplice idea di riunire
+gli articoli + interessanti che avevo scritto, poi ho deciso di aggiungere
+altri files interessanti e di pubblicarlo, cosi' adesso e' una collezione
+di files relativi ad hacking,phreaking,virii,cracking,coding,anarchia +
+stronzate varie.
+Non emailatemi per chiedermi che fine ha fatto l'edizione
+1, sono passato dalla 0 alla 2 per non creare confusione (infatti sono sicuro
+che molti passando sulla mia pagina e leggendo 'Cookbook v.1' avrebbero
+pensato "ah, no questo gia' l'ho letto".)
+Vi dico subito che non sono presenti tutti i magici circuiti annunciati nella
+prima edizione, per un semplice motivo : sarebbe stato lungo e difficile
+(probabilmente impossibile) portarli in ASCII, e per quanto possibile vorrei
+mantenere questo cookbook una raccolta di file di testo, cmq ho fatto del mio
+meglio per inserire altra robba utile.
+Buona lettura.
+                                
+
+------------------------------------------
+Legenda :                      		  |
+ 					  |
+g  =  Testo generale            	  |
+h  =  Hacking                    	  |
+p  =  Phreaking                   	  |	
+t  =  Truffa e illegalita'             	  |
+c  =  coding                      	  |	
+k  =  cracking                    	  |
+v  =  virii                       	  |
+e  =  elettronica                 	  |
+a  =  anarchia                            |
+s  =  stronzata, umoristico o demenziale  | 
+y  =  racconto				  |
+-------------------------------------------
+
+
+                 
+            _   _   _   ___    _    ___   ___
+           ³ ³ ³ \ ³ ³ ³   \  ³ ³  / __| ³ __|
+           ³ ³ ³  \| ³ ³ -  | ³ ³ | |__  ³ __|
+           |_| |_|\__| |___/  |_|  \___| |___|
+
+NB. Il numero nella colonna "E." indica l'edizione del cookbook nella quale
+il file e' stato inserito per la prima volta,oppure modificato, quindi anche
+se un articolo e' gia' presente dall'edizione 0, se c'e' scritto 2 vuol
+dire che l'ho aggiornato,che ci ho aggiunto qualcosa,o che l'ho corretto.
+
+_.-=-._.-=-.__.-=-._.-=-.__.-=-._.-=-.__.-=-._.-=-.__.-=-._.-=-.__.-=-._.-=-._
+E. TIPO   FILE          DESCRIZIONE                                    AUTORE
+=-._.-==-._.-==-._.-==-._.-==-._.-==-._.-==-._.-==-._.-==-._.-==-._.-==-._.-=
+                                                                                        
+0   g    000.txt    Questo file che state leggendo                       -
+2   g    001.txt    Due parole sugli autori del cookbook                 -
+0   c    002.txt    Corso di C, prima parte                      Techno Knight
+0   c    003.txt    Corso di C, seconda parte                    Techno Knight
+2   c    004.txt    Corso di C, terza parte                      Techno Knight                        
+2   c    005.txt    Corso di C, quarta parte                     Techno Knight
+0   a    006.txt    Divertirsi a scuola                          Techno Knight
+0   t    007.txt    Guida di base al Social Engeenering          Techno Knight
+0   e    008.txt    Un trasmettitore FM                          Techno Knight
+0   at   009.txt    Tecniche di intrusione I parte               Techno Knight
+0   at   010.txt    Tecniche di intrusione II parte              Techno Knight
+0   a    011.txt    Guida al combattimento da strada I parte     Techno Knight
+0   a    012.txt    Guida al combattimento da strada II parte    Techno Knight 
+0   a    013.txt    Micce                                        Techno Knight
+0   a    014.txt    Vendette                                     Techno Knight
+0   a    015.txt    Bombe puzzolenti                             Techno Knight
+0   h    016.txt    Introduzione all'hacking                     Techno Knight
+0   a    017.txt    Bombe fumogene                               Techno Knight
+0   a    018.txt    Cerbottana                                   Techno Knight
+2   hg   019.txt    Lista di comandi Unix...                     Techno Knight
+0   t    020.txt    Guida al Carding                             Techno Knight
+0   c    021.txt    Semplicissimo Criptatore per Linux           Techno Knight
+0   k    022.txt    The Xoanon's Guide to Cracking I parte       Xoanon
+0   k    023.txt    The Xoanon's Guide to Cracking II parte      Xoanon
+0   k    024.txt    The Xoanon's Guide to Cracking III parte     Xoanon
+0   v    025.txt    Bizatch                                      Quantum        
+0   vg   026.txt    Il meraviglioso mondo del VirusWriting       Techno Knight
+0   ag   027.txt    La lista della spesa dell'anarchico          Techno Knight
+0   a    028.txt    Molotov amore mio                            Techno Knight
+0   p    029.txt    Blocco Frega Tessere                         Dark Soul 
+0   s    030.txt    Cose da fare quando sei...                   Techno Knight
+0   s    030.txt    Progetti per l'anarchico....
+                    (traduzione di Techno Knight)                THE GNN
+ 
+0   s(t) 031.txt    Scherzi Telefonici                           Techno Knight
+                                                                                                                
+0   g    032.txt    I veri autori dei files del cookbook di
+                    Jolly Roger                                  Techno Knight  
+
+0   y    033.txt    Ugly Fucker (Tradotto da Techno Knight)      Mark E.Dassad
+0   g    034.txt    Equipaggiamento                              Techno Knight
+0   a    035.txt    Bomba al fertilizzante                       Techno Knight
+0   a    036.txt    Napalm                                       Techno Knight 
+0   a    037.txt    Gel infiammabile                             Techno Knight
+0   t    038.txt    Guida veloce per l'aspirante puttaniere      Techno Knight
+0   t    039.txt    Guida per l'aspirante ladro I Parte          Techno Knight
+0   t    040.txt    Guida per l'aspirante ladro II Parte         Techno Knight
+0   s    041.txt    Frasi e stronzate varie                      Techno Knight
+2   v    042.txt    Sabotagio                                    Techno Knight
+2   v    043.txt    Absolute                                     Techno Knight
+2   p    044.txt    BeigeBox                                     Techno Knight
+2   t    045.txt    Guida di base al trashing                    Techno Knight
+2   c    046.txt    NetPulman                                    Techno Knight
+2   v    047.txt    Virus di Boot+Dark Rider                     cod
+2   h    048.txt    BackDoor in Unix                             Techno Knight
+2   y    049.txt    Alfa e Omega                                 eXceptION handlER
+2   s    050.txt    Tua madre e' cosi' grassa che..              Techno Knight
+2   e    051.txt    Radio Tutorial                               Techno Knight
+2   e    052.txt    Amplificatori Operazionali 1                 DNA        
+2   v    053.txt    Infezione dei PE                             Techno Knight
+2   k    054.txt    Come crackare con il w32dasm (x newbies)     Techno Knight
+2   g    055.txt    Vocabolario del mondo H/P/A/C/C/Vecc. v.2    Techno Knight
+2   g    056.txt    Breve storia di Unix                         Techno Knight
+2   h    057.txt    Fondamenti dell'ircwar                       St0rm BriNgeR 
+2   g    058.txt    Il vino + divino                             BottleNeck
+2   a    059.txt    Giochetto con i cerini                       Techno Knight
+2   a    060.txt    Divertirsi a scuola II!                      Techno Knight
+2   a    061.txt    Semplice esplosivo a impatto                 Techno Knight
+
+_.-=-._.-=-.__.-=-._.-=-.__.-=-._.-=-.__.-=-._.-=-.__.-=-._.-=-.__.-=-._.-=-._
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+17 files anarchia
+10 files generali
+08 files truffa&illegalita'
+06 files coding
+06 files virii
+05 files S/U/D
+04 files hacking
+04 files cracking
+03 files elettronica
+02 files phreaking
+02 files racconto
+xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+SALUTO E RINGRAZIO :
+
+T0rment0
+
+Lord Guf
+
+LiVeD
+
+DNA                                                 
+
+Rigor Mortem
+
+St0rM Bringer
+
+Vecna
+
+Lord Destruction
+
+F4lc0n
+
+BottleNeck
+
+----
+E adesso restate sintonizzati in attesa dell'edizione III !
+
+NELL'EDIZIONE III MOLTI PIU' FILES, MOLTA PIU' DISTRUZIONE, MOLTA PIU' ANARCHIA!
+
+                              ---\\\ COOKBOOK di Techno Knight ///---
+                                             EDIZIONE 2
+
+        

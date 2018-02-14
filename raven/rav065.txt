@@ -1,0 +1,41 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Nascondere files all'interno del PC.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Proprio oggi a mio padre e' venuto lo sfizio di smanettare un po' sul
+mio comp, e non vi dico cosa mi e' passato per la testa quando mi sono
+reso conto che il collegamento al mio sito offline e' in bella evidenza
+sul desktop, sito che nella sua sezione UnDErGrOUnD raccoglie anche
+questo CB... Non so cosa potrebbe pensare leggendolo... Ebbene, ormai
+dai tempi in cui imboscavo le dir con le jpg porno ne e' passata di
+acqua sotto i ponti, oggi tengo tutto nella root dell'HD (diviso in
+cartelle of course, ma con nomi "Anarchy", "Hack", "Phreakin", "XXX".
+Beh per fortuna non se n'e' accorto ma ora l'esigenza di occultamento
+e' forte. Il mio consiglio allora? Beh, se volete avere il massimo
+dell'imboskamento in ambiente Windows (se usate Linux non avete bisogno
+di leggere Qwesto Phyle) e' zippare l'intera cartella, con subfolderz,
+e poi rinominare l'archivio da "testi su bombe & hacking.zip" a un piu'
+innocuo e insospettabile "driver.old" (o .DAT) , da nascondere in
+"C:\windows\system32\drv", utilissimo soprattutto nei casi in cui
+pensate di poter avere a che fare con un sequestro del PC da parte
+delle forze dell'ordine (leggi pula o GDF). Gia' cosi' se non avete
+bucato la CIA non correte rischi, se volete il max della protezione
+criptatelo anche (ma se sapete farlo cosa leggete a fare, questo e' un
+file per newbies (molto newbies) o aspiranti lamer). Se invece volete
+solo nascondere i vostri 40mila txt su esplosivi e 60mila immagini XXX,
+basta spostare la cartella in "c:\windows\samples" o qualcosa del
+genere, se anke vs padre o madre usa il comp, anche per applicazioni,
+non se ne accorgeranno mai... Evitate di settare le cartelle +h
+(nascoste), sono piu' sospette. Questo e' quanto, ora non avrei paura
+neanche se i carabbaz mi sequestrassero l'HD (se pero' vedessero il
+sito...). Enjoy, e "Kill the lamah but Save the newbie".
+
+The Raven
+Since `82

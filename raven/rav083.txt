@@ -1,0 +1,58 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Vibracall universale.
+~~~~~~~~~~~~~~~~~~~~~
+
+Metto le mani avanti dicendo che non l'ho mai messo in preatica e mi e'
+venuto in mente ora ora. In commenrcio (o piu' facilmente da un
+vucumpra') e' possibile trovare accessori come antenne e portachiavi
+che si illuminano quando si riceve una chiamata sul cellulare.
+Probabilmente questi aggeggini sfruttano il campo magnetico del tel.
+per produrre energia elettrica indotta e pilotare una piccola lampadina
+Se invece fornire la corrente alla lampada la si fornisce a un
+transitor che funge da rele' (che poi si scrive RELAIS -NdRaven), sara'
+possibile pilotare un piccolo motore elettrico con un peso eccentrico
+sull'albero, alimentato da una piccola pila da 1,5 Volt .
+
+Se questo raggionamento e' giusto avremo un vibracall universale, che
+non scarica la batteria del cello, perchè ne ha una a parte.
+
+Le antenne che si illuminano non vanno bene xche' non funzionano da
+rivelatori di campo, al contrario dei famosi portachiavi by vucumpra'.
+ 
+Il vibracall si attivera' anche con falsi allarmi, tipo invio e
+ricezione sms o collegamenti al ponte. Pero' siccome i collegamenti col
+ponte sono relativamente brevi (max 3 secondi) si potrebbe inserire un
+temporizzatore; per la ricezione degli sms, in fondo non e' un
+problema, anzi una cosa in piu'; per l'invio di sms ci si deve
+attaccare.
+ 
+L'inserimento del temporizzatore forse rendera' il vibracall un po'
+ingombrante (devo pensare a qualcosa di molto piccolo e funzionale).
+ 
+Ora un po di teoria di elettronica spicciola:
+Un transistor e' un semiconduttore e come tale permette il passaggio di
+corrente in base al suo stato (es: un diodo, che tutti sanno come
+funziona e un semiconduttore che permette il passaggio degli elettroni
+[la corrente elettrica] solo in un senso). Cosi' se noi colleghiamo il
+transitor in maniera opportuna avremo un passaggio di elettroni al suo
+interno in base al suo stato di eccitazione (ecco a che serve il terzo
+piedino), quando il transitor non viene eccitato non c'e' passaggio di
+corrente, se e' parzialmente eccitato c'è un passaggio di corrente
+proporzionale al suo stato di eccitazione, se e' eccitato a palla si
+ottine il passaggio di tutta la corrente che gli viene fornita.
+ 
+Spero di essere stato chiaro e di essermi fatto capire
+(lo so non sono tanto bravo a spiegare le cose, per me sono ovvie, per
+gli altri magari no)
+ 
+== Da una mail di ENZO (ienzo@freemail.it) ==
+
+The Raven
+Since `82

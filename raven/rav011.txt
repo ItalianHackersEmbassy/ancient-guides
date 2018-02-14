@@ -1,0 +1,154 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Varie bombe part I.
+~~~~~~~~~~~~~~~~~~~
+
+INDICE:
+bomba a iniezione elettronica
+lightbulb bomb
+
+----------------------------------------> BOMBA A INIEZIONE ELETTRONICA
+
+Una 'conquista' nella produzione di esplosivi caserecci e' sicuramente
+rappresentata dall'utilizzo dell'INIEZIONE ELETTRONICA (= detonazione
+per mezzo di elettricita', per gli infedeli). Una cosa che io dico
+sempre e' che la potenza di una bomba e' data solo in parte dal tipo di
+esplosivo utilizzato, e soprattutto dal contenitore usato [l'esplosione
+di una bomba e' infatti data dalla fuoriuscita del gas che si sviluppa
+(senza fare PRR)]. Questo 'muro' viene facilmente superato con questo
+sistema (una semplice bomba a miccia necessita di ossigeno per
+funzionare, e si tratta di un grave handicap), perche' (la bomba) la
+puoi sigillare ermeticamente facendo uscire solo i fili. Ma dopo queste
+righe di teoria ed ammirazione verso questa tecnica, la PRATICA.
+Hai bisogno di:
+- Una lampadina dell'albero di Natale
+- Polvere da sparo (cartucce, petardi, armeria, RAV010.TXT)
+- Una batteria
+- Dei fili elettrici (piu' son piccoli meglio e')
+- Un bel contenitore (preferibilmente a chiusura ermetica)
+- Scotch (OPZIONALE)
+Prendi il contenitore e riempilo quasi tutto di polvere (non prenderla
+da terra, deficente). Ora prendi il tappo e fai un piccolo foro, quanto
+basta per farci passare il fili. Facci passare i fili. (NON attaccarli
+alla batteria!). Ora prendi la lampadina (fig.1) e cerca di romperle la
+parte finale (fig.2) senza rovinare i filamenti o il resto della
+lampadina.
+
+NB (BY RAVEN): I FILI *NON* DEVONO ESSERE SCOPERTI!!! (non si sa mai!)
+
+     
+       /-------------\                         /-------------\
+     /            E    \                     /            E    
+IIIIIIIIIIIIIIIIII.     3          --===IIIIIIIIIIIIIIIIII.     
+     \            E    /                     \            E
+       \-------------/                         \-------------/
+  (FIG.1 e' una lampadina,                (FIG.2 questa dovrebbe essere
+   anche se non sembra)                    una lampadina rotta!)
+
+
+Ora collega la lampadina dall'altra parte del tappo (fig.3).
+
+
+                ,   ,
+                , e ,     <--------------------- LAMPADINA
+                 \o/
+   +              o              +
+  ++++++++++++++++o++++++++++++++++    <-------- TAPPO
+                  -
+                 
+   (FIG.3 sono fiero di questo disegno...)
+   
+Bene, ora riempi la lampadina (che e' a faccia in su, infatti ti sfido
+a farlo con la lampadina verso il basso) di polvere da sparo,
+preferibilmente molto fine. Adesso cerca di mettere la lampadina piena
+di polvere nel contenitore (anch'esso pieno di polvere...) ed avvita il
+tutto (fig.4). Ma mi raccomando, NON ATTACCARE ANCORA FILI ALLA
+BATTERIA!!! Altrimenti... BOOM. Non sarebbe bello morire alla tua eta'
+(qualsiasi essa sia). Vero? Bene ora hai la possibilita' di aumentare
+la potenza della bomba, per esempio, nastrando il tutto con dello
+scotch (che potrai anche sorseggiare). Fai TANTI giri e soprattutto che
+vadano dal tappo al fondo, altrimenti e' inutile.
+
+
+         EIIIIII=========-----> you! <----==========IIIIIII>
+         !                                                 /\
+    +++++o+++++                                          /    \ 
+    /    !    \                                        /        \
+   3ooooo!ooooo3                                    (+)          (-)
+   3oooo<E>oooo3                                   EIEIIIIIIIIIIIIEI>
+   3ooooooooooo3     (FIG.4 penso che diventero'   o 22222222222222 o
+   3ooooooooooo3      un disegnatore ASCIIsh...)   o 22 BATTERIA 22 o
+   3ooooooooooo3                                   o 22222222222222 o
+    \ooooooooo/                                    EIIIIIIIIIIIIIIIIE
+
+
+Bene ora puoi mettere la bomba dove meglio desideri (l'importante e'
+avere abbastanza filo), mettiti in un luogo riparato, prendi la
+batteria nella mano sinistra, il cavo nella mano destra (o viceversa)
+ed unisci un polo ad un filo e l'altro polo all'altro filo... BOOOMMM!
+(spero tu non l'abbia fatto prima...). Un altro pregio di questo tipo
+di bomba e' la possibilita' di utilizzare un TIMER. Capite perche' lo
+adoro?
+
+----------------------------------------------------VARIANTE by RAVEN:
+Oppure invece di una batteria o di un timer si potrebbe collegare all'
+interruttore della luce...
+
+-------------------------------------------------------> LIGHTBULB BOMB
+
+E' una delle bombe piu' usate dagli Anarchici professionisti, perche'
+UCCIDE praticamente a COLPO SICURO (!) ed e' facile da costruire. La
+Lightbulb bomb e' una vera e propria arma. Vediamo di spiegare cos'e':
+Si tratta di una lampadina piena di polvere da sparo (!) che sfruttando
+il meccanismo dell'iniezione elettronica, produce una forte esplosione
+che lancia schegge di vetro. La cosa TERRIBILE e' che la lampadina e'
+installata in una stanza, cosi' quando qualcuno accende la luce... BOOM
+Il folle che la cotruisce ha bisogno di:
+ - Una lampadina 
+ - Polvere da sparo (cartucce, petardi, armeria, RAV010.TXT)
+ - la stanza in cui dovra' passare la vittima
+ - Una fonte di calore
+ - Colla molto potente
+Ecco cosa fa questo buffo individuo:
+Prima controlla che l'interruttore sia SPENTO (E' MOLTO IMPORTANTE...),
+toglie la lampadina... Ora puo' fare in 2 modi:
+#1 staccare la parte in vetro
+#2 bucare la lampadina (il piu' facile e meno pericoloso)
+<#1>
+Scalda la lampadina su di una fonte di calore, cercando di scollare la
+parte di vetro. Fatto questo riempe (la parte di vetro) di polvere da
+sparo. Richiude la lampadina e sigilla il tutto con la sua bella colla.
+<#2>
+Fa un piccolo buco nella lampadina, in modo da far passare la polvere
+da sparo... Sigilla il tutto con una colla potente.
+
+(Ricontrolla che l'interruttore sia SPENTO...). Monta la lampadina.
+NON ACCENDE LA LUCE. La bomba e' sistemata. (magari abbassa le
+tapparelle...) E adesso... VA IN CHIESA, ha appena ucciso qualcuno.
+P.S. Quando mette la polvere, sta attento a non rovinare i filamenti
+(come tutti molti pazzi e' un maniaco dell'ordine).
+
+< LAMPADIMA PRIMA >    I     < LAMPADIMA DOPO >
+     _____             I            .....
+   /       \           I           <----->
+ /           \         I           <----->
+3             3        I           <----->
+3             3        I           3  o  3
+ \    AoU    /         I          /ooo+ooo\
+   \   º   /           I        /ooooooooooo\
+    3  o  3            I       3ooooooooooooo3
+    <----->            I       3ooooooooooooo3
+    <----->            I        \ooooooooooo/
+    <----->            I          \ooooooo/
+     """""             I            -----
+
+== Fonte: My Personal Cookbook, by AVA666 ==
+
+The Raven
+Since `82

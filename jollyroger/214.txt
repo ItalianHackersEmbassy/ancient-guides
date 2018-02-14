@@ -1,0 +1,169 @@
+                       ANARCHY 'N' EXPLOSIVES - VOLUME #6
+                       ==================================
+                          by Doctor Dissector, 6/14/89
+
+     Well, this is the sixth, infamous, release of Anarchy n' Explosives...
+Previously, I did not place my name on the issues 0-5, but for credits sake, I
+decided to place my name on each issue from here on. Anyway, this document is
+to be placed into the public domain, but might be originating from some Elite
+BBS's and other organizations such as Forgotten Realms at (xxx)xxx-xxxx and
+other groups associated with that BBS. And, since it is a public document, the
+author assumes no responsibility of misuse by irresponsible or ignorant
+parties, who may directly, or indirectly, gain injury to themselves or others,
+with the information contained in this document. Allright,,, enough of the
+shit, lets get down to business!
+
+WARNING: THE FOLLOWING INFORMATION CAN INJURY OR DEATH UPON ITS MISUSE. AUTHOR
+ASSUMES NO RESPONSIBILITY FOR ANY DAMAGES, PROPERTY OR BODILY, FROM ACTIONS
+DUE TO THIS DOCUMENT. PLEASE HANDLE WITH CARE, AND USE AT YOUR OWN RISK!!
+
+     Ok, now we can rock! This issue, #6, will deal with the basic
+pyrotechnical devices, which might be enhanced by or an addition to other
+anarchy projects you have or were covered in previous issues of ANARCHY 'N'
+EXPLOSIVES. The items covered will include srally rockets, serpents, smokes,
+whistling fireworks
+  and colored flames. Each section will cover, in detail,
+several aspects as well as the preparation of each project. Enjoy....
+
+SKY ROCKETS
+------------------------------------------------------------------------------
+Next to the Roman Candle, these are perhaps the most popular articles of the
+pyrotechnical craft and, on good authority, apparently antedate the candle. So
+much has been written about sky rockets that any detailed description would be
+superfluous. The French, particularly, have left a most complete history,
+sometimes amusing, in view of the present status of rocket manufacture. The
+rocket consists of a tube of paper rammed with suitable composition, its lower
+end choked to about one-third of the diameter of its bore, and having a hollow
+center extending upward through the composition to about 3/4 of an inch of the
+top. A stick attached to the tube serves to balance it while ascending.
+Roughly, the composition of a rocket, that is, the portion of it that is
+burning while it is ascending, should be seven times its diameter in length.
+Six-sevenths is pierced through the center while one-seventh is solid and acts
+as a fuse to communicate the fire to the heading when the rocket reaches the
+highest point of its flight.
+
+     The tube is made of strong paper, preferably 3 turns of hardware paper on
+the inside with 4 or more turns of straw board or Kraft paper on the outside.
+A good rocket case can also be made of heavy rag or building paper, if it is
+properly rolled with good paste. The process of choking the case and ramming
+in a mold has been practically discontinued. An average model for a 1 pound
+rocket is given in the file "ROCKET.ANS" (ANSI graphics format).
+
+     Good rockets should be uniform, all those of one caliber ascending to the
+same height and bursting at about the same time. This is particularly
+desirable in bouquets of 100 or more, fired simultaneously, or a straggling
+effect is produced.
+
+     Most rockets larger than 3 ounces are rammed singly or by gang rammers,
+which can be built on a custom basis. Today, hydraulic rammers are also in use.
+
+     For very large rockets, a scoop of clay is shaken in and rammed with
+eight good blows of a mallet on the longest rammer. Then, a scoopful of
+composition is rammed with about eight lighter blows. This is repeated until
+the case is filled to about 1 inch from the top. Shift rammer as it becomes
+necessary to use shorter ones. There should be 1 inch of solid composition
+above the top end of the spindle. Now the final charge of clay is put in and
+the hollow pin rammer is used. This sets the clay while leaving an opening for
+the fire to reach the heading. Care must be used to see that the hollow tube
+just pierces the clay. If it does not go through, the heading will fail to
+fire; if it goes too far, the heading will fire prematurely. (The heading is
+the blast charge or whatever you want to ignite) the following are good
+compositions for rockets of the different sizes given: (given in weighted
+parts)
+
+                    1-3 ounces    4-8 ounces    1-3 pounds    4-8 pounds
+Potassium Nitrate      18            16            16            18
+Mixed Coal             10             9            12            12
+Sulfur                  3             4             3             3
+
+     If rockets burst before ascending, add more coal; if they ascend too
+slowly, add more Potassium Nitrate. For the smaller sizes, use fine coal, for
+larger, coarser in proportion to the diameter. In 4-8 pound rockets, use
+partly granulated Potassium Nitrate.
+
+SERPENTS
+------------------------------------------------------------------------------
+     The eggs for producing this remarkable article consists of small pelletLE Ont aulfocyanide (thiocyanate) of mercury which has the remarkable property of
+swelling 25-50 times its original size when lighted, producing a ling, snake-
+like ash. To prepare it, make a concentrated solution of mercuric chloride and
+add, little by little, a solution of potassium sulfocyanide, stirring
+constantly. A grayish precipitate will be formed, and when the last addition
+nt aulfocyanide no longer produces cloudiness, permit the mixture to settle.
+Drain the supernatant liquid off as much as possible, remove the precipitate
+to a filter paper, placed in a glass funnel, and wash slightly. When it is
+thoroughly dried, reduce it to a fine powder. When ready to for the eggs,
+moisten the composition very sparingly with a weak solution of gum arabic
+which may be added a pinch of potassium nitrate and, made into cones, by
+ramming. However, this product is poisonous to man and other living species,
+since it is composed of cyanide and mercury. Thus, another formula has been
+devised to accommodate safety.
+
+     A safer version of the above serpent can be made of the following:
+Naphtha pitch (10), Linseed oil (2), Fuming nitric acid (7), and Picric acid
+(3 1/2). Reduce the pitch to a fine powder; add linseed oil and mix well in a
+mortar. Add the fuming nitric acid, always a little at a time, Allow to cool
+for 1 hour. Wash several times with water, the last time allowing the mass to
+stand in the water for several hours. Dry thoroughly; powder finely and add
+picric acid, rubbing it in well. Moisten with gum arabic water and form into
+pelletL about the size of a #4 star.
+
+SMOKES
+------------------------------------------------------------------------------
+     This branch of pyrotechny seems to have been somewhat overlooked, though
+its possibilities for daylight entertainment as a supplement of night displays
+could open an interesting field for those with enough imagination to develop
+it.
+
+     There are as many colors and tints of smoke as there are flames and
+aerial combinations. The simplest form of the smoke used in pyrotechny is the
+smoke pot, as used in spectacles like THE LAST DAYS OF POMPEII and BURNING OF
+ROME, where it is desired to give the effect of destruction by fire. Smoke and
+spark posts consist of short cases about 4-6 inches in diameter and 6-12
+inches in length. A basic formula subject to variation is:
+
+                                  Smoke 1   Smoke 2   Spark 1   White
+Potassium Nitrate                    4         6        ---       12
+Lampblack                            1        ---       ---       ---
+Fine Charcoal                        1        ---        1         1
+Realgar                              1        ---       ---       ---
+Rosin                                1        ---       ---       ---
+Sulfur                              ---      1 1/4      ---       16
+Antimony Sulfide                    ---        1        ---       ---
+Meal Powder                         ---        1         2        ---
+Sawdust                             ---       ---        1        ---
+
+WHISTLING FIREWORKS
+------------------------------------------------------------------------------
+     The peculiar property of picrate of whistling while burning has been
+known for a long time. You can manufacture whistling fireworks using this
+substance. In a porcelain receptacle, dissolve 1 pound of picric acid in the
+least possible quantity of boiling water; add 1/4 pound of potassium
+carbonate, a little at a time, stirring continuously. When effervescence has
+subsided, add 1 pound of powdered potassium nitrate. Stir thoroughly, allow to
+stand for an hour and then place it on a heavy piece of filter paper in a
+glass funnel, to drain. When it is dry, crush to a fine powder with a wooden
+roller.
+
+     Although this is a reasonably safe composition, only small quantities
+should be handled at a time, as an explosion will cause disastrous result, or
+will they? heh heh. The dry powder may be rammed into tubes from 1/4 to 3/4
+inches in diameter, and will produce the whistling sound when burned. Bamboo
+tubes are most effective.
+
+     Owing to the ease with which potassium picrate detonates, whistles cannot
+be use in shells, but small tubes, 1/4 inches in diameter and 2 1/2 inches
+long, when charged with the above composition, may be placed in the heads of
+rockets or fastened to the outside and arranged to burn while the rocket is
+ascending. Attached to wheels, they are quite amusing, but the most effective
+use for them is in a series of six or eight, ranging in size from 1/4 to 3/4
+inches in diameter, set side by side like a Pandean pipe and burned
+simultaneously.
+
+     A non--picrate whistle, safer than the one above, is made from potassium
+chlorate (3), and Gallic acid (1). This composition makes a very good whistle
+
+---------------------------------------
+
+
+                       ANARCHY 'N' EXPLOSIVES - VOLUME 7
+

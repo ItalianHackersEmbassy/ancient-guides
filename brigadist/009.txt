@@ -1,0 +1,115 @@
+Micce e Detonatori
+
+Questo mi piace...
+Il detonatore è la personalizzazione di ogni esplosivo, ed è una scienza, infatti ogni ambiente
+e ogni circostanza, ne richiedono uno diverso. Ci sono le micce che sono più semplici da
+realizzare, ma purtroppo hanno bisogno di Ossigeno per la combustione, e il ritardo di esplosione
+è alquanto limitato (A meno che non facciate una miccia di un Km...)
+
+Micce
+
+Vi sono vari tipi di micce, differenziati per la velocità di combustione.
+
+1) Miccia da ossigenatura
+
+Abbiamo bisogno di:
+
+Corde sottili
+Polvere da sparo
+Alcool o Acqua ossigenata
+
+Innanzitutto è da spiegare cos'è l' ossigenatura: è un processo (Anche detto granitura) tramite
+il quale, aggiungendo Alcool o Acqua ossigenata alla polvere da sparo, si rendono i suoi
+granelli di più piccoli, creando una polvere più fine, e aumentando la quantità di ossigeno
+nel composto. Durante questo processo, la polvere si trova ad uno stato poltiglioso, ed è 
+possibile "sporcarci" le corde dentro, infatti la polvere, una volta asciugata rimarrà attaccata
+alla corda. Questa è una miccia molto veloce, non ho constatato con il cronometro alla mano, ma
+levatevelo di testa di usarla con la TNT...
+
+2) Miccia bollita
+
+2 Parti di Acqua bollente in una pentola
+1 Parte di Nitrato di Potassio
+1 Parte di Zucchero 
+Parecchi lacci di cotone
+
+Aggiungete lo Zucchero e il Nitrato nella pentola, mescolate, e poi aggiungete i lacci. Lasciate
+in infusione per una ventina di minuti. Dato che una singola stringa di cotone non regge la
+combustione, è consigliabile intrecciarne 3. Otterrete una miccia abbastanza lenta, è 
+consigliabile usare questa con gli esplosivi di una certa potenza.
+
+3) Miccia alla benzina
+
+Per questa miccia a metà strada (Come velocità) fra le due precedenti, avete bisogno solo di:
+
+Spago (Quello marrone con un diametro più o meno di 2 mm)
+Diavolina
+Carta forno (Quella antiaderente)
+
+Stendete una stringa di spago sulla carta forno, poi con un cubetto di diavolina passateci sopra
+più volte lentamente e calcando forte, in modo da consumarla. Ruotate il filo in modo da
+ricoprire tutta la sua superficie con la patina bianca lasciata dalla diavolina.
+
+
+Detonatori
+
+Per detonatore è inteso il contatto elettrico che genera la scintilla e da la combustione al
+composto esplosivo. Fra quelli ad iniezione elettronica vi sono questi:
+
+1) Detonatore a contatto elettrico
+
+Una Lampadina da 1.5 V
+Una pila minimo da minimo 1.5 V
+Dei cavi elettrici della lunghezza desiderata
+Un interruttore (Opzionale)
+Carta vetrata
+
+Innanzitutto, il minimo comune multiplo di tutti i detonatori elettrici, è la lampadina aperta
+che genera la combustione. Il tungsteno (Cioè il filamento all' interno della lampadina) diventa
+incandescente quando l' energia elettrica lo attraversa, ma l' assenza di ossigeno nella 
+lampadina, fa si che il filamento non bruci. Se noi pratichiamo un foro (Anche piccolo) 
+strofinando con cura la carta vetrata sulla sommità della lampadina, l' ossigeno entra.
+Adesso, per ampliare la combustione del filamento, possiamo infilare nella lampadina della
+Polvere da sparo, Napalm, o meglio ancora Esplosivo. Adesso basta saldare ai contatti della
+lampadina i cavi elettrici, uno dei quali collegato ad un interruttore o spezzato, infine
+collegarli alla batteria. Adesso potete piazzare la lampadina (Ovvero il "Cuore") all' interno
+della bomba vera e propria. Azionate l' interruttore, o collegate i cavi spezzati, e BABOOMM !!
+(Infatti si verificherà un' esplosione a catena, perchè la lampadina, con l' esplosivo
+all' interno scoppierà, iinescando tutto ciò che ha intorno)
+
+2) Detonatore con Timer
+
+Più semplice di quanto si pensasse, richiede solo:
+
+Una Lampadina da 1.5 V preparata da innesco (Vedi sopra, che cazzo, già lo devo ripetere ?)
+Due pile da 1.5 V
+Del cavo elettrico
+Una sveglia a segnale elettronico (Non c'entra se c'ha le lancette, basta che fa il BEEP)
+Un saldatore a stagno (Con dello stagno, magari...)
+Due lamine di metallo (Dimensioni 1 cm * 2 cm)
+Dello scotch
+
+Aprite la sveglia e staccate il piccolo altoparlante che emette il Beep. Dovrete vedere o due
+cavetti spezzati o due saldature, in ogni caso saldeteci il cavo elettrico che avrete
+precedentemente saldato alla lampadina (Che casino, San Gennaro, saldaci tu !!!)
+A questo punto prendete le due pile e mettetele in serie, infatti per far funzionare la sveglia
+ne basta una, ma una sola non riuscirebbe ad accendere la lampadina (Che da sola necessita 1.5 V)
+Dovrebbe essere facile farvelo vedere...
+
+  |-----------|      _____ --------- Lamine di metallo SALDATE sui poli 
+  |        |--|     _-_ ___          | che permettono di fare contatto.(Io ho dovuto disegnarle
+  |      + |  |     |+| |-|          | distanti, ma voi dovete saldarle)
+  |        |  | <-- |||||||-- Scotch |
+  |        |  |     | | | |          |
+  |      - |__|     |-| |+|          |
+  |           |     --- -_-          |
+  |-----------|      _____ ----------/
+
+Come stanno le cose, solo una pila dovrebbe entrare nel vano, mentre l'altra saldata e attaccata
+con lo scotch rimane fuori. Spero di aver fatto un ASCII abbastanza chiaro. Ugualmente piazzate
+la lampadina-innesco all' interno dell' esplosivo. Adesso programmate la sveglia per l' Ora del
+Giudizio, UAZ UAZ UAZ...
+
+
+
+bRiGaDiSt

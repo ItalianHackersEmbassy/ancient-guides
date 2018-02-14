@@ -1,0 +1,185 @@
+                 * * * * * * * * * * * * * * *
+                *      COME INFETTARE I PE    *
+                *                             *
+                *       di Techno Knight      *
+                 * * * * * * * * * * * * * * *
+
+                                                                                
+Allora, considerando che questo articolo magari lo legge anche uno che non      
+ne capisce niente (lamer : se non ci fossero bisognerebbe inventarli!) comincio 
+col dire che i PE altro non sono che gli eseguibili di Windows95.               
+Si, infatti (mi rivolgo sempre ai mitici lameroni) gli eseguibili di Windows9x  
+sono diversi da quelli del DOS e da quelli del Windows 3.x (NE)                 
+                                                                                
+Ecco come e' strutturata la parte iniziale di un eseguibile Windows 9x :         
+                                                                                
+                                                                                
+SEZIONE DOS  (contenente l'header di tipo DOS pi— altra robbaccia)              
+PE HEADER    (ecco la prima novit…, all'header DOS segue l'header di Win)       
+OBJECT TABLE (poi vi spiego che cos'e', pazientate...)                          
+IMPORT INFO                                                                     
+EXPORT INFO                                                                     
+FIXUP INFO                                                                      
+RESOURCE INFO                                                                   
+DEBUG INFO                                                                      
+....                                                                            
+                                                                                
+La sezione DOS contiene un header compatibile con il DOS 2.0 (ecco perche'       
+anche i PE cominciano con la classica signature 'MZ')                           
+Il PE Header segue la sezione DOS ed e' l'header vero e proprio di Windows9x,    
+e comincia con la signature 'PE' (guarda un po'...).                             
+                                                                                
+Allora, la prima cosa da fare e' trovare dove inizia questo PE HEADER, dato      
+che la sezione DOS e' variabile di dimensione.                                   
+Per farlo ci basta sapere che dal byte 3ch del header DOS e' contenuto l'offset  
+dove comincia il PE HEADER. Quindi dobbiamo leggere per prima cosa un certo     
+numero di bytes dall'inizio del file (superiore a 3fh) e salvarli in un buffer  
+Poi leggeremo la dword che comincia al byte 3fh del buffer, ricordate pero' che  
+dovete leggerla in ordine inverso, cioe' :                                       
+                                                                                
+                3ch  3dh  3eh  3fh                                              
+                 |    |    |    |                                               
+                 B0   00   00   00                                              
+                                                                                
+indica che il PE HEADER inizia all offset 0000:00B0.                            
+Una volta trovato l'offset del PE HEADER leggiamo 88 bytes dal suo inizio       
+e salviamoli in un altro buffer. Ora mi sembra che sia arrivato il momento      
+di spiegarvi per bene come e' fatto il PE HEADER....                             
+                                                                                
+Byte(d) ³  Contenuto                                                            
+--------+----------                                                             
+ 0      ³  Signature                                                            
+ 4      ³  CPU Type                                                             
+ 6      ³  Numero degli oggetti                                                 
+ 8      ³  TIME/DATE Stamp                                                      
+ 12     ³  Reserved                                                             
+ 20     ³  NT HDR Size                                                          
+ 22     ³  Flags                                                                
+ 24     ³  Reserved                                                             
+ 26     ³  LMajor                                                               
+ 27     ³  LMinor                                                               
+ 28     ³  Reserved                                                             
+ 40     ³  EntryPoint RVA                                                       
+ 44     ³  Reserved                                                             
+ 52     ³  Image Base                                                           
+ 56     ³  Object Align                                                         
+ 60     ³  File Align                                                           
+ 64     ³  OS Major                                                             
+ 66     ³  OS Minor                                                             
+ 68     ³  User Major                                                           
+ 70     ³  User Minor                                                           
+ 72     ³  Subsys Major                                                         
+ 74     ³  Subsys Minor                                                         
+ 76     ³  Reserved                                                             
+ 80     ³  Image Size                                                           
+ 84     ³  Header Size                                                          
+                                                                                
+Uff e basta, questo e' quello che ci interessa per ora (che rottura)             
+                                                                                
+Allora leggete i primi 88 bytes dicevo, e vi ritroverete con tutti questi       
+bei dati. A che cazzo servono ? Ve lo spiego io (eh se non ci fossi io come     
+fareste...)                                                                     
+Allora al 6 c'e' il numero degli oggetti (.text, .data, .fanculo, non so se      
+vi ricordano qualcosa). Per infettare uno di questi files dovrete aggiungerne   
+uno. Dopo il PE Header e' presente la Object Table, che contiene i dati di       
+tutti gli oggetti.                                                              
+Ma andiamo avanti. Allora, leggete il valore di NT HDR Size. Sappiate che       
+questo valore vi serve a sapere quanti bytes ci sono dopo Flags prima che       
+cominci la Object Table. Quindi prendete NT HDR Size, sommatelo a 24 e          
+poi sommate ancora all'offset di inizio del PE HEADER (trovato in 3ch), e       
+avrete l'offset di inizio della Object Table.                                   
+Per aggiungere un oggetto alla object table non dovrete spostare niente,        
+perche' ci sara' sicuramente dello spazio vuoto alla fine.                        
+Il problema e' sapere dove finisce l'ultimo oggetto (e quindi dove comincia lo   
+spazio vuoto che possiamo occupare con i dati del nostro nuovo oggetto).        
+Prendiamo il valore trovato al byte 6 del PE Hdr (numero degli oggetti) e       
+lo moltiplichiamo per 40, che e' appunto la dimensione in bytes di un oggetto    
+nella object table. Cosi' (auff!) siamo arrivati alla fine dell'ultimo oggetto   
+della object table. Vediamo come e' fatto un oggetto :                           
+                                                                                
+Nome dell'oggetto - 8 bytes                                                     
+Virtual Size      - 4 bytes                                                     
+RVA               - 4 bytes                                                     
+Physical Size     - 4 bytes                                                     
+Physical Offset   - 4 bytes                                                     
+Reserved          - 12 bytes                                                    
+Object Flags      - 4 bytes                                                     
+                                                                                
+                                                                                
+Quello che dobbiamo fare e' costruire una nuova struttura come questa per        
+il nostro oggetto.                                                              
+Il nome dell'oggetto deve essere di 8 caratteri (come '.text   ', '.data   ',   
+ecc.). Per fare sfoggio della mia cultura vi ricordo che l'oggetto inserito     
+da Bizatch (poi chiamato Boza) il primo virus per Win95, si chiamava .vlad      
+(indovinate un po' di che gruppo era quello che l'ha fatto .... :)               
+                                                                                
+Ecco come calcolarci il resto :                                                 
+                                                                                
+                                                                                
+                        Virtual Size                                            
+                             =                                                  
+ ((Dimensione del virus + altrospazio)/Object Align+1)*Object Align             
+                                                                                
+                                                                                
+                                                                                
+                            RVA                                                 
+                             =                                                  
+ ((RVA dell'oggetto precedente + Virtual Size dell'ogg.prec.)/Object Align+     
+   +1)*Object Align                                                             
+                                                                                
+                                                                                
+                                                                                
+                        Physical Size                                           
+                             =                                                  
+      (Dimensione del Virus/File Align+1)*File Align                            
+                                                                                
+                                                                                
+                                                                                
+                        Physical Offset                                         
+                              =                                                 
+      Physical Offset dell'ogg.prec. + Physical Size dell'ogg.prec.             
+                                                                                
+                                                                                
+                                                                                
+                         Object Flags                                           
+                              =                                                 
+                         40h,0,0,c0h                                            
+                                                                                
+                                                                                
+Ecco. Ora sarete stanchi (anche io, ve lo assicuro) ma sappiate che abbiamo     
+quasi finito. Infatti una volta che avete scritto il vostro nuovo oggetto       
+nella Object Table dovrete soltanto :                                           
+                                                                                
+                                                                                
+-Cambiare EntryPoint RVA (byte 40) con il valore dell'RVA del vostro nuovo      
+ oggetto (che vi siete appena calcolati)                                        
+                                                                                
+-Cambiare l'Image Size nel seguente modo :                                      
+                                                                                
+                        NuovaImageSize                                          
+                             =                                                  
+((VecchiaImageSize+LunghezzadelVirus+altrospaziodilavoro)/ObjAlign+1)*ObjAlign  
+                                                                                
+                                                                                                                                                                                
+-Aumentare di uno il valore di numero degli oggetti (byte 6)                    
+                                                                                
+-Scrivere il virus all'offset Physical Offset (che anche vi siete calcolati)    
+                                                                                
+Ovviamente il nostro virus dovra' salvare il vecchio entrypoint RVA e la         
+Image Base del file, che sommati daranno l'indirizzo dove saltare per eseguire  
+il programma originale.                                                         
+                                                                                
+                                                                                
+                EVVIVA!!!!!!!!                                                  
+                ABBIAMO INFETTATO WINTENDO!!!!!!!                               
+                                                                                
+Avete visto ? non era poi tanto difficile. E poi Windows95 era stato fatto      
+in modo da essere ininfettabile, e dopo un po' hanno anche smesso di             
+distribuire la documentazione sui PE per i programmatori. Quel bastardone       
+di bill gates credeva di aver pensato a tutto, invece c'e' stato qualcuno        
+piu' intelligente di lui (mitico Quantum!). E adesso vuoi mettere la             
+soddisfazione di sapere che anche noi possiamo dare vita a microorganismi       
+elettronici capaci di infettare il sistema operativo piu' bastardo del mondo ?   
+                                                                                
+                    Techno Knight(techno83@freemail.it)
+

@@ -1,0 +1,45 @@
+Black Box
+
+Nonostante il boxing nel nostro paese sia notevolmente penalizzato dalla "creatività" degli
+ingegneri della Telekom, esistono alcuni apparecchietti che per i loro sistemi di
+telecomunicazione, non sono correggibili, e uno di questi è la Black Box, ovvero un apparecchio
+che si occupa di tenere fissa a 36 V l' alimentazione del telefono, quando normalmente, alla
+risposta, ci sarebbe un abbassamento a 10 V (E a questo punto la Maiala ci fa pagare). Questo
+schema l' ho letto sull' E-Zine di T0rment0 (Kazz, se non tu avessi preso il treno, sarei venuto
+all' Hack-it...) e parlando con Techno[k], è uscito fuori che con la presente Box, il ricevitore
+potrà far risparmiare qualche scatto al chiamante. Vediamo i componenti :
+
+R1 Resistenza 1/2 Watt 1.8k
+Led 1.5 V
+Interruttore a levetta (SPST)
+Un attacco telefonico
+Del cavo telefonico
+Se volete essere perfezionisti, comprate una piccola basetta ramata già bucherellata.
+
+Aprendo il cavo telefonico che va al telefono, isolate il cavo rosso da quello verde (O blu).
+
+Adesso mi cimento in ASCII...
+
+ 
+|P|________________________Verde (O blu)
+|r|
+|e|         R1     LED
+|s|_______/\/\/\___|>______Rosso
+|a|    |              |
+       |     / <-SPST |
+       |____/  _______|
+
+Vi accorgerete che la Box è in funzione quando il Led si accenderà. Vi consiglio comunque di fare
+la prova telefonando al telefono boxato da un cellulare, in modo da poter subito verificare se
+l' accredito e stato nullo, o anche questa Box è stata corretta :((
+Beh, sembra lineare. Se l' ho capito io che sto quasi a digiuno di elettronica, lo capirete anche
+voi...
+T0rment0 dice che esistono 2 schemi, questo è per la maggior parte dei telefoni, magari
+nella prossima versione copierò anche l' altro schema.
+Un altra cosa detta dall' autore è di non fare mai telefonate lunghe (Oltre la mezz'ora).
+
+TnX a T0rment0 e Techno[k]
+
+
+
+bRiGa

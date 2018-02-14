@@ -1,0 +1,71 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- TI SI E' SCARICATA LA SCHEDA? PUOI SFRUTTARE QUEST'OCCASIONE... -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- FOTOCOPIATRICI -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Le macchine fotocopiatrici, come la totalita' delle macchine elettroniche,
+funzionano seguendo un programma su rom, quindi e' probabile che anche questo
+programma abbia dei bugs come i suoi fratelli maggiori (es. Winzozz 95), basta
+trovare i bugs ed il gioco e' fatto! Cerca, da qualche parte (Biblioteca,ecc),  
+una macchina fotocopiatrice automatica, di quelle con la tessera magnetica
+precaricata, per essere precisi ipotizziamo sia una che riporta il marchio
+NASHUATEC, questo modello e' tra i + diffusi e nel nostro caso ha un piccolo
+lettore di schede con tastierino numerico in alto sulla destra...
+Il bug in questione riguarda proprio il lettore/scrittore di schede...
+Una volta che la propria scheda e' arrivata ad avere in carica una sola
+fotocopia, e' sufficente selezionare il formato A3 per rendere la propria
+scheda eterna....ovvero..con il formato A3 si possono fotocopiare 2 fogli A4
+su un solo A3, quindi la macchina cerca di scalare 2 fotocopie dalla tessera,
+ma dato che vi trova 1 solo credito, e non potendo inserire un numero
+negativo... incontra un FATAL ERROR...esegue le copie e sputa la scheda...che
+pero' ha ancora un credito in memoria...quindi la si rimette e via dicendo...
+C'e' un altro bug interesante che ci permette di arrivare ad avere un credito
+solo facendo il doppio di fotocopie a parita' di crediti...
+A questo scopo si deve usare come al solito la carta A3, ma la si deve inserire
+nell'inseritore a mano (e non tramite il cassetto) selezionando pero' A4...la
+macchina fara' quindi 2 fotocopie e ne scalera' 1.
+
+-!!!- VIDEONOLEGGI -!!!-
+שששששששששששששששששששששששש
+Nelle videoteche automatiche che utilizzano tessere a codice a barre ci sono
+molti bugs..
+Intanto le tessere si possono copiare con una semplice fotocopia, poi a
+seconda del software utilizzato se si e' fortunati si becca quello che come
+codice segreto usa la data di nascita dell'abbonato (e' il + diffuso).
+Il codice e' qundi di 6 cifre es 011184 = 1Novembre1984
+Sara' molto facile trovare qualcuno che chiaccherando riveli il suo codice
+ehm pardon la sua data di nascita...poi procurarsi la tessera sara' altrettanto
+facile, quel tanto che basta per copiarla, oppure si puo' chiedere alla vittima
+di mostrarcela perche' siamo interessati ad iscriverci anche noi, ed una volta
+in mano nostra, possiamo imparare a memoria quei numerini sotto al codice a
+barre per poterlo riprodurre.
+E' importante sapere che una volta in possesso della tessera copiata, si
+possono noleggiare le cassette al noleggio automatico, il quale, tra l'altro,
+al momento della restituzione non controlla se quello che date e' la cassetta,
+potrebbe benissimo essere una scatola vuota su cui avete incollato l'adesivo
+della cassetta originale con su il codice a barre della cassetta. E' ovvio che
+cosi' facendo si mandano in fallimento le videoteche (E allora?).
+
+*******************************************************************************
+
+TREMENDO FATTO SEGNALATO DA -RigoR MorteM-: 
+ "da me i videonolleggi di tipo "VideoBank" si sono dotati di telecamera e la
+  password non e' piu' decisa dall'utente ma gli viene cambiata una volta ogni
+  ricarica...."
+
+*******************************************************************************
+
+GRAZIE A 'VaNaDiO', L'AUTORE DI QUESTO FILE
+
+    by
+ֵ        ֵ
+³ AVA666 ³
+~~~~~~~~~~

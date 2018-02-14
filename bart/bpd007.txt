@@ -1,0 +1,79 @@
+                      bartx personal diary        releas 1.0
+
+ Tutto il materiale contenuto in questo articolo ha fini eslusivamente informativi ed  
+educativi. Io Bartx non mi ritengo in alcun modo responsabile dei danni causati a cose o  
+         persone dall'uso delle informazioni contenute in questo articolo.
+  Pertanto il lettore si assume ogni genere di responsabilita' per l'uso che farà delle  
+                    informazioni contenute in questo articolo.
+Siete pregati di non postare questo articolo in newsgroup e di non diffonderlo se non in  
+                                  forma originale.
+
+************************************   Ms Dos for dummies  ********************************
+Allora, ms dos sta alla base di windows, o almeno, alla base di windows e windows9x (nell'
+nt, nel 2000 e nel ME non esiste più il dos puro. Tuttavia c'è sempre il prompt).
+Questo è stato uno dei primi sistemi operativi, anzi il primo, di casa Microsoft, e forse, anche l'unico decente. 
+Premesso questo vi dirò, che il dos, essendo un'interfaccia non grafica, è molto più leggero
+e veloce del windows, quindi è sempre da preferire, soprattutto per le operazioni più 
+delicate e che richiedono molta memoria. 
+
+
+
+I comandi principari:
+cd = serve per entrare in una directory. l'uso è cd nome_directory. Per raggiungere la 
+directory di livello superiore scrivere "cd.." (senza apici).
+
+Dir = il comando dir serve per visualizzare i file presenti in una directory. Basta che lo 
+digitate quando siete nella directory di cui volete avere l'elenco dei file.
+In più potete sceglere varie opzioni: se scrivete dir/p l'elenco si fermerà ogni pagina
+per darvi la possibilità di leggere; se scrivete dir/w vi darà l'elenco in modalità 
+estesa; se scrivete *.exe vi darà l'elenco di tutti i nomi con estensioni exe; se scrivete 
+ciccio.* vi darà l'elenco di tutti i file che si chiamano ciccio con qualsiasi estensione.
+
+md = serve per creare una directory. Per esempio, per creasre una directory chiamata 
+imbecille basterà scrivere "md imbecille" (senza apici)
+
+rd = serve per cancellare una directory. Applicazione: "rd imbecille" (senza apici)
+
+copy = che sarà mai? Per copiare il file pincopallino che si trova in C:\imbecille nella 
+cartella fesso scriviamo così: "copy c:\imbecille\pincopallino c:\fesso" (naturalmente senza
+apici).
+
+del = cancella un file. Uso: del nome_file
+
+
+
+Questi erano i comandi principali. Ora passiamo ai comandi di rete, che sono quelli che ci
+interessano di più:
+
+Netstat = lo dice la parola no? cmq. per i dementi, il netstat visualizza lo stato delle
+connessione (porte aperte, verso che ip o da che ip)
+
+
+
+Ping = il ping verifica la connessione di un pc remoto e ne determina i tempi di risposta.
+Uso: "ping ip_computer" oppure "ping nome_sito" (senza apici)
+
+Tracert	= Mostra il percorso fatto da un pacchetto per raggiungere un computer remoto.
+uso: TRACERT [-d] [-h maximum_hops] [-j host-list] [-w timeout] nome_destinazione
+
+Ps = questi comandi possono essere ustati in modo più complesso aggiungendo delle opzioni.
+Per conoscere l'uso complesso e le varie opzioni scrivere il comando seguito da "/?".
+es: "tracert /?" oppure "ping/?"
+
+Telnet = non è alctro che un client che permette il controllo remoto su una shell.
+Per usarlo scrivete: telnet ip_computer porta
+Probabilmente spiegherò l'uso di telnet in modo approfondito in un'altro articolo, siccome 
+è molto vario e complesso.
+
+Ciao a tutti
+
+            ######                                    
+            ##   ##                #                  
+            ##   ##               ##                  
+            ##   ##   ####   ######## ##  ##          
+            ######   #   ##  ##   ##  ##  ##          
+            ##   ##    ####  ##   ##   ####           
+            ##   ##   ## ##  ##   ##    ##            
+            ##   ##  ##  ##  ##   ##   ####           
+            ##   ##  ##  ##  ##   ##  ##  ##          
+            ######    #####  ##    ## ##  ##          

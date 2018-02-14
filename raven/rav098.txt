@@ -1,0 +1,69 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Rockets.
+~~~~~~~~
+
+Next to the Roman Candle, these are perhaps the most popular articles of the
+pyrotechnical craft and, on good authority, apparently antedate the candle. So
+much has been written about sky rockets that any detailed description would be
+superfluous. The French, particularly, have left a most complete history,
+sometimes amusing, in view of the present status of rocket manufacture. The
+rocket consists of a tube of paper rammed with suitable composition, its lower
+end choked to about one-third of the diameter of its bore, and having a hollow
+center extending upward through the composition to about 3/4 of an inch of the
+top. A stick attached to the tube serves to balance it while ascending.
+Roughly, the composition of a rocket, that is, the portion of it that is
+burning while it is ascending, should be seven times its diameter in length.
+Six-sevenths is pierced through the center while one-seventh is solid and acts
+as a fuse to communicate the fire to the heading when the rocket reaches the
+highest point of its flight.
+
+     The tube is made of strong paper, preferably 3 turns of hardware paper on
+the inside with 4 or more turns of straw board or Kraft paper on the outside.
+A good rocket case can also be made of heavy rag or building paper, if it is
+properly rolled with good paste. The process of choking the case and ramming
+in a mold has been practically discontinued. An average model for a 1 pound
+rocket is given in the file "ROCKET.ANS" (ANSI graphics format).
+
+     Good rockets should be uniform, all those of one caliber ascending to the
+same height and bursting at about the same time. This is particularly
+desirable in bouquets of 100 or more, fired simultaneously, or a straggling
+effect is produced.
+
+     Most rockets larger than 3 ounces are rammed singly or by gang rammers,
+which can be built on a custom basis. Today, hydraulic rammers are also in use.
+
+     For very large rockets, a scoop of clay is shaken in and rammed with
+eight good blows of a mallet on the longest rammer. Then, a scoopful of
+composition is rammed with about eight lighter blows. This is repeated until
+the case is filled to about 1 inch from the top. Shift rammer as it becomes
+necessary to use shorter ones. There should be 1 inch of solid composition
+above the top end of the spindle. Now the final charge of clay is put in and
+the hollow pin rammer is used. This sets the clay while leaving an opening for
+the fire to reach the heading. Care must be used to see that the hollow tube
+just pierces the clay. If it does not go through, the heading will fail to
+fire; if it goes too far, the heading will fire prematurely. (The heading is
+the blast charge or whatever you want to ignite) the following are good
+compositions for rockets of the different sizes given: (given in weighted
+parts)
+
+                    1-3 ounces    4-8 ounces    1-3 pounds    4-8 pounds
+Potassium Nitrate      18            16            16            18
+Mixed Coal             10             9            12            12
+Sulfur                  3             4             3             3
+
+     If rockets burst before ascending, add more coal; if they ascend too
+slowly, add more Potassium Nitrate. For the smaller sizes, use fine coal, for
+larger, coarser in proportion to the diameter. In 4-8 pound rockets, use
+partly granulated Potassium Nitrate.
+
+== Fonte: Anarchy 'n' Explosives 6 ==
+
+The Raven
+Since `82

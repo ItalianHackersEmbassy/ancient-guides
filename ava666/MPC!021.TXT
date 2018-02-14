@@ -1,0 +1,187 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     L'AUTORE, AVA666, DECLINA OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- PROCEDURA DI TEST DELLE CABINE A SCHEDE -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+La 'Procedura di test' consente di fare molte cose interessanti (leggetevele),
+ma prima bisogna aprire la cabina (non vi consiglio di usare metodi 'violenti'
+(piede di porco, ecc),la cosa migliore sarebbe copiare la chiave o farne una
+nuova, perchŠ Š importante che NON SI NOTI il vostro intervento) e modificare
+la posizione dello switch a fianco del Display.
+
+
+-!!!-T.P.D.C.-!!!-
+^^^^^^^^^^^^^^^^^^
+Posizionare l'unico microswitch verso l'alto.
+
+Dare un comando di RESET al pulsante posto vicino al microswitch. Sul display
+viene visualizzato:
+
+   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+   ³                 STATO DI TEST                ³
+   ³              REL. nn.nn xx/xx/xx             ³
+   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+(REL.......: identificazione release)
+
+
+<TEST 1: FONIA - SONERIA - BIP RICEVITORE - BOLLINI>
+ Digitare 1 sulla tastiera di selezione, sul display compare TEST 01
+ lampeggiante. In questa fase TEST 01 lampeggiante si possono effettuare 4 test
+ diversi e cioŠ:
+  1 - TEST FONIA: Confermare "1", sul display viene visualizzato TEST FONIA;
+                  verificare la fonia nel microtelefono che rimane attiva per
+                  circa 1 min. dopo di che viene visualizzato in seconda riga
+                  FINE TEST a conferma della chiusura del test fonia e subito
+                  dopo ricompare TEST 01 lampeggiante.
+  2 - TEST SONERIA: Digitare "2", sul display viene visualizzato TEST SONERIA;
+                    verificare, se Š montata la soneria elettronica, che suoni;
+                    dopo circa 20 sec. viene visualizzato il seconda riga FINE
+                    TEST con la ricomparsa sul display di TEST 01 lampeggiante.
+  3 - TEST BEEP RICEVITORE: Digitare "3", sul display viene visualizzato TEST
+                            BEEP RICEVITORE; verificare il beep di avviso fine
+                            credito nel ricevitore che rimane attivo in modo
+                            intermittente per circa 20 sec. dopo di che viene
+                            visualizzato in seconda riga FINE TEST con la
+                            ricomparsa sul display di TEST 01 lampeggiante.
+
+
+<TEST 2: INTERFACCIA DI LINEA>
+ Digitare "2" e verificare sul display la comparsa del messaggio TEST 02 I.
+ LINEA seguito da EO in seconda riga.
+
+
+<TEST 3: PIASTRA LOGICA>
+ Digitare "3" e verificare sul display la comparsa del messaggio TEST 03 P.
+ LOGICA seguita da EO in seconda riga.
+
+
+<TEST 4: VISUALIZZAZIONE CONTATORI>
+ Digitare "4" sul display compare TEST 04 CONTATORI e subito dopo verranno
+ evidenziati in sequenza i contenuti dei contatori suddistinti per tipo (sulla
+ sinistra del display), e la quantit… (sulla destra) espresse da numeri di
+ max. 4 cifre che nel seguito saranno indicati con "xxxx" cioŠ:
+ CONT NICD xxxx       = numeri incassi carta telefonica
+ CONT NRCD xxxx       = numeri riscontri carta telefonica
+ CONT NICC xxxx       = numeri incassi carta di credito
+ VALORE SCATTO 200    = costo del gettone
+ Al termine, sul display in seconda riga comparir… il messaggio FINE TEST.
+
+
+<TEST 5: DISPLAY>
+ Digitare "5" e verificare sul display la scritta TEST 05 DISPLAY e subito dopo
+ la comparsa di tutti i numeri su due righe da 0 a 9; al termine comparir… in
+ seconda riga il messaggio FINE TEST.
+
+
+<TEST 6: MOTORE - ATTUATORE SARACINESCA>
+ Digitare "6" e verificare sia la la movimentazione del tamburo che quella
+ della saracinesca. Sul display TEST 06 MEC. LET. e subito dopo LETTORE
+ INTEGRATO e al termine in seconda riga FINE TEST.
+
+
+<TEST 7: LETTURA DELLE SCHEDE - BUZZER - LED>
+ Digitare "7". Sul display compare il messaggio LETTORE INEGRATO e subito dopo
+ INSERIRE UNA CARTA; introdurre una carta telefonica non esaurita; la carta
+ sar… trattenuta e poi restituita; sul display comparir… il messaggio CARTA
+ TELEFONICA e subito dopo RITIRARE LA CARTA; si attiver… il buzzer per alcuni
+ istanti. Passare una carta di credito; sul display comparir… CREDITO
+ TELEFONICO se la carta Š telecom, CREDITO COMMERCIALE se commerciale, per poi
+ ritornare sul display INSERIRE UNA CARTA. L'uscita da questo test avviene o
+ digitando un tasto della tastiera o per time-out di 40 sec., visualizzando il
+ messaggio FINE TEST in seconda riga.
+
+ NOTA: Una carta telefonica con valore viene restituita dalla bocchetta
+       superiore, mentre una carta telefonica azzerata viene restituita
+       dalla bocchetta inferiore.
+
+
+<TEST 8: VISUALIZZAZIONE SEQUENZIALE DEI CODICI DI ERRORE>
+ Digitare "8". Se successivamente all'ultimo TEST 8 visualizzato non vi Š
+ stato un errore che abbia determinato un F.S., eventuali codici diagnostici
+ presenti nello storico vengono visualizzati sul display come di seguito:
+ In prima riga:    ERRORI STORICI
+ In seconda riga:  E11 oppure E12, ecc.
+ Se vi Š stato un F.S. anche se autoripristinante sul display viene
+ visualizzata una sequenza formata dal codice di errore che ha determinato
+ il F.S. pi— eventuali codici diagnostici presenti nello storico. Pi— volte
+ l'apparecchio Š andato in F.S. pi— sequenze saranno visualizzate come di
+ seguito:
+ In prima riga:   SEQUENZA N.01
+ IN seconda riga: CODICE E10   oppure  Exx
+ L'avanzamento dei codici/sequenza avviene manualmente digitando un qualsiasi
+ tasto della tastiera. A fine sequenze gli eventuali codici diagnostici
+ presenti nello storico vengono visualizzati come descritto nella prima parte
+ ma in modo automatico. Successivamente sul display vengono visualizzati in
+ modo automatico i contatori statistici relativi al lettore integrato, distinti
+ per tipo (sulla sinistra), e per quantit… (sulla destra) espresse da numeri
+ max di 4 cifre che nel seguito saranno indicati con "xxxx" e cioŠ:
+ In prima riga:    CONTATORI LETTORE
+ In seconda riga:  CONT FRODE GON  xxxx: contatore frode gancio ON
+                   CONT FRODE GOFF xxxx: contatore frode gancio OFF
+                   CONT ERR LETT2  xxxx: contatore errore lettura T2
+                   CONT INCAGLIO   xxxx: contatore incaglio scheda
+                   CONT CANCEL OK  xxxx: contatore scheda OK
+                   CONT CANCEL KO  xxxx: contatore scheda KO
+
+Termina con TEST 08 SEQUENZE e in seconda riga FINE TEST. Questo test pu•
+essere ripetuto indefinitivamente senza uscire dallo stato di test. All'uscita
+da quest'ultimo sia per reset che per time-out di 40 sec. di inattivit…, viene
+azzerata la memoria dello storico sequenziale dei codici di errore, mentre i
+contatori statistici relativi al lettore integrato vengono azzerati solo
+superando la soglia di 9999. L'uscita da qualsiasi test per reset o per
+time-out che non abbia interessato il TEST 8, non determina l'azzeramento della
+memoria dello storico sequenziale dei codici degli errori.
+
+
+<TEST 9: RESET DEL LETTORE INTEGRATO>
+ Digitare "9". Sul display comparir… TEST 09 RESET LET.
+ Subito dopo viene visualizzato:
+ In prima riga:   LETTORE INTEGRATO
+ In seconda riga: REL nn.nn gg/mm/aa
+ (REL....... = identificazione della release software)
+ Subito dopo sul display comparir… FINE TEST.
+ Questo test consente di mandare un reset al lettore integrato.
+
+
+<TEST 10: VERIFICA INTERRUTTORE SPORTELLO>
+ Digitare "0". Sul display comparir… TEST 10 SPORTELLO e subito dopo in
+ seconda riga lo stato dell'interruttore relativo allo sportello e cioŠ:
+ SPORTELLO APERTO
+ SPORTELLO CHIUSO
+ Per verificare il buon funzionamento dell'interruttore bisogna controllare la
+ coerenza tra il messaggio sul display e lo stato dello sportello. Per uscire
+ dal test premere un tasto qualsiasi; sul display in seconda riga comparir… il
+ messaggio FINE TEST.
+
+
+<TEST 11: INDICE DEI CODICI DI ERRORE>
+ Digitare "*". Sul display comparir… TEST 11 INDICE. In modo automatico e/o
+ manuale pigiando un tasto saranno visualizzati in ordine crescente tutti i
+ codici di errore in seconda riga, con la relativa descrizione sulla prima riga.
+
+
+<TEST 12: AZZERAMENTO CONTATORI>
+ Digitare "#". Sul display comparir… TEST 12 AZZ.CONT. lampeggiante. Se si
+ vogliono azzerare i contatori bisogna confermare l'operazione digitando
+ nuovamente il tasto "#". Premendo un qualsiasi altro tasto si esce dal test
+ senza azzerare i contatori. Sul display in seconda riga comparir… FINE TEST.
+
+
+<<FINE TEST:>>
+ Se durante l'effettuazione della procedura di test fossero riscontrate delle
+ anomalie esse saranno evidenziate con il relativo codice di errore. Se l'esito
+ del test Š positivo, l'apparecchio Š pronto per entrare in servizio; pertanto
+ si riporta il microswitch verso il basso (normale funzionamento) e si preme
+ nuovamente il pulsante di reset.
+
+
+ Å        Å
+ ³ AVA666 ³ 
+ ~~~~~~~~~~
+

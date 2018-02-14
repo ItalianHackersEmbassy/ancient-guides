@@ -1,0 +1,98 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- REMAILER: ECCO UNA FACILE GUIDA #1 -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mantenere la Privacy su Internet e' importante, siccome lo sanno tutti, non mi
+dilunghero' parlando della sua importanza, ma mi limitero' a descrivere come
+tutelarsi sulla Rete. In questo file spieghero' come Spedire Lettere TOTALMENTE
+Anonime. Tutti (credo/spero) conoscono l'esistenza dei 'REMAILER' (particolari
+mail-server che ricevono la tua lettera e la rispediscono al destinatario che
+desideri facendo cosi' perdere le TUE tracce), vediamo come si utilizzano.
+
+Dopo avere preparato la lettera
+
+Esempio:
+
+< succhia succhia succhia
+< CIAO VECCHIO LAMER,
+< COME TE LA PASSI?
+< slurpa slurpa slurpa
+
+Mettere sopra della lettera le seguenti 2 righe:
+
+::
+Request-Remailing-To: INDIRIZZO
+
+
+Scrivendo, al posto di 'INDIRIZZO', l'indirizzo di posta elettronica a cui
+volete mandare il messaggio anonimo.
+
+
+A questo punto spedite la lettera NON all'indirizzo del Lamer, ma a quello di
+un Remailer. (Es. remailer@replay.com)
+
+
+Ecco come si presentera' la vostra lettera:
+
+
+     
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+To: remailer@replay.com
+Subject: 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+::
+Request-Remailing-To: pinco_pallino@hotmail.com
+
+< succhia succhia succhia
+< CIAO VECCHIO LAMER,
+< COME TE LA PASSI?
+< slurpa slurpa slurpa
+       
+
+
+Per "rafforzare" l'impossibilita' di essere beccati e' consigliato fare una
+"catena" di Remailer, questo e' davvero facile da fare: 
+
+
+      
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+To: remailer@replay.com
+Subject: 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+::
+Request-Remailing-To: remailer@anon.efga.org
+::
+Request-Remailing-To: remailer@replay.com
+::
+Request-Remailing-To: pinco_pallino@hotmail.com
+
+< succhia succhia succhia
+< CIAO VECCHIO LAMER,
+< COME TE LA PASSI?
+< slurpa slurpa slurpa
+       
+
+
+In questo modo la lettera RIMBALZA da un remailer all'altro prima di arrivare
+al destinatario, in questo modo rintracciare il mittente e' difficilissimo
+(vorrei dire impossibile, ma non si sa mai... comunque nel file successivo
+"mpc!063.txt" imparerete altri piccoli trucchi per sfruttare al max i remailer)
+
+P.S. Spero di essere stato chiaro e comprensibile
+
+P.P.S. Come potete intuire lo svantaggio di questo sistema e' l'impossibilita'
+       di essere "Replicati", ma credo che se lo state usando di certo non
+       volete che il destinatario vi risponda! (quindi, di che vi lamentate?)
+
+P.P.P.S. Esistono tanti indirizzi Remailer, io ve ne ho dato 2:
+         "remailer@replay.com" e "remailer@anon.efga.org"
+
+ Å        Å
+ ³ AVA666 ³
+ ~~~~~~~~~~

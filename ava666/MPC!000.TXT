@@ -1,0 +1,498 @@
+                                      .
+                              ,       ;       ,
+                      '.       ,      |      ,       .'
+                         \      ,     |     ,      /
+                           \      ,   :   ,      /
+                   ,         \     ,  ;  ,     /         ,
+                      '  ,     '.  ,-----,  .'     ,  '
+                            '  , /'       '\ ,  '
+                   - - - - - -  |           |  - - - - - -
+_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_=^=_=^=_=^=_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-
+_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-
+_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-
+_ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ ~ _ 
+, ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' ,
+  ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,  V O T A N  2
+.   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .
+
+          x9/0x/1999: Carabinieri a casa. Salve... Lasciamo stare.
+VERSIONE DEFINITIVA DEL COOKBOOK: CON QUESTO NUMERO (PROBABILMENTE) SI CHIUDE
+IL "MY PERSONAL COOKBOOK!". PER ME NON E' STATA UNA SCELTA FACILE, MA FORSE E'
+STATA LA DECISIONE GIUSTA. EBBENE, NON SCRIVETEMI (SE ANCORA POSSEDETE UNA
+VERSIONE IN CUI COMPARE IL MIO INDIRIZZO), NON CERCATEMI E NON CHIEDETE DI ME.
+AVA666 LASCIA. SONO CERTO CHE QUALCUNO IN ITALIA CONTINUERA' IL MIO LAVORO.
+INVITO CHI POSSIEDE VERSIONI PRECEDENTI DI QUESTO TESTO AD ELIMINARLE. GRAZIE.
+FORSE CONTINUERO' LA MIA COLLABORAZIONE A "SPAGHETTI PHREAKERs" (NON SONO
+CERTO NEANCHE DI QUESTO). COMUNQUE RINGRAZIO TUTTI PER LA STIMA DIMOSTRATA.
+[ESISTE UNA PICCOLA POSSIBILITA' CHE OGNI TANTO ESCA UNA VERSIONE SUCCESSIVA,
+MA NON ASPETTATEVI DEI TESTI COME QUELLI PUBBLICATI FINO AD ADESSO].
+TRALALTRO LA "TOTALE REVISIONE DEI FILEs HA PRESO PIU' TEMPO DEL PREVISTO,
+ALTRIMENTI QUESTA VERSIONE SAREBBE STATA PUBBLICATA MOLTO PRECEDENTEMENTE.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+N.B. TUTTI I FILEs QUI DESCRITTI SONO DA RITENERSI A TITOLO PURAMENTE
+     INFORMATIVO, PERCIO' L'AUTORE, AvAtAr, DECLINA OGNI RESPONSABILITA'
+     DALL'USO CHE POTREBBE ESSERNE FATTO. L'AUTORE, DUNQUE, NON INCORAGGIA
+     CHI VOLESSE SERVIRSENE PER SCOPI ILLEGALI. <- DiScLaImErS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SIETE PREGATI DI LEGGERE 'LA BACHECA DI AvAtAr' (VERSO LA FINE DI QUESTO FILE)
+  PER COLLABORARE CON ME ED AIUTARMI NELLO SVILUPPO DI ALTRI FILEs - Thanks
+---------SE VOLETE SCRIVERMI, FATELO, MA NON VI ASSICURO UNA RISPOSTA---------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+QUALORA DISEGNI O SCRITTE RISULTASSERO ILLEGIBILI O OSCENI DIPENDE DAL FATTO 
+CHE I FILEs SONO STATI SCRITTI SOTTO "DOS". PER SAPERLO FAI QUESTA PROVA:
+
+GUARDA QUESTI 2 SIMBOLI: "≥" e "|"
+<SE SI TRATTA DI:>
+a) 1 LINEA VERTICALE (a sinistra) E 2 PUNTI (a destra), ALLORA TUTTO OK!
+b) UN "3" (sinis.) ED UNA LINEA (destra), ALLORA DEVI UTILIZZARE UN PROGRAMMA
+CHE INTERPRETI GLI ASCII COME DICO IO (VE NE HO ALLEGATO UNO MOLTO BELLO).
+
+In tutti i casi vi consiglio di utilizzare il programma che ho allegato al
+CookBook ("HIEW.EXE"). Vi bastera' scrivere "hiew *.txt" e poi vi potrete
+muovere comodamente con "F9", oppure far partire il "FILE-BATCH" di mia
+creazione che risulta molto comodo (MPC.BAT), percio' digitate 'mpc' ed avrete
+accesso al magico mondo in cui vivo tutti i giorni: questo. - AVA666
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ …ÕÕÕÕÕÕÕÕÕÕÕÕÕÀÕÕÕÕÕÕÕÕÕÕÕÕÕª    …ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕª
+ ∫ …ÕÕÕÕÕÕÕÕÕÕÕ ÕÕÕÕÕÕÕÕÕÕÕª ∫ ah ∫                    -+-                  ∫
+ ∫ ∫      <MPC!v1.00>      ∫ ∫ vo ∫                     |                   ∫
+ ∫ ∫ MY PERSONAL COOKBOOK  ∫ ∫ at ∫                     |                   ∫
+ ∫ ∫   <live your life!>   ∫ ∫ tm ∫            |--------|--------|          ∫
+ ∫ ∫           ∫           ∫ ∫ aa ∫     \               |                   ∫
+ ÃÕπ        ÕÕÕŒÕÕÕ        ÃÕπ ri ∫     /\        /\    |    /\        /\   ∫
+ ∫ ∫           ∫           ∫ ∫ al ∫   /____\ __ /____\ _|_ /____\ __ /____\ ∫
+ ∫ ∫           ∫           ∫ ∫ 6. ∫ /        \/        \|/        \/    \   ∫
+ ∫ ∫           ∫           ∫ ∫ 6c ∫                     |                   ∫
+ ∫ ∫   <!> by AVA666 <!>   ∫ ∫ 6o ∫                     |                   ∫
+ ∫ »ÕÕÕÕÕÕÕÕÕÕÕÀÕÕÕÕÕÕÕÕÕÕÕº ∫ @m ∫                    -+-                  ∫
+ »ÕÕÕÕÕÕÕÕÕÕÕÕÕ ÕÕÕÕÕÕÕÕÕÕÕÕÕº    »ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕº
+
+< PRESENTAZIONE >
+Io sono AVA666 (diciamo pure "sono stato") e mi 'occupavo' di Anarchy e
+Phreaking. Tengo a precisare che non sono ASSOLUTAMENTE un Hacker e che non
+ho neanche le conoscenze minime per esserlo. Faccio parte della "Spaghetti
+Phreakers Crew" (very good italian team) ed ho collaborato all'e-zine dei
+"NewBies". Ho rinchiuso in questo COOKBOOK tutte le informazioni (utili ed
+interessanti) sull'HPAVC (e non solo) che sono in mio possesso.  Nella lettura
+dei vari Files potrete notare come io sia PARTICOLARMENTE IMPEGNATO nella
+LOTTA ALLA DISINFORMAZIONE. <-Probabilmente sara' il tema del mio nuovo lavoro.
+
+< PICCOLA PREMESSA >
+Questo e' il primo file del mio personale Cookbook che, per chissa' quale
+misterioso motivo, ho chiamato MY PERSONAL COOKBOOK! Sono trattati i temi
+del Phreaking, degli esplosivi e dell'Hacking in Italia (pero' guai a voi 
+se fate cio' che leggete: la mia e' solo INFORMAZIONE), ma anche altri
+sistemi per tirare a campare e qualche pillola di diritto.
+                 …ÕÕÕªª   ……ÕÕÕªÕÕÀÕÕ…ÕÕÕª…ÕÕª   …ÕÕª…ÕÕª…ÕÕª
+              by ÃÕÕÕπ»ª …ºÃÕÕÕπ  ∫  ÃÕÕÕπÃÕÕ ª  ÃÕÕªÃÕÕªÃÕÕª
+                 º   » »Õº º   »     º   »»   »  »ÕÕº»ÕÕº»ÕÕº
+Questo testo viene spedito solo all'attenzione di Lopks, un mio amico.
+Visitate il suo bel sito, se vi va. http://come.to/lopks/ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+===================================================
+-!!!- INDICE DEL 'MY PERSONAL COOKBOOK v1.00' -!!!-
+===================================================
+------------------------------------------------------------------------------
+< LEGENDA >
+i = testo di informazione generale o specifico (che bella definizione...)
+h = hacking
+p = phreaking
+a = anarchy
+v = virii
+c = cracking
+? = non identificabile (o "supposizione")
+------------------------------------------------------------------------------
+i   MPC!000 - Questo indice (meglio un indice che un medio...)
+a   MPC!001 - Fumogeno
+pi  MPC!002 - Guida agli errori delle Cabine 
+p   MPC!003 - Ti si e' scaricata la scheda? Puoi sfruttare quest'occasione...
+h?  MPC!004 - Fotocopiatrici automatiche e videonoleggio
+p   MPC!005 - The Green Pages... A nice guide 
+p   MPC!006 - Schede telefoniche 
+pi  MPC!007 - Informazioni tecniche sulle cabine
+a   MPC!008 - Fare la Polvere da Sparo
+h   MPC!009 - Nice Sites... A nice guide                 <SOGG. AD AGGIORNAM.>
+h   MPC!010 - Utilizzare Carte di Credito non esattamente tue...
+hp  MPC!011 - Internet Gratis
+a   MPC!012 - Odi qualcuno? Anche io!                    <SOGG. AD AGGIORNAM.>
+a   MPC!013 - Aprire macchine e serrature varie... #1
+a   MPC!014 - Bombe ad iniezione elettronica
+i   MPC!015 - Il mondo ci osserva. Considerazioni
+ip  MPC!016 - Emulare le monete... 
+a   MPC!017 - Bomba facile facile
+a   MPC!018 - Stinky Bomb
+h   MPC!019 - Alcune cosette da Hacker
+pi  MPC!020 - Procedura di Test dei Rotor
+pi  MPC!021 - Procedura di Test delle cabine a schede
+i   MPC!022 - La separazione dei poteri e la democrazia...
+a?  MPC!023 - Ricaricare batterie A, AA, ecc. normali (non ricaricabili)
+a   MPC!024 - Lightbulb bomb - lampadina esplosiva
+a?  MPC!025 - Guarda... 100 lire!
+a   MPC!026 - Generare cloro 
+a   MPC!027 - Guida agli elementi chimici: dove trovarli
+i   MPC!028 - Consigli per i giovani
+ip  MPC!029 - Telefonini: Prefissi e Tariffe da Rete Fissa
+a   MPC!030 - Un veleno facile facile...
+h   MPC!031 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.01)"
+h   MPC!032 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.02)"
+h   MPC!033 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.03)"
+h   MPC!034 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.04)"
+h   MPC!035 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.05)"
+h   MPC!036 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.06)"
+h   MPC!037 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.07)"
+h   MPC!038 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.08)"
+h   MPC!039 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.09)"
+h   MPC!040 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.10)"
+h   MPC!041 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.11)"
+h   MPC!042 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.12)"
+h   MPC!043 - "Enciclopedia dell'HACKING - by Lord Shinva (vol.13)"
+c   MPC!044 - "Xoanon's guide to CRACKING - By Xoanon (1/3)"
+c   MPC!045 - "Xoanon's guide to CRACKING - By Xoanon (2/3)"
+c   MPC!046 - "Xoanon's guide to CRACKING - By Xoanon (3/3)"
+a   MPC!047 - Fare il Napalm
+a   MPC!048 - Bomba 'Nutella'
+ip  MPC!049 - La natura giuridica del phone phreaking (di Andrea Monti)
+a   MPC!050 - Sigaretta simpatica (solo a te)
+a   MPC!051 - Costruire una bomba a mano
+a   MPC!052 - Costruire un fucile Tesla
+a   MPC!053 - Aprire macchine e serrature varie... #2
+a   MPC!054 - Diskette Bomb
+a   MPC!055 - Accendere un motorino a 'mani nude'
+p   MPC!056 - Intercettazioni e telefonate a scrocco
+a   MPC!057 - Molotov: facile ed efficace!
+ip  MPC!058 - Schemi dei Menu' del 916 Tim
+a   MPC!059 - Aprire macchine e serrature varie... #3
+i   MPC!060 - Gli spadini sono illegali?
+a   MPC!061 - 'Mace': Utile per la difesa
+h   MPC!062 - Remailer: ecco una facile guida #1
+h   MPC!063 - Remailer: ecco una facile guida #2
+a   MPC!064 - Super Miscela per motorini
+i   MPC!065 - L'AntiCristo rivelato...
+a   MPC!066 - Trucco collaudato per studenti disonesti
+a   MPC!067 - Scherzo innoquo!
+h?  MPC!068 - Distributori automatici #1 (Seghe'? Nescaghe'!)
+p   MPC!069 - Leggere messaggi gratis sugli Omnitel
+h?  MPC!070 - Giocare ai Coin-op Gratis
+a?  MPC!071 - Alcune cosette cattive
+a   MPC!072 - Scamming, ovvero: Avere molte cose Free... <SOGG. AD AGGIORNAM.>
+a   MPC!073 - Bomba con Timer
+i   MPC!074 - Lista di Remailers
+a   MPC!075 - Trucco per le 'Roulette da Bar' #1 (bug)
+a   MPC!076 - Odi la scuola?
+a   MPC!077 - Bomba con la palla da tennis
+a   MPC!078 - Come fare le micce
+a   MPC!079 - Trucco per le 'Roulette da Bar' #2 (trucco)
+h   MPC!080 - Netbus & Back Orifice
+p   MPC!081 - Ascoltare e modificare la segreteria di un Amico/Nemico (Tim)
+h?  MPC!082 - Distributori Automatici #2
+p   MPC!083 - Ascoltare e modificare la segreteria di un Amico/Nemico (Omnitel)
+h   MPC!084 - Come spedire E-Mail da un green e trarne un buffo vantaggio...
+a   MPC!085 - Costruzione Bomba Artigianale
+a   MPC!086 - Cannoni, Fucili, Mortai
+a   MPC!087 - Cosa non piace al serbatoio
+h   MPC!088 - Guida alle Password delle E-Mail
+h   MPC!089 - No Password per lo Screen Saver di Windows
+i   MPC!090 - PC Tips: Utili Cosette da sapere
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+(a) MPC!AP01- Anarchist Yellow Pages
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+ N.B. I files n. 02-07-20-21 possono essere considerati un vero e proprio
+      manuale per le cabine telefoniche (forse perche' lo sono davvero...)
+
+
+--STATISTICHE TEMI TRATTATI--
+  a = 38% ......... (38/100)
+  h = 27% ......... (27/100)
+  p = 16% ......... (16/100)
+ [i = 16% ......... (16/100)]
+  c =  3% ......... ( 3/100)
+
+
+   <<<PROGETTI SOSPESI>>>
+ovvero, files in preparazione
+o idee da realizzare e provare
+ - LI VEDRETE DIFFICILMENTE -
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+i   -Articoli tratti dal Codice Penale                                 (AVA666)
+h   -Manuale di Ingegneria Sociale                                  (BLINDHACK)
+a   -La guida per far morire i professori di Paura...               (BLINDHACK)
+a   -Fare l'acido nitrico                                              (AVA666)
+h   -Cambiamonete                                                      (AVA666)
+=====
+p   -Cimice telefonica                                                 (AVA666)
+p   -Hendrix Box                                                       (AVA666)
+
+=========================
+ALTRI COMMENTI (COMENTI):
+=========================
+1----> i fail di questo Cucbuc li o scriti cuasi tuti io, AvAtAr. comuncue
+in cuei fails scriti da altre persone ci e scrito il autore origianale. se
+invece il fail e stato scrito da me insieme a un altra persona ci sono tuti
+e due i nomi. spero che i miei insegniamenti vi siano utili.  +AvAtAr '99+
+
+2----> io o cercato di utilizare sopratuto fail fati da me, ma dala versi-
+one 0.41, io o agiunto molti fails di altri autori (naturalmente, anche in
+cuesto caso io o specificato il autore origianale).           +AvAtAr '99+
+
+3----> vorei ricordare che il cubuc e gestito interamente da me e non esi-
+ste nesuno che colabori con me in modo 'direto' al mantenimento in vita del
+cubuc. quindi vi consilio di considerare ogni cucbuc come fose lo ultimo.
+mi spiego: esendo una publicazione del tuto aperiodica il numero sucesivo
+potrebe anche non eserci mai. e infati una certeza che un giorno questa
+publicazione vera interota, spero per volere mio e non di altre 'forze'
+esterne (magari quele delo ordine... speriamo non acada).     +AvAtAr '99+
+
+APGREID
+4----> (vedi il punto 3). be, e acaduto cuanto avevo tragicamente predeto.
+dimenticatevi di avatar, e del suo bel cucbuc. adio, ragazi.  +AvAtAr '99+
+
+
+
+≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+∞∞ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∞∞
+∞∞ Øƒ> MOTIVO RICORRENTE DELLA BACHECA : SE SAPETE QUALCOSA SCRIVETEMI! <ƒÆ ∞∞
+∞∞ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∞∞
+∞∞           €ﬂ‹ ‹ﬂ‹ ‹ﬂ‹ € € €ﬂﬂ ‹ﬂ‹ ‹ﬂ‹           ‹ﬂ‹ € € ‹ﬂ‹ ﬂ€ﬂ ‹ﬂ‹ €ﬂ‹  ∞∞
+∞∞  €  ‹ﬂ‹   € € € € € ﬂ € € €   € ﬂ € €     € ﬂ   € € € € € €  €  € € € €  ∞∞
+∞∞  €  €‹€   €ﬂ‹ €ﬂ€ €   €ﬂ€ €ﬂ  €   €ﬂ€   ‹ﬂ€ €   €ﬂ€ € € €ﬂ€  €  €ﬂ€ €ﬂ‹  ∞∞
+∞∞  €‹ € €   € € € € € ‹ € € €   € ‹ € €   ﬂ‹€ €   € € € € € €  €  € € € €  ∞∞
+∞∞           €‹ﬂ € € ﬂ‹ﬂ € € €‹‹ ﬂ‹ﬂ € €           € €  €  € €  €  € € € €  ∞∞
+∞∞ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∞∞
+∞∞ ƒƒƒ ANNUNCI, PROPOSTE, COMUNICAZIONI RIVOLTE AL LETTORE DEL COOKBOOK ƒƒƒ ∞∞
+∞∞ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∞∞
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤≤
+
+  ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+COSA ERA "LA BACHECA DI AvAtAr"?
+All'interno della Bacheca di AvAtAr ho scritto tutti gli annunci, le notizie,
+le proposte di collaborazione e le comunicazioni rivolte ai lettori. Lo scopo
+fondamentale di questo 'angolo' all'interno del mio CookBook e' principalmente
+quello di realizzare nuovi files e di migliorare il CookBook stesso.
+Ovviamente, se potete aiutarmi, io ve ne saro' grato (se non potete aiutarmi
+voi in persona chiedete almeno ad altre persone affinche' possano darvi le
+info che mi interessano). Che dire... Io il mio appello lo ho fatto, spero che
+venga raccolto da molti di voi. (daltronde conviene anche a voi).
+Il fatto che un 'inserzione' sia ancora presente sulla bacheca vuol dire che
+non mi e' stata nessuna data risposta a proposito o la risposta non e' stata
+soddisfacente. Fessata: "Ma cosa volete, il SANGUE dalla (AVAT)arelli?"
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+CHIARIAMO CERTE COSE:
+Tutti i files che fanno parte di questo Testo non possono essere modificati,
+copiati o divulgati senza il Mio permesso e i dovuti riferimenti all'Autore.
+Tengo a sottolineare che i contenuti sono rivolti ad un tipo di lettore
+ABBASTANZA MATURO da NON FARE QUANTO scritto, capendo che tutto cio' e'
+talvolta PERICOLOSO o, peggio, ILLEGALE. Insomma, chiariamo: IO NON SCRIVO
+PER FARE MALE, MA PER "DIVERTIRE ed INTRATTENERE" I LETTORI. Percio' tutto il
+testo non va visto come un manuale, ma piu' che altro come un romanzo.
+Infatti tutte le informazioni che possono essere trovate e tratte hanno solo
+questo scopo. Quante volte dovro' ancora ripeterlo???
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+LOTTA ALLA DISINFORMAZIONE
+Chiunque fosse in possesso di notizie o curiosita' che dimostrano quanto la
+informazione in Italia e nel Mondo viene filtrata e sporcata e' pregatissimo
+di scrivermi per rendermi partecipe di tutto questo.
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+CARTE PREPAGATE ITALIANE E STRANIERE
+Se sapete dei numeri verdi tramite cui si possono usare carte prepagate
+straniere (americane, tedesche, francesi, ecc.) SCRIVETEMI! Sto facendo una
+ricerca e, se mi date questi benedetti numeri, forse si puo' fare qualcosa.
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+ESPERIMENTO DI DIFFICE SOLUZIONE
+Sto facendo degli studi per cercare un algoritmo per generare i codici dei
+ricaricabili (e delle carte prepagate in generale). Sarei veramente felice
+se qualcuno mi spedisse tutti CODICI [magari completi di "data di espirazione",
+"codici non nascosti", altri eventuali "segni di riconoscimento" (nelle Tim
+il numero/lettera in alto a destra) ed importo della scheda] che riesce a
+procurarmi. Siccome ho bisogno di molto materiale per avere dei risultati,
+chiedete anche in giro e ditemeli! Saro' ovviamente GRATO con chi mi aiutera'
+(capisci a me). Soprattutto se avro' risultati. Grazie. (Ovviamente sono
+graditissime vostre INFORMAZIONI o IDEE riguardanti gli algo TIM o OMNITEL).
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+UN MISTERO... AIUTATEMI A RISOLVERLO:
+Navigando sono "inciampato" in un Cookbook americano (BHU's Cookbook v.1) che
+apparentemente era la copiatura pari pari del Cookbook di Jolly Roger, ma
+leggendo attentamente mi sono reso conto di una cosa: Era PRECEDENTE.
+Questo sinceramente mi ha 'scioccato' e potrebbe essere spiegato in 3 modi:
+1-Jolly Roger prima si chiamava BHU;
+2-Jolly Roger ha Preso il Cookbook di BHU e lo ha continuato, mettendo il suo
+  nome su tutti i files (non ci credero' mai);
+3-BHU ha preso i primi 50/60 files dal Cookbook di J.Roger e ha detto che
+  erano suoi (lo scrive chiaramente, e poi la versione contiene una piccola
+  parte dei files, ma in perfetto ordine - e poi e' la versione 1, non 4 come
+  l'ultima Release conosciuta [in realta' circola anche la 5, ma e' stata
+  rivista da un altro di cui non mi ricordo il nome]).
+Sinceramente non credo molto alla 3¯ ipotesi, percio' il dubbio rimane tra le
+mie prime 2 teorie. Cercate di risolvere il mio dilemma! Se sapete qualcosa
+fatemi sapere, sono preoccupato per la fama del mio Maestro...
+Altro che "BHU": BHO!
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+RICHIESTA DI INFORMAZIONI
+Vorrei fare un appello a chiunque conosca dei numeri di telefono relativi a
+delle Cabine Telefoniche Pubbliche (o comunque e' in grado di procuramene),
+cosi' da poter fare un "Mega Elenco Telefonico Italiano". Questo e' uno dei
+miei soliti progetti ASSURDI che possono essere realizzati SOLTANTO con il
+vostro aiuto. Quindi come al solito, SE SAPETE, SCRIVETE! (VI PREGO!!!)
+[secondo certe infos questi numeri NON ESISTEREBBERO PROPRIO]
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+IL MEGLIO SUL PHREAKING (PUBBLICITA'...)
+Visitate spesso il sito di Spaghetti Phreakers per avere nuove Info ed
+aggiornamenti del COOKBOOK (http://come.to/spaghettiphreakers/). E' un ottimo
+sito per quanto riguarda le ultime notizie riguardo il Phreaking.
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+IL MEGLIO SULL'HACKING (PUBBLICITA'...) 1
+Visitate il sito di Cavallo de Cavallis, famoso Hacker, per avere ottimi
+programmi ed informazioni (http://members.tripod.com/~CavallodeCavallis/)
+Si tratta davvero di un bel sito, l'unico difetto (se se ne vuole cercare uno)
+e' rappresentato dagli aggiornamenti poco frequenti.
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+IL MEGLIO SULL'HACKING (PUBBLICITA'...) 2
+Visitate il sito di Lopks (http://come.to/lopks/), noto Hacker, per avere
+programmi utili e guide sull'HPAVC (ehi, ma qual e' la guida Anarchy che si
+puo' scaricare da qua? ma il mio "MPC!"). E' un sito che si sta evolvendo, la
+sua caratteristica sono gli aggiornamenti frequenti del mio Cookbook (piu'
+frequenti di Spaghetti [daltronde CDP non puo' starmi dietro con tutto il
+lavoro che gli deriva dalla supervisione del suo sito]).
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+RICHIESTA DI INFORMAZIONI
+Chiunque sia al corrente delle modalita' con cui viene effettuato un
+"rintraccio telefonico" tenga presente che ne sono MOLTO interessato.
+Insomma vorrei sapere COME e DOVE si puo' essere rintracciati (per esempio
+dopo avere composto un numero verde). Ripeto: Mi interessa molto.
+Ecco quanto so per ora "Per i numeri verdi basta che l'azienda lo richieda
+alla TI senza denuncia. Altrimenti serve un denuncia e un bel po' di tempo
+(ufficialmente) anche se non ne servirebbe quanto ne serve adesso. Blum".
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+AL FINE DI MIGLIORARE IL COOKBOOK...                           [NON LEGGETELO]
+Come dice il titolo, Al fine di migliorare il CookBook, segnalatemi qualsiasi
+Errore, Sito non piu' funzionante, Numero Telefonico non piu' funzionante,
+imprecisione, ecc. Sempre a questo scopo vi chiedo di SPEDIRMI DEI FILES
+SCRITTI DA VOI (a patto che siano REALMENTE scritti da voi e che siano Degni
+di far parte di questo testo)
+                                                                  +AvAtAr '99+
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+  ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞    ∞∞
+
+
+
+===============================================================================
+    ≤≤≤≤  ≤ ≤   ≤  ≤≤≤  ≤≤≤≤   ≤≤≤  ≤≤≤≤≤ ≤  ≤≤≤  ≤   ≤ ≤≤≤≤≤ ≤   ≤ ≤≤≤≤≤ ≤
+    ≤   ≤ ≤ ≤≤  ≤ ≤     ≤   ≤ ≤   ≤     ≤ ≤ ≤   ≤ ≤≤ ≤≤ ≤     ≤≤  ≤   ≤   ≤  
+ -= ≤≤≤≤  ≤ ≤ ≤ ≤ ≤ ≤≤≤ ≤≤≤≤  ≤≤≤≤≤  ≤≤≤  ≤ ≤≤≤≤≤ ≤ ≤ ≤ ≤≤≤   ≤ ≤ ≤   ≤   ≤ =-
+    ≤   ≤ ≤ ≤  ≤≤ ≤   ≤ ≤   ≤ ≤   ≤ ≤     ≤ ≤   ≤ ≤   ≤ ≤     ≤  ≤≤   ≤   ≤  
+    ≤   ≤ ≤ ≤   ≤  ≤≤≤  ≤   ≤ ≤   ≤ ≤≤≤≤≤ ≤ ≤   ≤ ≤   ≤ ≤≤≤≤≤ ≤   ≤   ≤   ≤
+-------------------------------------------------------------------------------
+__________________________________
+Vorrei ringraziare tutti gli altri
+autori presenti in questo Cookbook:
+----------------------------------
+Alcor
+Andrea Monti
+Blindhack
+DawCreek
+Dr_KrEkEr
+FlySky
+Lopks
+Lord Shinva
+Jankee
+Jenji
+Jolly Roger (maestro!)
+MasterdreaM
+OldDrake
+PiNbALL
+Pirandelliano
+Scanman
+Smoke
+StealthGhost
+Stefano Pelloni
+Super OzzO
+unlT 
+VaNaDiO
+Xoanon                           
+
+__________________________________
+E chi ha collaborato ai miei files:
+----------------------------------
+Abc                              
+Blum                             
+Cavallo de Cavallis              
+Enola
+RigoR MorteM
+ScReTcH RmX
+ZoD
+
+__________________________________
+Altri Ringraziamenti (amici, ecc.):
+----------------------------------
+Boboto        (Hi Friend! - lo specialista in MP3...)
+CDP           (master dei Webmaster)
+Superfriend   (Come le apri tu le serrature non le apre nessuno...)
+VoTaN II      ("Credevo" di saper disegnare in ASCII prima di conoscerti!)
+Jessie James  (compagno di esperimenti e di cazzate)
+-Tutta la "Spaghetti Phreakers Crew" (se tal puo' definirsi)-
+-Tutti i miei fedeli lettori-
+-Tutti i componenti della scena UnderGround Italiana (proprio TUTTI!)-
+-Tutte le persone che hanno "risposto ai miei appelli" fornendomi Codici, info,
+ Files e sostegno morale con i loro complimenti per il CookBook.
+
+
+<<<SpEcIaLi RiNgRaZiAmEnTi>>>
+Vorrei ringraziare, in particolare, Cavallo de Cavallis (per avermi segnalato
+delle inesattezze all'interno del Cookbook e per avere accettato la mia
+proposta di pubblicare questo testo all'interno del suo bel sito), il buon
+Lopks (per aver fatto quella bella presentazione del Testo sul sito), l'amico
+MasterdreaM (con cui e' nata gia' da un bel po' una grande collaborazione),
+l'amico Blum che mi ha fornito delle Info davvero utili, oltre ad avermi
+aiutato alla realizzazione di alcuni Filez e l'amico RigoR MorteM che mi ha
+dato UN BEL PO' di codici di RicariCard.
+                                                                   +AvAtAr'99+
+
+
+ /\/\  /~\ /|\  /\  |     /\/\  |  | /~\ |  /\
+|    | >    |  |\/| |    |    | |  |  \  | |
+ \  /  \_/  |  |  | |/    \  /   \/  \_/ |  \/   
+
+___________________________________________
+GRAZIE AL MIO MAESTRO DI VITA, Jolly Roger!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+<< Amo gli afgani che lottano
+   una guerra gia' perduta,
+   perche' sanno che la resa
+   e' la morte garantita >> - Eugenio Finardi ("Soweto")
+
+_______________
+FUCK THE LAMER!
+^^^^^^^^^^^^^^^
+
+<< Beati coloro che sanno di ridere di se stessi:
+   non smetteranno mai di divertirsi >> - By VoTaN II
+
+<< Ke strano! A soffrire in due si soffre la met‡,
+   ma a gioire in due si gioisce il doppio !!! >> - VoTaN II
+
+
+LIVE YOUR LIFE...
+
+ ≈  v1.0  ≈
+ ≥ AVA666 ≥ ULTIMO AGGIORNAMENTO: ESTATE 1999
+ ~~~~~~~~~~
+

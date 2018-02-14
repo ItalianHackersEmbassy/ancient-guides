@@ -1,0 +1,42 @@
+                              bart personal diary        releas 1.0
+
+ Tutto il materiale contenuto in questo articolo ha fini eslusivamente informativi ed  
+educativi. Io Bartx non mi ritengo in alcun modo responsabile dei danni causati a cose o  
+         persone dall'uso delle informazioni contenute in questo articolo.
+  Pertanto il lettore si assume ogni genere di responsabilita' per l'uso che farà delle  
+                    informazioni contenute in questo articolo.
+Siete pregati di non postare questo articolo in newsgroup e di non diffonderlo se non in  
+                                  forma originale.
+
+
+
+per la gioia di tutti i lamer e di tutti i cornuti:
+
+*****************************  Come leggere la posta altrui   *****************************
+Non è che sia una cosa chissà quanto difficile. Al max potrebbe rivelarsi lunga.
+Quello che vi serve? eccolo:
+
+1. il nickname della vittima
+2. il server pop3 della vittima
+3. un programma di bruteforce (brutus o unsecure)
+4. una dizionario di password
+
+Supponendo che il nick della vittima sia ragazza_troia@libero.it
+Allora, aprite il programma di bruteforce, impostate come user il nick della vittima, in
+questo caso ragazza_troia@libero.it (in libero nel nick è compreso "@libero.it", con altri
+provider non occorre), come porta la porta del pop3 che è la 110,  come host
+popmail.libero.it e come attacco il dictionary attak scegliendo la lista che vi
+siete procurati.
+Potreste anche fare un brute force, ma è molto più lungo.
+
+
+            ######                                    
+            ##   ##                #                  
+            ##   ##               ##                  
+            ##   ##   ####   ######## ##  ##          
+            ######   #   ##  ##   ##  ##  ##          
+            ##   ##    ####  ##   ##   ####           
+            ##   ##   ## ##  ##   ##    ##            
+            ##   ##  ##  ##  ##   ##   ####           
+            ##   ##  ##  ##  ##   ##  ##  ##          
+            ######    #####  ##    ## ##  ##          

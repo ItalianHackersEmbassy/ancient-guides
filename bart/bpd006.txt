@@ -1,0 +1,74 @@
+                      bartx personal diary        releas 1.0
+
+ Tutto il materiale contenuto in questo articolo ha fini eslusivamente informativi ed  
+educativi. Io Bartx non mi ritengo in alcun modo responsabile dei danni causati a cose o  
+         persone dall'uso delle informazioni contenute in questo articolo.
+  Pertanto il lettore si assume ogni genere di responsabilita' per l'uso che farà delle  
+                    informazioni contenute in questo articolo.
+Siete pregati di non postare questo articolo in newsgroup e di non diffonderlo se non in  
+                                  forma originale.
+
+
+******************************  che sono gli Hackers? **************************************
+
+No!
+non sono ne un cibo messicano ne una vartietà di banane!
+L'hackers è colui che penetra sistemi informatici spinto dalla sola curiosità. Colui studia
+perennemente e insistentemente sistemi informatici, con lo scopo di approfondire la propria
+conoscienza e di sapersi destreggiare e comportare sempre più adeguatamente in questi.
+Questo è cio che un'hacker è dall'esterno.
+
+Hacker, secondo me, può essere benissimo chi non ha mai visto un computer. Infatti, questo
+individuo, temuto da tutti (anche se stupidamente), è caratterizzato dal suo spirito di 
+avventura, dal suo fenomenale intuito, dalla inspiegabile forza che lo spinge a cercare
+sempre oltre e sempre di più. Per me, anche Ulisse può essere considerato un'Hacker.
+
+Propri per questo, forse, l'hacker non è visto di buon occhio, soprattutto da chi detiene 
+il potere, siccome rappresenta una sorta di ribellione a quello che è la pratica della
+non informazione che usano i politici ed i governanti per farci credere ciò che gli sta 
+comodo. L'hacker non ci casca, l'hacker indaga, l'hacker vuol capire a tutti i costi!
+Secondo me, hacker si diventa, ma bisogna essere predisposti. 
+L'hacker non indaga solo a scopo personale, ma contribuisce alla conoscienza comune.
+L'hacker è colui che mira ad arrivare oltre l'immaginabile, vuole conoscere ciò che non
+si conosce, vuole arrivare a fare ciò che non si è mai immaginato di fare. E' la ricerca di 
+emozioni nuove, di quel brivido di piacere che ti colpisce quando pensi di aver fatto 
+qualcosa che nessun'altro è riuscito a fare, a spingerti alla ricerca di un qualcosa 
+che ancora non conosci, anzi, di cui ancora non hai idea.
+
+Se speri di imparare ad brucare sistemi per scopi personali o per arrecare danni, allora 
+non sei hacker, sei una nullità. Non mi preoccupo molto di questa gente, perchè, privi 
+di forza di volontà, non arriveranno lontano. Al massimo impareranno ad usare subseven 
+o netbus, e non perche li hanno studiati, o conoscono i protocolli di rete, perchè qualcuno
+gli ha procurato una guida o gli ha spiegato come funzionano.
+
+Man mano che avnzerete a livello culturale, percepirete il bisogno di stare sempre di più 
+a contatto con un computer, di studiare sistemi operativi alternativi, di sperimentare, di
+leggere, di programmare, di fare pratica. 
+
+Come iniziare:
+Aprite il browser, dirigetevi verso un motore hi ricerca e digitate "hacking". Vi appariranno centinaia di link, nei quali vi dirigerete e entrerete nella sezione "guide".
+Scaricatevi quanto più è possile, lasciate perdere i programmi e gli expoilt (sarebbe 
+ridicolo cercare di penertare un server non conoscendo i protocolli di rete).
+
+Le cose da cui cominciare:
+Guida ai protocolli tcp/ip
+Leggete qualche guida all'hacking (Lord Shiva, Kalidor)
+Una guida all'hacking del netbios, e cominciate a fare pratica con questo.
+
+Cominciate a fare pratica su sistemi non molto protetti e controllati, giusto per farvi
+un'idea di come sono fatti, poi passerete a sistemi più complessi, più protetti e
+più difficili da penetrare.
+
+Buona fortuna a tutti i newsbies (come me, tra l'altro)
+
+            ######                                    
+            ##   ##                #                  
+            ##   ##               ##                  
+            ##   ##   ####   ######## ##  ##          
+            ######   #   ##  ##   ##  ##  ##          
+            ##   ##    ####  ##   ##   ####           
+            ##   ##   ## ##  ##   ##    ##            
+            ##   ##  ##  ##  ##   ##   ####           
+            ##   ##  ##  ##  ##   ##  ##  ##          
+            ######    #####  ##    ## ##  ##          
+

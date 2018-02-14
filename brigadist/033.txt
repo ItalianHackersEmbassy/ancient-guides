@@ -1,0 +1,125 @@
+Piccola guida sul phreaking in italia by *DjPrizzo*  ( ke un vento di musica sia sempre nell'
+aria ke respiri...).
+
+
+
+TUTTO QUELLO KE LEGGERETE IN QUESTA GUIDA è DA RITENERSI A PURO SCOPO INFORMATIVO,PERCIò IO ( 
+DjPrizzo ) DECLINO OGNI RESPONSABILITA'  DALL'USO CHE POTRESTI FARE DI QUESTE INFORMAZIONI,E NON 
+INCORAGGIO CHI VOLESSE SERVIRSENE PER SCOPI O FINI ILLEGALI.
+
+IL POSSESSO DI QUESTO FILE è COMUNQUE DEL TUTTO LECITO: INFORMARE NON è UN REATO. 
+
+
+
+Benvenuto nel mondo del Phreaking!!! Il mio nome è  *DjPrizzo* e ho inziato a scrivere questa 
+piccola guida dopo le diverse rikieste ke mi sono pervenute da amici e conoscenti.Se siete già
+Phreakers esperti, probabilmente non troverete nulla ke vi possa essere utile, ma se 
+siete all'inizio della vostra carriera può essere effettivamente utile.Molto utile....
+
+Vediamo di dare una definizione di Phreaking. L'arte del Phreaking è l'arte di fottere mamma 
+telecom, di fare le telefonate a scrocco, ma non solo.Infatti negli ultimi tempi il Phreaking si
+è diffuso anke per quanto riguarda la telefonia cellulare. Vi premetto ke non sono ancora 
+informato su come fottere le nuove compagnie telefonike come Infostrada,Wind,ecc,quindi nei miei
+articoli si parlerà solo della Telecom, almeno per ora. 
+
+
+IL ROTOR,QUESTO SCONOSCIUTO.
+
+Possiamo iniziare con lo spiegare cos'è un ROTOR,come funziona, come fotterlo. Allora, il ROTOR
+è il telefono arancione di mamma TelecomItalia ( i puzzoni.)., quello delle cabine telefonike.
+Come vi scriverò in seguito il funzionamento di questa ''macchina da guerra'' è tutt'altro ke
+semplice. Cmq, nel nostro cammino, miei cari apostoli, cerkeremo di fotterlo in ogni maniera 
+possibile. 
+
+
+
+
+
+Iniziamo con le cabine telefonike.
+
+C'è da premettere una cosa. Il phreaker non ha lo scopo di ''guadagnare'' grandi cifre con le 
+sue azioni,ma la soddisfazione stà nel fatto di riuscire a fottere il telefono, ke anke se non
+sembra, è un concentrato di tecnologia assurda. Prendiamo per esempio una comunissima cabina
+di quelle con il telefono a moneta. Le prime idee ke potrebbe avere per scroccare al maledetto
+la telefonarta potrebbero essere queste.
+
+-Moneta col filo (un classicone)
+-Disketti (non floppy!!!) metallici delle dimensioni delle monete
+-le classike 50 lire appiattite sotto l'autobus.
+-monetine di ghiaccio ( io ciò provato...)
+
+Magari!!! Sentite qui !!!  Questi 3 metodi non possono essere usati. Perkè? Semplice...
+Il telefono infatti non si accontenta di misurare le dimensioni della monetina,ma ne misura anke
+il peso e ne controlla la lega.
+Allora voi mi direte: Si ma la monetina col filo allore potrebbe funzionare...e invece no!!! Il 
+telefono ( quel bastardo ) dopo aver effettuato ( in poki secondi, fra l'altro) questi test,fa 
+scendere la moneta giù per un tubo a ''S'' .E fin qui nessun problema...ma il tubo termina
+purtroppo con una ghigliottina ke ha lo scopo di tagliare gli eventuali fili !!!
+E così il bastardo ci ha fottuto...
+E allora? Come possiamo fare per fare questa benedetta telefonata a scrocco?
+Il metodo ke io preferisco è il seguente.
+Se prendiamo una skeda telefonica vuota e la infiliamo fra la parte arancione del telefono e 
+quella grigia,il risultato sarà ke il telefono risputerà le monetine ke vi verranno inserite in
+seguito.A questo punto, kinatevi all'altezza del buco da cui esce il resto e guardateci dentro: 
+ci sono 3 buchi da cui portrebbe uscire il resto, 2 sulla sinistra e uno sulla destra.Bè, voi 
+dovete tappare il buco in fondo sulla sinistra, ( magari con un pezzo di cartoncino grigio ) 
+piegato a '' V '', in maniera ke non esca il resto. A questo punto il telefono non rilascerà più 
+il resto.Le persone ke da dopo di voi tenteranno di telefonare si vedranno mangiare le monetine. 
+Andatevene a fare un giro e tornate dopo un po'  e andate a prendere le ''vostre''  monetine!
+Kiaramente se vuoi ottenere guadagni ''sostanziosi'' devi applicare questo metodo su almeno 4/5 
+telefoni contemporaneamente. Ti consiglio di non applicare questo metodo sugli stessi telefoni 
+troppe volte,o la Telecom potrebbe fare dei controlli... In più NON LASCIATE MAI PER NESSUN 
+MOTIVO il pezzo di cartoncino piegato  nel telefono per più giorni!!!!! Infatti se il tipo ke 
+passa a raccogliere le monetine per conto della Telecom lo trovasse avviserebbe subito mamma 
+Telecom e voi perdereste una preziosa cabina.
+Inoltre vi consiglio di non applicare 'sto metodo neppure nelle cabine sotto casa vostra, è 
+abbastanza pericoloso ( le vicine mormorano... ) . Un' altro metodo per telefonare a scrocco 
+è quello di trattenere la tessera: voi inserite la tessera,ma al posto di lasciarla entrare la 
+trattenete. A questo punto avete a disposizione circa 4 minuti di conversazione gratuita, poi 
+la Telecom si accorge della bastardata e ti leva la linea.
+Un ulteriore ( ma ben più pericoloso ) metodo è quello della ricarica delle tessere. Lasciate 
+perdere le vekkie storie delle tessere ricaricate col registratore del commodore64 o con le 
+radiazioni del televisore, sono tutte cazzate. però ricaricare le skede telefonike è possibile...
+vediamo come.
+
+Partiamo parlando del segnale ke è inciso sulla carta. Se con un lettore Urmet ( vi dirò dopo 
+come e dove procurarlo ) collegato al computer registriamo il suono ( più ke suono il rumore 
+skifoso tipo cornakkia in amore strozzata ) come onda wave,e lo analizziamo con un analizzatore 
+di spettro ( credo si kiami così, ma non sono sicuro ) notiamo ke ci sono principalmente due 
+tipi di onde, una più acuta e una meno acuta. A questo punto possiamo dedurre ke il ''messaggio''
+registrato sulla skeda è costituito da una sequenza di 1 e 0 , proprio come il codice binario ke
+usano i computer. Ora, dovrebbe bastare registrare un'onda wave di una tessera piena di pari 
+valore con quella ke si vuole sovrascrivere (causa la lunghezza della banda magnetica ) per 
+rikaricare la skeda. Ma vediamo dove e come procurarci il lettore/scrittore della URMET, non in 
+vendita al pubblico,ma di semplice reperimento. Allora, il Rotor ( vedi sopra ) è formato da 2 
+parti principali: la parte del telefono vero e proprio dove è attaccata la cornetta e da una 
+parte separata , dove c'è il buco per inserirci le skede. Bè, la parte destra del telefono è 
+appunto il lettore/scrittore URMET delle skede!!! Per portarvelo a casa il lavoro è complicato, 
+ma assolutamente fattibile. Scegliete una cabina isolata, dove non passi nessuno e 4 amici 
+fidati. Avete bisogno di una torcetta ( il lavoretto va fatto di notte, non devo neanke dirvelo )
+un cuneo di ferro, 2 martelli, uno snello e leggero e uno molto grosso e pesante, nastro isolante
+e un asciugamano. Mentre i vostri 4 amici vi fanno da palo, voi coprite con il nastro isolante  
+il ''soffitto'' della cabina e dopo, con il martello,rompete la luce. L' asciugamano serve ad
+attutire il colpo,e il nastro isolante a evitare ke i vetri vi finiscano in testa. Una volta 
+rotta la luce, siete meno visibili. Ora inserite il cuneo tra il telefono e il lettore di skede 
+e date in colpo secco con il martello grosso...ed ecco ke dopo 4o5 colpi il lettore cade ai 
+vostri piedi!!! A questo punto correte a casa con il vostro gioiellino nel portabagagli e abbiate
+la precauzione di avvolgerlo nell'asciugamano in maniera ke non sia riconoscibile ad eventuali 
+vicini sonnambuli. A questo punto non vi resta ke collegare il lettore/scrittore delle skede al 
+computer tramite le porte della skeda audio ( SPK e MIC ) e ricaricare le skede!!!!
+
+
+
+Un' altro tentativo per fare qualke soldo è quello di far saltare ( con un cacciavite ) 
+l'anellino ke sta attorno alle serrature del telefono e fare un calco con della plastilina 
+( tipo DAS ). Lasciamo ke la plastilina si indurisca ma non troppo, ed estraiamola con 
+delicatezza. andiamo a casa e limiamo una barretta di ottone come il calco ke ci siamo 
+procurati. Ora dovremmo poter aprire senza problema il telefono e fottere i sakki. 
+
+
+
+
+
+Al prossimo numero.
+Concesso a bRiGa da ***DjPrizzo***.
+

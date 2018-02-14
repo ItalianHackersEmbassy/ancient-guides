@@ -1,0 +1,183 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+
+Risalire all'identita' di qualcuno su internet.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Premetto che questo articoletto NON E' ASSOLUTAMENTE farina del mio sacco
+ma devo ringraziare il MITICO e GRANDE PHOENYX per avermi insegnato
+questo trucchetto.
+
+[A] Come risalire all'identita' di una persona collegata ad Internet?
+
+Beh, non sempre si riesce a farlo, ma quando si riesce, diciamo che e'
+molto divertente .. :)
+Il materiale necessario e' il seguente :
+
+A) TraceRoute 
+Lo trovate o insieme a Win95 (per vedere se e' installato, fate esegui :
+tracert) o con alcune suite per internet (cercatelo su www.tucows.com)
+o meglio ancora usate Linux ..
+
+B) Finger 
+O utilizzate il Finger presente in Mirc (ALT+G), ma non sempre va,
+o utilizzate un Finger come quello che e' dato insieme al WS_FTP PRO (per
+esempio, non venite tutti a chiedermi di darvi il wsftppro, ci sono 3000 
+programmi che fanno da finger) oppure, tanto x cambiare, usate Linux...
+(a voler esagerare potreste usare il Telnet, sulla porta 79 ma onestamente
+non so quali sono i comandi da dare, scaricatevi l'RFC del finger se vi 
+interessa e volete fare i brillanti :-))
+
+C) Un Cervello funzionante
+Qui non vi posso aiutare :)
+
+
+Allora, la tecnica e' semplice:
+
+1) Scegliete la vittima, nel nostro esempio sara' il nick Ebreo
+2) Fate un /dns Ebreo nel mirc, il mirc vi dira' 123.123.123.123
+3) Prendete il fido Traceroute e tracciate l'ip di  cui sopra
+es. tracert 123.123.123.123
+Il traceroute buttera' fuori un po' di numeri (tutti a caso i seguenti)
+
+es.  
+    ms       IP 
+1)           111.111.111.111 (vostro IP)
+2)  123      111.111.111.55
+3)  435      120.122.222.111
+.....
+15)timeout (vuol dire che non ha risposto in tempo)
+.....
+
+21) 203      123.123.123.7
+22) 525      123.123.123.123
+host reached
+
+(se avete una connessione del cazzo e vi va in timeout proprio sul penultimo
+o su tutti provate se il programma di trace ve lo permette ad aumentare il
+tempo di timeout oppure vendete il culo)
+
+4) Prendete il PENULTIMO Ip (123.123.123.7) e sbattetelo nel finger:
+
+finger 123.123.123.7
+
+Qui viene il bello: o avete una risposta tipo:
+
+No information given, Nothing to finger, Unable to Connect
+o boiate simili, oppure .... (i nomi sono a caso):
+
+1 tty 1   gpedrelli Async interface          0 
+2 tty 2   prossi    Async interface          0 
+3 tty 3   mbenelli  Async interface          0 
+4 tty 4   sodomyspa Async interface          0 
+5 tty 5   demo      Async interface          0 
+....
+
+cioe' l'elenco di tutte le persone connesse !!
+Tra queste ci sara' sicuramente il vs obiettivo, a volte puo' essere
+che se Ebreo era collegato su ppp2.provider.it allora esso corrisponda
+alla linea n.2 ma non e' detto, penso dipenda dall'assegnazione delle linee
+da parte dei provider, comunque facendo una serie di controlli
+incrociati a diversi orari e in diversi giorni potete riuscire a scremare
+le infoz e a trovare chi cazzo e' la vostra vittima.
+Un'altra cosa, a volte si e' ancora piu' fortunati, si ottiene anche
+Nome e Cognome direttamente della persona, altrimenti ci vuole un po'
+di malizia e di fortuna per risalire dallo username ai dati personali,
+vado ad illustrare come :
+
+P.S. Questa parte e' farina del mio culo, ehm, sacco, quindi me ne
+prendo il merito :-))
+
+[B] Come risalire al nome e cognome di una persona sapendone lo username?
+
+Prendiamo x buono che lo username sia prossi
+Allora, premettendo che come al punto precedente la cosa puo' funzionare
+o meno, l'importante qui e' scoprire qual e' il server di posta elettronica
+del provider della vittima; se lo sapete gia' xche' magari ha il vs stesso
+ISP bene, altrimenti fate cosi', le alternative sono tre a mio modesto
+avviso:
+
+1) Interrogate con il servizio Whois il database Internic che contiene tutti
+i nomi registrati, cercando il nome del provider, di li' si potrebbe risalire
+ai domini registrati ai provider, ma questa e' secondo me la strada piu'
+lunga e non la ho ancora testata bene (anche xche' preferisco i metodi 2-3)
+PS: Anche il whois e' dentro insieme alle suite con finger, traceroute etc..,
+se proprio dovete scaricarne una prendetene una completa, magari con anche
+portscan, scan di un range di ip etc...
+
+2) Si prova a caso una serie di server predefiniti es :
+prossi@provider.it        / prossi@mail.provider.it 
+prossi@mailer.provider.it / prossi@pop.provider.it 
+prossi@pop3.provider.it   / prossi@mbox.provider.it 
+
+Ma cosi' non si finisce piu' e non si sa se funziona o no, allora eccovi
+il MIO  metodo, quello sacro :-)
+
+3) Spiegazione quasi tecnica (spero non siano boiate, comunque rendono l'idea): : 
+quando voi cercate di mandare una mail ad un tipo, la spedite a 
+username@provider.it, non a username@mail.provider.it o altro, quindi vuol
+dire che il provider automaticamente rigira le mail in entrata sul server 
+di posta, la stessa cosa viene fatta per il servizio di posta POP cioe'
+se voi cercate di collegarvi a www.provider.it sulla porta 110 (cioe'
+fate finta di essere un client di posta) esso vi rigirera' sul vero
+server di posta POP !!! Cio' sfortunatamente non funziona col servizio
+FINGER, quindi se voi provate a fingerare username@provider.it NON SARETE
+RIGIRATI sul server di posta e quindi non riuscirete ad interrogarlo.
+"Si', ma in sintesi hai rotto i coglioni, come si fa ?" OK OK Calma arrivo,
+praticamente se voi prendete il fido telnet (in win95 esegui: telnet, con
+linux non lo so e comunque se avete linux e non sapete usare il telnet siete
+delle merde), e specificate come Nome Host: www.provider.it e come porta
+110 (RICORDATEVI LA PORTA, NON LASCIATE telnet!!) cercherete di collegarvi
+via pop al provider, il provider vi rigirera' automaticamente sul server
+di posta dicendovi una cosa simile a :
+
++OK sodomia.provider.it POP3 SERVER Ready to Rock at 10/02/98.....
+
+Ecco li': sodomia.provider.it (e' un esempio :)) e' il server di posta,
+a questo punto riprendete il fido finger e fate:
+
+finger prossi@sodomia.provider.it
+
+Le alternative sono anche qui:
+
+Nothing to Finger, Unable to connect, User unknown ecc...
+
+Oppure un bel risultato tipo (ovviamente la struttura puo' cambiare, sparo
+a caso xche' non ho un risultato sotto mano):
+
+Username : prossi              Paolo Rossi
+	  
+Last login : 12.01.98 at 13:00
+
+Mail on Server : 2
+
+Fatto !!
+
+P.S.: (Nota tecnica) gli username, come penso saprete, non sono sempre del
+tipo inizialenomeecognome, ma posso essere quel cazzo che uno vuole,
+tipo Rodman69 o Shakal666, Sodomita etc...
+
+DIOSCLAIMER: Io non so niente, non ho visto niente, non sono responsabile,
+non c'ero e se c'ero stavo trombando, non mi rompete il cazzo se fate 
+danni etc...
+
+AVVISO: Bene o male quello che ho scritto e' giusto o almeno funziona, 
+se qualcuno che sicuramente ne sa piu' di me vuole segnalarmi errori, orrori
+omissis o altro, lo faccia pure, soprattutto sulla parte del whois e sulla 
+mia spiegazione quasi tecnica del rigiro; come diceva gia' +Orc nelle sue
+guide: "homines, dum docent, discunt".
+
+Ciao a tutti,
+Cavallo de Cavallis
+<cavallo@cryogen.com>
+
+==Fonte: Cavallo De Cavallis [S0ftPj98] x BFI ==
+
+The Raven
+Since `82

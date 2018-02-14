@@ -1,0 +1,58 @@
+     --------------------------------------------------------------------    
+     HACKING DI UN QUALSIASI SISTEMA OPERATIVO IN LOCALE,IN SOLI 5 MINUTI
+    ----------------------------------------------------------------------    
+
+
+Avendo letto il titolo vi starete aspettando dozzine di comandi in assembly,
+c# o bash...
+in realtà tutti i sistemi windows, ed in modo meno evidente
+anche i sistemi unix soffrono di bug tremendamente importante
+e pericoloso dovuto all'ignoranza dell'utente medio di tutto il mondo... 
+
+                            I LIVE CD LINUX!
+
+Eh si... volete un esempio?
+
+ok facciamo finta di essere un utente  che installa sul suo computer winzoz xp:
+una volta finito di installare il sistema, protegge il suo accont
+amministratore con password.
+non contento aggiunge uno di quei programmi che installano
+un boatloader protetto da password criptata sul primo settore 
+di avvio del disco rigido (MBR).
+WOW adesso nessuno potrebbe entrare nel suo sistema senza 
+la pass del suo boatloader...
+peccato che i LIVE CD LINUX  creano un MBR virtuale in ram!!!
+in questo, modo chiunque possegga un semplice live cd 
+(che si trovano ormai ovunque), una volta avuto accesso al nostro pc,
+non deve far altro che inserire il cd della distro, 
+avviarla e semplicemente sguazzare tranquillo tra i nostri file,
+poichè creando il mount in ram, sul sistema live  saremo root... 
+e volendo potremmo anche cancellare il programmino che richiede la password
+che risiede sull mbr...
+
+Su sistemi UNIX/Unix vale la stessa cosa! a nulla servirà impostare 
+una password al boat loader 
+(che sia grub o lilo è indifferente).
+
+L'unica soluzione per arginare il problema è immettere una password del bios,
+ache se alcune distro si avviano in automatico anche 
+se il lettore cd non è impostato come prima periferica....
+quindi su alcuni sistemi c'è solo da farsi il segno della croce!
+
+
+QUINDI COME DIFENDERSI DA QUESTO BUG?
+
+L'unico modo per difendersi da questo bug è criptare l'intero disco rigido,
+in questo caso gli renderemo le cose se non impossibili, perlomeno difficili.
+
+SFRUTTATELO BENE QUESTO TRUCCHETTO E NON FATE I LAMEROZZI!!!
+;)
+
+
+ 
+SNAKE32
+    
+
+
+
+

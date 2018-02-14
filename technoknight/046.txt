@@ -1,0 +1,106 @@
+// Ma perche' cazzo l'ho scritto in inglisc il commento??????? BOHH
+
+/*
+NETPULMAN
+
+by Techno Knight        
+-
+technok.tsx.org
+-------------------------
+
+This little program for Linux wait for connections on a port 
+so u can see when a lamer tries to scan for trojan-servers as netbus.
+You can choose to execute a program when a connection is made (useful to
+flood,nuke,or just to compile a list of the IPs), setting the command to 
+execute in COMANDO (using $ip for the ip of the lamer) and setting ESEGUI to 1.
+Example : "smurf $ip broadcast 0 50 700"  
+If you set PORTA to 12345 (NetBus) you could find useful setting MANDA to 1,
+so it will send two strings, the first, sent only one time, to make the
+client believe that there is a netbus server listening on the port, the
+second (sent QUANTE times) to show him that he is a real lamer. 
+
+bye.
+Techno Knight (techno83@freemail.it)
+							
+*/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <signal.h>
+
+#define PORTA 12345 
+#define STRINGA1 "NetBus 1.60\n\r"
+#define STRINGA2 "Info;LAMAH! [NETPULMAN - by Techno Knight]\r"
+#define QUANTE 20
+#define MANDA 1 
+#define COMANDO "/bin/echo $ip >> lamerlist"
+#define ESEGUI 1
+
+void esci(){
+
+        printf("\n\r\033[13;31mbYeZzzZ"); 	
+        printf("\n\n\r\033[15;0m");
+	exit(0);
+}
+
+
+main(){
+ int s,s2,sinl,i,l;
+ int opt=1;
+ struct sockaddr_in m,t;
+ struct hostent *hp;
+ char *ip;
+ char *lastringa,*comando;
+
+	comando=(char *)malloc(strlen(COMANDO)+20);
+	lastringa=(char *)malloc(strlen(COMANDO));
+	ip=(char *)malloc(20);
+	signal(SIGTERM,esci);
+	signal(SIGKILL,esci);
+	signal(SIGINT,esci);
+	signal(SIGQUIT,esci);
+	system("clear");
+	printf("\n\r\033[1;34mNETPULMAN - by Techno Knight\n\r");
+	s=socket(AF_INET,SOCK_STREAM,0);
+	setsockopt(s,SOL_SOCKET,SO_REUSEADDR,&opt,sizeof(opt));
+ 	m.sin_family=AF_INET;
+	m.sin_addr.s_addr=INADDR_ANY;
+	m.sin_port=htons(PORTA);	
+	sinl=sizeof(m);   
+	bind(s,(struct sockaddr *)&m,sizeof(m));
+	listen(s,1);
+	for (;;){
+		s2=accept(s,(struct sockaddr *)&t,&sinl);
+		hp=gethostbyaddr((char *)&t.sin_addr.s_addr,sizeof(t.sin_addr.s_addr),AF_INET);
+		strcpy(ip,inet_ntoa(t.sin_addr.s_addr));
+		printf("\n\r\033[1;32mLamer Detected : \033[13;36m%s (%s)\n\r",ip,hp->h_name);		
+		if (MANDA){
+			send(s2,STRINGA1,strlen(STRINGA1),0);
+			for (i=0;i<QUANTE;i++){
+		                send(s2,STRINGA2,strlen(STRINGA2),0);
+			}
+		}	
+		strcpy(lastringa,COMANDO);
+		i=0;
+		l=0;
+		bzero(comando,strlen(COMANDO)+20);
+		while (lastringa[i]!='\0'){
+			if (strstr(lastringa,"$ip")==lastringa+i){
+				strcat(comando,ip);
+				l+=strlen(ip);	
+				i+=3;
+			}
+                        else comando[l++]=lastringa[i++];
+		}
+		if (ESEGUI){
+			system(comando);
+		}
+	}
+}

@@ -1,0 +1,400 @@
+                                             ีอออออออออออออออออออออออออออออออธ
+                                             ณ  :::::::::::::::::::::::::::  |
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Titolo: Corso di C - II Parte ณ
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ di : Techno Knight            ณ 
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Scritto il  : xx/2/99         ณ
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Pericolo: Ûฐฐฐฐฐฐฐฐฐ          ณ
+                                             ิอออออออออออออออออออออออออออออออพ
+                                                                        
+                                                                                                                                                                                                                     
+Techno Knight_______CORSO_DI_C________II__PARTE___________________________________
+
+        
+        if ((aveteseguitolaprimaparte()) || (necapitegiaqualcosa())) {
+
+                 continuatealeggere();
+
+        }
+
+        else {
+
+                 leggetevilaprimaparte(); 
+
+        }               // eheh, mi divertono sempre queste stronzate :)
+______________________________________________________________________________
+                                                                                        
+
+
+
+Prima di cominciare a parlare della gestione dei file devo introdurre le
+strutture.
+
+Dunque, mettiamo per esempio che vogliate fare un gioco di corsa di
+automobili (ehhhhhhhhh! e state leggendo questo tutorial ?)
+Per ogni automobile vi serve sapere il nome, la velocita' massima, e i soldi
+posseduti dal guidatore.
+Sarebbe comodo se ci fosse un tipo di variabile automobile che potesse
+contenere tutti questi dati, non trovate ? Una variabile del genere si chiama
+struttura....
+
+Es.
+
+struct automobile{
+          char *nome;
+          int velmax;
+          long soldi;
+};
+
+
+Ecco il tipo di variabile che ci serviva !
+Adesso pero' dobbiamo definire la variabile vera e' propria...
+
+
+Es.
+
+struct automobile auto1;
+struct automobile auto2;
+struct automobile auto3;
+
+
+In questo modo creiamo 3 variabili di tipo automobile chiamate auto1, auto2
+e auto3. Ognuna di queste variabili conterra' al suo interno i membri della
+struttura automobile.
+
+Es.
+
+strcpy(auto1.nome,"Fiat 500");
+auto1.soldi = 0;
+auto1.velmax = 150;
+
+
+Ovviamente, tornando all'esempio del gioco di corsa, converrebbe creare un
+array di automobili...
+
+Es.
+
+struct automobile automobili[10];
+
+-------
+
+Ora vi spieghero' la gestione dei file da un punto di vista logico,
+cioe' non dovrete preoccuparvi di come il sistema operativo gestisce
+fisicamente i file, anche perche' questo richiederebbe una spiegazione
+a parte per ogni OS, mentre una delle caratteristiche piu' lodate del C e' la sua
+portabilita' da un sistema a un altro, quindi conviene piu' conoscere
+dei metodi generici di I/O, da potere poi usare sulla maggiorparte degli OS.
+Possiamo immaginare un file come un archivio contenente un certo numero di
+bytes ordinati, messi in fila uno di seguito all'altro.
+Ci sono due modi di accedere ad un file : in modo sequenziale (cioe' i
+bytes vengono scritti o letti in ordine, partendo dall'inizio del file),
+e in modo random, cioe' scrivendo o leggendo direttamente nel punto
+desiderato del file.
+I File di testo sono file formati da caratteri ascii, che non possono
+contenere il carattere 26 (EOF) dato che questo viene usato solo per indicare
+la fine del file.
+Ora, prima di continuare con la teoria, facciamo qualche esempio....
+
+
+
+#include <stdio.h>
+
+main(){
+ FILE *ilfile;
+
+        ilfile = fopen("\\autoexec.bat","a");
+        fprintf(ilfile,"%s","virus.exe");                                
+        fclose(ilfile);                       
+        
+}
+
+
+                                                                                                                                           
+Non mi soffermo sulle stronzate che dovreste aver gia' imparato dalla prima
+puntata (main e #include), e vado direttamente alla chiamata a fopen.
+Questa e' la funzione di stdio che serve ad aprire un file.
+Il valore di ritorno lo assegniamo al puntatore al tipo FILE "ilfile".
+Il primo argomento di fopen e' il nome del file da aprire, il secondo
+serve a specificare in che modo vogliamo aprire il file (in questo caso
+a = appending, cioe' quello che scriviamo viene messo alla fine del file,
+senza cancellare le righe gia' esistenti. "w" invece corrisponde a write,
+cioe' crea un file per scriverci dentro, se il file gia' esiste lo sovrascrive.
+"r" indovinate un po' a che serve ? :)
+
+Possiamo anche combinare piu' modi tra di loro per definire l'accesso al file
+che ci serve. Ad esempio "rwt" indica che vogliamo creare il file e poi
+accedervi in lettura e scrittura, trattandolo come file di testo ("t")
+
+Con fprintf scriviamo qualcosa nel file (alla fine del file in questo caso).
+I parametri da passare sono gli stessi di printf, ad eccezione del
+primo, che deve essere il puntatore a FILE.
+In questo caso la funzione scrive la stringa "virus.exe" alla fine
+del file aperto in ilfile, cioe' l'autoexec.bat.
+                                        
+Con fclose chiudiamo il file (operazione necessaria, altrimenti tutte le
+modifiche vanno perse).
+
+Quando operiamo su un file aperto come file di testo troviamo alcune limitazioni.
+Per prima cosa il carattere 26 viene considerato come fine del file, inoltre
+le funzioni seguono alcune convenzioni del sistema operativo. Ad esempio nel
+DOS, quando nel file si incontra la combinazione di caratteri CRLF (Return+Linefeed)
+viene letto un solo carattere, cioe' \n (se non sapete cos'e' dovreste andare
+a rivedervi la prima parte).
+Se vogliamo leggere il contenuto del file cosi' com'e', dobbiamo aprirlo in
+modo binario, anziche' come file di testo. Al posto di "t" useremo quindi "b".
+
+
+Es.    ilfile = fopen("\\command.com","rb");
+
+
+In tal modo tutti i caratteri verranno letti esattamente come si trovano
+nel file, senza conversioni.
+
+
+Scrivendo un numero in un file binario questo verra' scritto sotto forma
+di caratteri ascii, occupando quindi due soli byte per un int (risparmiando
+quindi spazio. Un altro vantaggio dell'uso dei file binari).
+                                                                
+
+
+Per leggere da un file, invece, possiamo usare la funzione fscanf, simile
+alla scanf, tranne che per il primo parametro, che deve essere il puntatore
+a FILE.
+
+
+Es.    fscanf(ilfile,"%d",&numero);
+
+------
+
+Il programma apre automaticamente alcuni file...
+
+        stdout = La periferica standard di output  (video, ma puo' essere ridirezionato)
+        stdin  = "  "          "        "  input   (tastiera)
+        stderr = "  "          "        "  error   (video)
+        stdprn = Stampante Standard                (stampante)
+
+
+
+
+Es.    fscanf(stdin,"%d",&ilnumero);  // legge un numero dalla tastiera
+
+
+-----
+
+Ritornando ai file binari, un'importante funzione e' fwrite.
+
+
+Es.
+
+#include <stdio.h>
+
+main(){
+ FILE *ilfile;
+ int ilnumero;
+
+        ilfile = fopen("prova.prv","wb");
+        fwrite(&ilnumero,sizeof(ilnumero),1,ilfile);
+        fclose(ilfile);
+        
+}
+
+Il primo argomento e' l'indirizzo della variabile, il secondo la dimensione
+in bytes, il terzo il numero di dati e il quarto il file.
+sizeof ritorna la dimensione in bytes della variabile.
+
+Es.
+
+
+#include <stdio.h>
+
+main(){
+ FILE *ilfile;
+ int inumeri[100];
+
+        ilfile = fopen("prova.prv","wb");
+        fwrite(inumeri,sizeof(inumeri[0]),100,ilfile);
+        fclose(ilfile);
+                        
+}
+
+
+In questo caso scriviamo nel file un intero array di int.
+La & davanti al primo argomento in questo caso non e' necessaria, dato che
+scrivendo il nome di un array senza numero ci si riferisce all'indirizzo in
+memoria dove inizia l'array.
+sizeof(inumeri[0]) ci da la dimensione di uno solo degli elementi dell'array,
+mentre il terzo argomento (100) dice alla funzione di registrare 100 dati della
+dimensione sizeof(inumeri[0]), dato che vogliamo registrare tutto l'array,
+composto appunto da 100 elementi.
+fwrite ha come valore di ritorno il numero di bytes che e' riuscito
+effettivamente a scrivere nel file.
+
+La funzione per leggere da un file corrispondente a fwrite e' fread, alla
+quale dobbiamo passare gli stessi argomenti di fwrite.
+Se ad esempio volessimo rileggere l'array salvato con l'esempio precedente...
+
+                
+
+#include <stdio.h>
+
+main(){
+ FILE *ilfile;
+ int inumeri[100];
+
+        ilfile = fopen("prova.prv","rb");
+        fread(inumeri,sizeof(inumeri[0]),100,ilfile);
+        fclose(ilfile);
+                               
+}
+
+Come avrete gia' capito, fread ritorna invece il numero di bytes che e'
+riuscito a leggere dal file (utile per accorgersi di un errore se il numero
+e' inferiore a quello richiesto)
+
+Un grosso vantaggio di fwrite e fread e' che fanno parte dello standard ANSI,
+e garantiscono quindi una certa portatilita' ai programmi che accedono ai
+file unicamente con queste due funzioni.
+
+
+Per leggere o scrivere un solo carattere si usano invece putc e getc.
+
+
+Es.
+                
+ilcarattere = getc(ilfile);
+putc(ilcarattere,ilfile2);
+
+                                
+Spesso capita di voler usare un ciclo generico per gestire file forniti
+dall'utente. In questo caso possiamo usare la funzione feof(FILE *stream) per
+controllare se il file e' terminato (la funzione ritorna nonzero) o no (la
+funzione ritorna 0), con qualcosa di questo tipo :
+
+                                while (!feof(inputf)){
+                                        fgetc(inputf);
+                                }
+
+                                                        
+
+--------
+
+Passiamo ora a vedere come accedere ad un file in modo random.
+
+Mentre in un file sequenziale leggevamo o scrivevamo byte uno dopo l'altro,
+possiamo immaginare un file random come un insieme di elementi numerati,
+chiamati record.
+Il vantaggio e' possiamo accedere direttamente al record che ci interessa,
+ricordando pero' che tutti i record devono essere della stessa dimensione.
+
+Anche se il C non fa differenza tra i due tipi di file, di solito si accede
+ad un file random in modo binario con fwrite e fread.
+Quindi per accedere in lettura e scrittura apriremo il file in modo "r+b"
+se il file esiste gia', in modo "w+b" se vogliamo crearlo.                                                           
+                        
+Per accedere ad un certo record dobbiamo conoscerne la posizione nel file
+ed andarci con la funzione fseek.
+
+Es.
+
+
+#include <stdio.h>
+
+main(){
+ FILE *ilfile;
+                
+        ilfile = fopen("prova.prv","rb");
+        fseek (ilfile,56L,SEEK_SET);    
+        fclose(ilfile);
+                               
+}
+
+
+In questo caso va al byte 56 (L = in formato Long) di ilfile, a partire
+da SEEK_SET, cioe' dall'inizio del file.
+
+        SEEK_SET = inizio del file
+        SEEK_CUR = posizione corrente
+        SEEK_END = fine del file
+
+
+Noi pero' non vogliamo raggiungere un qualsiasi byte del file, ma l'inizio
+del record che ci interessa.
+Per fare cio' dovremo usare sizeof.
+
+        fseek(ilfile,(long)numerodelrecord*sizeof(record),SEEK_SET);
+
+_____________________________________________________________________________
+		
+OOOPS! Una cosa che doveva essere spiegata nella prima parte :
+
+                         il cast
+
+scrivendo tra parentesi un tipo di variabili forziamo il compilatore a
+considerare un valore come se fosse di quel tipo. In questo caso e' necessario
+dato che fseek si aspetta come secondo argomento un valore di tipo long
+_____________________________________________________________________________
+                
+
+
+Passiamo a un altro esempio. Se volessimo salvare i dati delle automobili
+di quel gioco....
+
+
+#include <stdio.h>
+
+struct automobile{
+          char *nome;
+          int velmax;
+          long soldi;
+};
+
+main(){
+ FILE *ilfile;
+ struct automobile automobili[10];
+        
+        ilfile = fopen("automob.sav","w+b");
+        fwrite(automobili,sizeof(automobile),10,ilfile);
+        fclose(ilfile);                         
+                               
+}
+
+
+In questo caso ogni record rappresenta i dati di un automobile.
+Per accedere al terzo record scriveremo :
+
+
+struct automobile auto1;
+                                
+        fseek(ilfile,(long)2*sizeof(auto1),SEEK_SET);
+        fread(&auto1,sizeof(auto1),1,ilfile);
+                                        
+Ci ritroveremo cosi' nella variabile auto1 i dati dell'automobile numero 3.
+
+                                                
+
+Ecco, mi sembra di aver spiegato le cose di base sulla gestione dei file.
+Per piacere non mi e-mailate per dirmi che ho dimenticato di spiegare
+qualcosa. Questo e' solo un tutorial con il quale cerco di spiegare il C
+a chi non lo conosce, ma le cose piu' importanti si imparano sperimentando
+da soli.
+
+Se trovate questo tutorial troppo scemo, vi ricordo che questo tutorial
+DEVE cominciare da zero (e conoscendo la mia coerenza c'e' da scommettere
+che non andra' troppo lontano :)
+
+Se invece trovate questo tutorial troppo difficile..... e che cazzo! It's
+impossible!!!!! 
+                
+
+                              Techno Knight
+
+
+                                
+
+
+
+
+

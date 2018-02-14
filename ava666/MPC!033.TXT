@@ -1,0 +1,196 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 3 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+
+
+EMAIL E IDENTIFICAZIONE
+~~~~~~~~~~~~~~~~~~~~~~~
+Per concludere il nostro studio su FakeMail e messaggi anonimi, vedremo ora
+come riconoscere una e-mail "vera" da una "falsa", come identificarne (in
+parte) l'autore, e come utilizzare i remailer anonimi per un'anonimita` di
+livello elevatissimo.
+
+Per poter studiare un messaggio dobbiamo necessariamente essere in grado di
+leggerne gli "headers" (intestazioni), cioe` quelle righe che iniziano con
+la parola "Received:" e simili, che si trovano prima del corpo del messaggio
+vero e proprio).
+
+Visualizzare gli headers e` semplice: ogni programma di posta elettronica ha
+un'opzione (in genere nel menu`) per attivare/disattivare la visualizzazione
+degli stessi.
+Netscape Mail, ad esempio, ha la voce "Show Headers" nel menu` "Options",
+mentre con "Internet Explorer" e` necessario cliccare sul titolo dell'e-mail
+da analizzare, quindi premere il tasto destro e scegliere l'ultima voce
+(Properties, ovvero Proprieta`).  Eudora ed altri client hanno una funzione
+simile a quella di Netscape Mail (nei menu`).
+
+Prendiamo dunque ad esempio questa e-mail, di cui visualizziamo gli headers:
+
+Received: from posta.hackers.it (111.123.33.4) by provider.it via mtad (2.3)
+   id mx03-Biqmta0276; Mon, 27 Sep 1997 06:45:07 -0600 (MDT)
+Received: from america.com ([123.45.67.89]) by posta.hackers.it
+   (post.office MTA v1.9.3b ID# 0-12345) with SMTP id AAA187
+   for <utente@provider.it>; Mon, 27 Sep 1997 14:34:21 +0200
+From: <mittente@america.com>
+To: <utente@provider.it>
+Subject: test...
+
+Analizziamone ora gli headers: il primo (Received) e` lungo due righe, in
+quanto ogni header inizia con una parola chiave seguita dai due punti, e nel
+secondo rigo non esiste una prima parola, ne` i due punti; ne deduciamo
+percio` che e` il seguito della riga superiore.
+
+L'header "Received" ci informa del percorso seguito dall'e-mail da quando e`
+stato generato a quando l'abbiamo ricevuto.  Normalmente ce n'e` piu` di uno
+e sono disposti in ordine inverso (il primo rappresenta l'ultimo computer in
+cui e` arrivata l'e-mail - con ogni probabilita` il nostro o quello del
+nostro provider - e l'ultimo Received rappresenta il computer "mittente").
+Infatti, ogni volta che un server riceve una e-mail, aggiunge un "Received"
+in *cima* alle altre intestazioni gia` presenti.
+
+Tornando alla nostra e-mail, vediamo percio` che l'ultimo "Received" ci
+informa che il computer america.com ha l'IP Address 123.45.67.89 e ha mandato
+questa e-mail al server posta.hackers.it usando SMTP.
+Guardando l'header successivo (sopra) notiamo che poi il messaggio e` stato
+mandato a sua volta da posta.hackers.it (che vediamo avere un IP Address pari
+a 111.123.33.4) a provider.it, che e` il server destinatario (il nostro).
+Infatti, se guardiamo l'header "To:" vediamo che destinatario finale e`
+utente@provider.it.
+Il mittente, stando all'header "From:", dovrebbe essere mittente@america.com
+ma come sincerarsene?
+
+Utilizzando il programma Finger possiamo sapere se l'utente "mittente" esiste
+su "america.com", ma utilizzando Finger non possiamo sapere se sia stato
+effettivamente lui a mandare il messaggio o meno.
+
+Ricorriamo percio` ancora una volta all'analisi degli header "Received".
+Il primo header, quello che ci informa da CHI e` stato inviato il messaggio,
+corrisponde all'ultimo header (cioe` al secondo "Received").
+Da li` scopriamo che il computer mittente e` america.com con IP 123.45.67.89
+e dell'IP possiamo essere sicuri... ma non possiamo fidarci di "america.com"
+e l'unico modo per sapere se effettivamente Host Name e IP Address coincidono
+e` utilizzare un programma DNS.  Bastera` inserire l'IP Address per conoscere
+l'Host Name ad esso corrispondente.
+
+Questo metodo e` di estrema importanza, in quanto se da un lato non ci
+permette di scoprire l'autore, almeno potremo sapere quale computer e` stato
+usato per inviare e-mail, news, ecc.  Molti provider di posta elettronica
+gratuita (come Hotmail e Netaddress) e non, permettono di bloccare l'invio
+di e-mail che provengono da un determinato "dominio" (es. provider.it), ma
+per farlo e` necessario conoscerne l'Host Name oppure l'IP Address.
+
+Quando si effettua un mail-bombing usando Kaboom, Up Yours o altri programmi
+del genere, si lascia dunque in modo indelebile il proprio IP Address nelle
+e-mail.  L'unico "lato buono" e` che inviando alcune migliaia di e-mail a
+un indirizzo, *probabilmente* il proprietario della mailbox non riuscira` a
+scaricarle tutte (o non vorra` farlo) e non potra` percio` analizzarne le
+intestazioni per scoprire il colpevole ;)
+In ogni caso con i servizi di e-mail tramite Web, o con programmi ad hoc e`
+possibile scaricare un singolo messaggio e analizzarlo, quindi e` bene
+lasciare il mail-bombing ai lamers che non hanno nient'altro da fare...
+
+Il motivo per cui programmi come Kaboom e Up Yours si dichiarano "100% non
+rintracciabili" e` perche` la lista dei server SMTP inclusa in essi contiene
+per lo piu` vecchi server che non registrano l'IP Address di chi si collega.
+Ma tali server sono stati sfruttati, hackerati, bombardati e sovraccaricati
+di e-mail in uscita, e sono stati percio` disattivati o hanno cambiato nome.
+In ogni caso, tutti i piu` nuovi server SMTP registrano (purtroppo) l'IP e
+in alcuni casi sono addirittura in grado di riconoscere un tentativo di
+FakeMail e rispondere "sfottendo"... :-}
+
+Supponiamo ora che anziche` utilizzare e-mail false vogliamo scriverne una
+anonima per rispondere a qualcuno senza essere rintracciati, o magari per
+partecipare a un Newsgroup in maniera del tutto anonima.
+
+Esiste un servizio, quello dei cosiddetti "remailer", per inviare posta
+completamente anonima (senza mittente e senza alcuna traccia di IP Address o
+altro).
+
+NOTA: Per una lista completa con tutte le informazioni come: velocita`,
+caratteristiche e affidabilita` basta cercare le parole "anonymous remailer"
+con un qualsiasi motore di ricerca sul Web.
+
+Usarli nella loro forma piu` semplice (senza criptazione e senza re-routing
+multipli) e` facile, basta inviare una normalissima e-mail (con qualsiasi
+programma di posta elettronica) all'indirizzo e-mail di un remailer.
+Ad esempio, remailer@replay.com (oppure remailer@huge.cajones.com o ancora
+remailer@cypherpunks.ca) e, PRIMA del messaggio inserire una riga vuota, una
+coppia di due punti e altre informazioni, come segue:
+
+:: 
+Request-Remailing-To: destinatario@email.com
+
+Questa e` una prova....
+
+Dunque l'indirizzo del destinatario NON va inserito come destinatario.
+Come destinatario useremo l'indirizzo del remailer, mentre quello del vero
+destinatario andra` scritto a fianco a "Request-Remailing-To".
+
+Questo e` quanto per le e-mail anonime.  Come fare, invece, per inviare
+delle news anonime?  Seguendo lo stesso procedimento, ma usando come
+destinatario un "gateway" (passaggio) mail-news.  A cosa serve?
+Inviando un messaggio al gateway, questo lo inviera` a sua volta alle news.
+Volendo mandare un messaggio al Newsgroup alt.hackers bastera` sostituire
+i punti con dei trattini e aggiungere l'indirizzo del gateway (ad esempio
+cs.utexas.edu) quindi il risultato sara` alt-hackers@cs.utexas.edu al quale
+manderemo il nostro messaggio tramite remailer.
+
+Aggiungiamo ora alcune informazioni per completare il capitolo.
+
+Sul Web esistono vari siti per FakeMail che non registrano IP Address.  Uno
+molto veloce e` (al momento in cui si scrive) MailMan al seguente indirizzo:
+http://www.nettex.com/~thecap/
+
+Per quanto riguarda la posta anonima tramite remailer, ne esistono anche sul
+Web.  Per chi preferisse le Form ai programmi di posta elettronica bastera`
+cercare, come detto prima, dei remailer usando i motori di ricerca.
+Un indirizzo tra i piu` affidabili: http://www.replay.com/remailer/
+
+NOTA: questi siti sono attivi non per arrecare danni, ma per fornire un
+servizio a quanti vogliono preservare la propria privacy elettronica.
+Abusandone potreste mettere voi nei guai, o causare la chiusura del servizio.
+Inoltre molti remailer possono negarvi l'accesso al servizio in caso di
+proteste da parte di terzi.  In altre parole, usate il cervello...
+
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+
+Grazie a LoRD SHiNVA, l'autore di questa enciclopedia,
+
+       By
+   Å        Å
+   ³ AVA666 ³
+   ~~~~~~~~~~
+
+

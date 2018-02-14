@@ -1,0 +1,208 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- PROCEDURA DI TEST DEI ROTOR -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+La 'Procedura di test' consente di fare molte cose interessanti (leggetevele),
+soprattutto di ricavare informazioni 'utili', ma prima bisogna aprire la cabina
+(non vi consiglio di usare metodi 'violenti' (piede di porco, ecc),la cosa
+migliore sarebbe copiare la chiave o farne una nuova, perche' e' importante che
+NON SI NOTI il vostro intervento) e modificare la posizione degli switch a
+fianco del Display.
+
+
+-!!!-ROTOR O.V.-!!!-
+^^^^^^^^^^^^^^^^^^^^
+Posizionare il microswitch SW1 in modo OFF ed il microswitch SW2 in modo ON,
+dare un comando di RESET, sul display verra' visualizzato il numero della
+release a sinistra e la data di emissione a destra (identificazione release).
+Bravo, sei in 'Test mode'! Ecco i test che si possono fare:
+
+<TEST 1 - FONIA, SONERIA, BIP RICEVITORE, BOLLINI>
+ Digitare 1 sulla tastiera, sul display compare 01 lampeggiante a
+ sinistra. In questa fase 01 si possono effettuare 4 test diversi:
+        1 - TEST FONIA: Pigiando 1 dalla tastiera Serve per verificare la
+                        fonia nel microtelefono)
+        2 - TEST SONERIA: Pigiando 2 dalla tastiera. Serve per verificare il
+                          circuito soneria (se montata) 
+        3 - TEST BIP RICEVITORE: Pigiando 3 dalla tastiera. Serve per
+                                 verificare il bip di fine credito nel
+                                 ricevitore
+        4 - TEST BOLLINI: Pigiando 4 della tastiera. Serve per verificare il
+                          numero totale dei bollini presenti nell'apparecchio
+                          che saranno cos visualizzati:
+
+                          I.L. 0.0 00/00/00 = identifica la Release della MIL
+
+                          e subito dopo
+
+                          04 P xx = che indica bollini presenti (xx)
+
+                          Se il numero risulta meno di 12, Š possibile
+                          individuare i bollini non connessi:
+                          Pigiando 5 della tastiera vengono visualizzati in
+                          ordine progressivo i bollini presenti riscontrati
+                          che saranno cos visualizzati:
+
+                           05 C1 B1öB7  = C1 indica il primo cavetto collegato
+                           alla Plug æP della MIL (in basso) e B1öB7 i bollini
+                           riscontrati.
+
+
+                          Subito dopo viene visualizzato:
+
+                           05 C2 B1öB5  = C2 indica il secondo cavetto
+                           collegato alla Plug æP della MIL (in alto) e B1öB5 i bollini
+                           riscontrati.
+
+                          Nel caso di mancata connessione di uno o pi—
+                          bollini, il numero relativo al bollino non verr…
+                          visualizzato. L'identificazione dei bollini non
+                          visualizzati si ottiene contando i connettori in
+                          ordine progressivo del cavetto di appartenenza (C1
+                          o C2) partendo dalla connessione sulla Plug æP della
+                          MIL che non viene conteggiato fino al numero del
+                          bollino non visualizzato.
+                          I bollini sono connessi nel seguente ordine:
+                          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                          ³Connettore C1 (in basso)³Connettore C2 (in alto) ³
+                          ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+                          ³ B1 = MIL/O.V. 4 KV     ³ B1 = Selezionatore     ³
+                          ³ B2 = Microtelefono     ³ B2 = Piastra Meccanismi³
+                          ³ B3 = Sportello Rotor   ³ B3 = Plug Cell/O.V.    ³
+                          ³ B4 = Batteria          ³ B4 = Mod. Elettr. Base ³
+                          ³ B5 = Cassaforte        ³ B5 = Ram Backup        ³
+                          ³ B6 = Rotor O.V. BE     ³                        ³
+                          ³ B7 = Modulo LIOD/RI    ³                        ³
+                          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                          Al termine sul Display verr… visualizzato 01
+                          lampeggiante.
+
+                          Per uscire dai test citati premere un qualunque
+                          tasto e sul Display ricompare 01 lampeggiante.
+                          Per uscire dal test 01 lampeggiante digitare un
+                          numero che non sia 1-2-3-4 sul display 01-EO.
+
+
+<TEST 2 - RAM MICRO>
+ Digitare "2" e verificare la comparsa sul display della scritta 02-EO.
+
+
+<TEST 3 - RAM ESTERNA>
+ Digitare "3" e verificare la scritta 03-EO.
+
+
+<TEST 4 - TEST VISUALIZZAZIONE CONTATORI>
+ Digitare "4" sul display verranno evidenziati in sequenza i contenuti dei
+ contatori gestionali e tecnici suddistinti per tipo (sulla destra del
+ display), e la quantit… (sulla sinistra del display) espresse da numeri max
+ di 4 cifre che nel seguito saranno indicati con xxxx; cioŠ:
+
+ xxxx -200 = numero gettoni incassati (evidenziato co "-200" in quanto
+             attualmente il gettone costa 200 lire)
+
+ xxxx 100 = numero pezzi 100 lire incassati
+
+ xxxx 200 = numero pezzi 200 lire incassati
+
+ xxxx 500 = numero pezzi 500 lire incassati
+
+E le seguenti informazioni accessorie:
+
+xxxx - 0 = NIL numero comandi di incasso ricevuti dall'apparecchio
+
+xxxx - 1 = NGE numero gettoni equivalenti incassati
+
+xxxx - 2 = numero pezzi accettati dal validatore
+
+xxxx - 3 = numero pezzi scartati dal validatore
+
+xxxx - 4 = NICD nunero comandi di incasso ricevuti dall'apparecchio per
+           conversazioni a carta di Debito
+
+xxxx - 5 = NRCD numero di unit… riscontrate per conversazioni a carta di Debito
+
+xxxx - 6 = NICC rumero comandi di incasso ricevuti dall'apparecchio per
+           conversazioni a carta di credito 
+
+L.200 = Costo del gettone
+
+
+<TEST 5 - TEST DISPLAY>
+ Digitare "5" e verificare sul display la comparsa di tutti i numeri in tutte
+ le posizioni da "9" a "1" a al termine verificare la scritta 05 EO
+
+
+<TEST 6 - TEST MOTORE ED ENCODER ASSOLUTO>
+ Digitare "6" e verificare la scritta 06 EO
+
+
+<TEST 7 - TEST DINAMICO-FUNZIONALE DI TUTTI GLI ATTUATORI ELETTROMECCANICI E
+DEI SENSORI DELL'APPARECCHIO> 
+ Digitare "7" e verificare la scritta 07 EO
+
+<TEST 8 - VISUALIZZAZIONE SEQUENZIALE DEI CODICI DI ERRORE>
+ Digitare "8": se successivamente all'ultimo RESET dell'apparecchio non vi Š 
+ stato un errore che abbia determinato un F.S., eventuali codici diagnostici
+ presenti nello storico vengono visualizzati in modo automatico 
+ (Visualizzazione storico dei codici di errore). Se vi Š stato un F.S.: anche 
+ se autoripristinato sul display viene visualizzata una sequenza formata da
+ tutti i codici diagnostici presenti nello storico pi— il codice di errore che
+ ha determinato il F.S. dell'apparecchio.
+ Pi— voltel'apparecchio Š andato in F.S. pi— sequenze saranno visualizzate.
+ Le sequenze hanno un codice progressivo che compare a sinistra del display
+ mentre a destra saranno visualizzati uno per volta i codici di errore inerenti
+ a quella sequenza. L'avanzamento dei codici/sequenza avviene manualmente 
+ digitando un qualsiasi tasto della tastiera. A fine sequenze eventuali codici
+ diagnostici presenti nello storico vengono visualizzati in modo automatico.
+ La visualizzazione sequenziale dei codici di errore pu• essere ripetuta 
+ indefinitivamente senza uscire dallo stato di test, all'uscita da quest'ultimo
+ sia con RESET che per time out di 40 sec. di inattivit…, si azzera la memoria
+ dei codici e avviene soltanto se tali sono stati visualizzati almeno una volta.
+ In generale l'uscita da qualsiasi test per reset o per time out, che non abbia 
+ interessato il test 8, non determina l'azzeramento della memoria dello storico
+ sequenziale dei codici degli errori.
+
+
+<TEST 9 - RESET DEL LETTORE INSTALLATO>
+ Digitare "9" e verificare la scritta 09 EO. Questo test consente di
+ ripristinare una eventuale perdita di configurazione del lettore installato.
+
+
+<TEST 10 - VERIFICA INTERRUTTORE SPORTELLO>
+ Digitare "0" sul display comparir… 10 e subito dopo lo stato dell'interruttore
+ relativo allo sportello e cioŠ:
+  S A  (sportello aperto)
+  S C  (sportello chiuso)
+ Per verificare il buon funzionamento dell'interruttore bisogna controllare la
+ coerenza che sul display ad apparecchio aperto risulti S A, e ad apparecchio
+ chiuso risulti S C. Digitando un qualsiasi tasto si esce dal test.
+
+ 
+<TEST 11 - VERIFICA CHIUSURA/APERTURA BOCCHETTA INTRODUZIONE MONETE>
+ Digitare "*" sul display comparira' 11 in modo lampeggiante. Si potra'
+ eseguire l'apertura o la chiusura della bocchetta nel modo seguente:
+ A) Digitando il tasto "1" sul display comparira' "11 01" e la bocchetta
+    verra' comandata in chiusura.
+ B) Digitando il tasto "2" sul display comparira' "11 02" e la bocchetta
+    verra' comandata in apertura.
+ Le suddette indicazioni sul display rimangono per circa 3 secondi per poi
+ ritornare con la visualizzazione di "11" per dare la possibilita' di fare una
+ nuova scelta. L'uscita dal test avviene per T.O. di 40 secondi o digitando
+ un qualsiasi altro tasto non utilizzato dal test.
+
+
+Se durante l'effettuazione della procedura di test fossero riscontrate delle
+anomalie esse saranno evidenziate con il relativo codice di errore.
+Se il test e' tutto OK l'apparecchio e' pronto per entrare in servizio; pertanto
+si riportano i microcontatti secondo la configurazione OFF - OFF.
+
+
+ Å        Å
+ ³ AVA666 ³
+ ~~~~~~~~~~

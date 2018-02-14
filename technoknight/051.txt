@@ -1,0 +1,157 @@
+                     RADIO TUTORIAL
+
+                          di
+
+                     Techno Knight                                               
+                                                                                 
+                                                                                                                                                                       Sa
+Salve, sono il sempre + pazzo Techno Knight, e voglio scrivere un tutorial      
+sulle onde radio, come si propagano, come si trasmettono e ricevono e come      
+si fa a prelevare il segnale BF, suppondendo che sappiate gi… almeno un         
+minimo di elettronica.                                                          
+BF tanto per cominciare vuol dire Bassa Frequenza e indica la gamma di          
+frequenze percepibili dall'orecchio umano, cioŠ dai 20 hz fino a circa          
+20000 hz. Trasmettere una frequenza del genere a una grande distanza            
+Š impossibile, quindi per le trasmissioni radio si usano le RF (radio           
+frequenze) che possono raggiungere distanze anche di migliaia di kilometri,     
+con una velocit… pari a quella della luce (300000 km/s).                        
+ovviamente per• questo segnale (chiamato in questo caso veicolo portante)       
+dovr… contenere le informazioni necessarie per estrapolare il segnale           
+originale BF, e per fare ci• si usano la modulazione in ampiezza (AM) e         
+la modulazione in frequenza (FM).                                               
+Per modulare un segnale in ampiezza si sovrappone al segnale RF il segnale      
+BF da trasmettere variando cos l'ampiezza. Per modularlo in frequenza          
+si usa il segnale BF per variare invece la frequenza e non l'ampiezza del       
+segnale RF, inoltre solo con l'FM possiamo riprodurre fedelmente tutta la       
+gamma di frequenze dai 20hz fino ai 20000hz.                                    
+Per quanto riguarda la diffusione di questi segnali dobbiamo dire che           
+vengono diffusi dall'antenna trasmittente in tutte le direzioni, e le          
+onde emesse da questa antenna si dividono in onde di superficie e              
+onde spaziali. Le prime sono quelle che si propagano seguendo la superficie    
+della terra, mentre quelle spaziali (indovinate un p•) si propagano            
+verso lo spazio. Tra queste ultime ci sono poi alcune onde che vengono         
+riflesse nuovamente verso la terra dagli strati ionizzati dell'atmosfera       
+onde riflesse). Questi strati sono (lo schema lo sto vedendo da un libro,      
+spero che l'autore non fosse ubriaco, cmq prendetevela con lui) :                                                                                             ST
+
+STRATO F2
+                                                                               
+            260-300Km                                                          
+STRATO F1                                                                       
+                                                                               
+            180-200Km                                                          
+STRATO E                                                                        
+                                                                               
+            100-120Km                                                          
+STRATO D                                                                        
+            60-80Km                                                            
+                                                                                        
+SUPERFICIE TERRESTRE                                                             
+
+Questo durante il giorno. Durante la notte invece scompare lo strato D e
+gli strati F2 ed F1 si uniscono a formare un solo strato (F).                   
+Gli strati E ed F sono quelli che riflettono le onde radio sulla terra,         
+mentre lo strato D assorbe completamente                                        
+le frequenze delle Onde Medie, Corte e Cortissime, che quindi non possono       
+raggiungere gli strati E ed F e non vengono riflesse sulla terra, se non        
+di notte, quando lo strato D scompare, ed Š per questo che di notte i           
+segnali radio riescono a coprire distanze maggiori. Di giorno infatti si        
+diffondono solo tramite le onde di superficie, che per• non raggiungono         
+grandi distanze a causa della sfericit… della terra, e quindi finiscono         
+sempre con il disperdersi nello spazio.                                         
+Le onde che invece riescono ad oltrepassare tutti gli strati senza essere       
+assorbite o riflesse sono quelle con frequenze VHF, UHF, e SHF, infatti         
+queste frequenze vengono usate per le comunicazioni con lo spazio e             
+quindi anche per le trasmissioni satellitari.                                   
+Ma adesso torniamo al segnale modulato in frequenza o in ampiezza...            
+e' chiaro che una volta ricevuto tramite un antenna i segnali RF                
+dovremmo per prima cosa selezionare solo quello che ci interessa, dopodichŠ     
+bisogner… estrapolare il segnale BF e scartare quello RF usato solo come        
+veicolo portante. Per selezionare la frequenza che ci interessa utilizzeremo    
+quello che si chiama un circuito di sintonia, formato di solito da una          
+bobina e un condensatore a capacit… variabile, sostituito spesso con diodi   
+varicap. Infatti la nostra antenna capter… _tutti_ i segnali che arriveranno    
+fino a noi ma grazie a questo circuito di sintonia possiamo scegliere           
+di ricevere solo la frequenza che ci interessa.                                 
+Infatti variando la capacit… del condensatore variabile si modifica la
+frequenza nel circuito di sintonia, e in questo modo accetter… solo
+segnali che hanno quella stessa frequenza.                                       
+                                                                                                                                                                                                                                                                                                                      
+\|/                                                                             
+ |  = Antenna                                                                    
+                                                                                                                                                            ==
+=== = Condensatore, o meglio condensatore variabile, per modificare la freq.     
+===                                                                               
+                                                                               
+                                                                               
+)                                                                                
+)   = Bobina                                                                     
+)                                                                                
+)
+                                                                               
+--- = Terra                                                                      
+ -                                                                                
+                                                                                 
+                                                                                 
+               \|/                                                               
+                |                                                                
+                |__________                                                      
+                |           )                                                    
+               ===          )                                                    
+               ===          )                                                    
+                |___________)                                                    
+                |                                                                
+               ---                                                               
+                -                                                                
+                                                                               
+Ecco come possiamo calcolare la frequenza conoscendo la capacit… del            
+condensatore e l'induttanza della bobina :                                        
+                                                                                
+  Frequenza (in Mhz) = 159/radice(Capacit… in pF * Induttanza in microH)           
+                                                                               
+CioŠ la frequenza del circuito di sintonia (quindi quella dei segnali           
+che verranno accettati) in Mhz sar… uguale a 159 diviso la radice quadrata      
+del prodotto tra la capacit… in pF alla quale abbiamo settato il condensatore   
+per l'induttanza della bobina in microH, e da questa formula potete             
+facilmente trovare quella inversa per conoscere la capacit… del condensatore    
+per ricevere una certa frequenza.                                               
+Ora passiamo al secondo problema, estrapolare il segnale BF scartando           
+quello RF.                                                                      
+Per un segnale AM dovremmo usare per prima cosa un diodo raddrizzatore          
+che accettando solo le semionde positive del segnale (o solo quelle negative    
+a seconda della posizione nella quale lo inseriremo nel circuito) ci            
+dar… in uscita il segnale RF raddrizzato. Ancora non basta perchŠ dobbiamo      
+eliminare del tutto il segnale RF per avere quello BF. Quindi formiamo          
+una specie di bivio utilizzando un condensatore :                                 
+                                                                               
+-|>³   = diodo rettificatore                                                      
+                                                                               
+===                                                                            
+===    = condensatore                                                             
+                                                                               
+---    = terra                                                                 
+ -                                                                               
+                                                                                 
+    -----|>³--------------continua....                                           
+                 ³                                                               
+                 ³                                                               
+                ===                                                              
+                ===                                                              
+                 ³                                                               
+                 ³                                                               
+                ---                                                              
+                 -                                                               
+                                                                               
+Sappiamo che in presenza di una corrente alternata il condensatore presenter…   
+una resistenza (chiamata reattanza capacitiv…) inversamente proporzionale       
+alla frequenza, quindi il segnale RF (con una frequenza molto + elevata)        
+incontrer… pochissima resistenza e si scaricher… a terra, mentre quello BF,     
+con una frequenza molto bassa, incontrer… una resistenza molto maggiore         
+e continuer… per raggiungere il resto del circuito.                             
+Per un segnale FM invece si collegano due diodi in opposizione di polarit…      
+su una media frequenza con presa centrale.                                      
+Beh adesso abbiamo il segnale BF, non ci resta che farlo passare attraverso     
+uno o + stadi preamplificatori.                                                   
+                                                                                                                                                     
+                   Techno Knight (techno83@freemail.it)                          
+

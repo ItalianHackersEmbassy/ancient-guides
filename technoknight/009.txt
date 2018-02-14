@@ -1,0 +1,70 @@
+                     <-....T3cnIChe di IntRUsi0ne....->
+
+                             di Techno Knight
+
+Capita spesso di doversi introdurre in qualche edificio (lo dico tenendo conto
+della fascia di lettori ai quali e' rivolto questo file), senza farsi sgamare,
+localizzando e fottendo i sistemi di sicurezza.
+
+
+
+E' utilissimo studiare a fondo l'obbiettivo, prima dell'intrusione, cercando di
+raccogliere quante piu' informazioni e' possibile e facendo una mappa di questo
+tipo :
+
+         _______________________________________________
+        |                                               |
+        |        __________________________             |
+        |       |                          |            |
+        |       |                  finestra ]           |
+        |       |     EDIFICIO             |            |
+
+        |      [ finestra        porta     |            |
+        |       |_________________---______|            |
+        |                                               |
+        |                                               |
+        |___________________________||||||______________|
+           perimetro esterno        cancello
+
+
+
+(questo e' solo un esempio, la vostra mappa dovra' essere il piu' dettagliata
+possibile, una buona strategia iniziale e' essenziale)
+
+Studiando la mappa, e tenendo conto di tutte le informazioni che avete raccolto
+potrete studiare una strategia.
+
+Il primo ostacolo che dovrete superare e' il perimetro esterno, cioe' il confine
+oltre il quale c'e' il vostro obbiettivo. Per prima cosa dovrete individuare
+il punto dove il passaggio e' piu' facile (98% dei casi e' un cancello o un portone.
+Per passare potete scavalcare o procurarvi le chiavi.
+Il secondo metodo e' il piu' difficile, ma diminuisce incredibilmente le 
+probabilita' di essere preso, dato che quando siete davanti al cancello nella 
+maggiorparte dei casi non siete coperti, quindi piu' tempo perdete piu' diventa probabile
+che qualcuno vi noti. Nel caso di dispositivi anti intrusione non potrete
+toccare il cancello e non vi resta che usare una scala.
+
+I dispositivi potrebbero essere dei sensori che controllano le vibrazioni del
+cancello, i rumori trasmessi attraverso il cancello, o un campo elettrico, con
+sensori che si accorgono di un cambiamento all'interno del campo.
+Tuttavia se avete intenzione di entrare in edifici come scuole, palazzi, ecc.
+non dovreste avere di questi problemi.
+Un dispositivo anti-intrusione molto diffuso anche perche' di semplice funzionamento 
+e' una fotocellula. E' composto da una parte che trasmette un raggio infrarosso
+e una parte che lo riceve. Quando questo raggio viene interrotto (quindi quando
+passa qualcuno) non riceve piu' il raggio infrarosso e attiva l'allarme.
+I raggi infrarossi sono invisibili all'occhio umano, quindi dovete riuscire ad
+individuare il dispositivo, a meno che non sia mimetizzato. Spesso vengono usati
+piu' raggi, per rendere comunque impossibile sfuggire al controllo abbassandosi
+o saltando.
+Se vi imbattete in un dispositivo elettronico che ritenete imbattibile, potete
+simulare un guasto (soprattutto se c'e' cattivo tempo) facendo scattare 
+l'allarme continuamente, fino a che non lo disattiveranno.
+
+Ok, adesso mi sono rotto, continuiamo la prossima volta.
+
+
+
+                                Techno Knight
+
+

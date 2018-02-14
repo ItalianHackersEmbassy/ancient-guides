@@ -1,0 +1,80 @@
+IRCWar - Fondamenti
+di St0rm Bringer 
+
+Quando si parla di IRCWar ci si riferisce in genere a cose tipo takeover
+di canali e cosi' via... per capire bene questi discorsi bisogna avere 
+una piccola base riguardo irc, i server irc, i netsplit e alcuni comandi 
+e modi di ircnet.
+
+Diciamo che il terreno di battaglia principale dei takers e' lo split o il
+desynch. I server irc splittano a causa del sovraccarico della rete. In 
+genere, prima e dopo lo split c'e' un periodo di desynch, cioe' di 
+desincronizzazione dei server. In questi periodi possono accadere strane 
+cose.. facciamo qualche esempio:
+
+- Puo' accadere che un utente kicki un altro utente su un server, ma che su
+un altro server risulti ancora che l'utente kickato stia dentro il canale. 
+Ovviamente l'utente che e' stato kickato legge ancora quello che gli altri
+scrivono, a loro insaputa, ma lui non puo' comunque scrivere, in quanto 
+riceve il messaggio "Cannot send to channel".
+
+- Se un canale e' opless (cioe' senza operatori) e avviene uno split tra
+alcuni server, il taker si connette con un altro client sul server che e'
+splittato e ottiene l'op sul canale, in quanto e' l'unico presente. Al 
+rejoin dei server, nessuno deoppera' il taker poiche' solo lui avra' l'op.
+
+- Quando due server splittano, si puo' trovare il modo di killare le
+persone a noi sgradite. Ad esempio, se il nostro "nemico" ha il nick
+Techno[K] (uno a caso ;D) e il suo server splitta, noi potremo joinare
+il server che lui non riesce a vedere e dovremo usare il suo nick. Al
+rejoin dei server, io e il vero Techno[K] veniamo killati dai server per
+nick collision, in quanto irc non consente due nick uguali. Se Techno[K]
+era op su un canale, ovviamente non lo avra' piu' quando rijoinera'
+perche' disconnesso da irc.
+
+Queste sono alcune delle tecniche principali per ottenere un canale.
+Ovviamente se questo canale e' mantenuto da un certo numero di bot, la cosa
+sara' molto piu' difficile. In questi casi, dobbiamo osservare bene il
+canale e capire come i bot funzionano, a quali server sono connessi, e
+cosi' via, e dovremo prepararci bene al take. Se si ha la possibilita' di
+smurfare e se si e' capaci, ve lo consiglio vivamente :)
+Per riuscire a fare take del canale si puo' operare in questo modo:
+
+- Far collidere i nick, come spiegato in precedenza, ma questo puo'
+andar bene solo se i bot sono pochi e se non sono configurati in modo che
+cambiano nick ogni volta che c'e' uno split.
+
+- Floodare o smurfare i bot, usando opportune tecniche... lo smurf e'
+sicuro, il flood dei bot invece dipende soprattutto dalla botnet sotto
+esame. Se essa e' configurata bene state certi che non cadranno mai i bot
+floodandoli con migliaia di scritte o con join o con altre cose. Lo smurf
+e' sicuro, come dicevo, pero' e' piu' difficile da realizzare. Occore una
+shell decente da cui smurfare, degli ottimi broadcast e anche bravura
+quindi non e' per tutti... ;)
+
+- Se notate che i bot oppano degli utenti appena essi entrano nel canale,
+cercate di far cadere colui che e' stato oppato e fottetegli il nick e
+l'ident. Il bot in qualche caso vi oppera'... e voi sarete padroni di
+tutto... ovviamente dovrete essere veloci a deoppare e se vi portate
+alcuni amici e' anche meglio. E' inutile dire che dovrete deoppare prima
+i bot e i cazzoni con gli script lamer, perche' sono
+loro che potrebbero kickarvi per massdeop.
+
+Alcuni altri consigli e raccomandazioni per l'ircwar:
+
+- Dovete sempre preparare tutto prima di farlo... se dovete fare un mass
+deop osservate bene la situazione, ed e' lo stesso anche per le altre
+operazioni.
+
+- E' ovvio che possedere alcuni bot fa comodo, non devo dirvelo io :)
+usate anche delle tcl buone se prevedete molti attacchi al vostro canale.
+
+- Se riuscite a takare un canale, tenetelo chiuso per uno / due giorni...
+questo tempo sara' necessario a far raffreddare le testoline dei padroni
+precedenti, e servira' anche a configurare bene il canale con i relativi
+bot.
+
+                       St0rm Bringer
+
+                                
+                                

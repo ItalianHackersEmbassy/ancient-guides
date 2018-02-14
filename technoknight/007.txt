@@ -1,0 +1,244 @@
+                                              ีออออออออออออออออออออออออออออออธ
+                                              ณ  ::::::::::::::::::::::::::  |
+                                              ฦออออออออออออออออออออออออออออออต
+                                              ณ Titolo: Guida di base al S.E ณ
+                                              ฦออออออออออออออออออออออออออออออต
+                                              ณ di : Techno Knight           ณ 
+                                              ฦออออออออออออออออออออออออออออออต
+                                              ณ Scritto il  : xx/2/99        ณ
+                                              ฦออออออออออออออออออออออออออออออต
+                                              ณ Pericolo: Ûฐฐฐฐฐฐฐฐฐ         ณ
+                                              ิออออออออออออออออออออออออออออออพ
+                                                                                                                                          
+                                                                                                
+
+                ÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ
+                Û                    Û
+                   GUIDA DI BASE     Û
+                Û        AL          Û
+                Û SOCIAL ENGEENERING 
+                Û                    Û
+                ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛ
+
+                        di
+                     Techno Knight        
+
+
+Il social engeenering e' un'attivita' utile e divertente, che consiste
+nel fingere di essere qualcun altro.
+Le applicazioni del social engeenering sono innumerevoli e vanno dalla
+ricerca di informazioni riservate al semplice scherzo telefonico...
+Se vuoi dedicarti a questa sana e divertente attivita', devi essere :
+
+A) Creativo. Difficilmente troverai gente cosi' scema da credere a una scusa
+   ancora piu' scema.
+
+B) Veloce. La conversazione potrebbe prendere una strada che non avevi
+   previsto. In quel caso attaccare il telefono per pensare a un nuovo
+   piano non fara' che mettere in allarme la vittima, che sicuramente
+   non caschera' piu' nel tuo tranello. Veloce dunque nel trovare
+   risposte coerenti e credibili alle domande impreviste, cercando
+   di riportare, se possibile, la conversazione sulla strada giusta.
+
+
+Il mezzo piu' comune per praticare il social engeenering e' ovviamente il
+telefono, ma anche l'IRC e' terreno fertile per le malefatte di questo
+genere.
+
+
+-IL TELEFONO-
+
+
+Ecco alcune regole di base se devi usare il telefono :
+
+
+-Possibilmente non chiamare da casa tua. Meglio una cabina pubblica
+
+-Se sei un ragazzo non tentare di camuffare la voce per sembrare piu' grande :
+ chiunque con un minimo di intelligenza ti scoprirebbe subito. Molto meglio
+ usare la tua voce vera, o al massimo modificarla con un camuffa-voce (non
+ quelli che la rendono semplicemente non identificabile)
+        
+-Informati prima di chiamare. Fai un piano A (default) e un piano alternativo
+ per ogni piega che potrebbe prendere la conversazione (per quelle che riesci
+ a prevedere. Per le altre, come ho gia' detto, serve solo velocita')
+
+-Se stai parlando con un operatore, e le cose si stanno mettendo male,
+ puoi far finta di avere molta fretta, e se non ti va bene farai finta
+ di essere indignato per la sua incompetenza e le sue maniere di trattare
+ la gente, dicendogli di voler parlare con un suo superiore                                                   
+                                                                                  
+                                
+
+-IRC-
+                                        
+
+Ecco invece qualche dritta per il S.E. in IRC :
+
+
+-Non farlo su canali che frequenti abitualmente
+
+-Non farlo su canali come hacker.it, ma dove sai di trovare polli
+                        
+-Non usare il tuo solito nick. Stessa cosa per l'username.
+
+-Usa un abbonamento che non sia quello che usi di solito per collegarti
+
+
+                                                        
+-ABBONAMENTI GRATUITI-
+
+Ecco varie tecniche di Social Engeenering utili per soffiare le password
+di ISP account degli altri.
+
+
+-METODO 1-
+
+Passo direttamente all'esempio.....
+
+
+<techno[k]> Senti, sono nuovo, potresti farmi un piacere ?
+
+<P0110> Certo, spara.
+
+<techno[k]> Ho notato che quando scrivo la mia password seguita dal codice 266
+           esce scritto !INVENTATEVI UN MESSAGGIO!BOH!
+
+<P0110> Mah, non so perche'
+
+<techno[k]> Potresti provare a farlo anche tu ? Poi mi dici se esce anche a te.
+
+<P0110> Ok, ora ci provo. Come si fa il codice 266 ?
+
+<techno[k]> Tenendo premuto ALT digita 266 sul tastierino numerico e poi rilascia
+           ALT
+
+<P0110> pippo   <---- (questa e' la sua password!)
+                                                        
+                                                          
+In pratica inserendo il codice 266 e' come se avesse premuto ENTER,
+e vi avesse detto la sua password direttamente. Ovviamente il social
+engeenering dovra' continuare anche dopo, altrimenti sospettera' di voi....
+
+<techno[k]> Allora ?
+
+<P0110> MA CAZZO ! E' USCITA SCRITTA ?
+
+<techno[k]> No, dico, ti e' uscito quel messaggio ?
+
+<P0110> no
+
+<techno[k]> Cazzo, ma allora perche' a me esce ? Forse ho uno script di merda ?
+            Che dici, dovrei cambiarlo ? tu quale hai ?
+
+<P0110> Dynamirc
+
+<techno[k]> Mi dici dove posso prenderlo ? Gia' non ci capisco niente di IRC,
+            poi con questo script schifoso.....
+
+Ecco fatto.
+Se invece usa linux, al posto di alt-266 potete dirgli di premere ctrl-J dopo
+la password.... di norma un utente di linux dovrebbe sputarvi in faccia,
+ma oramai questo fantastico os se lo stanno istallando cani e porci, convinti
+di sembrare alquanto kewl, e poi non sanno neanche in realta' che cos'e'...
+Basti pensare che piu' di una persona mi ha fatto domande del tipo : "A che
+serve il programma Linux ?" oppure "Come installo Linux ? Sul cd non c'e'
+l'INSTALL.EXE !!!". Mi dispiace, ma vi assicuro che non sto scherzando...
+(((((((((((((((((p o v e r a   i t a l i a))))))))))))))))))))
+
+                                                
+
+
+-METODO 2-
+
+Trova un pollo, e comincia a parlare con lui. Una volta che siete
+diventati 'amici', invitalo su un canale che avrai aperto precedentemente.
+Su questo canale, oltre a  te, ci sara' un tuo clone, che avrai battezzato
+con un nome da bot, tipo <GUARDIANO>,o <UMILESERVO>, o <TROIONA>, fai tu.
+Dirai che hai creato questo nuovo canale (oppure, meglio ancora, che era
+gia' un canale conosciuto e tu lo hai takkato), e hai messo un bot.
+Gli chiedi se vuole aiutarti a mantenere il canale, dopodiche' gli dici
+che per farsi oppare dal bot serve una password, che gli darai (va bene
+qualsiasi cosa). Quando vede che in realta' non lo oppa affatto, farai
+finta di restare sorpreso e di pensare all'errore, dato che, come tu dirai,
+a te ha funzionato. Dopo un po' ti "ricorderai" che il bot oppa solo
+utenti gia' conosciuti, e che quindi deve registrarsi al bot, prima di
+poter usare la pass per essere oppato. Se ti chiede come digli che
+deve dare un messaggio al bot di questo tipo :
+
+/msg GUARDIANO nick user password
+
+Dove nick e' il suo nick (per allontanare il sospetto di quello che ci interessa
+realmente) e user e password sono ovviamente quelli del suo account.
+Se lo fara' avrai un nuovo abbonamento. Dopodiche', appena dice la password
+stronza che gli hai detto, fagli dare l'op dal tuo clone, in modo che non
+sospetti di niente.                             
+A questo punto aspetta che se ne vada, dopodiche' leva il clone. Il giorno
+dopo lo cercherai e gli spiegherai che avevano ritakkato il canale, che
+ti hanno klineato il bot, o una stronzata simile,
+per non farlo sospettare                                                                     
+                                                                                                            
+
+-METODO 3-
+
+Questo metodo utilizza il telefono, quindi devi prima trovare il numero
+di telefono della vittima. Conviene allora cercare la vittima, ad esempio,
+tra i propri compagni di classe, dei quali si conosce il numero di telefono.
+Dovrai anche conoscere il suo provider e il suo username (facile) dopodiche'
+potrai telefonarlo......
+
+Techno Knight - Buongiorno, qui Italia on Line. Vorrei parlare con il titolare
+                dell'abbonamento numero [inventatiunnumero]
+
+Padre di Giorgio - Uhm, un abbonamento internet, allora e' mio figlio, ora glielo
+                   lo passo.
+                                                                                                
+Giorgio - Pronto ?
+
+Techno Knight - E' l'utente numero (numero) ?
+        
+Giorgio - Uhm, non lo so, pero' ho un abbonamento.
+
+Techno Knight - Dunque...Allora, il suo username e' <username>, giusto ?
+
+Giorgio - Si
+
+Techno Knight - Stiamo trasferendo i dati degli account su un hard disk piu'
+                capiente, e quindi stiamo avvisando gli utenti. Lei ci da
+                l'autorizzazione a trasferire il suo account ?
+		[qualsiasi stronzata va bene]
+
+Giorgio - Ma che cambia ?
+
+Techno Knight - Niente. Anzi, avrebbe un accesso piu' veloce !
+
+Giorgio - Ah, allora si!
+
+Techno Knight - Allora ok. Ora pero' devo essere sicuro che lei e' davvero
+                l'utente numero (...). Mi dovrebbe dire la sua password.
+
+Giorgio - pippo
+
+Techno Knight - Uhm, non mi sembra
+
+Giorgio - ma sono sicuro
+
+Techno Knight - Ah si, mi scusi, avevo letto quella dell'utente precedente
+            Grazie di tutto, e buona giornata.
+
+
+Ecco, un nuovo abbonamento. Fare finta di non ritenere valida la password
+e' necessario per un semplice motivo. Se ti ha dato una password falsa
+si corregera' subito. Se ti ha dato quella giusta invece protestera' e
+tu ti "accorgerai" di aver sbagliato, "controllando" di nuovo la password
+e scusandoti dell'errore.
+
+
+OK ! Per questa volta e' tutto. Ovviamente il social engeenering si usa
+per molte altre cose, anche se questa sembra essere l'applicazione piu'
+popolare negli ultimi tempi. Ad ogni modo lascio il resto alla vostra
+fantasia.        
+
+
+                        Techno Knight
+

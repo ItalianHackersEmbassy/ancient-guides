@@ -1,0 +1,306 @@
+<Disclaimer>
+=======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo  ==
+==   NESSUNISSIMA responsabilita' per l'uso, illegale o meno, che    ==
+==    potrebbe esserne fatto. L'autore (sempre Raven, e chi se no)   ==
+== comunque non incoraggia all'illegalita'. Detto questo,  ENJOY!!!  ==
+=======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!      ==
+=======================================================================
+</Disclaimer>
+
+<Title>
+
+R A V E N ' S   C 0 0 K B 0 0 K  -  V e r s i o n e  1.00   10 dic 2000
+
+</Title>
+
+<Intro>
+
+***********************************************************************
+***********************************************************************
+***********************************************************************
+***                                                                 ***
+***  Arrivati alla versione 1.00, Raven finalmente capisce AVA666   ***
+***  e le sue motivazioni. Ecco perche' lascio anche io. Questa e'  ***
+***  l'ultima versione del cookbook, regalo di Natale 2000 da me a  ***
+***  tutti i miei fan (grazie a tutti x i complimenti che mi fate   ***
+***  spessissimo, via mail, icq, ecc)                               ***
+***                                                                 ***
+***  Addio ragazzi                                                  ***
+***                              The Raven       10 dicembre 2000   ***
+***                                                                 ***
+***********************************************************************
+***********************************************************************
+***********************************************************************
+
+
+-----------------------------------------------------------------------
+Nelle prime edizioni del cookbook compariva qui il seguente paragrafo:
+
+"Questo  [cb]  invece e'  rivolto ai  ragazzi come me, che non vogliono
+fare davvero i  terroristi,  sono solo una  serie di  consigli utili...
+Non sempre  leciti ma so  che alcuni  di essi saranno  messi in pratica
+con  molta piu'  facilita'".  L'intenzione  iniziale  era quindi di non
+mettere  troppi esplosivi  (e non solo,  non volevo  mettere neanche le
+molotov, il napalm...)  ma  alla  fine  ne  ho  messi  comunque  alcuni
+perche' e' davvero divertente!  Comunque non li ho mai usati per ferire
+qualcuno  ne' ho intenzione di  farlo (almeno per il momento, certo che
+se la mia citta' si trasformera' nel Bronx, avro' sempre bombe da 100gr
+nello zaino...) Il manifesto comunque resta lo stesso:
+
+<manifesto>
+"Non  biasimo chi la pensa  diversamente, ma io non credo davvero nell'
+anarchia.  Nella libertà e nell' informazione non filtrata si', eccome!
+Non voglio fare il terrorista non voglio sapere OGNI notizia del mondo,
+insomma  voglio vivere  divertendomi,  essendo trattato onestamente dal
+governo, dai media. Nient'altro. Chiedo forse troppo?"
+E' scritto da me,  solo  che ora  tra i  "divertimenti"  ci sono alcune
+new-entry...  Non so cosa possano pensare i vari anarchici scrittori di
+cookbook di questo mio, ma tant'e'.
+</manifesto>
+
+Non ho  trattato per niente il  tema del phreaking in quanto *TUTTO* il
+materiale che  ho  si  riferisce  al  boxing  (non  il  pugilato),  che
+funzionaVA  in  America,  e oggi a quanto  pare in Italia ci sono pochi
+phreakers, che per giunta non combinano molto (non l'ho detto io!). Cmq
+se vi interessa il tema, c'e' il sito http://come.to/spaghettiphreakers
+Ho trascurato (anche se non del tutto) anche l'hacking, qui la guida di
+riferimento e' la "Guida all'Hacking" di  Lord  Shinva,  che dice molto
+piu' di quanto ne  sappia io  (ed e' inclusa nel  CB di AVA666), poi ci
+sono le e-zines Bfi,  NewBies,  Wannabe, Systemdown, eccetera eccetera.
+Le trovate tutte su  www.spippolatori.com  .  Se avessi inserito troppi
+file qui avrei  rischiato di  vederli  obsoleti  nel giro di un paio d'
+anni, al  contrario del resto. Cmq  c'e'  moltissimo materiale nel sito
+di lopks (http://come.to/lopks).
+Va beh, vi ho annoiato pure troppo. Enjoy!
+(Non si sa mai che li trattero' in futuro pero')
+
+PS Che io sappia, questo e' il terzo (in ordine di apparizione) cookb.
+   italiano, dopo AVA666 e TechnoKnight. Correggetemi se sbaglio (E
+   inviatemi i vostri CB via mail!).
+</Intro>
+
+<Legenda>
+trk : trucchi
+inf : informazione
+how : how to...
+exp : esplosivi e armi.
+rif : riflessioni
+fun : umoristico, stronzata o quasi-inutile
+n.c : non classificabile
+</Legenda>
+
+<Indice>
+-----------------------------------------------------------------------
+* inf indice.txt Questo file
+* trk rav001.txt Dove nascondere le vostre cose da occhi indiscreti.
+  how rav002.txt La Marijuana. Come coltivarla all'aperto e al chiuso.
+* inf rav003.txt Un bell'elenco di siti, quelli che visito spesso. (SA)
+  trk rav004.txt Social Engineering. (SA)
+* trk rav005.txt Come scoprire se qualcuno ha aperto una porta.
+* n.c rav006.txt EGM, una minchiata che pero' puo' tornare utile :)
+* how rav007.txt Molti modi per rendere inagibile una scuola. (SA)
+  how rav008.txt Come accendere un motorino a mani nude.
+  how rav009.txt Costruire un ripetitore FM.
+* exp rav010.txt Fare la polvere da sparo.
+  exp rav011.txt Varie bombe part I.
+- exp rav012.txt Varie bombe part II.
+  exp rav013.txt Fare il napalm.
+* exp rav014.txt La bomba molotov.
+  inf rav015.txt Guida agli elementi chimici.
+  exp rav016.txt Cannoni, fucili, mortai...
+  exp rav017.txt Stink Bomb!
+- how rav018.txt Preparare in casa un veleno facilmente mimetizzabile.
+  how rav019.txt Uccidere qualcuno soltanto a mani nude.
+* trk rav020.txt Divertirsi a scuola. (SA)
+* n.c rav021.txt Cosa fare quando si e' DAVVERO annoiati.
+  how rav022.txt LSD.
+- exp rav023.txt Il fumogeno *-> e la bomba lacrimogena.
+* inf rav024.txt La lista della spesa. (SA)
+* exp rav025.txt Un timer perfetto per bombe ad iniezione elettronica.
+* trk rav026.txt Come nascondere le assenze da skuola.
+* trk rav027.txt Spedizioni di lettere GRATIS per posta ordinaria.
+  inf rav028.txt Come truccare uno scooter con meno di 300.000 lire.
+* fun rav029.txt Scherzetti "innocui". (SA)
+  exp rav030.txt Abbiamo parlato di bombe. Come fare le micce?
+  rif rav031.txt Il manifesto dell'hacker by ++The Mentor++.
+* how rav032.txt Carding, questo sconosciuto...
+* trk rav033.txt E se proprio decideste di fare le cose qui scritte...
+* trk rav034.txt REVENGE: vuoi vendicarti di qualcuno che odi? (SA)
+  how rav035.txt Il fucile Tesla.
+* how rav036.txt La lancia termica.
+  inf rav037.txt Come fare il vino in casa propria. Whohoo!
+  fun rav038.txt Un missiletto-giocattolo con un fiammifero.
+* fun rav039.txt Le 40 cose da fare ad un compito dove non sai un CAZZO
+  rif rav040.txt La vita: manuale di istruzioni. --> READ PLEASE!
+* fun rav041.txt L'angolo della poesia d'autore. (SA)
+* fun rav042.txt Il motore a gatto imburrato.
+  rif rav043.txt La Verita'.
+  rif rav044.txt Il Sistema.
+  rif rav045.txt Anatomia dell'odio.
+  how rav046.txt L'acido (non quello stupefacente).
+* fun rav047.txt Il laser.
+  rif rav048.txt Chiesa del Re(A)lista.
+  fun rav049.txt HOW TO MAKE A BOMB!
+* fun rav050.txt Lettera di una studentessa alla famiglia.
+* rif rav051.txt La scena Underground. (SA)
+* inf rav052.txt Motti. (SA)
+  fun rav053.txt HackinGirls.
+  fun rav054.txt Ma gli hackers ce l'hanno una ragazza?
+  inf rav055.txt Siamo fuori o no?
+  fun rav056.txt Psychological profile of the troubled female teen.
+  exp rav057.txt Nitroglicerina.
+  exp rav058.txt T.N.T.
+  exp rav059.txt Granate ad impatto.
+  exp rav060.txt Astrolite (esplosivo).
+  how rav061.txt Risalire all'identita' di qualcuno su internet.
+  inf rav062.txt Radio sniffer (frequenze & misc).
+  inf rav063.txt La dura arte del writing.
+  rif rav064.txt Driving Test.
+* trk rav065.txt Nascondere files all'interno del PC.
+  exp rav066.txt Fulminato di mercurio.
+* trk rav067.txt Il Bus (skammin').
+* exp rav068.txt Vari inneschi per bombe, piu' due info non confermate.
+  exp rav069.txt Fire bomb.
+* exp rav070.txt Precauzioni.
+  exp rav071.txt Varie bombe part III.
+  exp rav072.txt I moderni esplosivi.
+* how rav073.txt Un economico lanciafiamme.
+  rif rav074.txt Lettera di una giovane punk ribelle.
+  inf rav075.txt Cocktails!
+  inf rav076.txt Fuori con la salvia.
+  how rav077.txt Tatuaggi fatti in casa.
+  exp rav078.txt Thermite.
+* exp rav079.txt Ideuzza chimica.
+* rif rav080.txt Anarchia.
+  exp rav081.txt Plastico fatto in casa.
+  how rav082.txt Shocker!!
+  how rav083.txt Vibracall universale.
+  trk rav084.txt La filodiffusione.
+  exp rav085.txt Balloon bomb.
+  exp rav086.txt Fare l'acido nitrico.
+* how rav087.txt Il bong.
+  inf rav088.txt Trucchi per passare la dogana.
+  how rav089.txt Bus skamming PART II
+  exp rav090.txt Coefficienti di potenza.
+  rif rav091.txt "A" Cerchiata.
+  how rav092.txt Lockpicking PART I
+  how rav093.txt Lockpicking PART II
+  how rav094.txt Lockpicking PART III
+  how rav095.txt Generare Cloro.
+* inf rav096.txt Le droghe leggere.
+  how rav097.txt Master Table of Dynamites.
+  how rav098.txt Rockets.
+  trk rav099.txt Vincere alle macchinette da poker.
+  inf rav100.txt Pagine Gialle Anarchiche.
+-----------------------------------------------------------------------
+I file con la nota "(SA)" sono Soggetti ad Aggiornamenti.
+I file con l'asterisco (*) sono quelli scritti interamente da me.
+I file con il tratto (-) sono quelli scritti parzialmente da me.
+=======================================================================
+</Indice>
+
+<Parte Pallosa>
+=======================================================================
+
+I files  di questo cookbook li ho scritti quasi tutti io, e quindi sono
+soggetti  a  COPYRIGHT  (il  che  vuol  dire  che  potete  distribuirli
+LIBERAMENTE, purche' non li modifichiate;  potete anche inserirli in un
+altro vostro testo, tutti o parte, basta che mi citiate... in fondo non
+e' che pretenda molto, no?).  Qualche volta ho preso testi da altri, ma
+in quei casi cito sempre l'autore e il titolo dell'opera, se presenti.
+
+===> Sono presenti anche alcuni file di (in ordine alfabetico):
+
+AVA666                -          BottleNeck
+Barnei                -          CancereM
+Cavallo De Cavallis   -          Cookbooker
+Dr.Bluedump           -          Dr_Dreker
+DrSlu\\\p             -          Exodus
+Lord Shinva           -          ManDrAke
+MasterDream           -          PiNbALL
+S_A_S_H_A             -          Spirit
+Techno Knight         -          The Assassin
+The GNN               -          The Jolly Roger
+The Mentor            -          r3b0oT
+StealthGhost          -          uXu
+Vanadio               -          Vide0fuzzy
+=======================================================================
+
+Come  al solito, i contenuti di questo cookbook sono rivolti ad un tipo
+di lettore abbastanza maturo da NON FARE quanto scritto, in quanto cio'
+puo' essere PERICOLOSO, se non ILLEGALE. E perche' l'hai scritto, dirai
+tu? Per puri  scopi INFORMATIVI, di INTRATTENIMENTO. Non e' un manuale,
+ma un testo fine  a se'  stesso.  Io non incoraggio all'illegalita' ne'
+al danneggiamento proprio o altrui.  Se fate danni  o  succede qualcosa
+poi non venite a prendervela con me, chiaro?
+
+=======================================================================
+
+Se volete  che  inserisca un  vostro  file nel cookbook, mandatemelo in
+e-mail (the_raven@libero.it ------> NO SPAM o MAIL BOMBING), e se sara'
+all'altezza, lo  inseriro'  con il  vostro nome. Perpiacere pero' prima
+di mandare  files (SOLO ED ESCLUSIVAMENTE IN TXT NON ZIPPATO),  testate
+quello  che  scrivete!  O, se proprio  non potete, specificate il fatto
+che deve  essere  sperimentato!  Se necessari,  aggiungete pure disegni
+ASCII nei vostri  file  (pero' senza caratteri  non visualizzabili  con
+l'editor del DOS  e  col notepad  di  Windows).  Non ci sono  limiti al
+tipo di materiale  da mandare: potete spaziare  da "come  costruirsi un
+go-kart" a "le tre frasi che fanno cadere una ragazza ai vostri piedi",
+da  "overcloccare  il monitor"  a  "non  pagare  la  bolletta TELECOM",
+insomma quello che volete... Se il testo supera le due pagine e' meglio
+che me lo mandiate in italiano, o comunque NESSUNA lingua diversa dall'
+inglese. Se pensate che sia davvero interessante,  potete anche mandare
+file non vostri. Se conoscete  qualche altro  cookbook (in ing o meglio
+ita) oltre quelli citati, non esitate a darmi l'URL.
+
+=======================================================================
+
+Ringraziamenti (leggeteli, magari ci siete anche voi):
+
+The Jolly Roger:Non so come mai non t'abbiano ancora messo al gabbio!
+                In ogni caso sei un mito!
+Avatar 666:.....mi sono avvicinato a questo mondo grazie al tuo MPC.
+                Perche' hai mollato? Sniff... (IP Sniff) Inoltre grazie
+                per i consigli che m'hai dato per questo mio.
+Bill Gates:.....Fino al DOS 6.22 andava tutto bene... (cmq non e'  vero
+                un cazzo:  a me  windows  non si  pianta  mai e  mi da'
+                problemz solo in fase di installazione, dopo mai. E non
+                lo uso solo x il solitario e x scrivere il  cookbook...
+                Meditate gente meditate!)
+I miei lettori:.Continuate cosi', distribuite in giro questo CB  (senza
+                cambiare i files pero')!
+Melki-Neo-Drugo:Thank u my friends!
+TechnoKnight:...Mannaggia a te... Il tuo sito si vede solo col Lynx...!
+Barneei:........Bella te! Un lettore che mi ha fatto mille complimenti
+                e mi ha dato altrettante nuove idee. Nel CB ci sono
+                alcune sue invenzioni. Fate tutti come lui... Ocio a
+                non esplodere, mi servi vivo!! ;-)
+Myself.................................................................
+
+=======================================================================
+</Parte Pallosa>
+
+<Konklusion>
+E qui finisce il mio cookbook. Torna sul mio sito a scaricare  le nuove
+versioni ------>>> http://digilander.iol.it/mpetro <<<-------- Bye`ZzZ!
+
+By...
+_______  __  __  _____           _____   ___  __   __  _____  ___   __
+|__   _| | | | | | ___|          |  _ \  |  \ \ \  | | | ___| |  \  | |
+   | |   | |_| | | |_            | |_> | |   \ \ \ | | | |_   | \ \ | |
+   | |   |  _  | |  _|           | __ <  | |\ \ \ \| | |  _|  | |\ \| |
+   | |   | | | | | |__  _______  | | \ \ |  _  \ \ \ | | |__  | | \ \ |
+   |_|   |_| |_| |____| |______| |_|  \_||_|  \_\ \__| |____| |_|  \__|
+
+>---------------------------------------------------------------------<
+>---------------------->> the_raven@libero.it <<----------------------<
+>---------------------------------------------------------------------<
+>---------------->> http://digilander.iol.it/mpetro <<----------------<
+>---------------------------------------------------------------------<
+
+             L  I  V  E     Y  O  U  R     L  I  F  E     !
+
+</Konclusion>
+<end>

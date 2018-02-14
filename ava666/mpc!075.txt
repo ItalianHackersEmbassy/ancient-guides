@@ -1,0 +1,119 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- TRUCCO PER LE ROULETTE DEI BAR #1 (BUG) -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Autore:           Jenjy
+Consumo:          3 ore di sonno, 3 bicchierini di limoncino.
+Musica Ascoltata: Black Sabbath, Iron Maiden, Metallica.
+Saluti a:         Lo pi', Zoe, Gianni, Fantaman,Falasco',Giorgio D, e 
+                  UN SALUTO SPECIALE A SILVIA C. di Jesy.
+
+Da circa un anno a questa parte, i bar e le sale giochi sono caratterizzate
+dalle ormai consuete macchinette da gioco. In particolare Slot-machine, Poker
+e ROULETTE elettroniche. Voglio parlarvi proprio di quest'ultime.
+
+Il funzionamento e' abbastanza semplice, ma per chi non ne fosse a conoscenza
+lo spieghero'. La roulette accetta soldi 1000, 5000, 10000, 50000.
+Ad esempio quella dal caffe' sotto casa trasforma le 10000 Lire in 100
+punti giocabili.
+
+Dopo aver puntato la somma o una parte di essa, si puo' decidere di ritirare
+il premio sottoforma di Ticket, che si possono cambiare dal gestore del bar
+in denaro o Consumazioni. Questi Ticket escono da una fessura in basso al gioco.
+
+Volete vincere un po' di soldi in maniera facile ?????
+
+Seguitemi con attenzione !!!!
+
+Inserite 10000 Lire nella macchinetta.
+Ora puntate la meta' dei vostri punti sul colore Rosso, e l'altra meta' sul
+colore Nero. In entrambi dei casi (Tranne che nel verde) ritornerete al punto
+di partenza, con i vostri bei 100 crediti (10000 Lire) sul display.
+Adesso verra' la scritta "VUOI RITIRARE IL PREMIO ORA?" spostate il Joystick
+sul SI ma non premete niente.
+Adesso cercate l'interruttore per far spegnere la Roulette (di solito SOPRA
+il gioco). Adesso  (ATTENZIONE !!!!)
+Premete SI e IMMEDIATAMENTE dopo spegnete la macchina !!!
+Intanto avete ritirato il vostro bravo TICKET !!!!!!!!
+
+Quando dico IMMEDIATAMENTE intendo dire CONTEMPORANEAMENTE dopo aver premuto SI.
+
+Ora riaccendete la macchina. Essa dopo aver fatto il test video e dei colori
+ricarichera' il gioco !!!! E, MAGIA, ci sono ancora i vostri 100 punti !!!!! ;)
+
+Qualcuno di voi pensera' "Ma non li avevamo ritirati prima ?"
+Dopo ne riparleremo.
+
+I 100 punti che avete sono "VIRTUALI" ossia non potete Ritirarli, ma potete
+sempre giocarli per tentar di vincere ancora !!!!
+
+Qui dovete aver un po' di culo e dovete saper amministrare il gioco e i
+rispettivi punti !!!
+
+Quando arriverete a 200 punti o piu' e ritornera' la scritta per il ritiro
+del premio ora ritirate normalmente dicendo di SI.
+Ritirerete il punteggio sul display - i 100 punti virtuali.
+Ad esempio se sul Display c'e' scritto 400 punti (40000 Lire) ritirerete
+solamente 300 punti ossia 30000 Lire, perche' come dicevamo prima i 100 punti
+sono virtuali, ossia non potete ritirarli, ma potete sempre puntarli per
+vincere altri punti che poi pero' potranno essere ritirati.
+
+
+                           >Spiegazione DETTAGLIATA<
+      <BUG del Software "Les Fiches" Ossia del software della roulette.>
+
+Dopo circa 3 giorni di studi sono arrivato a una conclusione.
+
+Innanzitutto premetto che la macchinetta e' provvista di una memoria EEPROM
+su cui vengono salvati il punteggio ad ogni variare di esso, per non venire
+incontro a inconvenienti del tipo se va via la tensione.
+Ad ogni accensione della macchinetta tramite l'apposito interruttore. Il
+software carica dalla EEPROM il punteggio. Fino a qui tutto OK.
+Cio che e' molto interessante e' la priorita' che il software assegna a due
+diverse procedure durante il ritiro del premio.
+Queste due procedure sono rispettivamente LA FUORIUSCITA DEI TICKET e la
+CANCELLAZIONE DEI PUNTI DALLA MEMORIA.
+La gestione delle due vengono eseguite in fattore del tempo nella sequenza
+sopraccitata.
+
+Avendo un tempo di qualche centesimo di secondo tra la prima e la seconda
+operazione, togliendo tensione impediamo che il software vada a cancellare il
+punteggio della memoria EEPROM.
+
+L'errore e' di tipo concettuale , ossia l'esecuzione errata delle due procedure
+da parte del software.
+
+Be' ringraziamo i Programmatori !!!!!!!!!! :)
+
+
+PS: Ultimamente ci sono in giro macchinette "Les Fiches", in cui per ritirare
+    il premio, dovete effettuare un piccolo giochino tipo SPACE INVADERS, per
+    ritirare il premio, in cui i punti vengono decrementati un po' alla volta.
+    Mi dispiace per voi, ma non credo che con questo metodo, la macchinetta
+    sia Exploitabile. :(
+
+Io personalmente in un giorno ci ho rimediato 40000 Lire.
+Non sono miliardario ora, ma fanno sempre comodo 40 sacchi in tasca. ;)
+
+Vi ricordo che mi interesso anche di Phreaking, Hacking, Viring e Cracking.
+
+Se volete contattarmi potete farlo presso il mio indirizzo E-Mail:
+marco2@cronosnet.com
+
+
+GRAZIE A "Jenji",
+  L'AUTORE DI
+ QUESTO FILE...
+
+      by
+  Å        Å
+  ³ AVA666 ³
+  ~~~~~~~~~~
+

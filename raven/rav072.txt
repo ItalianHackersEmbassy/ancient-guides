@@ -1,0 +1,215 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+I moderni esplosivi.
+~~~~~~~~~~~~~~~~~~~~
+
+Un ordigno esplosivo e' costituito normalmente da:
+-esplosivo;
+-innesco;
+-accenditore;
+-involucro contenitore.
+
+}ESPLOSIVO{
+
+L'esplosivo e' una sostanza la cui prerogativa e' la
+capacita' di trasformarsi istantaneamente in un grande
+volume di gas ad elevatissima temperatura che si espande
+a pressione nell'ambiente circostante, quindi in grado 
+di generare un enorme calore e pressione che si traduce
+in grande forza d'urto con effetti distruttivi. Tale
+sostanza si trasforma a seguito di sollecitazioni 
+esterne: per urto, sfregamento o calore, sviluppando 
+elevata energia termica, effetti luminosi, gas ed energia
+meccanica. L'espansione dei gas e' detta esplosione, ed
+e' sempre accompagnata da un boato, o detonazione. I gas 
+espansi ad elevata temperatura creano un'onda diretta o
+di pressione e, per la loro temperatura, si innalzano e 
+svaniscono nell'atmosfera. L'aria respinta e compressa 
+dall'onda diretta torna istantaneamente e con violenza a 
+riempire il vuoto prodottosi, dando luogo ad un'onda 
+retrograda, i cui effetti si sommano a quelli prodotti 
+dall'onda diretta. L'onda diretta che incontra un oggetto 
+produce delle lesioni che possono poi venir aggravate 
+dall'onda retrograda; ad esempio un muro può essere 
+lesionato dall'onda diretta e poi fatto cadere dall'onda 
+retrograda. E' per tale fenomeno che gli effetti di una bomba 
+possono apparire diversi da quelli dettati dalla comune esperienza;
+ad esempio l'esplosione di una bomba in una strada può far 
+ritrovare le saracinesche dei negozi e le vetrine sventrate
+verso l'esterno, le pareti crollate verso la strada ed il
+tetto scoperchiato verso l'alto. L'onda retrograda creata 
+dall'aria che ritorna violentemente verso il centro 
+dell'esplosione può dar luogo a una successiva onda 
+rimbalzante all'indietro, ma di non rilevante potenzialità. 
+Quando l'esplosione avviene nel terreno, si creano in esso
+delle vibrazioni con onde d'urto simili a quelle di un 
+terremoto, che possono cagionare lesioni agli edifici o che
+possono avere l'effetto di una mazzata su di una persona a 
+contatto con la superficie investita (una bomba che scoppia
+sotto una nave può provocare lesioni a coloro che si trovano
+sulla sua tolda per il solo effetto dell'urto). E' per questo
+motivo che chi si trova a breve distanza da un'esplosione deve
+stendersi a terra avendo però l'avvertenza di reggersi solo 
+sulle punte dei piedi ed i gomiti: in tal modo evita lo 
+spostamento d'aria, l'ondata di calore e l'onda d'urto 
+trasmessa dal terreno. 
+
+
+  ,  
+ -+-
+  |
+ / \ 
+|^^^|
+| O |________
+|   |        |
+|   |  _   _ |
+|   | | | |_||
+|___|_|_|____|
+
+--------------
+    prima
+--------------
+,  
+-+-
+  \
+ / ,  
+|^^^|
+| O :________
+|   |        |
+:   ;  _   _ .
+|   | | < |_:|
+|___|_|_|____,
+. :  .  °.
+---------------
+     dopo      <<------
+ onda diretta  <<------
+--------------
+  
+
+ _
+  %,  
+t^''l
+ >0 ;_-_ __ 
+ j  i   ^  ° :
+:   ;  _   . .
+I   ; ; < ;-:<
+>_ _i_l#:_ __,
+°.:,°°.,'.-;.'
+-----------------
+       dopo       ------->>>
+ onda retrograda  ------->>>
+-----------------
+
+A breve distanza, l'esplosione agisce direttamente con 
+onde d'urto pulsanti che attraversano l'oggetto e vengono
+riflesse dalle sue superfici libere così che si creano 
+in esso sovratensioni che ne provocano la rottura. 
+All'esplosione segue normalmente una fiammata con possibile
+proiezione di corpi incandescenti che possono provocare 
+incendi nonché una irradiazione di calore che può essere la
+causa di ustioni da irradiazioni e di possibili incendi 
+Nel caso di esplosivo caricato in contenitori metallici 
+(mine, bombe, proiettili, ordigni esplosive), o di bombe 
+chiodate (create legando grossi chiodi attorno ad un 
+nucleo di esplosivo), vi è l'ulteriore effetto della proiezione 
+di frammenti metallici di varie dimensioni (schegge).
+Frammenti minuti ma aventi elevata velocità possono cagionare 
+lesioni più ampie di quelle prevedibili. Le persone coinvolte 
+da un'esplosione sono sottoposte ad entrambi gli effetti della
+medesima. La potenza di un esplosivo ed i suoi effetti 
+dipendono da vari fattori, quali la velocità ed il calore 
+di esplosione, la quantità di gas prodotti, influenzata dalla 
+temperatura di esplosione, e le conseguenti pressioni realizzabili. 
+Esplosivi ad alta velocità di detonazione hanno maggori 
+effetti distruttivi anche per semplice contatto, potendo 
+tranciare di netto piastre e sbarre metalliche; esplosivi 
+che producono molto gas sono più idonei in campo civile in 
+cui occorre sfruttare l'effetto di distacco. La prova più usata
+per determinare la potenza di un esplosivo consiste nel farlo 
+esplodere entro un grosso blocco di biombo (blocco di Trauzl)
+e nel misurare poi il volume della cavità creatasi. In base 
+ad essa, se si assume che la gelatina esplosiva abbia il 
+valore eguale a 100, si ha la seguente scala di valore per 
+gli altri esplosivi: 
+
+Gelatina esplosiva, 100 
+T4, 90 
+Pentrite, 80 
+Tritolo, 50 
+Fulminato di mercurio, 20 
+Polvere nera, 7 
+
+
+}INNESCO{
+
+La polvere nera può essere fatta esplodere per semplice 
+accensione a mezzo di una miccia; per gli altri esplosivi 
+(salvo casi particolari in cui può bastare un forte calore) 
+occorre un mezzo d'innesco che normalmente è il detonatore; 
+esso è costituito da un tubicino metallico chiuso da un lato
+e contenente una miscela di esplosivi primari. In alcuni casi,
+specie usando esplosivi poco sensibili, nel detonatore è 
+contenuto, sotto a quello primario, anche uno strato di 
+esplosivo secondario molto potente; in altri casi il detonatore 
+viene collegato ad un separato detonatore secondario costituito 
+da un quantitativo variabile da pochi grammi fino ad un chilo 
+di esplosivo potente (Pentrite, T4, TNT).
+
+
+}ACCENDITORE{
+
+L'accenditore e' un congegno meccanico, chimico o
+elettrico, idoneo a far reagire l'innesco.
+
+
+}INVOLUCRO CONTENITORE{
+
+L'ordigno esplosivo viene depositato in un involucro
+che spesso e' costituito da scatole, valigie...
+
+Accenditore e involucro contenitore possono anche mancare.
+Il funzionamento dell'ordigno esplosivo, in genere, si puo'
+scomporre cosi':
+L'accenditore fa detonare l'innesco...
+...la detonazione dell'innesco si propaga all'esplosivo...
+....ha luogo la reazione esplosiva. 
+
+--- 
+
+Bibliografia: 
+Gli Esplosivi, Hoepli
+Tecnica degli esplosivi, Bianco
+Impiego degli esplosivi, Bianco
+Ricettario Industriale, Hoepli
+
+---
+
+== Fonte: Cyborg [dGt_BRaInS] ==
+
+
+-------------------------------------------10 grandi miscele esplosive.
+
+10 GRANDI MISCELE ESPLOSIVE
+            
+1)  Perclorato di potassio e canna da zucchero
+2)  Nitrato di sodio e solfuro di fluoro
+3)  Bicromato di potassio e solfato di Antimonio
+4)  Nitrato di Guanidina e Antimonio polverizzato
+5)  Permanganato di potassio e zucchero polverizzato
+6)  Clorato di Bario e paraffina
+7)  Clorito di sodio e Alluminio polverizzato (non sono sicuro su
+    kuest' ultimo)
+8)  Perclorato di magnesio e canna da zucchero
+9)  Nitrato di Ammonio (puro più del 40%) e Benzina (MOLTO POTENTE) 
+10) Perossido di sodio e fiori di solfuro
+
+== Fonte: (m4l3f1k0) [dGt_BRaInS] ==
+
+The Raven
+Since `82

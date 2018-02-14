@@ -1,0 +1,454 @@
+                C0RS0 di C ----- Techno Knight
+							
+
+Il C e il C++ sono probabilmente i linguaggi di programmazione preferiti
+dai professionisti, e sicuramente quelli preferiti dagli hackerz per i loro
+loschi scopi. Quindi ora tentero' di spiegarvi i fondamenti del C....
+                                                        
+Ecco come si potrebbe presentare un semplicissimo programma C :
+-----
+
+#include <stdio.h>
+
+main(){
+
+ int numero;
+
+        numero = 3;
+        printf("Oggi la mamma di GiovanBattista ha fatto %d bucchini",numero);
+        numero++;
+        printf("\n\rIeri invece ne ha fatti %d",numero);
+
+}               
+-----           
+Allora, la prima riga del codice, #include <stdio.h>, dice al compilatore
+di includere nel programma funzioni, tipi e costanti definite in stdio.h.
+stdio e' appunto una libreria che contiene le funzioni di base per l'input
+e l'output.
+Il blocco principale, quello che viene eseguito automaticamente
+all'avvio del programma, si chiama main. Le due parentesi tonde dovrebbero
+contenere gli argomenti da passare alla funzione, in questo caso sono vuote,
+perche' non viene passato nessun argomento.
+Le parentesi graffe, invece, indicano l'inizio e la fine di un blocco
+(in questo caso la funzione main).
+Con la terza riga, int numero, dichiariamo una variabile chiamata numero,
+di tipo int (cioe' che va da -32767 a 32767) altri tipi di variabili
+comunente usate sono :
+                                
+long    =    da -2147483647 a 2147483647
+float   =    da 3,4 * (10**-38) a 3,4 * (10**+38)
+double  =    da 1,7 * (10**-308) a 1,7 * (10**308)          
+
+Il tipo char, invece, indica un carattere, che in C altro non e' che un
+numero. Il tipo unsigned char puo' andare da 0 a 255, mentre un signed char
+da -127 a 127. Un carattere viene racchiuso tra apici, ed essendo in realta'
+un numero e' lo stesso fare....
+
+        carattere = 'A'
+
+oppure....
+
+        carattere = 65
+
+In entrambi i casi il carattere sara' la A maiuscola, dato che 65 e' il codice
+ASCII che identifica la A.
+
+Tornando al codice di esempio, con la quarta riga, numero = 3, assegnamo
+il valore 3 alla variabile numero. = infatti e' in C l'operatore di
+assegnamento.
+Successivamente c'e' una chiamata alla funzione printf, contenuta appunto
+in stdio (per questo abbiamo incluso stdio.h). printf e' seguito da una
+coppia di parentesi tonde all'interno delle quali sono racchiusi i parametri
+da passare alla funzione, in questo caso la stringa da stampare.
+Notiamo che le stringhe in C vengono racchiuse tra virgolette.
+All'interno delle virgolette si trova anche %d. Cos'e' ? Semplicemente
+una specifica di stampa, che indica un numero decimale. Il compilatore
+capisce che al posto di %d dovra' stampare sullo schermo un numero, che
+verra' passato come argomento successivamente. Gli argomenti sono separati da
+virgole. In questo caso alla specifica di stampa %d verra' sostituito il
+valore della variabile numero, che contiene 3. Quindi apparira' sullo
+schermo :
+                Oggi la mamma di GiovanBattista ha fatto 3 bucchini
+
+"numero++;" e' l'equivalente di "numero = numero+1;". Se avessimo voluto
+incrementarlo di 3 invece avremmo dovuto scrivere "numero+=3;", per
+decrementarlo basta sostituire i piu' con meno. In questo caso il numero
+viene incrementato di una sola unita', e conterra' quindi 4.
+La chiamata seguente a printf stampera' al posto di %d il nuovo valore di
+numero, e scrivera' quindi :
+
+                     Ieri invece ne ha fatti 4
+
+\n e \r vengono interpretati come caratteri speciali corrispondenti
+rispettivamente a <newline> e <carriage-return>, cioe' \n va alla riga
+successiva e \r torna a capo.
+
+Il programma termina con } che indica la fine del blocco main.
+                                                                           
+Al contrario di printf, main non e' seguita da un punto e virgola, ma dalle
+parentesi graffe che racchiudono il codice, essendo in questo caso non una
+chiamata a funzione, ma una definizione di funzione (cioe' noi non chiamiamo
+la funzione main, ma la definiamo, "costruendo" il codice che la comporra'.
+Una definizione di funzione  contiene il codice da eseguire quando la funzione
+viene chiamata, mentre una chiamata alla funzione esegue quel codice gia'
+stabilito dalla definizione).
+
+Le specifiche di stampa vengono usate con printf per indicare il formato di
+cio' che vogliamo stampare a video.
+
+Es.
+
+/* Tutto cio' che e' racchiuso tra questi due simboli viene considerato
+   un commento */
+
+#include <stdio.h>
+
+main(){
+ char carattere;
+
+        carattere = 'A';
+        printf("%cBC",carattere);
+        printf("\n\r%dBC",carattere);  // anche questo viene considerato
+                                       // commento
+}
+
+La prima chiamata a printf stampa sullo schermo "ABC", dato che abbiamo
+dato come specifica di stampa della variabile carattere %c, cioe' carattere.
+La seconda invece scrivera' "65BC", perche' sotto forma di decimale 'A'
+equivale a 65.
+
+E' ovviamente possibile utilizzare piu' specifiche di stampa in una sola
+chiamata.
+                                                                        
+Es.
+
+printf("Sotto forma di carattere Š %c, sotto forma di numero Š %d",carattere,carattere);
+
+
+Per gestire l'input dalla tastiera, invece, sempre per rimanere nell'ambito
+delle funzioni di stdio, possiamo usare la funzione scanf.
+
+Es.
+
+#include <stdio.h>
+
+main(){
+ int ilnumero;
+        scanf("%d",&ilnumero);
+}
+
+%d indica che la scanf deve prepararsi a ricevere come input dalla tastiera
+un numero intero, &ilnumero indica DOVE schiaffare questo valore.
+La & davanti al nome della variabile indica l'indirizzo in memoria della
+variabile. Cioe', mentre ilnumero indica il valore della variabile (in questo
+caso un numero), &ilnumero indica il posto in memoria dove si trova la variabile
+ilnumero. Dato che scanf si aspetta un indirizzo e' necessario inserire
+l'indirizzo della variabile ilnumero, e viene fatto appunto con &.
+
+Dato che una variabile puo' occupare piu' di una "casella" in memoria,
+viene considerato come indirizzo quello della prima casella.
+Per indicare invece il valore contenuto in un indirizzo di memoria si
+utilizza *. Esiste una tipo di variabile chiamato puntatore, che contiene
+un indirizzo.
+
+Es.
+
+#include <stdio.h>
+
+main{
+ int *ilpuntatore;
+ int ilnumero;
+
+ ilpuntatore = &ilnumero;
+ scanf("%d",ilpuntatore);
+
+}
+                                                                
+Con "int *ilpuntatore;" dichiariamo la variabile ilpuntatore come un
+puntatore a una variabile di tipo int (infatti dovra' contenere l'indirizzo
+di ilnumero, che e' un int).
+"ilpuntatore = &ilnumero" assegna alla variabile ilpuntatore l'indirizzo in
+memoria della variabile ilnumero.
+Quando chiamiamo scanf, quindi, possiamo passare come parametro ilpuntatore,
+senza usare la &, dato che ilpuntatore contiene gia' l'indirizzo di ilnumero.
+Come ho gia' detto, per riferirsi al valore contenuto in un indirizzo di
+memoria, si usa l'asterisco (*), quindi, una volta assegnato a ilpuntatore
+l'indirizzo della variabile ilnumero, e' la stessa cosa fare ....
+
+        ilnumero = 3;
+
+oppure .....
+
+        *ilpuntatore = 3;
+
+
+Invece scrivere "*&ilnumero = 3;" e' una grandissima stronzata perche'
+e' la stessa cosa di "ilnumero = 3;", solo con due caratteri in piu' :)
+
+Un altro tipo di variabile, invece, e' l'array.
+Un array e' un insieme di variabili, che hanno lo stesso nome e che vengono
+quindi identificate da un numero.
+
+Es.
+
+int inumeri[50];
+
+La variabile inumeri non conterra un numero solo ma 50 numeri.
+
+inumeri[0] conterra' il primo numero, inumeri[1] il secondo, fino a
+inumeri[49], che conterra' il cinquantesimo numero.
+
+Es.
+
+inumeri[20] = 25;
+
+
+Ovviamente e' possibile definire array di dimensioni diverse e anche array
+a piu' dimensioni.
+
+Es.
+
+int tris[3][3];
+
+In questo caso e' un array rappresentante uno schema di tris (3 righe per
+3 colonne).
+
+tris[0][0] rappresentera' la prima casella e tris[2][2] l'ultima.
+
+Passiamo ora ad una parte fondamentale : la creazione di nuove funzioni.
+Infatti scrivere tutto il codice in main non sarebbe certo elegante, e
+creerebbe molta difficolta' nella comprensione del programma e nella
+ricerca di errori, soprattutto per programmi complessi.
+
+
+Es.
+
+
+#include <stdio.h>
+
+int doppio(int unnumero);
+
+main(){
+
+ int numero;
+                
+        scanf("%d",&numero);
+        printf("\n\rIl doppio di %d Š %d",numero,doppio(numero));
+                                        
+}
+
+int doppio(int unnumero){
+
+return unnumero*2;
+
+}
+        
+                                                        
+La prima riga dopo l'include, "int doppio(int unnumero);" e' il prototipo
+della funzione doppio, che verra' definita successivamente, dopo il main.
+La parola int prima del nome della funzione indica che la funzione ritorna
+(cioe' restituisce come risultato dell'operazione) un valore di tipo int.
+All'interno delle parentesi ci sono i parametri accettati dalla funzione.
+In questo caso e' uno solo, e' di tipo int, e viene riconosciuto all'interno
+della funzione con il nome "unnumero".
+Una funzione che non ritorna alcun valore (cioe' che serve solo ad eseguire
+una serie di istruzioni) viene preceduta da void. Se una funzione non
+accetta argomenti allora si scrive void tra le parentesi tonde.
+"return" serve a definire il valore di ritorno della funzione. In questo caso
+costituisce l'unica riga della funzione, e ritorna il numero passato come
+argomento moltiplicato per 2.
+                                                
+
+Un programma dovra' compiere delle scelte, e per fare cio' si usa l'istruzione
+"if".
+
+Es.
+
+if (lamammadigianteoboldohachiavato()) nonchiavartela();
+                                        
+In questo caso il programma controlla il valore di ritorno della funzione
+"lamammadigianteoboldohachiavato()". Se il valore di ritorno e' 1
+(considera 1=VERO 0=FALSO) allora eseguira' la funzione "nonchiavartela()"
+
+
+AltroEs.
+
+if (!lamammadigianteoboldohachiavato()) chiavatela();
+
+In questo caso se la funzione lamammadigianteoboldo NON restituisce 1 (e quindi
+vero) esegue la funzione chiavatela();
+Il punto esclamativo (!) infatti e' in C la negazione. Cioe' in questo caso
+viene intesa cosi' :
+
+se NON E' VERO che la funzione lamammadigianteoboldohachiavato ha ritornato
+1, allora esegui chiavatela();
+
+Prendiamo ora un altro esempio...
+
+
+if (numero>100) printf("eh cosi' grande ! non ce la faccio a elaborarlo !"); // :)
+                                                        
+Cosa succede ? Il simbolo > vuol dire "maggiore di", questo lo sapevamo, ma
+la if non si limita a vedere se un espressione e' vera o falsa ?
+Appunto. Se numero e' maggiore di 100 allora (numero>100) sara' vero, altrimenti
+falso.
+                                                                                                                    
+Se si vogliono eseguire, a una certa condizione, piu' di un'istruzione, si
+devono racchiudere le istruzioni tra due graffe.
+
+
+Es.
+
+if (seistronzo()){
+
+          vaffanculo();
+          nonmirompereilcazzo();
+}
+
+
+Per un'alternativa si usa invece "else"
+
+Es.
+                        
+if (seistronzo()){
+
+        vaffanculo();
+        nonmirompereilcazzo();
+}
+
+else {
+        benvenuto();
+        accomodatipure();
+}
+
+
+E' anche possibile utilizzare gli operatori binari...
+
+
+Es.
+
+if ((seistronzo()) || (seiscemo()) || (seiunrompipalle())) {
+
+vaffanculo();
+nonmirompereilcazzo();          
+
+}
+                
+
+|| rappresenta infatti l'OR. Cioe' se anche solo una delle espressioni
+e' vera, allora si avvera la condizione.
+
+&& invece e' l'AND, cioe' la condizione e' soddisfatta solo quando TUTTE
+le espressioni risultano vere, mentre ^ e' lo XOR, cioe' l'OR esclusivo
+(se solo una delle due espressioni e' vera allora si avvera la condizione,
+se sono entrambe false o entrambe vere la condizione non e' soddisfatta)
+
+                                
+
+Passiamo ora ad esaminare i cicli in C.
+"while" viene usato nella sintassi :
+
+while (condizione){
+                        
+       ...codice da eseguire a ogni ripetizione...
+
+}
+
+E ripete le istruzioni tra le graffe fino a quando e' vera la condizione.
+Per una sola istruzione si potrebbero anche non usare le graffe, ma conviene
+sempre usarle per evitare confusione.
+
+Es.
+
+#include <stdio.h>
+
+main(){
+
+ int ipriminumeri[10];
+ int numero;
+                
+        numero = 0;
+
+        while (numero<10){
+
+                ipriminumeri[numero] = numero;
+                numero++;
+                
+        }
+                        
+}
+
+
+
+Questo codice ripete il ciclo finche' la variabile numero e' minore di 10,
+e assegna agli elementi dell'array ipriminumeri i numeri da 0 a 9.
+Il controllo sulla condizione viene eseguito prima delle istruzioni contenute
+nel ciclo. Per farlo eseguire dopo le istruzioni del ciclo si usa do.
+
+Sintassi :
+
+do {
+
+   ...Istruzioni da eseguire....
+
+} while (condizione);
+
+"for", invece, e' in realta' inutile, ma offre indubbie comodita' in alcuni casi
+rispetto a while.
+
+Es.
+
+#include <stdio.h>
+
+main(){
+
+ int t;
+                
+        for (t=0;t<10;t++){
+
+                ..codice..
+                ..codice..
+                ..codice..
+        }
+
+}
+
+I tre campi tra le parentesi sono separati da 2 ; e sono, rispettivamente,
+l'inizializzazione delle variabili, la condizione, e l'aggiornamento.
+In pratica all'inizio (prima che il ciclo cominci) alla variabile t
+e' assegnato il valore 0.
+La condizione e' (t<10), cioe' il ciclo continuera' fino a quando il valore
+della t sara' minore di 10.
+L'aggiornamento e' t++, cioe' alla fine di ogni ciclo la t viene incrementata
+di 1.
+In questo caso il valore di t viene incrementato alla fine del ciclo.
+Se avessimo scritto ++t sarebbe stato incrementato all'inizio.
+
+E' anche possibile inizializzare piu' variabili...
+
+        for (t=0,s=0,z=0;t<10;t++,s++,z-=2){
+
+                ..codice..
+                ..codice..
+                ..codice..
+
+        }
+
+
+
+Per terminare un ciclo in anticipo si utilizza "break", senza parentesi.
+"continue", invece consente di ritornare direttamente all'inizio del ciclo
+senza eseguire le istruzioni successive.
+                                                        
+Ecco, questi sono i fondamenti del C.
+
+
+			
+                        Techno Knight                                                       
+                                                
+                                                
+                                                                                                                                         
+                                                       
+                                                                                                                  
+                        
+       

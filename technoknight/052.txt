@@ -1,0 +1,79 @@
+[Nota : Questo articolo e' stato steso dal professor DNA, docente di
+ Ingegneria Frattale all'Universit… La Sapienza di Pozzovetere]
+
+
+    |\      |     |  ----- 
+    |  \    |     | |     |
+    |    \  | \   | |     |
+    |     | |   \ | |-----|
+    |    /  |     | |     |
+    |  /    |     | |     |
+    |/      |     | |     |  presenta gli
+
+                 ษออออออออออออออออออออออออออออออออออป              
+                 บ   ********         ********      บ        |\       
+                 บ  *        *       *        *     บ        |  \      
+                 บ  *        *       *        *     บ   +  --|    \     
+                 บ  **********       *        *     บ        |      \__ Vs
+                 บ  *        *       *        *     บ   -  --|     /   
+                 บ  *        * * *   *        * * * บ        |   / 
+                 บ  *        * * *    ********  * * บ        | /          
+                 ศออออออออออออออออออออออออออออออออออผ     
+
+
+
+Se volete progettare qualcosa di interessante nel campo dell'elettronica
+analogica vi sara' di una cospicua utilita' conoscere i cosidetti
+amplificatori operazionali. Questi elementi sono in realta' dei
+circuiti composti da piu' elementi (principalmente transistor). Sono
+commercializzati sotto forma di integrati. La sua funzione consisterebbe
+nell'amplificare un segnale.
+L'amplificazione ottenuta e' specifica dell' A.O..
+In realta' le applicazioni che hanno questi elementi sono molteplici e
+utilissime.
+Iniziamo col dire che negli schemi viene rappresentato con un triangolo
+dal quale escono principalmente 3 connessioni: l'entrata negativa
+(indicata con '-'), l'entrata positiva (indicata con '+') e l'uscita
+(indicata con Vs). C'e' poi l'alimentazione che puo' essere
+semplice ( + Vcc e massa ) o simmetrica ( + Vcc e - Vcc ). Nei circuiti
+che seguono chiamero' A l'entrata negativa, B quella positiva e Vs
+l'uscita. Faccio notare che in questo articolo presento i vari circuiti
+in maniera teorica. Tutti sono talmente semplificati da non necessitare
+di un disegno! Dopo questa lettura dovreste comprendere meglio qualche
+schema. Se ne volete progettare qualcuno vi dovrete armare di un buon
+handbook o perlomeno di un catalogo che riporti le caratteristiche dei
+componenti che vi servono. Comunque nel prossimo numero (forse) proporro'
+qualche applicazione pratica.
+
+
+AMPLIFICATORE NON INVERTITORE
+In questo circuito bisogna immettere il segnale di entrata in A e collega-
+re B, tramite una resistenza, a massa. Inoltre, per ridurre rumori contro-
+reazioneremo l'A.O. collegando Vs, tramite una resistenza, a B. L'amplifi-
+cazione dipender… dall'A.O. e dalle resistenze utilizzate.
+
+
+AMPLIFICATORE INVERTITORE
+Come nel non invertitore: basta scambiare A e B!
+
+
+DIFFERENZIALE
+In questo circuito otteniamo in uscita una tensione che e' proporzionale
+alla differenza fra le tensioni di entrata.
+Chiamiamo le due tensioni di entrata V1 e V2. V1 va al terminale B
+tramite una resistenza R1, V2 al terminale A tramite una resistenza R3.
+Inoltre il terminale A va collegato a terra tramite una resistenza R4
+e l'uscita va collegata, tramite una resistenza R2, al terminale B (con-
+troreazione). Nota: se tutte le resistenze fossero uguali in uscita avremo
+una tensione pari esattamente alla differenza delle tensioni di entrata
+( A.O. differenziato ).
+
+
+COMPARATORE
+Questo circuito permette di confrontare fra loro due tensioni e di capire
+quale sia la maggiore. In A immetteremo la tensione di riferimento (Vr).
+In B la tensione da confrontare (Ve). Se  Vr>Ve, Vs sara' prossima alla
+tensione di alimentazione. Se Vr<Ve, Vs sara' di valore piccolo.
+
+                        DNA (root@inferno.com)
+                                                

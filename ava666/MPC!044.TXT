@@ -1,0 +1,531 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+file 1/3 - tratto dalla "Xoanon's guide to Cracking"
+
+			..............................
+			The Xoanon's Guide to Cracking
+			..............................
+		 Aspirante guida per gli aspiranti crackers
+		 ..........................................
+
+
+LE INFORMAZIONI CHE TROVATE ALL'INTERNO DI QUESTO FILE SONO PER PURO SCOPO
+DIDATTICO. L'AUTORE NON INCORAGGIA CHI VOLESSE SERVIRSENE PER SCOPI ILLEGALI.
+INOLTRE, NON MI ASSUMO NESSUNA RESPONSABILITA' SE VI DISTRUGGETE I PROGRAMMI.
+
+UPDATE 10/4/97 PART 1:
+
+CAUSA UN MONGOLOIDE CHE SI ERA SCANDALIZZATO PER IL CONTENUTO PRETTAMENTE
+OFFENSIVO E PERICOLOSO DI QUESTO SIMPATICO MANUALETTO, IL PRESENTE NON
+APPARIRA' PIU' SU SCREAM (ALMENO NELLE VERSIONI .EXE). QUINDI, SE LO
+TROVATE SUL PROSSIMO NUMERO DI "SYSTEM DOWN", VUOL DIRE CHE NON L'HO SCRITTO
+PER NULLA.....
+
+UPDATE 10/4/97 PART 2:
+
+.DOS4GW CRACKING *REVEALED* ... VEDERE A QUESTA SEZIONE
+.PICCOLE AGGIUNTE ALLA PARTE WINDOWS
+
+-----------------------------------------------------------------------------
+INTRODUZIONE: SCREAM SUPPORTA LA PIRATERIA. SUPPORTATE SCREAM! (SCHERZO EH?!)
+-----------------------------------------------------------------------------
+Dunque dunque dunque..... era tanto che pensavo di scrivere un qualcosa del
+genere, e ora finalmente (grazie a SCREAM) ne ho la possibilitÖ.
+Sinceramente, quando ho chiesto a Swan se potevo collaborare scrivendo un
+manuale di cracking, pensavo che mi avrebbe immediatamente kickato fuori dal
+canale (eravamo su IRC)...... ma fortunatamente ciï non ä avvenuto, anzi.....
+Quindi eccomi qua !!! Premetto che di tutorial come questo, su internet, se
+ne trovano a bizzeffe (io si puï dire che ho imparato leggendo quelli), tutti
+perï con un basilare difetto: sono in INGLESE! Anche se ormai quasi tutti
+conoscono questa lingua, penso che una versione italiana non dispiaccia a
+nessuno. Naturalmente, sempre che questa mia versione venga su decentemente..
+... Speriamo bene! (sento giÖ che scriverï una caterva di stronzate... Bah...)
+
+Accendiamoci una sigaretta...... via, si parte!
+Il manuale ä  strutturato in 4 parti, trattanti i seguenti argomenti:
+
+ 1)  NOZIONI GENERALI E USO DEL DEBUGGER
+ 2)  DOS, DOS EXTENDERS (DOS4GW e simili)
+ 3)  WINDOWS 3.1/95/NT
+ 4)  Appendice: Patchers,TSR,Trainers
+
+In ognuna di queste, cercherï di spiegarvi le tecniche da usare nei vari tipi
+di sprotezione, nei limiti delle mie possibilitÖ. Per semplificare le cose non
+sarï troppo specifico, e tenterï di rendere il tutto capibile anche da chi di
+assembler non ci capisce un accidente (io stesso non ä che sia una cima nel
+campo!). L'importante infatti ä sapere il significato di una manciata di
+istruzioni, oltre alle funzioni di alcuni dei registri AX,DX,CX,ecc...
+Per ogni sezione ci sarÖ una guida passo passo nella sprotezione di un
+programma (gioco o utility) in maniera da rendere le cose pió chiare.
+
+
+-----------------------------------------------------------------------------
+CAPITOLO 1:  NOZIONI GENERALI E USO DEL DEBUGGER
+-----------------------------------------------------------------------------
+
+
+Dunque, innanzitutto partiamo con le 3 doti principali dell'aspirante (e anche
+del provetto) cracker:
+
+1)  Conoscenza media dell'assembler, in particolare le funzioni di JMP (nelle
+    sue varie forme), MOV, CALL e CMP (il vostro intervento sui programmi
+    "vittima" si risolverÖ nel 99% dei casi nella disattivazione/modifica di
+    queste funzioni) e della  funzione dei registri principali della CPU.   
+ 
+2)  Conoscenza  dell'uso delle funzioni del  debugger (SOFTICE,GAMETOOLS,
+    WATCOM,ecc.) necessarie alla sprotezione (STEP,TRACE,come si settano e
+    cosa sono i BREAKPOINT; di solito queste 3 funzioni sono le principali
+    che userete, il resto ä utile ma non indispensabile).
+
+3)  Una dose spropositata di CULO sapientemente miscelata con intuito.
+    Difatti, molte volte il crack avviene per caso, magari NOPPANDO (poi vi
+    spiego) un'istruzione che apparentemente non c'entra nulla, oppure
+    forzando un JMP proprio quando si pensa che non serva a niente.
+    Quindi, se siete iellati tipo Paperino, meglio lasciar perdere
+    (scherzo eh?!)
+
+
+1.1........MINI CORSO CRACKING-ORIENTED DI ASSEMBLER (ORA SI RIDE!)
+
+
+Partiamo con la parte sull'assembler. Premetto che all'inizio avevo in mente 
+di fare solo un breve excursus (senti vi' che paroloni!), ma ciï penso che vi
+avrebbe lasciato con parecchi punti interrogativi. Quindi, per evitare di 
+essere sommerso da e-mail sull'argomento (che se il server-administrator me 
+le becca, probabilmente mi manda alle Sughere, rinomato carcere livornese) ho
+pensato di farmi dare una mano da MoonShadow (lui parla in assembler!)... 
+quindi, se un giorno andrete in galera per aver formato un cracking-group dopo
+esservi esaltati a leggere questo manualino, ringraziate anche lui!
+
+Allora...iniziamo con il funzionamento dei registri principali:
+
+[AX].... registro accumulatore, utilizzato per le operazioni matematiche e di
+I/O. Tutto passa da questo registro, le funzioni di COMPARE (CMP) di solito
+avvengono confrontando un valore inserito da voi (es. un numero del serial
+number, una lettera della password, il numero riferito ad una icona da
+scegliere) con quello contenuto in AH, AL o in tutto il registro
+(non ä perï una regola generale, voglio dire cioä che questi valori possono
+essere anche contenuti in un'altro registro, es.BX, perï nel 99% dei casi ä
+cosç).
+Questo valore ä qui  precedentemente mosso dalla routine che vi trasferisce
+uno ad uno i valori (naturalmente, in HEX o in DEC) della password o del
+serial number.
+
+[BX].... Viene utilizzato di solito come base o puntatore ad una locazione.
+
+[CX].... Il contatore. Viene usato per i loops (cicli) e viene decrementato
+o incrementato secondo le esigenze. Di solito contiene un numero (ad es. il
+numero delle volte che potete provare ad inserire la password prima che il
+tutto si blocchi) che viene poi decrementato (con l'istruzione DEC CX oppure
+SUB CX,AX) ogni volta che sbagliate. Utile in questo caso eliminare queste
+istruzioni per poter lavorare con pió tranquillitÖ.
+
+[DX].... Funzioni simili a BX.
+
+Da notare che ognuno di questi registri puï essere suddiviso ulteriormente in
+2 parti, ossia parte alta (es. AH,BH,ecc.) e parte bassa (AL,BL,ecc.). Quindi
+in questa maniera ogni "parte" del registro puï contenere un valore da 00 a
+FF (mentre il registro "intero" contiene valori da 0000 a FFFF). Facciamo un
+esempio: se muoviamo un valore in AX (MOV AX, 01AFh), il registro AL conterrÖ
+il valore AFh ed il registro AH conterrÖ invece 01h. Tutto qua! 
+
+Ora, i segment-registers:
+
+[CS].... Il code-segment, cioä l'area di memoria nella quale si trova il
+codice del programma che state sodomizzando. L'indirizzo CS:IP serve ad
+identificare proprio l'istruzione che state per eseguire.
+
+[DS].... Data-segment, l'area di memoria alla quale la CPU accede in lettura.
+i dati.
+
+[ES].... Extra-segment, altra area di memoria alla quale la CPU accede, ma
+questa volta in scrittura. In pratica, la CPU legge da DS:SI e vÖ a scrivere
+il byte (o la word) letta in ES:SI.
+
+[IP]..... Istruction Pointer. Cos'ä? Semplice, l'indirizzo dell'istruzione
+che state per eseguire nel code segment attuale. Io di solito, durante il
+crakkaggio nel debugger, modifico questo registro invece del jump, in maniera
+da non danneggiare per il momento il programma. Ma ä solo una mia abitudine...
+
+[SS].... Stack-segment, area di memoria di "parcheggio" nella quale la CPU
+tiene nota di tutti i return-address dalle subroutines. Usando l'istruzione
+PUSH o POP, lo stack viene riempito o svuotato (questa ci stÖ che sia una
+stronzata, comunque se non ä proprio cosç la funzione di queste istruzioni ä
+simile..... chiederï a MoonShadow!).
+
+Altri registri, ma questi li potete anche tralasciare, sono:
+
+[SI]..... Source-index, usato insieme all'istruzione MOV. E' un puntatore
+all'interno di un segment (di solito DS) che viene letto dalla CPU.
+
+[DI]..... Destination-index, anche questo usato insieme a MOV. E' un puntatore
+all'interno di un segment (di solito ES) dove la CPU vÖ a scrivere. Andando
+a vedere all'indirizzo ES:DI, se vedete che ci viene mosso qualcosa, potreste
+anche capitare in locazioni interessanti... (potreste trovarci addirittura la
+password che cercate.... boh, voi provate!)
+
+[BP]..... Base-pointer, usato insieme allo Stack-segment.
+
+[SP]..... Stack-pointer, altro pointer usato insieme allo Stack-segment
+
+Una particolare nota merita il seguente registro:
+
+[FLAG].. Nel vostro debugger, vedrete (di solito in cima) un'insieme di
+lettere maiuscole e minuscole (oppure illuminate o no, oppure con sotto dei
+numeri 0 e 1). Questi sono i flag, che servono ad indicare se un particolare
+jump deve avvenire o no. Logicamente, flag=0=spento flag=1=acceso.
+Agevoliamo un esempio (Agevoliamo TM of Enzino Iachetti)
+
+	CMP AL,2A......... confronta il valore di AL con 2A.
+			   Il risultato ä un cambiamento dello stato del flag
+			   Z. Cioä, se ä vero il flag viene attivato (1) sennï
+			   viene disattivato (0).
+	JZ 8EDF........... salta -SE- il flag Z=1 (quindi se AL=2A)
+
+Comunque, io di solito non li guardo mai,anche perchÇ tutti i debugger
+(di solito) ti dicono con una freccetta se il jump avviene o no..... ma ä
+una mia abitudine.
+
+
+
+Piaciuti i registri? Ganzi eh? (comunque non preoccupatevi, si puï crakkare
+bene anche senza conoscerli molto... io stesso di solito, a meno che il
+programma non sia una brutta bestia, non li guardo nemmeno..... poi vi spiego)
+
+
+
+Ora, qualcosa sulle istruzioni (altra sigaretta.... Ulp! Le ho quasi finite!)
+
+
+[MOV]..... E' un'istruzione le cui funzioni sono fondamentali nel cracking.
+Difatti, molte volte vi ritroverete a dover magari muovere un valore giusto
+in una locazione semplicemente cambiando un CMP in un MOV (poi vi spiego....
+non temete). La sua sintassi ä: MOV [destination],[source]
+
+  es 1. MOV AX,BX     ----------> muove il valore di BX in AX
+
+  es 2. MOV CX,[0400] ----------> muove i due bytes contenuti all'indirizzo
+				  specificato (DS:0400) in CX. In questo caso
+				  se dumpate a DS:0400 trovate lo stesso
+				  valore di CX, solo rovesciato (es. se in CX
+				  c'ä 002Ah, troverete 2A00h); non sï perchä,
+				  (stasera non ho fame), ma ä cosç....
+
+  es 3. MOV AL,DL     ----------> muove la parte bassa di DX nella parte bassa
+				  di AX
+
+  es 4. MOV [ES:300],AX ---------> muove il valore di AX nella locazione
+				   specificata. Notare che se ES non ä
+				   menzionato, si usa DS. Se prima di una
+				   istruzione del genere si muove un valore
+				   in BX (es. 03) questo viene usato come base
+				   da aggiungere all'indirizzo specificato.
+				   Quindi, in questo caso, il valore di AX
+				   verrebbe mosso in ES:300+BX = ES:303.
+
+[CMP]..... Semplicemente, confronta due valori in memoria, siano essi registri
+oppure bytes, cambiando di conseguenza il flag relativo. La sintassi, secondo
+i casi, puï essere:
+  
+  es 1. CMP AX,01       -----> confronta AX con 01
+  es 2. CMP AX,BX       -----> confronta AX con BX
+  es 3. CMP AX,[0550]   -----> confronta AX con i 2 bytes a DS:0550
+  (eccetera eccetera...)
+
+Questa funzione funziona (bello!) come una sottrazione source-destination,
+cioä:
+
+ponendo AX=20 e BX=21, il risultato del CMP AX,BX sarÖ 20-21=-1. Il risultato
+di questa sottrazione attiverÖ il flag CARRY (C), attivato quando si sottrae
+un valore pió grande da uno pió piccolo; se invece la sottrazione non dÖ
+risultato negativo, il flag rimane 0 (disattivato).
+Dal punto di vista crakkistico, le istruzioni CMP sono usate *SEMPRE* per
+verificare il vostro input, oppure per far sapere al programma se ä registrato
+o meno. Quindi, truffando il CMP si puï benissimo far credere al tapino una
+cosa per un'altra!
+
+
+[JMP].... Lo troverete *SEMPRE* dopo il CMP, nelle varie forme.
+La pió semplice, e ovvia, ä la forma JMP <indirizzo>, che naturalmente provoca
+un salto all'indirizzo desiderato, quali che siano i valori dei flags dati
+dal CMP. Per quanto riguarda l'indirizzo, questo puï essere nello stesso
+CS (JMP 0AF4) oppure in un'altro (JMP 2000:18A0 oppure JMP DWORD PTR ES:[DI],
+che vi spedirÖ alla locazione contenuta in ES:DI. Ma sono solo alcuni esempi).
+Questa comunque ä l'istruzione che userete pió spesso (anzi, mi sbilancio:
+nel 99% dei casi) nei vostri scopi pirateschi. Difatti, se la vostra
+protezione, ad esempio, controlla una locazione e poi fÖ un JNZ che riporta
+il programma all'inserimento della password/serialnumber, basta che
+sostituiate il jump condizionale con un JMP, e..... et voilÖ! Comunque, se
+ne riparla dopo! 
+Ora, vi agevolo la lista dei vari jump condizionali, spudoratamente copiata
+dal Cracking Manual di The Cyborg (quindi, grazie tante, leggetelo che ä
+bellino, ma il mio ä meglio perchä ä pió aggiornato!).
+Dunque, supponendo un CMP AX,BX, si possono avere i seguenti casi:
+
+	(Z,O,S,C,P sono i flags che i jump vanno a controllare)
+
+	Istruzione  Definizione, condizione, flag
+
+	JNZ 030A    (Jump if not zero, AX diverso da BX, Z=0)
+	JNE 030A    (Jump if not equal, identico a JNZ)
+	JZ 030A     (Jump if zero, AX=BX, Z=1)
+	JE 030A     (Jump if equal, identico a JNZ)
+	JB 030A     (Jump if below, AX<BX, C=1)
+	JA 030A     (Jump if above, AX>BX, C=0)
+	JL 030A     (Jump if less, AX<BX, S diverso da O)
+
+	JNGE 030A   (Jump if not greater or equal, AX<=BX, S diverso da O)
+	JGE 030A    (Jump if greater or equal, AX>=BX, S=O)
+	JNL 030A    (Jump if not less, in pratica uguale a JGE)
+	JLE 030A    (Jump if less or equal, AX<=BX Z=1 oppure S=F)
+	JNG 030A    (Jump if not greater, come JLE)
+	JG 030A     (Jump if greater, AX>BX Z=0 oppure S=O)
+	JNLE 030A   (Jump if not less or equal, AX>=BX Z=0 oppure S=O)
+
+	JS 030A     (Jump if sign, /, S=1)
+	JNS 030A    (Jump if not sign, /, S=0)
+	JC 030A     (Jump if carry, /, C=1)
+	JNC 030A    (Jump if not carry, /, C=0)
+	JO 030A     (Jump if overflow, /, O=1)
+	JNO 030A    (Jump if not overflow, /, O=0)
+	JP 030A     (Jump if parity, /, P=1)
+	JPE 030A    (Jump if parity even, come JP)
+	JNP 030A    (Jump if no parity, /, P=0)
+	JPO 030A    (Jump if no parity odd, come JNP)
+
+	(ce ne sarebbero altri, ma nella lista da cui li ho copiati non
+	 venivano menzionati.)
+
+Puff,Puff..... spero di non aver scritto minchiate! (tanto poi lo riguarda
+MoonShadow!). E comunque, non fatevici tante seghe mentali....
+il funzionamento dei jump lo imparerete strada facendo.... nemmeno io mi
+ricordo a memoria il funzionamento di tutti questi jmp (anzi, a dire il vero
+non vado oltre le prime 5/6 righe!).
+
+[LOOP]..... Indica un ciclo, che si ripete per CX volte (naturalmente, CX
+decrementa ogni volta che trova questa istruzione). Per quanto riguarda il
+formato, ä LOOP <indirizzo>, che indica appunto l'inizio del LOOP dove questo
+ogni volta ritorna finchä CX non diventa 0. Istruzione piuttosto pallosa da
+debuggare, utile in questo caso la funzione "Breakpoint Here" dei debugger,
+che permette di settare un breakpoint all'istruzione successiva e ripartire
+direttamente da lç senza sorbirsi tutto il ciclo (sempre che funzioni, sennï
+ve lo dovete puppare tutto).
+
+[REP]..... Repeat. Stesso discorso del loop per quanto riguarda la pallositÖ
+e l'uso della funzione "Here". Indica il ripetersi di istruzioni MOVS, LODS,
+STOS (quindi si troverÖ nel formato REP MOVS, REP LODS, REP STOS). Le
+istruzioni suddette vengono ripetute CX volte.
+
+[MOVSB]..... Muove un byte dall'indirizzo DS:SI all'indirizzo ES:SI.
+
+[MOVSW]..... Stesso discorso, ma per una word (4 bytes)
+
+[LODSB/LODSW]..... Con queste istruzioni, viene letto un byte o una word
+residenti in memoria all'indirizzo DS:SI. Il byte o la word in questione
+viene messo in AL (o in tutto AX, naturalmente, se ä una word)
+
+[STOSB/STOSW]..... Se le istruzioni prima leggevano, questa cosa fÖ?
+mah..... forse scrive! Difatti, scrive il byte (o la word) in AL (o AX se
+word) all'indirizzo ES:SI.
+
+[CALL]...... Richiama una subroutine, e dopo l'esecuzione di questa torna
+all'indirizzo successivo alla CALL stessa (tramite un RET/RETF).
+Esempio:
+	       CALL 68AB ----> esegue la subroutine a CS:68AB
+
+	       subroutine:
+
+	       CS:68AB ......
+		  68AE ......
+		  68B0 ......
+		  68B3 RET  ----> torna all'istruzione successiva a CALL 68AB
+
+Una call puï essere anche nel formato CALL FAR (come anche il JMP),cioä viene
+eseguita una subroutine ad un'indirizzo in un altro CS.
+Nei vostri primi approcci crakkistici, se avete la fortuna di trovare la CALL
+che salta *DIRETTAMENTE E SOLO* alla protezione, potete benissimo togliere
+quella. Pió in lÖ sarÖ meglio che impariate a districarvi con i jump e i
+compare, identificando e modificando quelli relativi al solo controllo della
+protezione. Difatti, se per caso quella CALL chiamasse una subroutine che
+contiene la protezione ma anche istruzioni necessarie al buon funzionamento
+del programma, eliminandola siete fottuti.... (cosa che ho imparato dopo
+mooooooooooooooolto tempo e moooooooooooolte figure penose distribuendo crack
+che sç sproteggevano il programma, ma che avevano anche "alcuni" effetti
+collaterali!)
+
+
+[INT]...... Chiama un interrupt (tipo una CALL ma non relativa al programma)
+, con una specifica funzione assegnata da un valore, di solito mosso in AX.
+E' utile ad esempio monitorare l'interrupt 13 con il debugger (nel caso si
+voglia sproteggere un programma che accede al floppy), oppure l'interrupt 16
+con funzione 10 (AX=10) nel caso il programma attenda la pressione di un
+tasto.... Utile ma non indispensabile, si crakka anche senza usare questa
+funzione del debugger.....
+
+
+FFFFFFFFFFFFIIIIIIIIIIIIINNNNNNNNNEEEEEEEEE!!!!!!!!!!!!!
+Finalmente, che palle!!! Non ne potevo pió. Non vedo l'ora di cominciare la
+parte sul cracking vero e proprio. Comunque, a parte gli scherzi, un mini
+corsino di assembler (MOOOOOOOLTTTOOOOO MIIIIIINIIIII!) ci voleva proprio,
+sennï probabilmente non capireste niente nelle parti successive. Comunque
+non ä detto che se capite poco in questa sezione non andrete avanti.......
+anzi! Io stesso non conosco troppo bene l'assembler, ma vi assicuro che se vi
+imparate ben bene le cose scritte sopra non avrete problemi. Quello che conta
+ä l'intuito, la perseveranza, e ancora una volta.....il CULO! Magari, se
+l'argomento vi interessa, puï essere una buona scusa per impararsi l'assembler
+un pï pió a fondo (cosa che stï cercando di fare anch'io!).
+
+
+1.2...... USO DEI VARI DEBUGGERS
+
+Vi dico subito che qui non mi dilungherï poi tanto, visto che anche se i
+programmi sono diversi, le funzioni sono sempre le stesse, e ben deducibili
+dal programma stesso. Comunque, in questo tutorial farï uso di:
+
+	1) GameTools 3.2 (G3X).... MITICO e INEGUAGLIABILE debugger DOS
+	   (purtroppo solo in modo reale) che potete usare anche per
+	   fare dei trainers. Lo allego io, non sï se lo trovate su internet.
+
+	2) SoftICE 2.0 for Windows95 ..... Praticamente, il GameTools per
+	   Windows, con le stesse doti di ineguagliabilitÖ e miticitÖ (che
+	   discorso a culo!). A parte gli scherzi, indispensabile, anche
+	   perchä ä l'unico debugger (almeno credo) che permette di 
+	   debuggare (bel discorso,complimenti...) i programmi con 
+	   DOS4GW. Se volete potete anche usare il SoftICE x DOS al posto
+	   del G3X.
+
+	3) Watcom Debugger..... Odiosissimo debugger indispensabile per
+	   il cracking in DOS4GW. Fortunatamente, lo dovete usare solo
+	   per questo..... il resto si fÖ con gli altri due! Dato che
+	   questa parte l'ho aggiunta dopo, i comandi li trovate direttamente
+	   nel paragrafo sul DOS4GW. 
+
+Beh, andiamo al dunque.....
+i comandi del debugger che userete pió spesso sono:
+
+[STEP] ....... Esegue le istruzioni una alla volta, eseguendo direttamente
+le CALL e i LOOP.
+
+[TRACE] ...... Come sopra, ma permette di eseguire le istruzioni all'interno
+delle CALL e dei LOOP una alla volta. Utile se dovete utilizzare la famosa
+tecnica "Cynar, fino al cuore del carciofo", ossia spulciare all'interno di
+una serie di CALL nidificate fino a trovare quella che chiama *SOLO* la
+routine di protezione
+
+[BREAKPOINT]..... Esegue un INT 3 al posto dell'istruzione presente all'
+indirizzo da voi specificato, causando un ritorno al debugger quando questa
+viene eseguita. (se perï c'ä la famosa trappola per il debugger...... son
+cazzi! dovete individuare le istruzioni che vi impiantano il debugger e
+levarle.). I breakpoint sono di vari tipi, ognuno con una funzione specifica.
+Ad esempio, un breakpoint molto usato ä quello che torna al debugger ogni
+qualvolta si accede in lettura e/o scrittura alla locazione indicata
+(utilissimo per trovare proprio le istruzioni che esaminano il vostro input).
+Un altro ancora ä quello che torna al debugger quando viene eseguita
+l'istruzione all'indirizzo indicato (ad esempio, per stoppare il programma
+in un certo punto che sappiamo essere proprio prima del controllo dell'input).
+Questi sono solo 2 esempi di breakpoint.... nel G3X vi appare la lista
+di quelli che potete usare, nel SoftICE dovete settarveli a mano.
+La sintassi per il SoftICE non stï a scriverla,in quanto ä spiegata nell'
+help stesso del programma. Direte voi, dove lo trovo l'help ?
+Semplice: se digitate ? <invio>, vi appare una lista di tutti i comandi
+disponibili; ora, andate a vedere quelli relativi ai breakpoint, scegliete
+quello che vi interessa e inserite ? <nome breakpoint (BPR,BPX,ecc.). Vi
+apparirÖ quindi la sintassi del comando. Questo procedimento ä valido anche
+per tutto il resto dei comandi del SoftICE (cosç lo spiego una volta sola!)
+
+
+[HERE]..... La funzione cui accennavo prima nel tutorial assembler, permette
+di settare un breakpoint BPX (break on execution) in un punto particolare
+(es. subito dopo un loop) causando il ritorno al debugger quando il programma
+arriva a quel punto. In questo modo, si saltano fastidiose attese.....
+Giustamente, voi mi direte: ma non ä lo stesso mettere un breakpoint come
+spiegato prima ? No, cioä sç (la funzione ä la stessa), ma cosç fate prima.
+Mi spiego: col G3X, ad esempio, scorrete il listato assembler, e all'indirizzo
+dove volete che il programma si fermi premete "H", in modo da mandarlo in
+esecuzione fino a quando non raggiunge quel punto. Per il SoftICE stesso
+discorso, ma prima dovete entrare nella CodeWindow (la finestra sopra a quella
+dove inserite i comandi, quella dove vedete il disassemblato del codice)
+digitando "ec". Quindi, scorrete con alt+frecce e premete F7 dove volete il
+breakpoint. L'unica differenza ä che questo tipo di BP vale una volta sola,
+ossia tutte le volte lo dovete risettare. Capito mi avete ?
+
+[INTERRUPT MONITOR]..... Non ä una vera e propria funzione, bensç un 
+breakpoint (nel SoftICE comando BPINT) ad uno specificato interrupt, che
+causa il ritorno al debugger ogni qualvolta questo interrupt ä chiamato.
+Utile nel caso di protezioni che accedono al floppy,o alla porta parallela
+(se se ne conoscono gli interrupt relativi, quello del floppy ä il 13)....
+ma come ho detto pió indietro non indispensabile, serve solo a sveltire un
+po' la procedura. Non vi intrippate quindi troppo a mettere breakpoint
+sull'interrupt 21 o 10, chiamati per funzioni dos e apertura schermo, perchä
+rischiate di perdervi nei meandri del programma. Usate questa funzione solo
+nei casi in cui conoscete *ESATTAMENTE* il numero dell'interrupt e la funzione
+richiesta (es. per la pressione di un tasto, INT16 con funzione 10 in AX).
+Dal G3X, accedendo al menu interrupt monitor, potete settare questi breakpoint
+in maniera molto semplice..... nel SoftICE dovete fare a mano.
+
+Vabbä, le funzioni che andrete maggiormente (anzi,diciamo pure esclusivamente)
+a usare nei debuggers trattati sono queste. Vi faccio ora una panoramica sui
+tasti da usare nel SoftICE per accedere a queste funzioni (cosç evitate di 
+battere 200 volte "p" <return>, "p" <return> mentre debuggate). Quelli del
+G3X non li metto, dato che tutto ä spiegato su schermo e anche un deficiente
+quale ero (e sono) io lo saprebbe far funzionare.....
+
+	F10..... P  (step)
+	F6...... EC (enter/exit code window)
+	F7...... H  (here)  [dovete prima andare nella code window con F6 (ec)]
+	F8...... T  (trace)
+	
+Da notare che questi tasti possono anche essere cambiati, basta andare a 
+modificare il file WINICE.DAT nella directory del SoftICE.
+
+
+
+Special Greetings to:   MoonShadow (Assembler Consultor)
+                        All the PiNNACLE Crew (Zima Man,Hyper,Blaze,Joker,
+                                               Silky,MrMox,X-con and
+                                               the others)
+                        Trencher   (For the long time spent together in
+				    cracking..... and for helping me
+				    in programming the first patcher i 
+				    did!)
+			Colonel    (Moral Support)
+			Beppe      (Moral Support)
+			All the rest of MeltBody Team (Moral Support)
+			Mamma e Babbo (Per le sigarette fornite... in tutto
+				       penso 2 pacchetti in 1 settimana di
+				       duro lavoro)
+
+
+H       A       P       P       Y       
+		C       R       A       C       K       I       N       G  
+
+
+
+					      .   .   .   .
+			***                 ** * * * * * * **
+		       ***                  **  .   .   .  **
+		***   ***  ***   ****** **  **   ***   **  **
+		 *** ***  ** **  **  ** *** **  ** **  *** **
+		   ***   **   ** ****** ** *** **   ** ** ***
+		  ** **   ** **  *** ** **  **  ** **  **  **
+		***   ***  ***   **  ** **   *   ***   **   *
+               ***       **     **       ...................
+                ***            ****     .PiNNACLE Industries.                
+                  **            **      .   Chief Cracker   .
+                                         ...................
+
+
+
+Grazie a Xoanon, L'autore di
+questi tre files...
+
+       by
+   ≈        ≈
+   ≥ AVA666 ≥ 
+   ~~~~~~~~~~

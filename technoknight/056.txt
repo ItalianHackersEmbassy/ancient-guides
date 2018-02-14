@@ -1,0 +1,37 @@
+BREVE STORIA DI....
+
+                ____    ____ __   ___ ___ ___    ___
+                ³  ³    ³  ³³  \  ³  ³   ³   \  /  /
+                ³  ³    ³  ³³   \ ³  ³   ³\   \/  /
+                ³   \__/   ³³    \|  ³   ³ >     <
+                 \        / ³  ³\    ³   ³/  /\   \
+                  \______/  |__| \___|___|__/  \___\
+
+
+                          by Techno Knight
+
+
+La storia di UNIX comincia nel 1969, quando Ken Thompson e Dennis Ritchie
+cominciarono a lavorare su quello che sarebbe diventato poi questo fantastico
+OS, che chiamarono inizialmente UNICS (UNiplexed Information and Computing
+System).
+Per 10 anni Unix rest• confinato su DEC'sPDP 11, a 16 bit.
+La prima versione (V1, finita nel 1971) fu scritta in assembler, ma la vera
+rivoluzione ci fu con la V4 (1973) riscritta in C, il che significava (essendo
+il C + portabile) che con pochi mesi di lavoro poteva essere portato su
+un'altra piattaforma, ma l'UNIX ancora non era stato diffuso, questo avvenne
+solo nel 1979 con la V6, che si diffuse nelle universit….
+La Bell Labs assegn• il lavoro a tre distinti gruppi : il Computer Research
+Group, responsabile di queste versioni, l'Unix System Group, e il PWB,
+questi ultimi due responsabili del supporto al nuovo sistema con la scrittura
+di nuovo software.
+Presto cominciano a sorgere le varianti del sistema originale come il
+Coloumbus Unix, o il System V, dell'AT&T.
+Da sistema usato esclusivamente nelle universit…, UNIX si afferm• presto
+come sistema operativo principale per la rete, e nel tempo sono sorte altre
+varianti come il BSD, Irix, SunOS, Solaris, Xenix, e alcuni cloni gratuiti
+come FreeBSD, OpenBSD e Linux.
+
+                                Techno Knight (techno83@freemail.it)
+                                                                                               
+                                                

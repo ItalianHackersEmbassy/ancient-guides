@@ -1,0 +1,177 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+
+Carding, questo sconosciuto...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Allora, per prima cosa, che vuol dire "carding"? E' l'arte di usare
+carte di credito non tue oppure false per acquistare roba, in genere
+su internet, dove basta fornire il numero di carta. Gia', il numero di
+carta. Bella forza, e io dove me lo procuro? Calma, calma. Ci sono due
+tipi di numeri di carte di credito che puoi usare: quelli veri, ma di
+un'altra persona (rubi alla persona interessata) e quelli falsi, cioe'
+verosimili (accettati dai negozi tipo amazon.com) ma che non
+corrispondono a nessuna carta di credito (di seguito CC) reale, (qui
+rubi al negozio). Allora, come ottenere questi benedetti numeri? Per
+quelli veri, devi fare del Trashing, cioe' cercare fra gli scontrini
+dei negozi, dove c'e' numero di CC, data di scadenza, intestatario...
+Ebbene: girando intorno alle casse di un supermercato, SENZA FARTI
+NOTARE, fai caso a chi paga con CC, seguilo e non perderlo di vista:
+se sarai fortunato gettera' lo scontrino... Ma cio' non succede quasi
+mai (a me non e' mai capitato), percio' devi controllare tra gli
+scontrini del supermercato, che vengono buttati (dopo i controlli della
+finanza in genere, ma varia da superm. a superm.), e qui devi cercarli
+nella spazzatura. Questo metodo pero' e' lungo, difficile e anche
+rischioso. E' molto piu' comodo, invece, usare utility come GenerID
+(http://digilander.iol.it/mpetro), che generano un numero di CC valido,
+su bancha Cariplo. Molti dicono che questo genere di programmi non
+funziona, ma a me non ha mai dato problemi... (e poi il suddetto prog
+genera anche identita' false con codice fiscale...). Bene, ora ho il
+numero di CC, vado su Amazon.com o qualsiasi altro negozio online,
+ordino la mia GeForce 256 o la mia cassetta porno, me la faccio mandare
+a casa, e... Me la vengono a consegnare direttamente le Fiamme Gialle!
+No no, fatemi spiegare... E intanto sei al gabbio. Tanto vale
+abbandonare tutto allora? Neanche per sogno, in quanto esistono alcuni
+modi per non farsi beccare:
+
+-Il mio preferito: se abitate in un condominio (possibilmente con molte
+ famiglie), e dovete farvi consegnare un pacco di piccole dimensioni,
+ cioe' che entri nella cassetta delle lettere, trovatene una che non
+ viene mai usata nel vs stesso condominio (o meglio in uno vicino a
+ casa vostra), mettetegli un'etichetta con un nome falso, ad es Mario
+ Rossi (sara' meglio scegliere qualcosa di meno scontato), date le sue
+ generalita' al sito (usate GenerId per il codice fisc. se serve), e
+ poi il sig. Mario Rossi verra' perseguito penalmente, se solo
+ esistesse, e voi avete il vostro pacchetto.
+
+-Un altro ottimo: fate l'ordine per telefono, date naturalmente un
+ indirizzo falso ma vicino a casa vostra, CHE PERO' DEVE ESSERE
+ ABBANDONATO, e dite che volete che il pacco vi sia consegnato ad una
+ precisa ora di un preciso giorno, in quanto lavorate... Ebbene, il
+ giorno prima attaccate alla porta dell'edificio (che sara', ad es. una
+ casa abbandonata, magari in periferia o in campagna) un biglietto che
+ dice "Lasciate pure davanti alla porta [o dentro il portone se e'
+ aperta ndR] i pacchi per Mario Rossi". Appena il postino lo lascera'
+ li' voi uscirete dal vostro nascondiglio nei paraggi, prenderete il
+ pacco e tornerete a casa... Meglio ancora se la casa e' intestata
+ proprio a Mario Rossi e lui e' in vacanza.
+
+Bene, questi sono i due metodi migliori in assoluto, e non mettete nei
+casini l'intestatario dell'appartamento che utilizzerete. Comunque se
+lavorate un po' di fantasia, ne potete inventare molti altri. Le uniche
+due cose che dovete ricordare e' di non dare mai ne' il vostro nome
+ne' il vostro indirizzo. Inoltre non ordinate roba troppo costosa,
+qualcuno potrebbe insospettirsi (se la CC e' di uno che prende due
+milioni al mese e voi ordinate una workstation da 7 milioni il poverino
+se ne accorgera' sicuramente...) Happy Carding e non fatevi beccare,
+e se proprio vi beccano non date la colpa a me: l'avete fatto voi...
+
+
+---------------------------------------------------------------->UPDATE
+
+L'alternativa c'e', e si chiama Fermo Posta.
+Nel caso non sappiate cosa sia, il Fermo Posta e' un servizio messo a
+disposizione dalle PP.TT., e' completamente anonimo e non e' personale.
+Praticamente e' una casella postale, identificata da un numero e da un ufficio
+postale (ad esempio Fermo Posta 31337 - Milano Centrale), che chiunque puo'
+controllare esibendo un ticket.
+La registrazione e' semplicissima: ci si presenta in un ufficio postale e si
+richiede un Fermo Posta. Dopo un brevissimo controllo di un documento
+d'identita' (necessario a verificare che la richiesta provenga da una persona
+in grado di esercitare diritti e doveri nei confronti dello Stato), che
+comunque non viene archiviato in nessun luogo, vi viene consegnato un ticket e
+si paga una somma irrisoria come tassa. Da quel momento il Fermo Posta non
+corrisponde ad una persona fisica, ma esclusivamente ad un numero (e qui c'e'
+la differenza con la Casella Postale, che fa capo ad un gruppo di persone ben
+definito).
+Chiunque, e ripeto chiunque, sia in possesso del ticket puo' controllare il
+contenuto del Fermo Posta e ritirarlo, pagando poche migliaia di lire come
+tassa. Non viene eseguito NESSUN controllo.
+Il rischio puo' venire solo all'origine della transazione: il vero titolare
+della cc viene a conoscenza della transazione e presenta denuncia, gli organi
+di polizia si presentano dalla ditta che ha richiesto l'addebito, che fornisce
+l'indirizzo del Fermo Posta, e quando voi andate a ritirare il pacco gli
+"amici", che vi stavano aspettando, vi prendono... e saluti...
+Fate queste cose, se proprio dovete, il piu' lontano possibile dalla scandenza
+dell'estratto conto...
+
+(Vide0Fuzzy:
+ c'e' un'ulteriore possibilita': utilizzare quei negozi che affittano cassette
+ di posta - vedi la catene "mail boxes etc." - che offrono la possibilita' di
+ ritirare la posta 24H su 24H. Per noleggiare una cassetta, anche mensilmente,
+ basta solitamente presentare un codice fiscale - almeno in quel negozio a cui
+ ho chiesto non volevano la carta di identita'- e non e' per niente difficile
+ creare un codice fiscale fasullo - naturalmente legato alla persona che avra'
+ poi "ordinato" il pacco. Molti per paura di perdere il codice fiscale
+ viaggiano con una fotocopia di questo e nessuno si lamenta, e pensare che
+ basta uno scanner per cambiare qualche dato e poi una fotocopiatrice per farne
+ una copia verosimile, non so proprio come certa gente si fidi di quel pezzo di
+ carta ;)
+ Non solo: potento ritirarla a qualsiasi ora si puo' passare in piena notte, 
+ osservare se qualcuno, leggasi polizia, e' dalla parti e solo se e' tutto
+ tranquillo entrare, ritirare il pacco e via...
+ Ah, un momento dimenticavo.. occhio alle telecamere che da qualche parte ci
+ sono sicuramente, che ne dite di indossare il buon vecchio passamontagna nero
+ prima di entrare? ;)
+
+E' interessante notare una cosa: la possibilita' (sempre piu' sbandierata) di
+far pervenire la merce tramite corriere espresso, e cito UPS, Bartolini,
+WorldWide Delivery, TNT Traco e molti altri. Sono servizi sempre piu'
+utilizzati da ditte, sia in rete che non (avete mai provato ad ordinare cd
+audio su CDNOW?), sia per la velocita', che per l'affidabilita' e la
+precisione. Certo, trasportano il materiale a domicilio e non, ad esempio, in
+un Fermo Posta... ma c'e' il trucco.
+Siccome quando viene eseguito l'ordine e richiesta la spedizione via corriere
+espresso il pacco diventa dominio del corriere, e' possibile seguire in tempo
+reale il percorso effettuato dai vostri nuovi beni, e soprattutto e' possibile
+sapere con una precisione nell'ordine dei minuti quando arrivera' a
+destinazione cio' che si e' ordinato. Una firma e via :), basta non farsi
+recapitare il tutto sotto casa... in alcuni casi e' necessario presentare un
+documento d'identita', fabbricate gente, fabbricate, che non stanno a
+controllare col microscopio, basta che corrispondano i dati. Se proprio avete
+poca voglia, potete dire che il pacco e' della vicina (che casualmente e' in
+vacanza), che trovandosi momentaneamente assente, non puo' ritirare nulla. Voi
+dite di essere stati incaricati, e se sapete contenuto del pacco, destinatario
+e altri dati vari (che sapete per forza, l'avete ordinato voi!) non dovrebbero
+stressare troppo. Ovviamente dovete aver avuto l'accortezza all'origine di
+usare come destinatario proprio la vostra vicina, nella speranza che non sia
+una biondona da 1.80m a cui sbavate dietro da secoli :)
+
+Trucco generale: fate fare tutto da una ragazza... e' meno sospetta. La voce
+femminile al telefono da' sicurezza, la scrittura femminile (e un nome
+femminile come ricevente del materiale) da' molto meno da pensare...).
+
+Ultima nota: se vi fate spedire i piani segretissimi del prossimo colpo di
+stato, e gli sbirri aprono il pacchetto e vengono a prendervi, quelle sono
+prove acquisite illegalmente (la posta e' PROPRIETA' PRIVATA, ricordatelo
+sempre), che non valgono in sede di processo...
+
+Alla prossima                                                      
+                                                               -sPIRIT
+(Vide0Fuzzy:
+ prima di lasciarvi, un piccolo compitino per casa per la prossima lezione.
+ Andate in una qualsiasi banca, non la vostra naturalmente, e chiedete di voler
+ aprire un conto, rompete le scatole chiedendo tassi, condizioni, tipi di
+ investimento ecc, prima di uscire chiedete il biglietto da visita del tizio
+ con cui avete parlato (dovrebbe esserci il nome, cognome, num tel ecc. ecc.)
+ e poi senza farvi notare prendete nota di tutte gli impiegati che vi lavorano
+ (nome,cognome e posizione (cassiere, consulente ecc). La prossima volta vi
+ spiego, se avete fatto i bravi, che ci potete fare ^_^)
+
+ATTENZIONE!
+L'autore (anch'io, Vide0Fuzzy) non intende essere ritenuto responsabile di
+eventuali comportamenti scorretti derivanti dalla lettura di questo articolo.
+L'autore si dissocia nella maniera piu' categorica dalle pratiche descritte in
+questo articolo e scoraggia la loro applicazione.
+                                                             sPIRIT [S0ftPj98]
+                                                             Vide0Fuzzy
+
+
+The Raven
+Since `82

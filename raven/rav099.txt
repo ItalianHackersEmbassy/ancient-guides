@@ -1,0 +1,210 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Vincere alle macchinette da poker.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1-
+Allora semplicemente dovete comprare (vi consiglio dai Marocchini) un
+accendi GAS elettrico, il più potente possibile, controllate la
+scintilla deve essere mucho blue ok?
+Adesso rompete la punta facendo attenzione a non rompere i due fili
+metallici ok a questo punto siete pronti, avvicinatevi ad una
+macchinetta del poker infilate il filo metallico nell'apposito spazio
+delle banconote, adesso accendete accendete accendete, nella maggior
+parte dei casi la macchina si impalla, ma il bello stà propio li, la
+macchina si impalla memorizzando tutti i crediti, e non vi parlo di un
+credito ma di un bel mazzo, se si impalla niente paura chiamate il
+gestore ditegli che si è impallato e che avete vinto lasciate numero
+di tel o ripassate dopo e fatevi dare tutti i crediti mi raccomando
+non ditegli che lo avete impallato con l'accendiGAS:))))
+2-
+Metodo anche questo efficace ma non su tutte le macchinette, Inserite
+una cifra che vi pare (dipende dalle vostre tasce, anche perchè non
+influeza nulla) accendete e spegnete velocemente finche non partono i
+ticket, adesso non sò perchè faccia così e sinceramente non me frega
+nulla basta che mi dia i ticket:))
+
+P/S 
+Maggiore vincita effetuata alle macchinette??
+1.000.000 di lire (dato che la legge non permette vincite così grosse:
+mi ha dato da scegliere o 500.000 lire o 500.000 lire in consumazioni,
+ho optato nell 500.000 LIRE)
+Spero serva a qualcuno 
+BYEZZZ
+
+SpIRIToZ
+
+-----------------------------------------------------------------------
+
+Autore: Jenjy
+Consumo: 3 ore di sonno, 3 bicchierini di limoncino.
+Musica Ascoltata: Black Sabbath,Iron Maiden,Metallica.
+Saluti a: Lo pì, Zoe, Gianni, Fantaman,Falascò,Giorgio D, e 
+UN SALUTO SPECIALE A
+SILVIA C. di Jesy.
+
+Da circa un anno a questa parte , i bar e le sale giochi sono
+caratterizzate dalle ormai consuete macchinette da gioco.
+In particolare Slot-machine,Poker,e ROULETTE elettroniche.
+
+Voglio parlarvi proprio di quest'ultime.
+
+Il funzionamento è abbastanza semplice, ma per chi non ne fosse a
+conoscenza lo spiegherò. La roulette accetta soldi 1000,5000,10000,
+50000
+Ad esempio quella dal caffè sotto casa trasforma le 10000 Lire in 100
+punti giocabili.
+Dopo aver puntato la somma o una parte di essa, si può decidere di
+ritirare
+il premio sottoforma di Ticket, che si possono cambiare dal gestore
+del bar in denaro o consumazioni.
+Questi Ticket escono da una fessura in basso al gioco.
+
+Volete vincere un pò di soldi in maniera facile ???
+
+Seguitemi con attenzione !!!!
+
+Inserite 10000 Lire nella macchinetta.
+Ora puntate la metà dei vostri punti sul colore Rosso, e l'altra metà
+sul colore Nero.
+In entrambi dei casi (Tranne che nel verde) ritornerete al punto di
+partenza, con i vostri bei 100 crediti (10000 Lire) sul display. Adesso
+verrà la scritta "VUOI RITIRARE IL PREMIO ORA ?" spostate il Joystick
+sul SI ma non premete niente.
+Adesso cercate l'interruttore per far spegnere la Roulette (di solito
+SOPRA il gioco).
+Adesso (ATTENZIONE !!!!)
+Premete SI e IMMEDIATAMENTE dopo spegnete la macchina !!!
+Intanto avete ritirato il vostro bravo TICKET !!!!!!!!
+
+Quando dico IMMEDIATAMENTE intendo dire CONTEMPORANEAMENTE dopo aver
+premuto SI.
+
+Ora riaccendete la macchina Essa dopo aver fatto il test video e dei
+colori ricaricherà il gioco !!!!
+E MAGIA ci sono ancora i vostri 100 punti !!!!! ;)
+
+Qualcuno di voi penserà "Ma non li avevamo ritirati prima ?" Dopo ne
+riparleremo.
+
+I 100 punti che avete sono "VIRTUALI" ossia non potete Ritirarli, ma
+potete sempre giocarli
+per tentar di vincere ancora !!!!
+
+Qui dovete aver un pò di culo e dovete saper amministrare il gioco e i
+rispettivi punti !!!
+
+Quando arriverete a 200 punti o più e ritornerà la scritta per il
+ritiro del premio ora ritirate 
+normalmente dicendo di SI.
+Ritirerete il punteggio sul display - i 100 punti virtuali.
+Ad esempio se sul Display c'è scritto 400 punti (40000 Lire) ritirerete
+solamente 300 punti ossia
+30000 Lire, perchè come dicevamo prima i 100 punti sono virtuali ,
+ossia non potete ritirarli ,ma
+potete sempre puntarli per vincere altri punti che poi però potranno
+essere ritirati.
+
+Spiegazione DETTAGLIATA - BUG del Software "Les Fiches" Ossia del
+software della roulette.
+
+Dopo circa 3 giorni di studi sono arrivato a una conclusione.
+
+Innanzitutto premetto che la macchinetta è provvista di una memoria
+EEPROM
+su cui vengono salvati il punteggio ad ogni variare di esso, per non
+venire incontro a inconvenienti del tipo se va via la tensione.
+Ad ogni accensione della macchinetta tramite l'apposito interruttore.
+Il software carica dalla  EEPROM il punteggio. Fino a qui tutto OK.
+Cio che è molto interessante è la priorità che il software assegna a
+due diverse procedure durante il ritiro del premio.
+Queste due procedure sono rispettivamente LA FUORIUSCITA DEI TICKET e
+la CANCELLAZIONE DEI PUNTI DALLA MEMORIA.
+La gestione delle due vengono eseguite in fattore del tempo nella
+sequenza sopraccitata.
+
+Avendo un tempo di qualche centesimo di secondo tra la prima e la
+seconda operazione, togliendo 
+tensione impediamo che il software vada a cancellare il punteggio
+della memoria EEPROM.
+
+L'errore è di tipo concettuale , ossia l'esecuzione errata delle due
+procedure da parte del software.
+
+Bè ringraziamo i Programmatori !!!!!!!!!! :)
+
+
+PS:Ultimamente ci sono in giro macchinette "Les Fiches", in cui per
+ritirare il premio , dovete
+effettuare un piccolo giochino tipo SPACE INVADERS, per ritirare il
+premio, in cui i punti vengono
+decrementati un pò alla volta.
+Mi dispiace per voi , ma non credo che con questo metodo, la
+macchinetta sia Exploitabile. :(
+
+Io personalmente in un giorno ci ho rimediato 40000 Lire. Non sono
+miliardario ora, ma è fa sempre comodo 40 sacchi in tasca. ;)
+
+marco2@cronosnet.com 
+
+
+
+ Salve a tutti...................
+
+finalmente ecco a voi tutti l'articolo riguardo quelle balorde
+macchinette del poker che sono solitamente nei bar dette da me e amici.
+............Fogne!!!!
+
+Vi siete mai chiesti se è possibile fregarle in qualche modo????Beh
+ecco la risposta! Non prendetela come assoluta però come dicevano gli
+antichi..........tentar non nuoce(gravemente alla salute) giusto?:)
+Allora cio che vi serve è: 
+
+1)Un pennellone(non Cinghiale...intendevo come amico!!!)
+
+2)Un accendino modificato x fiamma da combattimento:) Sapete a cosa mi
+riferisco vero? Quelle belle fiamme che x quanto grosse ti fanno
+sukkiare il gas in 3 min.
+
+Porre l'amico pennellone in modo che non vi vedano, poi incominciare
+a darci giu con la mega fiamma non a casaccio però..........altrimenti
+bruciate la macchina e il padrone brucia voi e il vostro pennello!(ma
+quale dei due??:) I punti focali dove bruciare sono le quattro viti
+metallizzate con testa tonda, ai 4 lati della macchina(avete capito? )
+Io personalmente sono andato a casaccio e mi è riuscito il trucco solo
+xchè quel giorno ero particolarmente sul vandalo andante!!!!!La mia
+vite fortunata è stata quella in basso a destra ma non so se le altre
+funzionano...basta provare!!!!Piu tenete la fiamma piu da punti.......
+ma okkio che a forza di fare così io l'ho mandata in TILT!!!!(Avrò
+bruciato qualcosa!?!?!mah)
+
+Ultimo punto debole è la "bocca" sputa Ticket.............li anche
+nelle vicinanze delle sue "labbra" (mamma mia che poeta!!!) provate a
+far FUOCO!!!!
+
+Spero che funzioni........................nella macchinetta del bar
+dove solitamente andiamo funzia!!ma non lo dite al padrone!!!!
+
+P.S
+Non a tutte le macchinette del poker riesce tale trucco..........
+magari è solo un caso chi lo sa????Fatemi sapere se vi riesce......e
+se vi riesce cercate di battere il mio recordo di 78 punti!!!!
+
+DiNgO
+
+(#BiKiNi)
+HTTP://www.panservice.it/people/bikini 
+
+dingo@online.latina.it 
+
+
+== Fonte: COOKBOOKER's cookbook ==
+
+The Raven
+Since `82

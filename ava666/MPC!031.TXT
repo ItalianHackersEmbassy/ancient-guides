@@ -1,0 +1,224 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>              Enciclopedia dell' Hacking               <=-=>
+      <=-=>              ``````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 1 ]:.                    <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+
+
+PREFAZIONE
+~~~~~~~~~~
+In seguito alle moltissime richieste di informazioni sull'hacking, noi del
+D.A.C. abbiamo deciso di scrivere una serie di "volumi" sull'argomento, per
+spiegare in modo semplice e graduale le basi dell'hacking.
+
+Le informazioni che ci accingiamo a darvi con la presente "Enciclopedia"
+sono solo a scopo informativo.
+L'autore, Lord Shinva, declina ogni responsabilita` per l'uso di queste
+informazioni.
+L'autore si riserva inoltre la possibilita` di ritardare o interrompere in
+qualsiasi momento la pubblicazione di questa serie di documenti in caso di
+uso improprio degli stessi.
+
+Questo documento puo` essere liberamente distribuito purche` non modificato.
+Sono VIETATE la vendita e la duplicazione integrale o parziale con qualsiasi
+mezzo e in qualsiasi modo.  Tutti i diritti sono riservati dall'autore.
+
+
+GLOSSARIO
+~~~~~~~~~
+- IP Address
+  Indirizzo numerico composto da quattro numeri (ad esempio 123.45.67.8) che
+  identifica il vostro computer sulla rete.  Un IP Address e` unico e
+  corrisponde ad un Host Name
+
+- Host Name
+  Nome in formato standard Internet di un sito. Ad esempio sara` del tipo
+  www.prova.com per un provider o un sito generico, mentre nel caso di un
+  collegamento via modem di un utente al suo provider potra` somigliare a
+  ppp14-ro.provider.it.
+  Le estensioni piu` usate sono:
+    .com   sito commerciale ("com") generico
+    .org   organizzazione ("org") senza fini di lucro
+    .mil   sito militare ("mil") USA
+    .net   rete (in inglese "net") sito generico
+  e i vari .it (Italia) .uk (Inghilterra) .ca (California), ecc.
+
+- Client
+  Programma "cliente", usato da un utente per collegarsi ad un servizio.
+  Ad esempio, Netscape e Microsoft Explorer sono client per collegarsi al
+  servizio Web (HTTP), Eudora e` un client per collegarsi al servizio e-mail
+  (SMTP/POP3), Cute FTP e WS-FTP sono client per collegarsi a FTP, e cosi`
+  via.  E` in pratica un programma che viene usato per comunicare con un
+  server.
+
+- Server
+  Programma che svolge un servizio e si occupa di rispondere ai client.
+  Ad esempio, i provider hanno un Web Server per offrirvi la possibilit…
+  di collegarvi ad Internet tramite il Web.
+
+- Protocollo
+  Insieme di regole per la gestione di un servizio Internet come web, email
+
+- Servizi: nomi tecnici
+  I servizi disponibili su Internet sono: Web (pagine ipertestuali), FTP
+  (trasferimento file), e-mail, news, IRC, ecc.
+  Ecco alcuni nomi tecnici e relativo servizio:
+    HTTP   e` il nome del protocollo del web
+    SMTP   e-mail, posta in uscita
+    POP3   e-mail, posta in arrivo
+    IMAP   e-mail, e` un altro tipo di posta in arrivo, meno usato
+
+- DNS (Domain Name Server)
+  E' la funzione svolta da un computer situato sulla rete che si occupa di
+  risalire a un IP Address da un Host Name e viceversa (se ad esempio volete
+  conoscere l'IP Address di www.prova.com utilizzando il DNS otterrete una
+  risposta del tipo 123.45.67.8, ma e` anche possibile fare il contrario).
+  L'operazione per la quale si risale dall'IP Address (numerico) all'Host
+  Name (nome) viene detta Reverse DNS.
+  Il DNS viene utilizzato automaticamente da tutti i programmi per Internet,
+  in quanto Internet non "capisce" gli Host Name, e ha bisogno di conoscere
+  il relativo IP Address per riuscire a collegarsi ad un sito (Host).
+  E' anche possibile utilizzarlo volutamente, per risalire a qualcuno, ecc.
+
+
+FONDAMENTI
+~~~~~~~~~~
+Prima di iniziare con l'hacking vero e proprio e` necessario iniziare con
+una breve lezione sull'anonimita`.
+
+Infatti, quando effettuate un'operazione qualsiasi sulla rete, lasciate
+tracce di voi ovunque.
+Questo e` particolarmente vero per il web, in quanto ogniqualvolta ci si
+collega ad un server o si inviano dati vengono automaticamente trasmesse
+informazioni come: da quale server (e quindi da quale citta`) si sta
+chiamando, il nome ed il produttore del programma che si sta usando, quale
+sistema operativo e` installato sul vostro PC, il vostro IP address, qual'e`
+l'ultimo sito visitato, se, quando e quante volte ci si e` collegati ad un
+sito, e talvolta anche il proprio indirizzo di e-mail.
+
+Mentre lasciare simili informazioni in giro puo` non costituire un pericolo
+per un utente qualsiasi, per un hacker la cosa diventa alquanto pericolosa.
+In pratica e` come se lasciaste un biglietto da visita (beh... quasi un
+curriculum!) ad ogni collegamento che effettuate.
+
+Molti siti utilizzano anche un comodo meccanismo di identificazione messo a
+disposizione dei browser (Netscape, Internet Explorer, Mosaic) che li aiuta
+ad identificarvi anche a distanza di tempo, e puo` rivelare loro la
+frequenza con cui visitate dei siti, IP address, ed altre informazioni che
+non vorreste dare.  Il file in questione e` denominato "cookie".
+Se usate Netscape lo troverete nella directory del browser con l'innocuo
+nome di "cookies.txt".  Non e` altro che un semplice file di testo, come
+questo che state leggendo.  Bastera` eliminarlo dopo ogni collegamento per
+eliminare le informazioni che esso puo` rivelare.  Se utilizzate siti che
+richiedono accesso con password puo` darsi che il cookie contenga delle
+informazioni necessarie al vostro collegamento: in tal caso bastera` editare
+il file ed eliminare solo le righe che non contengono il nome del sito in
+questione.
+
+I "cookies" possono essere disabilitati in alcuni browser (come Netscape).
+Lo stesso vale per altre tecnologie ancor piu` pericolose (per la privacy),
+come Java e JavaScript.  Rendono piu` allegre le pagine Web... e ancor
+piu` allegri quelli che vogliono sapere chi, come e quando si collega a
+una pagina.
+
+Un mezzo molto usato fino a poco tempo fa per nascondere le proprie tracce
+sul Web era l'Anonimizzatore (http://www.anonymizer.com), ma mentre prima
+era gratuito ora e` diventato a pagamento.  Lo si puo` ancora utilizzare, ma
+prima di visualizzare la pagina Web desiderata, l'utente e` costretto ad
+attendere circa mezzo minuto.  Inoltre questo servizio e` ora in grado di
+riconoscere un tentativo di hacking e si rifiuta di eseguire il collegamento.
+
+Per quanto riguarda invece le e-mail (posta elettronica) il discorso cambia.
+
+In realta`, un hacker non usa quasi mai altro che un solo programma: Telnet.
+Se non siete ancora in possesso di un client (programma utente) Telnet vi
+consiglio di prelevarlo al piu` presto dalla rete (ad esempio, cercando su
+http://www.shareware.com).
+Telnet non e` altro che un servizio di banca dati, con messaggi, programmi
+e cose del genere, proprio come nelle vecchie BBS.
+
+Ma perche` utilizzare proprio Telnet?
+
+In realta`, un client Telnet fa poco piu` che collegarsi a un server,
+inviargli tutto quello che scrivete e mostrarvi tutto quello che riceve dal
+server.
+
+Puo` in effetti sostituire (limitatamente) un qualsiasi altro client.
+
+Un esempio: quando usate un browser (Netscape, Explorer, ecc.) per collegarvi
+ad un sito Web, il programma non fa altro che svolgere una sessione Telnet.
+In parole semplici: invia un comando simile a "dammi il file xxxxx" e aspetta
+che il server glielo invii.
+Lo stesso accade con FTP, e in modo appena diverso per la posta elettronica.
+
+Come vediamo, quindi, usando Telnet noi possiamo impersonare un qualsiasi
+programma client, parlando al server e leggendo le sue risposte.
+
+Ma per quale motivo dovremmo farlo?  E` presto detto.
+
+Soffermiamoci un momento su questa cosa: un servizio, ad esempio e-mail,
+e` stato progettato perche` dall'altro capo della connessione ci sia un
+programma client che segua certe regole (ad esempio Eudora per la posta).
+
+Ma cosa succede se invece di un programma c'e` un hacker che "finge" di
+essere il programma e invece di seguire le regole standard fa altre cose
+non previste?
+Succede che si puo` sovvertire il servizio, e si possono fare le cose piu`
+disparate.
+
+Alcuni esempi: sovvertendo e-mail si puo` inviare posta elettronica "falsa"
+(detta FakeMail) che sembri provenire da chiunque noi vogliamo, sovvertendo
+il Web si puo` crashare (da "crash": distruggere, in senso virtuale) un
+server, con FTP si puo` ottenere un livello di anonimita` elevatissimo ed
+e` possibile infiltrarsi anche dove non si e` desiderati, e cosi` via; per
+praticamente ogni servizio esistente vi sono delle tecniche applicabili.
+
+E infine, con quasi tutti i servizi (e in particolar modo con la SMTP)
+esistono dei modi per ottenere il tanto agognato accesso "root", in pratica
+il livello dell'amministratore di sistema (detto SysAdmin) che puo` fare
+*qualsiasi* cosa: creare, aggiungere o eliminare account, file e directory,
+utenti con qualsiasi livello d'accesso, leggere la posta e i file degli
+utenti, attivare e disattivare servizi, modificare programmi...
+
+Nel prossimo volume ci occuperemo della falsificazione e identificazione di
+posta elettronica e news.
+
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+
+Grazie a LoRD SHiNVA, l'autore di questa enciclopedia,
+
+       By
+   Å        Å
+   ³ AVA666 ³ 
+   ~~~~~~~~~~
+

@@ -1,0 +1,514 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+
+Radio sniffer (frequenze & misc).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Hy fratelli, e' venuto il momento di accendere la radio e sentire cosa accade
+nel mondo...hey cosa avete capito, non quella radio, ma il vostro fidato
+scanner!! ? No non quello da tavolo del picci, quello radio che avete appena
+comprato dal vostro negozio di sfiducia. Si perche' se non l'avete capito i
+media ci consentono di sentire solo una minima parte di tutto quello che viene
+effettivamente trasmesso via etere.
+Non potete immaginare quante siano le cose che tv, radio(normale) e giornali ci
+tengono nascoste. Come ogni giorno,ogni notte accadano un mare di cose che per
+i piu' non esistono.
+Questa e' una terribile restrizione della nostra liberta', e s'impone di far 
+qualche cosa. 
+Avete mai desiderao sapere cosa dice per radio il pulotto che ci sta facendo
+una multa da guinness? O sapere cosa dice la propria ragazza al telefonino e se
+e' vero che telefona all'amica (hehe)?
+Ebbene e' giunto il momento di svelare la verita' !!
+Esistono sul mercato (nero o meno che sia) delle radioline particolari, grandi
+circa come un normale cellulare (i portatili), che ci permettono di fare giusto
+qualcosina di piu' del solito, questi sono i mitici Scanners (ehm..non gli
+ultracorpi).
+Un modello veramente buono e facilmente reperibile in Italia dal mafioso vicino
+casa e' l'UNIDEN BEARCAT twin turbo 200.
+Questo modello e' un portatile che si mimetizza facilmente come cellulare, ha
+ben 200 frequenze memorizzabili ed un costo abbastanza contenuto (~ 500.000 ).
+Ovviamente consiglio uno scanner perche' e' l'unico che permetta di
+sintonizzarsi su QUALUNQUE frequenza.
+A questo punto che cosa vi manca?
+Ma le frequenze ovviamente! Premetto che in Italia le frequenze sono
+abbastanza incasinate (cosa non lo e'), nel senso che da un comune all'altro
+aumentano, diminuiscono, cambiano, un vero e proprio bordello....
+Comunque in linea generale sono cosi' suddivise:
+
+066-088 Mhz Steps  5   Khz Mode NFM -* VHF Low Band    *-
+108-137 Mhz Steps 12.5 Khz Mode  AM -* Aircraft Band   *-
+137-144 Mhz Steps  5   Khz Mode NFM -* Military Land   *-
+144-148 Mhz Steps  5   Khz Mode NFM -* 2m Amateur Band *-
+148-174 Mhz Steps  5   Khz Mode NFM -* VHF High Band   *-
+406-420 Mhz Steps 12.5 Khz Mode NFM -* Federal Gov.    *-
+420-450 Mhz Steps 12.5 Khz Mode NFM -* 70cm Amat. Band *-
+450-470 Mhz Steps 12.5 Khz Mode NFM -* UHF Stndr. Band *-
+470-512 Mhz Steps 12.5 Khz Mode NFM -* UHF (T) Band    *-
+806-956 Mhz Steps 12.5 Khz Mode NFM -* Cell. Band      *-
+
+A scopo dimostrativo seguono alcune frequenze moolto interessanti, che sono
+certo non vi sognereste mai di ascoltare senza permesso scritto delle
+autorita' competenti.
+Sempre a scopo di esempio troverete allegati a questo articolo alcuni file
+sonori che vi daranno un'idea di cosa si puo' sentire con un poco di
+pazienza...ehm
+
+*******************************************************************************
+            FREQUENZE DEI TUTORI DEL DISORDINE PUBBLICO ( PULOTT )
+*******************************************************************************
+
+77.8250
+77.1500
+415.9000
+416.0500
+426.0500
+425.9000
+77.1000
+78.5250
+78.0000
+425.0000
+426.1250
+426.2750
+426.7750
+162.3500 trasmissioni dati
+124.8000 aeronautica
+145.6250
+162.3750
+162.6600
+164.8000 trasmissioni dati
+124.4500 aeronautica
+87.9000
+83.1250
+83.1300
+439.1625
+68.1850
+
+*******************************************************************************
+     FREQUENZE DEL CELLULARE DELLA VOSTRA RAGAZZA (o del suo ragazzo hehe)
+*******************************************************************************
+
+74.7300
+74.2550
+810.5500
+811.3125
+812.3500
+812.6000
+813.6375
+822.9750
+821.6250
+823.8750
+824.3250
+824.7500
+825.2250
+825.6750
+826.1250
+827.0250
+827.4750
+828.3750
+828.8000
+829.0625
+829.3125
+829.8375
+830.3500
+831.1125
+831.6375
+831.8875
+806.2625
+808.9625
+809.4125
+811.5750
+813.3750
+824.7750
+74.4050
+811.2500
+811.4125
+806.6625
+806.6750
+808.5125
+808.9125
+809.1500
+809.5000
+811.4875
+811.7500
+812.0875
+823.4250
+827.9250
+806.8250
+806.9000
+808.5500
+810.3750
+810.6375
+810.7125
+810.7250
+811.0625
+811.8375
+812.5000
+812.8625
+823.5125
+823.7625
+825.1875
+826.5750
+829.5750
+830.0875
+811.4250
+811.8000
+807.1625
+810.8875
+812.1750
+836.0875
+808.0625
+823.8500
+807.6125
+809.8625
+818.2125
+811.7250
+
+-------------------------------------------------------------------------------
+                              MP3 CHE PASSIONE !!                             
+-------------------------------------------------------------------------------
+
+Nel file radio01.zip trovate allegati a questo articoletto alcuni mp3 moolto
+interessanti..
+Sono degli esempi sulle possibilit… che il radioscanning offre.
+
+cell!!s.mp3   E' un piccolo mix di varie telefonate prese a caso da vari
+              cellulari. (Se per caso tra voi c'Š uno degli "intervistati"
+              non si scandalizzi..il mondo lo ascolta  ^_^
+telec!!s.mp3  E' uno dei tanti messaggi automatici di Telecom Italia Mobile,
+              In particolare vi avvisa che l'utente chiamato non Š
+              raggiungibile.
+telec2!!s.mp3 Avete presente il nuovo tacs ricaricabile?
+              Bene questo Š quello che sentirete...nel controllare il vostro
+              credito residuo...ma potete pure chiedere a me!! HAHA
+telec3!!s.mp3 Ma gli addetti Telecom non ci sono proprio mai...tranne
+              che per farvi pagare la bolletta ovviamente !
+
+
+===============================================================================
+
+                        TELEPHONE-RELATED FREQUENCIES
+
+
+-------------------------------------------------------------------------------
+TELEPHONE FREQUENCY BANDS - BY FREQUENCY
+-------------------------------------------------------------------------------
+
+           35.22   -   35.66    RADIO PAGING
+           43.22   -   43.64    RADIO PAGING
+           46.61   -   46.97    CORDLESS TELEPHONES
+           49.67   -   49.97    WIRELESS ROOM/BABY MONITORS
+          145.10   -  145.50    HAM AUTOPATCH
+          146.61   -  147.39    HAM AUTOPATCH
+          152.03   -  152.21    RCC ~& RADIO PAGING
+          152.48   -  152.825   IMTS TELEPHONE/CANADA
+          152.51   -  152.81    IMTS TELEPHONE ~& RADIO PAGING
+          157.74   -  158.10    RADIO PAGING
+          158.49   -  158.70    RADIO PAGING
+          158.91   -  161.565   RAILROADS/CANADA
+          160.215  -  161.565   RAILROADS/USA
+          161.80   -  162.025   MARINE OPERATOR SHIP/SHORE
+          223.85   -  224.98    HAM AUTOPATCH
+          442.00   -  445.00    HAM AUTOPATCH
+          447.00   -  450.00    HAM AUTOPATCH
+          451.175  -  451.6875  TELEPHONE REPAIR
+          454.025  -  454.35    RCC~ RADIO PAGING
+          454.40   -  454.65    IMTS TELEPHONE ~& RADIO PAGING
+          454.70   -  454.975   TELCO AIR/GROUND OPERATORS
+          459.025  -  459.65    RADIO PAGING
+          459.70   -  459.975   TELCO AIR/GROUND AIRCRAFT
+          479.025  -  493.00    OFFSHORE OIL PLATFORMS
+          861.0125 -  865.2375  BASIC EXCHANGE RADIO SERVICE
+          869.00   -  894.00    CELLULAR PHONES
+          902.00   -  928.00    900 MHZ CORDLESS PHONES
+          929.00   -  932.00    RADIO PAGING
+
+-------------------------------------------------------------------------------
+TELEPHONE FREQUENCY BANDS - BY SERVICE
+-------------------------------------------------------------------------------
+
+          902.00   -  928.00    900 MHZ CORDLESS PHONES
+          861.0125 -  865.2375  BASIC EXCHANGE RADIO SERVICE
+          869.00   -  894.00    CELLULAR PHONES
+           46.61   -   46.97    CORDLESS TELEPHONES
+          145.10   -  145.50    HAM AUTOPATCH
+          146.61   -  147.39    HAM AUTOPATCH
+          223.85   -  224.98    HAM AUTOPATCH
+          442.00   -  445.00    HAM AUTOPATCH
+          447.00   -  450.00    HAM AUTOPATCH
+          152.48   -  152.825   IMTS TELEPHONE/CANADA
+          152.51   -  152.81    IMTS TELEPHONE ~& RADIO PAGING
+          454.40   -  454.65    IMTS TELEPHONE ~& RADIO PAGING
+          161.80   -  162.025   MARINE OPERATOR SHIP/SHORE
+          479.025  -  493.00    OFFSHORE OIL PLATFORMS
+           35.22   -   35.66    RADIO PAGING
+           43.22   -   43.64    RADIO PAGING
+          157.74   -  158.10    RADIO PAGING
+          158.49   -  158.70    RADIO PAGING
+          459.025  -  459.65    RADIO PAGING
+          929.00   -  932.00    RADIO PAGING
+          158.91   -  161.565   RAILROADS/CANADA
+          160.215  -  161.565   RAILROADS/USA
+          152.03   -  152.21    RCC ~& RADIO PAGING
+          454.025  -  454.35    RCC~ & RADIO PAGING
+          454.70   -  454.975   TELCO AIR/GROUND OPERATORS
+          459.70   -  459.975   TELCO AIR/GROUND AIRCRAFT
+          451.175  -  451.6875  TELEPHONE REPAIR
+           49.67   -   49.97    WIRELESS ROOM/BABY MONITORS
+
+-------------------------------------------------------------------------------
+900 MHZ CORDLESS TELEPHONE FREQUENCIES - (AFTER MID-1992) - 902 - 928 MHZ NFM
+-------------------------------------------------------------------------------
+
+    902.000  - 928.000   900 MHZ CORDLESS TELEPHONES (60-100 KHZ SPACING)
+
+PANASONIC KX-T9000 (30 CHANNELS)
+
+     902.1 - 903.9   TRANSPONDER (BASE) FREQUENCIES (60 KHZ SPACING)
+     926.1 - 927.9   HANDSET FREQUENCIES
+
+     FIRST CHANNEL
+
+     902.1           DEFAULT TRANSPONDER FREQUENCY
+     926.1           HANDSET FREQUENCY  (24 MHZ HIGHER)
+
+     CH       BASE          HANDSET          CH       BASE          HANDSET 
+     --     -------         -------          --     -------         -------
+     01     902.100         926.100          08     902.310         926.310
+     02     902.130         926.130          09     902.340         926.340
+     03     902.160         926.160          10     902.370         926.370
+     04     902.190         926.190          11     902.400         926.400
+     05     902.220         926.220           ^         ^               ^
+     06     902.250         926.250           ^         ^               ^
+     07     902.280         926.280          59     903.870         927.870 
+
+V-TECH TROPEZ DX900 (20 CHANNELS)
+
+     905.6 - 907.5   TRANSPONDER (BASE) FREQUENCIES (100 KHZ SPACING)
+     925.5 - 927.4   HANDSET FREQUENCIES
+
+     ONE SUCH CHANNEL
+
+     906.375         DEFAULT TRANSPONDER FREQUENCY
+     926.275         HANDSET FREQUENCY 
+
+OTHER 900 MHZ CORDLESS PHONES
+
+     AT&T #9120 -           902-905 & 925-928 MHZ 
+     OTRON CORP. #CP-1000 - 902.1-903.9 & 926.1-927.9 MHZ
+     SAMSUNG #SP-R912-      903 & 927 MHZ
+
+-------------------------------------------------------------------------------
+CELLULAR TELEPHONE FREQUENCIES BANDS
+-------------------------------------------------------------------------------
+
+ 824.0000 - 834.2600      NON-WIRELINE COS. (RADIO COMMON CARRIERS) MOBILES
+ 845.0000 - 846.5000      NON-WIRELINE COS. (RADIO COMMON CARRIERS) MOBILES
+ 869.0000 - 879.3600      NON-WIRELINE COS. (RADIO COMMON CARRIERS) BASES
+ 890.0000 - 891.5000      NON-WIRELINE COS. (RADIO COMMON CARRIERS) BASES
+
+ 835.6500 - 845.0000      WIRELINE COS. (LOCAL TELEPHONE COMPANY) MOBILES
+ 846.5000 - 849.0000      WIRELINE COS. (LOCAL TELEPHONE COMPANY) MOBILES
+ 880.6500 - 890.0000      WIRELINE COS. (LOCAL TELEPHONE COMPANY) MOBILES ?
+ 891.5000 - 894.0000      WIRELINE COS. (LOCAL TELEPHONE COMPANY) MOBILES ?
+
+ 829.000  - 849.000       CELLULAR TRANS. FREQUENCY RANGE (30 KHZ)     
+ 869.000  - 894.000       CELLULAR RECV. FREQUENCY RANGE (PAIRED FREQS)
+ 869.0000 - 880.0000      SYSTEM A - NON WIRELINE TELEPHONE FREQUENCIES
+ 880.0000 - 894.0000      SYSTEM B - WIRELINE TELEPHONE FREQUENCIES
+
+-------------------------------------------------------------------------------
+CELLULAR TELEPHONE FREQUENCIES
+-------------------------------------------------------------------------------
+
+              Base      Mobile                 Base      Mobile                
+   
+            ~Transmit   Transmit~              Transmit~   Transmit            
+      
+  Channel  Frequency  Frequency    Channel  Frequency  Frequency               
+  
+  Number     (MHz)      (MHz)     ~ Number     (MHz)      (MHz)             ~  
+      
+
+     1     870.0300   825.0300        30    870.9000   825.9000  
+     2     870.0600   825.0600        31    870.9300   825.9300  
+     3     870.0900   825.0900        32    870.9600   825.9600  
+     4     870.1200   825.1200        33    870.9900   825.9900  
+     5     870.1500   825.1500        34    871.0200   826.0200  
+     6     870.1800   825.1800        35    871.0500   826.0500  
+     7     870.2100   825.2100        36    871.0800   826.0800  
+     8     870.2400   825.2400        37    871.1100   826.1100  
+     9     870.2700   825.2700        38    871.1400   826.1400  
+    10     870.3000   825.3000        39    871.1700   826.1700  
+    11     870.3300   825.3300        40    871.2000   826.2000  
+    12     870.3600   825.3600        41    871.2300   826.2300  
+    13     870.3900   825.3900        42    871.2600   826.2600  
+    14     870.4200   825.4200        43    871.2900   826.2900  
+    15     870.4500   825.4500        44    871.3200   826.3200  
+    16     870.4800   825.4800        45    871.3500   826.3500  
+    17     870.5100   825.5100        46    871.3800   826.3800  
+    18     870.5400   825.5400        47    871.4100   826.4100  
+    19     870.5700   825.5700        48    871.4400   826.4400  
+    20     870.6000   825.6000        49    871.4700   826.4700  
+    21     870.6300   825.6300        50    871.5000   826.5000  
+    22     870.6600   825.6600        51    871.5300   826.5300  
+    23     870.6900   825.6900        52    871.5600   826.5600  
+    24     870.7200   825.7200        53    871.5900   826.5900  
+    25     870.7500   825.7500        54    871-6200   826-6200  
+    26     870.7800   825.7800        55    871 6500   826.6500  
+    27     870.8100   825.8100        56    871.6800   826.6800  
+    28     870.8400   825.8400        57    871.7100   826.7100  
+    29     870.8700   825.8700        58    871.7400   826.7400  
+
+    59     871.7700   826.7700       111    873.3300   828.3300 
+    60     871.8000   826.8000       112    873.3600   828.3600 
+    61     871.8300   826.8300       113    873.3900   828.3900 
+    62     871.8600   826.8600       114    873.4200   828.4200 
+    63     871.8900   826.8900       115    873.4500   828.4500 
+    64     871.9200   826.9200       116    873.4800   828.4800 
+    65     871.9500   826.9500       117    873.5100   828.5100 
+    66     871.9800   826.9800       118    873.5400   828.5400 
+    67     872.0100   827.0100       119    873.5700   828.5700 
+    68     872.0400   827.0400       120    873.6000   828.6000 
+    69     872.0700   827.0700       121    873.6300   828.6300 
+    70     872.1000   827.1000       122    873.6600   828.6600 
+    71     872.1300   827.1300       123    873.6900   828.6900 
+    72     872.1600   827.1600       124    873.7200   828.7200 
+    73     872.1900   827.1900       125    873.7500   828.7500 
+    74     872.2200   827.2200       126    873.7800   828.7800 
+    75     872.2500   827.2500       127    873.8100   828.8100 
+    76     872.2800   827.2800       128    873.8400   828.8400 
+    77     872.3100   827.3100       129    873.8700   828.8700 
+    78     872.3400   827.3400       130    873.9000   828.9000 
+    79     872.3700   827.3700       131    873.9300   828.9300 
+    80     872.4000   827.4000       132    873.9600   828.9600 
+    81     872.4300   827.4300       133    873.9900   828.9900 
+    82     872.4600   827.4600       134    874.0200   829.0200 
+    83     872.4900   827.4900       135    874.0500   829.0500 
+    84     872.5200   827.5200       136    874.0800   829.0800 
+    85     872.5500   827.5500       137    874.1100   829.1100 
+    86     872.5800   827.5800       138    874.1400   829.1400 
+    87     872.6100   827.6100       139    874.1700   829.1700 
+    88     872.6400   827.6400       140    874.2000   829.2000 
+    89     872.6700   827.6700       141    874.2300   829.2300 
+    90     872.7000   827.7000       142    874.2600   829.2600 
+    91     872.7300   827.7300       143    874.2900   829.2900 
+    92     872.7600   827.7600       144    874.3200   829.3200 
+    93     872.7900   827.7900       145    874.3500   829.3500 
+    94     872.8200   827.8200       146    874.3800   829.3800 
+    95     872.8500   827.8500       147    874.4100   829.4100 
+    96     872.8800   827.8800       148    874.4400   829.4400 
+    97     872.9100   827.9100       149    874.4700   829.4700 
+    98     872.9400   827.9400       150    874.5000   829.5000 
+    99     872.9700   827.9700       151    874.5300   829.5300 
+   100     873.0000   828.0000       152    874.5600   829.5600 
+   101     873.0300   828.0300       153    874.5900   829.5900 
+   102     873.0600   828.0600       154    874.6200   829.6200 
+   103     873.0900   828.0900       155    874.6500   829.6500 
+   104     873.1200   828.1200       156    874.6800   829.6800 
+   l05     873.1500   828.1500       157    874.7100   829.7100 
+   106     873.1800   828.1800       158    874.7400   829.7400 
+   107     873.2100   828.2100       159    874.7700   829.7700 
+   108     873.2400   828.2400       160    874.8000   829.8000 
+   109     873.2700   828.2700       161    874.8300   829.8300 
+   110     873.3000   828.3000       162    874.8600   829.8600 
+
+   163    874.8900   829.8900        215    876.4500   831.4500 
+   164    874.9200   829.9200        216    876.4800   831.4800 
+   165    874.9500   829.9500        217    876.5100   831.5100 
+   166    874.9800   829.9800        218    876.5400   831.5400 
+   167    875.0100   830.0100        219    876.5700   831.5700 
+   168    875.0400   830.0400        220    876.6000   831.6000 
+   169    875.0700   830.0700        221    876.6300   831.6300 
+   170    875.1000   830.1000        222    876.6600   831.6600 
+   171    875.1300   830.1300        223    876.6900   831.6900 
+   172    875.1600   830.1600        224    876.7200   831.7200 
+   173    875.1900   830.1900        225    876.7500   831.7500 
+   174    875.2200   830.2200        226    876.7800   831.7800 
+   175    875.2500   830.2500        227    876.8100   831.8100 
+   176    875.2800   830.2800        228    876.8400   831.8400 
+   177    875.3100   830.3100        229    876.8700   831.8700 
+   178    875.3400   830.3400        230    876.9000   831.9000 
+   179    875.3700   830.3700        231    876.9300   831.9300 
+   180    875.4000   830.4000        232    876.9600   831.9600 
+   181    875.4300   830.4300        233    876.9900   831.9900 
+   182    875.4600   830.4600        234    877.0200   832.0200 
+   183    875.4900   830.4900        235    877.0500   832.0500 
+   184    875.5200   830.5200        236    877.0800   832.0800 
+   185    875.5500   830.5500        237    877.1100   832.1100 
+   186    875.5800   830.5800        238    877.1400   832.1400 
+   187    875.6100   830.6100        239    877.1700   832.1700 
+   188    875.6400   830.6400        240    877.2000   832.2000 
+   189    875.6700   830.6700        241    877.2300   832.2300 
+   190    875.7000   830.7000        242    877.2600   832.2600 
+   191    875.7300   830.7300        243    877.2900   832.2900 
+   192    875.7600   830.7600        244    877.3200   832.3200 
+   193    875.7900   830.7900        245    877.3500   832.3500 
+   194    875.8200   830.8200        246    877.3800   832.3800 
+   195    875.8500   830.8500        247    877.4100   832.4100 
+   196    875.8800   830.8800        248    877.4400   832.4400 
+   197    875.9100   830.9100        249    877.4700   832.4700 
+   198    875.9400   830.9400        250    877.5000   832.5000 
+   199    875.9700   830.9700        251    877.5300   832.5300 
+   200    876.0000   831.0000        252    877.5600   832.5600 
+   201    876.0300   831.0300        253    877.5900   832.5900 
+   202    876.0600   831.0600        254    877.6200   832.6200 
+   203    876.0900   831.0900        255    877.6500   832.6500 
+   204    876.1200   831.1200        256    877.6800   832.6800 
+   205    876.1500   831.1500        257    877.7100   832.7100 
+   206    876.1800   831.1800        258    877.7400   832.7400 
+   207    876.2100   831.2100        259    877.7700   832.7700 
+   208    876.2400   831.2400        260    877.8000   832.8000 
+   209    876.2700   831.2700        261    877.8300   832.8300 
+   210    876.3000   831.3000        262    877.8600   832.8600 
+   211    876.3300   831.3300        263    877.8900   832.8900 
+   212    876.3600   831.3600        264    877.9200   832.9200 
+   213    876.3900   831.3900        265    877.9500   832.9500 
+   214    876.4200   831.4200        266    877.9800   832.9800 
+
+   267    878.0100   833.0100        319    879.5700   834.5700 
+   268    878.0400   833.0400        320    879.6000   834.6000 
+   269    878.0700   833.0700        321    879.6300   834.6300 
+   270    878.1000   833.1000        322    879.6600   834.6600 
+   271    878.1300   833.1300        323    879.6900   834.6900 
+   272    878.1600   833.1600        324    879.7200   834.7200 
+   273    878.1900   833.1900        325    879.7500   834.7500 
+   274    878.2200   833.2200        326    879.7800   834.7800 
+   275    878.2500   833.2500        327    879.8100   834.8100 
+   276    878.2800   833.2800        328    879.8400   834.8400 
+   277    878.3100   833.3100        329    879.8700   834.8700 
+   278    878.3400   833.3400        330    879.9000   834.9000 
+   279    878.3700   833.3700        331    879.9300   834.9300 
+   280    878.4000   833.4000        332    879.9600   834.9600 
+   281    878.4300   833.4300        333    879.9900   834.9900 
+   282    878.4600   833.4600        334    880.0200   835.0200 
+   283    878.4900   833.4900        335    880.0500   835.0500 
+   284    878.5200   833.5200        336    880.0800   835.0800 
+   285    878.5500   833.5500        337    880.1100   835.1100 
+   286    878.5800   833.5800        338    880.1400   835.1400 
+   287    878.6100   833.6100        339    880.1700   835.1700 
+   288    878.6400   833.6400        340    880.2000   835.2000 
+   289    878.6700   833.6700        341    880.2300   835.2300 
+   290    878.7000   833.7000        342    880.2600   835.2600 
+   291    878.7300   833.7300        343    880.2900   835.2900 
+   292    878.7600   833.7600        344    880.3200   835.3200 
+   293    878.7900   833.7900        345    880.3500   835.3500 
+   294    878.8200   833.8200        346    880.3800   835.3800 
+   295    878.8500   833.8500        347    880.4100   835.4100
+
+-------------------------------------------------------------------------------
+ Per il momento e' tutto signori, eventuali domande non fatele a me
+ perche' io non ho detto niente, non so niente e soprattutto
+ non c'ero, e se c'ero dormivo OK ??
+-------------------------------------------------------------------------------
+
+
+==Fonte: Vanadio x BFI ==
+
+The Raven
+Since `82

@@ -1,0 +1,551 @@
+----------------------------------------------------------------------------
+CAPITOLO 3: CRACKING IN WINDOWS                                            
+----------------------------------------------------------------------------                            
+
+* IN QUESTA PARTE SARO` PIU` SBRIGATIVO, SPECIE NEI CONCETTI DETTI E RIDETTI
+  NELLE PARTI PRECEDENTI. SOPRATTUTTO, VI SPIEGHERO` IL FUNZIONAMENTO DEL
+  DEBUGGER *
+
+Ah, dopo il cracking in dos, passiamo a Windows..... con tutti i suoi bei
+programmini shareware che funzionano a meta', funzionano per 30 gg, e cazzi
+vari..... BASTA!!!! Vi salvero' da questo martirio !!!
+Premetto che trattero' solo Windows95 con il relativo SoftICE, ma penso che
+le stesse nozioni valgano anche per Windows3.1 e NT (comunque, fatemi sapere.)
+Dunque, innanzitutto installatevi il SoftICE95 (lo trovate sulla rete, basta
+che andiate a cercare con AltaVista la parola "Hack" o "Crack" e vi 
+appariranno migliaia di siti con tutti i debuggers che volete....
+Una volta installato, vi conviene farvi nella vostra AUTOEXEC.BAT un'aggiunta
+del tipo:
+
+Choice /TN,10 Carico il SoftICE (S/N) ?
+If ERRORLEVEL 2 goto END
+:ICE
+* mettete qui il comando che vi aggiunge il programma di installazione
+ (es. c:\utility\sice95\sice.exe
+:END
+
+Inoltre, andate a modificare il file WINICE.DAT nella directory dove il
+debugger e' installato, modificando la riga con "X;" in questo modo:
+
+WATCH ES:DI;LINES 50;X;
+
+A questo punto assicuratevi di settare il driver della scheda grafica dal
+setup del SoftICE, dopodiche' siete pronti a debuggare. Su questo, faccio
+una piccola aggiunta: a me, ad esempio, il driver della S3 fornito con
+l'ICE non funziona, quindi tutte le volte devo settare Windows95 a 16
+colori, senno' appena entro nel debugger svalvola lo schermo......
+(questo per il SoftICE 2.0, con il 3.0 tutto funziona a meraviglia. Se
+avete il 2.0 andatevi a beccare i nuovi drivers al sito della NuMEGA, mi
+sembra www.numega.com... ma non sono sicuro!)
+
+3.1 Nozioncine sul funzionamento di Windows95 (penso vada bene anche per 3.1)
+
+Iniziamo con qualche delucidazione su come Windows lavora... che e' meglio!
+Dunque, dovete sapere che ad ogni cosa che accade sullo schermo (come ad
+esempio, l'apparire di una finestra, il click di un bottone, insomma tutto!)
+corrisponde una particolare API (funzione interna) del sistema operativo.
+Per farvi capire meglio, se il programma vuole aprire una finestra non fara'
+altro che usare le funzioni del sistema, e nel disassemblato vedrete, tra le
+altre, una CALL USER!OPENWINDOW (o roba del genere, non ho il debugger qui
+davanti e a mente non me lo ricordo...). Quindi, per i nostri loschi scopi
+basta intercettare alcune di queste chiamate, nella maggior parte dei casi
+quelle relative all'inserimento di testo oppure al click di un bottone.
+Per questo ci viene in aiuto il comando dell'ICE, BMSG.
+Questo comando senta un particolare BP che vi riporta al beneamato debugger
+ogni volta che questo intercetta una chiamata ad una specifica funzione del
+sistema. La sintassi e' la seguente:
+
+BMSG window-handle funzionedelsistema
+
+Mi spiego meglio: il Window-Handle non e' altro che il primo indirizzo che
+trovate nella tabella che ottenete con HWND taskname (spiegato dopo).
+Notate che accanto a questo valore, tra le altre cose, c'e' il nome dell'handle
+stesso. Bene, questo ci serve a identificare l'handle che vogliamo allacciare.
+Ad esempio, se avete un task di nome OMAR, e la finestra mostra:
+
+3 righe per inserire il testo (ad es. dati personali e SN)
+2 bottoni (es. OK, Cancel)
+
+Dando il comando HWND omar troverete 3 handle EDIT e 2 handle BUTTON (pi-
+altre cose). Dato che voi dovete inserire il SN (mettiamo) il vostro bersaglio
+sara' uno dei 3 EDIT, giusto? Ma quale dei 3 ? Di solito il primo, perche'
+quello dove inserire il SN di solito appare per ultimo (funziona cosi'....).
+Comunque, provate, tanto se beccate quello giusto non appena premete return
+vi ritorna al debugger.......
+Ah gia', le funzioni di sistema da intercettare....... eccone qualcuna che
+vi fara' sicuramente comodo:
+
+WM_GETTEXT            Come nell'esempio, quando dovete inserire qualcosa
+WM_COMMAND            Quando dovete cliccare un bottone
+GETWINDOWTEXT         Sempre per il testo, applicazioni a 16-Bit  *
+GETWINDOWTEXTA (o W)  Come sopra, ma per applicazioni a 32-Bit    *
+GETDLGITEMTEXT        Ancora per il testo,16-Bit                  *
+GETDLGITEMTEXTA (o W) A 32-Bit                                    *
+WM_MOVE               Per tornare al debugger quando apre una nuova finestra
+			   (da usare se i precedenti non funzionano)
+
+* = da usare con BPX al posto di BMSG (si ferma quando trova la call che
+    esegue la funzione, mentre con BMSG vi ritrovate dentro la funzione
+    di sistema..... vabbe', e' uguale. Io uso solo WM_GETTEXT e WM_MOVE,
+    con BMSG, poi fate voi.....)
+
+
+3.2 Esempio pratico di registrazione di uno shareware
+
+Capito bene il paragrafo precedente? Bene, cominciamo!
+Dunque, i comandi principali li sapete gia' (andatevi a vedere il capitolo
+1 paragrafo 2).... al SoftICE si accede con CTRL-D..... cosa c'e' ancora
+da spiegare? Boh...... tagliamo la testa al toro e facciamo subito un
+bell'esempio, cosi' si spiega tutto senza star a fare rigirii inutili.
+Dunque, prendete un bel programmino shareware di quelli che, ad esempio,
+funzionano 30gg e poi non vanno piu'.... tipo il QuickView Plus 3.0 32-Bit.
+Una volta installato, aprite un promptino del dos (infatti non vi crea l'icona
+essendo un tipo-plug-in del Netscape) e caricate ORDER32.EXE. Quindi, clickate
+su "Single User" poi su "Unlock by Phone". A questo punto, inserite il vostro
+unlock code (senza premere return, mi raccomando!), naturalmente scazzato, e
+premete CTRL-D per entrare nell'ICE.
+A questo punto, il primo passo da fare e' individuare il task corrispondente
+all'ORDER32. Difatti, non e' detto che quando stoppate con CTRL-D andiate a
+finire proprio nell'area di memoria riservata al programma.... anzi, diciamo
+che non ci andrete a finire mai in questa maniera!
+Bisogna fare quello che in gergo si chiama "PINPOINTING", ossia dobbiamo
+intercettare un messaggio che quella finestra di Windows manda al sistema
+operativo, in modo da entrare cosi' nel task. Ordunque, individuiamo il
+task inserendo TASK <return>. Apparira' una lista con (fra gli altri):
+
+TaskName SS:SP      StackTop  StackBot StackLow TaskDB  hQueue  Events     
+........  * GLI INDIRIZZI NATURALMENTE CAMBIANO!*
+Order32  0000:0000  005ED000  005F0000          306E    30D7    0000
+Spool32  0000:0000  0073D000  006C0000          246E    25D7    0000
+Systray  0000:0000  00415000  003F0000          156E    2561    0000
+........
+
+A questo punto, facciamo un bel HWND Order32, per avere una lista di tutti
+gli handlers del task. Otteniamo questo (sempre tra gli altri):
+
+ Window Handle   hQueue          SZ      QOwner  Name    Window Procedure
+ ........      *GLI INDIRIZZI CAMBIANO (E VE LO RIDIO!!!!)*
+ 01AC (2)        0E3F            32      ORDER32 Static  17DF:000052FA
+ 01A4 (2)        0E3F            32      ORDER32 Edit    17DF:00000BF4
+ 01B4 (2)        0E3F            32      ORDER32 Button  17DF:0000102E
+ 0C50 (2)        0E3F            32      ORDER32 Button  17DF:0000102E
+ ........
+
+In base alle cose spiegate nel paragrafo precedente, scegliamo come handle
+da pinpointare quello EDIT a 01B4 (anche perche' e' l'unico edit che vi appare).
+A questo punto, tornate al debugger con CTRL-D e premete return per far
+accettare il vostro input. Di colpo riapparira' l'ICE, e voi inizierete nello
+steppaggio.....fino ad arrivare a:
+
+ ......  (INDOVINATE UN PO'? COSA FANNO GLI INDIRIZZI?)
+ 014F:004049C8  ADD ESP,04
+ 014F:004049CB  TEST EAX,EAX
+ 014F:004049CD  JNZ 00404A29   < Se il SN Š sbagliato, non esegue il salto
+ 014F:004049CF  PUSH 20          e vi d... il messaggio di errore.
+......
+  
+Bene, con le tecniche che ormai avrete appreso (ossia, cercare sempre il
+jump condizionale precedente alla call che vi fa' uscire) non avrete difficolta'
+ad individuare nel JNZ indicato sopra la "chiave" per questo crack. Basta
+cambiarlo in JMP (con A 004049CD <ret> JMP 00404A29 <ret>) e..... bravi!
+Ora crakkate anche in Windows..... Azz, siete dei mostri!!!
+Naturalmente, per il cracking in Windows valgono anche le regole generali
+spiegate e rispiegate, potete settare dei BPX (con l'apposito comando) per
+evitare tutte le volte di ricominciare da capo, ecc... Unica cosa, data la
+possibilita' di intercettare direttamente la chiamata alla routine di
+accettazione dell'input con BMSG, non c'e' bisogno tutte le volte di cercare
+il loop che aspetta l'inserimento. Per quanto riguarda gli HERE, anche quello
+l'ho gia' spiegato nelle funzioni del debugger..... cos'altro c'e' ?
+Ah,gia': se siete nella merda fino al collo e volete cercare il vostro ECHO
+in memoria, una volta tornati al debugger dopo il BMSG, fate questo:
+
+ 1) inserite S 30:0 lffffffff 'il vostro SN'
+ 2) guardate gli indirizzi che trovate. Quelli buoni sono di solito quelli
+    a 30:80000000 e seguenti (il 30 e' fisso!). Tanto per controllare,
+    andate a vedere a questi indirizzi con D <indirizzo> e scorrendo la
+    DATA WINDOW con ctrl+frecce (o alt, non me lo ricordo. Comunque, e'
+    la finestra dove appare l'immagine della memoria). Molte volte qui
+    ci trovate direttamente, oltre a quello inserito da voi, il SN
+    giusto gia' calcolato!!
+ 3) mettete un BPR (breakpoint-on-range) ai vari indirizzi che trovate
+    fino a trovare quello giusto. Di solito, quello giusto e' quello dove
+    appaiono vicino al SN anche gli altri dati inseriti.
+ 4) da qui, procedete come sempre.
+
+Una nota sul Loader: lo potete usare, serve a farvi entrare nel debugger
+dall'inizio del programma, per eseguirlo passo passo..... ma sinceramente
+io non l'ho mai usato....
+
+Beh.... non so' cos'altro dirvi.... naturalmente, applicando queste nozioni
+generali, potete anche provare a crackare qualcosa di diverso dallo shareware.
+Ad esempio, provate con il Cubase 3.0, che ha la chiave hardware. Vi posso
+garantire che la protezione e' una vera puttanata. Basta entrare nel debugger
+"di rincorsa" non appena appare l'inizio del Cubase e mettere un BMSG WM_MOVE
+per farlo tornare quando appare la finestra con scritto "Chiave non inserita".
+Di qui, trovate il jump condizionale ed Š fatta.......
+
+------------------------------------------------------------------------------
+APPENDICE: PATCHERS, TSR, TRAINERS
+------------------------------------------------------------------------------
+
+1.1 Il PATCHER. Per distribuire i vostri crack!
+
+Dunque, che cos'e' un patcher? Semplicemente, e' un programma che vi permette
+di distribuire a giro il vostro crack. Cioe', contiene delle istruzioni che
+vanno a scrivere sul file originale in modo da "sproteggerlo". Dunque,
+bando alle ciance, via agevolo il mio PATCHER UNIVERSALE in Turbo Pascal 7,
+che potete compilare e usare voi.
+Premetto che, per fare dei patch dovete avere:
+
+1) I bytes originali e quelli cambiati (deducibili come spiegato, nel
+   SoftICE assemblando l'istruzione voluta e andando a vedere in memoria a
+   quali bytes corrisponde). Piu', naturalmente, un po' di bytes prima e dopo
+   quelli che volete cambiare.
+2) Un disk-editor (uno qualsiasi, io ho l'HEXED che si trova su internet)
+3) L' UNP, per scompattare gli eseguibili che, essendo crunchati, non vi danno
+   la possibilita' di trovare al loro interno i bytes desiderati. Anche questo,
+   si trova su internet.
+4) L'offset (cioŠ la posizione nel file) dei bytes da cambiare.
+   Lo vedete nel disk editor (mi raccomando, in decimale!)
+5) La lunghezza del file bersaglio, per evitare che il patcher possa
+   modificare file con nome uguale, ma magari versione diversa.
+
+//////////////////////////TAGLIATE QUI////////////////////////////////////////
+
+ {$I-}
+
+ (* Simply follow the comments inside the file to customize your patch *)
+ (* This proggy is TOTALLY free, i wrote it for myself to speed-up patching*)
+ (* However, if you keep the "written by XOANON" lines, i will be glad!*)
+ (* Hello to all crackerz/phreakerz/hackerz worldwide! *)
+ (* Compile with Borland Turbo Pascal 7 or higher *)
+
+ uses
+     dos, crt;
+
+
+ var
+    f : file of char;
+    c: char;
+    filnam: string [80];
+    filsiz: longint;
+    size: longint;
+    a, i, x : integer;
+ procedure drawscreen;
+  begin
+
+     writeln (' ---------------------------------------------------------
+-------------------');
+     write   (' -       ');
+     gotoxy (69,2);
+     writeln ('        -');
+     gotoxy (1,3);
+     writeln (' ---------------------------------------------------------
+-------------------');
+
+     textcolor (8);
+     gotoxy (10,2);
+     write   ('General Purpose Patcher 1.0 - Written by [>X0aN0n<] in 1996');
+     delay (140);
+     gotoxy (10,2);
+     textcolor (7);
+     write   ('General Purpose Patcher 1.0 - Written by [>X0aN0n<] in 1996');
+     delay (140);
+     gotoxy (10,2);
+     textcolor (15);
+     write   ('General Purpose Patcher 1.0 - Written by [>X0aN0n<] in 1996');
+     delay (140);
+     textcolor (7);
+     writeln;writeln;writeln;
+     write ('   ');
+     textcolor(15);
+     write ('[PrOgRaM NaMe]  : ');
+     textcolor (7);
+(* Write in the line below the name of the program *)
+     writeln ('Cubase Score 3.0 for Windows                            ');
+     write ('   ');
+     textcolor(15);
+     write ('[PaTcH DoNe By] : ');
+     textcolor (7);
+(* Write in the line below the author of patch *)
+     writeln ('Xoanon                                                  ');
+     write ('  ');
+     textcolor(15);
+     write(' [FiLe T0 RaPe]  : ');
+     textcolor(7);
+(* Write in the line below the name of the file to be patched *);
+     writeln ('CUBASESC.EXE                                            ');
+     write ('  ');
+     textcolor (15);
+     write (' [TyPe 0f PaTcH] : ');
+     textcolor (7);
+(* Write in the line below the type of the patch *)
+     writeln ('Dongle Crack -100%-                                     ');
+     write ('  ');
+     textcolor (15);
+(* Write in the line below the results obtained patching the file*)
+     write (' [ReSuLtZ]       : ');
+     textcolor (7);
+(* Write in the line below the results obtained patching the file*)
+     writeln ('Simply, now your Cubase works!                          ');
+     write ('  ');
+     textcolor (15);
+     write (' [ByTeZ ChAnGeD] : ');
+     textcolor (7);
+(* Write in the line below how many bytes the patch will go to change*)
+     writeln ('2                                                       ');
+     write ('  ');
+     textcolor (15);
+     write (' [NoTeZ]         : ');
+     textcolor (7);
+(* In the writeln lines below, you can add some notes (I.E. how to run the
+patch) *)
+     writeln ('Run this patch in your Cubase directory to crack it.    ');
+     write ('  ');
+     write ('                   ');
+     writeln ('Personally, i see my patch more stable than others, bcoz');
+     write ('  ');
+     write ('                   ');
+     writeln ('using it there are less "General Protection Errors".    ');
+     write ('  ');
+     write ('                   ');
+     writeln ('But, try it yourself.......');
+     writeln;
+     writeln;
+
+  end;
+
+ begin
+   clrscr;
+   drawscreen;
+   assign (f, 'CUBASESC.EXE'); (* Write here the name of file to be patched*)
+   filnam := 'CUBASESC.EXE';   (* Write here the name of file to be patched*)
+   filsiz := 2478080;         (* This is the lenght of file to be patched*)
+   reset (f);
+   size := filesize (f);
+   a := IOResult;
+
+   if a <> 0 then (*Error, file not found*)
+	     begin
+	     sound (220);
+	     delay(120);
+	     nosound ;
+	     writeln ;
+	     textcolor (15);
+	     write ('Error 1:');
+	     textcolor (7);
+	     write (' File ',filnam);
+	     writeln (' not found. Check your directory.');
+	     writeln;
+	     halt (1)
+	     end else    (* File found but filelenght doesn't match*)
+	     begin
+	     if size <> filsiz then
+			       begin
+			       sound (220);
+			       delay (120);
+			       nosound;
+			       writeln;
+			       textcolor (15);
+			       write ('Error 2:');
+			       textcolor (7);
+			       write(' File ',filnam);
+			       write (' must be ',filsiz);
+			       writeln (' bytes long.');
+			       writeln ('         Probably you have an incorrect/packed version.');
+			       writeln;
+			       halt (1);
+			       end else
+
+
+
+
+  (*Everything is OK, let's PATCH!*)
+       (* First, we check if the file is already patched*)
+       seek (f,585299);  (*File offset of byte 1*)
+       read (f,c);
+       if c <> #116 then  (*This is the ORIGINAL value of byte 1, decimal of
+course*)
+		   begin (*Now we patch the file to its original state*)
+
+  (*The following lines depends on how many bytes you have to change*)
+  (*In this case, there are 3 bytes*)
+  (*If you have more, simply copy the first 3 lines 2,3,4,5,etc. times*)
+  (*The bytes must be entered in decimal format, I.E the NOP code $90 must be
+entered as #144*)
+  (*In all these line you must enter the ORIGINAL value of the bytes*)
+
+		   seek (f, 585299); (* File offset of byte 1*)
+		   c := #116;     (* Byte to write *)
+		   write (f, c);
+
+		   seek (f, 585300); (* File offset of byte 2*)
+		   c := #2;       (* Byte to write*)
+		   write (f, c);
+
+		   sound (220);
+		   delay (120);
+		   nosound;
+		   writeln ('File already patched. Now, back to original state.');
+		   writeln;
+		   end else
+
+  (*The following lines depends on how many bytes you have to change*)
+  (*In this case, there are 3 bytes*)
+  (*If you have more, simply copy the first 3 lines 2,3,4,5,etc. times*)
+  (*The bytes must be entered in decimal format, I.E the NOP code $90 must be
+entered as #144*)
+
+       begin
+       seek (f, 585299); (* File offset of byte 1*)
+       c := #144;       (* Byte to write *)
+       write (f, c);
+
+       seek (f, 585300); (* File offset of byte 2*)
+       c := #144;       (* Byte to write*)
+       write (f, c);
+
+       sound (220);
+       delay(120);
+       nosound ;
+       writeln ('File successfully patched.');
+       writeln;
+       end;
+       end;
+end.
+
+//////////////////////////TAGLIATE QUI////////////////////////////////////////
+
+Beh, anche se i commenti sono in inglese (l'ho fatto per distribuirlo su
+internet..... la traduzione mi sembra superflua....) si dovrebbe capire bene.
+Basta andare a sostituire i valori indicati, se ci sono piu' bytes da cambiare
+si deve copiare alcuni pezzi pi- volte.... insomma, e' gia' tutto fatto.
+L'importante e' convertire i bytes in HEX in decimale, con una qualsiasi
+calcolatrice.... Avete notato la funzione di unpatching? Bellina eh?
+Una cosa da notare: quando non trovate i bytes nel file, puo' essere perche'
+gli indirizzi li cambia direttamente in memoria, e quindi nel file non
+trovate solo l'offset. Quindi, cercate magari qualche byte prima (magari
+segnatevi i bytes delle istruzioni PUSH e POP precedenti, che quelle le 
+trovate sempre) e andate a occhio. Tutto qua!
+
+1.2. I TSR. Quando il patcher non basta......
+
+Che cos'Š il TSR? Š un programma che va a modificare il contenuto della
+memoria in maniera dinamica, ossia mentre il programma viene eseguito.
+Serve principalmente quando il file magari e' compattato in una maniera
+proprietaria e non potete quindi trovarvi dentro i bytes.
+Premetto che un TSR non lo so' scrivere, quindi, per evitare di sbattere le
+palle a Moonshadow per farmelo in assembler, vi dico come usare un programmino
+che trovate insieme al G3X, il TSRCRACK.
+Dunque, funziona cosi':
+ 1) Create un file testo del tipo
+
+   INT numero < interrupt al quale si aggancia. Deve essere nello stesso CS
+	       dell'istruzione. Per trovarlo, usate la funzione INT MONITOR
+	       del G3X su un interrupt di uso comune, es. il 21
+
+   IF CS:0000:ipdell'istruzione = byte1 byte2 byte3 byte4 (....)
+
+   THEN CS:0000:ipdell'istruzione = bytenew1 bytenew2 bytenew3 bytenew4 (...)
+
+ 2) Tornate al DOS e scrivete TSRCRACK nomefile.txt. Et voila', TSR pronto.
+    Naturalmente, lo dovete caricare SEMPRE, prima del programma protetto.
+
+Questo metodo vale solo per i programmi che non usano il DOS4GW, e comunque
+che non usano dos-extenders. Per questi particolari programmi, bisogna creare
+dei TSR ad-hoc, e io..... non sono ancora in grado. Al limite, chiedete a
+Moonshadow....
+Comunque, niente paura: la quasi totalita' dei programmi (anzi, diciamo pure
+tutti) non richiede TSR. Basta un patch!!!
+
+1.3. Trainers, come finire i giochi senza cheat-mode!
+
+Qui saro' sbrigativo. Il metodo descritto funziona solo con i giochi non in
+protected mode (quindi niente DOS4GW o extenders vari).
+
+ 1) Caricate il G3X
+ 2) Caricate il gioco, iniziate a giocare
+ 3) Entrate nel G3X e scegliete GLOBAL ANALYSIS, BYTE, <return>
+ 4) Tornate al gioco e perdete una vita o fate diminuire l'energia o il tempo
+ 5) Entrate nel G3X, GLOBAL ANALYSIS, DECREASE
+ 6) Ripetete dal punto 4 al 5 per un po' di volte, fino a quando non trovate
+    una locazione giusta..... cioe', con i valori es. 04 03 02 01
+ 7) Mettete un BP Read-Write a quella locazione
+ 8) Tornate al gioco, riperdete una vita/energia/tempo
+ 9) Quando torna al debugger (se la locazione e' giusta) segnatevi i bytes
+    dell'istruzione (di solito un DEC) e da qui in poi, procedete come
+    se fosse un crack qualsiasi (disk editor, patcher)
+
+Non vi allego il patcher modificato, tanto penso che la cosa sia intuitiva.
+Praticamente, basta cambiare le scritte, il procedimento a' lo stesso.
+Considerate che quando fa' il patch mette il trainer, quando fa' l'unpatch 
+riporta il gioco in condizioni normali.
+Essendo ora tutti i giochi in protected mode, comunque, questo metodo funziona
+solo con i giochi vecchi..... oppure con gli emulatori tipo C64S (pero' in
+questo caso non fate il patcher, meglio caricare il G3X in memoria ogni 
+volta che si vuol giocare!). Se volete fare trainer per i giochi in DOS4GW,
+meglio prendere qualcosa tipo il GameWizard32 (lo trovate su internet).
+
+------------------------------------------------------------------------------
+CONCLUSIONI E CONSIDERAZIONI FINALI
+------------------------------------------------------------------------------
+
+Dunque, siamo alla fine. Spero che questo tutorial vi sia servito, io da parte
+mia ho cercato di farlo nel migliore dei modi, accessibile a tutti.
+Non pensate comunque di riuscire a crackare qualcosa alla prima, il tutto 
+richiede logicamente un po' di pratica. Man mano che proverete, comunque, 
+troverete tutto piu' facile di volta in volta.
+Per trovare i programmi necessari (SoftICE x Windows95, se volete anche per
+DOS, e il disk editor), basta cercare con AltaVISTA o simili la parola "Hack"
+o "Crack" o "Phreak". Troverete migliaia di siti, basta cercare un minimo
+e troverete quello che cercate.
+Inoltre, scarivatevi *SUBITO* la guida di +ORC (la migliore al mondo e penso
+nell'universo) .... le varie parti abbastanza aggiornate le trovate a
+www.dodgenet.com/~kwantam nella sezione "Hacking Textz". Ci sarebbe anche il
+sito quasi-ufficiale di +ORC, ma quello non ve lo dico.... vi rovinerei il
+divertimento nel cercarlo..... sappiate solo che con i vari spiders non lo
+troverete mai, quindi .... l'unica a' rovistare tra i vari links nelle pagine
+hackers per vedere se scovate qualcosa! Eh eh eh..... 
+Sicuramente ho tralasciato qualcosa (e chi non lo fa'), ma d'altra parte non
+potevo certo spiegarvi TUTTE le situazioni (cambiano sempre)....
+Del resto, basta un po' di pratica e troverete da soli le risposte alle vostre
+domande! Ah, dimenticavo: >>>>>NON MI E-MAILATE TANTO NON VI RISPONDO<<<<<<.
+(O, swanne, mi raccomando eh? ir tegame di tu ma se mandi ir mi indirizzo a
+giro..... un mi vorrai mia fa' arresta' eh? Senno' poi l'artiolini ganzi chi
+te li scrive..... via swanne, ammodino eh, che se stai bono ti fo' anche
+ir crachin manua' in livornese!)
+
+Special Greetings to:   MoonShadow (Assembler Consultor)
+                        All the PiNNACLE Crew (Zima Man,Hyper,Blaze,Joker,
+                                               Silky,MrMox,X-con and
+                                               the others)
+                        Trencher   (For the long time spent together in
+				    cracking..... and for helping me
+				    in programming the first patcher i 
+				    did!)
+			Colonel    (Moral Support)
+			Beppe      (Moral Support)
+			All the rest of MeltBody Team (Moral Support)
+			Mamma e Babbo (Per le sigarette fornite... in tutto
+				       penso 2 pacchetti in 1 settimana di
+				       duro lavoro)
+
+
+H       A       P       P       Y       
+		C       R       A       C       K       I       N       G  
+
+
+
+					      .   .   .   .
+			***                 ** * * * * * * **
+		       ***                  **  .   .   .  **
+		***   ***  ***   ****** **  **   ***   **  **
+		 *** ***  ** **  **  ** *** **  ** **  *** **
+		   ***   **   ** ****** ** *** **   ** ** ***
+		  ** **   ** **  *** ** **  **  ** **  **  **
+		***   ***  ***   **  ** **   *   ***   **   *
+               ***       **     **       ...................
+                ***            ****     .PiNNACLE Industries.                
+                  **            **      .   Chief Cracker   .
+                                         ...................
+

@@ -1,0 +1,169 @@
+           #####  
+         #########                           
+        #######(@)#  
+       ############--<
+       ####
+       #####                     TOR BELLA MONACA
+        #####                        THE BEST                                   
+          ####     ####### ###     ####      ####  #####   #######
+    #       ####  ######## ###    ######     ####  ####   #########  
+   ##        ########  ### ###   ##   ###    #########   ##      ## 
+  ###        ########  ### ###  ##########   #########   ########## 
+ ####       #### ####  ### ### ###     ####  ###  #####  ##
+###############  ####  ##########       #### ###   ##### #########  
+ #############   ####  #########         #######    ############# 
+
+                                                                  ####     ####
+                                                                 ######   ######
+                                                                     ##      ###
+                                                                  #####      ###
+                                                                     ##     ###
+                                                                 ######    #####                                                                  ####    ######
+*** Questo cookbook è stato scritto interamente in VIM **
+         *** risoluzione consigliata:1024x768 ***       
+
+Eccoci finalmente! il mio primo cookbook è arrivato!!! 
+ho speso più di un mese per scrivere questo cookbook, in quanto
+era difficile trovare argomenti che non siano già stati trattati,
+dato l'ottimo lavoro fatto dagli anarchici italiani coi loro cookbook.
+Detto questo passiamo al 
+                              DISCLAIMER: 
+                                                                                 
+Io "SNAKE32" dichiaro che quanto scritto in questo e nei successivi txt,
+contenuti in questo CooKbook è da considerarsi a scopo puramente informativo.
+QUALSIASI CONSIGLIO O INCITAZIONE ALLA VIOLENZA E/O AL TERRORISMO,
+è DA CONSIDERARSI UNO SCHERZO.
+            
+            Mettete in atto quei consigli a vostro rischio e pericolo.
+
+
+                                MANIFESTO
+______________________________________________________________________________
+
+IO CREDO NELL'ANARCHIA PIù TOTALE, LA SOLA VIA PER ESSERE LIBERI è NON ESSERE
+CONTROLLATI IN NESSUN MODO DA QUALSIASI TIPO O FORMA DI AUTORITà, INVECE SI è
+SCOPERTO CHE ANCHE LE PUBBLICITà DEL BALSAMO CONTENGONO IMMAGINI IPNOTICHE PER
+FARTI PIACERE FOTTUTAMENTE IL PRODOTTO. MA QUELLE SONO LEGALI, COME LE SOSTANZE 
+PER PROVOCARE DIPENDENZA MESSE NEL FILTRO, E NEL TABACCO DELLE SIGARETTE IMPOSTECOME MONOPOLIO DI STATO. PERò LA MARIJUANA CHE NON PROVOCA DIPENDENZA è 
+ILLEGALE !! FANCULO A TUTTO E TUTTI!
+SE UNA COSA NON VI STA BENE SPACCATE TUTTO! 
+SE QALCUNO VI OSTACOLA UCCIDETELO!
+SE QUALCUNO VI FA UN TORTO TORTURATELO! 
+NON ASPETTATEVI CHE LE AUTORITà FACCIANO QUALCOSA PER VOI, 
+SONO LE PRIME A TOGLIRVI LA LIBERTà.
+LIBERATE L'ISTINTO ANIMALE!!!
+DATE SFOGO AL VOSTRO DEMONE INTERIORE!!
+
+SNAKE32
+________________________________________________________________________________
+
+
+                            
+_____LEGENDA_____ 
+|---------------|
+| H=hacking     |
+| P=preacking   |
+| E=elettronica |
+| C=chimica     |
+| D=diritto     |
+| F=fumo        |
+| A=anarky      |
+|---------------|
+  
+
+FILE	Titolo			                         Autore	     Tipo
+
+|001	Bruciare gli antitaccheggio                      SNAKE32      E
+|002	Produrre polvere da sparo in casa                SNAKE32      C
+|003	Che bomba la tua playstation !!!                 SNAKE32      A/E
+|004	Profuma l'aria con le stinky bomb!               SNAKE32      A/C
+|005	Date un retrogusto all'insalata con l'arsenico   SNAKE32      A/c
+|006	W il cloroformio!                                SNAKE32      A/C
+|007	Metti un piede qui! Boom!!!                      SNAKE32      A/E
+|008	Queste casse suonano una bomba! Ka Boom!!!       SNAKE32      A/E
+|009	Costruirsi un piede di porco                     SNAKE32      A
+|010    Manganello elettrico!(e che sò na guardia???)    GLADIUS      A/E
+|011    Scardina qualsiasi sistema operativo in 5 minuti SNAKE32      H
+|012    Usare linux esclusivamente dalla bash            SNAKE32      H
+|013    Comandi della bash usati per l'hacking           SNAKE32      H
+|014    Accesso come root scavalcando il bootloader      GLADIUS      H
+
+
+
+
+
+Note sulla diffusione di questo file:
+questo cookbook è stato stampato in un unica copia autofinanziata,
+quindi copiare o modificare, una o più parti di questo cookbook
+senza il consenso scritto (anche per meil) dell'autore (SNAKE32)
+vi costerebbe una multa (o la morte se vi trovo prima io).
+è invece possibile inculedere uno dei seguenti txt nel 
+vostro cookbook, a patto di dichiarare espressamente chi è l'autore 
+(SNAKE32 E/O GLADIUS)
+
+
+
+
+
+RINGRAZIAMENTI:
+
+
+Gladius:   Uno dei più gran figli di puttana che esistano al mondo,
+           non per niente è uno dei miei migliori amici :))
+
+Aldo:      Ti sei fatto sbattere al gabbio come un fesso per trasporto 
+           di esplosivo mentre eri a fare dei test :)         
+
+Grimm:     L'uomo che ha inventato l'alcolismo! 
+           (2 bottiglie di limoncello ogni primo maggio)    
+
+Anarchici: Tra cui tutti gli scrittori di cookbook come: 
+           AVATAR(AVA666), BRIGADIST, RAVEN, TECHNO KNIGHT, BARTX. 
+           Semplicemente grazie di esistere. 
+
+
+Linus:     C'è bisogno di dirvi chi è costui? se si, ditelo 
+           che vi schiaffeggio a enciclopediate infomatiche 
+
+
+MTV:       OK OK non c'entra molto, ma è una goduria pazzesca fare esperimenti
+           mentre ascolti le playlist o ti godi il trl.
+
+________________________________
+
+
+SF(SPECIAL FUCKZ):
+
+Pullotti:  Siete la rovina della società, chiamate noi terroristi ma voi
+           non siete altro che delinquenti legalizzati, uomini 
+           di merda con la divisa.
+
+Carramba:  Pur che habbia fatto un anno di militare accettate chiunque, 
+           spesso e volentieri vengono mandati di ronda degli idioti analfabeti,
+           che se ti trovano a fare qualcosa di sospetto,  non sapendo applicare           la legge, che dice espressamente che in assensa di prove 
+           non possono trattenervi, vi portano in caserma a farvi scassare 
+           le palle dai superiori e farvi perdere tempo, sperando che 
+           confessiate quello che stavate facendo.
+          
+
+Fascisti:  La maggior parte non sanno fare altro che scassare 
+           le palle e dire "DUX MEA LUX " non sapendo nemmeno 
+           che grande uomo fu veramente il Duce.
+
+Comunisti: Ancora peggio dei fascisti, non solo non sanno che
+           grande uomo fu il Duce, ma la maggior parte dice cose senza 
+           alcun senso, sfornando cazzate continue sul "Che", che alla 
+           fine nessuno di loro sa relamente chi sia stato e cosa habbia
+           fatto per il popolo.  
+
+Militant: Mi rifiuto di riconoscervi come anrachici! voi volete solo
+          uccidere la gente! uccidere qualcuno senza motivo è sbagliato!
+          sono solo ipocriti! dicono di odiare il genere umano però uccidono
+          solo chi gli sta sulle palle, si definiscono anarchici e poi
+          spesso fanno parte delle forze dell'ordine per occultare 
+          i loro omicidi.  
+
+_________________________________
+
+
+

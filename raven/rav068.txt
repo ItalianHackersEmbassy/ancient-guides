@@ -1,0 +1,123 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Vari inneschi per bombe, piu' due info non confermate.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La maggior parte di queste idee sono prese dal libro
+
+             L'artificiere (the tick tock man)
+                       Terence Strong
+
+L'ho divorato! Leggetelo, anche se tutte le idee utili le ho
+trascritte qui (ma un paio sono mie). Non ho solo copiato, quel
+bastardo ha tagliato quasi tutte le info davvero utili... Di base c'ha
+messo le idee, io le realizzo.
+
+Il circuito di cui si parla di seguito e' semplicissimo:
+
+
+OOOOOOOOO------------pila o alimentatore--------interruttore
+O bomba O                                  (o innesco: quelli
+OOOOOOOOO                                  qua sotto in pratica)
+  I                                                  I
+  \--------------------------------------------------/
+
+Ecco gli inneschi:
+* cellula fotoelettrica
+E' un componente elettrico che normalmente blocca la corrente, ma la
+fa passare in presenza di luce. Mettete questo tra alimentatore ed
+esplosivo e quando la zona sara' illuminata... BOOM!
+
+* materassino
+Avete presente quei cuscinetti gonfiabili che quando li premete fanno
+"squeak"? Bene, togliete il fischietto, mettete al suo posto una
+cannuccia. La cannuccia dovra' terminare all'interno di un contenitore
+e soffiera' aria su due lamelle metalliche (alluminio ad esempio) in
+modo che quando soffia, le due si toccano e chiudono il circuito.
+Segue schema ASCII
+
+    I
+    V
+
+/------\         /--------\
+I      I         I   _ ___I circuito
+I      ============= | i  I
+\------/         I        I
+materassino      \--------/
+con cannuccia     contenitore
+
+Lo so fa schifo ma usate un po' di fantasia. Bene, quando qualcuno
+cammina sopra il vs materassino, la cannuccia soffia sulla lamella di
+alluminio che tocca l'altro polo, il circuito si chiude... BUM!
+Piazzate il materassino sotto una mattonella, sotto la sabbia...
+
+* cartoncino nel libro
+Classico pacco-bomba: scavate all'interno del libro in modo da metterci
+abbastanza esplosivo + l'alimentatore, e fate in modo che l'
+interruttore siano due lamelle separate da un cartoncino che esce dal
+libro: quando uno lo sfila... inutile dirlo!
+
+* Bulbo al mercurio
+Questo e' bellissimo: si tratta di un piccolo contenitore pieno per
+meta' di mercurio, che come sappiamo conduce elettricita', essendo un
+metallo. Nell'altra meta', poco sopra il mercurio, ci saranno i due
+poli del solito circuito, che pero' NON TOCCANO il mercurio.
+ecco lo schema:
+
+     V-------------
+     V   __________
+  ___V___V__
+ /   V   V  \
+/            \
+I~~~~~~~~~~~~I      ~ = mercurio
+I~~~~~~~~~~~~I
+\____________/
+
+Cosa succede? Quando il tutto si agita, il mercurio entra in contatto
+coi due poli chiudendo il circuito... E basta un piccolo urto!
+Figuriamoci se lo montiamo su un'automobile...
+
+* assicella nella molletta
+Questa e' davvero banale:
+
+ _____________  sarebbe una molletta...
+ \_____o____X/
+  -----o ===================assicella
+ /__________X\
+
+Inutile dire che le due X sono i due poli e che si toccherebbero senza
+l'assicella... Tutto sta a legare tale assicella ad un filo, che poi va
+teso in terra o messo a mo' di interruttore (sapete, nelle cantine).
+Ottimo per le mine.
+
+* Interruttore
+Questa e' proprio stupida (non nel senso di inefficace, pero'):
+smontate la piastra dove c'e' l'interruttore della luce e prendete i
+due fili. Attenzione che ci passa corrente! Tagliateli, e al posto
+dell'interruttore fateli andare a finire all'esplosivo... Che potrete
+nascondere anche lontano. In un bagno pubblico non dev'essere male.
+
+Okay, credo di avervi dato abbastanza idee. Gia' che ci sono, vi do'
+anche un altro paio di dritte dal libro, che pero' non riguardano
+gli interruttori. Le metto qui perche':
+1) Sono info non complete
+2) Sono troppo poche per un nuovo file.
+
+Ecco qui:
+L'idrossido di sodio (SOH-  -?-) prende fuoco a contatto con l'acqua
+ Indovinate cosa si puo' fare... Fumogeno + impianto antiincendio
+ a pioggia... Io non vi ho detto niente...
+
+ricetta: ANS. nitrato d'ammonio (fertilizzante) e zucchero a velo.
+Purtroppo non dice le quantita'. Lo zucchero ha il solo compito di
+frenare la combustione. Dovrebbe innescarsi con l'elettricita' e col
+calore, ma non ne sono sicuro.
+
+The Raven
+Since `82

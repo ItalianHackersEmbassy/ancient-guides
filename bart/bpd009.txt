@@ -1,0 +1,46 @@
+                      bartx personal diary        releas 1.0
+
+ Tutto il materiale contenuto in questo articolo ha fini eslusivamente informativi ed  
+educativi. Io Bartx non mi ritengo in alcun modo responsabile dei danni causati a cose o  
+         persone dall'uso delle informazioni contenute in questo articolo.
+  Pertanto il lettore si assume ogni genere di responsabilita' per l'uso che farà delle  
+                    informazioni contenute in questo articolo.
+Siete pregati di non postare questo articolo in newsgroup e di non diffonderlo se non in  
+                                  forma originale.
+
+
+**********************************  La password del bios **********************************
+Quante volte ci è capitato di trovarci d'avanti ad un pc, e di bloccarci a causa della 
+famosa password del bios?
+I modi per eludere la suddetta noia sono molteplici, con usi diversi a seconda delle
+circostanze:
+
+1. Le password standard, sono password impostate dal produttore del bios. Sono le prime 
+che consiglio di provare, soprattutto se l'unico accesso che avete al pc è quando ci
+sono altre persone ed è spento.
+
+2. Se invece avete accesso al pc acceso, allora potete adoperare un apposito programmino 
+che trova la password del bios. il programma cambia da bios a bios.
+
+3. Se siete soli con il pc, allora potete permettervi il lusso di aprire il case, 
+togliere la batteria del bios, accendere il pc, spegnere dopo che apparirà il messaggio di
+errore del bios, rimontare la batteria, chiudere il case, e accendere il pc che non 
+ha più la password. Non dimenticate di entrare nel bios e di caricare le impostazioni
+del bios con la funzione "load setup defaults". A questo punto, potete anche cimentarvi a 
+trovare una password da sostituire a quella precedente. ;-)
+
+Il allegato:    1. lista di password standard
+		2. I programmi per trovare le password per ami bios ed award bios
+
+
+
+            ######                                    
+            ##   ##                #                  
+            ##   ##               ##                  
+            ##   ##   ####   ######## ##  ##          
+            ######   #   ##  ##   ##  ##  ##          
+            ##   ##    ####  ##   ##   ####           
+            ##   ##   ## ##  ##   ##    ##            
+            ##   ##  ##  ##  ##   ##   ####           
+            ##   ##  ##  ##  ##   ##  ##  ##          
+            ######    #####  ##    ## ##  ##          

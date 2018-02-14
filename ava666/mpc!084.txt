@@ -1,0 +1,72 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     L'AUTORE, JANKEE, DECLINA OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- COME SPEDIRE E-MAIL DA UN GREEN E TRARNE UN BUFFO VANTAGGIO... -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ecco come e' possibile mandare E-MAIL mostrando l'indirizzo che si vuole
+(fbi@fbi.gov; cia@cia.gov; salve@tutti.com; usate la fantasia...) con il
+Green di TIN.
+
+
+ti scrivo dal num. verde tin (167012837)
+dunque:
+per usare l'e-mail studia prima la guida di lord Shinva sull'uso di telnet e
+smtp il passaggio e': telnet 195.31.190.65 25 dove 195.31.190.65 e' il sito
+web.tin.it e 25 la porta dell' smtp
+
+P.S.: 
+per fare questo devi caricare il prompt di dos
+
+...
+.ti verra' eseguito il prog telnet, attento a non fare errori, devi scrivere
+tutto alla perfezione se cancelli il comp confondera' le informazioni
+
+X spedire un' email :
+mail from: indirizzo che vuoi tu (anche di qualcun'altro o inesistente)
+ poi :
+rcpt to: destinatario
+data
+scritto data il comp. ti dara' istruzioni
+dovrai scrivere il msg
+premere invio
+e su una riga vuota fare un punto per chiudere il msg, poi invio e "quit" per
+uscire. Ed il gioco e' fatto.
+
+il sito per rollare meglio, invece e':
+www.yi.com/home/TodRod/cannabis/itabmat.html
+
+
+P.S.:
+un metodo migliore per scrivere e-mail da qui e' scriverle e salvarle
+in txt poi fare copia del testo e incolla su telnet
+
+P.S.2:
+per spedire file non so ancora come fare ma ci sto lavorando, anche per
+visualizzare la posta dalla propria casella e-mail
+
+pre quanto riguarda le e-mail dal num verde : ho trovato questo
+indirizzo grazie a wingate (lo scan) inoltre non e' possible correggere i msg
+perche' dove ci sono le correzioni rimangono errori e segni.
+
+Jankee
+
+
+P.S. by AVA666: Il mio consiglio e' di utilizzare questo 'servizio' per il
+                puro divertimento o per comunicazioni non importanti (non
+                vogliamo che leggano le nostre E-MAIL o no?)
+
+
+  GRAZIE A 'Jankee',
+AUTORE DI QUESTO FILE
+
+         by
+     Å        Å
+     ³ AVA666 ³
+     ~~~~~~~~~~
+
+

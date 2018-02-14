@@ -1,0 +1,43 @@
+Shocker
+
+
+Basta con i circuiti incomprensibili dai pezzi introvabili, anche quelli come me, a digiuno di
+elettronica, hanno il diritto di folgorare la gente !!!
+Ed ecco da cosa sono riuscito a realizzare il mio Shocker :
+
+1 Flash removibile per macchine fotografiche (Potete rubarlo al supermercato)
+2 Aghi uguali (Piu' lunghi possibile)
+1 Interruttore a Pulsante (Normalmente aperto)
+Un accendino
+Un giravite
+Un saldatore
+
+Aprite il Flash, e noterete che dalla parte che si aggancia alla macchina fotografica, ci sono 2
+contatti (Che possono essere anche dei puntini metallici dietro ai quali ci sono i cavi).
+Quello che dovete fare, è collegare i due cavi sopracitati, all' interruttore a pulsante, ed
+avrete realizzato cosi' il pulsante per scaricare la scossa. Per il resto, basta staccare i due
+cavi che vanno alla lampadina, e saldarli ai due aghi separati. Il circuito dovrebbe ora
+funzionare, ma se vogliamo fare le cose meglio, possiamo farlo rientrare nel suo comodo involucro
+originario, il quale sara' sicuramente di plastica. Non dovete fare altro che riscaldare gli 
+aghi con l' accendino, e perforare la plastica nel punto in cui intendete farli fuoriuscire. E'
+Consigliabile tenerli ad una distanza minima di 1 cm. Per quanto riguarda il pulsante, fate 
+altrettanto con il giravite riscaldato, e inserite l' interruttore e fissatelo col suo bullone.
+Come funziona ???
+Bene, miei Einstein: noterete adesso sul flash richiuso, un interruttore a levetta 
+(Sempre chiuso-Sempre aperto) e uno a pulsante (Quello messo da voi Noralmente aperto). Quando
+chiudete il circuito con la levetta su ON, il condensatore si riempe fino ad illuminare la spia.
+A questo punto potete conficcarlo nelle carni di qualcuno e premere il pulsante.
+
+N.B.: Quando l' ho costruito, mi e' risultato inutile l' inserimento del pulsante, infatti a
+condensatore carico, nonappena gli aghi toccano un conduttore (Non l' ho provato ancora sugli
+umani :) scaturiscono delle impressionanti scintille e in prossimita' delle punte degli aghi, si
+formano dei piccoli buchi.
+
+Prossimamente cerchero' di misurarne l' output con un... ehm...eh... un... un misuratore :)
+
+
+
+
+bRiGa
+
+

@@ -1,0 +1,56 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Thermite.
+~~~~~~~~~
+
+Thermite. What's the italian for it? Dunno... Ovvero: Come si traduce
+in italiano Thermite? Non ne ho idea ne' ho voglia di prendere il
+dizionario, pero' e' un composto distruttivo, che e' cosa buona e
+giusta, e vi dovete accontentare.
+
+Occorrente:
+Ossido di ferro (ruggine in pratica)
+Alluminio
+
+Ecco un metodo veloce per ottenere la ruggine:
+
+
+- Prendi un convertitore a corrente continua, aprilo e separa i fili,
+  sguainali.
+- Prendi una bacinella d'acqua e aggiungi sale.
+- Accendi il convertitore (credo che in pratica sia un trasformatore a
+  corrente continua, dovrebbe andar bene anche una serie di batterie) e
+  metti i fili in acqua. Uno di questi fara' piu' bolle dell'altro,
+  questo e' il polo positivo (+). Attenzione: se non testi il tutto
+  per bene, otterrai l'opposto chimico della ruggine: la ruggine acida
+  (che qui e' inutile, anche se ha altri usi). Lascia il tutto cosi'
+  per cinque minuti.
+
+- Ora attacca un chiodo o un oggetto ferroso al cavo positivo da una
+  parte e al negativo dall'altra. Lascialo cosi' per 8 ore e poi
+  rimuovi la ruggine dal chiodo. Ripeti la procedura.
+
+- Alla fine, lascia evaporare l'acqua rimasta per ottenere altra
+  ruggine.
+
+Okay, ora hai abbastanza ruggine (che comunque puoi anche procurarti in
+altro modo). Polverizza la ruggine e riscaldala (magari in un pentolino
+o pirex) fino a quando diventa rossa. Ora mischiala con l'alluminio, le
+proporzioni sono ALLUMINIO: 8 -- RUGGINE: 3
+
+Okay, hai fatto la Thermite. Il problema e' che richiede MOLTISSIMO
+calore per accendersi, piu' di una fiamma ossidrica. Usa del magnesio:
+brucialo e usa il suo calore per accendere la Thermite. ATTENZIONE:
+Nella combustione la Thermite genera moltissimo calore, fonde anche il
+metallo: non provatela a casa, ma sulle cabine telefoniche!
+
+== Fonte: The Jolly Roger ==
+
+The Raven
+Since `82

@@ -1,0 +1,139 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- ALCUNE COSETTE DA HACKER -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Volete rovinarvi il computer? Seguite le istruzioni passo passo, ci riuscirete
+meglio. Se non funziona provate con il martello.
+
+(Premetto affermando che io NON SONO UN HACKER)
+
+Un HACKER e' una persona che (in genere utilizzando un modem) e' in grado di
+'superare' dei sistemi di sicurezza applicati su computer. (si tratta di una
+definizione molto restrittiva, ma che introduce quanto vado a spiegare)
+
+Il primo problema che potrebbe sorgere e' dato dalle password del BIOS.
+Come si possono eludere? Esistono vari modi, si dividono in:
+- Da fare dopo che chiede la password (quando si e' gia' 'dentro')
+- Da fare prima che chieda la password (quando si e' ancora 'fuori')
+
+<Da fare dopo che chiede la password>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E' il sistema piu' facile da utilizzare, ma l'importante e' avere gia' superato
+la PW. Devi utilizzare un programma che estragga la PW di BIOS (ne esistono
+molti). Li puoi trovare sulla Rete (se cambia qualcosa fatemelo sapere):
+"ftp://oak.oakland.edu/simtel/msdos/sysutil/amis2990.zip"
+
+<Da fare prima che chieda la password>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Questo e' piu' complicato... anche perche' dovrai aprire il computer...
+Allora devi fare cosi':
+- Accendi il computer ed entra nella schermata di SETUP (in genere bisogna
+  premere DEL o ESC per entrarci)
+- Scriviti TUTTE le informazioni e le configurazioni
+- Spegni (e stacca la spina)
+- Scoperchialo e mettilo per terra in modo da poter vedere, ed avere accesso,
+  al lato della scheda madre in cui c'e' il processore
+- Se vedi una sorta di batteria rotonda ('discoidale') toglila e lascia il
+  computer senza la batteria per 15/30 minuti. Rimetti la batteria
+- Se hai accesso ai diagrammi del circuito della scheda madre, guarda se trovi
+  il jumper della PW o del CMOS. Nel caso mettilo in ON e poi in OFF
+- Cerca una batteria blue saldata, con un Jumper. E' il jumper per la
+  connessione ad una batteria esterna. Sposta il J. per resettare il CMOS
+- Chiudi il computer
+- Riaccendi, entra nel setup e rimetti le configurazioni precedenti
+
+Dovrebbe funzionare! (se ci fossero delle imprecisioni o errori gradirei se me
+li segnalaste. Grazie!)
+
+------------------------------ UPGRADE By 'Blum' -----------------------------
+Riguardo le tecniche da utilizzare prima che ti chieda la passw, oltre che
+aprire il computer c'e' l'utilizzo di passw standard. 
+Ecco quelle che conosco per Bios Award:
+
+589589
+ALFAROMEO
+AWARD_SW
+Condo
+j332
+lkwpeter
+
+il funzionamento di una o di un'altra dipende dalla versione del Bios
+
+>Blum<
+------------------------------------------------------------------------------
+
+E ora... Ancora AVA666!
+
+Altri problemi ci sono gentilmente offerti dalle PASSWORD degli Screen Saver.
+Anche qui bisogna 'lavorare' dopo essere gia' entrati. Distinguiamo:
+- PW degli S.Saver di Windows 3.1
+- PW degli S.Saver di Windows 95
+
+
+<PW degli S.Saver di Windows 3.1>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Basta editare il file CONFIG.INI e cercare la password. Cancella, o cambia,
+quello che c'e' dopo l'uguale (se lo cambi e' piu' 'bello'...).
+
+
+<PW degli S.Saver di Windows 95 - By Cavallo de Cavallis>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+x quanto riguarda gli screen saver le password NON  sono nel file pwl
+, ma nel file di registro di windows95, vi sono quindi 3 possibilita' :
+
+1) sapere la key giusta del registro dove e' presente la password 
+(cryptata) dello screen saver (eheh vabbe' sono buono te lo dico :
+HKEY_CURRENT_USER/Control Panel/desktop/ScreenSave_Data
+basta sostituire con un bel 00 (zerozero) hex e via senza pass....
+
+2) per evitar di farsi sgamare a togliere la pass, usare il programma 
+apposito che scanna il registro e decrypta la suddetta password, il nome 
+del file e' : w95sscrk.arj (probabilmente reperibile alla mia homepage:
+'http://cavallo.home.ml.org' , ora non ricordo...)
+nota : il programma volendo piglia anche un file .reg quindi si puo' 
+esportare la key su file.reg e poi dare il file.reg in pasto al cracker
+
+3) cancellare il file di registro (HIHI NON CONSIGLIATO HIHI)
+
+
+
+P.S. cque c'e' il sw relativo anche x decriptare la pass dello screen 
+saver di win95
+
+Lunga Vita A JollyRoger !!!!
+
+
+       ,,)))))))      
+       ))))))))))))))   
+      (((((''''((((((((      
+     ((''  .     `))))))
+      | @    ;-.     (((
+     `|    /  )      ))) 
+      |   |   |        \
+       o_);   ;         |
+      Cavallo de Cavallis  
+     <cavallo@cryogen.com>  
+       ICQ UIN : 2948518     
+  http://cavallo.home.ml.org  
+=-=--=--=--=--=--=--=--=--=--==
+=    -=-  S0ftPr0j3cT -=-     =
+= Cr4ck1nG - R00T - Phr34k1nG =
+=    -=-   D1v1510n5  -=-     =
+==-=--=--=--=--=--=--=--=--=-==
+  = No prayer for the dying =  
+  = No mercy  for the lamer = 
+  ==--==--==--===--==--==--==
+
+(Cavallo de Cavallis: un uomo, un mito!)
+
+ Å        Å
+ ³ AVA666 ³
+ ~~~~~~~~~~
+
+

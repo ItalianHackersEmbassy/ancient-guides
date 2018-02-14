@@ -1,0 +1,107 @@
+           -------------------------------------------------------
+           OTTENERE ACCESSO COME ROOT SCAVALLANDO IL BOOTLOADER!!!
+          ---------------------------------------------------------- 
+
+Dopo il simpatico trucchetto delle livecd linux, mi sono detto:
+scardinare un PC  con quel sistema vuol dire averlo in locale...
+quindi dovremo infiltrarci a casa della vittima oppure roburgli il computer
+(così imparate a comprarvi i portatili! :]) che peccato... un trucco così
+semplice, se esistesse anche via web o senza l'ausilio di una distro live
+sarebbe  formidabile... 
+bhè in realtà esiste un altro "PICCOLO" bug 
+che affligge i sistemi Unix like... o meglio i suoi bootloader... 
+sopratutto il tanto osannato GRUB!
+
+OK! allora questa volta, mettiamo conto come nel precedente articolo,
+di essere davanti alla macchina della vittima, finalmente arriviamo 
+al boot loader, adesso non ci resta che passare dei parametri specifici 
+al kernel che ci fornirà così la possibilità di lanciare uno specifico
+programma con i privilegi di amministratore... indovinate un pò che programma
+sceglieremo? si bravi la shell bash che ci verrà quindi data come root!!!
+
+come fare?
+
+
+GRUB:
+
+Mettiamoci sopra l'immagine di defoult da avviare, ma invece di premere invio
+premiamo il tasto "e" .
+spostiamoci con i tasti freccia sulla stringa 
+che inizia con Kernel /vmlinux etc... 
+e premiamo nuovamente il tasto "e".
+vi verrà ora mostrata l'intera stringa di comandi che permette al sistema di
+far partire lo script di avvio "init" che fa partire il kernel.
+posizioniamoci alla fine della stringa, aggiungiamo uno
+spazio e poi inseriamo i seguenti parametri:
+
+"init=/bin/bash" senza virgolette
+
+dopo di che premiamo invio e poi "b" per caricare il kernel con i parametri che habbiamo inserito noi, ottenendo così una console con i permessi
+di amministratore!!!
+ora c'è solo da sbizzarrirsi, possiamo sguazzare nei file,
+cancellare roba, riscrivere l'mbr, cambiare le passwrd...
+ma prima di poter fare tutto ciò è necessario montare la
+partizione in modalità di lettura/scrittura.
+per far ciò basta eseguire il comando:
+
+"mount -o remount,rw /"  senza virgolette.
+
+LILO
+
+
+Per lilo il discorso è molto semplice, appena appare il prompt,
+basta digitare il nome del kernel usato di norma per l'avvio seguito
+dalla stringa "init=/bin/bash" senza virgolette ovviamente...
+
+
+
+  
+
+
+ora voi direte: ok è molto interessante ma... anche questo sistema 
+è utile solo in locale... se habbiamo il pc davanti agli occhi.
+Non proprio! sicuramente molti di voi hanno visto le publicità di 
+quei server web virtuali che danno la possibilità di gestirli atraverso una
+shell in remoto. Bene questi server danno la possibilità di arrestare,
+riavviare, e reinstallare il sistema operativo del proprio server virtuale 
+come se si fosse in locale...
+quindi se io dopo averci installato il mio bel sistema
+unix riavvio, mi appare il boot loader? esatto!!! 
+adesso entrare nel server con il metodo sopra descritto è un gioco da bambini...
+e se entreremo nella partizione /mnt potremmo trovare montato il disco
+"fisico" del server vero e proprio di cui a voi spetta una sola quota
+virtuale, sempre ammesso che l'amministratore habbia commesso qualche errore
+altrimenti potrete solo entrare nel server virtuale.  
+ma i più acuti di voi si saranno posti almeno due domande:
+
+1 per avere accesso a questo tipo di server virtuali devo pagare 
+  un abbonamento... e quindi dare tutti i miei dati anagrafici.. se sguazzo nel   server vero e proprio mi scopriranno! giusto?
+ 
+
+2 ok ma quello è il mio server virtuale... se volessi entrare in un altro
+  non potrei perchè non ho la possibilità di riavviarlo e di conseguenza
+  non posso accedere al boot loader! giusto??
+
+
+RISPOSTE
+-----------
+
+
+1 sbagliato! molti di questi server virtuali sono in promozione e vengono
+  offerti in prova gratuita per 30 giorni. basta iscriversi dando nome e cognome  falso,per quanto riguarda il codice fiscale basta usare uno di quei
+  programmini che si trovano rete.per il resto non credo di dovervi dire come
+  occultare la vostra identità... magari facendo le prime prove da un internet
+  point di qualche extracomunitario che non riechiede la registrazione.
+
+2 sbagliato! molti di questi server come ho detto sono in offerta 
+  e quindi utilizzati molto più da studenti che da ditte, in molti casi 
+  una volta installato il sistema operativo, questi "distrattoni"
+  lasciano sia il php sia il ruby/python e spessissimo non chiudono
+  le porte 23 e 79... non credo di dover aggiungere altro...
+
+
+ps: Sbrigatevi ad usare questo trucco prima che diventi obsoleto!
+    (sui sistemi in locale non lo diventerà mai...)
+
+
+GLADIUS

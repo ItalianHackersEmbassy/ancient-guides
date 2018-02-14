@@ -1,0 +1,181 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     L'AUTORE, OLDDRAKE, DECLINA OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. L'AUTORE, DUNQUE, NON INCORAGGIA CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- DISTRIBUTORI AUTOMATICI (Seghe'? Nescaghe'!) -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>Siamo di fretta, usciamo tardi da casa e non abbiamo bevuto il nostro solito
+>caffe'. Bhe poco male, rimedieremo con un misero caffe' liofilizzato della
+>nostra macchinetta di fiducia. Ma soffermiamoci un attimo e riflettiamo:
+>"Che bastardi, in cambio di uno sputo di finto caffe' vogliono 5 centianaia
+>di Lire? Non sia mai...
+Ho scoperto casualmente un bug nei distributori automatici di caffe' della
+Nescafe'.
+Introducendo una moneta da L.100 (sono quelle piu' leggere delle 100 normali,
+ma piu' grandi di quelle piccolissime...
+vedi fig.1) magicamente ti segna un credito di L. 500 = una consumazione
+(quasi) gratis.
+
+                                                                  (fig.1)
+               ±±±±±±±±±±±±±  
+             ±±±±±±±±±±±±±±±±± 
+           ±±±±±±±±±±±±±±±±±±±±±
+         ±±±±±±±±±±±±±±±±±±±±±±±±± 
+        ±±±±±°°±±±°°°°±±±±°°°°±±±±± 
+       ±±±±±°±°±±°±±±±°±±°±±±±°±±±±±
+       ±±±±±±±°±±°±±±±°±±°±±±±°±±±±±
+       ±±±±±±±°±±°±±±±°±±°±±±±°±±±±±                      100 lire... MeDiE
+        ±±±±±±°±±±°°°°±±±±°°°°±±±±± 
+         ±±±±±±±±±±±±±±±±±±±±±±±±±  
+           ±±±±±±±±±±±±±±±±±±±±±
+             ±±±±±±±±±±±±±±±±±  
+               ±±±±±±±±±±±±±  
+                                                                    
+ 
+                  ±±±±±±±±±±±±±±±±±±±  
+                ±±±±±±±±±±±±±±±±±±±±±±±  
+              ±±±±±±±±±±±±±±±±±±±±±±±±±±±    
+            ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±  
+           ±±±±±±±±±°±±±°°°°±±±±°°°°±±±±±±±±  
+          ±±±±±±±±±°°±±°±±±±°±±°±±±±°±±±±±±±±
+         ±±±±±±±±±°±°±±°±±±±°±±°±±±±°±±±±±±±±± 
+         ±±±±±±±±±±±°±±°±±±±°±±°±±±±°±±±±±±±±± 
+         ±±±±±±±±±±±°±±°±±±±°±±°±±±±°±±±±±±±±±                       100 lire... MeDiE
+          ±±±±±±±±±±°±±°±±±±°±±°±±±±°±±±±±±±±   
+           ±±±±±±±±±°±±±°°°°±±±±°°°°±±±±±±±±    
+            ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±  
+              ±±±±±±±±±±±±±±±±±±±±±±±±±±±   
+                ±±±±±±±±±±±±±±±±±±±±±±±  
+                  ±±±±±±±±±±±±±±±±±±   
+
+
+           ±±±±±±±±±±±   
+         ±±±±±±±±±±±±±±±  
+       ±±±°°±±±°°±±±±°°±±± 
+      ±±±°±°±±°±±°±±°±±°±±±                      100 lire... piccole
+      ±±±±±°±±°±±°±±°±±°±±±
+      ±±±±±°±±°±±°±±°±±°±±±
+       ±±±±°±±±°°±±±±°°±±± 
+         ±±±±±±±±±±±±±±±   
+           ±±±±±±±±±±±   
+                  
+
+>Non contenti della serie di caffe', abbiamo voglia di una bella briosche
+>per accompagnare l'aroma della caffeina. Archhh... abbiamo finito le
+>monetine e non possiamo cambiare i nostro deca. Cosa fare? 
+>Semplice: continuare a leggere.
+
+Esiste un bug dei distributori automatici di patatine/briosche (non so se e'
+presenti in tutti, ma in quello della mia scuola si'...e con le dovute
+precauzioni ogni mattina una dolce diverso... ;).
+Bisogna spingere la lastra di metallo per prendere normalmente la merendina,
+ora si tira verso di noi la lastra di fianco a questa e si dovrebbe aprire.
+Cosi' abbiamo ora i pulsanti appositi con cui ritirare gratis tutto quello
+che e' contenuto nella macchinetta.
+
+vediamo se il disegno rende meglio l'idea:
+
+||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |  P               |
+||||||||||||||||||||||||||||||||||||   |  U               |
+||||||||||||||||||||||||||||||||||||   |  S                |
+||||||||||||||||||||||||||||||||||||   |  H               |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||   |                    |
+||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |               |  P|
+||||||||||||||||||||||||||||||||||||    |               |  U|
+||||||||||||||||||||||||||||||||||||    |               |  S|
+||||||||||||||||||||||||||||||||||||    |               |  H|
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                |     |
+||||||||||||||||||||||||||||||||||||    |                 |     |
+||||||||||||||||||||||||||||||||||||    |   TIRA   |     |
+||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+UPDATE #1 by <OldDrake>:
+Ora hanno corretto il bug... ma infilando la mano sinistra dentro una
+fessura in basso, con il pollice si puo' azionare solo l'ultima levetta e
+ritirare la merendina dell' ultima striscia. (bhe...per fare cio' bisogna
+avere della dita sottili e molto lunghe... proprio come le mie :)
+
+>Ok...la mattinata e' iniziata nei migliori dei modi. Ma ora dobbiamo
+>fotocopiare un testo perche' ci e' piaciuto tanto tanto. Pero' sarebbe
+>piu' bello non pagare la fotocopia. No problem, e come 
+>dicevaRavanelli: lascia fa'... lascia fa'...
+Tramite tessera e' possibile sfruttare un bug di una stampante (non ricordo
+che versione fosse perche' ora l'hanno cambiata con un modello nuovo).
+Procedimento pratico: inserire la tessera. Schiacciare il pulsante stampa. 
+Ora prima che la banda della tessera venga letta, pigiare il bottone apposito
+per estrarre la tessera oppure farlo manualmente. Bene la fotocopia e' stata
+fatta, ma non e' scalato nessun credito sulla tessera.
+
+UPDATE #2 by <aVa666>:
+Ecco le 'misure' (90-60-90?) delle monete da 100 lire (se non avete capito di
+quale moneta si tratta aiutatevi con questa simpatica tabella fatto da me):
+
+/=========][============\
+[ Tipo    ][  Diametro  ]
+[=========][============]
+[ Piccola ][   1,7 cm   ]
+[ Media   ][   2,1 cm   ] USA QUESTA!!!
+[ Grande  ][   2,7 cm   ]
+\=========][============/
+
+
+UPDATE #3 by <aVa666>:
+Ho provato ad inserire 2 monete da 100 lire descritta da zio OldDrake in 2
+diverse macchine per caffe', ecco cosa comparve sul DISPLAY: <100>. Tralaltro
+non me le ha ridate. Comunque questa erano distributori NUOVI quindi e' ovvio
+che il BUG non e' presente. Provate il sistema della "moneta da 100 media" da
+qualche parte e fatemi sapere.
+
+
+Questo File e' stato scritto da  " O L D D R A K E ", piccolissime modifiche
+sono state poi apportate da AVA666, unicamente nei disegni e negli UPGRADEs,
+infine e' stato tutto inserito nel notissimo
+
+    |\/|
+    |  | Y 
+        |~~>
+        |~~ E R S O N A L  
+           /~~               
+           \__ O O K B O O K 
+
+  dell'inimitabile (in modestia)
+  
+            Å        Å
+            ³ AVA666 ³ 
+            ~~~~~~~~~~
+

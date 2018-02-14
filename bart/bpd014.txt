@@ -1,0 +1,39 @@
+                      bartx personal diary        releas 1.0
+
+ Tutto il materiale contenuto in questo articolo ha fini eslusivamente informativi ed  
+educativi. Io Bartx non mi ritengo in alcun modo responsabile dei danni causati a cose o  
+         persone dall'uso delle informazioni contenute in questo articolo.
+  Pertanto il lettore si assume ogni genere di responsabilita' per l'uso che farà delle  
+                    informazioni contenute in questo articolo.
+Siete pregati di non postare questo articolo in newsgroup e di non diffonderlo se non in  
+                                  forma originale.
+
+
+*********************************  Ottimizzare Windows ME   *******************************
+
+Windows Me è molto più stabile del 98, però, è ancha molto più pesante.
+Per rimediare a questo si pùo fare così:
+
+Disabilitate lo swap. (Il sistema ha bisogno di oltre 64M di RAM).
+Aprite il file "system.ini" con il Notepad e dopo [386Enh] aggiungete (senza virgolette): "ConservativeSwapfileUsage=1"
+
+Poi, digitate msconf da esegui, nel menù avvio, andate su esecuzione automatica e deselezionate tutti i prograsmmi inutili dall'esecuzione automatica (soprattutto PcHealth, StateMgr, SchedulingAgent, Taskmonitor). Non deselezionate explorer o systray, che dopo 
+sono cazzi vostri.
+
+Procuratevi il lettore cd di win98, e sostituitelo a quel cesso di media player.
+Basta che copiate il file "cdplayer.exe" dalla cartella windows di win98 su un floppy,
+poi lo copiate nella cartella di win me e fateci un collegamento. Il lettore cd è molto più
+stabile e più leggero di windows media player.
+
+
+
+            ######                                    
+            ##   ##                #                  
+            ##   ##               ##                  
+            ##   ##   ####   ######## ##  ##          
+            ######   #   ##  ##   ##  ##  ##          
+            ##   ##    ####  ##   ##   ####           
+            ##   ##   ## ##  ##   ##    ##            
+            ##   ##  ##  ##  ##   ##   ####           
+            ##   ##  ##  ##  ##   ##  ##  ##          
+            ######    #####  ##    ## ##  ##          

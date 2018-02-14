@@ -1,0 +1,80 @@
+/* 
+
+Semplicissimo criptatore/decriptatore per linux
+                by Techno Knight
+
+(facilmente crakkabile, se volete davvero usarlo almeno rendete la formula
+piu' complicata)
+
+*/								
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+main(int argc, char *argv[]){
+ long formula[4];
+ unsigned char car, carcr;
+ int carint;
+ FILE *fi,*fo;
+ char comando[100];
+
+
+        printf("Il criptatore v.1.0 by Techno Knight");
+
+	formula[0] = atoi(argv[4]);
+	formula[1] = atoi(argv[5]);
+	formula[2] = atoi(argv[6]);
+	formula[3] = atoi(argv[7]);	
+
+	if (strstr(argv[3],"c")){
+ 
+ 		fi = fopen(argv[1],"rb");
+		fo = fopen(argv[2],"wt");
+	}
+
+	if (strstr(argv[3],"d")){ 
+		
+                strcpy(comando,"gunzip ");
+                strcat(comando,argv[1]);
+		system(comando);
+                fi = fopen(argv[1],"rb");
+                fo = fopen(argv[2],"wb");
+        }
+
+
+        if (strstr(argv[3],"c")){
+                while (!feof(fi)) {
+			car = fgetc(fi);
+		        carint = car * (formula[0] * formula[1] ^ formula[2] / formula[3]);
+			fprintf(fo,"%d",carint);
+			fputc('\n',fo);
+		}
+
+		fclose(fi);
+		fclose(fo);
+		
+		strcpy(comando,"gzip ");
+		strcat(comando,argv[2]);
+		system(comando); 		
+	}
+
+
+	if (strstr(argv[3],"d")){
+		
+
+		carcr='0'; 
+		while (carcr!=255){
+			fscanf(fi,"%d",&carint);
+			carcr = carint / (formula[0] * formula[1] ^ formula[2] / formula[3]); 
+			fputc(carcr,fo);	
+		}
+		fclose(fi);
+		fclose(fo);
+
+
+	}
+	
+
+
+}

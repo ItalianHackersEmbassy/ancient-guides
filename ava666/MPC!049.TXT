@@ -1,0 +1,136 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- LA NATURA GIURIDICA DEL PHONE PHREAKING (di Andrea Monti) -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sul fatto che l'uso di mezzi o apparecchiature di varia complessita' e natura
+diretti ad evitare l'addebito sulla propria bolletta sia illegittimo non c'e'
+alcun dubbio; qualcuno ne sorge, invece, quando ci si ponga il problema di
+individuare, in concreto, quale reato sia stato commesso.
+La questione e' tutt'altro che priva di interesse pratico dal momento che nel
+nostro ordinamento penale, come e' noto, nessuno puo' essere punito per un fatto
+che al tempo in cui e' stato commesso non era previsto dalla legge come reato;
+cio' vuol dire, in altri termini, che se non e' possibile ricondurre l'impiego
+delle Blue-Box (o di apparecchiature o software aventi analoga funzione) ad
+una norma penale vigente non viene commesso nessun reato (salva, ovviamente,
+la risarcibilita' del danno in sede civile). 
+Siccome non esiste nessuna legge che vieta esplicitamente l'impiego di questi
+apparecchi sarebbe, allora, immediato dedurre che usare le Blue-Box; sia
+quantomeno non-illegale, ma le cose non sono cosi' semplici.
+
+Il problema di qualificare giuridicamente le interferenze abusive sulla rete
+telefonica e' noto da parecchio tempo: gia' nel 1977, infatti, la Corte di
+Cassazione ebbe ad occuparsi di un caso del genere pronunciando una sentenza
+della quale si riporta qui di seguito la massima:
+"La captazione fraudolenta di un servizio o di una prestazione (nella specie,
+collegamento abusivo di un apparecchio telefonico con la cabina di zona della
+SIP mediante allacciamento della linea di servizio riservata alla societa') puo'
+astrattamente integrare in concorso con degli altri elementi all'uopo richiesti
+dalla legge, e - segnatamente dell'ingiusto profitto e del danno patrimoniale -
+le ipotesi del delitto di truffa. 
+Non puo' invece ravvisarsi nel fatto il reato di furto dal momento che manca la
+cosa mobile (o l'energia ad essa equiparata) sulla quale deve cadere, ai fini
+della configurabilita' dell'ipotesi di cui all'art.624 c.p., l'azione
+dell'impossessamento.
+Infatti le utenze telefoniche private - gestite in regime di concessione ad una
+societa' privata, quale la SIP, anche se con partecipazione di capitale pubblico
+- realizzano una ipotesi di somministrazione di un servizio, e non di una
+energia, benche' questa sia essenziale al servizio stesso (le vibrazioni
+acustiche sono trasformate, nella telefonia, in vibrazioni elettriche, ma
+oggetto della utenza e' il servizio in se', e non l'energia che lo rende
+possibile). In difetto del delitto di truffa, puo' configurarsi nel fatto la
+specifica ipotesi di reato prevista dal d.p.r. 29/03/73 n. 156 che dichiara
+perseguibile, ai sensi dell'art.3 c.p., chiunque esplichi attivita' che rechino
+danno ai servizi postali e di telecomunicazione od alle opere ed oggetti ad
+essi inerenti (art.23)."   -   Cass.Pen. Sez.I, 21-12-77.
+
+In estrema sintesi i principi enunciati da questa sentenza sono i seguenti:
+1) La captazione fraudolenta del servizio telefonico non e' furto perche' manca
+   la "cosa mobile altrui" che dovrebbe venir sottratta a chi la detiene,
+   secondo il testo dell'art.624 c.p.
+2) Viceversa potrebbe configurarsi la truffa, ma per il verificarsi di questa
+   ipotesi sarebbe necessario provare di aver ingannato qualcuno per ottenere
+   l'ingiusto profitto, cosÏ infatti recita l'art.640 c.p. :
+   "Chiunque, con artifizi e raggiri, inducendo taluno in errore, procura a si'
+   o ad altri un ingiusto profitto con altrui danno, e' punito ....". In altri
+   termini, cio' che dovrebbe essere punito, in questo caso, non e' il phreaking
+   fine a se stesso quanto piuttosto il suo impiego al fine di compiere gli
+   artifizi e raggiri menzionati dal codice penale; che poi questo sia
+   difficile da provare e' un altro discorso.
+3) Se non e' possibile configurare la truffa allora potrebbe essere applicabile
+   l'art. 23 d.p.r. 29/03/73 n. 156.
+
+E' ragionevole sostenere che anche l'impiego delle "Blue-Box" rientri fra le
+ipotesi contemplate dalla sentenza in questione e che, quindi, sia
+qualificabile come "fraudolenta captazione di servizi o prestazione", anche
+se, ad oggi, non sembrano essere stati registrati precedenti giudiziari
+specifici. L'unica soluzione per risolvere definitivamente il problema era
+quella di prevedere una specifica ipotesi di reato che individuasse esattamente
+non solo cosa, ma anche e soprattutto, come punire. L'occasione (persa) poteva
+giungere dalla legge che ha inserito nel codice penale i c.d. Computer crimes".
+Fra i reati introdotti dalla L.547/93 il candidato a risolvere la questione
+che ha aperto il presente scritto avrebbe potuto essere quello previsto
+dall'art.640ter (frode informatica). Il testo dell'articolo in questione cosç
+recita:
+
+"Chiunque, alterando in qualsiasi modo il funzionamento di un sistema
+informatico o telematico o intervenendo senza diritto con qualsiasi modalitÖ
+su dati, informazioni o programmi contenuti in un sistema informatico o
+telematico o ad esso pertinenti, procura a sÇ o ad altri un ingiusto profitto
+con altrui danno, ä punito con la reclusione da sei mesi a tre anni e con la
+multa da lire centomila a due milioni. La pena ä della reclusione da uno a
+cinque anni e della multa da lire seicentomila a tre milioni se se ricorre una
+delle circostanze previste da numero 1) del secondo comma dell'art.640, ovvero
+se il fatto ä commesso con l'abuso della qualitÖ di operatore del sistema.
+Il delitto ä punibile a querela della persona offesa salvo che ricorra taluna
+delle circostanze di cui al secondo comma o un'altra circostanza aggravante."
+
+Una prima superficiale lettura dell'articolo non aiuta a chiarire le cose. 
+L'articolo 640 ter c.p., infatti, si riferisce esclusivamente ai sistemi
+informatici e telematici ma non prende affatto in considerazione il problema
+del phreaking. Del resto ä la legge stessa che differenzia nettamente l'ambito
+informatico-telematico da quello telefonico come nell'art.623 bis c.p. dove le
+forme di comunicazione vengono distinte in telefoniche, telegrafiche,
+informatiche e telematiche, o in materia di intercettazioni telefoniche dove
+sussiste la medesima classificazione. Nella stessa direzione si muove la
+dottrina che definisce sistema informatico "...pió elaboratori elettronici
+collegati fra loro per scambiare dati" (AA.VV., Profili penali
+dell'informatica, Giuffrä 1994 p.148), se il collegamento avviene per mezzo di
+cavi telefonici, onde guidate ecc. allora il sistema diventa "telematico"
+(ibidem). Sarebbe ovvio concludere che siccome il phreaking non riguarda i
+"sistemi" menzionati dalla legge ma solo dei centralini telefonici, esso non
+dovrebbe rientrare nell'ambito di vigenza dell'art.640ter.
+
+A ben vedere, tuttavia, molte delle tecniche impiegate per procurarsi la
+disponibilitÖ delle linee telefoniche hanno come bersaglio il software che
+gestisce la centrale telefonica, risultando idonee ad alterare il funzionamento
+del sistema cosç come previsto dalla norma in oggetto. In conclusione, quindi,
+bisognerebbe distinguere il metodo di phreaking impiegato: l'uso di apparecchi
+o sistemi che non interagiscono direttamente con un computer probabilmente non
+rientra nell'ambito di validita' dell'art. 640ter, e allora valgono le
+considerazioni svolte in precedenza. Il ricorso a sistemi che coinvolgono
+direttamente un elaboratore dovrebbe essere invece punibile ai sensi del
+predetto articolo, a nulla rilevando, peraltro, che il "bersaglio" del phreaker
+sia oltre confine o oltre oceano.
+
+24.07.95
+
+Il dr. Andrea Monti e' membro del Comitato di garanzia di ALCEI e responsabile
+del settore Studi giuridici dell'Associazione. 
+
+
+     __________________________
+     Questo file si puo' trovare
+ anche sul sito Spaghetti Phreakers
+ http://come.to/spaghettiphreakers/
+e fa parte del 'My Personal Cookbook'
+                By            
+            ≈        ≈        
+            ≥ AVA666 ≥
+            ~~~~~~~~~~
+

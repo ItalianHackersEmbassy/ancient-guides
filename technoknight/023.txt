@@ -1,0 +1,416 @@
+
+----------------------------------------------------------------------------
+CAPITOLO 2: CRACKING IN DOS     /  ThE FuN StUfF BeGiNs! /
+----------------------------------------------------------------------------
+
+
+Eccoci arrivati, dopo la pallosissima (anche da scrivere) prima parte, al
+succo di questo tutorial.... il cracking vero e proprio.
+Cominciamo dal DOS, trattando i vari tipi di protezione che potete trovare,
+ognuno spiegato in maniera (spero) abbastanza dettagliata e corredato da un
+esempio..... naturalmente, questi dovranno essere presi solo come tali, anche
+perche' ogni protezione e' diversa dall'altra e non si puo' generalizzare il
+tutto con una precisa tecnica. Mano a mano che poi crakkerete da soli
+sicuramente saprete far fronte anche a situazioni diverse, piu' o meno
+discostanti da quelle qui illustrate.
+Una cosa che tengo a puntualizzare e' questa: avrete sicuramente visto che 
+oggi tutti i crackers tendono a fare (per i programmi che richiedono un
+serial number collegato al vostro nome) dei KeyMakers, ossia dei programmi
+che, una volta scoperto l'algoritmo, prendono il vostro input e ne fanno
+un numero valido per il programma. Io da parte mia preferisco sempre
+SRADICARE di netto la protezione, anche perche' cosi' non devo perder tempo
+a star dietro all'algoritmo, magari complicatissimo..... Quindi, i miei 
+esempi saranno tutti improntati sulla COMPLETA eliminazione della routine
+di protezione. Se poi volete farvi i keymaker per quel tipo di programmi,
+basta che seguiate l'algoritmo di protezione, facilmente trovabile mettendo
+dei breakpoint R/W (read/write) o meglio R (read) alla locazione dove trovate
+il vostro ECHO (ossia, l'input che avete dato es.il vostro nome). Per cercare
+l'echo, basta cercare in memoria quello che avete inserito, subito dopo
+essere tornati al debugger dopo l'inserimento. A questo proposito, per quanto
+riguarda il dos, ricordatevi che le locazioni buone per l'echo (ne troverete
+infatti diversi) sono quelle dalle parti del CS o DS, ma non sempre...
+comunque, mai quelle iniziali e finali (da C000 in poi). Con un po' di
+pratica, le riconoscerete a occhio, ve lo garantisco.
+Quindi, fatte queste precisazioni, LET'S START!
+
+2.1.... Protezione con controllo dell'accesso al disco (INT13)
+
+Questo tipo di protezione e' in assoluto la piu' facile da eliminare.
+Difatti, si basa sul controllo di settori del floppy che non vengono copiati                                                                    
+durante un normale processo di copia, quindi presenti solo sul floppy
+originale.
+Data la sua facilita' di sradicazione, oggi questa protezione non e' quasi 
+piu' usata.... comunque, mi sembra un buon esempio per iniziare. 
+L'esempio che vi proporro' e' il gioco "Lemmings" (spero lo abbiate, di
+solito lo davano con le vecchie SoundBlaster), anche perche' non sono
+riuscito a trovare qualcos'altro che usa questo tipo di protezione.
+Iniziamo..... Per prima cosa, caricate il G3X, buttatevi Lemmings sull'HD
+e togliete il dischetto originale dal drive (oppure mettetecene uno a caso)
+in maniera da simulare il caso di una copia pirata.
+Ah, ricordatevi di togliere il QEMM (o l'EMM386) se lo avete installato,
+perche' nel mio caso faceva impallare il tutto (forse il gioco e' troppo
+vecchio, non lo supporta....).
+Dunque, appena caricato il file LEMMINGS.BAT vi trovate davanti ad una 
+schermata in modo testo che vi permette di scegliere il computer posseduto.
+A questo punto, premete PRTSCR (STAMPA, per i non inglesi) ed entrate nel
+G3X. Premete "V" per entrare nel debugger, dopodiche' iniziate a steppare 
+con "P" finchŠ non vi trovate nel ciclo di ripetizione che aspetta l'input.
+Questo e' un punto fermo nel debugging crakkistico, cioe' bisogna sempre 
+trovare questo ciclo in modo da rientrare nel debugger una volta effettuata
+la scelta.
+Quindi, vi troverete in questo punto (il CS lo ometto, tanto cambia sempre):
+ 
+5448 CALL 9109  < Inizio ciclo attesa input
+544B PUSH BX
+544C XOR BX,BX
+544E CALL 7583
+5451 POP BX
+5452 JB 5442
+5454 MOV AH,01
+5456 CALL 8413
+5459 JNE 8461
+545B MOV AH,84
+545D INT 2A    
+545F JMP 5448  < Torna all'inizio finchŠ non premete il tasto giusto
+5461 XOR AH,AH < Qui premete "H" per tornare al G3X dopo aver premuto <ret>
+
+Come vedrete, continuando con "P" non fa' altro che saltare a 5448 ogni volta
+che arriva a 545D, cio' indica che e' un ciclo. Allora, provate a mettere il
+breakpoint HERE a 5461 (andateci sopra e premete H).... hmmm, torna allo
+schermo di selezione! Quindi, premete return (tanto va' bene per tutti la
+prima opzione) e..... magia, riecco il G3X! Era proprio il ciclo di attesa
+dell'input!
+Vabbe', andiamo avanti! Premete comodamente "P" fino a che non arrivate a 
+questa parte:
+ 
+00E0 CALL 0649  < Controlla se il floppy originale e' inserito, senno' esce
+00E3 CALL 1591  < Fa' partire il gioco
+00E6 CLI
+00E7 MOV CX, [1FC9]
+
+Noterete subito che steppando la prima call, il programma esce dicendo che
+il disco originale non e' inserito. Primo trucchetto del cracker provetto:
+quando ci sono due call una di seguito all'altra, la prima delle quali esce
+se non si e' azzeccato la password o simili (come in questo caso), provare
+SEMPRE, una volta arrivati a questa call, a cambiare l'IP ed eseguire la 
+seconda..... fusse che fusse la vorta 'bbona!
+Quindi, tutto da capo, fino a riarrivare all'indirizzo 00E0 (questa volta 
+pero', salvatevi l'indirizzo andandoci sopra e premendo "TAB", almeno se
+qualcosa va' male poi potete metterci un BPX e ricominciare da qui). A questo
+punto provate a farli saltare la call, cioe' a non eseguirla proprio,                                                           
+cambiando il valore del registro IP (premete R poi I, quindi scrivete 00E3,
+la locazione successiva). Ora, incrociate le dita..... ricominciate a
+steppare con "P", anzi per un brivido maggiore consiglio di uscire
+direttamente dal G3X con "ESC". Et voila', come dice il mago Afono del
+Vernacoliere, avete fatto il vostro primo crack!!!! Naturalmente, dovete poi
+andare a ricercare con un hex-editor i bytes corrispondenti alla call
+(quindi,segnatevi i precedenti, quelli e i successivi) e cambiare i valori
+nel file (mi sembra sia VGALEMMI.EXE) con una serie di NOP (No-Operation, in
+hex 90). Ma di questo parleremo poi, nel capitolo apposta sul patcher!
+Intanto, godetevi la vostra prima sprotezione!!!!
+Ah, faccio notare che se provavate a monitorare l'INT13, in questo caso i 
+programmatori sono stati furbi implementando la cosiddetta "trappola per 
+debugger", cioe' una serie di INT3 dopo le istruzioni "chiave" che fanno
+impiantare il povero G3X.... se non ci credete, provate (tanto come si fa'
+lo dovreste sapere, ve l'ho spiegato prima!)
+
+2.2. Aiuto, il mio piratone di fiducia mi ha dato il programma senza SN!
+
+Capita sempre, specialmente col mio fornitore, di ricevere programmi bomba
+che una volta installati, chiedono il serial number. Alcuni funzionano per
+un po', poi cominciano a frantumarci le palle con nag-screens vari (del
+tipo : "Bei mi budiuli, ir programma E LO DOVETE PAGA'!!!). Alcuni,
+addirittura non si installano nemmeno in mancanza del magico numerino. E'
+questo il caso del crack che mo' vi propongo: il QEMM versione 8.0 (peraltro,
+non distribuito in versione shareware ma serial-dipendente anche lui).
+Dunque, come al solito, G3X in spalla e via!
+Si parte con l'inserimento di tutti i dati nell'installer (nome, citta',
+cazzi vari) e si inserisce anche un serial number a caso (puo' essere anche
+una parola, tanto la protezione la sodomizziamo! io di solito uso "culo",
+semplice ma efficace.....). Prima di premere return, PRTSCR e entriamo nel
+G3X. Dato che abbiamo inserito un input, tanto vale cercare il nostro ECHO,
+in modo da settare un BP R/W (read/write) che ci fara' capitombolare proprio
+nel bel mezzo della routine da fottere.... Quindi si entra nel debugger, si
+mette in modo testo con "U", si mette il display della memoria a 0000:0000
+con "C" (change address, senno' non trova una mazza) e si preme "F". A questo
+punto, inserite il serial number che avete digitato e premete return,
+scegliendo la ricerca in ASCII e il modo Case Sensitive OFF (non tiene conto
+delle maiuscole e minuscole). Troverete un bel po' di echo, comunque vi ho
+gia' detto prima di non considerare quelli troppo vicini all'inizio e quelli
+troppo lontani..... in medio stat virtus ( diceva Socrate, mi sembra.....
+sapete, studio Biologia e questi sono solo ricordi del liceo!).
+Spulciando tra gli echo che trovate vi saltera' subito all'occhio quello
+situato a CS:000A, contenente il vostro serial inserito e, guardando sopra,
+gli altri dati che avete messo. Quindi, sicuramente, e' quello giusto! Come
+al solito, salvatevi l'indirizzo andandoci sopra e premendo TAB, dopodiche'
+settateci un BPRW (tornate nella schermata iniziale del G3X, scegliete il
+menu dei breakpoint, selezionatene uno, scegliete BreakPoint ReadWrite,
+premete TAB e da qui selezionate l'indirizzo....puff, puff, ma vi devo dire
+tutto io? Basta,da ora in poi saro' piu' sintetico!).
+A questo punto tornate al programma premendo ESC, e quando premerete invio
+magicamente riapparira' il G3X. Bene, siete usciti proprio ora dalla routine
+di attesa dell'input! Cominciate allora a steppare, usando tutti i trucchetti
+che vi ho insegnato prima (ad es. all'indirizzo CS:3DA6 c'e' un ciclo palloso
+a bestia, saltatelo con l'HERE a 3DA8). Ad un certo punto arriverete qui:
+
+1B90 TEST AX,AX      < Parte finale della routine di protezione
+1B92 JNE 1BA6        < Se il numero e' giusto, va' a 1BA6
+1B94 MOV AL,F9
+1B96 CALL 11BF       < Beep, segnaccio!
+1B99 CALL 1916       < Spiacente,avete cacato fuori dal vaso (SN errato)
+1B9C POP SI
+1B9D CALL 18E3       < Con queste istruzioni e le successive torna 
+1BA0 CMP AL,1B         all'input e vi richiede il SN
+..............
+1BA6 POP SI
+1BA7 JMP 1B56
+
+Se eseguite la CALL 11BF e successiva, vedete che il programma da' il
+messaggio di errore. Bene, e' dove volevamo arrivare! Ora facciamo marcia
+indietro.
+Qual'e' il jump prima della call che da l'errore? Quello a CS:1B92! (infatti 
+vedete che salta avanti, cosa IMPORTANTISSIMA da  notare: difatti, cercando
+di saltare la protezione, i jump che saltano avanti sono SEMPRE i PRIMI da
+controllare, altro trucchetto da cracker provetto.... ci va' anche di rima!)
+Subito, settateci un BPX (togliete quello RW, tanto nella routine giusta ci 
+siete), uscite dal programma e ricaricatelo (tanto gli indirizzi in memoria 
+dovrebbero rimanere gli stessi, senno' vi tocca tornarci a mano.) 
+Vedrete che dopo aver reinserito il SN e premuto return, il G3X si ferma 
+proprio a CS:1B92. Cambiate quindi l'IP e mandatelo a 1BA6. Ancora qualche
+"P" e arriverete qui:
+ 
+1B68 JZ 1B6D        < Qui dovete cambiare l'istruzione in JMP 1C25
+1B6A CALL 1C26
+1B6D CALL 1525      < Torna al programma e attende la pressione del return
+1B70 MOV BX, [5307]
+1B74 CMP BX, 3F3F   < Ennesimo controllo finale della correttezza del SN
+1B78 JNE 1B7D       < Se e' sbagliato salta a 1B7D
+1B7A JMP 1C25       < Se e' giusto salta a 1C25 e inizia l'installazione
+
+Osserverete ora che eseguendo le CALL riappare lo schermo del programma,
+e che premendo <return> ritorna il G3X. Bene, avanti! Vedrete che facendo
+il JNE 187D si ritorna daccapo, con il beep di errore eccetera. Mettiamo
+dunque un BPX (disabilitando sempre il precedente,altra regolina) a 1B78,
+usciamo e ricarichiamo il programma. Una volta tornati a questo punto,
+cambiamo IP mettendolo a 1B7A e continuiamo a steppare. Tada'..... altra 
+protezione fottuta, complimenti, avete appena fatto il vostro 2ø crack!!!
+Per fare le cose ammodino, sara' meglio cambiare il JZ 1B6D a CS:1B68 in un
+bel JMP 1C25, in modo da garantire che, quale che sia il SN, il programma
+lo prenda per giusto. Quindi, tornando sopra, dovreste inserire l'istruzione
+premendo A (assemble) e inserendo i valori esadecimali E9 <ret> BF <ret> 00
+<ret>. Perche' questi? Be', sinceramente non lo so' nemmeno io. So' solo che
+dato che il G3X purtroppo non supporta l'inserimento dell'istruzione
+assembler in maniera normale (es. JMP direttamente), bisogna prendere il
+valore hex dell'istruzione che si vuole inserire (in questo caso, E9 A8 00
+che corrisponde al JMP 1525 all'offset 1B7A). Quindi, copiarlo nell'offset
+desiderato e giocherellare un po' con gli ultimi due valori (il primo rimane
+fisso) finche' non si riottiene l'indirizzo voluto, in questo caso 1525.
+Fatto questo, provate il tutto rieseguendo da capo il programma e facendo la
+modifica, poi segnatevi i valori dei bytes da sostituire e continuate la 
+lettura del manuale, perche' come fare i patches lo spiego  all'ultimo!!!
+Ah, dimenticavo: inutile dire che questo procedimento e' analogo in caso di
+programmi che vogliono una password (es. giochi che vogliono la password
+a pagina x del manuale).
+
+2.3 Variazioni sul tema: Xoanon's Standard Cracking Algorithm (TM)
+
+Questi due procedimenti standard sono applicabili anche ad altre situazioni,
+per cui non staro' a dilungarmi oltre. Un esempio e' il caso della scelta di
+una determinata icona per superare la protezione (come succede, ad esempio,
+in molti giochi della Lucas). In questo caso, come al solito, basta riuscire
+ad imbroccare il punto di entrata giusto, ossia, e non mi stanchero' mai di
+ripeterlo, L'ALGORITMO CHE ATTENDE IL VOSTRO INPUT. Fatto questo, in maniera
+analoga a come avete fatto per Lemmings, non resta altro da fare che steppare
+fino a che non succede qualcosa. Quando la routine vi butta fuori e riparte
+aspettando un'altro input, segnatevi il punto (una CALL) dove il fatidico
+"INCORRECT PASSWORD" appare e esaminate bene il disassemblato PRIMA di questa
+istruzione. Ci sara' infatti SICURAMENTE un CMP seguito da un jump
+condizionale che, in caso l'icona scelta sia quella giusta, saltera' questa
+CALL portandovi da un'altra parte (in genere il jump giusto da modificare vi
+portera' avanti, mai indietro, ma questo mi sembra di avervelo gia' detto).
+Quindi, una volta trovato basta modificarlo. Interessante variazione puo'
+essere quella di non modificare il jump, ma sostituire al CMP un MOV. E'
+quello che si chiama DIRTY-CRACK, e vi permette di evitare magari di
+ritornarci sopra se il check viene fatto anche piu' avanti nel programma.
+Basta andare a vedere, infatti, alla locazione di memoria dove effettua il
+compare (quella tra parentesi quadre, per intendersi, oppure in AX o nel
+registro dove effettua il CMP) e vedere che valore c'e'. Supponiamo che la
+situazione sia:
+
+........
+CS:0010    CMP AX,00  < se in AX c'e' 0 setta il flag a 1, senn• a 0
+CS:0013    JNZ 7641   < se il flag e' 0, salta a 7641
+CS:0015    CALL 4328  < vi butta fuori o simili
+........
+CS:7641    Dovete saltare qui per saltare la protezione
+
+Se quando andate a vedere nella locazione del compare, in caso sbagliaste 
+la password, ci trovate uno 00, vuol dire che quello e' il valore che il
+programma esamina per vedere se e' registrato/sprotetto o no. Basta cambiare
+il CMP in MOV in maniera da mettere nella locazione/registro un valore
+diverso da quello, per far credere al prg di essere registrato effettivamente
+(oppure per farli credere che avete indovinato la password).
+
+Tutto quello che vi ho detto in questo paragrafo puo' benissimo essere 
+considerato "IL METODO STANDARD PER IL CRACKING DOS/WINDOWS", quindi.......
+almeno questo dovete impiantarvelo bene nel ceppione !!!!!
+Anche per quanto riguarda le protezioni con chiave hardware, stesso discorso.
+L'unica cosa, come vi ho detto qualche pagina fa', e' se nella protezione
+sono implementati particolari accorgimenti "ANTI-DEBUGGING". In questo caso,
+purtroppo, la cosa si fa' complicata..... l'unica e' provare ad eseguire le
+istruzioni passo passo fino a quando il programma si impianta, tornare
+indietro, eliminare l'istruzione dove questo accade (andando a tracciare bene
+all'interno delle CALL per essere sicuri di non eliminare qualcosa di troppo)
+e riprovare. Di piu' su questo non so' dirvi, comunque sicuramente non
+troverete molti programmi di questo tipo..... lo stesso CuBase 3.0
+(programma che costa una cifra, con protezione a chiave hardware) non
+contiene nessuna di queste tecniche, e la sprotezione e' una vera puttanata
+(5 minuti) !!!
+Un'ultimo cenno sulla modifica della label del floppy (o del cdrom) quando
+il programma richiede un particolare nome del disco per funzionare o per
+essere installato: solita zuppa! Ci sara' un punto dove troverete un CMP
+con un jump condizionale seguente che vi portera' alla visualizzazione di
+roba del tipo "Insert the correct disk/CD in drive". Basta individuare questo
+punto e saltarlo. Tutto qua.
+
+2.4 Cracking in ambiente DOS4GW (*FOR EXPERTS ONLY*)
+
+Eccoci al dunque, al punto dove si vede veramente se un cracker ha le palle
+o meno (ve lo immaginate un cracker con le palle, dico di quelli da mangia'!).
+Premetto che le mie palle in questo campo non sono ancora molto sviluppate,
+quindi..... perdonatemi se in questa sezione saro' poco chiaro!
+Non vi sto' a dire nemmeno che, se prima non vi leggete bene gli altri
+capitoli e non vi imparate BENE BENE a destreggiare nel debugging,
+sviluppando un certo intuito "crakkistico", potete benissimo saltare questa
+parte, tanto non ci capirete quasi nulla! Ordunque, fatte queste
+precisazioni, cominciamo:
+Innanzitutto, dovete usare lo strafottutissimoWDmaledettochilhainventatolo
+potevanofa'unpo'piu'faciledausanonso'tipoilsofticechee'complicatopero'afa'
+lecosesifa'prestoinvececonquestobisognasta'agira'fralefinestreuncisicapisce
+unasega.....
+Capito, a me piace MOOOOLTO il Watcom Debugger!
+A parte questo mio odio recondito verso il programmino (in realta', l'unico
+che permette di debuggare il DOS4GW, che che ne dicano chi sostiene che si
+puo' fare benissimo con il SoftICE per Windows95. Dimostratemelo!), vi
+spiego subito qualche comandino:
+
+F5...... Go (esegue fino al BP specificato)   
+F8...... Trace
+F9...... Setta il BP all'indirizzo specificato
+F10..... Step
+
+Praticamente, il vostro debugging si ridurra' al pallosissimo steppare fino a
+che non trovate una call che vi butta fuori. A questo punto:
+   
+1) Fate UNDO con CTRL+LEFT (rispondete YES alla finestra che appare)  
+2) Mettete un BP con F9 alla call incriminata     
+3) Tracciatela
+4) Con le call successive, ripetete da 1 a 3 finche' non vi accorgete che
+   siete arrivati ad un punto nel quale un jump condizionale controlla
+   l'entrata o meno nel programma (password esatta, cd check).
+5) Provate a saltarlo, cambiando l'EIP (uguale all'IP, ma questa volta a
+   32-Bit. Anche gli altri registri li trovate in formato E) andando nella
+   finestra REGISTERS da uno dei meno e clicckando sopra al registro.
+6) Se funge, segnatevi i bytes da cambiare. Dato che nel WD non c'e' la 
+   funzione di assemble, a meno che non si tratti di NOPPARE qualcosa, 
+   dovrete scazzarvi a cambiare i bytes clickando sul jump da cambiare 
+   e giocherellando con i valori fino a che non avete ottenuto quello 
+   giusto. Questo e' uno dei principali motivi per cui odio questo debugger!
+
+Non vi sto' nemmeno a dire che nel debugging di questi programmi e'
+quantomeno ESSENZIALE avere a disposizione l'originale, per vedere come si
+comporta debuggandolo, in modo da identificare il punto dove agire. Difatti,
+in questa maniera potete prima provare a debuggare in condizione "pirata"
+(ossia, ad esempio, sbagliando la password o non inserendo il CD). Quindi,
+segnatevi tutti i breakpoint "buoni" che trovate. A questo punto, debuggando
+l'originale inserendo la PWD giusta o il CD, usate gli stessi BP partendo
+dall'ultimo, fino a che il programma non tornera' al debugger. Segnatevi
+questo BP. Ora sapete che il check avviene in un punto proprio dopo quella
+call.
+Tracciate la call e steppate finche' non esce, seguendo esattamente quello
+che succede, segnandovi tutti i jump condizionali. Ora basta riprovare a
+debuggare in condizione "pirata", settare il BP che che vi siete segnati
+precedentemente e vedere cosa fanno i jump condizionali. Sicuramente ne
+troverete uno che si comporta diversamente da prima, e sara' proprio quello 
+da cambiare.
+Questa tecnica e' diciamo standard per quanto riguarda i CD-CHECK, come nel
+caso di Destruction Derby che ora vi propongo.....
+Dunque, iniziate il debugging caricando WD /TR=RSI /SWAP DD.EXE.
+Steppate, settate BP, tracciate, eseguite e cazzi vari fino a quando non
+arrivate a questo punto (naturalmente, ci arriverete dopo MOOOLTE volte che
+il programma vi butta fuori, quindi dovrete ricominciare tracciando e 
+ritracciando.....):
+
+ (naturalmente, l'EIP che troverete voi sara' diverso!!)
+ [ ] 003A68F5 sub     esp,0000000C
+ [ ] 003A68FB mov     eax,[004EA78A]                       
+ [ ] 003A6900 sar     eax,10
+ [ ] 003A6903 cmp     eax,00000014
+ = > 003A6906 je      CS:003A6916   < Con il CD originale inserito, questo                           
+ [ ] 003A6908 mov     eax,00000003    JE viene eseguito. Per eliminare
+ [ ] 003A690D push    eax             il cd check, basta cambiarlo in JMP.
+ [ ] 003A690E call    CS:003A6ABF                             
+ [ ] 003A6913 add     esp,00000004
+
+Usando le tecniche sopra descritte e controllando prima come si comporta il
+gioco con il CD inserito vedrete che il JE a 3A906 (nel mio caso) viene 
+eseguito, mentre non inserendo il CD la call a 3A690E vi butta fuori. Quindi,
+basta cambiare questo je in un JMP. Dunque, provate innanzitutto a cambiare
+l'EIP in modo da simulare un JMP, per vedere se funge (tante volte mi fossi
+rincoglionito......). Controllato questo, segnatevi i bytes corrispondenti
+all'istruzione a 3A6906 (anche qualcuno prima e dopo) clicckando sul JE
+stesso. Poi, andate al capitolo sul patcher per vedere come il tutto si mette
+in pratica...... Ale', il vostro primo crack in DOS4GW!!!!!
+
+Ah, dimenticavo: dato che il WD non stoppa i programmi che hanno un proprio
+keyboard handler (praticamente, tutti) l'unica soluzione per debuggarli
+e' fare come in questo caso, cioe' eseguirli passo passo dall'inizio,
+tracciando e ritracciando (cosa PALLOSISSIMA che vi portera' via ore e ore).
+Senno', potete provare a mettere un BP (dall'apposito menu) alla locazione
+0xA0000 scegliendo "Byte", il che vi riportera' al debugger ogni volta che il
+programma scrive sullo schermo. Cioe', in pratica, non potete fare quello
+che fate col SoftICE o col G3X, cioe' magari arrivati al punto dove vi chiede
+la password entrare nel debugger e fare tutto il resto. Altra ragione per cui
+odio il WD, dato che il tasto per entrare nel debugger c'e' (PRTSCR), ma
+praticamente e' inusabile per questo "cavillo"!
+
+UPDATE:
+
+Ho scoperto finalmente come "crakkare" il DOS4GW usando il Softice 95!!!!
+Eh eh..... vi stupisco vero ?
+Dunque..... premetto che e' una puttanata, bastava solamente pensarci prima.
+Allora, partendo dal presupposto che la parte iniziale dell'extender e'
+sempre la stessa (cioe', il DOS4GW che e' "attaccato" all'eseguibile e'
+sempre il solito) basta fare in questa maniera:
+
+1) Si carica l'EXE da crakkare con il WD;
+2) Ci segnamo i primi bytes (quelli iniziali, che corrispondono a quelli
+   subito dopo il caricamento dell'extender);
+3) Usciamo dal WD, carichiamo il nostro bravo Hex-Editor e cerchiamo i
+   suddetti bytes nel file;
+4) Ai primi 2 bytes sostituiamo "CD 03", che corrisponde a INT 3, un                                                            
+   interrupt riservato ai debugger per prendere il controllo della
+   situazione;
+5) A questo punto, carichiamo il SoftICE 95, e eseguiamo il nostro file da
+   crakkare. Wow...... il Softice appare proprio nel punto dove noi abbiamo
+   sostituito i bytes.... ganzo!
+6) Al posto dell'INT3 sostituiamo i bytes che ci siamo segnati in precedenza
+7) Si continua a debuggare normalmente, avendo ora passato la parte di
+   startup.
+
+UPDATE 2:
+
+Dunque dunque.... eccovi fresco fresco un altro trucchetto (forse migliore
+del primo, essendo rippato brutalmente dalla guida di +ORC). C'e' di meglio
+che potete evitare di cercare prima i bytes con il WD.Allora:
+
+1) Cercate con un hex-editor nel file "vittima" la parola "WATCOM" (non mi
+   ricordo se e' WATCOM o Watcom o watcom, mettete case-insensitive). Ne
+   troverete 3 o 4, quella bona e' quella che immediatamente prima ha EB 76;
+2) Al solito, sostituite questo con CD 03 (ah gia'.. se il softice non
+   "poppa" quando eseguite, ricordatevi di attivare I3HERE ON);
+3) Runnate il programma normalmente e.... tadan! Siete proprio dopo lo
+   startup!
+4) Risostituite CD03 con EB76 e divertitevi!
+
+FINE SECONDA PARTE ( By Xoanon )

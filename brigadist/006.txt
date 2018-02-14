@@ -1,0 +1,50 @@
+Circuito Fotti-Artificieri
+
+Ok, ok, questo non è il mio campo: l' elettronica dovrei lasciarla a Techno Knight, comunque
+questo circuito è parte integrante di un esplosivo a timer, quindi per prima cosa andatevi a
+vedere il relativo file sui Detonatori, poi andate dal ferramenta fare la spesa, comprate:
+
+Una pila da 9V (Per evitare di dover fare il casino di metterle in serie, ma se volete...)
+Abbastanza cavi elettrici
+Una sveglia elettronica
+Una lampadina da 1.5V
+Due pile da 1.5V l' una
+
+Allora, guardate il file sui Detonatori, e fate il detonatore a tempo con la lampadina, la
+sveglia, le due pile da 1.5, e due dei cavi elettrici.
+Fatto ? Bene, adesso saldate un cavo elettrico ad ogni polo della pila da 9V (I cavi li 
+chiameremo A e B) poi saldate le altre estremità dei cavi sui contatti della lampadina 
+(Dove già avete saldato i contatti della sveglia), dovrebbe risultare qualcosa del genere:
+
+
+           |     |
+           \_T-T_/          Cavo A
+ Lampadina--|   |__________________________________!______
+            |   |_______________      _________    ! C    \
+            \___/               \    |         |   ! a    |
+             | |                 >===| SVEGLIA |   ! v    |
+             | \________________/    |_________|   ! o    |
+             |                                     !      |            ____
+             |                                     ! C    \__________+| 9V |
+             \_____________________________________!_________________-|____|
+                            Cavo B                 !
+
+Adesso, come si vede dal disegno, unire con un cavo denominato C (Scusa Techno Knight per questo
+linguaggio così poco specifico :) con i due cavi A e B, in modo da far fare loro contatto.
+In questo modo si annulla la polarità della pila.
+Come sempre, innestate la lampadina nell' esplosivo, inscatolate tutto il circuito, in modo da
+renderlo inaccessibile, ma fate in modo che il cavo C fuoriesca dall' ordigno, o almeno sia il
+più facilmente visibile (Meglio se nascondete anche esso, ma in modo più visibile)
+Adesso il circuito è pronto, e funziona così: l' esplosivo è detonato normalmente dal timer,
+però lo sfortunato che cercherà di di disinnescare la bomba tagliando il primo cavo che vede, 
+farà in modo che la che si annulli il gap, e il circuito funzionerà facendo accendere la
+lampadina. Potete, ripetendo il procedimento di sopra, aggiungere altri cavi A B e C, connessi
+alla stessa pila, perché ogni taglio di ogni cavo C, causerà il funzionamento del circuito.
+
+
+Spero di essere stato chiaro, comunque anche se il disegno sembra abbastanza di facile
+comprensione, questa è la prima ed ultima incursione nell' elettronica che faccio !!!
+
+
+
+bRiGaDiSt

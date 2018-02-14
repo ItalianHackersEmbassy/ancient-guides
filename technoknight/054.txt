@@ -1,0 +1,73 @@
+                COME CRACKARE UN PROGRAMMA CON IL                                 
+                           W32DASM                                               
+                                                                                 
+                     (Guida per Newbies)                                         
+                                                                                                         
+                       di Techno Knight                                          
+                  **************************                                     
+                                                                                 
+                                                                                                                                                                                                                                                                       Al
+Allora per prima cosa scaricatevi (se non li avete ancora) il W32DASM           
+l'avete letto il titolo?) e l'HIEW.                                            
+Il W32DASM e' un disassemblatore di applicazioni a 16 e a 32 bit mentre          
+puo' essere usato come debugger solo per applicazioni a 32 bit.                  
+per disassemblare un programma dal menu' "Disassembler" scegliete "Open          
+file to Disassemble..", e poi scegliete il programma che volete disassemblare.  
+Prima di fare cio' pero' fate due copie del programma, ad esempio copiatelo       
+con una nuova estensione, e poi con il W32DASM aprite la copia, altrimenti      
+l'EXE non sara' scrivibile mentre lo tenete aperto con il W32DASM (e inoltre     
+cosi' se combinate un casino avrete sempre una copia di backup)                  
+una volta che avra' finito di disassemblarlo vi ritroverete con il codice        
+assembler del programma preceduto da alcune informazioni.                       
+Ora dovete trovare il codice che vi interessa, segnarvi i bytes "scomodi"       
+e poi modificarli con l'HIEW.                                                   
+Ecco degli esempi su come potete fare...                                         
+                                                                               
+Se il programma e' uno di quelli che si registrano con un serial number         
+per prima cosa vedete cosa vi dice quando sbagliate ad inserire il S/N.        
+Poi nel W32DASM cliccate il bottone STRN REF, scegliete nella lista            
+la stringa che il programma vi presenta quando sbagliate codice, e il          
+W32DASM cerchera' per voi i riferimenti a quella stringa.                       
+Dunque se ad esempio quando sbagliate ad inserire il serial number il          
+programma vi dice "Stronzo, mi vuoi fregare ?", allora in STRN REF             
+cercherete proprio questa stringa, e cosi' troverete il primo riferimento       
+alla stringa. Il codice che state vedendo adesso e' probabilmente quello        
+che viene eseguito quando si sbaglia il S/N, quindi salite sopra e poi         
+sta a voi trovare i byte da cambiare, ma come regola generale cercate          
+un salto condizionato. Se il salto condizionato porta al codice che            
+visualizza la stringa e termina il programma allora dovrete sovrascriverlo     
+con dei NOP, se invece porta al codice che registra il programma dovrete       
+cambiarlo in un salto incondizionato (JMP)                                     
+Per farlo segnatevi i bytes e entrate nell'HIEW.                               
+Aprite il file .EXE, premete F4 e scegliete DECODE (che vi mostra il codice    
+assembler e i bytes sotto forma esadecimale), cercate i bytes che dovete       
+cambiare e sovrascriveteli con dei 90 (nel caso del NOP) o con EB (nel caso    
+del JMP).                                                                       
+                                                                               
+Sempre per i programmi con S/N potete lanciare il debugger e cercare il         
+punto nel quale si blocca. Risalite e cercate l'indirizzo di memoria dove       
+memorizza il codice esatto per passarlo alla funzione che confronta il codice   
+inserito con quello giusto.                                                     
+                                                                                
+Es.                                                                             
+                                                                                
+       PUSH EAX                  ;  Mette il Serial inserito nello Stack        
+       PUSH 406030               ;  Mette il Serial giusto nello Stack          
+       CALL [KERNEL32!lstrcmp]   ;  Li confronta....                            
+       TEST EAX,EAX                                                             
+       JNZ 00401271              ;  Vede se ti deve registrare                  
+                                                                               
+l codice giusto quindi e' conservato in 406030. Non ci resta che visualizzare   
+uell'indirizzo e cosi' troviamo il codice.                                      
+Nota che si potrebbe usare anche il metodo precedente patchando i bytes        
+el JNZ, ma non si sa mai che poi sorgono altri problemi....trovando il         
+odice vai sicuro)                                                                
+                                                                               
+Se e' un programma che dopo una certa data smette di funzionare (come alcune    
+trial) allora molto probabilmente devi cercare una chiamata a GetSystemTime    
+o qualcosa di simile che legga l'ora del sistema. Per cercare una chiamata     
+a una funzione premi il bottone IMP FN. Se hai mazzo la chiamata a
+GetSystemTime dovrebbe essere seguita da CMP e salti condizionati assai         
+evidenti, che potrai facilmente patchare con l'HIEW                              
+                                                                                 
+                               Techno Knight                                      

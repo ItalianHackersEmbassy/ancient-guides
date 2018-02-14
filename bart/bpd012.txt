@@ -1,0 +1,38 @@
+                      bartx personal diary        releas 1.0
+
+ Tutto il materiale contenuto in questo articolo ha fini eslusivamente informativi ed  
+educativi. Io Bartx non mi ritengo in alcun modo responsabile dei danni causati a cose o  
+         persone dall'uso delle informazioni contenute in questo articolo.
+  Pertanto il lettore si assume ogni genere di responsabilita' per l'uso che farà delle  
+                    informazioni contenute in questo articolo.
+Siete pregati di non postare questo articolo in newsgroup e di non diffonderlo se non in  
+                                  forma originale.
+
+
+********************************  Modifica a windows **************************************
+Allora:
+avete presente la cartella di windows?
+bene, apritela e cancellate tutti i file in esso contenuti! (per alleggerire il sistema, o
+meglio, per allegerire il pc dal sistema)
+invece, se volete prorprio usare windows c'è una cosetta interessante che potete fare
+in modo che l'uso di questo sia più immediato.
+Avete presente quando cliccate con il tasto destro del mouse su di un file e appaiono 
+le voci: copia, incolla, proprieta, ecc..? A noi interessa la voce "invia a".
+Se noi volessimo aggiungere qualche cartella, o percorso specifico tra quelli che ci sono?
+Fate così: aprite la cartella windows, cercate la cartellla "send to" e inseriteci il 
+collegamento alla cartella o disco che si vuole aggiungere. 
+Esempio pratico: voglio inserire nella voce "invia a" la cartella "immagini". Create un
+collegamento alla cartella e copiatelo in "c:\windows\send to".
+
+
+            ######                                    
+            ##   ##                #                  
+            ##   ##               ##                  
+            ##   ##   ####   ######## ##  ##          
+            ######   #   ##  ##   ##  ##  ##          
+            ##   ##    ####  ##   ##   ####           
+            ##   ##   ## ##  ##   ##    ##            
+            ##   ##  ##  ##  ##   ##   ####           
+            ##   ##  ##  ##  ##   ##  ##  ##          
+            ######    #####  ##    ## ##  ##          
+

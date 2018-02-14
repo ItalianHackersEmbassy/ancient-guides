@@ -1,0 +1,101 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+La filodiffusione.
+~~~~~~~~~~~~~~~~~~
+
+by *Acid crasH*
+
+Introduzione
+Ciao a tutti voi!!!!
+
+intro alla filodiffusione
+La filodiffusione e' la radio tramite telefono, praticamente (che
+PAROLONA!) attraverso la linea telefonica uno si ascolta la radio senza
+interruzioni di alcun genere (pubblicita' o altre cazzate), ha vari
+canali, praticamente su uno trasmettono sempre telegiornali, su un'
+altro sempre musica classica ecc. Naturalmente per questo scherzetto
+mamma' telecom si fa pagare un sacco di soldi:
+sparate una cifra esorbiante... penso che nessuno sia arrivato a tanto,
+la bastarda si piglia 260.000 all'anno, come canone e poi naturalmente
+non si riceve nel telefono, ma nei filodiffusori che sono degli
+apparecchi con dei bottoni per cambiare il canale e l'accensione.
+E vi pare che la strozzina gli metteva delle prese telefoniche come
+cristo comanda? esattamente! NO!
+ci mette delle cazzo di prese a due punti, o altre volte dei quadrati
+con una sporgenza che si ficca nella presa installata dai cazztecnici
+che magari quando la mettono si fregano anche qualcosa.
+
+La filodiffusione
+
+Occorrente:
+un cavetto plug (negozi di elettronica o di telefonia) intorno alle
+3000£
+coccodrilletti (negozi di elettronica)500 l'uno, ne servono 3-4
+saldatore & stagno (in mancanza, va bene il nastro isolante)
+un filodiffusore (mafioso, cecchino o cinese della bancarella o nei
+negozi cazzuti) ???
+
+Preparazione:
+prendete il cavetto PLUG, togliete il cazzetto alla fine del filo,
+tirate fuori i quattro fili e spellateli. sono stato abbastanza chiaro?
+:-) ora con il saldatore e lo stagno fissate i file ai coccodrilli.
+
+Consiglio
+I suddetti coccodrilli sono UTILISSIMI! Ci sono mille usi... per
+esempio per fissare i foglietti e per arraffare un'orecchio di un
+nemico! :-)
+
+Attacco:
+Piazzate estremita' del filo col cazzetto nella presa a muro di un
+telefono e con i coccodrilletti acchiappate i ferretti che escono
+dalla presa del filodiffusore (io non so cosa succeda se qualcuno
+telefona in questo memento!:-)). Dopo un po' di tentativi dovreste
+riuscire a sentire qualcosa dal filodiff. se si sente male andate a
+protestare alla tescazz :-)
+
+
+Ed ora... spazio agli ascoltoni!
+
+Ho trovato due metodi che credo siano "astratti" per ascoltare gli
+altri eccoli:
+1. Avete delle ricitrasmittenti? (di quelle giocattolo, per intenderci)
+accendetene una e fatevi un giro per casa... a me e' successo di
+sentire radioamatori e mooolto raramente delle telefonate
+2. NOTE: io l'ho fatto solamente con un motorola 6900 e in aperta
+campagna , per questo non vi assicuro che funzioni. Dovete telefonare
+ad un telefonino spento, per quanto mi risulta funziona solo cosi',
+certe volte si intercettano le telefonate, a me e' successo una volta..
+provate e fatemi sapere.
+
+Conclusione
+Io non  sono sicuro che tutto questo funga, io ci ho provato e ha
+funczionato.
+vi lasio con un bel quis da risolvere e mandare al mio indirizzo:
+jack410@openaccess.it
+
+Quis
+ho fatto una scoperta favolosa ieri!
+COSA SUCCEDE SE IN UN TELEFONO A SCHEDA E A GETTONI INSERITE UNA SCHEDA
+E LA BLOCCATE CON UN DITO E POI INSERITE £ 200?
+premio:
+assolutamente nulla.
+
+frase storica
+Se ci fosse un modo per hackerare i tombini e
+le carcasse dell'ENEL saremmo tutti stramiliardari.
+
+                                                         (*Acid crasH*)
+                                                             (cioe' io)
+
+see you soon :-)
+ 
+== Fonte: *Acid crasH* ==
+
+The Raven
+Since `82

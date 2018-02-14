@@ -1,0 +1,146 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO'
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER
+     SCOPI ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- LISTA DI REMAILERs -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Bene girando sulla rete sono riuscito a trovare un bel po' di Indirizzi di
+Remailers, che ho raccolto ed impaginato per voi :) . Penso che possano
+tornare MOLTO utili (soprattutto in una "catena" di remails).
+
+================================================================================
+Nome del          Indirizzo                          Caratteristiche
+Remailer          E-Mail                             del Remailer
+--------------------------------------------------------------------------------
+
+"athena"   <athena@cyberpass.net>                    mix post
+
+"base"     <remailer@base.xs4all.nl>                 cpunk pgp hash latent cut
+                                                     post ek esub ksub reord
+                                                     klen29
+
+"bird"     <blackbird@cpis.net>                      cpunk mix hybrid pgp
+                                                     latent ek cut hash post
+                                                     repgp remix reord ext max
+                                                     test inflt50 rhop5 klen1000
+
+"bpm"      <remailer@bpm.ai>                         mix
+
+"brianne"  <brianne@drule.org>                       cpunk mix hybrid middle
+                                                     pgp pgponly latent ek cut
+                                                     hash post repgp remix
+                                                     reord ext max test inflt50
+                                                     rhop5 klen250
+
+"clive"    <clive.remailer@usa.net>                  cpunk mix hybrid middle
+                                                     pgp pgponly latent ek cut
+                                                     hash ksub repgp repgp2
+                                                     remix remix2 ext reord
+                                                     test rhop5 inflt50 klen500
+
+"cracker"  <remailer@anon.efga.org>                  cpunk mix remix remix2 pgp
+                                                     middle hash ksub esub
+                                                     latent cut ek reord post
+                                                     klen1024
+
+"cripto"   <anon@ecn.org>                            cpunk mix remix remix2 pgp
+                                                     hash ksub esub latent cut
+                                                     ek reord
+
+"cyber"    <alias@alias.cyberpass.net>               alpha pgp
+
+"dctest"   <remailer@dragoncon.net>                  cpunk pgp ext latent ek
+                                                     cut hash ksub post repgp
+                                                     repgp2 reord test rhop5
+                                                     inflt30 klen1000
+
+"dongco"   <config@dongco.hyperreal.art.pl>          newnym pgp
+
+"drule"    <remailer@drule.org>                      cpunk mix ext max hybrid
+                                                     pgp latent ek cut hash
+                                                     ksub repgp repgp2 remix
+                                                     remix2 reord test rhop5
+                                                     inflt30 klen1000
+
+"gretchen" <gretchen@neuropa.net>                    cpunk pgp repgp repgp2
+                                                     latent ek cut hash ksub
+                                                     ext max test rhop5 inflt50
+                                                     klen1000
+
+"hr13"     <remailer@hr13.zedz.net>                  cpunk mix pgp hash latent
+                                                     cut ek pgponly test
+
+"hyper"    <mix@sind.hyperreal.art.pl>               cpunk mix remix remix2 pgp
+                                                     hash ksub esub latent cut
+                                                     ek reord post
+
+"lcs"      <mix@anon.lcs.mit.edu>                    mix klen1000
+
+"mccain"   <mccain@notatla.demon.co.uk>              mix middle klen200
+
+"mid"      <mid@lo14.wroc.pl>                        pgp mix middle
+
+"mix"      <mixmaster@remail.obscura.com>            cpunk mix pgp hash latent
+                                                     cut ek ksub reord klen1000
+
+"nitemare" <nightmare@uni-muenster.de>               cpunk mix ext hybrid middle
+                                                     pgp latent ek cut hash ksub
+                                                     repgp repgp2 reord klen128
+
+"nowhere"  <mixer@nowhere.to>                        ? cpunk mix remix remix2
+                                                     pgp hash ksub esub latent
+                                                     cut ek reord klen1000
+
+"nym"      <config@nym.alias.net>                    newnym pgp klen1000
+
+"openpgp"  <mixmaster@openpgp.net>                   mix 
+
+"passthru" <mixer@immd1.informatik.uni-erlangen.de>  mix middle
+
+"pilot"    <remailer@funlaw.com>                     cpunk mix hybrid pgp latent
+                                                     ek cut hash ksub post repgp
+                                                     repgp2 remix remix2 ext max
+                                                     test rhop5 inflt50 klen1000
+
+"piratech" <remailer@piratech.net>                   cpunk mix ext pgp latent
+                                                     ek cut hash ksub repgp
+                                                     repgp2 test rhop3 inflt50
+                                                     klen1000
+
+"privacy"  <remailer@privacy.nb.ca>                  mix
+
+"redneck"  <config@redneck.efga.org>                 newnym pgp klen1024
+
+"reject"   <remailer@reject.kewlhair.com>            mix
+
+"replay"   <remailer@replay.com>                     cpunk mix remix remix2 pgp
+                                                     hash latent cut post ek
+                                                     klen1000
+
+"squirrel" <mix@squirrel.owl.de>                     cpunk mix pgp pgponly hash
+                                                     latent cut post ek esub
+                                                     ksub reord remix remix2
+                                                     klen1000
+
+"swiss"    <mix@remailer.ch>                         mix
+
+"teatwo"   <teatwo@notatla.demon.co.uk>              cpunk middle pgp pgponly
+                                                     remix latent hash cut ek
+                                                     post klen200
+
+"widow"    <Widow@wol.be>                            cpunk mix hybrid middle
+                                                     pgp latent ek cut hash
+                                                     repgp remix reord ext max
+                                                     test inflt5 rhop3 klen250
+================================================================================
+
+Informazioni
+ reperite e
+ raccolte da
+ Å        Å
+ ³ AVA666 ³
+ ~~~~~~~~~~

@@ -1,0 +1,392 @@
+
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+#*                            Mercinary Today 4                            *#
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#                               
+Edited and MOSTLY written by Armagedeon
+Special Thanks go to Locutus for relieving me of the stress of having to write
+everything.
+Disclaimer
+++++++++++
+   I or anyone who is assosiated with me, take NO RESPONSIBLITY FOR what you
+do with any or all the info in this book. The information included is for
+ENTERTAINMENT PURPOSES ONLY. (I have absolutly no idea what you call 
+entertainment for all I know you just read this while on the can). If you
+drag me to court I WILL be pissed and I'll testify against YOU!!!!
+(well enough with the bullshit and on with the show)
+Contents
+!!!!!!!!
+Beginner Beige Boxing (very well written)
+Zen and the art of making weapons
+                             Beginner Beige Boxing
+                                by Major Mayhem
+Every mercinary has to keep in touch with there bosses at some time or another
+and were not all lucky enough to have cell phones or even if ya do, you might
+not want other people listening in on your call.  That's where I come in.  All
+you'll need to make free phone calls on someone else's phone line is:
+1) 1 x a phone preferably with the keypad in the handset it self
+2) 2 x alligator clips (red and green for practicallity)
+3) 1 x screw driver
+4) 1 x wire cutters
+5) 1 x an I.Q. higher then room temperature
+Okay, first things first, you're going to want to modify the phone for our uses
+so first cut off the modular jack.  Inside your going to see 4 wires (though in
+older phones you'll only see 2) and the only ones were interested in are the
+red (ring) and green (tip).  The other 2 are usually white and black but are of
+no use as they're for 2nd fone lines, extra features (call waiting, caller ID,
+call block etc...) so just cut them off.  Now strip the red and green wires so
+that you have about 1cm of bare wire.  Now wrap the red wire onto the red
+alligator clip and do the same for the green wire.
+Now that you've finished the hardware part of the beige box, you'll have to know
+how to use it.  The principals are easy to understand,  you'll be hooking this
+into any number of telco switching apparatus.  The easiest to start with is the
+one that's probably on the side of your house right now.  Walk around your house
+and find a small (3cm x 4cm) grey box that has the northern telecom logo (if you
+live in Canada or your local telco logo if your somewhere else) and open it.  It
+slides upwards so simply grab the sides and push up.  Now you'll see 5 posts.
+It should look something like this:
+                 ---------------------------------
+                 |                               |
+                 |  |*| |*|    |G|      |*| |*|  |
+                 |   |   |      |        |   |   |
+                 | __|   |      |        |   |__ |
+                 | ______|      |        |______ |
+                 | _____________|_______________ |
+                 |                               |
+                 |                               |
+                 ---------------------------------
+|*| = posts
+|__ = wire
+|G| = ground
+Inside these boxes there's enough posts for 2 phones lines, so just pick the one
+that has wires running to it and start connecting the phone like this.  Attach
+the red gator clip to the red wire on the right.  The red wire is ALWAYS on the
+right, remember this by using a saying like Red, Ring, Right or something.  Now
+attach the green gator clip to the post next to the red one.  You should hear a
+dialtone now.  Now as fun as this is, your still on your line so let's get to
+the good stuff, using someone else's.
+Look in the backs of businesses or in the ally's in your downtown sector (you
+know, the place your mommy's always told you not to go) and look for silver
+boxes about 30cm x 18cm that have the Nortern Telecom logo on it.  The older
+ones can be opened by just pulling up on the tab near the bottom while the newer
+ones have to be unlocked using a 7/16 hex socket and then opened by pulling the
+bottom up.  When you open it, you should see something like this:
+                    -----------------------------
+                    |     |R|    |*|        |R| |
+                    | |G|               |G|     |
+                    |            |*|            |
+                    |     |R|               |R| |
+                    | |G|        |*|    |G|     |
+                    |                           |
+                    |     |R|    |*|        |R| |
+                    | |G|               |G|     |
+                    |            |*|            |
+                    |     |R|               |R| |
+                    | |G|        |*|    |G|     |
+                    -----------------------------
+|G| = green
+|R| = red
+|*| = ground
+There will be wires running all through the box and can be quite a mess
+sometimes but anyway, this is almost the same as what we did back at the box on
+your house but on a larger scale.  These boxes have the posts on an upward angle
+so be carefull where you plug them in or you'll get nowhere fast.  Simply
+connect the red clip to the red post as marked in my diagram and do the same for
+the green clip.  If you hear a dialtone, great!  If not, try another set of
+posts, remember, not all of the lines are connected so you might have just hit
+a dead line.  Now you can dial all you want, anywhere you want.
+You may want to know who's line your on though, for tapping, or maybe you just
+want to know, so here's how to find out.  Call an ANI (Automatic Number
+Identification) which will read back in a computerized voice what number your
+calling from.  Try 1-800-MY-ANI-IS which is owned by MCI though at one time
+there wass no pin, then there was due to over abuse (the pin was 220) then they
+put on a fricken 12 digit pin!  Good luck hacking it :)  You might want to try
+  (800)238-4959   A voice mail system
+  (800)328-2630   A phone sex line
+  (800)568-3197   Info Access Telephone Company's Automated Blocking Line
+  (800)571-8859   A phone sex line
+  (800)692-6447   (800)MY-ANI-IS
+  (800)455-3256   Unknown
+An non-800 that works nationwide is 404-988-9664.  The one catch
+with this number is that it must be dialed with the AT&T Carrier
+Access Code 10732.
+Another non-800 nationwide ANI is Glen Robert of Full Disclosure
+Magazine's number, 10555-1-708-356-9646.
+Please use local ANI numbers if you can, as abuse or overuse can kill
+800 ANI numbers.
+Note: These geographic areas are for reference purposes only.  ANAC
+numbers may vary from switch to switch within the same city.
+  NPA  ANI number       Approximate Geographic area
+  ---  ---------------  ---------------------------------------------
+  201  958              Hackensack/Jersey City/Newark/Paterson, NJ
+  202  811              District of Columbia
+  203  970              CT
+  205  300-222-2222     Birmingham, AL
+  205  300-555-5555     Many small towns in AL
+  205  300-648-1111     Dora, AL
+  205  300-765-4321     Bessemer, AL
+  205  300-798-1111     Forestdale, AL
+  205  300-833-3333     Birmingham
+  205  557-2311         Birmingham, AL
+  205  811              Pell City/Cropwell/Lincoln, AL
+  205  841-1111         Tarrant, AL
+  205  908-222-2222     Birmingham, AL
+  206  411              WA (Not US West)
+  207  958              ME
+  209  830-2121         Stockton, CA
+  209  211-9779         Stockton, CA
+  210  830              Brownsville/Laredo/San Antonio, TX
+  212  958              Manhattan, NY
+  213  114              Los Angeles, CA (GTE)
+  213  1223             Los Angeles, CA (Some 1AESS switches)
+  213  211-2345         Los Angeles, CA (English response)
+  213  211-2346         Los Angeles, CA (DTMF response)
+  213  760-2???         Los Angeles, CA (DMS switches)
+  213  61056            Los Angeles, CA
+  214  570              Dallas, TX
+  214  790              Dallas, TX (GTE)
+  214  970-222-2222     Dallas, TX
+  214  970-611-1111     Dallas, TX (Southwestern Bell)
+  215  410-xxxx         Philadelphia, PA
+  215  511              Philadelphia, PA
+  215  958              Philadelphia, PA
+  216  200-XXXX         Akron/Canton/Cleveland/Lorain/Youngstown, OH
+  216  331              Akron/Canton/Cleveland/Lorain/Youngstown, OH
+  216  959-9892         Akron/Canton/Cleveland/Lorain/Youngstown, OH
+  217  200-xxx-xxxx     Champaign-Urbana/Springfield, IL
+  219  550              Gary/Hammond/Michigan City/Southbend, IN
+  219  559              Gary/Hammond/Michigan City/Southbend, IN
+  301  958-9968         Hagerstown/Rockville, MD
+  310  114              Long Beach, CA (On many GTE switches)
+  310  1223             Long Beach, CA (Some 1AESS switches)
+  310  211-2345         Long Beach, CA (English response)
+  310  211-2346         Long Beach, CA (DTMF response)
+  312  200              Chicago, IL
+  312  290              Chicago, IL
+  312  1-200-8825       Chicago, IL (Last four change rapidly)
+  312  1-200-555-1212   Chicago, IL
+  313  200-200-2002     Ann Arbor/Dearborn/Detroit, MI
+  313  200-222-2222     Ann Arbor/Dearborn/Detroit, MI
+  313  200-xxx-xxxx     Ann Arbor/Dearborn/Detroit, MI
+  313  200200200200200  Ann Arbor/Dearborn/Detroit, MI
+  314  410-xxxx#        Columbia/Jefferson City/St.Louis, MO
+  315  953              Syracuse/Utica, NY
+  315  958              Syracuse/Utica, NY
+  315  998              Syracuse/Utica, NY
+  317  310-222-2222     Indianapolis/Kokomo, IN
+  317  559-222-2222     Indianapolis/Kokomo, IN
+  317  743-1218         Indianapolis/Kokomo, IN
+  334  5572411          Montgomery, AL
+  334  5572311          Montgomery, AL
+  401  200-200-4444     RI
+  401  222-2222         RI
+  402  311              Lincoln, NE
+  404  311              Atlanta, GA
+  404  940-xxx-xxxx     Atlanta, GA
+  404  990              Atlanta, GA
+  405  890-7777777      Enid/Oklahoma City, OK
+  405  897              Enid/Oklahoma City, OK
+  407  200-222-2222     Orlando/West Palm Beach, FL
+  408  300-xxx-xxxx     San Jose, CA
+  408  760              San Jose, CA
+  408  940              San Jose, CA
+  409  951              Beaumont/Galveston, TX
+  409  970-xxxx         Beaumont/Galveston, TX
+  410  200-6969         Annapolis/Baltimore, MD
+  410  200-555-1212     Annapolis/Baltimore, MD
+  410  811              Annapolis/Baltimore, MD
+  412  711-6633         Pittsburgh, PA
+  412  711-4411         Pittsburgh, PA
+  412  999-xxxx         Pittsburgh, PA
+  413  958              Pittsfield/Springfield, MA
+  413  200-555-5555     Pittsfield/Springfield, MA
+  414  330-2234         Fond du Lac/Green Bay/Milwaukee/Racine, WI
+  415  200-555-1212     San Francisco, CA
+  415  211-2111         San Francisco, CA
+  415  2222             San Francisco, CA
+  415  640              San Francisco, CA
+  415  760-2878         San Francisco, CA
+  415  7600-2222        San Francisco, CA
+  419  311              Toledo, OH
+  502  2002222222       Frankfort/Louisville/Paducah/Shelbyville, KY
+  502  997-555-1212     Frankfort/Louisville/Paducah/Shelbyville, KY
+  503  611              Portland, OR
+  503  999              Portland, OR (GTE)
+  504  99882233         Baton Rouge/New Orleans, LA
+  504  201-269-1111     Baton Rouge/New Orleans, LA
+  504  998              Baton Rouge/New Orleans, LA
+  504  99851-0000000000 Baton Rouge/New Orleans, LA
+  508  958              Fall River/New Bedford/Worchester, MA
+  508  200-222-1234     Fall River/New Bedford/Worchester, MA
+  508  200-222-2222     Fall River/New Bedford/Worchester, MA
+  508  26011            Fall River/New Bedford/Worchester, MA
+  509  560              Spokane/Walla Walla/Yakima, WA
+  510  760-1111         Oakland, CA
+  512  830              Austin/Corpus Christi, TX
+  512  970-xxxx         Austin/Corpus Christi, TX
+  515  5463             Des Moines, IA
+  515  811              Des Moines, IA
+  516  958              Hempstead/Long Island, NY
+  516  968              Hempstead/Long Island, NY
+  517  200-222-2222     Bay City/Jackson/Lansing, MI
+  517  200200200200200  Bay City/Jackson/Lansing, MI
+  518  511              Albany/Schenectady/Troy, NY
+  518  997              Albany/Schenectady/Troy, NY
+  518  998              Albany/Schenectady/Troy, NY
+  603  200-222-2222     NH
+  606  997-555-1212     Ashland/Winchester, KY
+  606  711              Ashland/Winchester, KY
+  607  993              Binghamton/Elmira, NY
+  609  958              Atlantic City/Camden/Trenton/Vineland, NJ
+  610  958              Allentown/Reading, PA
+  610  958-4100         Allentown/Reading, PA
+  612  511              Minneapolis/St.Paul, MN
+  614  200              Columbus/Steubenville, OH
+  614  571              Columbus/Steubenville, OH
+  615  200200200200200  Chatanooga/Knoxville/Nashville, TN
+  615  2002222222       Chatanooga/Knoxville/Nashville, TN
+  615  830              Nashville, TN
+  616  200-222-2222     Battle Creek/Grand Rapids/Kalamazoo, MI
+  617  200-222-1234     Boston, MA
+  617  200-222-2222     Boston, MA
+  617  200-444-4444     Boston, MA (Woburn, MA)
+  617  220-2622         Boston, MA
+  617  958              Boston, MA
+  618  200-xxx-xxxx     Alton/Cairo/Mt.Vernon, IL
+  618  930              Alton/Cairo/Mt.Vernon, IL
+  619  211-2001         San Diego, CA
+  619  211-2121         San Diego, CA
+  703  811              Alexandria/Arlington/Roanoke, VA
+  704  311              Asheville/Charlotte, NC
+  707  211-2222         Eureka, CA
+  708  1-200-555-1212   Chicago/Elgin, IL
+  708  1-200-8825       Chicago/Elgin, IL (Last four change rapidly)
+  708  200-6153         Chicago/Elgin, IL
+  708  724-9951         Chicago/Elgin, IL
+  708  356-9646         Chicago/Elgin, IL
+  713  380              Houston, TX
+  713  970-xxxx         Houston, TX
+  713  811              Humble, TX
+  714  114              Anaheim, CA (GTE)
+  714  211-2121         Anaheim, CA (PacBell)
+  714  211-2222         Anaheim, CA (Pacbell)
+  716  511              Buffalo/Niagara Falls/Rochester, NY (Rochester Tel)
+  716  990              Buffalo/Niagara Falls/Rochester, NY (Rochester Tel)
+  717  958              Harrisburg/Scranton/Wilkes-Barre, PA
+  718  958              Bronx/Brooklyn/Queens/Staten Island, NY
+  802  2-222-222-2222   Vermont
+  802  200-222-2222     Vermont
+  802  1-700-222-2222   Vermont
+  802  111-2222         Vermont
+  805  114              Bakersfield/Santa Barbara, CA
+  805  211-2345         Bakersfield/Santa Barbara, CA
+  805  211-2346         Bakersfield/Santa Barbara, CA (Returns DTMF)
+  805  830              Bakersfield/Santa Barbara, CA
+  806  970-xxxx         Amarillo/Lubbock, TX
+  810  200200200200200  Flint/Pontiac/Southfield/Troy, MI
+  812  410-555-1212     Evansville, IN
+  813  311              Ft. Meyers/St. Petersburg/Tampa, FL
+  815  200-xxx-xxxx     La Salle/Rockford, IL
+  815  290              La Salle/Rockford, IL
+  817  211              Ft. Worth/Waco, TX
+  817  970-611-1111     Ft. Worth/Waco, TX  (Southwestern Bell)
+  818  1223             Pasadena, CA (Some 1AESS switches)
+  818  211-2345         Pasadena, CA (English response)
+  818  211-2346         Pasadena, CA (DTMF response)
+  903  970-611-1111     Tyler, TX
+  904  200-222-222      Jackonsville/Pensacola/Tallahasee, FL
+  906  1-200-222-2222   Marquette/Sault Ste. Marie, MI
+  907  811              AK (All)
+  908  958              New Brunswick, NJ
+  910  200              Fayetteville/Greensboro/Raleigh/Winston-Salem, NC
+  910  311              Fayetteville/Greensboro/Raleigh/Winston-Salem, NC
+  910  988              Fayetteville/Greensboro/Raleigh/Winston-Salem, NC
+  914  990-1111         Peekskill/Poughkeepsie/White Plains/Yonkers, NY
+  915  970-xxxx         Abilene/El Paso, TX
+  916  211-2222         Sacramento, CA (Pac Bell)
+  916  461              Sacramento, CA (Roseville Telepohone)
+  919  200              Durham, NC
+  919  711              Durham, NC
+  Canada:
+  204  644-4444         Manitoba
+  306  115              Saskatchewan, Canada
+  403  311              Alberta, Yukon and N.W. Territory
+  403  908-222-2222     Alberta, Yukon and N.W. Territory
+  403  999              Alberta, Yukon and N.W. Territory
+  416  997-xxxx         Toronto, Ontario
+  506  1-555-1313       New Brunswick
+  514  320-xxxx         Montreal, Quebec
+  519  320-xxxx         London, Ontario
+  604  1116             British Columbia, Canada
+  604  1211             British Columbia, Canada
+  604  211              British Columbia, Canada
+  613  320-2232         Ottawa, Ontario
+  705  320-4567         North Bay/Saulte Ste. Marie, Ontario
+  Australia:
+  +61  03-552-4111      Victoria 03 area
+  +612 19123            All major capital cities
+  +612 11544
+  United Kingdom:
+  175
+  Israel:
+  110
+Now, this can be VERY usefull but we all want to have some juvinile fun at some
+time or another so here's some idea's to screw up someones lines :)
+1) Try this, find the line of a major store, I like Toys 'R' Us personally but
+anyway, call forward from thier line to someones you really don't like.  *72
+in my area will bring up call forwarding.
+2) Have fun with the 911 operator.  You're not on YOUR line so who cares if 
+you screw around with them.  If you piss 'em off enough, they'll cut your line
+and they'll probably have to deal with the police, 911, and Bell to get there
+line back!
+3) Order a crapload of food (pizza, chinese) from anywhere that'll deliver.
+When they call back to confirm the order pick up AS SOON as the phone rings 
+and confirm.  They'll get a crapload of food and they'll have to pay because
+it was confirmed. 
+4) A variation on the 911 thing, call up the police or 911 again, whoever and
+say that your in the back room of this business or somthing and say there's
+just been a doube, triple or quadruple murder, whatever.  You could also use
+a banks line and say you were working late and there's just been an explosion
+in the vault.  They'll get the cops and bomb squad out there!
+Have fun, and don't get caught :)
+This article follows the same disclaimer as at the beginning of this mag.
+For educational use blah blah may cause death blah blah destruction, 
+devestation blah blah sex blah....
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+#*Zen and the art of making weapons*#
+#*         By: Armagedeon          *#
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+   Weapons are fun to use, but they are also fun to make. All you need is some
+spare time some files (or electric grinder) and an imagination. It can be a 
+fun past time. In making weapons your main objective is to do any of the 
+following:
+a)make a blunt end
+b)make a sharp edge
+or basically make something that could hurt someone.
+   
+   Any piece of metal (as long as it's not too soft) can be honed to a blade
+and if you make it small enough you can conceal it easily. The only problem
+is, where do you get the metal. Well you can go to a hardware store and buy
+a hacksaw blade (this is EXCELLENT metal) and file it into a blade with a grinder
+or file. If you use a grinder make sure you have an ice cube handy so you can
+temper the blade because it gets HOT!! If you're into wood carving you can make
+a nice club out of a thick branch (make sure it's a hardwood like maple or something)
+#*#*#*#*#*#*#*#*#*#*#
+#*   Conclusion    *#
+#*#*#*#*#*#*#*#*#*#*#
+  
+   Well this has been mercinary today 4. Sorry I didn't make it longer but I'm
+kinda pressed for time lately. I also thought I'd change it to an executable
+because if your like me ya get kinda lazy and don't like to type more then you
+have to. Well until next time!!!
+Peace is for wimps and faggots, war is for REAL men!!
+Armagedeon
+                      /\/\/\/\/\
+                      *        *
+                           |
+                        /\/\/\
+                      \________/
+                     /  /\/\/\  \
+                     /\/\/\/\/\/\
+                       /\/\/\/\
+                         /\/\
+                          \/

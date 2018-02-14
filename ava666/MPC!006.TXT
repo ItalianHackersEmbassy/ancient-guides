@@ -1,0 +1,110 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     L'AUTORE, AVA666, DECLINA OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- SCHEDE TELEFONICHE -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vi piacerebbe poter ricaricare le schede telefoniche esaurite? Sappiate che
+ä praticamente impossibile. Ma non ho detto che lo ä. Infatti vi ricordo che
+una s.t. (SCHEDA TELEFONICA) non ä altro che un nastro magnetico sopra un
+pezzo di plastica: dunque lo puoi leggere e scrivere (Per ora io riesco solo
+a leggerle...). Spero quindi che possano tornarvi utili le mie esperienze.
+Ora vi darÚ alcune info tecniche (e non) sulle schede telefoniche (Tutte, o
+quasi, ottenute per intuito, esperimenti ed osservazioni).
+
+Le schede telefoniche italiane hanno queste caratteristiche:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+->Banda magnetica, in cui sono scritti: il numero seriale della carta, la data
+  di scadenza e la quantitÖ del denaro in essa contenuto;
+->Numero seriale della carta (stampato in basso a sinistra);
+->Logo Telecom 'in bella vista' (in basso a destra);
+->Logo Telecom subliminale (probabilmente per tutelarsi dalle contraffazioni),
+  in due strisce incolore: al centro e in basso (si vedono in controluce);
+->Una specie di codice a lettura ottica.
+
+
+Informazioni sulla banda magnetica
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PuÚ essere lunga 4 cm (5.000 lire), 4,75 cm (10.000) o 5,5 cm (15.000). Si
+puÚ facilmente dedurre che nei soli 0,75 cm finali sono contenuti i soldi.
+Se letta la scheda appare divisa in tre principali sezioni: Nella terza sono
+contenuti i soldi (ogni 200 lire corrispondono ad una linea d'onda).
+
+
+Informazioni sul codice a lettura ottica
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ne esistono solo 3 tipi, ed identificano il valore della carta:
+
+≥≥≥ ≥€ €≥ €≥
+≥≥≥ ≥€ €≥ €≥  ------> 5.000 lire
+≥≥≥ ≥€ €≥ €≥
+
+
+≥≥≥≥ € €≥ €≥
+≥≥≥≥ € €≥ €≥  ------> 10.000 lire
+≥≥≥≥ € €≥ €≥
+
+
+≥≥≥ ≥€  €≥€≥
+≥≥≥ ≥€  €≥€≥  ------> 15.000 lire
+≥≥≥ ≥€  €≥€≥
+
+Insomma, funzionano un po' come gli scontrini!
+
+Comunque, secondo le mie informazioni, anche riuscire a copiarle sarebbe
+praticamente inutile, perchä (da quel che ho saputo), la cabina controlla il
+codice seriale, e ne memorizza i soldi, quindi non potrai mai utilizzare due
+schede con lo stesso seriale. Il colpaccio sarebbe riuscire a generare codici
+senza problemi, in questo modo si supererebbe l'unico, vero, grosso, problema.
+
+Per leggerle avete bisogno di:
+- UN COMPUTER
+- UNA SCHEDA 
+- UN REGISTRATORE A BOBINE
+- UNA TESTINA MAGNETICA (qualora non andasse bene quella del registr.)
+
+Collegate il registratore all'entrata della scheda sonora o direttamete all'
+entrata del microfono (io la uso cosç) e passate la s.t. (a velocitÖ costante)
+davanti alla testina (la cosa migliore ä utilizzare una testina di un rotor).
+Ovviamente dovrete registrarlo con un programma, tipo Sound Forge o Cool Edit).
+In teoria anche per scrivere una scheda avete bisogno della stessa roba. 
+
+<upgrade 1>
+ORMAI HO LASCIATO PERDERE IL COSIDETTO 'MTF project'- ci ho perso anche troppo
+tempo... - AVATAR
+
+
+<PICCO DELLE SPERANZE PER L'MTF PRJT:>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^           
+           90%
+           /|  
+         /  |
+    65%/    |
+      |     |
+50%  /      |
+---/        |
+             \45%
+              |
+              |25%
+               \   2%           0.001%       
+                 \______________............. 0%
+
+
+<upgrade 2>
+Questo UPG. e' rivolto solo riguardo alcune considerazioni sulle dimensioni
+delle Schede: 8.5 x 5.35 cm (sono dati abbastanza approssimativi).
+La cosa MOLTO INTERESSANTE e' che queste sembrano essere misure STANDARD,
+infatti sono ESATTAMENTE LE STESSE di altri tipi di schede, ovvero:
+- SIM CARD per Cellulare (tipo grande);
+- Biglietti plastificati con menate scritte sopra regalate con le pastine (!);
+- Schede internazionali;
+- <ALTRE CHE ORA NON MI RICORDO - PROSSIMAMENTE>
+
+ ≈        ≈
+ ≥ AVA666 ≥ 
+ ~~~~~~~~~~
+

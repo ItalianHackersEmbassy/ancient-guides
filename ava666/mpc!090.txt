@@ -1,0 +1,86 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     L'AUTORE, AVA666, DECLINA OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Consiglio, prima di tutto, di fare una copia dei files da modificare.
+
+-!!!- PC TIPS: UTILI COSETTE DA SAPERE -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wow. Ecco come si struttura questo buffo File:
+          1=--_-Come cancellare i files indesiderati ed inutili ad ogni Boot
+        2=--_-Come velocizzare l'avvio di Windows
+      3=--_-Ottimizzare il File System per partire applicazioni Multimediali
+    4=--_-Come far funzionare il Modem piu' velocemente
+  5=--_-Come personalizzare il comando 'Dir' sotto Dos
+6=--_-Come editare i Files (sopra citati)
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+COME CANCELLARE I FILEs INDESIDERATI ED INUTILI AD OGNI 'BOOT'
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Aggiungi delle linee di questo tipo nel tuo AUTOEXEC.BAT:
+(attenzione: prima accertatevi se per 'Si' il computer vuole Y o S)
+
+Echo Y|If Exist C:\Windows\Tempor~1\*.* Del C:\Windows\Tempor~1\*.*
+Echo Y|If Exist C:\Windows\Cookies\*.* Del C:\Windows\Cookies\*.*
+Echo Y|If Exist C:\Windows\Recent\*.* Del C:\Windows\Recent\*.*
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+COME VELOCIZZARE L'AVVIO DI WINDOWS
+'''''''''''''''''''''''''''''''''''
+Apri il file C:\MSDOS.SYS con un editor di Testo e aggiungi le seguenti linee
+sotto 'Options':
+
+Logo=0
+Bootdelay=0
+
+ Come potrete intuire queste linee fanno in modo che all'avvio non venga fatto
+ vedere il logo e non ci sia nessun'attesa inutile.
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+OTTIMIZZARE IL FILE SYSTEM PER FAR PARTIRE APPLICAZIONI MULTIMEDIALI
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Fai partire REGEDIT (Vai su Avvio, Esegui..., poi scrivi "Regedit") ora vai a:
+Hkey_Local_Machine\System\CurrentControlSet\Control\FileSystem ora crea un
+nuovo valore "DWORD" cosi': "ContigFileAllocSize" con valore "0x000001F4(500)"
+esadecimale (basta cliccare col tasto destro e andare su "Modifica" e inserire,
+nel campo del valore, "000001F4"). Allora "Resetta il Sistema" (Rebootta).
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+COME FAR FUNZIONARE IL MODEM PIU' VELOCEMENTE
+'''''''''''''''''''''''''''''''''''''''''''''
+Vai su Avvio, Impostazioni, Pannello di controllo, infine fai un doppio clic
+su "Modem". Apri IMPOSTAZIONI, PANNELLO DI CONTROLLO, MODEM, PROPRIETA',
+CONNESSIONE, AVANZATE. Inserisci s11=40 nel campo "extra settings".
+Eventualmente puoi fare diversi tentativi modificando "40".
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+COME PERSONALIZZARE IL COMANDO "Dir" SOTTO DOS
+''''''''''''''''''''''''''''''''''''''''''''''
+Edita il file "AUTOEXEC.BAT" e aggiungi "SET DIRCMD=/P /O:GNE" cosi', ogni
+volta che scrivete "Dir", automaticamente, dividera' la lista dei files in
+pagine (/p) e fara' prima vedere le directories (G), poi mettera' in ordine
+alfabetico i files (N) e poi le estensioni (E). Questa e' probabilmente la
+miglior settaggio predefinito che potreste fare, ma ovviamente ognuno ha
+delle preferenze... (quindi, per altre opzioni che potreste aggiungere, vi
+bastera' fare 'Dir /H').
+
+,,,,,,,,,,,,,,,,,,,,
+COME EDITARE I FILES
+''''''''''''''''''''
+Per editare i Files potete usare direttamente "Notepad" o, se state usando
+Gestione Risorse, basta fare un doppio clic (in genere se il visualizzatore
+predefinito e' quello giusto - altrimenti basta tenere premuto "SHIFT" e
+cliccarci sopra col tasto destro, comparira' magicamente "Apri con..." e
+selezionate il programma che piu' vi aggrada: Notepad, Wordpad, Word, ecc.).
+
+P.S. Questo file e' stato ispirato da una pagina HTML (inglese) presente su
+     Internet. Anche se io ho STRAVOLTO il contenuto rispetto l'originale,
+     avrei voluto scrivere il 1ø autore, ma non si e' firmato.
+
+ Å        Å
+ ³ AVA666 ³
+ ~~~~~~~~~~

@@ -1,0 +1,34 @@
+                ------------------------------------------------ 
+                Bruciare un antitacheggio dei centri commerciali 
+             ------------------------------------------------------   
+
+
+
+Vi è mai capitato di entrare in un centro commerciale, 
+notare che è poco sorvegliato da videocamere, poter quindi prendere
+la merce senza che nessuno vi noti infilndovi nei camerini, ma non poter fregare
+nulla perchè è tutto blindato da chip rfid? (quello a forma di nastro di
+plastica col codice a barre)
+a me si...
+
+bhè vi svelerò un segreto... 
+i cip rfid che sono stati eletti come re della sicurezza del futuro,
+sono inrealtà una vera cagata.
+infatti basta una scarica elettrostatica abbastanza
+potente per poterli bruciare.
+Ma come possiamo fare per procurarci un generatore di scariche di questo tipo?
+
+cominciamo col prendere una macchinetta fotografica usa e getta con FLASH.
+
+Smontate la macchinetta e togliete la lampadina dal circuito del flash, 
+dopo di che fate una specie di bobbina di fili elettrici e fate in modo che
+i contatti tocchino l'alloggiamento della lampoadina in modo che quando
+si premeper fare la foto, la scarica destinata al flash passi per la bobbina 
+emettendo una scarica elettrostatica talmente forte da bruciare il chip.
+Richiudete il tutto (togliete la pellicola), adesso potete tranquillamente fare
+finta di fare foto ai prodotti mettendo la macchina più vicino possibile al rfidper poi uscire tranquillamente dal 
+negozio/mercato/centroccomerciale/quelchecazzovipare con la merce in mano!
+
+SNAKE32  
+
+   

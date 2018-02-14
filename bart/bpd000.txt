@@ -1,0 +1,82 @@
+                      bartx personal diary        releas 1.0
+
+ Tutto il materiale contenuto in questo articolo ha fini eslusivamente informativi ed  
+educativi. Io Bartx non mi ritengo in alcun modo responsabile dei danni causati a cose o  
+         persone dall'uso delle informazioni contenute in questo articolo.
+  Pertanto il lettore si assume ogni genere di responsabilita' per l'uso che farà delle  
+                    informazioni contenute in questo articolo.
+Siete pregati di non postare questo articolo in newsgroup e di non diffonderlo se non in  
+                                  forma originale.
+
+                                        PREMESSA
+Ho scritto, o meglio, sto scrivendo questa raccolta con la speranza che chi la legga possa
+ricredere e far fronte agli ideali che mi hanno spinto e che mi spingono ancora ora a fare 
+a botte, a violare sistemi informatici, a fregarmene di tutto e di tutti e al contrastare
+tutto ciò che non mi sta bene.
+Il mio credo: io credo nell'anarkia assoluta, cioè non credo ne obbedisco a nulla e a
+nessuno al di fuori del mio volere.
+Nonostante penso di essere destinato a diventare un grande, io vivo alla giornata, anzi
+all'attimo, e a differenza degli altri ragazzi della mia età, penso di avere delle qualità
+in più: sono terribilmente curioso, per questo, sono sempre alla ricerca di quella
+sensazione che ti fà sentire un grande, ti dà quel brivido alla nuca che ti carica di
+energia. E' per questo che anche la paura mi attira, perchè è come un firewall, complica le
+cose ma non rende un sistema impenetrabile. Non c'è nulla che mi può trattenere dalla
+ricerca di quest'emozione, o per lo meno, nulla di umano!!!
+
+*************************************  Legenda  ******************************************
+
+V: vari
+Hk: hacking
+Sys: sistemi
+Phk: prehacking
+A: anarky
+Lm: lamering
+Pg: programmazione
+E: elettronica
+Vpc: varie sui pc, Informatica, chat, giochi
+S: stronzate
+
+***********************************   INDICE   ********************************************
+                      
+
+		A	Bpd001. Risse? No problem!
+		A	Bpd002. Vendetta!!!
+		A	Bpd003. Fabbricare l'arsenico
+		V	Bpd004. Scuola dolce scuola!!!
+		Vpc	Bpd005. Guida base ai comandi principali di irc
+		Hk	Bpd006. che sono gli Hackers? come si ci diventa?
+		sys/hk	Bpd007. Ms dos for dummies
+		sys/hk	Bpd008. Guida ai comandi Unix
+		Hk	Bpd009. Le password del bios
+		S	Bpd010. Latino: poesia
+		Lm	Bpd011. Come leggo la posta della mia ragazza?
+		sys	Bpd012. Modifica facile facile a windows (forse anche utile)
+		A	Bpd013. Guida all'occupazione di Anarkya
+		sys	Bpd014. Alleggerire Windows ME
+
+
+
+
+Nella release 0.1:
+1. Ircwar, trucchi e stategie
+2. Armi tutorial
+3. Risse? No problem! parte2 (Strangolamenti e leve articolari) 
+4. Hacking del netbios
+5. Netcat, uso e disuso
+6. Telnet uso approfondito
+7. Hacking della vagina  ;-)
+8. Test esplosivi
+
+
+
+
+            ######                                    
+            ##   ##                #                  
+            ##   ##               ##                  
+            ##   ##   ####   ######## ##  ##          
+            ######   #   ##  ##   ##  ##  ##          
+            ##   ##    ####  ##   ##   ####           
+            ##   ##   ## ##  ##   ##    ##            
+            ##   ##  ##  ##  ##   ##   ####           
+            ##   ##  ##  ##  ##   ##  ##  ##          
+            ######    #####  ##    ## ##  ##          

@@ -1,0 +1,328 @@
+          PiCCOLo v0cABoLArieTT0 dEL M0nDo H/P/A/C/C/V/ecc.ecc.                 
+                        Edizione 2
+
+                     di Techno Knight                                            
+                     (techno83@freemail.it)                                      
+
+
+
+ 40Hex = Storica rivista di VirusWriting                                         
+                                                                                 
+ Anarchia = Movimento sorto in russia che propone l'assenza di un governo        
+            come unica via per rendere davvero libero il popolo.                 
+            Con la diffusione di internet ha assunto un nuovo significato,
+            dato che gli utenti della grande rete vedono minacciato ogni
+            giorno il loro diritto a vivere in una rete libera.
+
+ Appending Virus = Un virus che, al contrario degli overwriting virus, non       
+                   sovrascrive il file da infettare, ma gli si "appende"         
+                   in modo che l'utente non noti subito la presenza del          
+                   virus, perchä il programma continua a funzionare              
+                   normalmente, dopo aver pero' eseguito il codice               
+                   virale.                                                       
+                                                                                 
+ Astalavista = astalavista.box.sk, un motore di ricerca che dovrebbe portarvi    
+               alla robba illegale per la strada + breve, purtroppo ho imparato  
+               che non sempre ä cosç e spesso i contenuti delle pagine sono      
+               obsoleti (provate a cercare qualcosa di recente sui virus e poi   
+               ditemi che non ä vero)                                            
+                                                                                 
+ AutoGol = L'uccisione o il ferimento di un membro della propria crew            
+           con un esplosivo destinato a scopi anarchici.                         
+           Ad esempio se fate una bomba e trasportandola                         
+           vi scoppia in mano e ammazza voi e un vostro amico allora             
+           la vostra crew ha appena fatto un autogol.                            
+                                                                                 
+ AV = AntiVirus                                                                  
+                                                                                 
+ AVer = Scrittore di AntiVirus                                                   
+                                                                                 
+ Back Orifice = Trojan creato dai Cult of the Dead Cow.                          
+                                                                                 
+ BFI = Butchered From Inside, attualmente l'ezine di H/P/C italiana              
+       + famosa (leggetevela e sarete d'accordo con me che se lo meritano!!!)    
+                                                                                 
+ Bizatch = Il primo virus per Windows95, creato da Quantum dei VLAD, poi         
+           il nome gli ä stato cambiato dagli AVers (penso per dispetto) in      
+           Boza, sebbene Quantum dentro ci avesse scritto chiaramente x          
+           + volte che il nome era Bizatch....                                   
+                                                                                 
+ Box = Una magica scatoletta, fino a un pï di tempo fa arma principale
+       dei phreakers. La + nota ä la blue box, che generava un tono da
+       2600Hz che permetteva in pratica non solo di non pagare la bolletta
+       ma di avere l'intera rete telefonica ai propri piedi. Altre molto famose
+       sono la red box (che con determinate frequenze faceva credere
+       ad una cabina telefonica che erano stati inseriti dei soldi), e la
+       beige box (un semplice telefono che perï puï essere attaccato ovunque,
+       utile ad esempio per inserirsi sulla linea di qualcuno), senza
+       dimenticare altre meno utili, come la olive box che serve solo
+       a cambiare lo squillo del telefono.
+                                                                    
+ Bug = Errore di un programma. Sfruttato soprattutto da un hacker se puo'
+       essere usato per provocare un buffer overflow (sovrascrivendo             
+       l'indirizzo di ritorno della CALL possiamo far saltare il prog            
+       dove vogliamo e se gira con privilegi da root, allora                     
+       si possono ottenere cose interessanti ;)                                  
+                                                                                 
+ Carding = La truffa riguardante carte di credito, che consiste di solito nel    
+           trovare il numero di carta di credito di qualcuno per poi             
+           usarlo per comprare via telefono o via internet.                      
+                                                                                 
+ CdC = Vedi Cult of the Dead Cow                                                 
+                                                                                 
+ CC = Nel carding di solito abbreviazione di Carta di Credito                    
+                                                                                 
+ Client = Un applicazione che sfrutta un servizio presente su una rete           
+                                                                                 
+ Companion Virus = vedi Spawning Virus                                           
+                                                                                 
+ Computer Militant = Una persona che hacka sistemi con il solo scopo di          
+                     distruggerli.                                               
+                                                                                 
+ Craccare = Eliminare lo schema di protezione di un programma                    
+                                                                                 
+ Cracker = Individuo che cracca programmi a scopo di lucro o di divertimento.    
+                                                                                 
+ Crasher = Uno che cerca di far crashare un sistema, impedendo agli altri        
+           user di accedervi e bloccando i suoi servizi.                         
+                                                                                 
+ Cult of the Dead Cow = Gruppo underground, creatori del famoso Back Orifice     
+                        e particolarmente produttivi per quanto riguarda i       
+                        testi. Probabilmente il + famoso gruppo del mondo        
+                        di H/P                                                   
+                                                                                 
+ DoS     = Denial of Service. Attacco ad un computer collegato in rete con       
+           lo scopo di farlo crashare, di scollegarlo o di rallentarlo.          
+                                                                                 
+ Elf = Individuo che ne capisce solo di computers, del resto non sa              
+       fare niente (fortemente negativo, al punto che in + riviste               
+       di H/P/C/A straniere si trova l'invito ad uccidere questi                 
+       Elves) infatti un Elf non deve essere per forza un hacker, anzi           
+       la maggiorparte di questi Elf sono solo principianti di hacking           
+       (e quasi tutti restano principianti forever...)                           
+                                                                                 
+ e-ViP = electronic Virus italian Project, gruppo di coderz italiani             
+                                                                                 
+ Exploit = Programma o tecnica per exploitare un bug                             
+                                                                                 
+ Exploitare = Sfruttare a proprio vantaggio un bug di un programma               
+                                                                                 
+ Fitness = Termine usato per indicare il livello di probabilitÖ                  
+           di sopravvivenza di un individuo o di un determinato carattere        
+           genetico. Nel viruswriting viene usato per indicare le                
+           probabilitÖ di sopravvivenza e di diffusione di un virus.             
+           Ad esempio un virus di overwriting per .COM che dopo 2 infezioni      
+           distrugge l'HD ä sicuramente poco fit.                                
+           IMPORTANTE : Fit For Fun _NON_ ä una rivista di virii, quindi         
+           continuate a leggere Vana Imago, che ä gratis ;)                      
+                                                                                 
+ Hack = Trucchetto ingegnoso da fare su un computer. (ricordo ancora quando      
+        agli inizi cercavo "hack" su altavista e trovavo tutte queste descri-    
+        zioni di <trucchetti>, tipo come far collegare il proprio pc automati-   
+        camente ad una certa ora,....)                                           
+                                                                                 
+ Hacker =  
+
+        1) Individuo che sfrutta le sue conoscenze al di sopra della media
+           riguardo computers e reti per ottenere l'accesso a sistemi            
+           protetti in modo illegale.                                            
+                                        
+        2) Individuo che sfrutta le sue conoscenze al di sopra della media
+           riguardo computers e reti per trovare buchi nei sistemi e poi
+           fixarli o riportarli al sysadm. (seeeee vanne a trovare uno)
+
+
+
+ HLLx = Sigla posta all'inizio del nome di un virus per identificarlo come       
+        virus scritto in un linguaggio ad alto livello (High Level Language)     
+        Il carattere finale (dove io ho scritto x) puï essere P (parassita),     
+        C (companion) o O (overwriting) a seconda del tipo di virus.             
+                                                                                 
+                                                                                 
+ Immortal Riot = Storico gruppo di VirusWriters (in esplicita concorrenza        
+                 con i VLAD), che pubblicava un'ezine chiamata Insane Reality.   
+                                                                                 
+ Lamer = Termine che puï assumere vari significati (ma sempre negativi).         
+         Puï essere uno scassacazzo, una persona che pensa di essere bravo       
+         invece non lo ä, uno che vorrebbe essere hacker ma non ci riesce,       
+         un figlio di zoccola, uno che non vuole perdere tempo a imparare        
+         come funziona la rete e preferisce usare solo trojan....                
+         Alcuni considerano una persona lamer solo in base alle sue              
+         capacitÖ tecniche, per altri ä solo un giudizio sul piano morale,       
+         per altri ancora ä una specie di rapporto tra quello che uno dice       
+         di saper fare e quello che sa fare realmente, ecc.                      
+                                                                                 
+ Logic Bomb = Un programma che aspetta un determinato evento per eseguire        
+              una routine, di solito distruttiva (ad esempio un programma        
+              che rimane residente in memoria controllando continuamente         
+              l'ora di sistema e alle 16:00 formatta l'HD)                       
+                                                                                 
+                                                                                 
+ Militant = L'anarchico + estremo, molto peggio di un semplice terrorista,       
+            un militant non ha ideali, ma cerca di uccidere quante + persone     
+            e' possibile semplicemente perche' odia il genere umano.             
+                                                                                 
+                                                                                 
+ NetBus = Tool di amministrazione remota, presto diventato uno dei trojan        
+          + usati dai lamer.                                                     
+                                                                                 
+ NetRunners = La e-zine del gruppo degli Spippolatori, con informazioni          
+              adatte soprattutto a chi ne capisce giÖ qualcosa.                  
+                                                                                 
+ NewBies = E-zine della crew NewBies, fondata da N0body88 e ZeroCool, che        
+           si rivolge (indovinate) soprattutto ai newbies.                       
+                                                                                 
+ Newbies (2) = Crew che pubblica la rivista NewBies.                             
+                                                                                 
+ Nuke = DoS che consiste nel mandare una stringa OOB sulla porta 139 di un       
+        computer con Windows95, il che puï (se il sistema non ä patchato)        
+        farlo crashare. Probabilmente (secondo il mio parere) inserita dagli     
+        stessi programmatori della microsoft per avere il controllo della        
+        rete ;)                                                                  
+                                                                                 
+ Nuke(2) = Storico gruppo Underground                                            
+                                                                                 
+ Orda Delle BadLands = Gruppo di hackers italiani                                
+                                                                                 
+ OverWriting Virus = Un virus che infetta i file sovrascrivendoli. I virus       
+                     di questo tipo hanno di solito una sopravvivenza molto      
+                     breve, perchä distruggendo completamente il file            
+                     originale si rendono molto visibili.                        
+                                                                                 
+ Payload = In un virus, la routine tramite la quale il virus mostra esplicita-   
+           mente all'utente la sua presenza.                                     
+                                                                                 
+                                                                                 
+ Phreaker = Un individuo che sfrutta le sue conoscenze di telefonia per          
+            truffare le societÖ o altri utenti (di solito per non pagare         
+            la dannata bolletta)                                                 
+                                                                                 
+ Pirata = Un individuo che copia e commercia software protetto da copyright.     
+                                                                                 
+ Rodent = Un rompiballe che di solito e' un principiante di hacking che cerca    
+          di far vedere che e' molto + bravo di quello che in effetti e'.        
+                                                                                 
+ root = su sistemi unix di solito ä l'utente con livello uid=0 gid=0,
+        in parole povere il padrone del sistema.                                                     
+                                                                                                                                
+ Server = Un applicazione che offre un servizio su una rete                      
+                                                                                 
+ Script Kiddie = Termine dispregiativo del mondo hacker, con il quale si
+                 designa lo pseudo-hacker che ä capace di trovare buchi solo
+                 utilizzando uno scanner e poi non fa altro che scaricarsi
+                 l'exploit che serve da rootshell... (eheh se ti riconosci
+                 in questa descrizione non ti spaventare, oramai il 90%
+                 dei cosiddetti 'hackers' in realtÖ ä composto da script
+                 kiddiez....
+
+
+ Shell = Interprete dei comandi (come bash, sh, csh, ecc.), spesso perï
+         utilizzato (soprattutto nel mondo hacker) come abbreviazione di
+         Shell Account                                                           
+                                                                                 
+ Shell Account = Un account su un sistema che da accesso ad una shell            
+                 (quindi un abbonamento ISP _NON_ ä uno shell account)           
+                                                                                 
+ Smurf = DoS che consiste nello spedire pacchetti "truccati" (cioä che           
+         sembrano essere stati spediti dalla vittima) a server che               
+         "rispondono", ma non a voi, dato che loro pensano che i pacchetti       
+         siano stati mandati dalla vostra vittima, quindi risponderanno          
+         tutti alla vittima, mandando la sua connessione a puttane o             
+         cmq rallentandolo.                                                      
+                                                                                 
+ Social Engeenering = L'arte di spacciarsi per qualcun altro (di solito          
+                      su irc o con il telefono) allo scopo di ottenere           
+                      vantaggi o + spesso informazioni riservate.                
+                                                                                 
+ SoftIce = Il debugger + usato dai crackers.                                     
+                                                                                 
+ SoftProject = L'oramai strafamoso gruppo italiano che pubblica la rivista       
+               Butchered From Inside                                             
+                                                                                 
+ Spawning Virus = O anche companion virus. Tipo di virus che, trovato un .EXE    
+                  "vittima" non lo sovrascrive ne gli si appende, ma crea        
+                  un file che ha lo stesso nome del file vittima, ma estensione  
+                  .COM, e dato che il dos, se viene omessa l'estensione del      
+                  file, esegue prima i .COM, quando qualcuno chiamerÖ l'ese-     
+                  guibile originale in realtÖ verrÖ eseguito il virus.           
+                                                                                 
+ Spippolatori (SPP) = gruppo di hacking italiano, che pubblica la rivista        
+                      NetRunners. Alcuni dei suoi membri + famosi sono           
+                      Chrome, Rigor Mortem, TheDuke, Brigante,                   
+                      SirPsychoSexy, Master, Buttha,....                         
+                                                                                 
+
+ Sysadm = Amministratore di sistema. Una persona che ha come compiti
+          provvedere alla sicurezza del sistema, fare copie di backup dei
+          dati, tenere aggiornato il software, aiutare gli utenti, creare
+          e cancellare account, ecc. insomma, come dicono molti, quella
+          persona che tutti si chiedono a cosa serva, finchä non va in
+          vacanza.
+
+
+ System Down = Una delle prime e-zine di H/P/C italiane, hanno fatto solo
+               4 numeri.                                                         
+                                                                                 
+ The Black Page = E-zine storica di H/P/C italiana (penso che sia stata la       
+                  prima), molto buona, purtroppo hanno fatto solo 2 numeri.      
+                                                                                 
+ Trashing = L'arte di cercare tra i rifiuti per trovare qualcosa di utile,       
+            come scontrini con numeri di CC o altre info riservate.              
+                                                                                 
+ Trojan = Un programma che dietro sembianze amichevoli nasconde in realtÖ        
+          del codice non tanto amichevole. Ultimamente con trojan si tende       
+          ad indicare quasi esclusivamente quelli del tipo di Back Orifice,      
+          cioä programmi che installano un server sul computer di modo che       
+          una persona in possesso del client apposito puï comunicare con         
+          questo server dandogli dei comandi e avendo accesso quindi al          
+          computer.                                                              
+                                                                                 
+ UXU e ULTRA = Ho deciso di inserire insieme questi 2 gruppi perchä gli ULTRA    
+               e gli UXU (Underground eXperts United) sono accomunati dal        
+               fatto che i loro articoli fanno veramente vomitare. Manuali       
+               di violenze sessuali, omicidio, pedofilia (addirittura        
+               incoraggiano la pedofilia per il semplice sfizio di rovinare      
+               la vita ad un bambino) nonchä articoli che parlano di quanto      
+               sia bello l'omicidio senza ragione, e che una volta che si        
+               ä ammazzata una persona (il primo omicidio viene paragonato       
+               alla perdita della verginitÖ) non se ne riesce + a fare a meno.   
+               No comment. E poi erGoline si lamenta del mio cookbook....        
+                                                                                 
+ Underground = L'insieme di molte tecniche considerate illegali e che quindi     
+               trovano un risvolto (spesso persino artistico) in un mondo        
+               alternativo a quello "convenzionale"   
+               (che cazzo di definizione, mi dispiace non me ne veniva           
+               una migliore)                                                                  
+                                                                                 
+ Unix = Sistema operativo, a mio parere il migliore di tutti, con un supporto
+        per la rete e per la programmazione che wintendo se lo sogna,
+        flessibile ma anche stabile, in pratica il paradiso degli hackers.
+        Esistono anche cloni gratuiti come FreeBSD, OpenBSD e ovviamente
+        Linux.
+
+
+ Vana Imago = E-zine che non vale 100 lire bucate, creata con il solo scopo
+              di confondere ancora di + le idee alla gente. Un consiglio : non   
+              la leggete ! :PPPPP                                                
+                                                                                 
+ Vicious Propaganda = Ezine poco famosa, ma che a quanto pare nell'underground   
+                      americano aveva riscosso un discreto successo              
+                                                                                 
+ Virus = Programma che ha come scopo quello di diffondersi infettando altri      
+         eseguibili, boot sector, librerie, drivers, macro ecc.                  
+                                                                                 
+ Vlad = Storico gruppo di virus writers, famosi tra l'altro per aver scritto     
+        il primo virus per Windows95 (l'ha scritto Quantum se non sbaglio)       
+                                                                                 
+ W32Dasm = Disassembler diventato oramai un mito tra i crackers. E' anche        
+           in grado di fare da debugger per applicazioni a 32 bit.               
+                                                                                 
+ Worm = Programma che ha come scopo quello di riprodursi, anche attraverso       
+        le reti, generando copie identiche di se stesso ed exploitando dei       
+        bug per avere accesso ai sistemi.                                        
+                                                                                 
+ Xine = E-zine degli iKX, scritta in inglese, che tratta soprattutto di          
+        virus writing.                                                           
+                                                                                 
+                                                                                 
+                         Techno Knight (techno83@freemail.it)                    

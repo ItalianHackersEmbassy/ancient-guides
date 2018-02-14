@@ -1,0 +1,142 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     IO, AVA666, DECLINO OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -=> Lord Shinva <=-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                  -DiGiTAL::ALLiANCE-                  <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>   C : 0 . N : F . E : D . E : R . A : T . i : 0 . N   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>                                                       <=-=>
+      <=-=>               Enciclopedia dell'Hacking               <=-=>
+      <=-=>               `````````````````````````               <=-=>
+      <=-=>                   .:[ Volume 13 ]:.                   <=-=>
+      <=-=>                                                       <=-=>
+      <=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=><=-=>
+
+
+
+VIRTUOSISMI TECNICI: PARTE 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Questo file conclude il capitolo iniziato nel volume 11, sulle tecniche
+avanzate di hacking su Unix (da leggere quando sarete piu` esperti).
+Alcune di queste tecniche sono abbastanza conosciute, mentre altre sono
+(relativamente) nuove.
+
+Ricordate sempre che:
+
+ - fare del port surfing (connettersi via Telnet alle porte di un server
+   per trovare vie d'accesso non controllate e informazioni utili) e
+   studiare il funzionamento dei servizi leggendo le RFC presenti su Internet
+   e` utilissimo per scoprire molte vulnerabilita` di un generico sistema;
+   vi meraviglierete di quello che potrete trovare: outdial (collegamenti
+   via modem che vi permettono di telefonare ovunque nel mondo, anche a casa
+   vostra, digitando comandi standard Hayes direttamente nel modem del
+   server che state hackerando), liste di informazioni sulla struttura
+   interna del network (come nel caso della porta 15, detta "netstat"),
+   possibilita` di manipolare un servizio per fare le cose piu` disparate
+   e attacchi all'integrita` del sistema, per dirne qualcuna...
+
+ - installare una backdoor e` spesso necessario: anche se al momento il
+   SysAdmin non sa della vostra presenza, prima o poi se ne accorgera` ed
+   eliminera` il vostro account; inoltre dai log potrebbe risalire al modo
+   in cui siete "entrati" nel sistema, e correggere il problema: in tal caso,
+   installare una backdoor preventivamente (cancellando le tracce di ogni
+   operazione come descritto in uno dei precedenti volumi) e` indispensabile;
+
+Ecco altri consigli piu` o meno avanzati:
+
+ - nascondetevi da utmp e dai comandi come "who" utilizzando il programma
+   incluso in uno dei precedenti volumi, in modo che nessuno potra` notare
+   la vostra presenza del sistema (per maggior sicurezza collegatevi di
+   notte o al mattino presto);
+
+ - manipolate i file .rhost per poter accedere senza restrizioni da remoto;
+
+ - se siete in grado di programmare e conoscete *bene* Unix, potete
+   installare delle nuove chiamate di sistema che svolgano le operazioni che
+   vi servono (una per la gestione dei file e dei loro permessi, una di
+   riserva per l'esecuzione shell, e cosi` via) e disabilitare i controlli
+   per l'accesso root al sistema, manipolando la kernel (argomento troppo
+   complicato per poter essere spiegato in questi volumi);
+
+ - se avete accesso in scrittura a /dev/kmem cambiate il vostro userid; se
+   invece avete solo accesso in lettura, scrivete un programmino in C che
+   intercetti le sessioni degli altri terminali (TTY) per intercettare le
+   password degli altri utenti;
+
+ - modificate i permessi d'accesso dei file piu` interessanti, come /dev/mem
+   e copiate la shell /bin/sh nella vostra directory utente, in una directory
+   nascosta (oppure un .term) sotto falso nome e create degli script SUID;
+
+ - editate gli script (.login .profile .cshrc ecc...) per installare troiani;
+
+ - controllate se esistono password nel file .netrc (potrebbero esservi
+   utili per accedere ad altri account);
+
+ - provate sempre ad utilizzare i programmi in modo "non previsto" ;) per
+   trovare nuovi bugs: scrivendo !/bin/sh nella schermata di un comando come
+   "more" o "man", ad esempio, potreste riuscire ad accedere alla shell...
+
+ - fate lo stesso con le chiamate di sistema, passando loro parametri non
+   previsti;
+
+ - controllate i file system utilizzando il comando showmount e state attenti
+   ai permessi... potreste trovare intere partizioni accessibili a chiunque!
+
+ - controllate l'esistenza dei seguenti bugs:
+
+     lpr -r nomefile           stampera` il file e lo cancellera` (utile in
+                               caso di file per i quali non avete permessi)
+     su username -c /bin/sh    dara` accesso a /bin/sh all'account username
+
+ - esplorate i file SUID utilizzando il comando:
+
+     find / -perm -6000 -ls
+
+   per accedere a uno di essi, basta utilizzare il comando "ln" per creare un
+   link al file interessato, con il nome "-i", e quindi eseguire il link cosi`
+   creato;
+
+ - eliminate SEMPRE le vostre tracce e prendete ogni precauzione nel
+   collegarvi e nel fare qualsiasi cosa: questo vale tanto per un semplice
+   provider che per un mainframe del Pentagono (forse un po` di piu` in
+   quest'ultimo caso... ;)
+
+Un buon metodo per trovare informazioni di ogni tipo (username e password di
+altri utenti - anche di root, se siete fortunati - posta elettronica di altri
+e intere sessioni di chat, per citarne alcune) e` creare un programmino in C
+che allochi quanta piu` memoria possibile, e poi cercare nel blocco allocato
+(oppure salvare l'intero blocco e scaricarselo per controllarlo con piu`
+calma).
+Cio` che accade e` questo: per soddisfare la vostra richiesta di spazio in
+memoria, il sistema mettera` a disposizione quella usata in precedenza dalle
+altre applicazioni, senza pero` preoccuparsi di ripulirla! =)
+
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+                           Copyright (C) 1997 by
+
+                             :: LoRD SHiNVA ::
+
+                      -Digital Alliance Confederation-
+
+                http://members.tripod.com/~helghast/dac.htm
+
++- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +- +-
+
+
+Grazie a LoRD SHiNVA, l'autore di questa enciclopedia,
+
+       By
+   Å        Å
+   ³ AVA666 ³
+   ~~~~~~~~~~

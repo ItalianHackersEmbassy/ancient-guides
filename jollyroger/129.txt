@@ -1,0 +1,37 @@
+The Acrylic Box                             Brought to you by  ---RFlagg---
+
+Ok the purpose of this box is to get Three-Way-Calling, Call Waiting,
+programmable Call Forwarding, and an easier way of extended Bud Boxing ALL for
+FREE.
+
+
+Materials:
+
+1) Wire stripers
+2) Couple Feet Wire
+3) AT&T/BELL Can
+4) Hex Wrench
+
+Idea: Ok the idea of this box is to get all of the above features by stealing
+them from the fortunate ones on your block.
+
+Procedure:
+
+Step 1) Find AT&T/BELL Can that is being used to service you surrounding area.
+
+Step 2) Open can with Hex wrench.
+
+Step 3) Find your line and another persons line who has 3-way, Call
+(waiting/forwarding), if the # of all the lines are not listed in the box you
+will have to use your local ANI to find them.
+
+Step 4) Once you have found the lines then wire the (Black & Yellow) wires on
+the victims line to the (Black & Yellow) wires on you line (Be sure your phone
+at home uses all 4 wire as some of the cheap phones don't).
+
+Step 5) Then disconnect the victims (Black & Yellow) Wires, resulting the the
+loss of these features to their line ( you mat want to leave these wires
+connected, this may or may not cause problems I haven't tried it that may yet)
+.
+
+

@@ -1,0 +1,83 @@
+	            | 	LISTA DEI COMANDI UNIX PRINCIPALI    |
+		    |	   PER UN ASPIRANTE HACKER CHE       |
+		    |______NON CONOSCE L'OS PER ECCELLENZA___|
+				
+                                                di   Techno Knight
+
+
+ls = Come il dir del dos, mostra i file della directory.
+
+     L'opzione -a permette di vedere anche i file nascosti (cioe' che iniziano
+     con '.', un punto)  
+
+     L'opzione -d visualizza solo i nomi delle directory (anziche' il loro
+     contenuto. Es. ls directory   :  mostra tutti i file contenuti nella
+     directory.  ls -d directory  : mostra solo il nome della directory
+  
+     L'opzione -l visualizza anche le informazioni del file (permessi, dimensione
+     data,...)
+
+     L'opzione -F aggiunge un carattere alla fine di ogni nome di file per     
+     indicare il tipo di file.
+
+
+man = mostra la pagina di manuale di un programma. Ad esempio "man ls" mostra
+      quella del comando ls, con la sintassi e tutte le opzioni possibili.
+      Per specificare la sezione del manuale di unix nel quale e' spiegato
+      il comando usate la sintassi : man <sezione> <comando>
+
+cd  = Cambia directory. Es. "cd /etc" : va nella directory /etc 
+      (/ indica la directory principale, come il \ del dos)
+
+
+mkdir = Crea una directory. Es. "mkdir directory"
+
+
+rm = Cancella uno o piu' files. Es. "rm *ole*" cancella tutti i files che
+     contengono "ole" nel loro nome (* e' un carattere jolly, come nel dos)
+
+     L'opzione -f cancella senza chiedere conferma.
+ 
+     L'opzione -r cancella anche le directory.
+
+
+cat = Visualizza il contenuto di un file (come il type del dos).
+      Es. "cat /etc/passwd" mostra il file delle password
+      Es. "cat /etc/passwd | more" mostra il file delle password un pezzo
+      alla volta (| more ridirige l'output al programma more, che ce lo
+      mostra un po' alla volta)
+
+
+mv = Rinomina un file. Es. "mv /documento.txt ." sposta il file documento.txt
+     dalla directory principale alla directory corrente (. indica appunto
+     la directory corrente)
+
+
+less e more = Mostrano un file una schermata alla volta
+
+
+tail e head = tail serve a vedere le ultime righe o gli ultimi caratteri
+	      di un file, head invece le prime righe o i primi caratteri.
+	      Es. "tail -3 file" mostra le ultime 3 righe di file
+		  "tail -c 10 file" mostra gli ultimi 10 caratteri di file 
+
+
+touch = cambia la data dell'ultima modifica ad un file. Se il file non esiste
+	e' creato un file vuoto con quel nome.
+
+
+vi, pico, joe = gli editor piu' comuni
+
+mail,elm, pine = i programmi di e-mail piu' comuni
+
+gcc, cc = compilatori C. Es. "cc mioprog.c -o mioprog" compila il codice
+          contenuto in mioprog.c nel file mioprog
+
+g++,c++ = compilatori C++ 
+
+f77, g77 = compilatori fortran
+
+lynx = il browser piu' bello del mondo!
+
+
+                                        Techno Knight

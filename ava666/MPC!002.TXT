@@ -1,0 +1,145 @@
+N.B. QUESTO FILE E' DA RITENERSI A TITOLO PURAMENTE INFORMATIVO, PERCIO' 
+     L'AUTORE, AVA666, DECLINA OGNI RESPONSABILITA' DALL'USO CHE POTREBBE
+     ESSERNE FATTO. NON INCORAGGIO, DUNQUE, CHI VOLESSE SERVIRSENE PER SCOPI
+     ILLEGALI. IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       <<<<< TESTO SCRITTO COL PURO SCOPO DI DIVERTIRE IL LETTORE >>>>>     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-!!!- GUIDA AGLI ERRORI DELLE CABINE -!!!-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Quante volte ti sara' capitato di leggere in una cabina guasta (e non) uno
+strano codice? Beh ora puoi sapere cosa vuol dire...
+
+
+-Codici di errore del ROTOR O.V. (Cabina a monete, per intenderci!)-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E100        Errore del validatore
+
+E101        Errore della tastiera
+
+E102        Errore Display
+
+E103        Cassetta piena
+
+E104        Possibile guasto trasmettitore microtelefono
+
+E105        Preallarme Cassetta Piena
+
+E106        Errore Ram del Micro
+
+E107        Incaglio di una scheda
+
+E200        Errore foto ingresso tasca (sempre buio)
+
+E201        Errore foto uscita tasca
+
+E202        Errore foto ingresso tasca (sempre in luce)
+
+E203        Errore Saracinesca introduzione
+
+E204        Errore foto canaletta incasso
+
+E205        Errore Saracinesca incasso/restituzione
+
+E206        Errore foto Magnete incasso/restituzione
+
+E300-E301-
+E302-E303      Anomalia al meccanismo di movimentazione rotore
+
+E304        Incaglio canale di incasso
+
+E305        Sezione di credito F.S.
+
+E306        Sezione di debito F.S.
+
+E305-E306      F.S. totale L.I.
+
+E305-E306-
+E107        Mancanza canale di Con. APP. L.I.
+
+E307        Da 1 a 7 tasche in Fuori Servizio
+
+E400        Guasto al magnete di incasso/restituzione
+
+E401        Assenza colloquio con translatore (manca livello 2)
+
+E402        Errore dati configurazione (RAM ESTERNA)
+
+E403        Interruzione breve in conversazione con riconfigurazione del
+            terminale
+
+E404        Sportello aperto
+
+E405        Ostruzione nella bocchetta restituzione, sul display a gancio a
+            riposo compare: F.S. con la bocchetta introduzione moneta chiusa.
+
+E406-E407      Asportazione cassetta, ed apertura sportello cassaforte
+
+E500        Guasto RAM ESTERNA
+
+E501        30 sganci consecutivi senza conteggio
+
+E502-E503      Errore foto introduzione durante l'introduzione/validazione
+
+E504        8 o pió tasche in Fuori Servizio
+
+E505        Errore di ricezione della configurazione del sistema
+
+E506        Manca alimentazione alla linea (ac-bc)
+
+E507        Mancanza colloquio tra base micro e interfaccia linea O.V.
+
+
+-Codici di errore del T.P.D.C. / R.I. (Cabina a schede, per intenderci!)-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E10         Sportello aperto
+
+E11         Errore tastiera
+
+E12         Errore display
+
+E13         Errore trasmettitore microtelefono
+
+E14         Mancanza colloquio con sistema di centrale
+
+E15         Mancanza alimentazione di linea
+
+E16         Assenza colloquio interfaccia di linea
+
+E17         RAM del ÊP guasta
+
+E20         Sezione credito F.S.
+
+E21         Sezione debito F.S.
+
+E22         Scheda incagliata
+
+E23         Lettore F.S.
+
+E24         Assenza colloquio con il lettore
+
+E25         Tentativo di frode lettore in conv. a carte telefoniche (!)
+
+E26         Dati errati da sistema
+
+E27         Dati errati RAM esterna
+
+E30         Contatori errati
+
+E31         Guasto RAM esterna
+
+E32         Guasto EEPROM
+
+E33         Riconfigurazione
+
+
+L.I. Lettore integrato
+F.S. Fuori Servizio
+O.V. Over Voice
+
+
+ ≈        ≈
+ ≥ AVA666 ≥   
+ ~~~~~~~~~~
+

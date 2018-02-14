@@ -1,0 +1,53 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Un timer perfetto per bombe ad iniezione elettronica.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Hi there boyz. Ecco un'idea niente male che mi e' venuta poko fa per
+fare un timer con autonomia max di 12 ore, niente male! Ecco cosa devi
+fare: procurati una sveglia o un orologio a lancette.
+
+1 ora o meno: incolla un filo di rame sulla lancetta delle ore e uno
+sulla lancetta dei minuti, in modo che quando si trovano sovrapposte i
+due fili si tocchino, e collega un capo direttamente alla bomba e l'
+altro ad un polo di una batteria qualsiasi, poi collega un terzo filo
+dall'altro polo della batteria alla bomba. Attenzione, quando le
+lancette si sovrapporranno (al max 1 ora se erano sovrapposte un
+attimo prima che tu facessi i collegamenti), BOOM!
+
+12 ore o meno: stessa cosa del precedente, solo che stavolta devi
+incollare un filo sulla lancetta delle ore e l'altro sul quadrante
+della sveglia o dell'orologio, assicurandoti che tocchino.
+
+IMPORTANTE: Per non mandare tutto a puttane, usa una colla POTENTE, un
+orologio con le lancette NON TROPPO SOTTILI, non TIRARE troppo i fili
+e fa' prima una prova con una lampadina al posto della bomba: non si sa
+mai, il filo potrebbe piegarsi, o spezzarsi, o la lancetta bloccarsi,
+e tu resteresti inculato!
+
+---------------------------------------update by CancerM [HyperSpeed13]
+...si comincia a ragionare meglio con un timer digitale. Prendete una sveglia
+digitale qualsiasi, togliete lo speaker e usate i fili che erano collegati allo
+speaker x l'innesco, settate l'ora e il gioco e' fatto. Qui il tempo a vostra
+disposizione e' di 24 ore. Ovviamente anche qui vi lascio alla vostra fantasia:
+pensate ad un videoregistratore, di solito hanno un timer da una settimana se
+non da un mese o addirittura un anno, oppure pensate allo showview...c'e vostra
+sorella che vuole registrarsi il video delle Spice Girls e voi cosa fate? Una
+microcarica nel vcr e ding niente concerto :)) (see e il vcr chi lo paga?...
+cazzi vostri) insomma di timer ne trovate a valanga. Se proprio volete fare i
+cattivi, prendete esempio dal Mossad (il servizio segreto israeliano), il
+cellulare...eheheheh ....pensate: lo portate sempre con voi e quando rispondete
+ve lo mettete vicino alla faccia...meglio di cosi'!...(Telecom Italia Mobile:
+l'utente da lei chiamato e' momentaneamente... morto! uaz uaz uaz). Io se fossi
+in voi la prossima volta che vi deve telefonare la vostra ragazza ci penserei
+due volte a rispondere ^_^... Il mondo e' pieno di cattivoni... scegliete voi
+se essere Aquile o pecore... (meglio camaleonti).
+
+The Raven
+Since `82

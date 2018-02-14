@@ -1,0 +1,242 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Social Engineering.
+~~~~~~~~~~~~~~~~~~~
+
+Social Engineering, ovvero Ingegneria Sociale... cos'e'?
+
+E' il metodo piu' semplice ed efficace per ottenere informazioni che
+altrimenti non sapreste dove trovare, come ad esempio la password di un
+utente, o addirittura i suoi dati personali (indirizzo, telefono, ecc).
+Sono solo esempi, ma con un po' di fantasia e fortuna potete fare
+davvero di tutto.  Non si tratta, nel caso ve lo stiate chiedendo, di
+tecniche hacking: niente Telnet, niente file di log, solo voi e la
+vostra intelligenza.
+Ma procediamo per ordine.
+Fare del "Social Engineering" significa far credere di essere qualcun
+altro allo scopo di ottenere qualcosa.
+Immaginate di andare dalla segretaria di Bill Gates a chiederle di
+versare sul vostro conto un paio di milioni.  Al massimo vi ridera' in
+faccia... :) Ma se invece fosse lui, il "caro" Bill, a telefonare alla
+sua segretaria da una riunione d'affari e dirle di sbrigare un attimino
+una faccenda urgente per conto suo.... ho reso l'idea?
+Beh, normalmente ci si limita ad utilizzare il Social Engineering per
+ottenere password e dati personali, ma l'uso e' lasciato a voi.
+Si puo' fare S.E. (Social Engineering) per telefono o via modem (e
+Internet).
+Le regole sono semplici:
+- dovete agire "professionalmente" ed essere credibili
+- dovete informarvi sull'argomento che state per affrontare
+e, se utilizzerete il telefono:
+- dovete essere sicuri di voi stessi e di quello che dite
+- dovete avere una voce credibile, che non sia cioe' quella di un
+  ragazzo che vuole sfottere un po' per telefono...
+
+Per quelli che tra voi stanno pensando che il S.E. non funziona: vi
+basti sapere che praticamente tutti gli hackers piu' conosciuti
+utilizzano proprio il S.E. per ottenere le informazioni di cui hanno
+bisogno. E' l'unica "tecnica" che, se fatta come si deve, non fallisce
+e non diventa obsoleta con il passare del tempo.
+
+Ma ora veniamo alla pratica.
+Supponiamo ad esempio di voler ottenere la password di un utente (sia
+essa la password del suo account Internet oppure quella della sua
+mailbox).
+In quale caso potremmo chiedere a un utente la sua password?
+Probabilmente, nel caso in cui fossimo il SysAdmin (o un tecnico del
+servizio utenti) del suo provider.
+In questo caso, non dovremo fare altro che crearci un account di email
+su usa.net mailexcite.com che possa sembrare l'indirizzo email di un
+tecnico del provider, come ad esempio servizio_utenti@usa.net o altro.
+Meglio ancora, se avete un account di posta elettronica potete usare
+iNAME (http://yahoo.iname.com) per creare un account email "virtuale".
+Potrete cioe' crearvi un account come ad esempio
+servizio_tecnico@fastservice.com (che e' MOLTO piu' credibile di
+pippo@hotmail.com) e tutta la posta che verra' inviata a quell'account
+sara' ridirottata anonimamente sul vostro account normale.
+Potrete scegliere tra vari nomi di server, e cio' torna a vostro
+favore. Se state fingendo di essere del servizio tecnico o help utenti
+di un provider scegliete qualityservice.com, topservice.com, oppure
+cyberservices.com.
+Al giorno d'oggi moltissimi provider gratuiti permettono di avere
+account multipli, basta sceglierne uno tipo servizio_utenti@provider.it
+in questo modo TUTTI quelli a cui scriverete che hanno un account su
+quel provider non avranno dubbi.
+
+Ora viene il bello.  Supponiamo di voler ottenere una password di un
+server senza allarmare il SysAdmin tentando di prelevare il file delle
+password. Cio' che vi serve e' l'indirizzo di email di un utente
+qualsiasi di QUEL server.  Come trovarlo: se il server ha una
+messaggistica, un forum dove gli utenti possono chiacchierare... vedete
+li'. Altrimenti non scoraggiatevi: collegatevi a www.whowhere.com
+oppure a http://www.four11.com e cercate il server che vi interessa.
+Avrete una lista di tutte le email che vi possono interessare, complete
+di nome e cognome che vi torneranno certamente utili.
+Oppure potete usare finger, se e' abilitato... facendo
+"finger @server.com" avrete la lista di tutti gli utenti presenti su
+quel sistema. Come vedete, ci sono molti modi per ottenere la stessa
+cosa. Fate MOLTA ATTENZIONE a non scrivere all'indirizzo del SysAdmin,
+del Webmaster o di uno dei responsabili o dei tecnici del server!
+Trovata la "cavia" ora dovete scrivergli un messaggio di questo tipo:
+
+--->
+Da: servizio_utenti@provider_x.com
+A: utente@provider_x.it
+Soggetto: 
+
+Gentile Utente,
+
+    per offrirLe un miglior servizio abbiamo aggiornato il server
+software del ns. Internet Provider. Per problemi tecnici non ci e'
+stato possibile importare il database Utenti, motivo per cui La
+preghiamo di volerci comunicare al piu' presto il suo username e la sua
+password,  scrivendo al nostro indirizzo email:
+Servizio_utenti@provider_x.it
+
+    La ringraziamo per la cortese attenzione.
+
+                                                Cordiali saluti
+
+Webmaster
+
+<---
+
+Poche righe, insomma, ma ben scritte.
+Vi meraviglierete di come talvolta anche le societa' che si appoggiano
+ai provider per l'accesso a Internet cascano in questi trucchi.
+
+NOTA: in alcuni casi puo' essere utile utilizzare la tecnica delle
+FakeMail per inviare un "ordine di servizio" a qualcuno da parte di una
+persona (un dirigente, ad esempio) di cui si conosca pero' l'indirizzo
+di email. Ricordate pero' che, in caso di risposta, l'email andra' all'
+indirizzo falso che avremo utilizzato (cioe' quello del dirigente!).
+Se avessimo invece voluto fare qualcosa di piu' complicato, come
+ottenere un qualche tipo di informazioni piu' o meno riservate da una
+grande azienda, avremmo dovuto utilizzare (preferibilmente) il telefono
+Avere prontezza di riflessi, sicurezza e una voce "adatta allo scopo"
+in tal caso sara' indispensabile se non si vuole mandare tutto a monte.
+Nel caso di personale particolarmente attento (raro...), del tipo che
+vuole chiedere prima un'autorizzazione al capo e roba del genere, e'
+utile far capire di avere altri affari da sbrigare, di essere seccati
+dall'inettitudine di quell'impiegato e roba del genere... perdere la
+pazienza, insomma, senza essere ne' patetici ne' isterici.
+Il resto e' lasciato a voi.
+
+== Fonte: Enciclopedia sull'hacking by Lord Shinva ==
+
+---------------------------------------------------------------->UPDATE
+
+Beccate un pollo su irc, ditegli che siete nuovo e comportatevi così.
+
+<voi> Ho notato che quando scrivo la mia password seguita dal codice
+      266 esce scritto !INVENTATEVI UN MESSAGGIO!BOH!
+<P0110> Mah, non so perche'
+<voi> Potresti provare a farlo anche tu ? Poi mi dici se esce anche a
+      te.
+<P0110> Ok, ora ci provo. Come si fa il codice 266 ?
+<voi> Tenendo premuto ALT digita 266 sul tastierino numerico e poi
+      rilascia ALT
+<P0110> pippo   <---- (questa e' la sua password!)
+                                                        
+In pratica inserendo il codice 266 e' come se avesse premuto ENTER,
+e vi avesse detto la sua password direttamente. Ovviamente il social
+engineering dovra' continuare anche dopo, altrimenti sospettera' di voi
+
+<voi> Allora ?
+<P0110> MA CAZZO ! E' USCITA SCRITTA ?
+<voi> No, dico, ti e' uscito quel messaggio ?
+<P0110> no
+<voi> Cazzo, ma allora perche' a me esce? Forse ho uno script di merda?
+      Che dici, dovrei cambiarlo ? tu quale hai ?
+<P0110> Dynamirc
+<voi> Mi dici dove posso prenderlo ? Gia' non ci capisco niente di IRC,
+            poi con questo script schifoso.....
+
+-----------------------------------------------------ALTRO METODO (IRC)
+
+Trova un pollo, e comincia a parlare con lui. Una volta che siete
+diventati 'amici', invitalo su un canale che avrai aperto
+precedentemente. Su questo canale, oltre a te, ci sara' un tuo clone,
+che avrai battezzato con un nome da bot, tipo <GUARDIANO>,o <SERVO>, o
+<TROIONA>, fai tu. Dirai che hai creato questo nuovo canale (oppure,
+meglio ancora, che era gia' un canale conosciuto e tu lo hai
+takeoverato), e hai messo un bot. Gli chiedi se vuole aiutarti a
+mantenere il canale, dopodiche' gli dici che per farsi oppare dal bot
+serve una password, che gli darai (va bene qualsiasi cosa). Quando vede
+che in realta' non lo oppa affatto, farai finta di restare sorpreso e
+di pensare all'errore, dato che, come tu dirai, a te ha funzionato.
+Dopo un po' ti "ricorderai" che il bot oppa solo utenti gia'
+conosciuti, e che quindi deve registrarsi al bot, prima di poter usare
+la pass per essere oppato. Se ti chiede come digli che deve dare un
+messaggio al bot di questo tipo:
+
+/msg GUARDIANO nick user password
+
+Dove nick e' il suo nick (per allontanare il sospetto di quello che ci
+interessa realmente) e user e password sono ovviamente quelli del suo
+account. Se lo fara' avrai un nuovo abbonamento. Dopodiche', appena
+dice la password stronza che gli hai detto, fagli dare l'op dal tuo
+clone, in modo che non sospetti di niente.                             
+A questo punto aspetta che se ne va, dopodiche' leva il clone. Il
+giorno dopo lo cercherai e gli spiegherai che avevano ritakeoverato il
+canale, che la tin lo ha sgamato con il bot collegato al suo server, o
+una stronzata simile, per non farlo sospettare
+
+------------------------------------------------ALTRO METODO (TELEFONO)
+
+Questo metodo utilizza il telefono, quindi devi prima trovare il numero
+di telefono della vittima. Dovrai anche conoscere il suo provider e il
+suo username (facile) dopodiche' potrai telefonargli...
+
+voi: Buongiorno, qui Italia on Line. Vorrei parlare con il titolare
+     dell'abbonamento numero [inventatiunnumero]
+
+Giorgio: Si sono io.
+
+voi: E' l'utente numero (inventati un altro numero) ?
+        
+Giorgio: Uhm, non lo so, pero' ho un abbonamento.
+
+voi: Dunque...Allora, il suo username e' <username>, giusto ?
+
+Giorgio: Si
+
+voi: Stiamo trasferendo i dati degli account su un hard disk piu'
+     capiente, e quindi stiamo avvisando gli utenti. Lei ci da
+     l'autorizzazione a trasferire il suo account ?
+
+Giorgio: Ma che cambia ?
+
+voi: Niente. Anzi, avrebbe un accesso piu' veloce !
+
+Giorgio: Ah, allora si!
+
+voi: Allora ok. Ora pero' devo essere sicuro che lei e' davvero
+     l'utente numero (...). Mi dovrebbe dire la sua password.
+
+Giorgio: pippo
+
+voi: Uhm, non mi sembra
+
+Giorgio: ma sono sicuro
+
+voi: Ah si, mi scusi, avevo letto quella dell'utente precedente
+     Grazie di tutto, e buona giornata.
+
+
+That's all. Fare finta di non ritenere valida la password e' necessario
+per un semplice motivo: Se ti ha dato una password falsa si corregera'
+subito. Se ti ha dato quella giusta invece protestera' e tu ti
+"accorgerai" di aver sbagliato, "controllando" di nuovo la password e
+scusandoti dell'errore.
+
+== Fonte: Cookbook by Techno Knight ==
+
+The Raven
+since `82

@@ -1,0 +1,42 @@
+Produrre l' Acido Nitrico
+
+L' Acido Nitrico è un acido importantissimo per la produzione di esplosivi, non è molto
+difficile da preparare, tuttavia è molto pericoloso.
+
+Avete bisogno di:
+
+Un contenitore con attorno del ghiaccio e un altro contenitore al di fuori
+Un bollitore con un tubo all' estremità
+Un misurino e una bilancia di precisione per pesare gli elementi, infatti...
+32 ml di Acido Solforico
+68 g di Nitrato di Potassio
+
+Mettete nel bollitore l' Acido Solforico e aggiungete lentamente il Nitrato di Potassio, e 
+mescolare fino a saturazione.
+Adesso mettere il bollitore sul fuoco, e l'acido una volta pronto, verrà versato nel
+contenitore raffreddante, avete così ottenuto una componente base per tutti gli esplosivi più
+potenti. Forse è meglio che vi faccia uno schema... o almeno ci provo, è il primo ASCII che
+faccio...
+
+
+                   / Tubo
+                   |
+        /--------------------------\      /-Contenitore
+        |  |---------------------| |      | /-Ghiaccio
+        |  |                     | |      | | /-Contenitore
+        |  |--Bollitore          | |      | | |
+        /  \             |OOO|   | |      |OOO|
+       /    \            |OOO|   | |      |OOO|
+      /      \           |OOO|____________|OOO|
+     /________\          |OOOOOOOOOOOOOOOOOOOO|
+                         ----------------------
+     /\/\/\/\/\ --Fiamma
+     \________/
+         ||
+
+
+Tutto chiaro ?
+
+
+
+bRiGa

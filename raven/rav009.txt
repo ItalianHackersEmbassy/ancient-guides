@@ -1,0 +1,48 @@
+======================================================================
+== Testo scritto con puro scopo educativo. Io, Raven, non mi assumo ==
+== responsabilita' per l'uso, illegale o meno, che potrebbe esserne ==
+== fatto. Uomo avvisato...                                          ==
+======================================================================
+==     IL POSSESSO DI QUESTO FILE E' COMUNQUE DEL TUTTO LECITO!     ==
+======================================================================
+
+Costruire un ripetitore FM
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Serve:
+ 
+-Un'amplificatore di banda lineare di 6 metri, per incrementare il
+ segnale FM dall'impianto all'etere. Una larghezza di banda di 6 MHz va
+ bene.
+-Un'antenna HAM di 1.80 mt
+-Un'impianto stereo da cui trasmettere
+-Due riduttori minijack (o RCa o altro-dipende dal tuo impianto)-jack 
+ piccolissimo (quelli per i cellulari)
+-Cavi audio per speaker
+
+La costruzione e' facile, la parte difficile viene quando si deve
+cercare una stazione da utilizzare... Per prima cosa metti i riduttori
+nell'OUT dell'impianto, ora collega a questi due fili che avvolgerai
+attorno all'amplificatore lineare. Poi metti i cavi da speaker nell'OUT
+dell'amplificatore. Collega l'altra estremita' all'antenna HAM.
+
+  ----------               -------                  ---\ /---
+[ Impianto ] ----------> [  Amp  ] -------------> [ Antenna ]
+ ----------               -------                  ---------
+ 
+Ok, ora devi trovare la stazione... dipende dalla lunghezza dell'
+antenna che stai usando. Ecco l'equazione per trovare la lunghezza
+dell'antenna da usare per una determinata stazione: lunghezza dell'ant.
+in piedi (1 piede = 30 cm) = 468 diviso la frequenza in MHz. Per es.
+se la frequenza che vuoi usare e' 96.3 fai 468/96.3, il cui risultato
+e' la lunghezza dell'antenna (in piedi), cioe' 4.86 piedi
+6 footer.
+Ora suona quel che vuoi nell'impianto e verra' trasmesso al pubblico!
+Come usarlo? Beh si puo' fare una stazione privata o fare scherzi...
+insomma basta un po' di fantasia...
+ 
+== Fonte: MAGIK (Master Anarchists Giving Illicit Knowledge),
+          The Assassin 93 ==
+
+The Raven
+Since `82
