@@ -1,0 +1,479 @@
+Modem , che fai?
+
+Testo di: RigorMortem
+Beh,non ve lo siete mai chiesto anke voi?
+La classica domanda 'Ma cosa sono quelle lucine colorate?' non vi e' mai passata per la testa?
+Beh,se la risposta e'no,leggete che ve lo spiego , se la rispsta e' si velo spiego pure a voi!
+Come il mio precedente articolo,e' molto meglio che leggiate questo testo con il classico type o con l'edit da dos dato che ci sono molti ascii (ci sto prendendo gusto) oppure usate una cosa del tipo GetDiz o GetNfo per leggero in ambiente win.
+Pero' prima vi spiego la teoria di funzionamento del magico scatolotto che ha notevolmente alleggerito il portafoglio di molti e che ha portato notevoli scompensi nella vita del sottoscritto.
+Consumo:
+nulla, ho appena finito di mangiare
+Musica ascoltata:
+Metallica-And Justice for All
+Nuclear Assault-Game Over
+Iron Maiden-A real Dead One
+Detestor-In the circle of time
+
+Ok, si inizia , Nob0dy88, questo e' per te.
+Si ringrazia Pc Upgrade per avermi fatto rispolverare dei vecchi manuali e per le loro tabelle dei registri.
+Il modem,se esterno,comunica con la porta seriale del pc (rs232) e con la linea telefonica consentendo lo scambio di dati, ma questo e' lapalissiano.Cosa meno lapalissiana invece e' capire come fa in pratica a compiere questa magia...
+Primo skemino :
+
+
+porta seriale
+linea telefonica    
+       
+    +----------------+
++----------------+ | convertitore |
+| interfaccia | | TTL/RS232 |
+|linea telefonica| +----------------+
++----------------+  | 
+ | |  
+|  +-------------------+
++----------++------------+ |tx| rx|rom|ram|ctrl|
+|modulatore||demodulatore| |rx| tx| | | |
++----------++------------+ +-------------------+
+ |  |
+| +---------+ |
++----------------------------+
+
+E fino a qui non penso che sorgano problemi;logicamente il componente siglato CTRL e' la logica di controllo del modem...
+Il convertitore TTL/RS232 serve a trasformare i bit trasmessi dalla porta seriale in impulsi di frequenza che possono essere inviati sulla normale linea telefonica.Il motivo della conversione e' molto semplice: i segnali che vengono inviati dal pc al modem sono in forma binaria , ovvero hanno valore 0 associato alla tensione di 0volts e di valore 1 associato a 5volts.Il circuito TTL/RS232 li trasforma in 2 tensioni distinte, una positiva ed una negativa.Successivamente vengono convertiti da segnali RS232 a segnali di frequenza e modulati.
+Magari non e' molto chiaro, quindi beccatevi il secondo schemino ;-]
+
+
++-----------+
+|modulazione|
++------------------+ +------------------+
+|01110101-binario/TTL-TTL/RS232-RS232/frequenza|
++-------------------------------------------------+
++-------------+
+|demodulazione|
++-----------------+ +-----------------+
+|frequenza/RS232-RS232/TTL-TTL/binario-01110101|
++-------------------------------------------------+
+
+Ok,adesso la teoria di base del funzionamento del modem la avete per lo meno vista,non dico capita ;-]
+Adesso , sotto con un'altro skema che vi spiega i segnali della seriale che servono al modem ,e dato che io non so se avete il modem sulla com1 (a 9 poli) o sulla com2 (a 25 poli) ve li ho messi entrambi.
+Ah,tanto per intendersi,sono le famose lucine che lampeggiano come un'albero di Natale quando navigate ....
+
++------------------------------------------+
+|9poli|25poli|Segnale| Funzione |
++-----+------+-------+---------------------|
+| 1 | 8 | DCD | Data Carrier Detect |
++-----+------+-------+---------------------|
+| 2 | 3 | RX | Ricezione |
++-----+------+-------+---------------------|
+| 3 | 2 | TX | Trasmissione |
++-----+------+-------+---------------------|
+| 4 | 20 | DTR | Data Terminal Ready |
++-----+------+-------+---------------------|
+| 5 | 7 | GND | Massa |
++-----+------+-------+---------------------|
+| 6 | 6 | DSR | Data Set Ready |
++-----+------+-------+---------------------|
+| 7 | 4 | RTS | Request To Send |
++-----+------+-------+---------------------|
+| 8 | 5 | CTS | Clear To Send |
++-----+------+-------+---------------------|
+| 9 | 22 | RI | Ring Indicator |
++------------------------------------------+
+
+Piccola notizia: nei modem (modelli piu' accessoriati o industriali) c'e' un'isolatore galvanico.
+Che ca**o sara' mai?
+Beh, diciamo che permette il perfetto isolamento fra la linea telefonica e il modem stesso.Serve per non far entrare in contatto il segnale di massa del modem con quello della lonea,che altrimenti diverrebbe inutilizzabile.Oltre a questo simpatico compito,si occupa anche della rilevazione dello squillo che e' necessaria alla attivazione dell'eventuale segreteria telefonica o all'accensione del pc.
+Per ultima cosa si occupa di smistare i segnali in entrata e quelli in uscita.Non male,vero?
+Ma a parte queste piccole notizie , vi siete mai chiesti come si calcola davvero la velocita' del modem?
+Insomma, perche' un modem ha un baud rate di 14.400 baud ed un'altro di 33.600 baud?
+Eccovi la semplice spiegazione (che poi semplice non e',ma fa lo stesso)
+La sezione di modulazione e quella di demodulazione di un modem si occupano,come ho gia' detto,di convertire i segnali da e per la linea telefonica,quindi ogni bit deve essere convertito e piu' veloce sara' la conversione,piu' altro sara' il baud rate.Piccolo esempio pratico: se un bit viene convertito in X tempo il baud rate sara' di X/K.Ancora non vi e' chiaro, eh?
+Ok, allora sieghiamoci meglio...
+Se un modem converte un bit in 52 microsecondi che equivalogono a 0,000052 secondi il baud rate sara' 1/0,000052 che risulta 19230,76923077 ovvero 19.200 baud circa.
+Tenete sempre presente comunque che il modem si connette ad una velocita' di Y baud ma non e' detto che sia effettivamente la velocita' con la quale ricevete voi i dati sul pc,proprio perche' oltre che a ricevere i dati dalla linea telefono deve anche inoltrarli alla sariale,quindi se avete una seriale lenta ed un modem veloce non noterete enormi differenze usando un 14.400 al posto del vostro nuovissimo v.90,okkio quindi alla motherboard!
+Spero adesso di essere stato chiaro!
+Se cosi' non fosse, beh, cari miei,arrangiatevi o scrivetemi, tanto il mio indirizzo e' alla fine di questo articoletto ;-]
+
+Bene, fino a qui ci siamo arrivati,vediamo adesso una delle cose piu' oscure del modem,ovvero le stringhe AT, e qui iniziano i casini ehehehheeh
+Se non avete voglia di leggere tutto cio'andate fino alla riga contraddistinta da +-+-+-+
+Dovete sapere che il modem dispone di due modalita' di lavoro definite DATI e COMANDI.
+Nel primo modo il modem non fa altro che passare i dati che gli inviamo alla linea telefonica e viceversa,mentre il secondo modo non necessita di linea telefonica dato che riceve segnali solo ed esclusivamte dalla porta seriale.
+Questa modalita' e' di default quando si accende il modem ed e' in questa modalita' che vengono ricevute dal pc le famose stringhe AT ovvero stringhe di comandi.Spesso ogni provider da assieme alla sua clientela una stringa at che serve a 'limitare' la velocita' del modem (se e' un modello 56.000) a 33.600 per non far cadere la linea oppure con un'impostazione particolare per accedere al suo servizio.Le stringhe AT vengono conservate nella RAM del modem e vengono usate fino a che non viene inviata una seconda stringa.
+Le operazioni possibili tramite stringhe AT sono le seguenti:
+
+velocita' in baud
+numerpo bit per dato
+presenza del bit di parita'
+tipo di parita' del bit
+numero bit di stop
+presenza controlo di flusso software
+presenza controlo di flusso hardware
+
+Non poche opzioni,vero?
+Beh,adesso vi spiego cosa sono e come usarle,cosi' potete spippolare in pace!
+Prima di spippolare pero' e' meglio che sappiate come sono strutturate le stringhe,quindi vi dovete leggere un'altro skemino!
+
++-----------------+
+|AT|C1|C2|C3|CR|LF|
++-----------------+
+
+Ok,adesso la logica di base!
+Ogni stringa DEVE iniziare con il comando AT seguito da quanti comandi vogliate e va terminata SEMPRE con CR e LF che altro non sono che il banale Enter.I valori ascii di CR e LF sono i seguenti :
+CR (carriage return) = 0x13
+LF (line feed) = 0x10
+Il minimo di caratteri per una stringa e' di 10 ed il massimo e' di 256 escluso AT.Se mandate una stringa AT il modem la riceve,la esegue e torna in modalita' comandi,se invece nella stringa specificate che deve essere composto un numero il modem lo fa e si mette in modalita' DATI.Per terminare la sessione DATI e tornare in modo COMANDI deve essere inviata una stringa di ESCAPE ovvero di chiusura che solitamente e' +++ ma la potete modificare voi come piu' vi pare,dopo vi spiego anke come,preparatevi alla mega tabella!Adesso che + o - avete capito qualcosina sui modem e sulle stringhe AT vi spiego i comandi.
+
+-*- Bn
+Specifica che protocollo di trasmissione usare.
+La lettera 'n' deve essere un valore compreso tra 0 ed 1.
+Al valore 0 il modem usara' il protocollo CCITT V.22 a 1.200 baud oppure il CCITT V.21 a 300 baud.
+Al valore 1 il modem usara' il protocollo BELL 212A a 1.200 baud oppure il BELL 103J a 300 baud.
+
+-*- DnX
+Serve per formare un numero telefonico.
+Il valore 'n' e' il numero di telefono da comporre mentre X sono le specifiche della connessione.
+I valori di X servono ad impostare un sacco di cose,vediamo!
+il metodo di chiamata: P per composizione ad impulsi e T per il modo multifrequenza.
+richiamare l'ultimo numero composto: la lettera e' L
+richiamare un numero in memoria: S=n (leggete bene alla fine della descrizione dei comandi)
+sconnettere la linea per 500millisecondi: ! (funzione di hook-flash cioe' aggancio rapido)
+mettere in pausa la connessione dopo un certo periodo di tempo: ,
+tornare in modalita' COMANDI: ;
+
+-*- En 
+Abilita o disabilita l'eco del carattere.
+Anche in questo caso 'n' e' un valore compreso fra 0 ed 1 dove n=1 eco abilitato invece se n=0 eco disabilitato.
+
+-*- Hn (hook switch control)
+Connette o disconnette dalla linea telefonica.
+Anche in questo caso 'n' e' un valore compreso fra 0 ed 1 dove n=1 connesso invece se n=0 disconnesso.
+
+-*- In
+Identificazione del modem.
+Tanto per cambiare 'n' e' un valore ma stavolta e' compreso tra 0 e 6.
+Via, altra tabella....
++--------------------------------+
+|0| codice del prodotto |
++-+------------------------------|
+|1| checksum del firmware |
++-+------------------------------|
+|2|verifica checksum del firmware|
++-+------------------------------|
+|3| versione del firmware |
++-+------------------------------|
+|4| stringa identificativa |
++-+------------------------------|
+|5| codice del paese |
++-+------------------------------|
+|6| revisione del modem |
++--------------------------------+
+
+Questo e' cio' che mi dice il mio modem Motorola VoiceSurfr k56 :
+ati1
+057
+
+OK
+ati2
+OK
+ati3
+V1.009-K56_DLS
+
+OK
+ati4
+Motorola VoiceSURFR 56K External
+
+OK
+ati5
+022
+
+OK
+ati6
+RCV56DPF L8570A Rev 30.1/30.1
+OK
+
+-*- Ln
+Regola il volume dell'altoparlante del modem.
+Qui facciamo ancora un'eccezione: sebbene 'n' sia sempre una variabile e'compresa tra 0 e 3.
+Altra tabella,che ci sto prendendo la mano ;-]
++---------------------+
+|L=0|volume bassissimo|
++---+-----------------|
+|L=1|volume basso |
++---+-----------------|
+|L=2|volume medio |
++---+-----------------|
+|L=3|volume alto |
++---------------------+
+
+-*- Mn
+Attiva o disattiva l'altoparlante.
+Ancora un'eccezione: sebbene 'n' sia sempre una variabile e'compresa tra 0 e 3.
+Altra tabella hihihih.
++--------------------------------------------------+
+|n=0|altoparlante sempre muto |
++---+----------------------------------------------|
+|n=1|funziona fino al riconoscimento della portante|
++---+----------------------------------------------|
+|n=2|sempre attivo |
++---+----------------------------------------------|
+|n=3|attivo dopo la composizione fino alla portante|
++--------------------------------------------------+
+La portante non e' altro che la risposta dell'altro modem,detta anke handshake.
+
+-*- O
+Esce dalla modalita' COMANDI e si setta in DATI.
+
+-*- P
+Compone il numero in modo impulsi.
+
+-*- Qn
+Abilita o disabilita la risposta del modem.
+Come al solito 'n' e' variabile fra 0 ed 1 e se n=0 abilitato ed n=1 disabilitato.
+
+-*- Sn=v
+Scrive un valore nel registro del modem.
+Qui le variabili sono ben due lettere, la classica 'n' e la 'v'.
+'n' e' un valore di registro del modem (tabella alla fine,vi risparmio!)
+'v' e' invece un numero compreso tra 0 e 255
+
+-*- Sn:?
+Legge un registro del modem.
+Al solito 'n' e' variabile,vedi alla fine al tabella dei registri.
+
+-*- T
+Composizione del numero in multifrequenza detta anche DTMF.
+
+-*- Vn
+Risposte brevi o lunghe attivate o disattivate.
+Come sempre 'n' e' variabile che se impostata a 0 permette le risposte numeriche del modem mentre se messa a 1 abilita le risposte testuali.Va usato dopo Qn.
+
+-*- Xn
+Gestisce le risposte del modem e il rilevamento del segnale di linea.
+Altra tabella che magatri vi chiarisce il tutto ;-)
++-----------------------+
+|Xn|Risposta|Rdial|Roccu| Rdial = rilevazione dial-tone
++--+--------+-----+-----| Roccu = rilevazione occupato
+|X0| dis | dis | dis | dis = disabilitato
++--+--------+-----+-----| ab = abilitato
+|X1| ab | dis | dis |
++--+--------+-----+-----|
+|X2| ab | ab | dis |
++--+--------+-----+-----|
+|X3| ab | dis | ab |
++--+--------+-----+-----|
+|X4| ab | ab | ab |
++-----------------------+
+
+-*- Yn
+Disconnessione long space.
+Anche qui 'n' e' variabile e se con valore 1 abilita la disconnessione, se a valore 0 la disabilita.
+
+-*- Zn
+Resetta il modem.
+Piccola anomalia: 'n' puo' essere 1 oppure 0 ma ottiene lo stesso effetto:resetta il modem.
+Pero' la differenza c'e',attenzione!
+Se 'n' e' 0 dopo il reset il modem caricherà il profilo utente numero 0,se invece 'n' e' 1 il profilo caricato sara',guardacaso,il numero 1.
+
+-*- &Cn
+Gestisce il DCD (detto anche CD).
+Ha due valori di 'n' ovvero 0 ed 1.
+Se 'n' e' pari a 0 il DCD e' sempre ON, se invece e' settato a 1 il DCD e' ON solo quando viene rilevata la portante della linea,e ritorna ad OFF quando non c'e' piu' portante.
+
+-*- &Dn
+Gestisce il DTR (detto anche TR).
+Il parametro 'n' ha valori compresi tra 0 e 3 e si comporta nel seguente modo:
+n=0 : ignora DTR
+n=1 : se il DTR diventa inattivo il modem va in modo COMANDI invia un OK e resta in connesione
+n=2 : se il DTR diventa inattivo si disconnette e se in modo autorisposta non risponde
+n=3 : se il DTR diventa inattivo si disconnette,si autoresetta e carica il profilo Z0
+
+-*- &F
+Resetta i valori di default del modem
+
+-*- &Kn
+Gestisce il controllo di flusso.
+Il parametro 'n' ha i seguenti valori e compie le seguenti azioni:
+n=0 : controllo flusso disabilitato
+n=3 : controllo hardware RTS/CTS abilitato
+n=4 : controllo software XON/XOFF abilitato
+n=6 : controlli RTS/CTS e XON/XOFF abilitati
+
+-*- &Qn
+Gestione modalita' operativa.
+I valori di 'n' sono 3 e si comportano cosi':
+n=0 : connessione diretta senza conversioni,correzione d'errore e compressione
+n=5 : correzione automatica di errore attiva
+n=6 : connessione normale
+
+-*- &Sn
+Gestisce il DSR.
+In questo caso 'n' ha solo 2 modalita'.Se 'n' e' paria a 0 il DSR resta sempre attivo, se 'n' e' 1 il DSR si attiva quando rileva il modem remoto e si disattiva quando manca la portante.
+
+-*- &Tn
+Comando di test.
+I parametri in questo caso sono molti, come si puo' vedere:
+n=0 : termina i test in eseguzione
+n=1 : test sezione analogica
+n=3 : test sezione digitale
+n=4 : abilita il loopback remoto
+n=5 : disabilita il loopback remoto
+n=6 : test digitale remoto
+n=7 : test digitale remoto con self-test
+n=8 : test analogico con self test
+
+-*- &V
+Mostra i profili di configurazione del modem.(vedi Zn,&Dn,&Wn,&Yn)
+
+-*- &Wn
+Memorizza il profilo attivo nella memoria.
+Il valore 'n' e' compreso tra 0 ed 1 ed indica che profilo si sta memorizzando.
+Se 'n' e' 0 il profilo si memorizzera' come profilo 0 , se 'n' invece e' 1 il profilo memorizzato sara' il profilo 1.
+
+-*- &Yn
+Seleziona profilo di default.
+In questo caso 'n' se e' 0 il profilo di default sara' lo 0, se invece 'n' e' 1 il default profile sara' l'1.
+
+-*- &Zn=x
+Memorizza un numero telefonico.
+Qui ci sono 2 variabili , 'n' e 'x'.
+La 'n' puo' avere valore 0,1,2,3 ed e' la memoria nella quale 'x' verra' scritto.
+La 'x' invece e' il numero di telefono da comporre.
+
+-*- &Gn
+Abilita/disabilita il controllo di flusso XON/XOFF.
+Se 'n' e' 0 il controllo e' disabilitato se e' invece '1' viene abilitato.
+
+Relativamente al comando S=n c'e' da dire un paio di cose: il modem puo' generalmente tenere in memoria 4 numeri e il valore 'n' comunica quale di questi 4 numeri usare.Il valore di 'n' e' tra 0 e 3.
+Invece relativamente al comando di pausa ',' per molti non servira' a nulla ma chi e' dietro un centralino e deve comproe un numero per avere la linea esterna lo usera' di sicuro.Il tempo da far trascorrere e' nel registro S8 del modem.Tranquilli che poi vi spiego!
+
+Infatti adesso preparatevi psicologicamente perche' vi sto per far vedere l'incredibile!
+No, le foto di Master nudo no!!!!
+Invece la tabella (ehehe,ancora tabella!) di tutti i registri del modem!
+
++-------------------------------------------------------------------+
+|Registro| Funzione |Range | Unita' |Mem| Def|
++--------+--------------------------------+------+---------+---+----+
+| S0 |Squilli per autoanswer |0-255 | squilli |si | 0 |
+| S1 |Contatore di squilli |0-25 | squilli |no | 0 |
+| S2 |Carattere ESCAPE |0-255 | ascii |si | 43+|
+| S3 |Carattere CR |0-127 | ascii |no | 13 |
+| S4 |Carattere LF |0-127 | ascii |no | 10 |
+| S5 |Carattere di cancellazione |0-127 | ascii |no | 8 |
+| S6 |Attesa tono linea |2-255 | 1 sec |si | 2 |
+| S7 |Attesa portante |1-255 | 1 sec |si | 50 |
+| S8 |Pausa per composizione |0-255 | 1 sec |si | 2 |
+| S9 |Riconoscimento portante |1-255 | 0.1 sec |si | 6 |
+| S10 |Perdita portante |1-255 | 0.1 sec |si | 14 |
+| S11 |Durata tono DTMF |50-255|0.001 sec|si | 95 |
+| S12 |Ritardo escape |0-255 |0.02 sec |si | 50 |
+| S13 |Riservato |------|---------|no |----|
+| S14 |Bit mappati per E,Q,V,T,P |------|---------|si | 138|
+| S15 |Riservato |------|---------|no |----|
+| S16 |Bit mappati per &T |------|---------|no | 0 |
+| S17 |Riservato |------|---------|no |----|
+| S18 |Test timer |0-255 | 1 sec |si | 0 |
+| S19 |Riservato |------|---------|no |----|
+| S20 |Riservato |------|---------|no |----|
+| S21 |Bit mappati per &C,&D,&S,Y |------|---------|si | 524|
+| S22 |Bit mappati per L,M,N |------|---------|si | 117|
+| S23 |Bit mappati per &T4,&T5 |------|---------|si |6254|
+| S24 |Timer per sleep |0-255 | 1 sec |si | 0 |
+| S25 |Ritardo DRT off |0-255 |0.01 sec |no | 5 |
+| S26 |Ritardo RTS CTS |0-255 |0.01 sec |no | 1 |
+| S27 |Bit mappati per &Q,B |------|---------|si | 739|
+| S28 |Riservato |------|---------|no | 0 |
+| S29 |Tempo FLASH |0-255 |0.001 sec|no | 700|
+| S30 |Timer disconnessione inattivita'|0.255 | 10 sec |no | 0 |
+| S31 |Bit mappati per N,W |------|---------|si |1942|
+| S32 |Carattere XON |0-255 | ascii |no | 17 |
+| S33 |Carattere XOFF |0-255 | ascii |no | 19 |
+| S34 |Riservato |------|---------|no |----|
+| S35 |Riservato |------|---------|no |----|
+| S37 |Velocita' connessione | * |---------|si | 7 |
+| S38 |Ritardo disconnessione |0-255 | 1 sec |no | 20 |
+| S39 |bit mappati per &K |------|---------|si | 3 |
+| S42 |Riservato |------|---------|no |----|
+| S45 |Riservato |------|---------|no |----|
+| S46 |Controllo compressione dati | ** |---------|si |138 |
++-------------------------------------------------------------------+
+Alcune note:
+* = La velocita' di connessione accetta questi valori:
+0 = Velocita' comando AT
+3 = 300 baud
+5 = 1200 baud v.22
+6 = 2400 baud v.22bis
+7 = 1200/75 baud v.23
+8 = 4800 baud v.32bis/v.32
+9 = 9600 baud v.32bis/v.32
+10= 12000 baud v.32bis
+11= 14400 baud v.32bis
+12= 7200 baud v.32bis
+
+** = I valori sono i seguenti:
+136 : correzione errori senza compressione
+138 : correzione errori con compressione
+
+Resistete che abbiamo quasi finito, dai!
+Ancora una breve spiegazione e una tabella e potrete spippolare!
+tutto sto casino di tabella serve per vedere dove il modem tiene le sue impostazioni e quali sono le impostazioni sulle quali potete spippolare e memorizzare.Va da se che le impostazioni che non salverete con il comando Wn allo spegnimento del pc non verranno mantenute.Potete customizzare tutto il customizzabile usando le comuni stringhe AT.Logico che se proprio non siete dei degenrati mentali avrete capito che il modem lo potete programmare solo in modo COMANDI.
+Ogni stringa che invierete al modem generera' una risposta che potra' essere ASCII oppure un byte.
+La tabella qui sotto,che e' anche l'ultima di questo articolo,vi mostra la corrispondenza fra le risposte di un byte e quelle ASCII...Ed ora, per la vostra gioia, la tabella!
+
+| 0|ok | comando eseguito
+| 1|connect | connessione avvenuta
+| 2|ring | squillo telefono in arrivo
+| 3|no carrier | manca la portante o la linea
+| 4|error | errore
+| 5|connect 1200 |
+| 6|no dial tone | manca il tono di linea libera (USA only)
+| 7|busy | linea occupata
+| 8|no answer | mancata risposta
+| 9|connect 0600 | connessione avvenuta a XXX bps
+|10|connect 2400 |
+|11|connect 4800 |
+|12|connect 9600 |
+|13|connect 7200 |
+|14|connect 12000 |
+|15|connect 14400 |
+|16|connect 19200 |
+|17|connect 38400 |
+|18|connect 57600 |
+|19|connect 115200 |
+|22|connect 1200RX/75TX|
+|23|connect 75RX/1200TX|
+|33|fax | discrimina chimata fax in arrivo
+|35|data | discrimina chiamata dati in arrivo
+|40|carrier 300 | portante rilevata a XXX bps
+|44|carrier 1200/75 |
+|45|carrier 75/1200 |
+|46|carrier 1200 |
+|47|carrier 2400 |
+|48|carrier 4800 |
+|49|carrier 7200 |
+|50|carrier 9600 |
+|51|carrier 12000 |
+|52|carrier 14400 |
+|53|carrier 16800 |
+|54|carrier 19200 |
+|55|carrier 21600 |
+|56|carrier 24000 |
+|57|carrier 26400 |
+|58|carrier 28800 |
+|59|connect 16800 |
+|61|connect 21600 |
+|62|connect 24000 |
+|63|connect 26400 |
+|64|connect 28800 |
+|66|compression:class 5| protocollo di compressione usato
+|67|compression:v.24bis| 
+|69|compression:none |
+|76|protocol:none | protocollo di comunicazione usato
+|77|protocol:lapm |
+|80|protocol:alt |
+
+Ok, adesso che ho finito con i omandi AT,i registri del modem e il funzionamento del modem non vi resta che provate...
+Usate Hyperterminal, configurate il modem sulla vostra com e spippolate allegramente!
+Bene,l'articoletto e' finito,spero che sia servito a qualcuno oltre che a Nick1 ;-]
+Ah,ho appena notato che i segni di +-+-+-+ che avevo citato non sono stati inseriti, ma che sbadatone che sono,o forse sono solo bastardo?Mah, ai posteri la sentenza!
+
+RigoR MorteM, SPP Webmaster, rigormortem@spippolatori.com
+(si ringrazia Simone Angelini per la consulenza)

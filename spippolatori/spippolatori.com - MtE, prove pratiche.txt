@@ -1,0 +1,114 @@
+MtE , prove pratiche
+
+ 
+
+Creato da : RigoR MorteM
+
+Queste prove sono state fatte per soddisfare la curiosità di tutti coloro volessero "giocare" con i virus , in particolare con tutti quelli creati con il Mutation Engine del mai abbastanza compianto Dark Avenger.Sono stato aiutato da amici (che hanno trovato e rispolverato i loro vecchi pc) e colgo l'occasione di ringraziarli calorosamente!!!
+Se trovate degli errori o delle omissioni siete pregati di farmelo sapere , in modo da non dare informazioni errate...
+
+-=Indice=-
+
+1) Il Mutation Engine (MtE) in relazione ai virus
+
+2) Come trovare i Virus ed in particolare i Virus basati sul MtE
+
+3) Gli Algoritmi di disinfezione ed i vari tipi di mutazione
+
+4) Risultati dei Test e commenti
+
+
+-*-1) Il Mutation Engine (MtE) in relazione ai virus-*-
+
+Ho preso in esame , come detto prima , il Mutatione Engine , che da ora in poi chiamerò MtE , sviluppato da Dark Avenger ed un semplice virus basato su MtE.
+Ho fatto anche dei test sull'affidabilità dei vari anti-virus nella rilevazione di questa particolare famiglia (o , in gergo batterilogico , ceppo) di virus e ho tirto fuori dei dati molto empirici...
+Non prendete come oro colato questi dati , sono solo frutto di esperimenti casalinghi fatti replicando i test che fece a suo tempo il VDS Advanced Research Group nel 92.Devo dire , ad onor del vero , che non ho rilevato notevoli discrepanze fra i loro risultati e quelli che ho ottenuto io...
+Sono andato anche a scovare un programma sviluppato da quei cervelloni (che si chiama CatchMTE) e che , con un algoritmo matematico, trova (o si suppone che trovi) i virus basati su MtE.
+Pensate che l'eseguibile di CatchMTE era freeware ma , sempre in nome del progresso scientifico , il sorgente e tutte le specifiche erano disponibili solo dietro pagamento.
+L'idea era forse quella di rivendere il sorgente a qualche ditta tipo McAffee ma mi sa che il progetto non è mai andato in porto. Comunque , per chi non ha familiarità con MtE qui di seguito ci sono delle info generali:
+
+Anzitutto MtE non è un virus , è solo un "modulo" o , se preferite , un' "estensione" che , aggiunta ad un virus , ne aumenta la capacità di far danni , infatti aggiunge delle routine che lo rendono polimorfico ovvero in grado di cambiare ad ogni replicazione porzioni del codice di base.
+Sarebbe meglio chiamare MtE una routine che , secondo la documentazione in mio possesso, cifra una porzione del codice del virus , la elabora con dei numeri random e la decifra.
+Se non avete capito provo a spiegare così : MtE prende il primo files che trova in memoria , vi aggiunge un virus e lo "salda" al programma. Il prossimo programma che capita sotto le grinfie di MtE si troverà infettato allo stesso modo , solo che , grazie all'uso dei numeri random per ogni passaggio , il virus sarà diverso.
+Carino lo scherzetto , no?
+Devo anche dire che il genenratore di numeri random o pseudo random è incluso nel pacchetto di distribuzione di MtE , sebbene non faccia parte del codice di MtE, dando così la possibilità a tutti di inserire il proprio generatore di numeri random. Se volete un consiglio non includete mai delle routine troppo grosse per generatore dato che appesantirebbero l'eseguzione. Sappiate sempre bilanciare la lunghezza del generatore in base alla dimensione del virus!
+Continuando il nostro discorso so che si possono trovare un sacco di Mutation Engine ma , credetemi , sono stati tutti creati partendo da MtE. Ho nella mia collezione 8 Mutation Engine e sono molto simili fra loro , anche se , come comodità , io preferisco Mutagen Encrypt Engine di MnemoriX.
+Per avere un punto di vantaggio su tutti i Mutation Engine Dark Avenger ha sviluppato un prodotto di meno di 2K che da veramente ad ogi virus la possibilità di mutare totalmente e ne fornisce anche una prova.
+Infatti nel pacchetto di distribuzione di MtE era anche incluso un virus (Dedicated) .com che era un piccolo tsr. Poco dopo che il pacchetto è stato distribuito una mutazione di Dedicated dal nome Fear.Per tutti i testi relativi alllo sviluppo della scena dei virus bulgari raccomando la lettura del testo "Bulgarian Virus Factory" che avevo prima del format.....
+
+-*-2) Come trovare i Virus ed in particolare i Virus basati sul MtE-*-
+
+Eseguire una scansione di un disco in cerca di virus è ormai una pratica comune.Chi ha creato il programma anti-virus ha semplicemente inserito in un'apposito motore di ricerca la stringa (detta anche pattern) di bytes che caratterizza un virus ed il motore si occupa di cercare in ogni files sul disco la corrispondenza con la stringa predefinita.Questo è un metodo di ricerca definito "euristico" in quanto non è sicuro al 100% , dato che un file di uso comune potrebbe avere all'interno la stringa incriminata , comunque è un metodo sempre più diffuso per la ricerca e la disinfezione.A me personalmente è capitato di trovare notepad.exe infetto , mentre con un antivirus di un'altra ditta non rilevava nulla.Attenzione quindi ai falsi allarmi.Anche se il metodo euristico il più delle volte trova qualche virus analizzate anche con altri prodotti il votro sistema , non si sa mai.La combinazione di più prodotti , solitamente da origine ad un poco di confusione , ma resta il metodo più sicuro per rilevare i virus in genere.Per rilevare un virus polimorfico , invece, questa metodologia fallisce.Il fallimento è decretato dal fatto che sia il primo virus sia i prodotti della mutazione vengano incorporati nei files in maniera cifrata ed ogni copia ha una diversa chiave di crittazione.Spesso i virus-copia vengono rilevati dal sistema come non-appartenenti al ceppo di base , sempre grazie alla diversa chiave di crittazione.Comunque , anche questi tipi di virus hanno bisogno di una porzione di codice non cifrata che permetta loro la decrittazione , in modo da permettere la replicazione.Normalmente gli anti-virus cercano questa porzione di codice per identificare il virus ed è solitamente necessario che vengano anche dati dei specifici parametri di ricerca avanzati a livello di byte che riconoscano con precisione il virus , ma questa è una cosa che non riguarda l'utente , bensì i programmatori di anti-virus.Tutto questo discorso vale per i virus polimorfici in genere , non per quelli creati con MtE.
+Infatti MtE genera, grazie all'uso di numeri random, un codice di decrittazione diverso per ogni replicazione di virus.Ciò vuol dire che in teoria ogni virus non può essere rilevato con assoluta precisione e non può essere attribuito con certazza ad un ceppo base.In teoria , dato che , analizzando MtE e diverse mutazioni basate su di esso si è giunti a scoprire diverse caratteristiche ricorrenti nella generazione.
+Di questa scoperta non sono io il responsabile, bensì il già citato VDS Advanced Research Group.Questi signori , con un 386 , un 8086 , un paio di virus generati da MtE ed un disassembler sono riusciti a trovare delle parti in comune con i vari ceppi virali generati.
+Basandomi sulla documentazione del tempo leggo che dopo aver infettato dei files e delle dir , questi signori si sono messi a cercare le chiamate ai registri e hanno avuto uno choc: l'architetture 80x86 permetteva una flessibilità nella gestione dei registri di memoria che aiutava la diffusione di ogni prodotto basato su MtE.Inoltre la routine di decrittazione del codice non ha una lunghezza fissa ma variabile , oltre al fatto che è piena di istruzioni ridondanti , in modo da nascondere l'inizio della vera routine di decrittazione.Per più del 90% delle mutazioni MtE genera una routine di crittazione a 16 bit di tipo XOR. Comunque in molti casi non applica direttamente la maschera XOR alla memoria.
+Il procedimento-tipo è il seguente: viene creata la maschera e vengono presi da un registro i dati da decrittare,quindi viene applicata la maschera ed i risultati vengono messi nella locazione di memoria dedicata.L'accesso alla memoria viene fatto usando sia le istruzioni di MOV che quelle di XCHG.Un'altra cosa molto curiosa è il fatto che a volte MtE genera una routine di decrittazione nulla , cioè che non decritta niente.Infatti , in quei casi il virus non viene ovviamente cifrato.Questa operazione , che a prima vista può apparire assurda, è data dal fatto che vengono usati dei numeri random , quindi il risultato , a volte , rischia di essere una cifratura inesistente.Bisogna però dire che i prodotti del ceppo dei virus non cifrati risultano cifrati e molto raramente si producono , nelle generazioni successive , virus non cifrati.
+
+-*-3) Gli Algoritmi di disinfezione ed i vari tipi di mutazione-*-
+
+MtE di per se genera quattro ceppi virali ben distinti :
+
+:A: Con doppia cifratura (89.5%)
+:B: SUB-NEG (2.3%)
+:C: Cifratura singola (1.9%)
+:D: Non cifrati (6.3%)
+
+
+Notare che i valori fra parentesi si riferiscono alla media delle valutazioni del team VDS e delle mie personali , escludendi le valutazioni di CatchMTE , in quanto non sono stato in gradi di reperire il file.Io ho avuto modo di generare la bellezza di 657 files infetti in ogni test , ed ho fatto i test 15 volte , quindi la valutazione percentuale è stata la media di 9855 files, tutti infettati in modo leggermente diverso.Sempre dal documento del VDS leggo che il loro programma è in gradi di rilevare i virus di tutti i ceppi generati con un'accuratezza del 100% , logicamente , se qualcuno trova quel files mi farebbe cosa gradita se me lo mandasse...
+
+
+-*-4) Risultati dei Test e commenti-*-
+
+Test #1 Basato su Virus : Dedicated
+
+SCAN 91 F-PROT 2.04
+
+Con stringa di ricerca generica (1) 67 69 
+Con ricerca di ceppo MtE (2) 933 931 
+Non reputati infetti -0 -0 
+Non trovati -0 -0 
+Accuratezza 100% 100%
+
+
+Test Programma usato Identificazione
+(1) SCAN91 [Mut]
+(1) F-PROT 2.04 Dedicated
+(2) SCAN91 [DAME]
+(2) F-PROT 2.04 MtE
+
+
+Test #2 Basato su Virus : Pogue
+
+SCAN 91 F-PROT 2.04
+
+Con stringa di ricerca generica (1) 0 0 
+Con ricerca di ceppo MtE (2) 935 936 
+Non reputati infetti* (3) -65 -61 
+Non trovati -0 -3 
+Accuratezza 93.5% 93.6%
+
+
+Test Programma usato Identificazione
+(1) SCAN91 N/A
+(1) F-PROT 2.04 N/A
+(2) SCAN91 [DAME]
+(2) F-PROT 2.04 MtE
+(3) SCAN91 [7S]
+(3) F-PROT 2.04 Gotcha
+
+*= Non reputati infetti da ceppo MtE
+
+Appendice A : I risultati analizzati
+
+Sembra che F-PROT 2.04 e SCAN 91 abbiano qualche difficoltà a trovare i virus che hano la ruotine di decifrazione non criptata.Bisogna notare che F-PROT 2.04 , con il metodo di scansione rapida non ha trovato nesuna mutazione.Quindi bisogna sempre usare il metodo di scansione più lento dato che la minor velocità è sinonimo di accuratezza.Bisogna dire però che il metodo di ricerca rapida è valido solo con virus non-mutanti , dato che cerca una specifica stringa , in un specifico offset quindi per i virus mutanti la sua utilità è nulla.Inoltre , anche con il metodo accurato , sono stati saltati 3 virus Pogue con ruotine cifrata.Questi erano del gruppo :C: Cifratura singola ma solo uno dei tre è stato segnalato come sospetto.I sigori del VDS fanno notare che le mutazioni di Pogue vengono rilevate come Gotcha e se ne stupiscono.Non dovrebbero dato che in realtà Pogue è un ceppo Gotcha con l'aggiunta di MtE.La ragione per la quale vengono rilevati come Gotcha è il fatto che la stinga di byte necessari all'identificazione molto probabilmente non è cifrata e ciò porta all'identificazione come Gotcha-based.
+Nel complesso dei test , sia miei sia del VDS , la media delle mutazioni Pogue non rilevata è del 9% circa, e non è una media molto rassicurante dato che ogni file infetto è in gradi di generare altre infezioni e nuove varianti.
+
+Appendice B : Conclusioni Finali
+
+Anzitutto , come si è potuto vedere , nessun metodo di scansione può essere considerato sicuro al 100% per riconoscere i virus del ceppo MtE.Fortunatamente , per chi scrive virus , anche se il ceppo MtE può venir rilevato bisogna sempre tener presente che in giro ci sono molti Mutation Engine e nuovi ne escono almeno una volta al mese , quindi non è il caso di disperarsi.Il metodo base che dovrebbe essere la prassi di tutti (anche se non lo fa nessuno) è la scansione ma non solo quella! Infatti , avete visto che molti scanner non rilevano un'infezione quindi è meglio usarli conguintamente ad un'integrity checker.Infatti avete molte più probabilità di trovare un virus mutante con un' integrity checker che con uno scanner generico.Forse il maggior "difetto" di un virus è il fatto che spesso viene anche fornito il sorgente che , se da un lato aiuta chi si occupa di programmazione virale, dall'altro aiuta anche chi scrive anti-virus.
+
+Con questo è tutto , per maggiori info (storiche) vi consiglio Bulgarian Virus Factory , ottimo testo , anche se limitato all'analisi del fenomeno Dark Avenger e non molto legato alla produzione virale in sè.
+Dato che ne sono riuscito a trovare una copia mi sa che lo tradurrò quanto prima.
+Per ora è tutto , vi saluto e vi auguro buona sperimentazione ,
+
+RigoR MorteM , SPP Webmaster , 1998

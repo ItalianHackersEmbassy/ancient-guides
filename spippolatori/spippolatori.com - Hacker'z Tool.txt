@@ -1,0 +1,422 @@
+Hacker'z tool
+
+
+Creato da : #Override> Spp-member
+
+
+(!)TUTTO IL MATERIALE CONTENUTO IN QUESTA GUIDA E' DA RITENERSI A (!)
+(!)PURO SCOPO INFORMATIVO!!! L'AUTORE NON SI RITIENE IN ALCUN MODO(!)
+(!)RESPONSABILE PER DANNI CAUSATI DALL'UTILIZZO DELLE INFORMAZIONI(!) 
+(!)CONTENUTE ALL'INTERNO DEL TESTO.... (!)
+
+
+......OK??! 
+Bene allora si parte!
+
+PREMESSA
+
+In questo primo numero tratteremo temi con esempi specifici cercando di semplificare al massimo gli argomenti. Questa guida infatti è stata scritta per chi è alle prime armi nell'arte dell'hacking ; ai piu' esperti probabilmente non sarà di nessuna utilita'....
+....una cosa però vorrei sottolineare; gran parte (non tutti ovviamente) di questi temi NON sono stati copiati o tradotti 
+dagli innumerevoli testi presenti sui vari warez,ma si trattano di esperienze ed informazioni personali.
+Fatta questa premessa, iniziamo !
+
+
+^^^^^^^^
+
+IL PROVETTO RICERCATORE 
+
+Internet è un immensa fonte di informazioni e muoversi all'interno di essa è come entrare in un labirinto, dove senza un filo di Arianna che ci guidi,non potremmo mai uscirne fuori(senti che eufemismi!! :-o).
+Il nostro filo di Arianna in questo caso sono alcuni strumenti nati con l'intento di guidarci e portare a buon fine il nostro scopo.Gli strumenti di cui abbiamo bisogno sono di due tipi: quelli implementati nel sistema operativo (Tracert, Ping, Nbtstat, ecc..), e quelli forniti dalla rete (finger, Netfind, Whois, ecc..).In questa guida mi occuperò solamente di quei toolz che permettono di rintracciare delle persone che utilizzano la rete e reperire più informazioni possibili su di esse. A cosa serve direte voi...
+....bè diciamo a tutto. ;-)
+
+Quasi tutte le tecniche usate per l'hacking si basano principalmente nel reperire il maggior numero di info relative al sito da attaccare; è necessario sapere quali prog (e versione) girano sul server vittima, per poter conoscere in seguito quale exploit utilizzare. Anche la tecnica stessa del bruteforce si basa sulla ricerca di ogni dettaglio riguardo l'admin del server per poterne identificare l'eventuale user o pwd.Ma non trovate che sia anche utile ed interessante sapere come rintracciare una determinata persona, magari qualcuno che ci stia tremendamente sulle balle ( vedi pedofilo!) e al quale vorremmo dare una lezione?? E magari avendo solo a disposizione il suo IP, o il suo nome e dominio, trovare la sua vera mail o meglio ancora dove abita!Avere anche la possibilità di rintracciare la vittima on-line quando vi pare, anche se possiede un IP dinamico!!Potreste rendergli la vita (sul Net... :) ovviamente) impossibile....non sbavate però, ovviamente tutto questo dipende anche da una certa dose di cu.. fortuna, nel senso che più la nostra vittima si è resa "visibile" in rete, più informazioni riusciremo ad avere su di lui.Questo dovrebbe farvi capire intuitivamente che è molto più facile ottenere ottimi risultati su un'amministratore di un server che su un utente qualsiasi della rete. 
+Ma veniamo al dunque....
+
+
+WINDOWS UTILITY
+
+Installando il protocollo di rete Microsoft TCP/IP, vengono copiati alcuni file in /Windows, questi file sono delle utility per Internet (e reti LAN), che spesso vengono erroneamente sottovalutate. Invece sono molto utili e si adattano molto bene a diversi scopi ;-).
+
+----------------------------------------------------------------------------------------------------------------------------
+Tenete presente che esistono molti programmini nei siti warez che fanno uso di tali strumenti, ma vi consiglio vivamente di imparare ad utilizzarli da DOS o comunque da una shell, ve lo dico per esperienza personale! 
+----------------------------------------------------------------------------------------------------------------------------
+
+
+Tracert Mostra il percorso (HOPS) fatto da un pacchetto per raggiungere un computer remoto.
+
+Ping Verifica la connessione di un sito e ne determina i tempi di risposta.
+
+
+Gli switch dei comandi sono case-sensitive, quindi attenzione a come digitate le maiuscole e le minuscole, ad es. è diverso scrivere: Ping -a da Ping -A !!
+
+TRACERT
+
+E' un'utility che stabilisce il percorso verso una destinazione inviando pacchetti echo con valori variabili di Time To Live (TTL).Lungo il percorso il compito di ogni "instradatore" è quello di abbassare di almeno una unità il TTL di un pacchetto prima di consegnarlo, in pratica il TTL è un conteggio di salti (Hops). Quando il TTL di un pacchetto arriva a 0, l'instradatore dovrebbe mandare indietro un messaggio al sistema di origine.In base ai messaggi rinviati dagli instradatori, viene determinato il percorso del pacchetto.(!) (Acuni instradatori però rendono invisibili i pacchetti echo, lasciandoli esaurire senza che tracert ne rilevi la traccia....provate allora col ping).
+
+Sintassi del comando:
+
+TRACERT [-d] [-h maximum_hops] [-j host-list] [-w timeout] nome_destinazione
+
+Opzioni:
+
+• -d Non risolve gli indirizzi in nome host.
+• -h Numero massimo di hops per ricercare la destinazione.
+• -j Libera route di origine lungo l'elenco host.
+• -w Intervallo di timeout in millisecondi per ogni risposta.
+• nome_dest. Specifica il nome di ospite del computer di destinazione
+
+
+Facciamo un'esempio;
+
+C:\windows> TRACERT mbox.virtualbit.it
+
+
+Rilevazione instradamento verso mbox.virtualbit.it [195.103.10.3] su un massimo di 30 punti di passaggio:
+
+1 115 ms 121 ms 113 ms 202.41.103.65
+2 153 ms 151 ms 149 ms 202.41.103.1
+3 192 ms 317 ms 189 ms 202.41.92.10
+4 214 ms 188 ms 227 ms [202.41.92.1]
+5 186 ms 224 ms 185 ms interbusiness.it [212.41.192.2]
+6 * * 2684 ms r-mi3-.interbusiness.it 
+[151.9.15.145]
+7 290 ms 234 ms 228 ms r-mi1-fddi.interbusiness.it [151.99.5.167]
+8 402 ms 486 ms 269 ms 195.31.80.134
+9 303 ms 795 ms 286 ms 195.103.10.130
+10 * 351 ms 941 ms 192.168.0.6
+11 756 ms 475 ms 512 ms mbox.virtualbit.it [195.103.10.3]
+
+Rilevazione completata.
+[ è solo un'esempio ]
+
+La prima colonna riporta il numero di TTL (hops).
+Le altre colonne indicano i tempi di andata e ritorno in millisecondi per un tentativo di raggiungere l'host remoto.
+L'ultimo hops è il server da noi analizzato (tin.it), mentre gli hops intermedi sono vari routers che instradano il pacchetto.L'asterisco indica che il tempo(timeout) per il tentativo è scaduto, mentre l'ultima colonna riporta il nome e l'indirizzo IP dell'host.Avrete notato quindi come sia semplice ottenere l'IP di un server tramite il suo nome e viceversa (NSlookup), ovvero trovare il nome del server avendo solamente il suo IP.Infatti possiamo utilizzare tracert su un'indirizzo numerico (IP)e determinare quale server utilizza il nostro amico.....potremo poi connetterci al nome del server per reperire ulteriori info sulla nostra vittima (dovete sapere che molti provider usano una specie di yellow page dei propri utenti!).
+Parleremo di come utilizzare le info reperite in questo modo nella parte relativa agli strumenti di Internet. 
+Tracert però non sempre dà i risultati che vogliamo, ed ecco che a questo punto entra in ballo un'altra utility...
+
+Ping
+
+Il comando Ping è utile per controllare un collegamento con l'host remoto e valutarne la velocità.
+Viene inviato all'host in questione una serie di pacchetti "echo" di 64 byte aspettando i pacchetti di risposta. 
+Non è certo utile ai nostri scopi usarlo in questo modo, ma se invece lo utilizziamo con dei parametri, il discorso cambia...
+
+Sintassi:
+
+PING [-t] [-a] [-n numero] [-l lunghezza] [-f] [-i TTL] [-v TOS]
+
+Opzioni:
+
+•-t Ping è eseguito sull'host specificato finchè non viene interrotto.
+
+•-a Risolve gli indirizzi in nomi host.
+
+•-n Invia il numero di richieste di echo indicato da numero. Il valore di default è 4.
+
+•-l Invia i pacchetti echo contenenti la quantità di dati indicati in lunghezza; il default è 64 byte;il massimo è 8192.
+
+•-f Imposta il flag. Non frammenta il pacchetto.
+
+•-i TTL Imposta la "vita" del pacchetto col valore indicato da TTL
+
+•-v TOS Imposta il tipo di servizio col valore indicato da TOS.
+
+•-r Registra il percorso del pacchetto in uscita e del pacchetto di ritorno nel campo Record Route.
+Numero che deve specificare da 1 a 9 ospiti.
+
+•-s Marca orario per il numero dei salti precisati da numero
+
+•-j host-list Indirizza i pacchetti per mezzo della lista degli ospiti specificata da host-list.Gli ospiti vicini possono essere separati da gateway intermedi.
+
+•-k host-list Restringe route di origine lungo l'elenco host.
+
+•-w Intervallo attesa "timeout" (in millisecondi) per ogni risposta.
+
+
+Non spaventatevi, non abbiamo bisogno di conoscere tutti i parametri del comando, neanch'io li ricordo tutti (li ho presi dall'help di win). Basta conoscere i più importanti....
+
+
+ping -a IP // risolve l'IP di un server in nome
+
+ping -w IP (intervallo) // imposta l'intervallo d'attesa
+
+
+... per i nostri scopi. Mentre è ben conosciuto l'IP Flooding come DoS:
+
+ping -l IP (dim.del pacchetto) // invia un "echo" di dim. determinate
+
+ping -f IP (dim.del pacchetto) // ne evita la frammentazione (flag)
+
+
+Ma facciamo un'esempio. L'IP di un utente è facilmente determinabile sia che frequenti Usenet che i servizi Chat, nel 1° caso è presente nelle proprietà del msg, nel 2° se non è visualizzato (es. in ICQ) ci sono molti progZ che servono a tale scopo e sono reperibili in rete, se poi abbiamo anche il suo nome, o alias o altro , le cose diventano più facili.Una volta ottenuto tale numero, possiamo incominciare le nostre ricerche. Supponiamo che l'IP della vittima sia 194.105.97.16 (casuale)..
+
+c:\windows> ping -a 194.105.97.16
+
+(Il parametro -a sappiamo che risolve un IP num. in nome dell'host)
+
+Il risultato sarà del tipo...
+
+Esecuzione di Ping NOME_HOST [194.105.97.16] con 32 byte di dati:
+
+Risposta da 194.105.97.16: byte=32 durata=1ms TTL=128
+Risposta da 194.105.97.16: byte=32 durata<10ms TTL=128
+Risposta da 194.105.97.16: byte=32 durata<10ms TTL=128
+Risposta da 194.105.97.16: byte=32 durata<10ms TTL=128
+
+Statistiche Ping per 194.105.97.16:
+Pacchetti: Trasmessi = 4, Ricevuti = 4, Persi = 0 (0% persi),
+Tempo approssimativo percorsi andata/ritorno in millisecondi:
+Minimo = 0ms, Massimo = 1ms, Medio = 0ms
+
+..possiamo vedere così quale sia il nome del computer della vittima, oppure , se fosse un server, il nome host dello stesso.
+
+Tenete presente comunque che se avete l'IP di un utente in tempo reale (in IRC), avete già tutto ciò che vi serve per rendergli la vita difficile !!
+
+Come?? E' semplicissimo...
+
+...basta avere un DNS-scanner, reperibile nei warez.
+Personalmente ho sempre preferito utilizzare Genius un progZ completo di ogni utility (compreso il ping&tracert appunto), ma ce ne sono molti altri.Questa utility permette la scansione di un range di IP, possiamo verificare quanti e quali hosts sono online in un intervallo compreso fra due indirizzi.
+
+Prima di andare avanti però apriamo una piccola parentesi.
+Come dovreste sapere l'indirizzo IP assegnato dal Provider ad un'host della sua rete è dinamico, cioè cambia ad ogni connessione, ma la radice (i primi 24 bit) rimane invariata. Se per esempio il mio IP è 194.10.190.18 significa che appartengo ad un indirizzo di rete :
+
+194.10.190.X //dove "X" è il n°host che mi può essere assegnato
+
+(a meno che si tratta di grosse sottoreti, dove l'assegnazione del n° può variare negli ultimi 16 bit --> .192.X e .191.X per esempio).Questo procedimento viene fatto utilizzando una maschera di rete (Netmask) sovrapposta all'IP ... ma per questo discorso vi rimando alla lettura di testi sul protocollo TCP/IP. 
+
+Facciamo un'esempio e torniamo alla nostra vittima in IRC; supponiamo che il suo IP sia 196.41.197.36 , mano al nostro DNS-scanner e inseriamo il suo IP...
+
+..il risultato sarà *(con un pò di fortuna) il nome del suo PC !!(risultato simile lo avremmo avuto col Ping -a)
+
+Proprio così, avete presente quando installate windows (o altri S.O.)che caricando i protocolli di rete NetBios e Client Microsoft, vi chiede di dare un nome al vostro PC ?.. bene, quello è il nome che apparirà in rete e sarà visualizzato dallo scanner!Quindi se sappiamo il nome dell'host ed a quale indirizzo di rete appartiene, in futuro potremo sempre intercettarlo (se sarà online, ovviamente) facendo una scansione degli indirizzi da 196.41.197.1 a 196.41.197.249 controllando se apparirà il suo nome!Normalmente basta una scansione dei primi 50/90 n°, visto che difficilmente gli utenti della stessa rete si collegano nello stesso momento, inoltre una volta trovato e attaccato,se dovesse riconnettersi il server gli assegnerà il primo n° disponibile su quella rete, accellerando così le nostre ricerche...Certo, dovremmo dedicargli parte del nostro tempo, ma ciò dipende da quanto ci stà sulle palle il nostro utente ;-)
+
+*Prima ho detto "con un pò di fortuna" perchè alcuni non danno nessun nome al proprio mezzo (e fanno bene).. lo scanner in questo caso vi descriverà l'host come "undelevaraible host" anche se sarà attivo.
+In questo caso sarete delusi eh? :-((
+Bè io non lo sarei... insomma, dovete reperire qualche dettaglio che possa identificare il nostro obiettivo no??
+Ci sono diversi modi per farlo, uno di questi è senz'altro usando un port scanner!
+
+- Avete già preso in considerazione il mio labile stato mentale eh? -
+
+Stò dicendo sul serio.. facendo una scansione delle porte, possiamo reperire alcune importanti informazioni. Se per esempio scopriamo che è attiva la porta 135 o 137 nel Pc della vittima, significa (quasi certamente) che utilizza WinNT, che non è un dettaglio da poco! Più ampliamo la scansione delle porte e più troviamo dei dettagli propri del computer del malcapitato.
+Mi è accaduto per esempio un paio di volte di trovare una chiave di registro ad una porta alta (9000-13000), oppure era attiva una porta non specificata (una backdoor ?... ;-) .. ) più specifico di così !
+
+Un'altro metodo sarebbe quello di utilizzare nbtstat (di /windows) per controllare se ha il netbios attivo ( e magari condivide pure qualcosa eh..), ed avere altre info utili.. 
+Insomma, con un pò di ingegno si determina l'obiettivo.
+
+
+Voglio fare una piccola digressione..... 
+in Irc (e non solo) è ormai diffuso il noto prog NukeNabber, utilizzato per proteggersi dagli attacchi via Net. Oltre a determinare l'origine dell'attacco, NN è in grado di rilevare se sul proprio sistema è in corso una scansione remota delle proprie porte.Come fare ad accorgersi se la nostra vittima lo utilizza ed è quindi al corrente del nostro attacco??
+Per poter fare il suo dovere questo prog si mette in "ascolto" sulle porte del proprio sys, come default Nukenabber fà un listening della 19,53,129,ecc.. , quindi le seguenti porte risulteranno attive !!Se facendo uno scanner troverete aperte queste porte, significa che il vostro obiettivo utilizza tale programma. 
+Volete spaventarlo un pò?? 8-|=|
+
+Aprite una sessione telnet (come spiegato più avanti), o utilizzate un Row client, tramite Genius o altro...
+"ma Telnet apre le sessioni solo sui server!!!" (direte voi) è vero.. ma se il sistema remoto si mette in ascolto su una determinata porta, darà libero accesso a qualunque tentativo di connessione sulla medesima, e se l'host in questione avrà un determinato prog (come NukeN o altri port-monitor) che visualizzi tutto ciò che accade sulla porta monitorata, farà apparire anche ciò che noi digiteremo tramite telnet o qualsiasi altro prog che spedisca dei caratteri !(detto terra-terra!) 
+Non usate però Telnet di Winzozz perchè non accetta nessun collegamento se non con un server, quindi per i nostri scopi servirà un client meno "intelligente" ! ( ma è prorio Microsoft ??! ;-) )
+Allora dicevo, collegatevi ad una delle porte aperte da NN (come la 129, non la 139 utilizzata da Win), una volta connessi tutto quello che digiterete sarà visualizzato da NN !!
+Se per esempio scriviamo "sei in grossi guai!" oppure "vattene, sei nel mio territorio", il tutto sarà visibile dalla nostra vittima.....bella sorpresa eh! 
+Inoltre ci sono vari progz che possono attaccare NN senza problemi, come Teardrop, Nestea, Newdrop.
+In alcuni casi è possibile anche creargli problemi al sys (come ho potuto sperimentare personalmente), digitando dei catteri sufficientemente lunghi e scoordinati, ma non ho ancora compreso con che criterio ciò avviene...o magari è stato solo un caso :-( 
+Fine della digressione.
+
+Ma torniamo a noi.
+Se la nostra vittima invece è un utente che frequenta le news, la ricerca sarà un pò più lunga ma con un pò di impegno si raggiungerà ugualmente l'obiettivo. In questo caso il suo IP lo potete vedere semplicemente sotto l'header (intestazione) del server NNTP, verificando nelle proprietà del msg... trovato ? ..bene , ma i msg che vengono postati sui NG sono ovviamente datati, oramai il suo IP non sarà più quello...però abbiamo comunque il suo indirizzo di rete ;
+
+per es. 195.12.97.X
+
+Dovreste capire già cosa fare... mano al Ping e via!
+Si incomincia a pingare l'indirizzo che abbiamo facendo una scansione dal primo n° ;
+
+ping -a 195.12.97.1
+ping -a 195.12.97.2
+.......
+ecc....
+
+dopo pochi tentativi di solito si becca subito un host attivo (se proprio volete, usate uno scanner.. sfaticati!), che come risposta ci darà il nome del server a cui è collegato.Se abbiamo il suo nome o alias possiamo comportarci come ho descritto prima, cioè usando un dns-scanner e verificare se il suo nome host coincide con quello che abbiamo.
+
+Esiste anche un modo per cercare degli indirizzi di chi posta sulle news.... ed è anche comodo da usare , ma serve solamente se l'utente che state cercando ha tenuto visibile il suo vero e-mail address nelle proprietà di almeno un msg. In pratica vi è utile quando vi ricordate solo il nome del tizio e dove postava, ma non avete il suo indirizzo.
+Basta spedire una mail a rtfm.mit.edu (database per Usenet);
+
+mail-server@rtmf.mit.edu
+
+specificando nel corpo del messaggio ciò che desiderate ottenere;
+
+send usenet-addresses/nome o cognome della persona
+
+Se il nome della persona che cercate contiene della punteggiatura (oppure volete sapere in quale altro modo è possibile sfruttare questo servizio) vi conviene dare un'occhiata all'help del sito stesso;
+
+send usenet-addresses/help
+
+in ogni caso,nel giro di pochissimi giorni, otterrete quello che avrete chiesto sempre tramite posta elettronica (comodo no?).
+
+
+Se invece non siamo contenti di quello che abbiamo trovato e vogliamo sapere tutto il possibile sulla nostra vittima, allora si passa ai servizi che ci offre Internet...
+
+
+Netfind, Whois, Finger
+
+Si tratta di alcuni dei tanti servizi che la rete ci offre per reperire tutte le informazioni di cui abbiamo bisogno.
+Per poterne fare uso è necessario (o quasi, come vedremo più avanti) l'uso di TELNET! Spero che sappiate almeno di cosa si tratti...in caso contrario vi rimando a qualche testo che ne spieghi le caratteristiche. E' molto importante che vi leggiate gli RFC (Request For Comment) presenti sul Net per capire veramente come funziona non solo telnet, ma tutto ciò che stà dietro ad Internet !Quindi, per chi ne è sprovvisto, mano ai motori di ricerca!Comunque per rinfrescarci la memoria, molto brevemente, ne farò una descrizione...
+
+
+INTRODUZIONE A TELNET
+
+Telnet è un prog che permette ad un utente di comandare (in modo restrittivo) una shell remota, in modo da usufruire dei suoi servizi.
+Come si utilizza?
+Dunque prendiamo il nostro telnet ... c:\windows\telnet per windows, per quanto riguarda Linux lo saprete sicuramente(!),
+il mio consiglio comunque è di avviarlo da Dos, questo perchè l'interfaccia grafica di Win95 crea talvolta dei problemi di connessione ( andate a chiedere a Bill il perchè!).Se poi vi procurate un prog Telnet un pò più decente (tipo Netterm, ma ce ne sono molti altri) che supporti il comando copia-incolla, è ancora meglio (vedrete poi perchè), ... ma questo è un'altro discorso, per i nostri scopi va bene anche quello di windows.Il comando per avviare una connessione è:
+
+telnet host_remoto n°porta
+
+dove host_remoto sarà l'indirizzo del server host al quale dovremo collegarci, mentre n°porta è la porta alla quale ci si collega per avere un determinato servizio. Se per esempio vogliamo collegarci ad un servizio mail (SMTP) la porta sarà la n° 25 , per le news è 119, e così via...Facciamo un esempio; se ci vogliamo collegare al servizio FTP della Tin, il nostro comando sarà:
+
+telnet ftp.volftp.tin.it 21 //la porta 21 è per il servizio FTP
+
+Quando vedremo apparire un messaggio con la descrizione del server significa che la connessione è avvenuta.Qui di seguito riporterò le porte principali tra le WKS (Well Known Services) utilizzabili su un server telnet. Per WKS si intendono quelle porte (le prime 1024) che hanno di regola un valore fisso stabilito per un determinato servizio (tenete conto comunque che in totale sono 65535).
+
+
+Porta Servizi
+
+7 [echo] Qualunque cosa scrivi, l'host te lo ripete 
+11 [systat] Molte info sugli utenti 
+13 [daytime] Ora e data dell'host locale 
+15 [netstat] Informazioni sul Networks (!) 
+21 [ftp] Servizio trasferimento files 
+23 [telnet] Il tuo log in. 
+25 [smpt] Servizio mail (spedizione) 
+39 [rlp] Risorse dell'ubicazione 
+43 [whois] Info su host e reti 
+53 [domain] Nome del server 
+70 [gopher] Servizio gopher 
+79 [finger] Informazioni sugli utenti 
+80 [http] Sevizio Web 
+110 [pop] Servizio mail (ricevente) 
+119 [nntp] Servizio Usenet 
+443 [shttp] Altro servizio Web 
+512 [biff] Notificazione della posta 
+513 [rlogin] Login remoto 
+[who] Who remoto 
+514 [shell] Comandi in remoto, nessuna pwd 
+[syslog] Logging del sys remoto 
+520 [route] Protocollo di instradamento.
+
+
+Bene, chiusa questa piccola parentesi sul funzionamento di Telnet, possiamo incominciare......
+
+
+Whois
+
+Questo servizio è presente in diversi server e contiene un database dove all'interno sono memorizzati nomi, cognomi, indirizzi (e-mail) di milioni di persone che frequentano Internet.Tramite questo servizio potremo reperire inofrmazioni su un determinato utente partendo dal suo nome e cognome ( sempre che sia presente nel database), vediamo un'esempio;
+uno dei server più capienti è senz'altro internic.net, dove per collegarsi digiteremo da DOS:
+
+c:\windows> telnet whois.internic.net 43
+
+..dove "43" è ovviamente il n° della porta per tale servizio.
+E'possibile anche non specificare la porta, purchè venga utilizzato il nome del server per intero (whois.dominio.net). 
+Basta attendere un'attimo e riceveremo la risposta dal server....
+
+al prompt digiteremo prima il cognome poi il nome...
+
+whois: pawell, jhon
+
+... e avremo così di seguito le informazioni relative alla persona che stiamo cercando. Ovviamente per avere maggiori probabilità di riuscita è essenziale utilizzare il server whois più vicino alla vittima (e questo vale anche per gli altri servizi che tratterò di seguito)...Potreste provare addirittura (se siete fortunati) a verificare se il provider della persona che cerchiamo abbia attivo questo tipo di servizio, in questo caso la strada sarà molto più semplice ed efficace.
+Se siete incerti del nome potrete inserire solo il cognome,in questo caso whois vi elencherà tutti gli utenti con la possibilità di scegliere quello che volete.La possibilità di utilizzare whois si estende anche al Web (oltre ai soliti programmini), ci sono infatti numerosi server che offrono questo servizio via http e che ne consentono quindi l'utilizzo con più semplicità ( volete la pappa pronta eh ??), come per esempio l'ottimo database Europeo "RIPE" ..
+
+http://www.ripe.net (nella sez whois)
+
+Se desiderate invece un'elenco dei server whois potete trovarlo a:
+
+ftp://sipb.mit.edu/pub/whois/whois-servers.list
+
+Finger
+
+Come per whois, finger è un'altro strumento molto utile per reperire delle info sugli utenti, allo stesso modo si apre una sessione telnet, ma la porta in questo caso è la 79 (è sempre utile leggersi l'help del server prima di utilizzarlo):
+
+telnet arpanet.it 79 
+
+La quantità di informazioni varia da server a server, così come il metodo di ricerca, un difetto questo che rende il servizio non molto affidabile; potremmo non trovare niente su un determinato server e trovare di tutto su un'altro.
+I termini di ricerca in questo caso sono di vario tipo ma diciamo che normalmente viene utilizzato l'indirizzo e-mail della vittima...
+
+: kevin@netware.net
+
+...dategli tempo di elaborare e (se saranno presenti) vi troverete davanti le informazioni riguardanti l'utente, sarete anche avvisati (sempre che il server lo permetta) se l'utente è collegato in rete!! 
+In alternativa se la chive di ricerca è incerta potrete utilizzare finger in questo modo..
+
+: finger@netware.net
+
+..per avere un elenco degli utenti appartenenti al sito "netware.net" (anche se non è molto consigliabile farlo su grossi siti, visto l'interminabile elenco di utenti).
+Come già dovreste sapere molti server disattivano questo tipo di servizio perchè particolarmente debole agli attacchi (///* ^s, per es.), qundi sarà vostro impegno trovarne uno adatto al prorio bisogno.
+
+Netfind
+
+Ora passiamo ad un sistema ormai in disuso che è comunque utile conoscere e sapere come funziona, perchè nel caso in cui avrete la possibilità di usufruirne, diventerebbe uno strumento utilissimo.Il server netfind viene utilizzato nel caso in cui siamo a conoscenza del nome o cognome della persona che cerchiamo, del dominio oppure anche tramite alcune parole chiave che vi saranno spiegate nell'help del server.E' ovvio quindi che netfind è un servizio utile solo per una ricerca più mirata, ovvero se siamo già a conoscenza di alcune info sul nostro bersaglio.Per utilizzare questo servizio sarà sufficiente collegarsi con telnet ad un server netfind, entrare con "netfind" quando chiede il login e dare un'invio quando richiede la password (non tutti i server utilizzano però questo protocollo).Vi troverete davanti la solita descrizione del server ;-) ed un'elenco di altri servizi netfind disponibili in rete.Una volta dentro dovrete inserire i dati per la vostra ricerca;
+supponiamo di dover cercare un tal Kevin su un dominio "netware.net"..
+
+netfind: kevin netware.net
+
+..bisognerà inserire prima il cognome (o il nome), poi il dominio o qualunque parola chiave che possa identificare la persona...ecco tutto quello che dovrete fare.
+Netfind si preoccuperà di effettuare una ricerca nel dominio da voi indicato, riferendovi tutte le informazioni disponibili e , come per finger, se l'utente da voi selezionato è attualmente in rete.
+Interessante no?!
+(Ricordatevi che le chiavi di ricerca vanno divise da spazi e non da punteggiature).
+Più la ricerca sarà precisa e più sarà veloce ed efficace il risultato, se invece dovrete effettuare dei tentativi... allora armatevi di pazienza.Fra i più grandi server netfind và considerato dis.internic.net, ma ce ne sono diversi sparsi per molti paesi, eccone alcuni che ho potuto verificare:
+
+netfind.fnet.fr (Francia)
+netfind.uni-essen.de (germania)
+ds.internic.net (USA)
+netfind.elte.hu (Ungheria)
+netfind.icm.edu.pl (Polonia)
+nic.uakom.sk (Slovenia)
+bruno.cs.colorado.edu (USA)
+netfind.vslib.cz (Rep.Ceca)
+
+Non ho ancora verificato se esiste un server netfind in Italia, nel caso lo sappiate mandatemi pure una mail! 
+Come whois anche netfind ha la sua presenza sul Web ed esistono vari Url dove è possibile usufruirne; non stò ad elencarli perchè potete facilmente trovarli tramite un motore di ricerca! :-P
+
+
+Ricordatevi di utilizzare sempre il server più vicino al nostro obiettivo o ancora meglio se è il suo provider a fornire tali servizi, per avere maggior successo nella nostra ricerca !
+^^^^^^^^^
+
+Questo è tutto... (Uff!)
+
+-------------------------------------------------------------
+Raccomando solamente una cosa; non fate casini con i servizi che ho sopra citato e altri ancora che ci offre la rete (in particolar modo mi riferisco ai Lamer!), sono già molti i server che li chiudono perchè degli idioti sperimentano le loro cazzate, non diamo modo di aiutarli in questo intento!
+-------------------------------------------------------------
+
+OK?
+
+
+"ma una volta ottenuto ciò che cerchiamo, cosa ne facciamo??"
+........ARGGGHH!!
+
+.... non lo starete dicendo sul serio!!
+Che cavolo di hacker volete diventare??
+A parte quello che vi ho spiegato all'inizio.
+Se state cercando così accanitamente un'utente tanto da perdere parte del vostro tempo prezioso, significa che o vi stà tremendamente sulle palle o volete ringraziarlo di cuore per un favore che vi ha fatto.. ..??ahahahah!.. hihihi!huhuu.... (ma fatemi il piacere!)
+
+Nel primo caso potrete agire in diversi modi;
+
+SOFT
+-spedirgli tramite una fakemail una Backdoor implementata in un'innocente prog con qualche scusa (o magari indicandogli dove scaricare tale progZ, ovvero su un sito da voi creato temporaneamente) ..insomma fategli installare stà BD in qualche modo!...poi fate voi.
+
+-utilizzate i vari nuker che ci sono in rete (come aggressor) per attaccarlo ogni volta che lo beccate online, oppure, da lamers, utilizzate un mail-bombing.
+
+-spaventatelo un pò con qualche msg o con alcuni prog che fanno al caso vostro.
+
+HARD (vi stà prorio sulle palle!!)
+Avete abbastanza info sull'utente? Basta poco per sapere residenza,via, n°di tel., ecc.. ( si può fare tutto online). Avrete sicuramente fatto del carding, nel vostro piccolo. Basta un generatore di CC e riuscire a beccare un numero valido e... sapete quei servizi online che spediscono per posta materiale diciamo... culturale ( cicciolina ai mondiali, le calde voglie di helen, analcanal,ecc..)?! ;-))
+ecco.. fate voi. Ricordatevi però; se volete andare sul sicuro, utilizzate almeno un'anonymizer per effettuare "l'abbonamento", o meglio ancora, un bounce (rimbalzo) tramite proxy. 
+Altre cose si possono fare, ma non voglio entrare nel particolare...
+Basta comunque un pò di inventiva.
+
+°°°°°°°°°°°°°°
+
+
+Se ritenete che tutto questo vi è servito a qualcosa .. meglio per voi, altrimenti..... cazzi vostri! :-]
+...ma se pensate che non vi sia nessuna utilità nell'imparare queste cose, bè allora non avete capito un ...!
+
+Ricordatevi che un buon hacker ha la capacità di trovare chiunque nella rete, dovunque esso sia, qualsiasi cosa faccia... 
+per questo non vi augurerei mai di incontrarlo!! :-|=|
+
+
+Per i più saccenti: se avete delle correzioni da fare o info da aggiungere, sono ben gradite le vostre mail !
+
+#Override> the_over@mindless.com

