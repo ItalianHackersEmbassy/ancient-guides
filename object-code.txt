@@ -1,0 +1,386 @@
+The following is the verion of my essay on source vs. object code that
+was submitted to the Court in the New York DVD trial on July 25, 2000.
+This is still only a rough draft.  It needs more work, but we ran out
+of time.
+
+A number of people contributed information and insightful comments
+that improved this draft or helped to fine tune my testimony.  I'd
+like to thank Hal Abelson, Andrew Appel, Mark Fuhs, and Scott Goehring
+for their assistance.
+
+-- Dave Touretzky
+
+================================================================
+
+	Source vs. Object Code:  A False Dichotomy
+
+		David S. Touretzky
+		Computer Science Department
+		Carnegie Mellon University
+
+	*** DRAFT VERSION OF JULY 12, 2000 ***
+
+The notion of source and object code as disjoint classes of computer
+code is a false dichotomy common among non-programmers.  The general
+public's understanding is that computer programs are written as
+"source code" that is human readable and not immediately executable by
+the machine.  Source code is supposed to contain meaningful variable
+names and helpful comments that are intended only to be read by
+humans.  A piece of software called a "compiler" must convert source
+code to object code before the program described in the source code
+can be executed.  Object code cannot be read by people; it is a
+sequence of bytes that encode specific machine instructions that will
+be executed by the microprocessor when it runs (executes) the program.
+
+The above statements are not exactly false; they are in fact the usual
+way of explaining to laymen how a computer works.  However, any
+attempt to draw legal distinctions between "source" code and "object"
+code, or between code that is executable and code that is not, will
+immediately encounter difficulties, because these dichotomies are only
+a convenient fiction.  Computer scientists don't view things this way
+at all.  Here are some of the problems:
+
+1. "Source" and "object" are not well-defined classes of code.  They
+are actually relative terms.  Given a device for transforming programs
+from one form to another, source code is what goes into the device,
+and object code (or "target" code) is what comes out.  The target code
+of one device is frequently the source code of another.  For example,
+both early C++ compilers and the Kyoto Common Lisp compiler produced C
+code as their output.  C++ (or Common Lisp) was the source language; C
+was the target language.  This output was then run through a C
+compiler to produce symbolic assembler code as output.  This then had
+to be run through yet another proram, the "assembler", to produce
+binary machine code that could be directly executed by a processor.
+
+In summary, programs typically go through a series of transformations
+from higher level to lower level languages.  The assembler language
+code that a C compiler produces as "object" code is source code for
+the assembler.  Today, the GNU C compiler (known as gcc) will deliver
+assembler language code instead of binary if the user requests it by
+specifying the -S switch.
+
+2. Even binary machine code is perfectly readable by humans.  It was,
+after all, designed by humans.  It may be tedious to read, but this
+can be helped somewhat by using a program called a disassembler to
+translate the raw binary instructions back into symbolic form.  For
+example, the Pentium instruction "add 7 to register AL" is written
+0000010000000111 in the machine's binary language; it is written in
+symbolic form as "ADD AL,7".  (Reference: Intel Architecture
+Developer's Manual, 1997 edition, volume 2, page 3-17.)  Converting
+between these two forms is trivial.
+
+The instant litigation seems to be a result of a person having read
+and understood a piece of machine code.  A document signed by 1) a
+Norwegian minor, Jon Johansen, 2) an "anonymous German cracker" from
+the group MoRE (Masters of Reverse Engineering), who is designated the
+group's "top coder/disassembler", and 3) an individual referred to
+only as "[dEZZY/DoD]", suggests that the original CSS "crack" was
+performed by disassembling a software DVD player and rewriting the
+descrambling algorithm in C.  The "anonymous C source code" in my
+Gallery of CSS Descramblers (http://www.cs.cmu.edu/~dst/DeCSS/Gallery)
+may be the fruit of that effort.
+
+3. Human-readable programs do not have to be compiled in order to be
+executed.  Compilation merely transforms the program into a form that
+can be executed more efficiently.  But a piece of software called an
+"interpreter" can execute source code directly, without compiling it.
+Programs normally run more slowly when they are being executed by an
+interpreter than when they are first compiled into machine
+instructions that the processor can execute directly.  But they do
+run.  And interpreters have some advantages: they are easier to write
+than compilers, and they are better suited for debugging purposes.
+
+An interpreter for the C programming language, called EIC, is
+available for free on the web at http://www.anarchos.com/eic/.  There
+are other C interpreters as well.
+
+Some languages, such as MATLAB, are normally executed in interpreted
+mode.  Today, most laser printers have a computer inside running a
+PostScript interpreter.  When a document prepared in a text editor
+such as Microsoft Word is to be printed, it is first converted to a
+Postscript program.  The Postscript interpreter inside the printer
+then executes the program to construct the page image that is sent to
+the printing engine.  Postscript programs are easily human readable;
+they do not even require a disassembler.  Yet they are executable.
+
+4. Binary "machine code" isn't necessarily directly executable by the
+computer's microprocessor.  Languages such as Java and PERL compile to
+what is called 'byte code", or "virtual machine code".  This is binary
+code for an idealized, imaginary processor that does not correspond to
+any particular commercial processor architecture, such as the the
+Pentium, SPARC, or PowerPC architectures.  The virtual machine code
+must then be executed by a piece of software called a "byte code
+interpreter" that simulates the imaginary processor.  The advantage of
+this approach is that it allows one to quickly produce Java or Perl
+implementations for new computer architectures, because the same
+compiler can be used.  Only a new byte code interpreter is required.
+Byte code interpreters are easier to write than compilers.
+
+Another approach taken by some implementations is to compile a piece
+of Java byte code into native machine instructions (e.g., Pentium
+instructions, SPARC instructions, or PowerPC instructions) when that
+piece begins to execute.  In this scheme, the Java byte code becomes
+the "source code" and the native mode instructions are the target
+code.
+
+The new Crusoe processor from Transmeta treats Pentium code as virtual
+machine code.  Although it appears to execute Pentium code, internally
+the chip translates the code into another machine language that is
+considerably more complex, in order to take better advantage of
+pipelining and other optimization techniques.  Hence, what the layman
+would call object code is actually the source code for the Crusoe's
+transformation process.
+
+5. "Binary executable" code sometimes isn't.  Consider the DECSS.EXE
+file that is the subject of the instant litigation.  This file
+contains a program expressed as machine instructions directly
+executable by a Pentium processor.  It also includes "system calls",
+specific to the Microsoft Windows operating system, to perform
+input/output operations.  If this file were downloaded to a Sun SPARC
+workstation running Unix, or a PowerPC running the Macintosh operating
+system, it would not be directly executable.  But all is not lost.
+
+The SPARC or PowerPC owner could construct a Pentium emulator program
+to simulate the operation of the Pentium processor.  Such programs are
+commonplace; in fact they are a necessary step in the development of
+any new processor architecture.  He or she would also need to build a
+small portion of a Windows emulator in order to handle the Windows
+system calls.  At that point, DECSS.EXE could be executed by the
+emulator program.  An alternative approach would be to build a
+translator program to convert Pentium instructions to SPARC or PowerPC
+native instructions.  Again, this is a well-known technique in
+computer science and not technically difficult.  DECSS.EXE would then
+be the input, or source code, for the emulator or translator program.
+
+6. Executable binary code has much of the same expressive content as
+code written in a symbolic language, be it assembly language or a
+higher level language such as C or Lisp.  Appendix A shows a small C
+program for computing 5 factorial (the product of the integers from 1
+to 5).  Appendix B shows the assembler language output produced by gcc
+version 2.95.3 on a Sun UltraSparc 170 running the Solaris operating
+system.  Appendix C is a dump of the binary output file produced by
+the assembler.  (The values are actually displayed in hexadecimal,
+which is a more compact form of binary.)  Appendix D is the result of
+disassembling the binary file, going back to symbolic assembler
+language code.  Note that line number 20 in Appendix D contains an
+integer compare instruction, "cmp %o0, 5".  The equivalent hexadecimal
+form is also shown: it is 80a22005.  Appendix C shows this same
+sequence in the binary file, mid-way through the line labeled 0000220.
+The same instruction, "cmp %o0, 5", also appears in Appendix B, two
+lines after the label .LL3.  And the equivalent in the C code of
+Appendix A is the sequence "i<6".  The fact that the constant is 6 in
+the C code and 5 in the assembly language code is the sort of thing
+one can learn only by looking at the assembly language code, or the
+binary file that results from it.  (The reason for the difference, 5
+vs. 6, has to do with the particular strategy used by the gcc compiler
+to implement the FOR loop.)
+
+The lessons that should be drawn from the above are:
+
+1) All computer code is human readable.  Some forms are simply more
+convenient to read than others.
+
+2. All computer code is expressive.  Many of the ideas expressed in C
+code are also expressed in the assembly language code that results
+from compiling that C code, and again in the binary machine language
+that is the output of the assembler.  Some content may be lost, e.g.,
+source code comments are typically not preserved in object code,
+although variable names may be.  But some ideas that are only implicit
+in the source code may be made more apparent in the object code, such
+as how a particular sequence of actions should be best expressed in
+terms of processor operations in order to obtain maximum performance
+from the machine.
+
+3) All computer code is executable.  In some instances it may be
+advantageous to transform the code into another form first, but
+transformation is by no means mandatory.  An interpreter can be
+employed instead.  Interpreters are in common use in computer systems.
+
+4) "Source" and "object" are relative terms, not absolute categories.
+
+5) The file DECSS.EXE is a particular expression of an algorithm for
+converting video files from one format to another.  It expresses the
+same algorithm as the C code from which it was compiled.  DECSS.EXE is
+coded in a binary language that is more tedious to read than the C
+code, but more efficiently executable by a Pentium processor.  These
+are differences in degree only.  If C code is protected speech because
+of its expressive content --- and one can argue that a computer
+program is nothing but expressive content -- then code written in a
+binary machine language that expresses the same algorithm should not
+be regarded any differently.
+
+================================================================
+
+APPENDIX A:  C source file fact.c
+
+#include <stdio.h>
+void main(int argc, char *argv[]) {
+  int i, result;
+  result = 1;
+  for (i = 1; i<6; i++) {
+    result = result * i;
+  }
+  printf ("Result is:  %d.\n",result);
+}
+
+
+================================================================
+
+APPENDIX B: assembler language file fact.s (produced by:  gcc -S fact.c)
+
+	.file	"fact.c"
+gcc2_compiled.:
+	.global .umul
+.section	".rodata"
+	.align 8
+.LLC0:
+	.asciz	"Result is:  %d.\n"
+.section	".text"
+	.align 4
+	.global main
+	.type	 main,#function
+	.proc	020
+main:
+	!#PROLOGUE# 0
+	save	%sp, -120, %sp
+	!#PROLOGUE# 1
+	st	%i0, [%fp+68]
+	st	%i1, [%fp+72]
+	mov	1, %o0
+	st	%o0, [%fp-24]
+	mov	1, %o0
+	st	%o0, [%fp-20]
+.LL3:
+	ld	[%fp-20], %o0
+	cmp	%o0, 5
+	ble	.LL6
+	nop
+	b	.LL4
+	 nop
+.LL6:
+	ld	[%fp-24], %o0
+	ld	[%fp-20], %o1
+	call	.umul, 0
+	 nop
+	st	%o0, [%fp-24]
+.LL5:
+	ld	[%fp-20], %o0
+	add	%o0, 1, %o1
+	st	%o1, [%fp-20]
+	b	.LL3
+	 nop
+.LL4:
+	sethi	%hi(.LLC0), %o1
+	or	%o1, %lo(.LLC0), %o0
+	ld	[%fp-24], %o1
+	call	printf, 0
+	 nop
+.LL2:
+	ret
+	restore
+.LLfe1:
+	.size	 main,.LLfe1-main
+	.ident	"GCC: (GNU) 2.95.2 19991024 (release)"
+
+================================================================
+
+APPENDIX C: binary file fact.o (produced by:  gcc -c fact.c;
+	dumped by:  od -x fact.o)
+
+0000000 7f45 4c46 0102 0100 0000 0000 0000 0000
+0000020 0001 0002 0000 0001 0000 0000 0000 0000
+0000040 0000 0234 0000 0000 0034 0000 0000 0028
+0000060 0008 0001 002e 7368 7374 7274 6162 002e
+0000100 7465 7874 002e 726f 6461 7461 002e 7379
+0000120 6d74 6162 002e 7374 7274 6162 002e 7265
+0000140 6c61 2e74 6578 7400 2e63 6f6d 6d65 6e74
+0000160 0000 0000 9de3 bf88 f027 a044 f227 a048
+0000200 9010 2001 d027 bfe8 9010 2001 d027 bfec
+0000220 d007 bfec 80a2 2005 0480 0004 0100 0000
+0000240 1080 000c 0100 0000 d007 bfe8 d207 bfec
+0000260 4000 0000 0100 0000 d027 bfe8 d007 bfec
+0000300 9202 2001 d227 bfec 10bf fff2 0100 0000
+0000320 1300 0000 9012 6000 d207 bfe8 4000 0000
+0000340 0100 0000 81c7 e008 81e8 0000 0000 0000
+0000360 5265 7375 6c74 2069 733a 2020 2564 2e0a
+0000400 0000 0000 0000 0001 0000 0000 0000 0000
+0000420 0400 fff1 0000 0001 0000 0000 0000 0000
+0000440 0400 fff1 0000 0000 0000 0000 0000 0000
+0000460 0300 0003 0000 0008 0000 0000 0000 0000
+0000500 0000 0002 0000 0000 0000 0000 0000 0000
+0000520 0300 0002 0000 0017 0000 0000 0000 0000
+0000540 1000 0000 0000 001d 0000 0000 0000 0000
+0000560 1000 0000 0000 0024 0000 0000 0000 0078
+0000600 1200 0002 0066 6163 742e 6300 6763 6332
+0000620 5f63 6f6d 7069 6c65 642e 002e 756d 756c
+0000640 0070 7269 6e74 6600 6d61 696e 0000 0000
+0000660 0000 003c 0000 0507 0000 0000 0000 005c
+0000700 0000 0209 0000 0000 0000 0060 0000 020c
+0000720 0000 0000 0000 0068 0000 0607 0000 0000
+0000740 0061 733a 2057 6f72 6b53 686f 7020 436f
+0000760 6d70 696c 6572 7320 342e 3220 6465 7620
+0001000 3133 204d 6179 2031 3939 360a 0047 4343
+0001020 3a20 2847 4e55 2920 322e 3935 2e32 2031
+0001040 3939 3931 3032 3420 2872 656c 6561 7365
+0001060 2900 0000 0000 0000 0000 0000 0000 0000
+0001100 0000 0000 0000 0000 0000 0000 0000 0000
+0001120 0000 0000 0000 0000 0000 0000 0000 0001
+0001140 0000 0003 0000 0000 0000 0000 0000 0034
+0001160 0000 003d 0000 0000 0000 0000 0000 0001
+0001200 0000 0000 0000 000b 0000 0001 0000 0006
+0001220 0000 0000 0000 0074 0000 0078 0000 0000
+0001240 0000 0000 0000 0004 0000 0000 0000 0011
+0001260 0000 0001 0000 0002 0000 0000 0000 00f0
+0001300 0000 0011 0000 0000 0000 0000 0000 0008
+0001320 0000 0000 0000 0019 0000 0002 0000 0002
+0001340 0000 0000 0000 0104 0000 0080 0000 0005
+0001360 0000 0005 0000 0004 0000 0010 0000 0021
+0001400 0000 0003 0000 0002 0000 0000 0000 0184
+0001420 0000 0029 0000 0000 0000 0000 0000 0001
+0001440 0000 0000 0000 0029 0000 0004 0000 0002
+0001460 0000 0000 0000 01b0 0000 0030 0000 0004
+0001500 0000 0002 0000 0004 0000 000c 0000 0034
+0001520 0000 0001 0000 0000 0000 0000 0000 01e0
+0001540 0000 0052 0000 0000 0000 0000 0000 0001
+0001560 0000 0000
+0001564
+
+================================================================
+
+APPENDIX D:  disassembly of fact.o  (produced by:   dis fact.o)
+
+                ****   DISASSEMBLER  ****
+
+
+section .text
+main()
+           0:  9d e3 bf 88         save         %sp, -120, %sp
+           4:  f0 27 a0 44         st           %i0, [%fp + 68]
+           8:  f2 27 a0 48         st           %i1, [%fp + 72]
+           c:  90 10 20 01         mov          1, %o0
+          10:  d0 27 bf e8         st           %o0, [%fp - 24]
+          14:  90 10 20 01         mov          1, %o0
+          18:  d0 27 bf ec         st           %o0, [%fp - 20]
+          1c:  d0 07 bf ec         ld           [%fp - 20], %o0
+          20:  80 a2 20 05         cmp          %o0, 5
+          24:  04 80 00 04         ble          0x34
+          28:  01 00 00 00         nop     
+          2c:  10 80 00 0c         ba           0x5c
+          30:  01 00 00 00         nop     
+          34:  d0 07 bf e8         ld           [%fp - 24], %o0
+          38:  d2 07 bf ec         ld           [%fp - 20], %o1
+          3c:  40 00 00 00         call         0x3c
+          40:  01 00 00 00         nop     
+          44:  d0 27 bf e8         st           %o0, [%fp - 24]
+          48:  d0 07 bf ec         ld           [%fp - 20], %o0
+          4c:  92 02 20 01         add          %o0, 1, %o1
+          50:  d2 27 bf ec         st           %o1, [%fp - 20]
+          54:  10 bf ff f2         ba           0x1c
+          58:  01 00 00 00         nop     
+          5c:  13 00 00 00         sethi        %hi(gcc2_compiled.), %o1
+          60:  90 12 60 00         or           %o1, gcc2_compiled., %o0       ! gcc2_compiled.
+          64:  d2 07 bf e8         ld           [%fp - 24], %o1
+          68:  40 00 00 00         call         0x68
+          6c:  01 00 00 00         nop     
+          70:  81 c7 e0 08         ret     
+          74:  81 e8 00 00         restore 
